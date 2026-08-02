@@ -191,8 +191,8 @@ python3 docs/build_public_site.py
 python3 docs/check_public_release.py _site
 ```
 
-This publication build requires `pdflatex` and the standard AMS, TikZ,
-`stmaryrd`, and `microtype` packages.
+This publication build requires `pdflatex`, Latin Modern, and the standard AMS,
+TikZ, `stmaryrd`, and `microtype` packages.
 
 The tracked `docs/public/source-locators.json` is the sanitized publication
 input. `docs/export_public_locators.py` is a maintainer-only command for
