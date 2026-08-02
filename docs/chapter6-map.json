@@ -1,0 +1,516 @@
+{
+  "chapter": "Chapter 6",
+  "title": "Powerdomains",
+  "leanFile": "../Practice/DomainTheory/Chapter06.lean",
+  "notice": "This map records public paraphrases and Lean source locations. It does not reproduce the textbook text.",
+  "items": [
+    {
+      "id": "prop-6-1-1",
+      "number": "Proposition 6.1.1",
+      "section": "6.1",
+      "kind": "Proposition",
+      "title": "Dcpo algebras form a complete category",
+      "summary": "Dcpo algebras form a complete category.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "prop_6_1_1_dcpo_algebras_complete"
+      ],
+      "startLine": 138,
+      "endLine": 164
+    },
+    {
+      "id": "thm-6-1-2",
+      "number": "Theorem 6.1.2",
+      "section": "6.1",
+      "kind": "Theorem",
+      "title": "Free dcpo algebras exist for inequational theories",
+      "summary": "Free dcpo algebras exist for inequational theories.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "theorem_6_1_2_free_dcpo_algebras_exist"
+      ],
+      "startLine": 165,
+      "endLine": 505
+    },
+    {
+      "id": "prop-6-1-3",
+      "number": "Proposition 6.1.3",
+      "section": "6.1",
+      "kind": "Proposition",
+      "title": "The syntactic basis for free continuous algebras is an abstract basis",
+      "summary": "The syntactic basis for free continuous algebras is an abstract basis.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "prop_6_1_3_syntactic_basis_abstract_basis"
+      ],
+      "startLine": 506,
+      "endLine": 522
+    },
+    {
+      "id": "prop-6-1-4",
+      "number": "Proposition 6.1.4",
+      "section": "6.1",
+      "kind": "Proposition",
+      "title": "Syntactic approximation has the required inclusion properties",
+      "summary": "Syntactic approximation has the required inclusion properties.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "prop_6_1_4_syntactic_approximation_properties"
+      ],
+      "startLine": 523,
+      "endLine": 651
+    },
+    {
+      "id": "lemma-6-1-5",
+      "number": "Lemma 6.1.5",
+      "section": "6.1",
+      "kind": "Lemma",
+      "title": "The quotient syntactic basis is an abstract basis",
+      "summary": "The quotient syntactic basis is an abstract basis.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "lemma_6_1_5_quotient_syntactic_basis"
+      ],
+      "startLine": 652,
+      "endLine": 677
+    },
+    {
+      "id": "thm-6-1-6",
+      "number": "Theorem 6.1.6",
+      "section": "6.1",
+      "kind": "Theorem",
+      "title": "Free continuous dcpo algebras are built from the syntactic basis",
+      "summary": "Free continuous dcpo algebras are built from the syntactic basis.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "theorem_6_1_6_free_continuous_dcpo_algebra"
+      ],
+      "startLine": 678,
+      "endLine": 719
+    },
+    {
+      "id": "thm-6-1-7",
+      "number": "Theorem 6.1.7",
+      "section": "6.1",
+      "kind": "Theorem",
+      "title": "Free continuous-domain algebras exist",
+      "summary": "Free continuous-domain algebras exist.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "theorem_6_1_7_free_continuous_domain_algebras_exist"
+      ],
+      "startLine": 720,
+      "endLine": 758
+    },
+    {
+      "id": "prop-6-1-8",
+      "number": "Proposition 6.1.8",
+      "section": "6.1",
+      "kind": "Proposition",
+      "title": "The extension map is Scott-continuous",
+      "summary": "The extension map is Scott-continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "prop_6_1_8_extension_map_scott_continuous"
+      ],
+      "startLine": 759,
+      "endLine": 795
+    },
+    {
+      "id": "thm-6-1-9",
+      "number": "Theorem 6.1.9",
+      "section": "6.1",
+      "kind": "Theorem",
+      "title": "The free-algebra monad is locally continuous",
+      "summary": "The free-algebra monad is locally continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "theorem_6_1_9_free_algebra_monad_locally_continuous"
+      ],
+      "startLine": 796,
+      "endLine": 840
+    },
+    {
+      "id": "thm-6-1-10",
+      "number": "Theorem 6.1.10",
+      "section": "6.1",
+      "kind": "Theorem",
+      "title": "Free algebraic-domain algebras exist",
+      "summary": "Free algebraic-domain algebras exist.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "theorem_6_1_10_free_algebraic_domain_algebras_exist"
+      ],
+      "startLine": 841,
+      "endLine": 862
+    },
+    {
+      "id": "prop-6-1-11",
+      "number": "Proposition 6.1.11",
+      "section": "6.1",
+      "kind": "Proposition",
+      "title": "The unit order-reflection criterion for free algebras",
+      "summary": "The unit order-reflection criterion for free algebras.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "prop_6_1_11_unit_order_reflection_criterion"
+      ],
+      "startLine": 863,
+      "endLine": 915
+    },
+    {
+      "id": "def-6-1-12",
+      "number": "Definition 6.1.12",
+      "section": "6.1",
+      "kind": "Definition",
+      "title": "Strict dcpo algebras and strict homomorphisms",
+      "summary": "Strict dcpo algebras and strict homomorphisms.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "def_6_1_12_strict_dcpo_algebra",
+        "def_6_1_12_strict_homomorphism"
+      ],
+      "startLine": 916,
+      "endLine": 921
+    },
+    {
+      "id": "thm-6-1-13",
+      "number": "Theorem 6.1.13",
+      "section": "6.1",
+      "kind": "Theorem",
+      "title": "Free strict algebras exist",
+      "summary": "Free strict algebras exist.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "theorem_6_1_13_free_strict_algebras_exist"
+      ],
+      "startLine": 1034,
+      "endLine": 1159
+    },
+    {
+      "id": "prop-6-1-14",
+      "number": "Proposition 6.1.14",
+      "section": "6.1",
+      "kind": "Proposition",
+      "title": "Finite-poset preservation yields bifinite preservation",
+      "summary": "Finite-poset preservation yields bifinite preservation.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "lean": [
+        "prop_6_1_14_finite_preservation_bifinite"
+      ],
+      "startLine": 1160,
+      "endLine": 1168
+    },
+    {
+      "id": "def-6-2-1",
+      "number": "Definition 6.2.1",
+      "section": "6.2",
+      "kind": "Definition",
+      "title": "The Plotkin powertheory",
+      "summary": "The Plotkin powertheory.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "def_6_2_1_plotkin_powertheory"
+      ],
+      "startLine": 172,
+      "endLine": 226
+    },
+    {
+      "id": "def-6-2-2",
+      "number": "Definition 6.2.2",
+      "section": "6.2",
+      "kind": "Definition",
+      "title": "The Egli-Milner relation",
+      "summary": "The Egli-Milner relation.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "def_6_2_2_egli_milner_relation"
+      ],
+      "startLine": 59,
+      "endLine": 171
+    },
+    {
+      "id": "thm-6-2-3",
+      "number": "Theorem 6.2.3",
+      "section": "6.2",
+      "kind": "Theorem",
+      "title": "The Plotkin powerdomain of a continuous domain is continuous",
+      "summary": "The Plotkin powerdomain of a continuous domain is continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "theorem_6_2_3_plotkin_powerdomain_continuous"
+      ],
+      "startLine": 227,
+      "endLine": 244
+    },
+    {
+      "id": "def-6-2-4",
+      "number": "Definition 6.2.4",
+      "section": "6.2",
+      "kind": "Definition",
+      "title": "Convex hulls and convex subsets",
+      "summary": "Convex hulls and convex subsets.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "def_6_2_4_convex_hull"
+      ],
+      "startLine": 245,
+      "endLine": 259
+    },
+    {
+      "id": "prop-6-2-5",
+      "number": "Proposition 6.2.5",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "Convex-hull and Egli-Milner properties",
+      "summary": "Convex-hull and Egli-Milner properties.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_5_convex_egli_milner_properties"
+      ],
+      "startLine": 260,
+      "endLine": 363
+    },
+    {
+      "id": "prop-6-2-6",
+      "number": "Proposition 6.2.6",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "The Plotkin powerdomain of an algebraic domain is algebraic",
+      "summary": "The Plotkin powerdomain of an algebraic domain is algebraic.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_6_plotkin_powerdomain_algebraic"
+      ],
+      "startLine": 364,
+      "endLine": 386
+    },
+    {
+      "id": "def-6-2-7",
+      "number": "Definition 6.2.7",
+      "section": "6.2",
+      "kind": "Definition",
+      "title": "Hoare and Smyth powertheories",
+      "summary": "Hoare and Smyth powertheories.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "def_6_2_7_hoare_smyth_powertheories"
+      ],
+      "startLine": 387,
+      "endLine": 424
+    },
+    {
+      "id": "prop-6-2-8",
+      "number": "Proposition 6.2.8",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "Hoare and Smyth powerdomains have lattice operations",
+      "summary": "Hoare and Smyth powerdomains have lattice operations.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_8_hoare_smyth_powerdomain_lattice",
+        "prop_6_2_8_hoare_powerdomain_lattice"
+      ],
+      "startLine": 425,
+      "endLine": 436
+    },
+    {
+      "id": "prop-6-2-9",
+      "number": "Proposition 6.2.9",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "Finite-basis approximations for Hoare and Smyth powerdomains",
+      "summary": "Finite-basis approximations for Hoare and Smyth powerdomains.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_9_hoare_smyth_finite_basis_approximation"
+      ],
+      "startLine": 471,
+      "endLine": 484
+    },
+    {
+      "id": "thm-6-2-10",
+      "number": "Theorem 6.2.10",
+      "section": "6.2",
+      "kind": "Theorem",
+      "title": "Hoare and Smyth powerdomains of continuous domains are continuous",
+      "summary": "Hoare and Smyth powerdomains of continuous domains are continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "theorem_6_2_10_hoare_smyth_powerdomain_continuous",
+        "theorem_6_2_10_hoare_powerdomain_continuous"
+      ],
+      "startLine": 485,
+      "endLine": 498
+    },
+    {
+      "id": "prop-6-2-11",
+      "number": "Proposition 6.2.11",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "Subset approximation facts for Hoare and Smyth powerdomains",
+      "summary": "Subset approximation facts for Hoare and Smyth powerdomains.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_11_subset_approximation_preorders"
+      ],
+      "startLine": 513,
+      "endLine": 576
+    },
+    {
+      "id": "prop-6-2-12",
+      "number": "Proposition 6.2.12",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "Algebraic Hoare and Smyth powerdomains are algebraic",
+      "summary": "Algebraic Hoare and Smyth powerdomains are algebraic.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_12_hoare_smyth_powerdomain_algebraic",
+        "prop_6_2_12_smyth_powerdomain_algebraic"
+      ],
+      "startLine": 577,
+      "endLine": 592
+    },
+    {
+      "id": "thm-6-2-13",
+      "number": "Theorem 6.2.13",
+      "section": "6.2",
+      "kind": "Theorem",
+      "title": "Hoare powerdomains can be represented by closed sets",
+      "summary": "Hoare powerdomains can be represented by closed sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "theorem_6_2_13_hoare_powerdomain_closed_sets"
+      ],
+      "startLine": 766,
+      "endLine": 777
+    },
+    {
+      "id": "thm-6-2-14",
+      "number": "Theorem 6.2.14",
+      "section": "6.2",
+      "kind": "Theorem",
+      "title": "Smyth powerdomains can be represented by compact saturated sets",
+      "summary": "Smyth powerdomains can be represented by compact saturated sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "theorem_6_2_14_smyth_powerdomain_compact_saturated"
+      ],
+      "startLine": 778,
+      "endLine": 794
+    },
+    {
+      "id": "cor-6-2-15",
+      "number": "Corollary 6.2.15",
+      "section": "6.2",
+      "kind": "Corollary",
+      "title": "Smyth powerdomains of coherent domains are bifinite-continuous",
+      "summary": "Smyth powerdomains of coherent domains are bifinite-continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "cor_6_2_15_smyth_powerdomain_coherent_bc"
+      ],
+      "startLine": 795,
+      "endLine": 826
+    },
+    {
+      "id": "def-6-2-16",
+      "number": "Definition 6.2.16",
+      "section": "6.2",
+      "kind": "Definition",
+      "title": "Lenses and their Egli-Milner ordering",
+      "summary": "Lenses and their Egli-Milner ordering.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "def_6_2_16_lenses"
+      ],
+      "startLine": 827,
+      "endLine": 941
+    },
+    {
+      "id": "prop-6-2-17",
+      "number": "Proposition 6.2.17",
+      "section": "6.2",
+      "kind": "Proposition",
+      "title": "Lenses are convex, compact, and closed under the stated operations",
+      "summary": "Lenses are convex, compact, and closed under the stated operations.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "prop_6_2_17_lens_closure_properties"
+      ],
+      "startLine": 942,
+      "endLine": 1030
+    },
+    {
+      "id": "lemma-6-2-18",
+      "number": "Lemma 6.2.18",
+      "section": "6.2",
+      "kind": "Lemma",
+      "title": "Plotkin ideals are represented by generated lenses",
+      "summary": "Plotkin ideals are represented by generated lenses.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "lemma_6_2_18_plotkin_ideal_lens_representation"
+      ],
+      "startLine": 1031,
+      "endLine": 1080
+    },
+    {
+      "id": "thm-6-2-19",
+      "number": "Theorem 6.2.19",
+      "section": "6.2",
+      "kind": "Theorem",
+      "title": "Omega-continuous Plotkin powerdomains are represented by lenses",
+      "summary": "Omega-continuous Plotkin powerdomains are represented by lenses.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "theorem_6_2_19_plotkin_powerdomain_omega_lenses"
+      ],
+      "startLine": 1081,
+      "endLine": 1136
+    },
+    {
+      "id": "lemma-6-2-20",
+      "number": "Lemma 6.2.20",
+      "section": "6.2",
+      "kind": "Lemma",
+      "title": "Lawson-compact lower closures are Scott-closed",
+      "summary": "Lawson-compact lower closures are Scott-closed.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "lemma_6_2_20_lawson_compact_lower_scott_closed"
+      ],
+      "startLine": 1137,
+      "endLine": 1318
+    },
+    {
+      "id": "cor-6-2-21",
+      "number": "Corollary 6.2.21",
+      "section": "6.2",
+      "kind": "Corollary",
+      "title": "Coherent-domain lenses are convex Lawson-compact sets",
+      "summary": "Coherent-domain lenses are convex Lawson-compact sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "cor_6_2_21_lenses_convex_lawson_compact"
+      ],
+      "startLine": 1319,
+      "endLine": 1331
+    },
+    {
+      "id": "thm-6-2-22",
+      "number": "Theorem 6.2.22",
+      "section": "6.2",
+      "kind": "Theorem",
+      "title": "The Plotkin powerdomain of a coherent domain is represented by lenses",
+      "summary": "The Plotkin powerdomain of a coherent domain is represented by lenses.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+      "lean": [
+        "theorem_6_2_22_plotkin_powerdomain_lenses"
+      ],
+      "startLine": 1332,
+      "endLine": 1340
+    }
+  ]
+}

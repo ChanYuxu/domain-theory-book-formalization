@@ -1,0 +1,334 @@
+{
+  "items": {
+    "def-4-0-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-0-1}{Definition 4.0.1} Let $D$ and $E$ be dcpos, with $E$ pointed.  For $d\\in D$ and $e\\in E$, the step function $(d\\searrow e):D\\to E$ is\n\\[\n(d\\searrow e)(x)=\n\\begin{cases}\ne,& x\\in \\operatorname{Int}(\\uparrow d),\\\\\n\\bot_E,& \\text{otherwise.}\n\\end{cases}\n\\]\nMore generally, $(O\\searrow e)$ maps the Scott-open set $O$ to $e$ and maps its complement to $\\bot_E$."
+    },
+    "prop-4-0-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-0-2}{Proposition 4.0.2}\n\\begin{enumerate}\n\\item Step functions are Scott-continuous.\n\\item If $D,E$ are dcpos, $E$ is pointed, $f:D\\to E$ is continuous, and $e\\ll f(d)$, then $(d\\searrow e)\\ll f$.\n\\item If, in addition, $D$ and $E$ are continuous, then every continuous $f:D\\to E$ is a supremum of step functions.\n\\end{enumerate}",
+      "skipBlocksAfter": 2
+    },
+    "def-4-1-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-1-1}{Definition 4.1.1} Let $E$ be a pointed continuous domain.\n\\begin{enumerate}\n\\item $E$ is an $L$-domain if every pair $e_1,e_2\\leq e$ has a supremum in $\\downarrow e$.\n\\item $E$ is bounded-complete if every bounded pair has a supremum.\n\\item $E$ is a continuous lattice if every pair has a supremum.\n\\end{enumerate}\nThe corresponding full subcategories are denoted $L$, $BC$, and $LAT$, with algebraic counterparts $aL$, $aBC$, and $aLAT$."
+    },
+    "prop-4-1-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-1-2}{Proposition 4.1.2} For a pointed continuous domain $D$, being an $L$-domain, a bc-domain, or a continuous lattice is equivalent respectively to having infima for bounded nonempty subsets, nonempty subsets, or arbitrary subsets."
+    },
+    "prop-4-1-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-1-3}{Proposition 4.1.3} Retracts and bilimits of $L$-domains, bc-domains, and continuous lattices are again objects of the same respective class."
+    },
+    "prop-4-1-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-1-4}{Proposition 4.1.4} If $D$ is an $L$-domain, a bc-domain, or a continuous lattice, then $\\operatorname{Idl}(D,\\sqsubseteq)$ is respectively an algebraic $L$-domain, an algebraic bc-domain, or an algebraic lattice."
+    },
+    "prop-4-1-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-1-5}{Proposition 4.1.5} If $D$ is a continuous domain and $E$ is an $L$-domain, a bc-domain, or a continuous lattice, then the function space $[D\\to E]$ is again respectively an $L$-domain, a bc-domain, or a continuous lattice."
+    },
+    "cor-4-1-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{cor-4-1-6}{Corollary 4.1.6} The categories $L$, $BC$, $LAT$, and their algebraic counterparts are cartesian closed."
+    },
+    "def-4-2-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-2-1}{Definition 4.2.1} Let $P$ be a poset.\n\\begin{enumerate}\n\\item $P$ is mub-complete if every upper bound of a finite set $M\\subseteq P$ lies above a minimal upper bound of $M$; equivalently,\n\\[\n\\bigcap_{m\\in M}\\uparrow m = \\uparrow\\operatorname{mub}(M).\n\\]\n\\item The mub-closure $\\operatorname{mc}(A)$ is the least superset of $A$ closed under adjoining $\\operatorname{mub}(M)$ for finite $M$.\n\\item $P$ has the finite mub property if it is mub-complete and every finite subset has finite mub-closure; with a least element it is a Plotkin order.\n\\item An algebraic domain whose compact basis is a Plotkin order is called bifinite; the full subcategory of $ALG_\\bot$ is denoted $B$.\n\\end{enumerate}",
+      "skipBlocksAfter": 1
+    },
+    "def-4-2-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-2-2}{Definition 4.2.2} Let $D$ be bifinite and $E$ pointed algebraic. A finite set $F\\subseteq K(D)\\times K(E)$ is joinable if\n\\[\n\\forall G\\subseteq F\\;\\exists H\\subseteq F\\;\\Bigl(\n\\pi_1(H)=\\operatorname{mub}(\\pi_1(G))\\ \\land\\\n\\forall c\\in\\pi_2(G)\\;\\forall d\\in\\pi_2(H),\\ c\\sqsubseteq d\\Bigr).\n\\]\nThe function associated with a joinable family $F$ is\n\\[\nx\\longmapsto \\bigvee\\{e\\mid \\exists d\\in K(D),\\ d\\sqsubseteq x\\ \\land\\ (d,e)\\in F\\}.\n\\]"
+    },
+    "lemma-4-2-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-4-2-3}{Lemma 4.2.3} If $D$ is bifinite and $E$ is pointed algebraic, every joinable subset of $K(D)\\times K(E)$ gives a compact element of $[D\\to E]$. For joinable families $F,G$, the associated functions satisfy the stated order exactly when every $(d,e)\\in G$ is matched by some $(d',e')\\in F$ with $d'\\sqsubseteq d$ and $e\\sqsubseteq e'$."
+    },
+    "prop-4-2-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-4}{Proposition 4.2.4} If $D$ is bifinite and $E$ is pointed algebraic, then $[D\\to E]$ is algebraic, and all compact elements of $[D\\to E]$ arise from joinable families.\n\\textit{Proof sketch.} Let \\(f:D\\to E\\) be continuous, let \\(M\\) be a finite mub-closed set of compact elements of \\(D\\), and choose compact elements \\((e_m)_{m\\in M}\\) of \\(E\\) with \\(e_m\\sqsubseteq f(m)\\). One constructs compact elements \\((\\widehat e_m)_{m\\in M}\\) so that \\(m\\mapsto\\widehat e_m\\) is order-preserving, by repeatedly choosing an upper bound for \\(\\{e_m\\}\\cup\\{\\widehat e_{m'}\\mid m'<m\\}\\). This yields a directed collection of compact elements of \\([D\\to E]\\) arbitrarily close to \\(f\\).",
+      "skipBlocksAfter": 0
+    },
+    "prop-4-2-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-5}{Proposition 4.2.5} Let $D$ be algebraic with mub-complete basis $K(D)$, and let $A\\subseteq K(D)$. There is a least kernel operator $p_A$ on $D$ fixing $A$, given by\n\\[\np_A(x)=\\bigvee\\{c\\in \\operatorname{mc}(A)\\mid c\\sqsubseteq x\\}.\n\\]"
+    },
+    "thm-4-2-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-2-6}{Theorem 4.2.6} For a pointed dcpo $D$, the following are equivalent:\n\\begin{enumerate}\n\\item $D$ is bifinite.\n\\item There is a directed family $(f_i)_{i\\in I}$ of idempotent deflations with $\\bigvee_i f_i=\\operatorname{id}_D$.\n\\item The set of all idempotent deflations is directed and has join $\\operatorname{id}_D$.\n\\end{enumerate}"
+    },
+    "thm-4-2-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-2-7}{Theorem 4.2.7} A dcpo is bifinite if and only if it is a bilimit of an expanding system of finite pointed posets.\n\\textit{Proof sketch.} If \\(D\\) is bifinite, take the images of a directed family of idempotent deflations as finite pointed posets, with connecting embeddings induced by inclusion of images; the upper adjoint is the corresponding deflation restricted to the image. Conversely, if \\(D\\) is a bilimit of finite posets, the composites \\(f_i\\circ g_i\\), where \\(g_i\\) is the upper adjoint of the embedding \\(f_i\\), give the directed idempotent deflations required in Theorem 4.2.6.",
+      "skipBlocksAfter": 0
+    },
+    "thm-4-2-8": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-2-8}{Theorem 4.2.8} The category $B$ of bifinite domains is closed under cartesian products, function spaces, coalesced sums, and bilimits. In particular, $B$ is cartesian closed.\n\\textit{Proof sketch.} For function spaces, if \\((f_i)_{i\\in I}\\) and \\((g_j)_{j\\in J}\\) are directed families of idempotent deflations for \\(D\\) and \\(E\\), then\n\\[\n  F_{ij}(h)=g_j\\circ h\\circ f_i\\qquad (i,j)\\in I\\times J\n\\]\nforms a directed family of idempotent deflations on \\([D\\to E]\\).",
+      "skipBlocksAfter": 0
+    },
+    "def-4-2-9": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-2-9}{Definition 4.2.9} A Scott-continuous $f:D\\to D$ is finitely separated from $\\operatorname{id}_D$ if some finite $M\\subseteq D$ satisfies: for every $x\\in D$, there is $m\\in M$ with $f(x)\\sqsubseteq m\\sqsubseteq x$. Strong separation requires $m,m'\\in M$ with $f(x)\\sqsubseteq m\\ll m'\\sqsubseteq x$. A pointed dcpo is an FS-domain if a directed family of finitely separated continuous self-maps has supremum $\\operatorname{id}_D$.",
+      "skipBlocksAfter": 1
+    },
+    "prop-4-2-10": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-10}{Proposition 4.2.10 (conjectural in the source)} If $D$ is an FS-domain and $E$ is pointed continuous, then $[D\\to E]$ is continuous. The immediately following comment says that the proof was as yet unknown. The Lean side therefore records only the statement and does not provide evidence for it."
+    },
+    "thm-4-2-11": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-2-11}{Theorem 4.2.11} The category $FS$ is closed under products, function spaces, coalesced sums, and bilimits; hence it is cartesian closed."
+    },
+    "prop-4-2-12": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-12}{Proposition 4.2.12}\n\\begin{enumerate}\n\\item Every bifinite domain is an FS-domain.\n\\item A retract of an FS-domain is an FS-domain.\n\\item An algebraic FS-domain is bifinite.\n\\end{enumerate}",
+      "skipBlocksAfter": 2
+    },
+    "thm-4-2-13": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-2-13}{Theorem 4.2.13} For a continuous domain $D$, the sets of open neighborhoods of compact saturated sets are exactly the Scott-open filters in $\\sigma D$."
+    },
+    "prop-4-2-14": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-14}{Proposition 4.2.14} For a continuous domain $D$:\n\\begin{enumerate}\n\\item $\\kappa D$ is a dcpo, with directed suprema given by intersection.\n\\item If a filtered intersection of compact saturated sets is contained in a Scott-open set $O$, then one member is already contained in $O$.\n\\item $\\kappa D\\setminus\\{\\emptyset\\}$ is a dcpo.\n\\end{enumerate}"
+    },
+    "prop-4-2-15": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-15}{Proposition 4.2.15} For a continuous domain $D$:\n\\begin{enumerate}\n\\item $\\kappa D$ is continuous.\n\\item $A\\ll B$ in $\\kappa D$ iff there is a Scott-open $O$ with $B\\subseteq O\\subseteq A$.\n\\item $O\\ll U$ in $\\sigma D$ iff there is compact saturated $A$ with $O\\subseteq A\\subseteq U$.\n\\end{enumerate}\nThe proof uses upper sets generated by finitely many points: if \\(O\\) is an open neighborhood of a compact saturated set \\(A\\), then there is a finite set \\(M\\subseteq O\\) with\n\\[\n  A\\subseteq \\uparrow M\\subseteq \\uparrow M\\subseteq O.\n\\]"
+    },
+    "prop-4-2-16": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-16}{Proposition 4.2.16} A continuous domain $D$ is coherent iff for all $O,U_1,U_2\\in\\sigma D$, from $O\\ll U_1$ and $O\\ll U_2$ it follows that $O\\ll U_1\\cap U_2$."
+    },
+    "prop-4-2-17": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-17}{Proposition 4.2.17} An algebraic domain $D$ is coherent iff $K(D)$ is mub-complete and finite subsets of $K(D)$ have finite sets of minimal upper bounds.\nThis is the ``2/3-SFP Theorem'' of Plotkin: coherence rules out the first two non-bifinite examples from Figure 12, but not the third. In algebraic coherent domains, the compact-open sets \\(\\uparrow c_1\\cup\\cdots\\cup\\uparrow c_n\\) form a common sublattice of \\(\\sigma D\\) and \\(\\kappa D\\)."
+    },
+    "thm-4-2-18": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-2-18}{Theorem 4.2.18} FS-domains and bifinite domains are coherent."
+    },
+    "def-4-2-19": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-2-19}{Definition 4.2.19} The Lawson topology on a dcpo $D$ is the smallest topology containing all Scott-open sets and all complements $D\\setminus\\uparrow x$. It is denoted by $\\lambda D$."
+    },
+    "prop-4-2-20": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-2-20}{Proposition 4.2.20} For a continuous domain $D$:\n\\begin{enumerate}\n\\item The Lawson topology is Hausdorff, and every Lawson-open has the form $O\\setminus A$ with $O$ Scott-open and $A$ Scott-compact saturated.\n\\item The Lawson topology is compact iff $D$ is coherent.\n\\item Scott-continuous retracts of Lawson-compact continuous domains are Lawson-compact and continuous.\n\\end{enumerate}"
+    },
+    "lemma-4-3-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-4-3-1}{Lemma 4.3.1} If $D,E$ are continuous domains, $E$ is pointed, and $[D\\to E]$ is continuous, then $D$ is coherent or $E$ is an $L$-domain.\n\\textit{Proof sketch.} Suppose not. Choose Scott opens \\(O,U_1,U_2\\) with \\(O\\ll U_1\\), \\(O\\ll U_2\\), but not \\(O\\ll U_1\\cap U_2\\), and a directed cover \\((V_i)_{i\\in I}\\) of \\(U_1\\cap U_2\\) none of whose members covers \\(O\\). Interpolate \\(O\\ll U'_1\\ll U_1\\) and \\(O\\ll U'_2\\ll U_2\\). The failure of the \\(L\\)-domain property reduces to two retract cases.\nFor \\(E=A\\), take \\(f_1=(U'_1\\searrow a)\\), \\(f_2=(U'_2\\searrow b)\\), and\n\\[\n f(x)=\\begin{cases}\n c_0,&x\\in U_1\\cap U_2,\\\\\n a,&x\\in U_1\\setminus U_2,\\\\\n b,&x\\in U_2\\setminus U_1,\\\\\n \\bot,&\\text{otherwise.}\n \\end{cases}\n\\]\nGiven an upper bound \\(g\\) of \\(\\{f_1,f_2\\}\\) below \\(f\\), define\n\\[\n h_i(x)=\\begin{cases}\n c_0,&x\\in V_i,\\\\\n c_{n+1},&x\\in (U_1\\cap U_2)\\setminus V_i\\text{ and }g(x)=c_n,\\\\\n g(x),&\\text{otherwise.}\n \\end{cases}\n\\]\nNo \\(h_i\\) is above \\(g\\), but their supremum is \\(f\\), contradicting continuity of \\([D\\to E]\\). For \\(E=X\\), use the same opens and\n\\[\n f(x)=\\begin{cases}\n c_1,&x\\in U_1\\cap U_2,\\\\\n a,&x\\in U_1\\setminus U_2,\\\\\n b,&x\\in U_2\\setminus U_1,\\\\\n \\bot,&\\text{otherwise,}\n \\end{cases}\n\\quad\n h_i(x)=\\begin{cases}\n \\top,&x\\in V_i,\\\\\n c_2,&x\\in (U_1\\cap U_2)\\setminus V_i,\\\\\n g(x),&\\text{otherwise.}\n \\end{cases}\n\\]\nto obtain the same contradiction.",
+      "formalizationNote": "The printed Case 2 uses one symbol f for two roles and leaves h_i equal to g outside the intersection, so the stated pointwise supremum does not follow. The compiled Figure 11 formalization uses a c1-valued map to bound the common approximant, a distinct top-valued map as the family supremum, and family members equal to the c1-valued map outside the intersection. Figure 12 remains under human source review because its successor construction and supremum claim require additional source-valid chain data.",
+      "skipBlocksAfter": 1
+    },
+    "lemma-4-3-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-4-3-2}{Lemma 4.3.2} A continuous domain with bottom is an FS-domain iff both $D$ and $[D\\to D]$ are coherent."
+    },
+    "thm-4-3-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-3-3}{Theorem 4.3.3} Every cartesian closed full subcategory of $CONT_\\bot$ is contained in $FS$ or in $L$."
+    },
+    "thm-4-3-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-3-4}{Theorem 4.3.4} Every cartesian closed full subcategory of $ALG_\\bot$ is contained in $B$ or in $aL$."
+    },
+    "thm-4-3-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-3-5}{Theorem 4.3.5} Every cartesian closed full subcategory of $\\omega$-$CONT_\\bot$ respectively $\\omega$-$ALG_\\bot$ is contained in $\\omega$-$FS$ respectively $\\omega$-$B$."
+    },
+    "lemma-4-3-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-4-3-6}{Lemma 4.3.6} If $D,E$ are continuous domains and $[D\\to E]$ is continuous, then $D$ is compact or $E$ is a disjoint union of pointed domains."
+    },
+    "def-4-3-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-4-3-7}{Definition 4.3.7} A dcpo $D$ is a finite amalgam if it is the union of finitely many pointed dcpos $D_1,\\ldots,D_n$ such that every intersection of members of this family is also a union of members of the family. Categories of finite amalgams of objects of $C$ are denoted $F$-$C$, and disjoint unions by $U$-$C$."
+    },
+    "prop-4-3-8": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-4-3-8}{Proposition 4.3.8} A mub-complete dcpo is a finite amalgam iff the mub-closure of the empty set is finite."
+    },
+    "lemma-4-3-9": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-4-3-9}{Lemma 4.3.9} If both $D$ and $[D\\to D]$ are compact and continuous, then $D$ is a finite amalgam."
+    },
+    "thm-4-3-10": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-4-3-10}{Theorem 4.3.10}\n\\begin{enumerate}\n\\item The maximal cartesian closed full subcategories of $CONT$ are $F$-$FS$, $U$-$FS$, $F$-$L$, and $U$-$L$.\n\\item The maximal cartesian closed full subcategories of $ALG$ are $F$-$B$, $U$-$B$, $F$-$aL$, and $U$-$aL$.\n\\end{enumerate}"
+    }
+  },
+  "blocks": {
+    "p54-b1": {
+      "status": "reviewed",
+      "tex": "\\section*{4 Cartesian closed categories of domains}\nThe ambient categories \\(DCPO\\) and \\(DCPO_\\bot\\) are cartesian closed, but the natural subcategories \\(CONT\\) and \\(ALG\\) are not automatically closed under function spaces. If a full subcategory of \\(CONT\\) is closed under terminal object, cartesian product, and function space, then it inherits cartesian closedness from \\(DCPO\\). This chapter studies which domain-theoretic hypotheses make function spaces continuous or algebraic. The basic approximants are step functions, which require the target domain to have a bottom element.",
+      "skipBlocksAfter": 0
+    },
+    "p55-b1": {
+      "status": "reviewed",
+      "tex": "\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.72]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.4pt}}\n  % D side\n  \\node at (-3.1,-1.15) {$D:$};\n  \\draw (-3.9,1.35)--(-1.1,1.35)--(-2.5,-1.05)--cycle;\n  \\draw (-3.6,1.35)--(-2.55,-0.25)--(-1.35,1.35);\n  \\draw (-2.6,1.35)--(-1.85,0.05);\n  \\node[dot,label=below right:{$d_1$}] at (-2.8,-0.25) {};\n  \\node[dot,label=right:{$d_2$}] at (-2.05,0.25) {};\n  \\draw (-2.0,1.7)--(-2.55,1.05);\n  \\node[right] at (-1.85,1.72) {$A$};\n  % E side\n  \\node at (1.1,-1.15) {$E:$};\n  \\draw (0.2,1.35)--(3.6,1.35)--(1.9,-1.35)--cycle;\n  \\draw (0.65,1.35)--(1.55,0.25)--(3.05,1.35);\n  \\draw (1.25,1.35)--(2.25,0.25)--(2.75,1.35);\n  \\node[dot,label=below left:{$f(d_1)$}] at (1.55,0.25) {};\n  \\node[dot,label=below right:{$f(d_2)$}] at (2.25,0.25) {};\n  \\node[dot,label=below:{$e_1$}] at (1.55,-0.25) {};\n  \\node[dot,label=below:{$e_2$}] at (2.25,-0.25) {};\n  \\draw (2.2,1.7)--(1.85,0.95);\n  \\node[right] at (2.32,1.72) {$B\\sqsupseteq f(A)$};\n\\end{tikzpicture}\n\\caption*{Figure 10: Finding an upper bound for two step functions.}\n\\end{figure}\n\nThe situation is illustrated in Figure 10. The problem is where to map the Scott-open but otherwise unstructured set $A=\\uparrow d_1\\cap\\uparrow d_2$. It has to be done in such a way that the resulting function still approximates $f$.",
+      "skipBlocksAfter": 6
+    },
+    "p56-b1": {
+      "status": "reviewed",
+      "tex": "\\begin{figure}[h]\n\\centering\n\\setlength{\\tabcolsep}{2.2em}\n\\begin{tabular}{ccc}\n\\begin{tikzpicture}[scale=0.66,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.3pt}}\n  \\node[dot,label=right:{$\\top$}] (top) at (0,2.3) {};\n  \\node[dot,label=left:{$c_1$}] (c1) at (-0.95,1.35) {};\n  \\node[dot,label=right:{$c_2$}] (c2) at (0.95,1.35) {};\n  \\node[dot,label=left:{$a$}] (a) at (-0.95,0.35) {};\n  \\node[dot,label=right:{$b$}] (b) at (0.95,0.35) {};\n  \\node[dot,label=right:{$\\bot$}] (bot) at (0,-0.6) {};\n  \\draw (bot)--(a)--(c1)--(top)--(c2)--(b)--(bot);\n  \\draw (a)--(c2) (b)--(c1);\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.66,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.3pt}}\n  \\node[dot] (lt) at (-0.9,1.45) {};\n  \\node[dot] (rt) at (0.9,1.45) {};\n  \\node[dot] (lm) at (-0.9,0.35) {};\n  \\node[dot] (rm) at (0.9,0.35) {};\n  \\node[dot] (bot) at (0,-0.7) {};\n  \\draw (bot)--(lm)--(lt);\n  \\draw (bot)--(rm)--(rt);\n  \\draw (lm)--(rt) (rm)--(lt);\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.66,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.3pt}}\n  \\node[dot] (l) at (-0.75,0.75) {};\n  \\node[dot] (r) at (0.75,0.75) {};\n  \\node[dot] (b) at (0,0) {};\n  \\draw (b)--(l) (b)--(r);\n\\end{tikzpicture}\n\\\\[-0.1em]\n$X\\in\\mathbf{ALG}\\setminus\\mathbf L$ & $C\\in\\mathbf L\\setminus\\mathbf{BC}$ & $V\\in\\mathbf{BC}\\setminus\\mathbf{LAT}$\n\\end{tabular}\n\\caption*{Figure 11: Separating examples for the categories of lattice-like domains.}\n\\end{figure}\n\nThe third example is repeated for comparison: a continuous lattice is one in which each pair $e_1,e_2\\in E$ has a supremum. We denote the corresponding full subcategories by $\\mathbf L$, $\\mathbf{BC}$, and $\\mathbf{LAT}$, and for algebraic counterparts by $\\mathbf{aL}$, $\\mathbf{aBC}$, and $\\mathbf{aLAT}$.",
+      "skipBlocksAfter": 8
+    },
+    "p59-b1": {
+      "status": "reviewed",
+      "tex": "\\begin{figure}[h]\n\\centering\n\\setlength{\\tabcolsep}{1.7em}\n\\begin{tabular}{ccc}\n\\begin{tikzpicture}[scale=0.62,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.2pt}}\n  \\node[dot,label=right:{$c_0$}] at (0,2.8) {};\n  \\node[dot,label=right:{$c_1$}] at (0,2.25) {};\n  \\node[dot,label=right:{$c_2$}] at (0,1.7) {};\n  \\draw (0,1.7)--(0,2.8);\n  \\draw[dotted,line width=0.8pt] (0,1.45)--(0,0.85);\n  \\node[dot,label=left:{$a$}] (a) at (-0.75,0.0) {};\n  \\node[dot,label=right:{$b$}] (b) at (0.75,0.0) {};\n  \\node[dot] (bot) at (0,-0.65) {};\n  \\draw (bot)--(a) (bot)--(b);\n  \\draw[dotted,line width=0.8pt] (a)--(-0.05,0.75) (b)--(0.05,0.75);\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.62,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.2pt}}\n  \\node[dot] (bot) at (0,-0.8) {};\n  \\foreach \\i/\\x in {1/-1.4,2/-0.5,3/0.5,4/1.4} {\n    \\node[dot] (l\\i) at (\\x,0.2) {};\n    \\node[dot] (u\\i) at (\\x,1.25) {};\n    \\draw (bot)--(l\\i)--(u\\i);\n  }\n  \\draw (l1)--(u3) (l2)--(u4) (l3)--(u1) (l4)--(u2);\n  \\node at (2.0,1.25) {$\\cdots$};\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.62,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.2pt}}\n  \\node[dot] (top) at (0,3.0) {};\n  \\node[dot] (l3) at (-0.75,1.7) {};\n  \\node[dot] (r3) at (0.75,1.7) {};\n  \\node[dot] (l2) at (-0.75,0.9) {};\n  \\node[dot] (r2) at (0.75,0.9) {};\n  \\node[dot] (l1) at (-0.75,0.1) {};\n  \\node[dot] (r1) at (0.75,0.1) {};\n  \\node[dot] (bot) at (0,-0.75) {};\n  \\draw (bot)--(l1)--(l2)--(l3);\n  \\draw (bot)--(r1)--(r2)--(r3);\n  \\draw (l1)--(r2) (r1)--(l2) (l2)--(r3) (r2)--(l3);\n  \\draw[dotted,line width=0.8pt] (l3)--(-0.75,2.45) (r3)--(0.75,2.45);\n\\end{tikzpicture}\n\\\\[-0.1em]\n$A:$ & $N:$ & $T:$\n\\end{tabular}\n\\caption*{Figure 12: Typical non-bifinite domains.}\n\\end{figure}\n\nThese examples illustrate failures of the finiteness conditions behind bifiniteness. The surrounding argument shows that every finite pointed poset is a Plotkin-order and hence bifinite.",
+      "skipBlocksAfter": 9
+    },
+    "p56-b9": {
+      "status": "reviewed",
+      "tex": "\\textit{Figure 11 caption and the remaining clause of Definition 4.1.1 are incorporated in the reviewed blocks above.}"
+    },
+    "p55-b8": {
+      "status": "reviewed",
+      "tex": "\\section*{4.1 Local uniqueness: Lattice-like domains}",
+      "skipBlocksAfter": 1
+    },
+    "p55-b10": {
+      "status": "reviewed",
+      "tex": "For two step functions \\((d_1\\searrow e_1)\\) and \\((d_2\\searrow e_2)\\) approximating the same continuous function, the overlap \\(A=\\uparrow d_1\\cap\\uparrow d_2\\) must be assigned a value above both \\(e_1\\) and \\(e_2\\), but still below the relevant value of \\(f\\). It is enough to require these joins locally in principal ideals \\(\\downarrow f(a)\\), which leads to the following lattice-like classes.",
+      "skipBlocksAfter": 0
+    },
+    "p57-b4": {
+      "status": "reviewed",
+      "tex": "\\section*{4.2 Finite choice: Compact domains}",
+      "skipBlocksAfter": 1
+    },
+    "p57-b6": {
+      "status": "reviewed",
+      "tex": "We now turn to the first argument of function spaces: the behavior of open sets and their finite intersections. Step functions use basic opens of the form \\(\\uparrow d\\), and the single generator \\(d\\) is crucial in showing \\((d\\searrow e)\\ll f\\) whenever \\(e\\ll f(d)\\). Arbitrary opens are unions of such basic opens, but infinite unions do not preserve the finite argument used in Proposition 4.0.2. Algebraic domains make this issue more tractable.",
+      "skipBlocksAfter": 0
+    },
+    "p57-b7": {
+      "status": "reviewed",
+      "tex": "\\subsection*{4.2.1 Bifinite domains}",
+      "skipBlocksAfter": 0
+    },
+    "p57-b8": {
+      "status": "reviewed",
+      "tex": "In the algebraic case, step functions \\((d\\searrow e)\\) may be defined using compact elements, where the characteristic preimage \\(\\uparrow d\\) is basic. For algebraicity of the function space, the intersection\n\\[\n  A=\\uparrow d_1\\cap\\uparrow d_2\n\\]\nshould be generated by finitely many compact points,\n\\[\n  A=\\uparrow c_1\\cup\\cdots\\cup\\uparrow c_n,\n\\]\nwhere the \\(c_i\\) are minimal upper bounds of \\(\\{d_1,d_2\\}\\). Iterating this finite choice process motivates the definitions below.",
+      "skipBlocksAfter": 0
+    },
+    "p58-b5": {
+      "status": "reviewed",
+      "tex": "This result is weaker than Proposition 4.1.5, so it does not immediately prove that \\(B\\) is cartesian closed. The finite mub-closure condition is best understood through the examples of Figure 12: failure of mub-completeness, an infinite mub-set for two compact elements, and an infinite mub-closure even when all mub-sets are finite.",
+      "skipBlocksAfter": 0
+    },
+    "p59-b12": {
+      "status": "reviewed",
+      "tex": "\\textit{Proof of Proposition 4.2.5.} The map \\(p_A\\) is well-defined because the displayed supremum ranges over a directed set, by mub-completeness. Continuity follows from Corollary 2.2.16. Conversely, any kernel operator fixing \\(A\\) must fix every element of \\(\\operatorname{mc}(A)\\), so \\(p_A\\) is the least monotone map with the required property. Thus, in a bifinite domain, finite sets of compact elements give finite-image kernel operators, called idempotent deflations.",
+      "skipBlocksAfter": 0
+    },
+    "p60-b1": {
+      "status": "reviewed",
+      "tex": "The remaining part of Theorem 4.2.6 observes that images of kernel operators embed by lower adjoints and hence preserve compactness. Idempotent deflations are compact elements of the function space, giving the implication from a directed family of such deflations to the directedness of all idempotent deflations.",
+      "skipBlocksAfter": 0
+    },
+    "p60-b4": {
+      "status": "reviewed",
+      "tex": "\\subsection*{4.2.2 FS-domains}",
+      "skipBlocksAfter": 0
+    },
+    "p60-b5": {
+      "status": "reviewed",
+      "tex": "For continuous domains, the same question about continuity of \\([D\\to E]\\) can be asked, but the finite mub-closure argument no longer applies directly. Instead of postulating a finite partition structure inside \\(D\\), the text generalizes the functional characterization by idempotent deflations.",
+      "skipBlocksAfter": 0
+    },
+    "p61-b3": {
+      "status": "reviewed",
+      "tex": "\\textit{Comment.} The text notes that it was unknown in this presentation whether every FS-domain is a retract of a bifinite domain. What is used here is Jung's theorem that if both \\(D\\) and \\(E\\) are FS-domains, then \\([D\\to E]\\) is again an FS-domain.",
+      "skipBlocksAfter": 0
+    },
+    "p61-b7": {
+      "status": "reviewed",
+      "tex": "The example following Proposition 4.2.12 describes the dcpo of closed discs in the plane, ordered by reverse inclusion, as a continuous FS-domain whose relation to retracts of bifinite domains is left open in the text.",
+      "skipBlocksAfter": 0
+    },
+    "p62-b1": {
+      "status": "reviewed",
+      "tex": "\\subsection*{4.2.3 Coherence}",
+      "skipBlocksAfter": 1
+    },
+    "p62-b3": {
+      "status": "reviewed",
+      "tex": "The topological tool needed here is the collection of compact saturated subsets. Compactness is meant in the ordinary topological sense; saturated subsets are intersections of neighborhoods, which in dcpos with the Scott topology are precisely upper sets.",
+      "skipBlocksAfter": 0
+    },
+    "p63-b1": {
+      "status": "reviewed",
+      "tex": "The preceding characterization is not automatic for arbitrary continuous lattices, as illustrated earlier by Figure 6.",
+      "skipBlocksAfter": 0
+    },
+    "p63-b6": {
+      "status": "reviewed",
+      "tex": "\\section*{4.3 The hierarchy of categories of domains}",
+      "skipBlocksAfter": 1
+    },
+    "p63-b8": {
+      "status": "reviewed",
+      "tex": "This section explains that the cartesian closed full subcategories of \\(CONT\\) and \\(ALG\\) are essentially the ones built in the preceding sections. The classification originates with Plotkin and was developed by Smyth and Jung; the results use the Axiom of Choice.",
+      "skipBlocksAfter": 0
+    },
+    "p64-b1": {
+      "status": "reviewed",
+      "tex": "\\subsection*{4.3.1 Domains with least element}",
+      "skipBlocksAfter": 1
+    },
+    "p64-b3": {
+      "status": "reviewed",
+      "tex": "The central ingredient for the pointed classification is the following bifurcation lemma.",
+      "skipBlocksAfter": 0
+    },
+    "p65-b1": {
+      "status": "reviewed",
+      "tex": "Coherence alone does not imply that \\(D\\) is an FS-domain, nor in the algebraic case that it is bifinite. The missing condition is recovered by passing to higher-order function spaces.",
+      "skipBlocksAfter": 0
+    },
+    "p65-b6": {
+      "status": "reviewed",
+      "tex": "\\subsection*{4.3.2 Domains without least element}",
+      "skipBlocksAfter": 0
+    },
+    "p65-b7": {
+      "status": "reviewed",
+      "tex": "Without least elements, the pointed dichotomy between coherent and lattice-like structures has to be supplemented by the behavior of the mub-closure of the empty set. Coherence becomes compactness of \\(D\\) as a topological space, while the lattice-like alternative says that each element of \\(E\\) lies above a unique minimal element, so \\(E\\) decomposes as a disjoint union of pointed components.",
+      "skipBlocksAfter": 0
+    },
+    "p55-b2": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p55-b6": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p56-b2": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p56-b5": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p56-b8": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p59-b3": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p59-b6": {
+      "status": "ignored",
+      "tex": ""
+    }
+  }
+}

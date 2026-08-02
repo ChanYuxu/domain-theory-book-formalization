@@ -1,0 +1,353 @@
+{
+  "items": {
+    "prop-6-1-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-1-1}{Proposition 6.1.1} Dcpo algebras form a complete category."
+    },
+    "thm-6-1-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-1-2}{Theorem 6.1.2} Free dcpo algebras exist for inequational theories."
+    },
+    "prop-6-1-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-1-3}{Proposition 6.1.3} The syntactic basis for free continuous algebras is an abstract basis."
+    },
+    "prop-6-1-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-1-4}{Proposition 6.1.4} Syntactic approximation has the required inclusion properties."
+    },
+    "lemma-6-1-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-6-1-5}{Lemma 6.1.5} The quotient syntactic basis is an abstract basis."
+    },
+    "thm-6-1-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-1-6}{Theorem 6.1.6} Free continuous dcpo algebras are built from the syntactic basis."
+    },
+    "thm-6-1-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-1-7}{Theorem 6.1.7} Free continuous-domain algebras exist."
+    },
+    "prop-6-1-8": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-1-8}{Proposition 6.1.8} The extension map is Scott-continuous."
+    },
+    "thm-6-1-9": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-1-9}{Theorem 6.1.9} The free-algebra monad is locally continuous."
+    },
+    "thm-6-1-10": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-1-10}{Theorem 6.1.10} Free algebraic-domain algebras exist."
+    },
+    "prop-6-1-11": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-1-11}{Proposition 6.1.11} The unit order-reflection criterion for free algebras."
+    },
+    "def-6-1-12": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-6-1-12}{Definition 6.1.12} A strict dcpo-algebra is a dcpo-algebra whose carrier has a least element. A strict homomorphism between strict algebras is a Scott-continuous homomorphism which preserves the least element."
+    },
+    "thm-6-1-13": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-1-13}{Theorem 6.1.13} Free strict dcpo- and domain-algebras exist. Equivalently, the forgetful functors\n\\[\n\\begin{array}{rclcrcl}\n\\mathbf{DCPO}_{\\bot!}(\\Sigma,E)&\\longrightarrow&\\mathbf{DCPO}_{\\bot!},&&\n\\mathbf{CONT}_{\\bot!}(\\Sigma,E)&\\longrightarrow&\\mathbf{CONT}_{\\bot!},\\\\\n\\mathbf{ALG}_{\\bot!}(\\Sigma,E)&\\longrightarrow&\\mathbf{ALG}_{\\bot!}\n\\end{array}\n\\]\nhave left adjoints.",
+      "skipBlocksAfter": 8
+    },
+    "prop-6-1-14": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-1-14}{Proposition 6.1.14} Finite-poset preservation yields bifinite preservation."
+    },
+    "def-6-2-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-6-2-1}{Definition 6.2.1} The convex, or Plotkin, powertheory has one binary operation \\(\\cup\\) and equations\n\\[\n\\begin{array}{ll}\n1.&x\\cup y=y\\cup x,\\\\\n2.&(x\\cup y)\\cup z=x\\cup(y\\cup z),\\\\\n3.&x\\cup x=x.\n\\end{array}\n\\]\nThe operation is formal union. The free dcpo-semilattice over a dcpo \\(D\\) is the Plotkin powerdomain \\(P^P(D)\\)."
+    },
+    "def-6-2-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-6-2-2}{Definition 6.2.2} For subsets \\(M,N\\) of a set with relation \\(R\\), the Egli-Milner relation \\(M\\,R_{EM}\\,N\\) means\n\\[\n  (\\forall a\\in M\\;\\exists b\\in N.\\ aRb)\\quad\\text{and}\\quad\n  (\\forall b\\in N\\;\\exists a\\in M.\\ aRb).\n\\]",
+      "skipBlocksAfter": 5
+    },
+    "thm-6-2-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-2-3}{Theorem 6.2.3} If \\(D\\) is continuous with basis \\(\\langle B,\\ll\\rangle\\), then the Plotkin powerdomain is the ideal completion of\n\\[\n  \\langle \\mathcal{P}_f(B),\\ll_{EM}\\rangle.\n\\]"
+    },
+    "def-6-2-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-6-2-4}{Definition 6.2.4} For a subset \\(M\\) of a preordered set \\(\\langle B,\\sqsubseteq\\rangle\\), define its convex hull by\n\\[\n  \\operatorname{Cx}(M)=\\{\\,a\\in B\\mid \\exists m,n\\in M.\\ m\\sqsubseteq a\\sqsubseteq n\\,\\}.\n\\]\nA set equal to its convex hull is called convex."
+    },
+    "prop-6-2-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-5}{Proposition 6.2.5} For a preordered set \\(\\langle B,\\sqsubseteq\\rangle\\) and subsets \\(M,N\\subseteq B\\):\n\\[\n\\begin{array}{ll}\n1.&\\operatorname{Cx}(M)=\\uparrow M\\cap\\downarrow M,\\\\\n2.&M\\subseteq\\operatorname{Cx}(M),\\\\\n3.&\\operatorname{Cx}(\\operatorname{Cx}(M))=\\operatorname{Cx}(M),\\\\\n4.&M\\subseteq N\\Rightarrow\\operatorname{Cx}(M)\\subseteq\\operatorname{Cx}(N),\\\\\n5.&M=_{EM}\\operatorname{Cx}(M),\\\\\n6.&M=_{EM}N\\Longleftrightarrow\\operatorname{Cx}(M)=\\operatorname{Cx}(N).\n\\end{array}\n\\]"
+    },
+    "prop-6-2-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-6}{Proposition 6.2.6} If \\(D\\) is algebraic, then the Plotkin powerdomain of \\(D\\) is isomorphic to the ideal completion of\n\\[\n  \\langle\\mathcal{P}_{\\operatorname{Cx},f}(K(D)),\\sqsubseteq_{EM}\\rangle,\n\\]\nwhere \\(\\mathcal{P}_{\\operatorname{Cx},f}(K(D))\\) is the set of finitely generated convex subsets of \\(K(D)\\)."
+    },
+    "def-6-2-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-6-2-7}{Definition 6.2.7} Hoare and Smyth powertheories."
+    },
+    "prop-6-2-8": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-8}{Proposition 6.2.8} Hoare and Smyth powerdomains have lattice operations."
+    },
+    "prop-6-2-9": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-9}{Proposition 6.2.9} Finite-basis approximations for Hoare and Smyth powerdomains."
+    },
+    "thm-6-2-10": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-2-10}{Theorem 6.2.10} Hoare and Smyth powerdomains of continuous domains are continuous."
+    },
+    "prop-6-2-11": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-11}{Proposition 6.2.11} Subset approximation facts for Hoare and Smyth powerdomains."
+    },
+    "prop-6-2-12": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-12}{Proposition 6.2.12} Algebraic Hoare and Smyth powerdomains are algebraic."
+    },
+    "thm-6-2-13": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-2-13}{Theorem 6.2.13} For a continuous domain \\(D\\), the Hoare powerdomain is isomorphic to the lattice of all non-empty Scott-closed subsets of \\(D\\). Formal union is interpreted by actual union."
+    },
+    "thm-6-2-14": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-2-14}{Theorem 6.2.14} For a continuous domain \\(D\\), the Smyth powerdomain is isomorphic to \\(\\kappa D\\setminus\\{\\emptyset\\}\\), the non-empty Scott-compact saturated subsets ordered by reverse inclusion. Formal union is interpreted by intersection."
+    },
+    "cor-6-2-15": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{cor-6-2-15}{Corollary 6.2.15} Smyth powerdomains of coherent domains are bifinite-continuous."
+    },
+    "def-6-2-16": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-6-2-16}{Definition 6.2.16} For a dcpo \\(D\\), \\(\\operatorname{Lens}(D)\\) is the set of all non-empty subsets that are intersections of a Scott-closed set and a compact saturated set. On lenses define the topological Egli-Milner ordering by\n\\[\n  K\\sqsubseteq_{TEM}L\\quad\\Longleftrightarrow\\quad L\\subseteq\\uparrow K\\text{ and }K\\subseteq\\operatorname{Cl}(L).\n\\]"
+    },
+    "prop-6-2-17": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-6-2-17}{Proposition 6.2.17} For a dcpo \\(D\\): every lens is convex and Scott-compact; a canonical representation of a lens \\(L\\) is \\(\\uparrow L\\cap\\operatorname{Cl}(L)\\); and \\(\\sqsubseteq_{TEM}\\) is anti-symmetric on \\(\\operatorname{Lens}(D)\\)."
+    },
+    "lemma-6-2-18": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-6-2-18}{Lemma 6.2.18} Let \\(D\\) be continuous with basis \\(B\\), and let \\(I\\) be an ideal in \\(\\langle\\mathcal{P}_f(B),\\ll_{EM}\\rangle\\). Then\n\\[\n  \\phi(I)=\\{\\,\\uparrow A\\mid A\\subseteq\\bigcup I\\text{ is directed and }A\\cap M\\ne\\emptyset\\text{ for every }M\\in I\\,\\}.\n\\]"
+    },
+    "thm-6-2-19": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-2-19}{Theorem 6.2.19} If \\(D\\) is an \\(\\omega\\)-continuous domain, then the Plotkin powerdomain \\(P^P(D)\\) is isomorphic to\n\\[\n  \\langle\\operatorname{Lens}(D),\\sqsubseteq_{TEM}\\rangle.\n\\]\nFormal union is interpreted as union followed by topological convex closure."
+    },
+    "lemma-6-2-20": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-6-2-20}{Lemma 6.2.20} If \\(L\\) is a Lawson-compact subset of a continuous domain \\(D\\), then \\(\\downarrow L\\) is Scott-closed."
+    },
+    "cor-6-2-21": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{cor-6-2-21}{Corollary 6.2.21} In a coherent domain, the lenses are precisely the convex Lawson-compact subsets. For these, topological Egli-Milner ordering and ordinary Egli-Milner ordering coincide."
+    },
+    "thm-6-2-22": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-6-2-22}{Theorem 6.2.22} If \\(D\\) is coherent, then the Plotkin powerdomain of \\(D\\) is isomorphic to\n\\[\n  \\langle\\operatorname{Lens}(D),\\sqsubseteq_{EM}\\rangle.\n\\]\nFormal union is interpreted as union followed by convex closure."
+    }
+  },
+  "blocks": {
+    "p85-b1": {
+      "status": "reviewed",
+      "tex": "\\section*{6 Equational theories}\nThe previous chapter constructed initial algebras over domains. Here the problem is to include equations, and hence to construct free algebras for equational theories. In ordinary universal algebra this is done by quotienting the term algebra by the congruence generated by the equations. For domains the same idea remains visible, but bases and approximation relations must be tracked carefully.\n\nThe iterative construction from Chapter 5 is not adequate for arbitrary equations. Flat equations can sometimes be encoded in the algebra functor itself, but non-flat equations such as associativity require access to all term operations over a carrier. Categorically, this points toward monads and Eilenberg-Moore algebras rather than ordinary \\(F\\)-algebras.\n\nThe first part of the chapter proves existence of free algebras for dcpo's and continuous domains. The second part applies these constructions to nondeterministic semantics, where the relevant algebras are powerdomains.",
+      "skipBlocksAfter": 0
+    },
+    "p85-b2": {
+      "status": "reviewed",
+      "tex": "\\section*{6.1 General techniques}",
+      "skipBlocksAfter": 1
+    },
+    "p85-b4": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.1.1 Free dcpo-algebras}",
+      "skipBlocksAfter": 1
+    },
+    "p85-b6": {
+      "status": "reviewed",
+      "tex": "Fix a signature \\(\\Sigma=\\langle\\Omega,\\alpha\\rangle\\), where \\(\\Omega\\) is a set of operation symbols and \\(\\alpha:\\Omega\\to\\mathbb N\\) assigns finite arities. A \\(\\Sigma\\)-algebra \\(A=\\langle A,I\\rangle\\) consists of a carrier set and interpretations \\(f_A:A^{\\alpha(f)}\\to A\\) for all \\(f\\in\\Omega\\). A homomorphism \\(h:A\\to B\\) satisfies\n\\[\n  h(f_A(a_1,\\ldots,a_{\\alpha(f)}))\n  =f_B(h(a_1),\\ldots,h(a_{\\alpha(f)}))\n\\]\nfor each operation symbol \\(f\\).",
+      "skipBlocksAfter": 0
+    },
+    "p86-b1": {
+      "status": "reviewed",
+      "tex": "Let \\(T_\\Sigma(X)\\) be the term algebra over a set \\(X\\). It has the universal property that every map \\(X\\to A\\) into a \\(\\Sigma\\)-algebra extends uniquely to a homomorphism \\(\\overline h:T_\\Sigma(X)\\to A\\). Equations are encoded as pairs of terms over a fixed countable set of variables \\(V\\). In the ordered setting a pair \\(\\langle\\tau_1,\\tau_2\\rangle\\in E\\subseteq T_\\Sigma(V)\\times T_\\Sigma(V)\\) is read as an inequality \\(\\tau_1\\sqsubseteq\\tau_2\\). We write \\(\\mathbf{DCPO}(\\Sigma,E)\\) for the dcpo-algebras satisfying all these inequalities, with Scott-continuous homomorphisms.",
+      "skipBlocksAfter": 0
+    },
+    "p87-b1": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.1.2 Free continuous domain-algebras}",
+      "skipBlocksAfter": 1
+    },
+    "p87-b3": {
+      "status": "reviewed",
+      "tex": "None of the categories of approximated dcpos or domains considered so far is complete, so the Adjoint Functor Theorem cannot be used directly. We write \\(\\mathbf{CONT}(\\Sigma,E)\\) for dcpo-algebras whose carriers are continuous domains, and suppress the forgetful functor \\(U:\\mathbf{CONT}(\\Sigma,E)\\to\\mathbf{CONT}\\). The required adjointness condition is the following universal property:\n\\begin{center}\n\\begin{tikzpicture}[scale=0.92, >=stealth]\n  \\node (D)  at (0,1.65) {$D$};\n  \\node (FD) at (3.0,1.65) {$F(D)$};\n  \\node (A)  at (3.0,-0.9) {$A$};\n  \\draw[->] (D) -- node[above] {$\\eta$} (FD);\n  \\draw[->] (D) -- node[below left] {$g$} (A);\n  \\draw[->] (FD) -- node[right] {$\\operatorname{ext}(g)$} (A);\n  \\node[font=\\bfseries] at (-1.1,-0.1) {CONT};\n  \\draw[dashed] (4.35,2.15) -- (4.35,-1.35);\n  \\node (FDa) at (5.65,1.65) {$\\underline{F(D)}$};\n  \\node (Aa)  at (5.65,-0.9) {$\\underline{A}$};\n  \\draw[->] (FDa) -- node[right] {$\\exists!\\operatorname{ext}(g)$} (Aa);\n  \\node[font=\\bfseries] at (7.55,-0.1) {CONT$(\\Sigma,E)$};\n\\end{tikzpicture}\n\\end{center}\nThus for every continuous domain \\(D\\) one must construct a dcpo-algebra \\(F(D)\\), a continuous map \\(\\eta:D\\to F(D)\\), and for every algebra \\(A\\) and continuous \\(g:D\\to A\\) a unique homomorphism \\(\\operatorname{ext}(g):F(D)\\to A\\) with \\(\\operatorname{ext}(g)\\circ\\eta=g\\). The construction works with a fixed basis \\(\\langle B,\\ll\\rangle\\) of \\(D\\). The underlying set before quotienting is \\(FB=T_\\Sigma(B)\\). On \\(FB\\) define the substitutive preorder \\(\\sqsubseteq\\) from the inequations by\n\\[\n\\begin{array}{ll}\n(A1)& t\\sqsubseteq t,\\\\\n(A2)& s\\sqsubseteq t\\quad\\text{if this is an instance of an inequation from }E,\\\\\n(R1)& s_i\\sqsubseteq t_i\\ (1\\le i\\le n)\\Rightarrow f(s_1,\\ldots,s_n)\\sqsubseteq f(t_1,\\ldots,t_n),\\\\\n(R2)& s\\sqsubseteq t\\text{ and }t\\sqsubseteq u\\Rightarrow s\\sqsubseteq u.\n\\end{array}\n\\]\nThe associated equivalence relation is written \\(\\sim\\), and the factor \\(FB/{\\sim}\\) is ordered by \\(\\sqsubseteq\\).",
+      "skipBlocksAfter": 9
+    },
+    "p88-b1": {
+      "status": "reviewed",
+      "tex": "The second relation on \\(FB\\) is induced by the basis approximation. Define \\(t\\prec^s t'\\) when \\(t\\) and \\(t'\\) have the same structure and corresponding constants are related by \\(\\ll\\). It is generated by\n\\[\n(A)\\quad a\\prec^s b\\text{ if }a\\ll b\\text{ in }B,\n\\]\nand by the rule\n\\[\n(R)\\quad s_i\\prec^s t_i\\ (1\\le i\\le n)\\Rightarrow f(s_1,\\ldots,s_n)\\prec^s f(t_1,\\ldots,t_n).\n\\]\nThe interpolation proof replaces each constant in a term by an interpolating basis element.",
+      "skipBlocksAfter": 0
+    },
+    "p88-b4": {
+      "status": "reviewed",
+      "tex": "The two relations are combined by taking \\(\\prec\\) to be the transitive closure of \\(\\sqsubseteq\\circ\\prec^s\\circ\\sqsubseteq\\). Proposition 6.1.4 records the technical inclusions needed later:\n\\[\n\\begin{array}{ll}\n1.& \\prec^s\\circ\\sqsubseteq\\subseteq \\prec^s\\circ\\sqsubseteq\\circ\\prec^s,\\\\[1mm]\n2.& n\\le m\\Rightarrow (\\sqsubseteq\\circ\\prec^s\\circ\\sqsubseteq)^n\\subseteq(\\sqsubseteq\\circ\\prec^s\\circ\\sqsubseteq)^m.\n\\end{array}\n\\]\nFor (1), replace constants in a derivation \\(t\\sqsubseteq u\\) by interpolants; inequation instances remain inequation instances. Part (2) follows from (1) and reflexivity of \\(\\sqsubseteq\\).",
+      "skipBlocksAfter": 2
+    },
+    "p89-b1": {
+      "status": "reviewed",
+      "tex": "Continuing the proof of Proposition 6.1.4, the construction gives a derivation\n\\[\n  s\\prec^s t'\\sqsubseteq u'\\prec^s u,\n\\]\nso the required inclusion follows. The general finite-composite case is by induction."
+    },
+    "p89-b2": {
+      "status": "reviewed",
+      "tex": "The general finite-composite case follows by induction from the binary inclusion just proved.",
+      "skipBlocksAfter": 0
+    },
+    "p89-b4": {
+      "status": "reviewed",
+      "tex": "For Lemma 6.1.5, transitivity is built into \\(\\prec\\). For interpolation, write \\(M\\prec t\\) with finite \\(M\\). Each \\(s\\in M\\) has a chain\n\\[\n  s\\sqsubseteq s_i^1\\prec^s s_i^2\\sqsubseteq\\cdots\\prec^s s_i^{m(i)}\\sqsubseteq t.\n\\]\nUsing Proposition 6.1.4(2), extend these chains to a common length; Proposition 6.1.3 then gives an interpolating term. The operations on the ideal completion \\(F(D)\\) are defined pointwise: for ideals \\(A_1,\\ldots,A_n\\),\n\\[\n  f_{F(D)}(A_1,\\ldots,A_n)\n  =\\downarrow\\{\\,f(t_1,\\ldots,t_n)\\mid t_i\\in A_i\\,\\}.\n\\]\nMonotonicity with respect to \\(\\prec\\) follows by alternating rules (R1) and (R).",
+      "skipBlocksAfter": 2
+    },
+    "p90-b1": {
+      "status": "reviewed",
+      "tex": "In the proof of Theorem 6.1.6, inequations are respected because if \\((\\tau_1,\\tau_2)\\in E\\) and \\(h:V\\to F(D)\\), then a representative \\(s\\prec\\bar{k}(\\tau_1)\\) satisfies \\(s\\prec\\bar{k}(\\tau_2)\\) after applying the inequation in the term algebra \\(FB=T_\\Sigma(B)\\). For the universal property, restrict a continuous map \\(g:D\\to A\\) to \\(B\\), extend it monotonically to \\(\\bar g:FB\\to A\\), and use homomorphicity plus monotonicity:\n\\[\n\\begin{aligned}\n\\bar g(f(s_1,\\ldots,s_n))\n &= f_A(\\bar g(s_1),\\ldots,\\bar g(s_n))\\\\\n &\\sqsubseteq f_A(\\bar g(t_1),\\ldots,\\bar g(t_n))\\\\\n &= \\bar g(f(t_1,\\ldots,t_n)).\n\\end{aligned}\n\\]\nTherefore \\(\\bar g\\) extends to a homomorphism \\(\\operatorname{ext}(g):F(D)\\to A\\), and on generators one has \\(\\operatorname{ext}(g)(\\eta(d))=g(d)\\).",
+      "skipBlocksAfter": 5
+    },
+    "p90-b8": {
+      "status": "reviewed",
+      "tex": "For a continuous map \\(g:D\\to E\\), the functorial action of the left adjoint is the unique homomorphic extension of \\(\\eta_E\\circ g\\):\n\\[\n\\begin{array}{ccc}\nD&\\xrightarrow{\\eta_D}&F(D)\\\\\n\\downarrow g&&\\downarrow F(g)\\\\\nE&\\xrightarrow{\\eta_E}&F(E).\n\\end{array}\n\\]\nThis is the map whose local continuity is studied next.",
+      "skipBlocksAfter": 6
+    },
+    "p90-b15": {
+      "status": "reviewed",
+      "tex": "To prove that \\(F\\) is locally continuous in the sense of Definition 5.2.3, it suffices to analyze how a map \\(g:D\\to A\\) passes to its homomorphic extension \\(\\operatorname{ext}(g):F(D)\\to A\\).",
+      "skipBlocksAfter": 0
+    },
+    "p91-b2": {
+      "status": "reviewed",
+      "tex": "For Proposition 6.1.8, it suffices to compute on the basis. If \\(G\\) is directed and \\(t\\in FB\\) uses constants \\(a_1,\\ldots,a_n\\in B\\), then\n\\[\n\\begin{aligned}\n\\bigvee \\uparrow G(t)\n &= t[\\bigvee\\uparrow G(a_1)/a_1,\\ldots,\\bigvee\\uparrow G(a_n)/a_n]\\\\\n &= \\bigvee_{g\\in G}t[g(a_1)/a_1,\\ldots,g(a_n)/a_n]\\\\\n &= \\bigvee_{g\\in G}\\uparrow\\bar g(t).\n\\end{aligned}\n\\]\nThus \\(g\\mapsto\\operatorname{ext}(g)\\) is Scott-continuous.",
+      "skipBlocksAfter": 5
+    },
+    "p93-b1": {
+      "status": "reviewed",
+      "tex": "For strict operations one can add a nullary operation \\(0\\) to the signature and the inequation \\(0\\sqsubseteq x\\) to \\(E\\) without changing the free algebra. Axiom (A3) gives \\(\\bot\\sqsubseteq 0\\), and the new inequation gives \\(0\\sqsubseteq\\bot\\), so the new operation is interpreted by the bottom element. Strictness of an operation can then be expressed, for each positive-arity operation symbol \\(f\\) and each \\(1\\le i\\le\\alpha(f)\\), by adding\n\\[\n  f(x_1,\\ldots,x_{i-1},0,x_{i+1},\\ldots,x_{\\alpha(f)})\\sqsubseteq 0.\n\\]\nThis gives free strict algebras by the general theorem. The bifinite-domain case is subtler because a least element in the generating dcpo need not imply a least element in the free algebra, so local continuity alone is not enough."
+    },
+    "p92-b2": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.1.3 Least elements and strict algebras}",
+      "skipBlocksAfter": 0
+    },
+    "p92-b3": {
+      "status": "reviewed",
+      "tex": "Strict functions have appeared repeatedly, so it is useful to ask how free algebra constructions behave in a pointed setting. There are several possible strictness requirements on operations: an operation may be required to return \\(\\bot\\) when any argument is \\(\\bot\\), or only when the whole argument vector is constantly \\(\\bot\\), or only for positive arity operations. The following construction is flexible enough that the precise choice can be encoded by additional equations or inequations.",
+      "skipBlocksAfter": 0
+    },
+    "p93-b3": {
+      "status": "reviewed",
+      "tex": "\\section*{6.2 Powerdomains}",
+      "skipBlocksAfter": 1
+    },
+    "p93-b5": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.2.1 The convex or Plotkin powerdomain}",
+      "skipBlocksAfter": 1
+    },
+    "p94-b1": {
+      "status": "reviewed",
+      "tex": "Every semilattice is ordered by\n\\[\n  x\\le y\\quad\\Longleftrightarrow\\quad x\\cup y=y.\n\\]\nFor the free semilattice over a set \\(X\\), this gives the non-empty finite subsets of \\(X\\) with formal union interpreted as union. For a continuous domain \\(D\\) with basis \\(B\\), the term basis \\(FB\\) for the Plotkin theory is quotiented by \\(\\sim\\), and the equivalence classes correspond to finite subsets of \\(B\\). The approximation relation \\(\\prec\\), defined as the transitive closure of \\(\\sqsubseteq\\circ\\prec^s\\circ\\sqsubseteq\\), respects these equivalence classes. Hence one may replace \\(FB\\) by \\(\\mathcal{P}_f(B)\\), the finite subsets of \\(B\\), and transfer approximation to this basis."
+    },
+    "p94-b8": {
+      "status": "reviewed",
+      "tex": "The preceding argument proves the following representation theorem.",
+      "skipBlocksAfter": 0
+    },
+    "p95-b1": {
+      "status": "reviewed",
+      "tex": "A finite pointed poset has a finite pointed Plotkin powerdomain, and Proposition 6.1.14 therefore implies that the Plotkin powerdomain of a bifinite domain is again bifinite. This is close to optimal: the construction need not preserve lattice-like properties. For algebraic domains the basis can be simplified further by using finitely generated convex subsets of the compact elements.",
+      "skipBlocksAfter": 0
+    },
+    "p95-b4": {
+      "status": "reviewed",
+      "tex": "Although \\(\\langle\\mathcal{P}_f(K(D)),\\sqsubseteq_{EM}\\rangle\\) is only a preorder, Proposition 6.2.5 shows how to replace it by an ordered basis: use finitely generated convex subsets of \\(K(D)\\). This yields the algebraic representation in Proposition 6.2.6 and explains the terminology \\emph{convex powerdomain}.",
+      "skipBlocksAfter": 1
+    },
+    "p96-b1": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.2.2 One-sided powerdomains}",
+      "skipBlocksAfter": 1
+    },
+    "p97-b1": {
+      "status": "reviewed",
+      "tex": "The Hoare and Smyth one-sided theories are described by the two halves of the Egli-Milner approximation:\n\\[\n  s\\prec_H t \\iff \\forall a\\in [s]\\,\\exists b\\in[t].\\ a\\ll b,\n\\]\nand\n\\[\n  s\\prec_S t \\iff \\forall b\\in [t]\\,\\exists a\\in[s].\\ a\\ll b.\n\\]\nWriting these relations as \\(\\ll_H\\) and \\(\\ll_S\\) gives the corresponding basis representations.",
+      "skipBlocksAfter": 0
+    },
+    "p97-b5": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.2.3 Topological representation theorems}",
+      "skipBlocksAfter": 0
+    },
+    "p97-b6": {
+      "status": "reviewed",
+      "tex": "The aim of this subsection is to describe the powerdomains directly as spaces of suitable subsets of the original domain, rather than through bases and ideal completions. The characterizations of Proposition 6.2.6 and Proposition 6.2.12 extend naturally once topological closure and compact-saturated sets are used.",
+      "skipBlocksAfter": 0
+    },
+    "p99-b1": {
+      "status": "reviewed",
+      "tex": "For the Smyth representation, a compact saturated set \\(A\\) is sent to the ideal\n\\[\n  \\psi^S(A)=\\{\\,M\\in\\mathcal{P}_f(B)\\mid A\\subseteq\\uparrow M\\,\\}.\n\\]\nThis is an ideal because every open neighbourhood of a compact set contains a finite set of basis elements whose upward closure covers it. The two maps are inverse: \\(\\psi^S\\circ\\phi^S=\\operatorname{id}\\) follows by the \\(\\ll_S\\)-roundness argument, and \\(\\phi^S\\circ\\psi^S=\\operatorname{id}\\) because a saturated compact set is the intersection of its open neighbourhoods. Formal union becomes intersection:\n\\[\n  \\phi^S(I\\cup J)=\\phi^S(I)\\cap\\phi^S(J).\n\\]\nFor the Plotkin case, an ideal \\(I\\) in \\(\\langle\\mathcal{P}_f(B),\\ll_{EM}\\rangle\\) gives a Scott-closed set \\(\\phi^H(I)=\\operatorname{Cl}(\\bigcup I)\\) and a compact saturated set \\(\\phi^S(I)=\\bigcap_{M\\in I}\\uparrow M\\). The lens represented by \\(I\\) is\n\\[\n  \\phi(I)=\\phi^H(I)\\cap\\phi^S(I).\n\\]",
+      "skipBlocksAfter": 2
+    },
+    "p101-b1": {
+      "status": "reviewed",
+      "tex": "In the proof of Theorem 6.2.19, countability of the basis is used to reconstruct the lower part of the lens. One shows\n\\[\n  \\phi^S(I)=\\uparrow\\phi(I),\\qquad\n  \\phi^H(I)=\\operatorname{Cl}(\\phi(I)).\n\\]\nIf \\(I\\subseteq I'\\), then\n\\[\n  \\phi(I)\\subseteq\\phi^H(I)\\subseteq\\phi^H(I')=\\operatorname{Cl}(\\phi(I')),\n  \\qquad\n  \\phi(I')\\subseteq\\phi^S(I')\\subseteq\\phi^S(I)=\\uparrow\\phi(I),\n\\]\nso \\(\\phi(I)\\sqsubseteq_{TEM}\\phi(I')\\). The inverse map sends a lens \\(L\\) to \\(\\psi^H(\\operatorname{Cl}(L))\\cap\\psi^S(\\uparrow L)\\), and the two composites are identities. Formal union is interpreted as union followed by topological convex closure:\n\\[\n\\phi(I\\cup J)=\\operatorname{Cl}(\\phi(I)\\cup\\phi(J))\\cap\\uparrow(\\phi(I)\\cup\\phi(J)).\n\\]\nFigure 13 explains why topological closure is needed: in the displayed algebraic domain, the topological and ordinary Egli-Milner orders do not coincide.",
+      "skipBlocksAfter": 1
+    },
+    "p102-b1": {
+      "status": "reviewed",
+      "tex": "Figure 13 is a non-coherent algebraic domain used to show that topological Egli-Milner ordering and ordinary Egli-Milner ordering can differ. The set \\(\\{c_1,a\\}\\) has infinitely many minimal upper bounds; topological closure adds the missing point \\(c\\)."
+    },
+    "p102-b2": {
+      "status": "reviewed",
+      "tex": "\\begin{center}\n\\begin{tikzpicture}[scale=0.78, >=stealth]\n  \\coordinate (bot) at (3.5,-1.9);\n  \\coordinate (c1) at (2.4,-0.8);\n  \\coordinate (c2) at (1.85,0.15);\n  \\coordinate (c3) at (1.3,1.1);\n  \\coordinate (a)  at (4.9,-0.8);\n  \\coordinate (a3) at (2.9,2.15);\n  \\coordinate (a2) at (4.0,2.15);\n  \\coordinate (a1) at (5.15,2.15);\n  \\coordinate (c)  at (-0.15,2.15);\n  \\foreach \\u/\\v in {bot/c1,bot/a,c1/a2,c2/a2,c2/a3,c3/a3,c1/a1,c2/a1,c3/a,a/a1,a/a2,a/a3} {\n    \\draw (\\u) -- (\\v);\n  }\n  \\draw[dotted, line width=0.7pt] (c) -- (c3);\n  \\node[left] at (c) {$c$};\n  \\node[left] at (c3) {$c_3$};\n  \\node[left] at (c2) {$c_2$};\n  \\node[left] at (c1) {$c_1$};\n  \\node[below right] at (a) {$a$};\n  \\node[above] at (a3) {$a_3$};\n  \\node[above] at (a2) {$a_2$};\n  \\node[above] at (a1) {$a_1$};\n  \\node[below] at (bot) {$\\bot$};\n  \\node at (0.95,2.2) {$\\cdots$};\n  \\foreach \\p in {bot,c1,c2,c3,a,a1,a2,a3,c} {\n    \\filldraw[fill=white] (\\p) circle (2.3pt);\n  }\n\\end{tikzpicture}\n\\par\\smallskip\\textbf{Figure 13:} An algebraic domain in which topological Egli--Milner ordering and ordinary Egli--Milner ordering do not coincide.\n\\end{center}",
+      "skipBlocksAfter": 1
+    },
+    "p102-b4": {
+      "status": "reviewed",
+      "tex": "For Lemma 6.2.20, if \\(x\\notin\\downarrow L\\), then for each \\(y\\in L\\) choose a basis element \\(b_y\\ll x\\) with \\(b_y\\not\\le y\\). The set \\(D\\setminus\\uparrow b_y\\) is Lawson-open and covers \\(L\\). Lawson compactness yields finitely many such \\(b_y\\); taking an upper bound \\(b\\ll x\\) gives a Scott-open neighbourhood \\(\\uparrow b\\) of \\(x\\) disjoint from \\(\\downarrow L\\). Hence \\(\\downarrow L\\) is Scott-closed.",
+      "skipBlocksAfter": 0
+    },
+    "p103-b1": {
+      "status": "reviewed",
+      "tex": "\\subsection*{6.2.4 Hyperspaces and probabilistic powerdomains}",
+      "skipBlocksAfter": 1
+    },
+    "p103-b3": {
+      "status": "reviewed",
+      "tex": "The preceding presentation emphasized powerdomains as free algebras for inequational theories, following the tradition initiated by Hennessy and Plotkin. There is another viewpoint: study suitable spaces of subsets of a domain directly. In topology these are hyperspaces, going back to Hausdorff and Vietoris. This perspective is useful even when an equational characterization is unavailable or unnatural, as in some set-domain constructions for database semantics.\n\nProbabilistic powerdomains form another important line of development. They cannot be restricted to algebraic domains, because the unit interval \\([0,1]\\) forces the broader setting of continuous domains. Their equational descriptions go beyond the methods of this chapter. More abstract accounts of powerdomain constructions have also been developed; they recover several canonicality properties, though their semantic interpretation is still less clear.",
+      "skipBlocksAfter": 0
+    },
+    "p104-b1": {
+      "status": "reviewed",
+      "tex": "\\begin{center}\n\\begin{tikzpicture}[scale=0.82, >=stealth]\n  \\draw[rounded corners=9pt] (-1.15,1.85) rectangle (1.25,2.45);\n  \\draw[rounded corners=9pt] (-2.95,0.35) rectangle (-0.65,0.95);\n  \\draw[rounded corners=9pt] (0.65,0.35) rectangle (2.95,0.95);\n  \\draw[rounded corners=9pt] (-1.15,-1.15) rectangle (1.25,-0.55);\n  \\coordinate (t1) at (-0.75,2.15); \\coordinate (t2) at (0,2.15); \\coordinate (t3) at (0.78,2.15);\n  \\coordinate (l1) at (-2.55,0.65); \\coordinate (l2) at (-1.15,0.65);\n  \\coordinate (r1) at (1.15,0.65); \\coordinate (r2) at (2.55,0.65);\n  \\coordinate (b1) at (-0.75,-0.85); \\coordinate (b2) at (0.78,-0.85);\n  \\foreach \\u/\\v in {b1/l1,b1/r1,b2/l2,b2/r2,l1/t1,l1/t2,l2/t2,l2/t3,r1/t1,r1/t2,r2/t2,r2/t3,l2/r1,t1/r2,t3/l1} {\n    \\draw (\\u) -- (\\v);\n  }\n  \\foreach \\p in {t1,t2,l1,r1,b1} {\\filldraw[fill=black] (\\p) circle (2.2pt);}\n  \\foreach \\p in {t3,l2,r2,b2} {\\filldraw[fill=white] (\\p) circle (2.2pt);}\n  \\node at (-0.1,-1.05) {$a$};\n\\end{tikzpicture}\n\\par\\smallskip\\textbf{Figure 14:} Part of an algebraic domain where Theorem 6.2.19 fails.\n\\end{center}\nThe following exercises ask the reader to check related failures and constructions. In particular, for the usual equational theories of groups or Boolean algebras, any dcpo-algebra is trivially ordered, so the free construction collapses each connected component of the generating dcpo. For a reduct \\(\\langle\\Sigma,E\\rangle\\) of \\(\\langle\\Sigma',E'\\rangle\\), the induced forgetful functor from \\(C(\\Sigma',E')\\) to \\(C(\\Sigma,E)\\) has a left adjoint by the same methods as Theorems 6.1.2 and 6.1.7. The exercises also ask about freely completing partial domain algebras, compactness of values of operations on compact elements, and examples showing that Plotkin powerdomains need not remain in \\(\\mathbf{F\\text{-}B}\\) or be \\(L\\)-domains.\n\nExercise 11 constructs an algebraic domain \\(D\\) for which Theorem 6.2.19 cannot be extended. The compact elements are arranged in finite sets \\(M_\\alpha\\) indexed by finite subsets \\(\\alpha\\subseteq\\mathbb{R}\\), ordered so that \\(M_\\alpha\\ll_{EM}M_\\beta\\) when \\(\\alpha\\subseteq\\beta\\). Each \\(M_\\alpha\\) has one white element and \\(|\\alpha|!\\) black elements, arranged in layers as in Figure 14.",
+      "skipBlocksAfter": 0
+    },
+    "p105-b1": {
+      "status": "reviewed",
+      "tex": "The continuation of Exercise 11 uses the following facts about the ordered set \\(K(D)\\). Above a black element there are only black elements, and below a white element there are only white elements. An ideal in \\(K(D)\\) contains at most one black element from each set, at most one black element in each layer, and hence at most countably many black elements. Conversely, an ideal meeting all sets must contain all white elements; if it contains a black element, then it contains the least black element \\(a\\); and if such an ideal contains \\(a\\), then it must contain uncountably many black upper bounds. The contradiction shows that the only ideal meeting all sets is the ideal \\(W\\) of white elements. Consequently \\(\\phi(I)\\) contains exactly one element, say \\(b\\), with \\(\\downarrow b=W\\cup\\{b\\}\\) Scott-closed, so it is far from containing all elements of \\(I=K(D)\\). The final step is to show that the lenses of \\(D\\) are not directed-complete because the ideal \\(I\\) has no upper bound.",
+      "skipBlocksAfter": 4
+    },
+    "p105-b6": {
+      "status": "reviewed",
+      "tex": "Exercise 12, due to R. Heckmann, asks what happens when idempotence is removed from the Hoare powertheory. The resulting free domain algebras need not be finite over finite generators; in particular, the free algebra over the four-element lattice from Figure 1 is neither bifinite nor an \\(L\\)-domain.",
+      "skipBlocksAfter": 0
+    },
+    "p87-b7": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p87-b4": {
+      "status": "reviewed",
+      "tex": "\\[\n\\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]\n  \\node (D)  at (0,1.5) {$D$};\n  \\node (FD) at (3.0,1.5) {$F(D)$};\n  \\node (A)  at (3.0,-0.95) {$A$};\n  \\draw[->] (D) -- node[above] {$\\eta$} (FD);\n  \\draw[->] (D) -- node[below left] {$g$} (A);\n  \\draw[->] (FD) -- node[right] {$\\operatorname{ext}(g)$} (A);\n  \\node[font=\\bfseries] at (-1.2,-0.25) {CONT};\n  \\draw[dashed] (4.45,2.05) -- (4.45,-1.45);\n  \\node (FDa) at (5.7,1.5) {$\\underline{F(D)}$};\n  \\node (Aa)  at (5.7,-0.95) {$\\underline{A}$};\n  \\draw[->] (FDa) -- node[right] {$\\exists!\\operatorname{ext}(g)$} (Aa);\n  \\node[font=\\bfseries] at (7.6,-0.25) {CONT$(\\Sigma,\\mathcal E)$};\n\\end{tikzpicture}\n\\]",
+      "skipBlocksAfter": 6
+    }
+  }
+}

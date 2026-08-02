@@ -1,0 +1,404 @@
+{
+  "items": {
+    "def-5-1-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-1-1}{Definition 5.1.1} Let \\(F\\) be a functor on a category \\(\\mathbf C\\). An \\(F\\)-algebra is an object \\(A\\) together with a map \\(f:F(A)\\to A\\). A homomorphism from \\(f:F(A)\\to A\\) to \\(f':F(A')\\to A'\\) is a map \\(g:A\\to A'\\) such that\n\\[\n\\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]\n  \\node (FA)  at (0,1.7) {$F(A)$};\n  \\node (FAp) at (4.0,1.7) {$F(A')$};\n  \\node (A)   at (0,0) {$A$};\n  \\node (Ap)  at (4.0,0) {$A'$};\n  \\draw[->] (FA) -- node[above] {$F(g)$} (FAp);\n  \\draw[->] (FA) -- node[left] {$f$} (A);\n  \\draw[->] (FAp) -- node[right] {$f'$} (Ap);\n  \\draw[->] (A) -- node[below] {$g$} (Ap);\n\\end{tikzpicture}\n\\]\ncommutes.",
+      "skipBlocksAfter": 4
+    },
+    "lemma-5-1-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-5-1-2}{Lemma 5.1.2} If \\(i:F(A)\\to A\\) is an initial \\(F\\)-algebra, then \\(i\\) is an isomorphism.\n\\emph{Proof sketch.} Let \\(f\\) be the unique homomorphism from \\(i:F(A)\\to A\\) to \\(F(i):F^2(A)\\to F(A)\\). The proof uses the composition of homomorphisms displayed below:\n\\[\n\\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]\n  \\node (FA0) at (0,1.8) {$F(A)$};\n  \\node (F2A) at (3.2,1.8) {$F^2(A)$};\n  \\node (FA1) at (6.4,1.8) {$F(A)$};\n  \\node (A0)  at (0,0) {$A$};\n  \\node (FA2) at (3.2,0) {$F(A)$};\n  \\node (A1)  at (6.4,0) {$A$};\n  \\draw[->] (FA0) -- node[above] {$F(f)$} (F2A);\n  \\draw[->] (F2A) -- node[above] {$F(i)$} (FA1);\n  \\draw[->] (FA0) -- node[left] {$i$} (A0);\n  \\draw[->] (F2A) -- node[right] {$F(i)$} (FA2);\n  \\draw[->] (FA1) -- node[right] {$i$} (A1);\n  \\draw[->] (A0) -- node[below] {$f$} (FA2);\n  \\draw[->] (FA2) -- node[below] {$i$} (A1);\n\\end{tikzpicture}\n\\]\nInitiality gives \\(i\\circ f=\\operatorname{id}_A\\), and the remaining equality gives the inverse law on \\(F(A)\\).",
+      "skipBlocksAfter": 8
+    },
+    "def-5-2-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-2-1}{Definition 5.2.1} A functor \\(F:\\mathbf{D}^e\\to\\mathbf{D}^e\\) is continuous if, for every expanding sequence \\(\\langle(D_n)_{n\\in\\mathbb N},(e_{mn}:D_n\\to D_m)_{n\\le m}\\rangle\\) with colimit \\(\\langle D,(e_n)_{n\\in\\mathbb N}\\rangle\\), the cocone\n\\[\n  \\langle F(D),(F(e_n))_{n\\in\\mathbb N}\\rangle\n\\]\nis a colimit of the sequence \\(\\langle(F(D_n))_{n\\in\\mathbb N},(F(e_{mn}))_{n\\le m}\\rangle\\)."
+    },
+    "lemma-5-2-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-5-2-2}{Lemma 5.2.2} Let \\(F\\) be a continuous functor on a category \\(\\mathbf{D}^e\\) of domains. For an embedding \\(e:A\\to F(A)\\), let \\(\\langle D,(e_n)_{n\\in\\mathbb N}\\rangle\\) be the colimit of\n\\[\n  A\\xrightarrow{e}F(A)\\xrightarrow{F(e)}F(F(A))\\xrightarrow{F(F(e))}\\cdots.\n\\]\nThen \\(D\\cong F(D)\\). The isomorphism is given by\n\\[\n\\begin{aligned}\n\\operatorname{fold}&=\\bigvee_{n\\in\\mathbb N} e_{n+1}\\circ F(e_n)^*:F(D)\\to D,\\\\\n\\operatorname{unfold}&=\\bigvee_{n\\in\\mathbb N}F(e_n)\\circ e_{n+1}^*:D\\to F(D),\n\\end{aligned}\n\\]\nand for every \\(n\\),\n\\[\n  F(e_n)=\\operatorname{unfold}\\circ e_{n+1},\\qquad\n  F(e_n)^*=e_{n+1}^*\\circ\\operatorname{fold}.\n\\]",
+      "skipBlocksAfter": 8
+    },
+    "def-5-2-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-2-3}{Definition 5.2.3} A functor \\(F:\\mathbf D\\to\\mathbf E\\) between categories of domains is called locally continuous if, for every pair of objects \\(D,D'\\), the map\n\\[\n  \\operatorname{Hom}(D,D')\\longrightarrow\\operatorname{Hom}(F(D),F(D')),\n  \\qquad f\\longmapsto F(f),\n\\]\nis Scott-continuous."
+    },
+    "prop-5-2-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-5-2-4}{Proposition 5.2.4} A locally continuous functor \\(F:\\mathbf D\\to\\mathbf E\\) restricts to a continuous functor \\(F:\\mathbf D^e\\to\\mathbf E^e\\) on the corresponding categories of embeddings."
+    },
+    "def-5-2-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-2-5}{Definition 5.2.5} A functor \\(F:\\mathbf{D}^{op}\\times\\mathbf{D}'\\to\\mathbf{E}\\), contravariant in the first coordinate and covariant in the second, is locally continuous if, for directed sets \\(A\\subseteq\\operatorname{Hom}(D_2,D_1)\\) and \\(A'\\subseteq\\operatorname{Hom}(D'_1,D'_2)\\),\n\\[\n  F\\bigl(\\bigvee{}^{\\uparrow}A,\\bigvee{}^{\\uparrow}A'\\bigr)\n  =\\bigvee{}^{\\uparrow}_{f\\in A,\\,f'\\in A'}F(f,f')\n\\]\nin \\(\\operatorname{Hom}(F(D_1,D'_1),F(D_2,D'_2))\\).",
+      "skipBlocksAfter": 1
+    },
+    "prop-5-2-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-5-2-6}{Proposition 5.2.6} If \\(F:\\mathbf{D}^{op}\\times\\mathbf{D}'\\to\\mathbf{E}\\) is mixed-variant and locally continuous, it defines a continuous covariant functor \\(\\widehat F:\\mathbf{D}^e\\times\\mathbf{D}'^e\\to\\mathbf{E}^e\\) by\n\\[\n  \\widehat F(D,D')=F(D,D'),\\qquad\n  \\widehat F(e,e')=F(e^*,e')\n\\]\nfor embeddings. The upper adjoint of \\(\\widehat F(e,e')\\) is \\(F(e,e'^*)\\). If \\((e,e^*)\\) and \\((e',e'^*)\\) are embedding-projection pairs, then\n\\[\n\\begin{aligned}\nF(e,e'^*)\\circ\\widehat F(e,e')&=F(e,e'^*)\\circ F(e^*,e')=F(e^*\\circ e,e'^*\\circ e')=\\operatorname{id},\\\\\n\\widehat F(e,e')\\circ F(e,e'^*)&=F(e^*,e')\\circ F(e,e'^*)=F(e\\circ e^*,e'\\circ e'^*)\\sqsubseteq\\operatorname{id}.\n\\end{aligned}\n\\]\nThus \\(\\widehat F\\) maps embeddings to embeddings. Continuity follows by applying local continuity to expanding sequences in the two coordinates.",
+      "skipBlocksAfter": 4
+    },
+    "prop-5-2-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-5-2-7}{Proposition 5.2.7} Let \\(F:\\mathbf{D}_{\\bot!}\\times\\mathbf{E}_{\\bot!}\\to\\mathbf{E}_{\\bot!}\\) be locally continuous. Then the assignment\n\\[\n  D\\mapsto \\operatorname{FIX}(F_D),\\qquad F_D(E)=F(D,E),\n\\]\nextends to a locally continuous functor \\(\\mathbf{D}_{\\bot!}\\to\\mathbf{E}_{\\bot!}\\). On a strict map \\(f:D\\to D'\\), the induced map is\n\\[\n  f\\mapsto \\bigvee_{n\\in\\mathbb N} e'_n\\circ f_n\\circ e_n^*,\n\\]\nwhere \\(f_0=\\operatorname{id}_{\\mathbb I}\\) and \\(f_{n+1}=F(f,f_n)\\). The canonical solution of \\(X\\cong F(D,X)\\) is obtained as the bilimit of\n\\[\n\\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]\n  \\node (Fix) at (3.2,2.15) {$\\operatorname{FIX}(F_D)$};\n  \\node (I)   at (0,0) {$\\mathbb I$};\n  \\node (FDI) at (3.2,0) {$F_D(\\mathbb I)$};\n  \\node (FD2) at (6.6,0) {$F_D^2(\\mathbb I)$};\n  \\node (Dots) at (9.0,0) {$\\cdots$};\n  \\draw[->] (I) -- node[below] {$e$} (FDI);\n  \\draw[->] (FDI) -- node[below] {$F_D(e)$} (FD2);\n  \\draw[->] (FD2) -- (Dots);\n  \\draw[->] (I) -- node[left] {$e_0$} (Fix);\n  \\draw[->] (FDI) -- node[right] {$e_1$} (Fix);\n  \\draw[->] (FD2) -- node[right] {$e_2$} (Fix);\n\\end{tikzpicture}\n\\]\nand similarly for \\(D'\\).",
+      "skipBlocksAfter": 14
+    },
+    "lemma-5-3-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-5-3-1}{Lemma 5.3.1} Let \\(F\\) be a locally continuous functor on a category of domains \\(\\mathbf D\\), and let \\(i:F(A)\\to A\\) be an isomorphism. For every \\(F\\)-algebra \\(f:F(C)\\to C\\) there is a least homomorphism \\(h_{C,A}:A\\to C\\). It is the least fixed point of the functional \\(\\phi_{C,A}\\) on \\([A\\to C]\\) defined by\n\\[\n  \\phi_{C,A}(g)=f\\circ F(g)\\circ i^{-1}.\n\\]\nLeast homomorphisms compose: if \\(j:F(B)\\to B\\) is also an isomorphism, then\n\\[\n  h_{C,A}=h_{C,B}\\circ h_{B,A}.\n\\]\n\\emph{Proof sketch.} The functional \\(\\phi_{C,A}\\) is continuous because \\(F\\) is locally continuous and composition is continuous. Hence its least fixed point exists as the supremum of the chain starting from \\(c_\\bot\\); induction shows that this point is below every homomorphism and is itself a homomorphism. Composition follows from Lemma 2.1.21 applied to the square whose horizontal map sends \\(g\\) to \\(g\\circ h_{B,A}\\), giving \\(\\operatorname{fix}(\\phi_{C,A})=\\operatorname{fix}(\\phi_{C,B})\\circ h_{B,A}\\).",
+      "skipBlocksAfter": 3
+    },
+    "thm-5-3-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-2}{Theorem 5.3.2} \\emph{(Invariance, Part 1)} Let \\(F\\) be a locally continuous functor on a category of domains \\(\\mathbf D\\), and let \\(i:F(A)\\to A\\) be an isomorphism. The following are equivalent:\n\\begin{enumerate}\n\\item \\(A\\) is isomorphic to the canonical fixpoint \\(\\operatorname{FIX}(F)\\);\n\\item \\(\\operatorname{id}_A\\) is the least endomorphism of \\(A\\);\n\\item \\(\\operatorname{id}_A=\\operatorname{fix}(\\phi_{A,A})\\), where \\(\\phi_{A,A}:[A\\to A]\\to[A\\to A]\\) is defined by \\(\\phi_{A,A}(g)=i\\circ F(g)\\circ i^{-1}\\);\n\\item \\(\\operatorname{id}_A\\) is the only strict endomorphism of \\(A\\).\n\\end{enumerate}\n\\emph{Proof sketch.} For \\(D=\\operatorname{FIX}(F)\\), the least endomorphism is the least fixed point of \\(g\\mapsto \\operatorname{fold}\\circ F(g)\\circ\\operatorname{unfold}\\). With the standard embeddings \\(e_n:F^n(\\mathbb I)\\to D\\), induction gives \\(c_\\bot=e_0\\circ e_0^*\\) and \\(\\phi^n(c_\\bot)=e_n\\circ e_n^*\\), whose supremum is the identity by Lemma 3.3.8. The equivalence of (2) and (3) is Lemma 5.3.1. For (3) implies (4), Lemma 2.1.21 is applied to the square with \\(H(g)=h\\circ g\\) for a strict endomorphism \\(h\\), yielding \\(\\operatorname{id}_A=H(\\operatorname{id}_A)=h\\). Finally, the homomorphisms between \\(A\\) and \\(\\operatorname{FIX}(F)\\) compose to the least endomorphisms, hence to identities under (4).",
+      "skipBlocksAfter": 3
+    },
+    "thm-5-3-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-3}{Theorem 5.3.3} \\emph{(Minimality, Part 1)} The canonical fixpoint of a locally continuous functor is a sub-domain of every other fixpoint."
+    },
+    "thm-5-3-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-4}{Theorem 5.3.4} \\emph{(Initiality)} Let \\(F:\\mathbf D_{\\bot!}\\to\\mathbf D_{\\bot!}\\) be a locally continuous functor on a category of domains with strict functions. Then \\(\\operatorname{fold}:F(D)\\to D\\) is an initial \\(F\\)-algebra, where \\(D\\) is the canonical solution to \\(X\\cong F(X)\\).\n\\emph{Proof sketch.} For a strict algebra \\(f:F(A)\\to A\\), Lemma 5.3.1 gives a homomorphism \\(h:D\\to A\\), and inspection of the construction shows that \\(h\\) is strict. Uniqueness is proved as in Theorem 5.3.2, using Lemma 2.1.21 on the commutative square\n\\[\n\\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]\n  \\node (DD0) at (0,1.8) {$[D\\to D]$};\n  \\node (DA0) at (4.2,1.8) {$[D\\to A]$};\n  \\node (DD1) at (0,0) {$[D\\to D]$};\n  \\node (DA1) at (4.2,0) {$[D\\to A]$};\n  \\draw[->] (DD0) -- node[above] {$H$} (DA0);\n  \\draw[->] (DD1) -- node[below] {$H$} (DA1);\n  \\draw[->] (DD0) -- node[left] {$\\phi_{D,D}$} (DD1);\n  \\draw[->] (DA0) -- node[right] {$\\phi_{A,D}$} (DA1);\n\\end{tikzpicture}\n\\]\nwhere \\(H(g)=h\\circ g\\).",
+      "skipBlocksAfter": 3
+    },
+    "thm-5-3-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-5}{Theorem 5.3.5} \\emph{(Finality)} Let \\(F:\\mathbf D\\to\\mathbf D\\) be a locally continuous functor with canonical fixpoint \\(D=\\operatorname{FIX}(F)\\). Then \\(\\operatorname{unfold}:D\\to F(D)\\) is a final co-algebra."
+    },
+    "lemma-5-3-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{lemma-5-3-6}{Lemma 5.3.6} Let \\(F:\\mathbf D^{op}\\times\\mathbf D\\to\\mathbf D\\) be a mixed-variant, locally continuous functor, and let \\(i:F(A,A)\\to A\\) and \\(j:F(B,B)\\to B\\) be isomorphisms. Then there exists a least pair of functions \\(h:A\\to B\\) and \\(k:B\\to A\\) such that the two squares\n\\[\n\\begin{array}{ccc}\nF(A,A)&\\xrightarrow{F(k,h)}&F(B,B)\\\\\n\\scriptstyle i\\downarrow&&\\downarrow\\scriptstyle j\\\\\nA&\\xrightarrow{h}&B\n\\end{array}\n\\qquad\n\\begin{array}{ccc}\nF(B,B)&\\xrightarrow{F(h,k)}&F(A,A)\\\\\n\\scriptstyle j\\downarrow&&\\downarrow\\scriptstyle i\\\\\nB&\\xrightarrow{k}&A\n\\end{array}\n\\]\ncommute.",
+      "skipBlocksAfter": 12
+    },
+    "thm-5-3-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-7}{Theorem 5.3.7} \\emph{(Invariance, Part 2)} Let \\(F:\\mathbf D^{op}\\times\\mathbf D\\to\\mathbf D\\) be a mixed-variant and locally continuous functor, and let \\(i:F(A,A)\\to A\\) be an isomorphism. The following are equivalent:\n\\begin{enumerate}\n\\item \\(A\\) is isomorphic to the canonical fixpoint \\(\\operatorname{FIX}(F)\\);\n\\item \\(\\operatorname{id}_A\\) is the least mixed endomorphism of \\(A\\);\n\\item \\(\\operatorname{id}_A=\\operatorname{fix}(\\phi_{A,A})\\), where \\(\\phi_{A,A}:[A\\to A]\\to[A\\to A]\\) is defined by \\(\\phi_{A,A}(g)=i\\circ F(g,g)\\circ i^{-1}\\);\n\\item \\(\\operatorname{id}_A\\) is the only strict mixed endomorphism of \\(A\\).\n\\end{enumerate}\n\\emph{Proof sketch.} The proof follows Theorem 5.3.2, with the mixed-variance step made explicit. If \\(D=\\operatorname{FIX}(F)\\) and \\(e_n:F^n(\\mathbb I)\\to D\\) are the colimiting maps, then the cocone into \\(F(D,D)\\) gives\n\\[\n  F(e_n^*,e_n)=\\operatorname{unfold}\\circ e_{n+1},\\qquad\n  F(e_n^*,e_n)^*=F(e_n,e_n^*)=e_{n+1}^*\\circ\\operatorname{fold}.\n\\]\nFor the least mixed endomorphism, induction gives\n\\[\n\\begin{aligned}\n\\phi^{n+1}(c_\\bot)&=\\phi(\\phi^n(c_\\bot))\n =\\phi(e_n\\circ e_n^*)\\\\\n&=\\operatorname{fold}\\circ F(e_n\\circ e_n^*,e_n\\circ e_n^*)\\circ\\operatorname{unfold}\\\\\n&=\\operatorname{fold}\\circ F(e_n^*,e_n)\\circ F(e_n,e_n^*)\\circ\\operatorname{unfold}\n =e_{n+1}\\circ e_{n+1}^*.\n\\end{aligned}\n\\]\nContravariance in the first argument is exactly what swaps \\(e_n\\) and \\(e_n^*\\). For (3) implies (4), use Lemma 2.1.21 with \\(H(g)=h\\circ g\\circ h\\).",
+      "skipBlocksAfter": 2
+    },
+    "thm-5-3-8": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-8}{Theorem 5.3.8} \\emph{(Minimality, Part 2)} The canonical fixpoint of a mixed-variant and locally continuous functor is a sub-domain of every other fixpoint."
+    },
+    "thm-5-3-9": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-3-9}{Theorem 5.3.9} \\emph{(Free mixed-variant algebra)} Let \\(F:\\mathbf D_{\\bot!}^{op}\\times\\mathbf D_{\\bot!}\\to\\mathbf D_{\\bot!}\\) be a mixed-variant, locally continuous functor, and let \\(D\\) be the canonical solution to \\(X\\cong F(X,X)\\). For every pair of strict continuous functions\n\\[\n  f:A\\to F(B,A),\\qquad g:F(A,B)\\to B,\n\\]\nthere are unique strict functions \\(h:A\\to D\\) and \\(k:D\\to B\\) such that the two squares\n\\[\n\\begin{array}{ccc}\nF(B,A)&\\xrightarrow{F(k,h)}&F(D,D)\\\\\n\\scriptstyle f\\uparrow&&\\uparrow\\scriptstyle\\operatorname{unfold}\\\\\nA&\\xrightarrow{h}&D\n\\end{array}\n\\qquad\n\\begin{array}{ccc}\nF(D,D)&\\xrightarrow{F(h,k)}&F(A,B)\\\\\n\\scriptstyle\\operatorname{fold}\\downarrow&&\\downarrow\\scriptstyle g\\\\\nD&\\xrightarrow{k}&B\n\\end{array}\n\\]\ncommute.",
+      "skipBlocksAfter": 15
+    },
+    "def-5-4-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-4-1}{Definition 5.4.1} A relation \\(R\\subseteq D^n\\) on a pointed domain \\(D\\) is called admissible if it contains the constantly-bottom tuple and is closed under suprema of \\(\\omega\\)-chains. Write \\(\\mathcal R^n(D)\\) for the set of all admissible \\(n\\)-ary relations on \\(D\\), ordered by inclusion; unary relations of this kind are admissible predicates.\nIf \\(f:D\\to E\\) is strict and continuous, then it acts pointwise on relations by\n\\[\n  f^{rel}(R)=\\{\\langle f(x_1),\\ldots,f(x_n)\\rangle\\mid \\langle x_1,\n  \\ldots,x_n\\rangle\\in R\\}.\n\\]"
+    },
+    "prop-5-4-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-5-4-2}{Proposition 5.4.2} For dcpo's \\(D\\) and \\(E\\), and admissible \\(n\\)-ary relations \\(R\\) on \\(D\\) and \\(S\\) on \\(E\\), the set\n\\[\n  \\{f\\mid f^{rel}(R)\\subseteq S\\}\n\\]\nis an admissible predicate on the strict function space \\([D\\to E]\\)."
+    },
+    "def-5-4-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-4-3}{Definition 5.4.3} Let \\(F:\\mathbf D_{\\bot!}^{op}\\times\\mathbf D_{\\bot!}\\to\\mathbf D_{\\bot!}\\) be mixed-variant and locally continuous. An admissible action on \\(n\\)-ary relations for \\(F\\) is a function \\(F^{rel}\\) assigning to each pair \\(\\langle D,E\\rangle\\) a map\n\\[\n  F^{rel}_{\\langle D,E\\rangle}:\\mathcal R(D)\\times\\mathcal R(E)\n  \\to\\mathcal R(F(D,E)).\n\\]\nThese maps are compatible with strict morphisms as follows: if \\(f:D_2\\to D_1\\), \\(g:E_1\\to E_2\\), \\(f^{rel}(R_2)\\subseteq R_1\\), and \\(g^{rel}(S_1)\\subseteq S_2\\), then\n\\[\n  F(f,g)^{rel}\\bigl(F^{rel}_{\\langle D_1,E_1\\rangle}(R_1,S_1)\\bigr)\n  \\subseteq F^{rel}_{\\langle D_2,E_2\\rangle}(R_2,S_2).\n\\]",
+      "skipBlocksAfter": 3
+    },
+    "prop-5-4-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-5-4-4}{Proposition 5.4.4} The maps \\(F^{rel}_{\\langle D,E\\rangle}\\) are antitone in the first variable and monotone in the second variable."
+    },
+    "thm-5-4-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-4-5}{Theorem 5.4.5} Let \\(\\mathbf D_{\\bot!}\\) be a category of domains, and let \\(F:\\mathbf D_{\\bot!}^{op}\\times\\mathbf D_{\\bot!}\\to\\mathbf D_{\\bot!}\\) be a mixed-variant locally continuous functor with an admissible action on relations. Write \\(D=\\operatorname{FIX}(F)\\). If \\(R,S\\in\\mathcal R^n(D)\\) satisfy\n\\[\n  \\operatorname{unfold}^{rel}(R)\\subseteq F^{rel}(S,R),\n  \\qquad\n  \\operatorname{fold}^{rel}\\bigl(F^{rel}(R,S)\\bigr)\\subseteq S,\n\\]\nthen \\(R\\subseteq S\\).\n\\emph{Proof sketch.} By invariance, \\(\\operatorname{id}_D\\) is the least fixed point of \\(\\phi(g)=\\operatorname{fold}\\circ F(g,g)\\circ\\operatorname{unfold}\\). Let\n\\[\n  P=\\{f\\in[D\\to D]\\mid f^{rel}(R)\\subseteq S\\}.\n\\]\nThis is admissible. If \\(g\\in P\\), then\n\\[\n\\begin{aligned}\n\\phi(g)^{rel}(R)\n&=\\operatorname{fold}^{rel}\\circ F(g,g)^{rel}\\circ\\operatorname{unfold}^{rel}(R)\\\\\n&\\subseteq\\operatorname{fold}^{rel}\\circ F(g,g)^{rel}\\bigl(F^{rel}(S,R)\\bigr)\\\\\n&\\subseteq\\operatorname{fold}^{rel}\\bigl(F^{rel}(R,S)\\bigr)\n \\subseteq S.\n\\end{aligned}\n\\]\nThus \\(\\phi(g)\\in P\\), so \\(\\operatorname{id}_D\\in P\\), which is exactly \\(R\\subseteq S\\).",
+      "skipBlocksAfter": 7
+    },
+    "def-5-4-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-4-6}{Definition 5.4.6} Let \\(F\\) be a mixed-variant functor as above. An admissible action on \\(n\\)-ary relations is called logical if, for all objects \\(D,E\\) and all \\(R\\in\\mathcal R^n(D)\\),\n\\[\n  F^{rel}_{\\langle D,E\\rangle}(R,E^n)=F(D,E)^n.\n\\]\nSpecializing Theorem 5.4.5 to \\(R=D\\) gives the induction principle below."
+    },
+    "thm-5-4-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-4-7}{Theorem 5.4.7} \\emph{(Induction)} Let \\(\\mathbf D_{\\bot!}\\) be a category of domains, and let \\(F:\\mathbf D_{\\bot!}^{op}\\times\\mathbf D_{\\bot!}\\to\\mathbf D_{\\bot!}\\) be mixed-variant and locally continuous with a logical action on admissible predicates. Let \\(D=\\operatorname{FIX}(F)\\). If \\(S\\in\\mathcal R^1(D)\\) is an admissible predicate such that\n\\[\n  x\\in F^{rel}(D,S)\\quad\\Longrightarrow\\quad \\operatorname{fold}(x)\\in S,\n\\]\nthen \\(S=D\\).\nFor the primitive constructors, logical actions are given by\n\\[\n\\begin{aligned}\nR_\\bot&=\\operatorname{up}(R)\\cup\\{\\bot\\}\\subseteq D_\\bot,\\\\\nR\\times S&=\\{\\langle x,y\\rangle\\in D\\times E\\mid x\\in R,\\ y\\in S\\},\\\\\n[R\\to S]&=\\{f\\in[D\\to E]\\mid f(R)\\subseteq S\\},\\\\\nR\\oplus S&=\\operatorname{inl}(R)\\cup\\operatorname{inr}(S)\\subseteq D\\oplus E.\n\\end{aligned}\n\\]\nThe actions for composite functors are obtained by composing the corresponding relation actions.",
+      "skipBlocksAfter": 8
+    },
+    "def-5-4-8": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-5-4-8}{Definition 5.4.8} Let \\(F\\) be a mixed-variant functor. An admissible action on binary relations is extensional if, for all objects \\(D,E\\) and all \\(R\\in\\mathcal R^2(D)\\),\n\\[\n  F^{rel}_{\\langle D,E\\rangle}(R,\\sqsubseteq_E)=\\sqsubseteq_{F(D,E)}.\n\\]"
+    },
+    "thm-5-4-9": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{thm-5-4-9}{Theorem 5.4.9} \\emph{(Co-induction)} Let \\(\\mathbf D_{\\bot!}\\) be a category of domains, and let \\(F:\\mathbf D_{\\bot!}^{op}\\times\\mathbf D_{\\bot!}\\to\\mathbf D_{\\bot!}\\) be mixed-variant and locally continuous with an extensional action on binary relations. Let \\(D=\\operatorname{FIX}(F)\\). If \\(R\\in\\mathcal R^2(D)\\) is admissible and, for all \\(\\langle x,y\\rangle\\in R\\),\n\\[\n  \\langle\\operatorname{unfold}(x),\\operatorname{unfold}(y)\\rangle\n  \\in F^{rel}(\\sqsubseteq_D,R),\n\\]\nthen \\(R\\subseteq\\sqsubseteq_D\\)."
+    },
+    "cor-5-4-10": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{cor-5-4-10}{Corollary 5.4.10} Two elements of the canonical fixpoint of a mixed-variant locally continuous functor are in the order relation if and only if they are related by a simulation.",
+      "skipBlocksAfter": 10
+    }
+  },
+  "blocks": {
+    "p68-b1": {
+      "status": "reviewed",
+      "tex": "\\section*{5 Recursive domain equations}\nRecursive domain equations are used to specify domains by self-reference. The main mathematical issue is to construct canonical solutions, rather than merely arbitrary isomorphic copies, and to obtain proof principles for reasoning about the elements of those solutions.",
+      "skipBlocksAfter": 0
+    },
+    "p68-b2": {
+      "status": "reviewed",
+      "tex": "\\section*{5.1 Examples}",
+      "skipBlocksAfter": 1
+    },
+    "p68-b4": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.1.1 Genuine equations}",
+      "skipBlocksAfter": 1
+    },
+    "p68-b6": {
+      "status": "reviewed",
+      "tex": "A basic example is the equation\n\\[\n  X\\cong [X\\to X].\n\\]\nIt is motivated by the semantics of the untyped \\(\\lambda\\)-calculus: every element of a solution must act as a function, and every function must itself be represented by an element. Thus one wants continuous maps\n\\[\n  \\varphi:D\\to [D\\to D],\\qquad \\psi:[D\\to D]\\to D\n\\]\nwhich are inverse to one another. The equation is non-trivial because the function-space constructor is contravariant in its first argument and covariant in its second; this mixed variance is one of the reasons canonical solutions are needed.",
+      "skipBlocksAfter": 0
+    },
+    "p68-b7": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.1.2 Recursive definitions}",
+      "skipBlocksAfter": 0
+    },
+    "p68-b8": {
+      "status": "reviewed",
+      "tex": "Recursive definitions also arise in denotational semantics. For example, a domain \\(R\\) of resumptions over a state space \\(S\\) may be specified by\n\\[\n  R\\cong [S\\to (S\\oplus S\\times R)].\n\\]\nAn element of \\(R\\) maps an input state either to a final state or to a pair consisting of a new state and a further resumption. Such a recursive definition abbreviates an infinite unfolding of the computation type.",
+      "skipBlocksAfter": 1
+    },
+    "p69-b2": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.1.3 Data types}",
+      "skipBlocksAfter": 0
+    },
+    "p69-b3": {
+      "status": "reviewed",
+      "tex": "Data types can be viewed as algebras: a carrier set together with operations. Categorically, this is expressed by choosing an endofunctor \\(F\\) and studying maps \\(F(A)\\to A\\). Initial algebras capture freely generated data types.",
+      "skipBlocksAfter": 0
+    },
+    "p69-b9": {
+      "status": "reviewed",
+      "tex": "For instance, if \\(F(A)=I\\cup A\\times A\\) on \\(\\mathbf{Set}\\), then an \\(F\\)-algebra consists of constants indexed by \\(I\\) and a binary operation. The initial algebra is the set of finite binary trees whose leaves are labelled by elements of \\(I\\). This illustrates why solving recursive equations is closely related to initial-algebra constructions.",
+      "skipBlocksAfter": 0
+    },
+    "p69-b19": {
+      "status": "reviewed",
+      "tex": "Continuing the proof of Lemma 5.1.2, let \\(f\\) be the unique homomorphism from \\(i:F(A)\\to A\\) to \\(F(i):F^2(A)\\to F(A)\\). The defining square gives \\(i\\circ f=\\operatorname{id}_A\\). Applying functoriality to the other square gives\n\\[\n  f\\circ i=F(i)\\circ F(f)=F(i\\circ f)=F(\\operatorname{id}_A)=\\operatorname{id}_{F(A)}.\n\\]\nHence \\(i\\) is an isomorphism. Freyd's theorem shows that, under suitable hypotheses, initial algebras and final co-algebras can coincide; the following sections construct the domain-theoretic version explicitly.",
+      "skipBlocksAfter": 1
+    },
+    "p70-b2": {
+      "status": "reviewed",
+      "tex": "\\section*{5.2 Construction of solutions}",
+      "skipBlocksAfter": 1
+    },
+    "p70-b4": {
+      "status": "reviewed",
+      "tex": "Suppose a recursive domain equation has the form\n\\[\n  X\\cong F(X),\n\\]\nwhere \\(F\\) is a functor on a category of domains. The canonical solution is obtained as a bilimit of an expanding sequence\n\\[\n  \\mathbb I\\to F(\\mathbb I)\\to F^2(\\mathbb I)\\to\\cdots.\n\\]\nHere \\(\\mathbf D\\) denotes the ambient category of domains, \\(\\mathbf D^e\\) the category with embeddings as morphisms, and \\(\\mathbf D_{\\bot!}\\) the corresponding category with strict continuous functions when pointed domains are used.",
+      "skipBlocksAfter": 0
+    },
+    "p70-b5": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.2.1 Continuous functors}",
+      "skipBlocksAfter": 0
+    },
+    "p71-b1": {
+      "status": "reviewed",
+      "tex": "Definition 5.2.1 is exactly Scott-continuity expressed at the level of functors on expanding sequences. It says that applying \\(F\\) to a colimiting cocone again gives a colimiting cocone. This condition is what permits the bilimit construction to commute with the recursive unfolding.",
+      "skipBlocksAfter": 0
+    },
+    "p71-b11": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.2.2 Local continuity}",
+      "skipBlocksAfter": 0
+    },
+    "p71-b12": {
+      "status": "reviewed",
+      "tex": "Functor continuity is often difficult to verify directly. A more useful sufficient condition is local continuity: the action of the functor on hom-sets preserves directed suprema. In categories of domains this hom-wise continuity is usually checked from the constructors used to build the functor.",
+      "skipBlocksAfter": 0
+    },
+    "p72-b1": {
+      "status": "reviewed",
+      "tex": "The same idea extends to mixed-variant functors. In a functor \\(F:\\mathbf D^{op}\\times\\mathbf D'\\to\\mathbf E\\), directed suprema in the contravariant coordinate are taken in the hom-set \\(\\operatorname{Hom}(D_2,D_1)\\), while directed suprema in the covariant coordinate are taken in \\(\\operatorname{Hom}(D'_1,D'_2)\\).",
+      "skipBlocksAfter": 0
+    },
+    "p73-b2": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.2.3 Parameterized equations}",
+      "skipBlocksAfter": 0
+    },
+    "p73-b3": {
+      "status": "reviewed",
+      "tex": "Parameterized recursive equations have the form \\(X\\cong F(D,X)\\), where \\(D\\) is a parameter and \\(F\\) is locally continuous in both variables. For each fixed \\(D\\), write \\(F_D(E)=F(D,E)\\); the canonical solution is denoted \\(\\operatorname{FIX}(F_D)\\).",
+      "skipBlocksAfter": 0
+    },
+    "p73-b4": {
+      "status": "reviewed",
+      "tex": "If \\(D'\\) is another parameter, the same notation gives \\(F_{D'}\\). A morphism between parameters induces compatible maps between the two expanding sequences, and hence a map between the corresponding canonical fixpoints. Proposition 5.2.7 records this construction as a locally continuous functor of the parameter.",
+      "skipBlocksAfter": 0
+    },
+    "p74-b10": {
+      "status": "reviewed",
+      "tex": "\\section*{5.3 Canonicity}",
+      "skipBlocksAfter": 1
+    },
+    "p74-b12": {
+      "status": "reviewed",
+      "tex": "The previous section constructs solutions, but recursive domain equations usually need canonical solutions: solutions invariant under the expected algebraic structure and minimal among all solutions. This section develops invariance, initiality, finality, and minimality properties of the canonical fixpoint.\n\\subsection*{5.3.1 Invariance and minimality}",
+      "skipBlocksAfter": 1
+    },
+    "p74-b14": {
+      "status": "reviewed",
+      "tex": "The proofs begin by internalizing the expanding sequence\n\\[\n  \\mathbb I\\to F(\\mathbb I)\\to F^2(\\mathbb I)\\to\\cdots\n\\]\ninside an arbitrary solution \\(A\\cong F(A)\\). Local continuity then provides least homomorphisms from the canonical fixpoint into any other solution, and these least maps are used to characterize when a solution is canonical.",
+      "skipBlocksAfter": 0
+    },
+    "p71-b8": {
+      "status": "reviewed",
+      "tex": "The proof of Lemma 5.2.2 uses the fact that \\(\\langle D,(e_n)_{n\\in\\mathbb N\\setminus\\{0\\}}\\rangle\\) is also a colimit over\n\\[\n  F(A)\\xrightarrow{F(e)}F(F(A))\\xrightarrow{F(F(e))}\\cdots.\n\\]\nThe cocone \\(\\langle F(D),(F(e_n))_{n\\in\\mathbb N}\\rangle\\) is colimiting by continuity of \\(F\\), so Theorem 3.3.7 gives the mediating maps called \\(\\operatorname{fold}\\) and \\(\\operatorname{unfold}\\). They are inverse because both cocones are colimiting, and the displayed equations follow from the explicit mediating-map formula.",
+      "skipBlocksAfter": 2
+    },
+    "p73-b1": {
+      "status": "reviewed",
+      "tex": "The usual constructors for recursive domain equations, together with diagonal, tupling, constants, bilimits, and later powerdomain constructions, give locally continuous functors. This permits simultaneous systems of equations to be solved coordinatewise in a finite product category.",
+      "skipBlocksAfter": 0
+    },
+    "p73-b14": {
+      "status": "reviewed",
+      "tex": "For Proposition 5.2.7, the canonical solution of \\(X\\cong F(D,X)\\) is the bilimit of\n\\[\n  \\mathbb I\\xrightarrow{e}F_D(\\mathbb I)\\xrightarrow{F_D(e)}F_D^2(\\mathbb I)\\to\\cdots.\n\\]\nFor a strict map \\(f:D\\to D'\\), define \\(f_0=\\operatorname{id}_{\\mathbb I}\\) and \\(f_{n+1}=F(f,f_n)\\). These maps commute with the expanding sequences, and hence determine the mediating morphism\n\\[\n  \\bigvee_{n\\in\\mathbb N} e'_n\\circ f_n\\circ e_n^*:\\operatorname{FIX}(F_D)\\to\\operatorname{FIX}(F_{D'}).\n\\]\nFunctoriality and local continuity follow from uniqueness of mediating maps and local continuity of \\(F\\).",
+      "skipBlocksAfter": 5
+    },
+    "p74-b1": {
+      "status": "reviewed",
+      "tex": "Proof continuation for Proposition 5.2.7 is summarized by the reviewed proposition statement above.",
+      "skipBlocksAfter": 8
+    },
+    "p76-b6": {
+      "status": "reviewed",
+      "tex": "By a refinement of the preceding proofs, the canonical fixpoint together with \\(\\operatorname{fold}\\) is an initial \\(F\\)-algebra. One adjustment is that we pass to strict functions, because Lemma 5.3.1 gives homomorphisms but not automatically strict ones.",
+      "skipBlocksAfter": 1
+    },
+    "p76-b5": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.3.2 Initiality and finality}",
+      "skipBlocksAfter": 0
+    },
+    "p77-b6": {
+      "status": "reviewed",
+      "tex": "Dualizing Lemma 5.3.1 and the implication \\((3)\\Rightarrow(4)\\) in the proof of Theorem 5.3.2 gives the final co-algebra theorem. It is slightly stronger than initiality, because it applies to all co-algebras and not only to strict algebras.",
+      "skipBlocksAfter": 0
+    },
+    "p77-b8": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.3.3 Mixed variance}",
+      "skipBlocksAfter": 0
+    },
+    "p77-b9": {
+      "status": "reviewed",
+      "tex": "Now consider equations in which the variable occurs both negatively and positively, such as\n\\[\n  X\\cong [X\\to X].\n\\]\nAfter separating negative and positive occurrences, the body is treated as a functor of two variables, contravariant in the first and covariant in the second. The construction uses adjoints in the first coordinate. Since ordinary \\(F\\)-algebras and co-algebras are no longer the right notion for a mixed-variant functor, the homomorphism arguments are replaced by pairs of maps.",
+      "skipBlocksAfter": 0
+    },
+    "p78-b1": {
+      "status": "reviewed",
+      "tex": "The composition of two such least pairs again gives a least pair. In the proof one defines a Scott-continuous function \\(\\phi\\) on \\([A\\to B]\\times[B\\to A]\\) by\n\\[\n  \\phi(f,g)=\\bigl(j\\circ F(g,f)\\circ i^{-1},\\; i\\circ F(f,g)\\circ j^{-1}\\bigr),\n\\]\nand takes \\((h,k)\\) to be its least fixed point. Commutativity of the two diagrams is shown as in Lemma 5.3.1.",
+      "skipBlocksAfter": 0
+    },
+    "p78-b2": {
+      "status": "reviewed",
+      "tex": "By putting \\(A=B\\) in Lemma 5.3.6, one obtains a least endofunction \\(h\\) satisfying \\(h\\circ f=f\\circ F(h,h)\\). It is below the identity; such endofunctions are called mixed endomorphisms.",
+      "skipBlocksAfter": 0
+    },
+    "p79-b18": {
+      "status": "reviewed",
+      "tex": "The passage from covariant to mixed-variant functors can also be treated abstractly and categorically, as Peter Freyd demonstrated in \\([\\mathrm{Fre}91]\\). Domain theory supplies the existence and coincidence of initial algebras and final co-algebras for the relevant locally continuous endofunctors.",
+      "skipBlocksAfter": 0
+    },
+    "p79-b19": {
+      "status": "reviewed",
+      "tex": "\\section*{5.4 Analysis of solutions}",
+      "skipBlocksAfter": 1
+    },
+    "p79-b21": {
+      "status": "reviewed",
+      "tex": "The solutions constructed above are canonical in several respects. This is useful because it gives proof principles for establishing properties of those solutions.",
+      "skipBlocksAfter": 0
+    },
+    "p79-b22": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.4.1 Structural induction on terms}",
+      "skipBlocksAfter": 0
+    },
+    "p79-b23": {
+      "status": "reviewed",
+      "tex": "This technique is analogous to structural induction in universal algebra. Basis elements of the constructed domains are represented by finite terms: tuples \\(\\langle d,e\\rangle\\), variants \\((d:i)\\), the one-element constant \\(\\bot\\in\\mathbb I\\), and step-functions \\((d\\searrow e)\\).",
+      "skipBlocksAfter": 0
+    },
+    "p80-b1": {
+      "status": "reviewed",
+      "tex": "Since canonical solutions are bilimits beginning with \\(\\mathbb I\\), every basis element appears at a finite stage and can be represented by a finite expression. Structural induction can then proceed on the length of these terms. Uniqueness is harder for function spaces and requires normal forms and conversion rules; see Chapter 7.3.\n\\subsection*{5.4.2 Admissible relations}",
+      "skipBlocksAfter": 1
+    },
+    "p80-b3": {
+      "status": "reviewed",
+      "tex": "This is a domain-theoretic form of structural induction based on relations. Pitts reorganized this subject in a more general framework; here we use only the amount needed for recursive domains. The starting point is the notion of admissible relation, already encountered briefly in Chapter 2.",
+      "skipBlocksAfter": 0
+    },
+    "p81-b1": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p81-b11": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.4.3 Induction with admissible relations}",
+      "skipBlocksAfter": 0
+    },
+    "p82-b9": {
+      "status": "reviewed",
+      "tex": "\\subsection*{5.4.4 Co-induction with admissible relations}",
+      "skipBlocksAfter": 0
+    },
+    "p82-b10": {
+      "status": "reviewed",
+      "tex": "For co-induction we use another canonical relation on a domain: its order relation. The relation action is required to make the order relation dominant when it is placed in the covariant argument.",
+      "skipBlocksAfter": 0
+    },
+    "p83-b11": {
+      "status": "reviewed",
+      "tex": "Exercises for Chapter 5 are omitted from this marked reading copy.",
+      "skipBlocksAfter": 100
+    },
+    "p69-b8": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p69-b18": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p73-b16": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p73-b18": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p77-b5": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p77-b17": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p77-b22": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    },
+    "p79-b17": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}",
+      "skipBlocksAfter": 0
+    }
+  }
+}

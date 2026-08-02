@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domain Theory Readers</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --accent: #0f766e;
+      --accent-soft: #e4f4f1;
+      --warn: #9a3412;
+      --warn-soft: #fff7ed;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .meta {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 24px auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .chapter {
+      display: grid;
+      gap: 8px;
+      min-height: 148px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: inherit;
+      text-decoration: none;
+      padding: 15px;
+    }
+
+    .chapter:hover,
+    .chapter:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .chapter.missing {
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+
+    .chapter-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .editable .badge {
+      border-color: #99d5ca;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .files {
+      margin-top: auto;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+
+    .notice {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Domain Theory Book-to-Lean Readers</h1>
+    <div class="meta" id="meta">Choose a chapter to open the marked PDF and Lean correspondence view.</div>
+  </header>
+  <main>
+    <div class="grid" id="chapterGrid"></div>
+    <div class="notice">
+      Chapters 2 and 3 support editing Lean snippets with save-build-rollback. Later chapter readers currently open in review mode.
+    </div>
+  </main>
+
+  <script>
+    const chapters = [
+      { n: 2, title: "Basic definitions and results", editable: true, items: "Chapter 2 Lean editing enabled" },
+      { n: 3, title: "Categories, functors, and constructions", editable: true, items: "Chapter 3 Lean editing enabled" },
+      { n: 4, title: "Cartesian closed categories of domains", editable: true, items: "Chapter 4 Lean editing enabled" },
+      { n: 5, title: "Recursive domain equations", editable: false, items: "Review reader" },
+      { n: 6, title: "Powerdomains", editable: false, items: "Review reader" },
+      { n: 7, title: "Stone duality", editable: false, items: "Review reader" }
+    ];
+
+    const grid = document.getElementById("chapterGrid");
+    const meta = document.getElementById("meta");
+
+    async function exists(path) {
+      try {
+        const response = await fetch(path, { method: "HEAD", cache: "no-store" });
+        return response.ok;
+      } catch {
+        return false;
+      }
+    }
+
+    async function render() {
+      const rows = await Promise.all(chapters.map(async chapter => {
+        const pdf = `generated/chapter${chapter.n}-marked.pdf`;
+        const extract = `generated/chapter${chapter.n}-extract.json`;
+        const ready = await exists(pdf) && await exists(extract);
+        return { ...chapter, pdf, extract, ready };
+      }));
+
+      grid.innerHTML = rows.map(chapter => {
+        const href = chapter.ready ? `chapter${chapter.n}-tex-reader.html` : "#";
+        const classes = ["chapter", chapter.editable ? "editable" : "", chapter.ready ? "" : "missing"].join(" ");
+        const badge = chapter.ready ? (chapter.editable ? "editable" : "review") : "missing generated PDF";
+        return `
+          <a class="${classes}" href="${href}" aria-disabled="${chapter.ready ? "false" : "true"}">
+            <div class="chapter-title">
+              <h2>Chapter ${chapter.n}</h2>
+              <span class="badge">${badge}</span>
+            </div>
+            <p class="summary">${chapter.title}</p>
+            <p class="summary">${chapter.items}</p>
+            <div class="files">${chapter.pdf}<br>${chapter.extract}</div>
+          </a>
+        `;
+      }).join("");
+
+      const readyCount = rows.filter(chapter => chapter.ready).length;
+      meta.textContent = `${readyCount} of ${rows.length} chapter readers are ready.`;
+    }
+
+    grid.addEventListener("click", event => {
+      const link = event.target.closest("a.chapter");
+      if (link && link.getAttribute("aria-disabled") === "true") {
+        event.preventDefault();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

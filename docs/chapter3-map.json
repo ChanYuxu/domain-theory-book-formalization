@@ -1,0 +1,629 @@
+{
+  "chapter": "Chapter 3",
+  "title": "Domains collectively",
+  "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+  "notice": "This map records public paraphrases and Lean source locations. It does not reproduce the textbook text.",
+  "items": [
+    {
+      "id": "def-3-1-1",
+      "number": "Definition 3.1.1",
+      "section": "3.1",
+      "kind": "Definition",
+      "title": "Section-retraction pairs",
+      "summary": "Monotone and continuous section-retraction pairs, with a retract equation.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_Retractions.lean",
+      "lean": [
+        "SectionRetractionPair",
+        "ContinuousSectionRetractionPair"
+      ],
+      "startLine": 24,
+      "endLine": 31
+    },
+    {
+      "id": "prop-3-1-2",
+      "number": "Proposition 3.1.2",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Properties inherited by monotone retracts",
+      "summary": "Suprema, infima, dcpo structure, pointedness, semilattice/lattice structure, and completeness descend along monotone section-retraction pairs.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_Retractions.lean",
+      "lean": [
+        "isSup_of_section_image_isSup",
+        "isInf_of_section_image_isInf",
+        "isDcpo_of_isDcpo",
+        "pointedDcpo_of_pointedDcpo",
+        "hasBinaryJoins_of_hasBinaryJoins",
+        "hasBinaryMeets_of_hasBinaryMeets",
+        "isLatticeOrder_of_isLatticeOrder",
+        "isCompleteOrder_of_isCompleteOrder"
+      ],
+      "startLine": 47,
+      "endLine": 63
+    },
+    {
+      "id": "lemma-3-1-3",
+      "number": "Lemma 3.1.3",
+      "section": "3.1",
+      "kind": "Lemma",
+      "title": "Retraction image of a basis",
+      "summary": "A continuous section-retraction pair sends a basis of the larger dcpo to a basis of the retract.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "lemma_3_1_3_retraction_image_basis"
+      ],
+      "startLine": 30,
+      "endLine": 58
+    },
+    {
+      "id": "thm-3-1-4",
+      "number": "Theorem 3.1.4",
+      "section": "3.1",
+      "kind": "Theorem",
+      "title": "Continuous retracts of continuous domains",
+      "summary": "A continuous retract of a continuous domain is continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_1_4_retract_continuous_domain",
+        "theorem_3_1_4_retract_continuous_domain_basis",
+        "theorem_3_1_4_retract_continuous_domain_with_dcpo"
+      ],
+      "startLine": 68,
+      "endLine": 88
+    },
+    {
+      "id": "thm-3-1-5",
+      "number": "Theorem 3.1.5",
+      "section": "3.1",
+      "kind": "Theorem",
+      "title": "Continuous domains as retracts of algebraic domains",
+      "summary": "Every continuous or omega-continuous domain is represented as a continuous retract of an algebraic or omega-algebraic ideal completion.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_1_5_continuous_retract_of_algebraic",
+        "theorem_3_1_5_omega_continuous_retract_of_omega_algebraic"
+      ],
+      "startLine": 317,
+      "endLine": 334
+    },
+    {
+      "id": "prop-3-1-6",
+      "number": "Proposition 3.1.6",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Basis ideal completion section-retraction",
+      "summary": "The maps from a domain to the ideal completion of a basis and back form the continuous section-retraction pair used in Theorem 3.1.5.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_1_6_basis_ideal_section_retraction",
+        "basisIdealSection",
+        "basisIdealRetraction",
+        "basisIdeal_retract",
+        "basisIdealSection_scottContinuous",
+        "basisIdealRetraction_scottContinuous"
+      ],
+      "startLine": 368,
+      "endLine": 374
+    },
+    {
+      "id": "prop-3-1-7",
+      "number": "Proposition 3.1.7",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Images and directed suprema of continuous idempotents",
+      "summary": "The image of a continuous idempotent is a dcpo, and continuous idempotents are closed under directed suprema.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_Retractions.lean",
+      "lean": [
+        "image_isDcpo",
+        "image_isSup_iff_ambient_isSup",
+        "inclusion_scottContinuous",
+        "continuousIdempotent_isDcpo",
+        "continuous_idempotent_sup_of_image_mem"
+      ],
+      "startLine": 300,
+      "endLine": 322
+    },
+    {
+      "id": "prop-3-1-8",
+      "number": "Proposition 3.1.8",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Scott topology on an idempotent image",
+      "summary": "The Scott topology on the image of a continuous idempotent is the subspace topology inherited from the ambient dcpo.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_1_8_idempotent_image_scott_topology",
+        "prop_3_1_8_scott_open_to_subspace_open"
+      ],
+      "startLine": 419,
+      "endLine": 436
+    },
+    {
+      "id": "def-3-1-9",
+      "number": "Definition 3.1.9",
+      "section": "3.1",
+      "kind": "Definition",
+      "title": "Preliminary adjunction",
+      "summary": "A preliminary adjunction is represented by least elements of inverse upper sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "PreliminaryAdjunction"
+      ],
+      "startLine": 437,
+      "endLine": 446
+    },
+    {
+      "id": "prop-3-1-10",
+      "number": "Proposition 3.1.10",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Equivalent adjunction formulations",
+      "summary": "The least-preimage, greatest-preimage, unit/counit, and hom-set inequality formulations of adjunctions are packaged as equivalent data.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_1_10_adjunction_equivalent_forms",
+        "UpperPreliminaryAdjunction",
+        "UnitCounitAdjunction"
+      ],
+      "startLine": 467,
+      "endLine": 532
+    },
+    {
+      "id": "def-3-1-11",
+      "number": "Definition 3.1.11",
+      "section": "3.1",
+      "kind": "Definition",
+      "title": "Official adjunction",
+      "summary": "An adjunction between posets is defined by the equivalence x <= u y iff l x <= y.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_Adjunctions.lean",
+      "lean": [
+        "Adjunction"
+      ],
+      "startLine": 24,
+      "endLine": 27
+    },
+    {
+      "id": "prop-3-1-12",
+      "number": "Proposition 3.1.12",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Basic laws of adjunctions",
+      "summary": "Adjunctions satisfy composition laws, image order isomorphism, injective/surjective characterizations, and preservation of existing suprema/infima.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_Adjunctions.lean",
+      "lean": [
+        "adjunction_composition_laws",
+        "adjunction_image_order_iso",
+        "upper_surjective_unit_lower_injective",
+        "lower_surjective_counit_upper_injective",
+        "lower_adjoint_preserves_sup",
+        "upper_adjoint_preserves_inf"
+      ],
+      "startLine": 118,
+      "endLine": 126
+    },
+    {
+      "id": "prop-3-1-13",
+      "number": "Proposition 3.1.13",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Adjoint criterion for complete lattices",
+      "summary": "A monotone map out of a complete lattice has a lower adjoint exactly when it preserves all infima, and dually for upper adjoints and suprema.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_1_13_complete_lattice_adjoint_criterion",
+        "prop_3_1_13_complete_lattice_upper_adjoint_criterion",
+        "PreservesAllInfima",
+        "HasLowerAdjoint"
+      ],
+      "startLine": 543,
+      "endLine": 577
+    },
+    {
+      "id": "prop-3-1-14",
+      "number": "Proposition 3.1.14",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Adjunctions between dcpos",
+      "summary": "Lower adjoints are Scott-continuous; continuous upper adjoints imply preservation of way-below; for continuous domains the converse is packaged.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_Adjunctions.lean",
+      "lean": [
+        "lower_adjoint_scottContinuous",
+        "lower_adjoint_preserves_wayBelow",
+        "upper_adjoint_scottContinuous_of_preserves_wayBelow"
+      ],
+      "startLine": 252,
+      "endLine": 259
+    },
+    {
+      "id": "def-3-1-15",
+      "number": "Definition 3.1.15",
+      "section": "3.1",
+      "kind": "Definition",
+      "title": "Embedding-projection pairs",
+      "summary": "A continuous embedding-projection pair consists of continuous maps with p o e = id and e o p <= id.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_EmbeddingProjection.lean",
+      "lean": [
+        "EPPair"
+      ],
+      "startLine": 24,
+      "endLine": 32
+    },
+    {
+      "id": "prop-3-1-16",
+      "number": "Proposition 3.1.16",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Embeddings reflect approximation",
+      "summary": "For an embedding-projection pair, e x is way-below e y exactly when x is way-below y.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_EmbeddingProjection.lean",
+      "lean": [
+        "wayBelow_iff"
+      ],
+      "startLine": 56,
+      "endLine": 71
+    },
+    {
+      "id": "prop-3-1-17",
+      "number": "Proposition 3.1.17",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Kernel operators and images",
+      "summary": "Kernel operators form a dcpo, determine maximal image elements below a point, preserve existing image suprema, reflect way-below on the image, and are ordered by image inclusion.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section31_EmbeddingProjection.lean",
+      "lean": [
+        "kernelOperator_isDcpo",
+        "le_kernel_of_mem_range_le",
+        "isSup_mem_range",
+        "image_wayBelow_iff",
+        "kernel_le_iff_range_subset"
+      ],
+      "startLine": 230,
+      "endLine": 290
+    },
+    {
+      "id": "prop-3-1-18",
+      "number": "Proposition 3.1.18",
+      "section": "3.1",
+      "kind": "Proposition",
+      "title": "Algebraic images of closure operators",
+      "summary": "For monotone idempotents above the identity on algebraic domains, algebraicity of the image is tied to closure under directed suprema, with the hard converse isolated by an explicit bridge.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_1_18_raw_closure_image_algebraic_subdomain_iff_directed_sup_closed",
+        "prop_3_1_18_raw_closure_image_algebraic_iff_directed_sup_closed_of_sup_agrees",
+        "prop_3_1_18_closure_image_algebraic_iff_directed_sup_closed",
+        "RawClosureOperator",
+        "image_algebraic_of_directedSupClosed"
+      ],
+      "startLine": 1053,
+      "endLine": 1059
+    },
+    {
+      "id": "def-3-2-1",
+      "number": "Definition 3.2.1",
+      "section": "3.2",
+      "kind": "Definition",
+      "title": "Cartesian product of dcpos",
+      "summary": "The product carrier and pointwise order used for cartesian products of dcpos.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section32_Products.lean",
+      "lean": [
+        "CartesianProduct"
+      ],
+      "startLine": 25,
+      "endLine": 27
+    },
+    {
+      "id": "prop-3-2-2",
+      "number": "Proposition 3.2.2",
+      "section": "3.2",
+      "kind": "Proposition",
+      "title": "Products preserve dcpo structure",
+      "summary": "Cartesian products compute suprema and infima componentwise and are dcpos when both factors are dcpos.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section32_Products.lean",
+      "lean": [
+        "prod_isSup_of_projection_isSup",
+        "prod_isInf_of_projection_isInf",
+        "prod_isDcpo"
+      ],
+      "startLine": 28,
+      "endLine": 48
+    },
+    {
+      "id": "prop-3-2-3",
+      "number": "Proposition 3.2.3",
+      "section": "3.2",
+      "kind": "Proposition",
+      "title": "Product projections and mediating maps",
+      "summary": "Product pairing and product maps are Scott-continuous in the local interface.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section32_Products.lean",
+      "lean": [
+        "prod_pair_scottContinuous",
+        "prod_map_scottContinuous"
+      ],
+      "startLine": 100,
+      "endLine": 133
+    },
+    {
+      "id": "prop-3-2-4",
+      "number": "Proposition 3.2.4",
+      "section": "3.2",
+      "kind": "Proposition",
+      "title": "Product approximation and bases",
+      "summary": "Way-below, bases, continuity, and compact elements of cartesian products are characterized componentwise, with a reverse continuity result under chosen points.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section32_Products.lean",
+      "lean": [
+        "prod_wayBelow_iff",
+        "prod_basis",
+        "prod_continuous_domain",
+        "prod_compact_iff",
+        "prod_compactSet_eq",
+        "prop_3_2_4_product_continuous_domain_iff_of_points"
+      ],
+      "startLine": 250,
+      "endLine": 347
+    },
+    {
+      "id": "lemma-3-2-5",
+      "number": "Lemma 3.2.5",
+      "section": "3.2",
+      "kind": "Lemma",
+      "title": "Finite products in full subcategories",
+      "summary": "Compares a genuine finite-product object, equipped with terminal and binary-product universal properties, with the cartesian product via the cited external categorical theorem.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "lemma_3_2_5_full_subcategory_products_cartesian_full",
+        "lemma_3_2_5_full_subcategory_products_cartesian",
+        "FullSubcategoryWithFiniteProducts",
+        "FullSubcategoryFiniteProductsAgreeWithCartesian"
+      ],
+      "startLine": 1399,
+      "endLine": 1406
+    },
+    {
+      "id": "lemma-3-2-6",
+      "number": "Lemma 3.2.6",
+      "section": "3.2",
+      "kind": "Lemma",
+      "title": "Separate continuity criterion",
+      "summary": "A function out of a product is Scott-continuous exactly when it is Scott-continuous in each variable.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "lemma_3_2_6_continuous_iff_separately_continuous",
+        "SeparatelyScottContinuous"
+      ],
+      "startLine": 1446,
+      "endLine": 1605
+    },
+    {
+      "id": "lemma-3-2-7",
+      "number": "Lemma 3.2.7",
+      "section": "3.2",
+      "kind": "Lemma",
+      "title": "Exponential objects as function spaces",
+      "summary": "Compares an exponential object carrying the finite-product hom-order universal property with the Scott-continuous function space via the cited external categorical theorem.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "lemma_3_2_7_exponential_is_function_space_full",
+        "lemma_3_2_7_exponential_is_function_space",
+        "CartesianClosedFullSubcategoryOfDCPO",
+        "FullSubcategoryExponentialAgreesWithFunctionSpace"
+      ],
+      "startLine": 1670,
+      "endLine": 1677
+    },
+    {
+      "id": "prop-3-2-8",
+      "number": "Proposition 3.2.8",
+      "section": "3.2",
+      "kind": "Proposition",
+      "title": "Coalesced sums are pointed dcpos",
+      "summary": "The coalesced sum of pointed dcpos is again a pointed dcpo.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_2_8_coalesced_sum_pointed_dcpo"
+      ],
+      "startLine": 1704,
+      "endLine": 1717
+    },
+    {
+      "id": "prop-3-2-9",
+      "number": "Proposition 3.2.9",
+      "section": "3.2",
+      "kind": "Proposition",
+      "title": "Coalesced sums as strict coproducts",
+      "summary": "Coalesced sums serve as coproducts in strict pointed categories, with continuous and algebraic closure clauses in the local interface.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_2_9_coalesced_sum_coproduct_full_exists",
+        "prop_3_2_9_coalesced_sum_coproduct_full",
+        "CoalescedSumContinuousObjectClosure",
+        "CoalescedSumAlgebraicObjectClosure",
+        "CoalescedSumFullCoproductData"
+      ],
+      "startLine": 1821,
+      "endLine": 1829
+    },
+    {
+      "id": "thm-3-3-1",
+      "number": "Theorem 3.3.1",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "DCPO is complete",
+      "summary": "Arbitrary diagram limits in DCPO are constructed as commuting tuples with coordinatewise directed suprema and projection cones.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_1_dcpo_complete",
+        "DiagramLimitCarrier",
+        "LimitingConeData",
+        "DCPOCompletenessStatement"
+      ],
+      "startLine": 2554,
+      "endLine": 2585
+    },
+    {
+      "id": "thm-3-3-2",
+      "number": "Theorem 3.3.2",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "DCPO is cocomplete",
+      "summary": "Arbitrary colimits in DCPO are recorded as an external theorem from the cited literature and left as explicit proof debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_2_dcpo_cocomplete",
+        "DCPOCocompletenessStatement"
+      ],
+      "startLine": 2631,
+      "endLine": 2638
+    },
+    {
+      "id": "thm-3-3-3",
+      "number": "Theorem 3.3.3",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "DCPO is cartesian closed, complete, and cocomplete",
+      "summary": "The formal package combines cartesian closure with the complete and cocomplete DCPO statements.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_3_dcpo_cartesian_closed_complete_cocomplete",
+        "theorem_3_3_3_dcpo_cartesian_closed_complete_cocomplete_of_cartesianClosed",
+        "dcpoCartesianClosed"
+      ],
+      "startLine": 5784,
+      "endLine": 5797
+    },
+    {
+      "id": "thm-3-3-4",
+      "number": "Theorem 3.3.4",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "Strict pointed DCPO is monoidal closed, complete, and cocomplete",
+      "summary": "The strict pointed category is packaged with strict function-space/internal-hom data, the smash tensor-hom order isomorphism, completeness, and explicit cocompleteness proof debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_4_strict_pointed_dcpo_monoidal_closed_complete_cocomplete",
+        "theorem_3_3_4_strict_pointed_dcpo_complete",
+        "theorem_3_3_4_strict_pointed_dcpo_cocomplete",
+        "strictPointedDCPOMonoidalClosed"
+      ],
+      "startLine": 5492,
+      "endLine": 5502
+    },
+    {
+      "id": "thm-3-3-5",
+      "number": "Theorem 3.3.5",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "Pointed DCPO is cartesian closed",
+      "summary": "The pointed category has cartesian closure in the local preorder-based interface.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_5_pointed_dcpo_cartesian_closed",
+        "theorem_3_3_5_pointed_dcpo_cartesian_closed_of_cartesianClosed",
+        "pointedDCPOCartesianClosed"
+      ],
+      "startLine": 5798,
+      "endLine": 5808
+    },
+    {
+      "id": "def-3-3-6",
+      "number": "Definition 3.3.6",
+      "section": "3.3",
+      "kind": "Definition",
+      "title": "Expanding sequences",
+      "summary": "An expanding sequence is a natural-number diagram with identity and composition laws.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/Section33_ExpandingSequences.lean",
+      "lean": [
+        "ExpandingSequence",
+        "id_p",
+        "comp_p_of_antisymm"
+      ],
+      "startLine": 18,
+      "endLine": 40
+    },
+    {
+      "id": "thm-3-3-7",
+      "number": "Theorem 3.3.7",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "Bilimits of expanding sequences",
+      "summary": "The bilimit carrier, projections, embeddings, limit cone, and colimit cocone are constructed for expanding sequences.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_7_expanding_sequence_bilimit_exists",
+        "theorem_3_3_7_expanding_sequence_bilimit",
+        "ExpandingSequence.BilimitTheoremFullData",
+        "theorem_3_3_7_expanding_sequence_bilimit_legacy",
+        "ExpandingSequence.BilimitTheoremData"
+      ],
+      "startLine": 4115,
+      "endLine": 4124
+    },
+    {
+      "id": "lemma-3-3-8",
+      "number": "Lemma 3.3.8",
+      "section": "3.3",
+      "kind": "Lemma",
+      "title": "Criterion for colimiting cocones",
+      "summary": "A cocone over an expanding sequence is colimiting exactly when it admits compatible projection legs and an e-p-pair decomposition.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "lemma_3_3_8_expanding_sequence_colimiting_cocone_criterion",
+        "ExpandingSequence.isColimitingCocone_of_epDecomposition",
+        "ExpandingSequence.ColimitingCoconeCriterionFull",
+        "ExpandingSequence.CoconeEPDecomposition"
+      ],
+      "startLine": 4538,
+      "endLine": 4558
+    },
+    {
+      "id": "prop-3-3-9",
+      "number": "Proposition 3.3.9",
+      "section": "3.3",
+      "kind": "Proposition",
+      "title": "Bilimit as a subdomain of any cocone carrier",
+      "summary": "For a colimiting cocone, the bilimit embeds as a subdomain of the cocone carrier through the canonical supremum map.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "prop_3_3_9_bilimit_subdomain_of_cocone",
+        "ExpandingSequence.bilimitSubdomainOf_of_embeddingData",
+        "ExpandingSequence.bilimitToCoconeSup_scottContinuous_of_embeddingData",
+        "toBilimitOfAntisymm"
+      ],
+      "startLine": 4580,
+      "endLine": 4596
+    },
+    {
+      "id": "cor-3-3-10",
+      "number": "Corollary 3.3.10",
+      "section": "3.3",
+      "kind": "Corollary",
+      "title": "Bilimits are colimits and limits in restricted categories",
+      "summary": "The bilimit of an expanding sequence is also the colimit and limit in the corresponding embedding/projection categories.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "cor_3_3_10_bilimit_colimit_embedding_projection",
+        "ExpandingSequence.RestrictedBilimitColimitData",
+        "ExpandingSequence.RestrictedBilimitColimitCoincidence"
+      ],
+      "startLine": 4611,
+      "endLine": 4639
+    },
+    {
+      "id": "thm-3-3-11",
+      "number": "Theorem 3.3.11",
+      "section": "3.3",
+      "kind": "Theorem",
+      "title": "Bilimits preserve continuity and algebraicity",
+      "summary": "Bilimits of expanding sequences preserve continuous, omega-continuous, algebraic, and omega-algebraic structure, with basis and compact-union clauses.",
+      "leanFile": "../Practice/DomainTheory/Chapter03/NumberedItems.lean",
+      "lean": [
+        "theorem_3_3_11_expanding_sequence_bilimit_preservation_full_exists",
+        "theorem_3_3_11_expanding_sequence_bilimit_preservation_full",
+        "ExpandingSequence.BilimitBasisUnion",
+        "ExpandingSequence.bilimitBasisUnion_isBasisRaw",
+        "ExpandingSequence.bilimitCompactSet_eq"
+      ],
+      "startLine": 4980,
+      "endLine": 4989
+    }
+  ]
+}

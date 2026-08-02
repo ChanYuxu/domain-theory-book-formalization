@@ -1,0 +1,1103 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "title": "Domain Theory",
+    "authors": [
+      "Samson Abramsky",
+      "Achim Jung"
+    ],
+    "edition": "Corrected and expanded version",
+    "pageNumbering": "one-based PDF pages",
+    "notice": "Locators only; no source PDF path or extracted prose is included."
+  },
+  "chapters": {
+    "2": {
+      "sourcePdfPages": [
+        10,
+        33
+      ],
+      "items": {
+        "def-2-1-1": {
+          "pdfPage": 10,
+          "block": "p10-b6"
+        },
+        "prop-2-1-2": {
+          "pdfPage": 10,
+          "block": "p10-b7"
+        },
+        "def-2-1-3": {
+          "pdfPage": 11,
+          "block": "p11-b17"
+        },
+        "prop-2-1-4": {
+          "pdfPage": 12,
+          "block": "p12-b2"
+        },
+        "prop-2-1-5": {
+          "pdfPage": 12,
+          "block": "p12-b5"
+        },
+        "def-2-1-6": {
+          "pdfPage": 13,
+          "block": "p13-b3"
+        },
+        "prop-2-1-7": {
+          "pdfPage": 13,
+          "block": "p13-b4"
+        },
+        "def-2-1-8": {
+          "pdfPage": 13,
+          "block": "p13-b7"
+        },
+        "prop-2-1-9": {
+          "pdfPage": 13,
+          "block": "p13-b8"
+        },
+        "def-2-1-10": {
+          "pdfPage": 14,
+          "block": "p14-b2"
+        },
+        "lemma-2-1-11": {
+          "pdfPage": 14,
+          "block": "p14-b3"
+        },
+        "prop-2-1-12": {
+          "pdfPage": 14,
+          "block": "p14-b11"
+        },
+        "def-2-1-13": {
+          "pdfPage": 15,
+          "block": "p15-b3"
+        },
+        "prop-2-1-15": {
+          "pdfPage": 15,
+          "block": "p15-b4"
+        },
+        "prop-2-1-16": {
+          "pdfPage": 15,
+          "block": "p15-b5"
+        },
+        "def-2-1-17": {
+          "pdfPage": 15,
+          "block": "p15-b7"
+        },
+        "prop-2-1-18": {
+          "pdfPage": 16,
+          "block": "p16-b2"
+        },
+        "thm-2-1-19": {
+          "pdfPage": 16,
+          "block": "p16-b10"
+        },
+        "lemma-2-1-20": {
+          "pdfPage": 17,
+          "block": "p17-b2"
+        },
+        "lemma-2-1-21": {
+          "pdfPage": 17,
+          "block": "p17-b3"
+        },
+        "def-2-2-1": {
+          "pdfPage": 18,
+          "block": "p18-b3"
+        },
+        "prop-2-2-2": {
+          "pdfPage": 18,
+          "block": "p18-b12"
+        },
+        "def-2-2-3": {
+          "pdfPage": 18,
+          "block": "p18-b14"
+        },
+        "prop-2-2-4": {
+          "pdfPage": 18,
+          "block": "p18-b15"
+        },
+        "cor-2-2-5": {
+          "pdfPage": 19,
+          "block": "p19-b2"
+        },
+        "def-2-2-6": {
+          "pdfPage": 19,
+          "block": "p19-b4"
+        },
+        "prop-2-2-7": {
+          "pdfPage": 19,
+          "block": "p19-b5"
+        },
+        "def-2-2-8": {
+          "pdfPage": 19,
+          "block": "p19-b11"
+        },
+        "prop-2-2-9": {
+          "pdfPage": 19,
+          "block": "p19-b12"
+        },
+        "prop-2-2-10": {
+          "pdfPage": 21,
+          "block": "p21-b23"
+        },
+        "prop-2-2-11": {
+          "pdfPage": 22,
+          "block": "p22-b1"
+        },
+        "prop-2-2-12": {
+          "pdfPage": 22,
+          "block": "p22-b2"
+        },
+        "prop-2-2-13": {
+          "pdfPage": 22,
+          "block": "p22-b6"
+        },
+        "prop-2-2-14": {
+          "pdfPage": 23,
+          "block": "p23-b1"
+        },
+        "lemma-2-2-15": {
+          "pdfPage": 24,
+          "block": "p24-b4"
+        },
+        "cor-2-2-16": {
+          "pdfPage": 25,
+          "block": "p25-b2"
+        },
+        "prop-2-2-17": {
+          "pdfPage": 25,
+          "block": "p25-b5"
+        },
+        "prop-2-2-18": {
+          "pdfPage": 25,
+          "block": "p25-b7"
+        },
+        "cor-2-2-19": {
+          "pdfPage": 25,
+          "block": "p25-b8"
+        },
+        "def-2-2-20": {
+          "pdfPage": 26,
+          "block": "p26-b4"
+        },
+        "def-2-2-21": {
+          "pdfPage": 27,
+          "block": "p27-b1"
+        },
+        "prop-2-2-22": {
+          "pdfPage": 27,
+          "block": "p27-b2"
+        },
+        "prop-2-2-23": {
+          "pdfPage": 27,
+          "block": "p27-b3"
+        },
+        "prop-2-2-24": {
+          "pdfPage": 27,
+          "block": "p27-b4"
+        },
+        "prop-2-2-25": {
+          "pdfPage": 28,
+          "block": "p28-b2"
+        },
+        "cor-2-2-26": {
+          "pdfPage": 28,
+          "block": "p28-b3"
+        },
+        "def-2-2-27": {
+          "pdfPage": 28,
+          "block": "p28-b4"
+        },
+        "thm-2-2-28": {
+          "pdfPage": 29,
+          "block": "p29-b2"
+        },
+        "thm-2-2-29": {
+          "pdfPage": 29,
+          "block": "p29-b3"
+        },
+        "def-2-3-1": {
+          "pdfPage": 29,
+          "block": "p29-b8"
+        },
+        "prop-2-3-2": {
+          "pdfPage": 29,
+          "block": "p29-b9"
+        },
+        "prop-2-3-3": {
+          "pdfPage": 30,
+          "block": "p30-b2"
+        },
+        "prop-2-3-4": {
+          "pdfPage": 30,
+          "block": "p30-b3"
+        },
+        "prop-2-3-5": {
+          "pdfPage": 30,
+          "block": "p30-b6"
+        },
+        "prop-2-3-6": {
+          "pdfPage": 30,
+          "block": "p30-b7"
+        },
+        "prop-2-3-7": {
+          "pdfPage": 31,
+          "block": "p31-b6"
+        },
+        "lemma-2-3-8": {
+          "pdfPage": 31,
+          "block": "p31-b7"
+        }
+      }
+    },
+    "3": {
+      "sourcePdfPages": [
+        34,
+        51
+      ],
+      "items": {
+        "def-3-1-1": {
+          "pdfPage": 34,
+          "block": "p34-b6"
+        },
+        "prop-3-1-2": {
+          "pdfPage": 34,
+          "block": "p34-b7"
+        },
+        "lemma-3-1-3": {
+          "pdfPage": 34,
+          "block": "p34-b9"
+        },
+        "thm-3-1-4": {
+          "pdfPage": 35,
+          "block": "p35-b2"
+        },
+        "thm-3-1-5": {
+          "pdfPage": 35,
+          "block": "p35-b3"
+        },
+        "prop-3-1-6": {
+          "pdfPage": 35,
+          "block": "p35-b4"
+        },
+        "prop-3-1-7": {
+          "pdfPage": 35,
+          "block": "p35-b7"
+        },
+        "prop-3-1-8": {
+          "pdfPage": 36,
+          "block": "p36-b35"
+        },
+        "def-3-1-9": {
+          "pdfPage": 37,
+          "block": "p37-b5"
+        },
+        "prop-3-1-10": {
+          "pdfPage": 37,
+          "block": "p37-b6"
+        },
+        "def-3-1-11": {
+          "pdfPage": 38,
+          "block": "p38-b2"
+        },
+        "prop-3-1-12": {
+          "pdfPage": 38,
+          "block": "p38-b3"
+        },
+        "prop-3-1-13": {
+          "pdfPage": 38,
+          "block": "p38-b4"
+        },
+        "prop-3-1-14": {
+          "pdfPage": 39,
+          "block": "p39-b2"
+        },
+        "def-3-1-15": {
+          "pdfPage": 39,
+          "block": "p39-b5"
+        },
+        "prop-3-1-16": {
+          "pdfPage": 39,
+          "block": "p39-b6"
+        },
+        "prop-3-1-17": {
+          "pdfPage": 40,
+          "block": "p40-b3"
+        },
+        "prop-3-1-18": {
+          "pdfPage": 41,
+          "block": "p41-b2"
+        },
+        "def-3-2-1": {
+          "pdfPage": 42,
+          "block": "p42-b3"
+        },
+        "prop-3-2-2": {
+          "pdfPage": 42,
+          "block": "p42-b4"
+        },
+        "prop-3-2-3": {
+          "pdfPage": 42,
+          "block": "p42-b5"
+        },
+        "prop-3-2-4": {
+          "pdfPage": 42,
+          "block": "p42-b6"
+        },
+        "lemma-3-2-5": {
+          "pdfPage": 42,
+          "block": "p42-b7"
+        },
+        "lemma-3-2-6": {
+          "pdfPage": 43,
+          "block": "p43-b2"
+        },
+        "lemma-3-2-7": {
+          "pdfPage": 44,
+          "block": "p44-b12"
+        },
+        "prop-3-2-8": {
+          "pdfPage": 44,
+          "block": "p44-b15"
+        },
+        "prop-3-2-9": {
+          "pdfPage": 45,
+          "block": "p45-b6"
+        },
+        "thm-3-3-1": {
+          "pdfPage": 46,
+          "block": "p46-b35"
+        },
+        "thm-3-3-2": {
+          "pdfPage": 47,
+          "block": "p47-b9"
+        },
+        "thm-3-3-3": {
+          "pdfPage": 47,
+          "block": "p47-b10"
+        },
+        "thm-3-3-4": {
+          "pdfPage": 47,
+          "block": "p47-b11"
+        },
+        "thm-3-3-5": {
+          "pdfPage": 47,
+          "block": "p47-b12"
+        },
+        "def-3-3-6": {
+          "pdfPage": 48,
+          "block": "p48-b2"
+        },
+        "thm-3-3-7": {
+          "pdfPage": 48,
+          "block": "p48-b3"
+        },
+        "lemma-3-3-8": {
+          "pdfPage": 50,
+          "block": "p50-b3"
+        },
+        "prop-3-3-9": {
+          "pdfPage": 51,
+          "block": "p51-b2"
+        },
+        "cor-3-3-10": {
+          "pdfPage": 51,
+          "block": "p51-b3"
+        },
+        "thm-3-3-11": {
+          "pdfPage": 51,
+          "block": "p51-b5"
+        }
+      }
+    },
+    "4": {
+      "sourcePdfPages": [
+        54,
+        66
+      ],
+      "items": {
+        "def-4-0-1": {
+          "pdfPage": 54,
+          "block": "p54-b2"
+        },
+        "prop-4-0-2": {
+          "pdfPage": 54,
+          "block": "p54-b3"
+        },
+        "def-4-1-1": {
+          "pdfPage": 55,
+          "block": "p55-b11"
+        },
+        "prop-4-1-2": {
+          "pdfPage": 56,
+          "block": "p56-b10"
+        },
+        "prop-4-1-3": {
+          "pdfPage": 56,
+          "block": "p56-b11"
+        },
+        "prop-4-1-4": {
+          "pdfPage": 57,
+          "block": "p57-b1"
+        },
+        "prop-4-1-5": {
+          "pdfPage": 57,
+          "block": "p57-b2"
+        },
+        "cor-4-1-6": {
+          "pdfPage": 57,
+          "block": "p57-b3"
+        },
+        "def-4-2-1": {
+          "pdfPage": 57,
+          "block": "p57-b9"
+        },
+        "def-4-2-2": {
+          "pdfPage": 58,
+          "block": "p58-b2"
+        },
+        "lemma-4-2-3": {
+          "pdfPage": 58,
+          "block": "p58-b3"
+        },
+        "prop-4-2-4": {
+          "pdfPage": 58,
+          "block": "p58-b4"
+        },
+        "prop-4-2-5": {
+          "pdfPage": 59,
+          "block": "p59-b11"
+        },
+        "thm-4-2-6": {
+          "pdfPage": 59,
+          "block": "p59-b13"
+        },
+        "thm-4-2-7": {
+          "pdfPage": 60,
+          "block": "p60-b2"
+        },
+        "thm-4-2-8": {
+          "pdfPage": 60,
+          "block": "p60-b3"
+        },
+        "def-4-2-9": {
+          "pdfPage": 60,
+          "block": "p60-b6"
+        },
+        "prop-4-2-10": {
+          "pdfPage": 61,
+          "block": "p61-b2"
+        },
+        "thm-4-2-11": {
+          "pdfPage": 61,
+          "block": "p61-b4"
+        },
+        "prop-4-2-12": {
+          "pdfPage": 61,
+          "block": "p61-b5"
+        },
+        "thm-4-2-13": {
+          "pdfPage": 62,
+          "block": "p62-b4"
+        },
+        "prop-4-2-14": {
+          "pdfPage": 62,
+          "block": "p62-b5"
+        },
+        "prop-4-2-15": {
+          "pdfPage": 62,
+          "block": "p62-b6"
+        },
+        "prop-4-2-16": {
+          "pdfPage": 62,
+          "block": "p62-b7"
+        },
+        "prop-4-2-17": {
+          "pdfPage": 63,
+          "block": "p63-b2"
+        },
+        "thm-4-2-18": {
+          "pdfPage": 63,
+          "block": "p63-b3"
+        },
+        "def-4-2-19": {
+          "pdfPage": 63,
+          "block": "p63-b4"
+        },
+        "prop-4-2-20": {
+          "pdfPage": 63,
+          "block": "p63-b5"
+        },
+        "lemma-4-3-1": {
+          "pdfPage": 64,
+          "block": "p64-b4"
+        },
+        "lemma-4-3-2": {
+          "pdfPage": 65,
+          "block": "p65-b2"
+        },
+        "thm-4-3-3": {
+          "pdfPage": 65,
+          "block": "p65-b3"
+        },
+        "thm-4-3-4": {
+          "pdfPage": 65,
+          "block": "p65-b4"
+        },
+        "thm-4-3-5": {
+          "pdfPage": 65,
+          "block": "p65-b5"
+        },
+        "lemma-4-3-6": {
+          "pdfPage": 65,
+          "block": "p65-b8"
+        },
+        "def-4-3-7": {
+          "pdfPage": 66,
+          "block": "p66-b1"
+        },
+        "prop-4-3-8": {
+          "pdfPage": 66,
+          "block": "p66-b2"
+        },
+        "lemma-4-3-9": {
+          "pdfPage": 66,
+          "block": "p66-b3"
+        },
+        "thm-4-3-10": {
+          "pdfPage": 66,
+          "block": "p66-b4"
+        }
+      }
+    },
+    "5": {
+      "sourcePdfPages": [
+        68,
+        84
+      ],
+      "items": {
+        "def-5-1-1": {
+          "pdfPage": 69,
+          "block": "p69-b4"
+        },
+        "lemma-5-1-2": {
+          "pdfPage": 69,
+          "block": "p69-b10"
+        },
+        "def-5-2-1": {
+          "pdfPage": 70,
+          "block": "p70-b6"
+        },
+        "lemma-5-2-2": {
+          "pdfPage": 71,
+          "block": "p71-b2"
+        },
+        "def-5-2-3": {
+          "pdfPage": 71,
+          "block": "p71-b13"
+        },
+        "prop-5-2-4": {
+          "pdfPage": 71,
+          "block": "p71-b14"
+        },
+        "def-5-2-5": {
+          "pdfPage": 72,
+          "block": "p72-b2"
+        },
+        "prop-5-2-6": {
+          "pdfPage": 72,
+          "block": "p72-b4"
+        },
+        "prop-5-2-7": {
+          "pdfPage": 73,
+          "block": "p73-b5"
+        },
+        "lemma-5-3-1": {
+          "pdfPage": 74,
+          "block": "p74-b15"
+        },
+        "thm-5-3-2": {
+          "pdfPage": 75,
+          "block": "p75-b4"
+        },
+        "thm-5-3-3": {
+          "pdfPage": 76,
+          "block": "p76-b4"
+        },
+        "thm-5-3-4": {
+          "pdfPage": 77,
+          "block": "p77-b2"
+        },
+        "thm-5-3-5": {
+          "pdfPage": 77,
+          "block": "p77-b7"
+        },
+        "lemma-5-3-6": {
+          "pdfPage": 77,
+          "block": "p77-b10"
+        },
+        "thm-5-3-7": {
+          "pdfPage": 78,
+          "block": "p78-b3"
+        },
+        "thm-5-3-8": {
+          "pdfPage": 79,
+          "block": "p79-b1"
+        },
+        "thm-5-3-9": {
+          "pdfPage": 79,
+          "block": "p79-b2"
+        },
+        "def-5-4-1": {
+          "pdfPage": 80,
+          "block": "p80-b4"
+        },
+        "prop-5-4-2": {
+          "pdfPage": 80,
+          "block": "p80-b5"
+        },
+        "def-5-4-3": {
+          "pdfPage": 80,
+          "block": "p80-b6"
+        },
+        "prop-5-4-4": {
+          "pdfPage": 81,
+          "block": "p81-b2"
+        },
+        "thm-5-4-5": {
+          "pdfPage": 81,
+          "block": "p81-b3"
+        },
+        "def-5-4-6": {
+          "pdfPage": 81,
+          "block": "p81-b12"
+        },
+        "thm-5-4-7": {
+          "pdfPage": 81,
+          "block": "p81-b13"
+        },
+        "def-5-4-8": {
+          "pdfPage": 82,
+          "block": "p82-b11"
+        },
+        "thm-5-4-9": {
+          "pdfPage": 82,
+          "block": "p82-b12"
+        },
+        "cor-5-4-10": {
+          "pdfPage": 82,
+          "block": "p82-b13"
+        }
+      }
+    },
+    "6": {
+      "sourcePdfPages": [
+        85,
+        105
+      ],
+      "items": {
+        "prop-6-1-1": {
+          "pdfPage": 86,
+          "block": "p86-b2"
+        },
+        "thm-6-1-2": {
+          "pdfPage": 86,
+          "block": "p86-b3"
+        },
+        "prop-6-1-3": {
+          "pdfPage": 88,
+          "block": "p88-b2"
+        },
+        "prop-6-1-4": {
+          "pdfPage": 88,
+          "block": "p88-b3"
+        },
+        "lemma-6-1-5": {
+          "pdfPage": 89,
+          "block": "p89-b3"
+        },
+        "thm-6-1-6": {
+          "pdfPage": 89,
+          "block": "p89-b7"
+        },
+        "thm-6-1-7": {
+          "pdfPage": 90,
+          "block": "p90-b7"
+        },
+        "prop-6-1-8": {
+          "pdfPage": 91,
+          "block": "p91-b1"
+        },
+        "thm-6-1-9": {
+          "pdfPage": 91,
+          "block": "p91-b8"
+        },
+        "thm-6-1-10": {
+          "pdfPage": 91,
+          "block": "p91-b9"
+        },
+        "prop-6-1-11": {
+          "pdfPage": 92,
+          "block": "p92-b1"
+        },
+        "def-6-1-12": {
+          "pdfPage": 92,
+          "block": "p92-b4"
+        },
+        "thm-6-1-13": {
+          "pdfPage": 92,
+          "block": "p92-b5"
+        },
+        "prop-6-1-14": {
+          "pdfPage": 93,
+          "block": "p93-b2"
+        },
+        "def-6-2-1": {
+          "pdfPage": 93,
+          "block": "p93-b7"
+        },
+        "def-6-2-2": {
+          "pdfPage": 94,
+          "block": "p94-b2"
+        },
+        "thm-6-2-3": {
+          "pdfPage": 94,
+          "block": "p94-b9"
+        },
+        "def-6-2-4": {
+          "pdfPage": 95,
+          "block": "p95-b2"
+        },
+        "prop-6-2-5": {
+          "pdfPage": 95,
+          "block": "p95-b3"
+        },
+        "prop-6-2-6": {
+          "pdfPage": 95,
+          "block": "p95-b5"
+        },
+        "def-6-2-7": {
+          "pdfPage": 96,
+          "block": "p96-b3"
+        },
+        "prop-6-2-8": {
+          "pdfPage": 96,
+          "block": "p96-b4"
+        },
+        "prop-6-2-9": {
+          "pdfPage": 96,
+          "block": "p96-b5"
+        },
+        "thm-6-2-10": {
+          "pdfPage": 97,
+          "block": "p97-b2"
+        },
+        "prop-6-2-11": {
+          "pdfPage": 97,
+          "block": "p97-b3"
+        },
+        "prop-6-2-12": {
+          "pdfPage": 97,
+          "block": "p97-b4"
+        },
+        "thm-6-2-13": {
+          "pdfPage": 98,
+          "block": "p98-b1"
+        },
+        "thm-6-2-14": {
+          "pdfPage": 98,
+          "block": "p98-b2"
+        },
+        "cor-6-2-15": {
+          "pdfPage": 99,
+          "block": "p99-b2"
+        },
+        "def-6-2-16": {
+          "pdfPage": 99,
+          "block": "p99-b3"
+        },
+        "prop-6-2-17": {
+          "pdfPage": 100,
+          "block": "p100-b1"
+        },
+        "lemma-6-2-18": {
+          "pdfPage": 100,
+          "block": "p100-b2"
+        },
+        "thm-6-2-19": {
+          "pdfPage": 100,
+          "block": "p100-b3"
+        },
+        "lemma-6-2-20": {
+          "pdfPage": 102,
+          "block": "p102-b4"
+        },
+        "cor-6-2-21": {
+          "pdfPage": 102,
+          "block": "p102-b5"
+        },
+        "thm-6-2-22": {
+          "pdfPage": 102,
+          "block": "p102-b6"
+        }
+      }
+    },
+    "7": {
+      "sourcePdfPages": [
+        106,
+        143
+      ],
+      "items": {
+        "thm-7-1-1": {
+          "pdfPage": 107,
+          "block": "p107-b6"
+        },
+        "def-7-1-2": {
+          "pdfPage": 107,
+          "block": "p107-b11"
+        },
+        "thm-7-1-3": {
+          "pdfPage": 108,
+          "block": "p108-b2"
+        },
+        "def-7-1-4": {
+          "pdfPage": 108,
+          "block": "p108-b3"
+        },
+        "def-7-1-5": {
+          "pdfPage": 108,
+          "block": "p108-b5"
+        },
+        "prop-7-1-6": {
+          "pdfPage": 108,
+          "block": "p108-b6"
+        },
+        "thm-7-1-7": {
+          "pdfPage": 108,
+          "block": "p108-b7"
+        },
+        "thm-7-1-8": {
+          "pdfPage": 108,
+          "block": "p108-b8"
+        },
+        "def-7-1-9": {
+          "pdfPage": 109,
+          "block": "p109-b16"
+        },
+        "def-7-1-10": {
+          "pdfPage": 110,
+          "block": "p110-b15"
+        },
+        "prop-7-1-11": {
+          "pdfPage": 110,
+          "block": "p110-b16"
+        },
+        "def-7-1-12": {
+          "pdfPage": 111,
+          "block": "p111-b1"
+        },
+        "prop-7-1-13": {
+          "pdfPage": 111,
+          "block": "p111-b2"
+        },
+        "thm-7-1-14": {
+          "pdfPage": 111,
+          "block": "p111-b6"
+        },
+        "def-7-2-1": {
+          "pdfPage": 112,
+          "block": "p112-b22"
+        },
+        "prop-7-2-2": {
+          "pdfPage": 112,
+          "block": "p112-b23"
+        },
+        "def-7-2-3": {
+          "pdfPage": 113,
+          "block": "p113-b1"
+        },
+        "prop-7-2-4": {
+          "pdfPage": 113,
+          "block": "p113-b2"
+        },
+        "def-7-2-5": {
+          "pdfPage": 113,
+          "block": "p113-b3"
+        },
+        "thm-7-2-6": {
+          "pdfPage": 113,
+          "block": "p113-b4"
+        },
+        "thm-7-2-7": {
+          "pdfPage": 113,
+          "block": "p113-b5"
+        },
+        "cor-7-2-8": {
+          "pdfPage": 114,
+          "block": "p114-b2"
+        },
+        "thm-7-2-9": {
+          "pdfPage": 114,
+          "block": "p114-b5"
+        },
+        "cor-7-2-10": {
+          "pdfPage": 115,
+          "block": "p115-b2"
+        },
+        "cor-7-2-11": {
+          "pdfPage": 115,
+          "block": "p115-b3"
+        },
+        "prop-7-2-12": {
+          "pdfPage": 115,
+          "block": "p115-b4"
+        },
+        "prop-7-2-13": {
+          "pdfPage": 115,
+          "block": "p115-b5"
+        },
+        "thm-7-2-14": {
+          "pdfPage": 115,
+          "block": "p115-b6"
+        },
+        "lemma-7-2-15": {
+          "pdfPage": 116,
+          "block": "p116-b5"
+        },
+        "thm-7-2-16": {
+          "pdfPage": 116,
+          "block": "p116-b6"
+        },
+        "def-7-2-17": {
+          "pdfPage": 117,
+          "block": "p117-b4"
+        },
+        "def-7-2-18": {
+          "pdfPage": 117,
+          "block": "p117-b5"
+        },
+        "thm-7-2-19": {
+          "pdfPage": 117,
+          "block": "p117-b6"
+        },
+        "thm-7-2-20": {
+          "pdfPage": 117,
+          "block": "p117-b9"
+        },
+        "def-7-2-21": {
+          "pdfPage": 117,
+          "block": "p117-b10"
+        },
+        "thm-7-2-22": {
+          "pdfPage": 117,
+          "block": "p117-b11"
+        },
+        "prop-7-2-23": {
+          "pdfPage": 117,
+          "block": "p117-b12"
+        },
+        "def-7-2-24": {
+          "pdfPage": 118,
+          "block": "p118-b2"
+        },
+        "prop-7-2-25": {
+          "pdfPage": 118,
+          "block": "p118-b3"
+        },
+        "thm-7-2-26": {
+          "pdfPage": 118,
+          "block": "p118-b4"
+        },
+        "prop-7-2-27": {
+          "pdfPage": 119,
+          "block": "p119-b6"
+        },
+        "thm-7-2-28": {
+          "pdfPage": 119,
+          "block": "p119-b8"
+        },
+        "thm-7-2-29": {
+          "pdfPage": 120,
+          "block": "p120-b2"
+        },
+        "thm-7-2-30": {
+          "pdfPage": 120,
+          "block": "p120-b3"
+        },
+        "thm-7-2-31": {
+          "pdfPage": 121,
+          "block": "p121-b2"
+        },
+        "def-7-3-1": {
+          "pdfPage": 123,
+          "block": "p123-b12"
+        },
+        "def-7-3-2": {
+          "pdfPage": 124,
+          "block": "p124-b2"
+        },
+        "prop-7-3-3": {
+          "pdfPage": 125,
+          "block": "p125-b9"
+        },
+        "thm-7-3-4": {
+          "pdfPage": 125,
+          "block": "p125-b10"
+        },
+        "def-7-3-5": {
+          "pdfPage": 125,
+          "block": "p125-b11"
+        },
+        "prop-7-3-6": {
+          "pdfPage": 126,
+          "block": "p126-b2"
+        },
+        "cor-7-3-7": {
+          "pdfPage": 126,
+          "block": "p126-b5"
+        },
+        "lemma-7-3-8": {
+          "pdfPage": 130,
+          "block": "p130-b4"
+        },
+        "lemma-7-3-9": {
+          "pdfPage": 130,
+          "block": "p130-b5"
+        },
+        "thm-7-3-10": {
+          "pdfPage": 132,
+          "block": "p132-b4"
+        },
+        "lemma-7-3-11": {
+          "pdfPage": 133,
+          "block": "p133-b2"
+        },
+        "def-7-3-12": {
+          "pdfPage": 133,
+          "block": "p133-b6"
+        },
+        "thm-7-3-13": {
+          "pdfPage": 135,
+          "block": "p135-b20"
+        },
+        "thm-7-3-14": {
+          "pdfPage": 136,
+          "block": "p136-b14"
+        },
+        "thm-7-3-15": {
+          "pdfPage": 138,
+          "block": "p138-b13"
+        },
+        "thm-7-3-16": {
+          "pdfPage": 139,
+          "block": "p139-b17"
+        },
+        "thm-7-3-17": {
+          "pdfPage": 139,
+          "block": "p139-b18"
+        },
+        "thm-7-3-18": {
+          "pdfPage": 143,
+          "block": "p143-b2"
+        }
+      }
+    }
+  }
+}

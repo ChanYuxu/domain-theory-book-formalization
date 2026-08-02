@@ -1,0 +1,544 @@
+{
+  "notice": "Reviewed TeX snippets for Chapter 2 items. Ordinary prose remains generated from the local PDF unless a block override below records an OCR-assisted review.",
+  "blocks": {
+    "p10-b8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 10",
+      "skipBlocksAfter": 7,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\setlength{\\tabcolsep}{1.8em}\n\\begin{tabular}{ccc}\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.6pt}}\n  \\node[dot,label=above:{true}] (t) at (-0.75,1.0) {};\n  \\node[dot,label=above:{false}] (f) at (0.75,1.0) {};\n  \\node[dot,label=below:{$\\bot$}] (b) at (0,0) {};\n  \\draw (b)--(t) (b)--(f);\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.6pt}}\n  \\node[dot] (top) at (0,1.7) {};\n  \\node[dot] (l) at (-1.0,0.85) {};\n  \\node[dot] (r) at (1.0,0.85) {};\n  \\node[dot] (bot) at (0,0) {};\n  \\draw (bot)--(l)--(top)--(r)--(bot);\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.6pt}}\n  \\node[dot] (a) at (0,0) {};\n  \\node[dot] (b) at (0,0.6) {};\n  \\node[dot] (c) at (0,1.2) {};\n  \\node[dot] (d) at (0,1.8) {};\n  \\draw (a)--(b)--(c)--(d);\n\\end{tikzpicture}\n\\\\[-0.1em]\nThe flat booleans & The four-element lattice & The four-element chain\n\\end{tabular}\n\\caption*{Figure 1: A few posets drawn as line diagrams.}\n\\end{figure}"
+    },
+    "p11-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 11",
+      "skipBlocksAfter": 13,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\setlength{\\tabcolsep}{2.1em}\n\\begin{tabular}{ccc}\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.4pt}}\n  \\foreach \\y/\\lab in {0/0,0.65/1,1.3/2} {\\node[dot,label=right:{$\\lab$}] at (0,\\y) {};}\n  \\draw (0,0)--(0,1.3);\n  \\draw[dotted,line width=0.8pt] (0,1.48)--(0,2.02);\n  \\node[dot,label=right:{$\\omega$}] at (0,2.25) {};\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.4pt}}\n  \\node[dot,label=below:{$\\bot$}] (bot) at (0,0) {};\n  \\foreach \\x/\\lab in {-1.35/0,-0.45/1,0.45/2,1.35/3} {\n    \\node[dot,label=above:{$\\lab$}] (p\\lab) at (\\x,0.95) {};\n    \\draw (bot)--(p\\lab);\n  }\n  \\node at (1.95,0.95) {$\\cdots$};\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.4pt}}\n  \\node[dot] (b0) at (0,0) {};\n  \\node[dot,label=left:{$0$}] (z) at (-0.65,0.72) {};\n  \\node[dot] (b1) at (0.2,1.42) {};\n  \\node[dot,label=left:{$1$}] (o) at (-0.45,2.1) {};\n  \\node[dot] (b2) at (0.4,2.8) {};\n  \\node[dot,label=left:{$2$}] (t) at (-0.25,3.45) {};\n  \\draw (b0)--(z)--(b1)--(o)--(b2)--(t);\n  \\draw[dotted,line width=0.8pt] (b2)--(0.95,3.55);\n  \\node[dot] at (1.1,3.85) {};\n\\end{tikzpicture}\n\\\\[-0.1em]\nordinal & flat & lazy\n\\end{tabular}\n\\caption*{Figure 2: Three versions of the natural numbers.}\n\\end{figure}\n\n\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.72]\n  \\tikzset{class/.style={draw,rounded corners=8pt,minimum width=1.55cm,minimum height=0.42cm}, dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.0pt}}\n  \\node[class] (top) at (0,2.1) {$\\circ$};\n  \\node[class] (left) at (-1.35,1.05) {$\\circ\\quad\\circ\\quad\\circ$};\n  \\node[class] (right) at (1.35,1.05) {$\\circ\\quad\\circ$};\n  \\node[class] (bot) at (0,0) {$\\circ\\quad\\circ\\quad\\circ\\quad\\circ$};\n  \\draw (bot)--(left)--(top)--(right)--(bot);\n\\end{tikzpicture}\n\\caption*{Figure 3: A preorder whose canonical quotient is the four-element lattice.}\n\\end{figure}\n\nOne consequence of this observation is that each of the concepts introduced below has a dual counterpart."
+    },
+    "p17-b23": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 17",
+      "tex": "In the last subsection we have explained the kind of limits that domain theory deals with, namely, suprema of directed sets. We could have said much more about these ``convergence spaces'' called dcpo's, but the topic can easily become esoteric and lose its connection with computing. For example, the cardinality of dcpo's has not yet been restricted, and indeed we did not have the tools to do so sensibly. In this subsection we introduce the idea that elements are composed of, or approximated by, simple pieces. This will enrich our theory immensely and will also give the desired connection to semantics."
+    },
+    "p20-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 20",
+      "tex": "Given a group, or more generally an algebra in the sense of universal algebra, there are two canonical inductive closure systems associated with it: the lattice of subgroups (subalgebras) and the lattice of normal subgroups (congruence relations).\n\nOther standard examples of algebraic domains are:\n\\begin{itemize}\n\\item Any set with the discrete order is an algebraic domain. In semantics one usually adds a bottom element, standing for divergence, resulting in flat domains. The flat natural numbers are shown in Figure 2. A basis must in either case contain all elements.\n\\item The set $[X\\to Y]$ of partial functions between sets $X$ and $Y$, ordered by graph inclusion. Compact elements are those functions which have a finite carrier. It is naturally isomorphic to $[X\\to Y_\\bot]$ and to $[X_\\bot\\xrightarrow{\\bot!}Y_\\bot]$.\n\\item Every finite poset.\n\\end{itemize}\n\nContinuous domains include:\n\\begin{itemize}\n\\item Every algebraic dcpo. The order of approximation is characterized by $x\\ll y$ iff there exists a compact element $c$ between $x$ and $y$.\n\\item The unit interval, as a continuous lattice. Equivalently, one may model the real line by closed finite-length intervals ordered by reverse inclusion; singleton intervals are maximal, and intervals with rational endpoints form a countable basis.\n\\item The lattice of open subsets of a sober space $X$, which is continuous iff $X$ is locally compact. Compact Hausdorff spaces are a special case. Here $O\\ll U$ holds iff there exists a compact set $C$ such that $O\\subseteq C\\subseteq U$.\n\\end{itemize}\n\nThe non-continuous dcpo $D$ in Figure 4 has empty order of approximation. Pairs $(a_i,b_j)$ and $(b_i,a_j)$ cannot approximate because they are not ordered; two points $a_i\\sqsubseteq a_j$ on the same leg still fail to approximate because $(b_n)_{n\\in\\mathbb{N}}$ is directed with supremum above $a_j$ but contains no element above $a_i$.\n\nA non-continuous complete lattice due to Paul B. Levy appears in Exercise 2.3.9(35). A non-continuous distributive complete lattice is harder to draw as a line diagram; it arises from the topology of a sober space that is not locally compact, as discussed in Exercise 2.3.9(21)."
+    },
+    "p21-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 21",
+      "skipBlocksAfter": 10,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\setlength{\\tabcolsep}{2.6em}\n\\begin{tabular}{cc}\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.4pt}}\n  \\node at (-2.45,0.1) {$D:$};\n  \\node[dot,label=below:{$a_0$}] (a0) at (-1.2,0) {};\n  \\node[dot,label=left:{$a_1$}] (a1) at (-0.85,0.75) {};\n  \\node[dot,label=left:{$a_2$}] (a2) at (-0.5,1.5) {};\n  \\draw (a0)--(a1)--(a2);\n  \\draw[dotted,line width=0.8pt] (a2)--(-0.05,2.45);\n  \\node[dot,label=right:{$\\top$}] (top) at (0.25,2.85) {};\n  \\node[dot,label=right:{$b_2$}] (b2) at (0.9,1.5) {};\n  \\node[dot,label=right:{$b_1$}] (b1) at (1.25,0.75) {};\n  \\node[dot,label=right:{$b_0$}] (b0) at (1.6,0) {};\n  \\draw (b0)--(b1)--(b2);\n  \\draw[dotted,line width=0.8pt] (b2)--(0.55,2.45);\n\\end{tikzpicture}\n&\n\\begin{tikzpicture}[scale=0.72,baseline=(current bounding box.center)]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.4pt}}\n  \\node at (-1.1,0.1) {$E:$};\n  \\foreach \\x in {0,0.45} {\n    \\node[dot] at (\\x,0) {};\n    \\node[dot] at (\\x,0.72) {};\n    \\node[dot] at (\\x,1.44) {};\n    \\draw (\\x,0)--(\\x,1.44);\n    \\draw[dotted,line width=0.8pt] (\\x,1.62)--(\\x,2.2);\n    \\node[dot] at (\\x,2.55) {};\n  }\n\\end{tikzpicture}\n\\end{tabular}\n\\caption*{Figure 4: A continuous ($E$) and a non-continuous ($D$) dcpo.}\n\\end{figure}"
+    },
+    "p21-b12": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 21",
+      "skipBlocksAfter": 10,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.76]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.6pt}}\n  \\draw (-2.9,1.85)--(0,-1.05)--(2.9,1.85)--cycle;\n  \\draw (-1.55,-0.28)--(-0.18,1.25)--(1.1,-0.3);\n  \\draw (-0.55,-0.72)--(0.85,1.45)--(2.05,-0.75);\n  \\node[dot,label=above left:{$x$}] at (-0.18,1.25) {};\n  \\node[dot,label=above right:{$y$}] at (0.85,1.45) {};\n  \\node[dot,label=right:{$b$}] at (0.02,0.35) {};\n  \\draw (-2.15,-0.32)--(-1.05,-0.32);\n  \\node[left] at (-2.15,-0.32) {$\\downarrow x\\setminus\\downarrow y$};\n  \\draw (1.15,-0.72)--(2.0,-0.72);\n  \\node[right] at (2.0,-0.72) {$\\downarrow y$};\n\\end{tikzpicture}\n\\caption*{Figure 5: Basis element $b$ witnesses that $x$ is not below $y$.}\n\\end{figure}\n\nIf $D$ is pointed then the order of approximation is non-empty because a bottom element approximates every other element.\n\nA basis not only gives approximations for elements, it also approximates the order relation:"
+    },
+    "p23-b4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 23-24",
+      "skipBlocksAfter": 1,
+      "tex": "If we drop the crucial assumption about the countability of the basis then the two theories bifurcate and, in our opinion, the theory based on $\\omega$-chains becomes rather bizarre. To give just one illustration, observe that simple objects, such as powersets, may fail to be algebraic domains. There remains the question, however, whether in the realm of a mathematical theory of computation one should start with $\\omega$-chains. Arguments in favor of this approach point to pedagogy and foundations. The pedagogical aspect is somewhat weakened by the fact that even in a continuous $\\omega$-ccpo the sets $\\downarrow x$ happen to be directed. Glossing over this fact would tend to mislead the student. In our eyes, the right middle ground for a course on domain theory would be to start with $\\omega$-chains and motivations from semantics and then, at some point, switch to directed sets as the more general concept.\n\nTurning to foundations, we feel that the necessity to choose chains where directed subsets are naturally available, such as in function spaces, and thus to rely on the Axiom of Choice without need, is a serious stain on this approach. Taking foundational questions seriously implies a much deeper re-working of the theory; some pointers to the literature will be found in Section 8. We do not feel the need to say much about chains of arbitrary cardinality. This adds nothing in strength, by Proposition 2.1.15, but has all the disadvantages pointed out for $\\omega$-chains already.\n\n\\emph{Bases vs. intrinsic descriptions.} The definition of a continuous domain given here differs from, and is in fact more complicated than, the standard one presented as Proposition 2.2.7(1). We nevertheless preferred this approach to the concept of approximation for three reasons. Firstly, the standard definition does not allow the restriction of the size of continuous domains; the minimal cardinality of a basis is often the quantity of interest. Secondly, we wanted to point out the strong analogy between algebraic and continuous domains: the proofs given so far for continuous domains specialize directly to the algebraic case if one replaces $B$ by $K(D)$. Thirdly, we wanted to stress the idea of approximation by elements which are, for whatever reason, simpler than others.\n\n\\emph{Algebraic vs. continuous.} This brings up the question of why one bothers with continuous domains at all. There are two important reasons, depending on later definitions: the simplification stemming from the possibility of freely using retracts, and the observation that in algebraic domains Scott-open sets and compact saturated sets essentially coincide. Distinguishing the two notions is pedagogically useful.\n\n\\emph{Continuous dcpo vs. continuous domain.} It is common practice to assign the name ``domain'' to the subclass of dcpos of interest. In this text, however, the most general structure studied is a dcpo, and ``domain'' refers to both ideas essential to the theory: convergence and approximation."
+    },
+    "p25-b10": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 25-26",
+      "tex": "In Section 2.2.2 we have seen how we can use bases in order to express properties of the ambient domain. We will now study the question of how far we can reduce domain theory to a theory of (abstract) bases. The resulting techniques will prove useful in later chapters but we hope that they will also deepen the reader's understanding of the nature of domains."
+    },
+    "p26-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 26",
+      "skipBlocksAfter": 2,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.72]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.6pt}}\n  \\node[dot] (top) at (0,2.4) {};\n  \\node[dot,label=left:{$a$}] (a) at (-0.9,1.55) {};\n  \\node[dot,label=right:{$b$}] (b) at (0.9,1.55) {};\n  \\node[dot] (meet) at (0,0.72) {};\n  \\draw (meet)--(a)--(top)--(b)--(meet);\n  \\draw[dotted,line width=0.8pt] (meet)--(0,-0.05);\n  \\node[dot] (c1) at (0,-0.65) {};\n  \\node[dot] (c2) at (0,-1.32) {};\n  \\node[dot] (c3) at (0,-2.0) {};\n  \\draw (c1)--(c2)--(c3);\n\\end{tikzpicture}\n\\caption*{Figure 6: The meet of the compact elements $a$ and $b$ is not compact.}\n\\end{figure}\n\nWe start with the question of what additional information is necessary in order to reconstruct a domain from one of its bases."
+    },
+    "p31-b8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 31",
+      "tex": "\\textbf{Exercises 2.3.9.}\n\\begin{enumerate}\n\\item Formalize the passage from preorders to their quotient posets."
+    },
+    "p31-b9": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 31",
+      "tex": "\\item Draw line diagrams of the powersets of a one, two, three, and four element set.\n\\item Show that a poset which has all suprema also has all infima, and vice versa.\n\\item Refine Proposition 2.1.7 by showing that the fixpoints of a monotone function on a complete lattice form a complete lattice. Is it a sublattice?\n\\item Show that finite directed sets have a largest element. Characterize the class of posets in which this is true for every directed set.\n\\item Show that the directed set of finite subsets of real numbers does not contain a cofinal chain.\n\\item Which of the following are dcpo's: $\\mathbb{R}$, $[0,1]$ (unit interval), $\\mathbb{Q}$, $\\mathbb{Z}^{-}$ (negative integers)?\n\\item Let $f$ be a monotone map between complete lattices $L$ and $M$ and let $A$ be a subset of $L$. Prove: $f(\\bigvee A)\\sqsupseteq \\bigvee f(A)$."
+    },
+    "p32-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 32",
+      "tex": "\\item Show that the category of posets and monotone functions forms a cartesian closed category.\n\\item Draw the line diagram for the function space of the flat booleans (see Figure 1).\n\\item Show that an ideal in a (binary) product of posets can always be seen as the product of two ideals from the individual posets.\n\\item Show that a map $f$ between two dcpo's $D$ and $E$ is continuous if and only if for all directed sets $A$ in $D$,\n\\[\n  f\\left(\\bigvee^{\\uparrow} A\\right)=\\bigvee^{\\uparrow} f(A)\n\\]\nholds (i.e., monotonicity does not need to be required explicitly).\n\\item Give an example of a monotone map $f$ on a pointed dcpo $D$ for which\n\\[\n  \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} f^n(\\bot)\n\\]\nis not a fixpoint. Some fixpoint must exist by Proposition 2.1.16.\n\\item Use fixpoint induction to prove the following. Let $f,g:D\\to D$ be continuous functions on a pointed dcpo $D$ with $f(\\bot)=g(\\bot)$, and $f\\circ g=g\\circ f$. Then $\\operatorname{fix}(f)=\\operatorname{fix}(g)$."
+    },
+    "p32-b2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 32",
+      "tex": "\\item (Dinaturality of fixpoints) Let $D,E$ be pointed dcpo's and let $f:D\\to E$, $g:E\\to D$ be continuous functions. Prove\n\\[\n  \\operatorname{fix}(g\\circ f)=g\\bigl(\\operatorname{fix}(f\\circ g)\\bigr).\n\\]\n\\item Show that Lemma 2.1.21 uniquely characterizes $\\operatorname{fix}$ among all fixpoint operators.\n\\item Prove: Given pointed dcpo's $D$ and $E$ and a continuous function $f:D\\times E\\to E$ there is a continuous function $Y(f):D\\to E$ such that\n\\[\n  Y(f)=f\\circ\\langle\\operatorname{id}_D,Y(f)\\rangle\n\\]\nholds. This is the general definition of a category having fixpoints. How does Theorem 2.1.19 follow from this?\n\\item Show that each version of the natural numbers as shown in Figure 2 is an example of a countable dcpo whose function space is uncountable.\n\\item Characterize the order of approximation on the unit interval. What are the compact elements?\n\\item Show that in finite posets every element is compact.\n\\item Let $L$ be the lattice of open sets of $\\mathbb{Q}$, where $\\mathbb{Q}$ is equipped with the ordinary metric topology. Show that no two non-empty open sets approximate each other. Conclude that $L$ is not continuous.\n\\item Prove Proposition 2.2.10.\n\\item Extend Proposition 2.2.10 in the following way: For every finite subset $M$ of a continuous dcpo $D$ with basis $B$ there exists $M'\\subseteq B$, such that $x\\mapsto x'$ is an order-isomorphism between $M$ and $M'$ and such that for all $x\\in M$, the element $x'$ belongs to $B_x$.\n\\item Prove Proposition 2.2.17."
+    },
+    "p33-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 33",
+      "tex": "\\item Show that elements of an abstract basis, which approximate no other element, may be deleted without changing the ideal completion.\n\\item Show that if $x$ is a non-compact element of a basis $B$ for a continuous domain $D$ then $B\\setminus\\{x\\}$ is still a basis. (Hint: Use the interpolation property.)\n\\item The preceding exercise shows that different bases can generate the same domain. Show that for a fixed basis different orders of approximation may also yield the same domain. Show that this will definitely be the case if the two orders $\\prec_1$ and $\\prec_2$ satisfy the equations $\\prec_1\\circ\\prec_2=\\prec_1$ and $\\prec_2\\circ\\prec_1=\\prec_2$.\n\\item Consider Proposition 2.2.22(2). Give an example of an abstract basis $B$ which shows that $i(x)\\ll i(y)$ in $\\operatorname{Idl}(B)$ does not entail $x\\prec y$.\n\\item What is the ideal completion of $\\langle\\mathbb{Q},<\\rangle$?\n\\item Let $\\prec$ be a relation on a set $B$ such that $\\prec\\circ\\prec=\\prec$ holds. Give an example showing that Axiom (INT) (Definition 2.2.20) need not be satisfied. Nevertheless, $\\operatorname{Idl}(B,\\prec)$ is a continuous domain. What is the advantage of our axiomatization over this simpler concept?\n\\item Spell out the proof of Theorem 2.2.28.\n\\item Prove that in a dcpo every upper set is the intersection of its Scott-neighborhoods.\n\\item Show that in order to construct the Scott-closure of a lower set $A$ of a continuous domain it is sufficient to add all suprema of directed subsets to $\\downarrow A$. Give an example of a non-continuous dcpo where this fails.\n\\item Given a subset $X$ in a dcpo $D$ let $\\overline X$ be the smallest superset of $X$ which is closed against the formation of suprema of directed subsets. Show that the cardinality of $\\overline X$ can be no greater than $2^{|X|}$. (Hint: Construct a directed suprema closed superset of $X$ by adding all existing suprema to $X$.)\n\\item \\textnormal{[Suggested by Paul B. Levy]} Consider the set $\\operatorname{Equ}^{op}$ of equivalence relations on $\\mathbb{N}$, ordered by reverse inclusion with smallest element $\\bot=\\mathbb{N}\\times\\mathbb{N}$ and largest element the equality on $\\mathbb{N}$, denoted by $\\Delta$.\n\\begin{enumerate}\n\\item Show that $\\operatorname{Equ}^{op}$ is a complete lattice.\n\\item Show that $R\\ll S$ in $\\operatorname{Equ}^{op}$, iff $R=\\bot$.\n\\item Conclude that $\\operatorname{Equ}^{op}$ is not a continuous domain.\n\\item Prove that the map $\\operatorname{card}:\\operatorname{Equ}^{op}\\to\\omega$, which assigns to an equivalence relation its number of equivalence classes, is Scott-continuous.\n\\item Show that every countable ordinal can be order-embedded into $\\operatorname{Equ}^{op}$.\n\\end{enumerate}\n\\end{enumerate}"
+    },
+    "p10-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\section*{2 Domains individually}\nWe will begin by introducing the basic language of Domain Theory. Most topics we deal with in this section are treated more thoroughly and at a more leisurely pace in [DP90]."
+    },
+    "p10-b2": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsection*{2.1 Convergence}",
+      "skipBlocksAfter": 1
+    },
+    "p10-b4": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.1.1 Posets and preorders}",
+      "skipBlocksAfter": 1
+    },
+    "p11-b15": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.1.2 Notation from order theory}\nThe following concepts form the core language of order theory.",
+      "skipBlocksAfter": 1
+    },
+    "p12-b4": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "Let us conclude this subsection by looking at an important family of examples of complete lattices. Suppose $X$ is a set and $L$ is a family of subsets of $X$. We call $L$ a \\emph{closure system} if it is closed under arbitrary intersections: whenever each member of a family $(A_i)_{i\\in I}$ belongs to $L$, then so does $\\bigcap_{i\\in I} A_i$. Since the index set may be empty, this implies that $X\\in L$.\n\nThe members of $L$ are called hulls or closed sets. Given an arbitrary subset $A\\subseteq X$, its hull or closure is\n\\[\n  \\bigcap\\{B\\in L\\mid A\\subseteq B\\},\n\\]\nthe least superset of $A$ which belongs to $L$."
+    },
+    "p13-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.1.3 Monotone functions}",
+      "skipBlocksAfter": 1
+    },
+    "p13-b6": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.1.4 Directed sets}"
+    },
+    "p14-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "General directed sets may be quite messy and unstructured. Sometimes one can find a well-behaved cofinal subset, such as a chain. We say that $A$ is cofinal in $B$ if for every $b\\in B$ there is $a\\in A$ above it. Such a cofinal subset has the same supremum, when that supremum exists. Cofinal chains do not always exist, as Exercise 2.3.9(6) shows; nevertheless every directed set may be viewed as externally equipped with a nicer indexing structure."
+    },
+    "p14-b10": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The following is an instance of Proposition 2.1.4(3):"
+    },
+    "p15-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.1.5 Directed-complete partial orders}",
+      "skipBlocksAfter": 1
+    },
+    "p15-b6": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.1.6 Continuous functions}"
+    },
+    "p16-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The preservation of joins of directed sets is enough to characterize continuous maps. In practice, however, one usually first shows that $f(A)$ is directed, which is equivalent to monotonicity."
+    },
+    "p16-b9": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The class of all dcpo's together with Scott-continuous functions forms a category, denoted $\\mathbf{DCPO}$. It has strong closure properties, some of which appear below. For now we concentrate on the feature of continuous maps that explains much of their usefulness in domain theory: fixed points can be calculated easily and uniformly."
+    },
+    "p17-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The least fixed point operator is the mathematical counterpart of recursive and iterative statements in programming languages. When proving a property of such a statement semantically, one often uses the following proof principle, known as fixed point induction. A predicate on a dcpo is called admissible if it contains $\\bot$ and is closed under suprema of $\\omega$-chains. The following lemma is then immediate."
+    },
+    "p17-b22": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsection*{2.2 Approximation}"
+    },
+    "p18-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.2.1 The order of approximation}",
+      "skipBlocksAfter": 1
+    },
+    "p18-b11": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The relation $\\ll$ is traditionally called the way-below relation. M. B. Smyth introduced the expression ``order of definite refinement'' in [Smy86]. We call it the order of approximation, even though it is not reflexive. Other common terminology for compact elements is finite or isolated.\n\nThe analogy with finite sets is strong: whenever a finite set $M$ is covered by a directed collection $(A_i)_{i\\in I}$ of sets, $M$ is already contained in some $A_i$. In general, approximation is not an absolute property of a single point; $x\\ll y$ may be read as saying that $x$ is much simpler than $y$. A compact element approximates every element above it. More generally, we have the following basic properties of approximation."
+    },
+    "p18-b13": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.2.2 Bases in dcpo's}"
+    },
+    "p19-b3": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.2.3 Continuous and algebraic domains}"
+    },
+    "p19-b10": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The word ``algebraic'' points to algebra. Let us make this connection precise."
+    },
+    "p22-b3": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.2.4 Comments on possible variations}\n\\emph{Directed sets vs. $\\omega$-chains.} Let us start with the following observation.",
+      "skipBlocksAfter": 2
+    },
+    "p24-b2": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.2.5 Useful properties}\nLet us start with the most important feature of the order of approximation: the interpolation property.",
+      "skipBlocksAfter": 1
+    },
+    "p25-b4": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "Next we illustrate how, in a domain, one can restrict attention to principal ideals."
+    },
+    "p25-b9": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsubsection*{2.2.6 Bases as objects}"
+    },
+    "p29-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "The following is then proved without difficulties."
+    },
+    "p29-b4": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "\\subsection*{2.3 Topology}",
+      "skipBlocksAfter": 1
+    },
+    "p29-b6": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "By a topology on a space $X$ we understand a system of subsets of $X$, called the open sets, which is closed under finite intersections and arbitrary unions. A suitable topology can encode convergence, approximation, continuity of functions, and even points. In domain theory, open sets are tied to observable properties, an idea developed in detail earlier in this handbook [Smy92]. We proceed directly to the mathematical side of the subject.\n\n\\subsubsection*{2.3.1 The Scott-topology on a dcpo}",
+      "skipBlocksAfter": 1
+    },
+    "p30-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "Thus the order between elements of a dcpo can be reconstructed from the Scott topology. Directed suprema can be recovered in the same way."
+    },
+    "p31-b5": {
+      "status": "reviewed",
+      "source": "OCR-assisted prose review",
+      "tex": "This can be read as saying that every open set is supported by its members from the basis. We may therefore ask how the Scott topology is derived from an abstract basis."
+    }
+  },
+  "items": {
+    "def-2-1-1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 10",
+      "tex": "\\leanmarker{def-2-1-1}{Definition 2.1.1} A set $P$ with a binary relation $\\sqsubseteq$ is called a partially ordered set or poset if the following holds for all $x,y,z\\in P$:\n\\begin{enumerate}\n\\item $x\\sqsubseteq x$ (Reflexivity)\n\\item $x\\sqsubseteq y \\wedge y\\sqsubseteq z \\Rightarrow x\\sqsubseteq z$ (Transitivity)\n\\item $x\\sqsubseteq y \\wedge y\\sqsubseteq x \\Rightarrow x=y$ (Antisymmetry)\n\\end{enumerate}\nIf antisymmetry is omitted, the structure is a preorder. The induced equivalence relation is $\\sqsubseteq\\cap\\sqsupseteq$, and passing to equivalence classes gives a canonical poset. A common way to extract order-theoretic content from a relation $R$ is its transitive closure $\\bigcup_{n\\in\\mathbb{N}\\setminus\\{0\\}} R^n$."
+    },
+    "prop-2-1-2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 10",
+      "tex": "\\leanmarker{prop-2-1-2}{Proposition 2.1.2} If $\\langle P,\\sqsubseteq\\rangle$ is an ordered set, then so is $P^{op}=\\langle P,\\sqsupseteq\\rangle$."
+    },
+    "def-2-1-3": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 11-12",
+      "tex": "\\leanmarker{def-2-1-3}{Definition 2.1.3} Let $(P,\\sqsubseteq)$ be an ordered set.\n\\begin{enumerate}\n\\item A subset $A$ of $P$ is an upper set if $x\\in A$ and $y\\sqsupseteq x$ imply $y\\in A$. We write $\\uparrow A$ for the set of elements above some element of $A$, and abbreviate $\\uparrow\\{x\\}$ as $\\uparrow x$. The dual notions are lower set and $\\downarrow A$.\n\\item An element $x\\in P$ is an upper bound for $A\\subseteq P$ if every element of $A$ is below $x$; we write $A\\sqsubseteq x$. The sets of upper and lower bounds are denoted $\\operatorname{ub}(A)$ and $\\operatorname{lb}(A)$.\n\\item An element $x\\in P$ is maximal if $\\uparrow x\\cap P=\\{x\\}$. Minimal elements are defined dually. Minimal upper bounds of $A$ are collected in $\\operatorname{mub}(A)$.\n\\item If all elements of $P$ are below a single element $x\\in P$, then $x$ is the largest element. The dually defined least element is also called bottom and is denoted $\\bot$.\n\\item If $A\\subseteq P$ has a least upper bound $x$, then $x$ is the supremum or join of $A$, written $x=\\bigvee A$. Dually, an infimum or meet is written $x=\\bigwedge A$.\n\\item A poset is a $\\sqcup$-semilattice, respectively $\\sqcap$-semilattice, if each pair has a supremum, respectively infimum. It is a lattice if both operations exist, and complete if suprema and infima exist for all subsets.\n\\end{enumerate}",
+      "skipBlocksAfter": 1
+    },
+    "prop-2-1-4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 12",
+      "tex": "\\leanmarker{prop-2-1-4}{Proposition 2.1.4} Let $P$ be a poset such that the suprema and infima occurring below exist. Let $A,B$ and all $A_i$ be subsets of $P$.\n\\begin{enumerate}\n\\item If $A\\subseteq B$, then $\\bigvee A\\sqsubseteq \\bigvee B$ and $\\bigwedge A\\sqsupseteq \\bigwedge B$.\n\\item $\\bigvee A=\\bigvee(\\downarrow A)$ and $\\bigwedge A=\\bigwedge(\\uparrow A)$.\n\\item If $A=\\bigcup_{i\\in I} A_i$, then\n\\[\n  \\bigvee A = \\bigvee_{i\\in I}\\bigl(\\bigvee A_i\\bigr),\n\\]\nand similarly for the infimum.\n\\end{enumerate}\n\\emph{Proof.} For (3), $\\bigvee A$ is above every $A_i$, hence above each $\\bigvee A_i$. Conversely, each $a\\in A$ belongs to some $A_i$, so it is below $\\bigvee A_i$ and therefore below $\\bigvee_i(\\bigvee A_i)$. This proves the displayed equality; the infimum statement is dual.",
+      "skipBlocksAfter": 1
+    },
+    "prop-2-1-5": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 12",
+      "tex": "\\leanmarker{prop-2-1-5}{Proposition 2.1.5} Every closure system is a complete lattice with respect to inclusion. Infima are given by intersections; the supremum of a family is the closure of its union."
+    },
+    "def-2-1-6": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 13",
+      "tex": "\\leanmarker{def-2-1-6}{Definition 2.1.6} Let $P$ and $Q$ be partially ordered sets. A function $f:P\\to Q$ is called monotone if, for all $x,y\\in P$,\n\\[\n  x\\sqsubseteq y \\quad\\Rightarrow\\quad f(x)\\sqsubseteq f(y).\n\\]\nThe set $[P\\xrightarrow{m}Q]$ of monotone functions is ordered pointwise: $f\\sqsubseteq g$ iff $f(x)\\sqsubseteq g(x)$ for all $x\\in P$."
+    },
+    "prop-2-1-7": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 13",
+      "tex": "\\leanmarker{prop-2-1-7}{Proposition 2.1.7} If $L$ is a complete lattice, then every monotone map $f:L\\to L$ has a fixed point. The least fixed point is\n\\[\n  \\bigwedge\\{x\\in L \\mid f(x)\\sqsubseteq x\\},\n\\]\nand the greatest fixed point is\n\\[\n  \\bigvee\\{x\\in L \\mid x\\sqsubseteq f(x)\\}.\n\\]\n\\emph{Proof.} Let\n\\[\n  A=\\{x\\in L\\mid f(x)\\sqsubseteq x\\},\\qquad a=\\bigwedge A.\n\\]\nFor every $x\\in A$ we have $a\\sqsubseteq x$, hence $f(a)\\sqsubseteq f(x)\\sqsubseteq x$. Taking the infimum over $A$ gives $f(a)\\sqsubseteq a$, so $a\\in A$. Monotonicity then gives $f(a)\\in A$, and therefore $a\\sqsubseteq f(a)$. Thus $f(a)=a$, and $a$ is the least fixed point. The greatest fixed point is obtained dually from $\\bigvee\\{x\\in L\\mid x\\sqsubseteq f(x)\\}$.\n\nFor lattices, the converse is also true: the existence of fixed points for monotone maps implies completeness. The proof is harder and relies on the Axiom of Choice; see Markowsky.",
+      "skipBlocksAfter": 1
+    },
+    "def-2-1-8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 13",
+      "tex": "\\leanmarker{def-2-1-8}{Definition 2.1.8} Let $P$ be a poset. A subset $A$ of $P$ is directed if it is nonempty and each pair of elements of $A$ has an upper bound in $A$. If a directed set $A$ has a supremum, it is denoted by $\\bigvee^{\\uparrow}A$. Directed lower sets are called ideals; ideals of the form $\\downarrow x$ are principal. Dually one obtains filtered sets and filters. Chains are nonempty totally ordered subsets, and subsets isomorphic to the natural numbers are called $\\omega$-chains."
+    },
+    "prop-2-1-9": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 13",
+      "tex": "\\leanmarker{prop-2-1-9}{Proposition 2.1.9} Let $A$ be a nonempty subset of a $\\sqcup$-semilattice for which $\\bigvee A$ exists. Then the join of $A$ can also be written as the directed join\n\\[\n  \\bigvee A\n  = \\bigvee\n    \\left\\{\\bigvee M \\;\\middle|\\; M\\subseteq A,\\ M\\text{ finite and nonempty}\\right\\}.\n\\]"
+    },
+    "def-2-1-10": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 14",
+      "tex": "\\leanmarker{def-2-1-10}{Definition 2.1.10} A monotone net in a poset $P$ is a monotone function $\\alpha:I\\to P$ from a directed set $I$ into $P$; $I$ is called the index set. If $\\alpha:I\\to P$ is a monotone net and $\\beta:J\\to I$ is monotone, with $J$ directed and cofinal in the sense that for every $i\\in I$ there is $j\\in J$ with $\\beta(j)\\ge i$, then $\\alpha\\circ\\beta:J\\to P$ is called a subnet of $\\alpha$. A monotone net has a supremum in $P$ when the set $\\{\\alpha(i)\\mid i\\in I\\}$ has a supremum in $P$."
+    },
+    "lemma-2-1-11": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 14",
+      "tex": "\\leanmarker{lemma-2-1-11}{Lemma 2.1.11} Let $P$ be a poset and let $\\alpha:I\\to P$ be a monotone net. Then $\\alpha$ has a subnet $\\alpha\\circ\\beta:J\\to P$ whose index set $J$ is a lattice and in which every principal ideal is finite.\n\nFor the construction, take $J$ to be the set of finite subsets of $I$. Define $\\beta:J\\to I$ by induction on cardinality:\n\\[\n\\beta(\\emptyset)=\\text{any element of }I,\n\\]\nand, for $A\\ne\\emptyset$,\n\\[\n\\beta(A)=\\text{any upper bound of }A\\cup\\{\\beta(B)\\mid B\\subset A\\}.\n\\]\nThen $\\beta$ is monotone and cofinal, hence defines the required subnet.",
+      "skipBlocksAfter": 6
+    },
+    "prop-2-1-12": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 14",
+      "tex": "\\leanmarker{prop-2-1-12}{Proposition 2.1.12} Let $I$ be directed and let $\\alpha:I\\times I\\to P$ be a monotone net. Assuming the indicated directed suprema exist, the iterated suprema and the diagonal supremum agree:\n\\[\n\\bigvee\n  \\{\\alpha(i,j)\\mid i,j\\in I\\}\n=\\bigvee_{i\\in I}^{\\uparrow}\\left(\\bigvee_{j\\in I}^{\\uparrow}\\alpha(i,j)\\right)\n=\\bigvee_{j\\in I}^{\\uparrow}\\left(\\bigvee_{i\\in I}^{\\uparrow}\\alpha(i,j)\\right)\n=\\bigvee_{i\\in I}^{\\uparrow}\\alpha(i,i).\n\\]",
+      "skipBlocksAfter": 3
+    },
+    "def-2-1-13": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 15",
+      "tex": "\\leanmarker{def-2-1-13}{Definition 2.1.13} A poset $D$ is called a directed-complete partial order, or dcpo, if every directed subset of $D$ has a supremum.\n\n\\textbf{Examples 2.1.14.} Every complete lattice is a dcpo; every finite poset is a dcpo; the natural numbers with the usual order are not a dcpo unless a top element is added. Further examples include point sets of locales ordered by specialization."
+    },
+    "prop-2-1-15": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 15",
+      "tex": "\\leanmarker{prop-2-1-15}{Proposition 2.1.15} A partially ordered set $D$ is a dcpo if and only if each chain in $D$ has a supremum.\n\nThe proof uses the Axiom of Choice and goes back to a lemma of Iwamura; the cited reference is Markowsky."
+    },
+    "prop-2-1-16": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 15",
+      "tex": "\\leanmarker{prop-2-1-16}{Proposition 2.1.16} A pointed poset $P$ is a dcpo if and only if every monotone map $P\\to P$ has a least fixed point."
+    },
+    "def-2-1-17": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 15",
+      "tex": "\\leanmarker{def-2-1-17}{Definition 2.1.17} Let $D$ and $E$ be dcpos. A function $f:D\\to E$ is \\emph{Scott-continuous} if it is monotone and preserves directed suprema: for every directed subset $A\\subseteq D$,\n\\[\n  f\\left(\\bigvee^{\\uparrow} A\\right)=\\bigvee^{\\uparrow} f(A).\n\\]\nThe continuous functions from $D$ to $E$, ordered pointwise, are denoted $[D\\to E]$. A function between pointed dcpos is \\emph{strict} if it preserves bottom; continuous strict functions are denoted $[D\\xrightarrow{\\bot!}E]$. The identity on $A$ is written $\\operatorname{id}_A$, and the constant function with value $x$ is written $c_x$."
+    },
+    "prop-2-1-18": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 16",
+      "tex": "\\leanmarker{prop-2-1-18}{Proposition 2.1.18} Let $D$ and $E$ be dcpos. Then $[D\\to E]$ is again a dcpo. Directed suprema in $[D\\to E]$ are calculated pointwise.\n\n\\emph{Proof.} Let $F$ be a directed collection of continuous functions from $D$ to $E$. Define\n\\[\n  g(x)=\\bigvee_{f\\in F}^{\\uparrow} f(x).\n\\]\nFor a directed set $A\\subseteq D$ one computes\n\\[\n\\begin{aligned}\n  g\\left(\\bigvee^{\\uparrow}A\\right)\n  &= \\bigvee_{f\\in F}^{\\uparrow} f\\left(\\bigvee^{\\uparrow}A\\right) \\\\\n  &= \\bigvee_{f\\in F}^{\\uparrow}\\bigvee_{a\\in A}^{\\uparrow} f(a) && \\text{(continuity of $f$)} \\\\\n  &= \\bigvee_{a\\in A}^{\\uparrow}\\bigvee_{f\\in F}^{\\uparrow} f(a) && \\text{(Proposition 2.1.12)} \\\\\n  &= \\bigvee_{a\\in A}^{\\uparrow} g(a).\n\\end{aligned}\n\\]\nThus $g$ is continuous.",
+      "skipBlocksAfter": 6
+    },
+    "thm-2-1-19": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 16",
+      "tex": "\\leanmarker{thm-2-1-19}{Theorem 2.1.19} Let $D$ be a pointed dcpo.\n\\begin{enumerate}\n\\item Every continuous function $f:D\\to D$ has a least fixed point, namely\n\\[\n  \\operatorname{fix}(f)=\\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} f^n(\\bot).\n\\]\n\\item The assignment\n\\[\n  \\operatorname{fix}:[D\\to D]\\to D,\n  \\qquad f\\mapsto \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} f^n(\\bot),\n\\]\nis continuous.\n\\end{enumerate}\nThe first part is the Kleene fixed point theorem: the iterates form an increasing chain, continuity makes the supremum a fixed point, and induction shows it is below every other fixed point. The second part follows because the iteration operators $\\operatorname{it}_n(f)=f^n(\\bot)$ are continuous and $\\operatorname{fix}$ is their pointwise supremum.",
+      "skipBlocksAfter": 2
+    },
+    "lemma-2-1-20": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 17",
+      "tex": "\\leanmarker{lemma-2-1-20}{Lemma 2.1.20} Let $D$ be a dcpo, let $P\\subseteq D$ be an admissible predicate, and let $f:D\\to D$ be Scott-continuous. If $f(x)$ satisfies $P$ whenever $x$ satisfies $P$, then $\\operatorname{fix}(f)$ satisfies $P$."
+    },
+    "lemma-2-1-21": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 17",
+      "tex": "\\leanmarker{lemma-2-1-21}{Lemma 2.1.21} Let $D$ and $E$ be pointed dcpos, let $f:D\\to D$ and $g:E\\to E$ be continuous, and let $h:D\\to E$ be strict and continuous. If the square commutes, $h\\circ f=g\\circ h$, then\n\\[\n  \\operatorname{fix}(g)=h(\\operatorname{fix}(f)).\n\\]\nIndeed,\n\\[\n\\begin{aligned}\n  h(\\operatorname{fix}(f))\n  &= h\\left(\\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} f^n(\\bot)\\right) \\\\\n  &= \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} h(f^n(\\bot)) \\\\\n  &= \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} g^n(h(\\bot)) \\\\\n  &= \\operatorname{fix}(g),\n\\end{aligned}\n\\]\nusing continuity of $h$, commutativity, and strictness of $h$.",
+      "skipBlocksAfter": 18
+    },
+    "def-2-2-1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 18",
+      "tex": "\\leanmarker{def-2-2-1}{Definition 2.2.1} Let $x$ and $y$ be elements of a dcpo $D$. We say that $x$ \\emph{approximates} $y$, written $x\\ll y$, if for every directed subset $A\\subseteq D$,\n\\[\n  y\\sqsubseteq \\bigvee^{\\uparrow} A\n  \\quad\\Rightarrow\\quad\n  \\exists a\\in A,\\ x\\sqsubseteq a.\n\\]\nThe element $x$ is \\emph{compact} if $x\\ll x$. For $x,y\\in D$ and $A\\subseteq D$ the standard notation is\n\\[\n\\begin{array}{rcl}\n  x\\ll y &\\Longleftrightarrow& x\\text{ approximates }y,\\\\\n  \\Downarrow x &=& \\{y\\in D\\mid y\\ll x\\},\\\\\n  \\Uparrow x &=& \\{y\\in D\\mid x\\ll y\\},\\\\\n  \\Uparrow A &=& \\displaystyle\\bigcup_{a\\in A}\\Uparrow a,\\\\\n  K(D) &=& \\{x\\in D\\mid x\\text{ compact}\\}.\n\\end{array}\n\\]",
+      "skipBlocksAfter": 7
+    },
+    "prop-2-2-2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 18",
+      "tex": "\\leanmarker{prop-2-2-2}{Proposition 2.2.2} Let $D$ be a dcpo. For all $x,x',y,y'\\in D$:\n\\begin{enumerate}\n\\item $x\\ll y \\Rightarrow x\\sqsubseteq y$.\n\\item $x'\\sqsubseteq x\\ll y\\sqsubseteq y' \\Rightarrow x'\\ll y'$.\n\\end{enumerate}"
+    },
+    "def-2-2-3": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 18",
+      "tex": "\\leanmarker{def-2-2-3}{Definition 2.2.3} A subset $B$ of a dcpo $D$ is a \\emph{basis} for $D$ if, for every element $x\\in D$, the set\n\\[\n  B_x=\\Downarrow x\\cap B\n\\]\ncontains a directed subset with supremum $x$. Elements of $B_x$ are called approximants to $x$ relative to $B$."
+    },
+    "prop-2-2-4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 18-19",
+      "tex": "\\leanmarker{prop-2-2-4}{Proposition 2.2.4} Let $D$ be a dcpo with basis $B$.\n\\begin{enumerate}\n\\item For every $x\\in D$, the set $B_x$ is directed and\n\\[\n  x=\\bigvee^{\\uparrow} B_x.\n\\]\n\\item $B$ contains $K(D)$.\n\\item Every superset of $B$ is also a basis for $D$.\n\\end{enumerate}\n\\emph{Proof.} For (1), the supremum is clear from the definition; directedness follows by comparing any two approximants with a directed subset of $B_x$ whose supremum is $x$. For (2), if $c\\in K(D)$, then from $c=\\bigvee^{\\uparrow}B_c$ compactness gives some $b\\in B_c$ above $c$, while all elements of $B_c$ are below $c$, so $b=c$. Part (3) is immediate from the definition.",
+      "skipBlocksAfter": 3
+    },
+    "cor-2-2-5": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 19",
+      "tex": "\\leanmarker{cor-2-2-5}{Corollary 2.2.5} Let $D$ be a dcpo with basis $B$.\n\\begin{enumerate}\n\\item The largest basis for $D$ is $D$ itself.\n\\item $B$ is the smallest basis for $D$ if and only if $B=K(D)$.\n\\end{enumerate}\nThe reverse direction in (2) is not a direct consequence of Proposition 2.2.4; the book leaves it as Exercise 2.3.9(26)."
+    },
+    "def-2-2-6": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 19",
+      "tex": "\\leanmarker{def-2-2-6}{Definition 2.2.6} A dcpo is \\emph{continuous}, or a continuous domain, if it has a basis. It is \\emph{algebraic}, or an algebraic domain, if it has a basis of compact elements. It is $\\omega$-continuous if it has a countable basis, and $\\omega$-algebraic if $K(D)$ is a countable basis."
+    },
+    "prop-2-2-7": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 19",
+      "tex": "\\leanmarker{prop-2-2-7}{Proposition 2.2.7}\n\\begin{enumerate}\n\\item A dcpo $D$ is continuous if and only if, for every $x\\in D$,\n\\[\n  x=\\bigvee^{\\uparrow}\\Downarrow x.\n\\]\n\\item A dcpo $D$ is algebraic if and only if, for every $x\\in D$,\n\\[\n  x=\\bigvee^{\\uparrow} K(D)_x.\n\\]\n\\end{enumerate}",
+      "skipBlocksAfter": 4
+    },
+    "prop-2-2-9": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 19",
+      "tex": "\\leanmarker{prop-2-2-9}{Proposition 2.2.9} Every inductive closure system $L$ is an algebraic lattice. Its compact elements are precisely the finitely generated hulls.\n\n\\emph{Proof.} If $A$ is the hull of a finite set $M$ and $(B_i)_{i\\in I}$ is a directed family of hulls with\n\\[\n  \\bigvee_{i\\in I}^{\\uparrow} B_i=\\bigcup_{i\\in I}B_i\\supseteq A,\n\\]\nthen $M$ is contained in some $B_i$. Hence finitely generated hulls are compact. Conversely, every closed set is the directed union of finitely generated hulls, so these hulls form a basis; Proposition 2.2.4(2) rules out any other compact elements."
+    },
+    "prop-2-2-10": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 21",
+      "tex": "\\leanmarker{prop-2-2-10}{Proposition 2.2.10} Let $D$ be a continuous domain with basis $B$, and let $x,y\\in D$. The following are equivalent:\n\\[\n  x\\sqsubseteq y,\n  \\qquad B_x\\subseteq B_y,\n  \\qquad B_x\\subseteq \\downarrow y.\n\\]\nEquivalently, if $x\\not\\sqsubseteq y$, then there exists $b\\in B_x$ with $b\\not\\sqsubseteq y$. Figure 5 depicts this situation.\n\nIn the light of Proposition 2.2.10, the dcpo $D$ in Figure 4 is not continuous because the natural would-be basis consisting of the $a_i$'s and $b_i$'s cannot see that\n\\[\n  \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} a_n\n  =\\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} b_n\n  =\\top.\n\\]\nIn a continuous domain this information would already be reflected by the basis. This is why the continuous version should look like $E$ in Figure 4, which is indeed algebraic.\n\nBases also allow us to express continuity of functions in a form reminiscent of the $\\epsilon$-$\\delta$ definition for real-valued functions.",
+      "skipBlocksAfter": 0
+    },
+    "prop-2-2-11": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 22",
+      "tex": "\\leanmarker{prop-2-2-11}{Proposition 2.2.11} Let $f:D\\to E$ be a map between continuous domains with bases $B$ and $C$, respectively. Then $f$ is continuous if and only if, for every $x\\in D$ and every $e\\in C_{f(x)}$, there exists $d\\in B_x$ such that\n\\[\n  f(\\uparrow d)\\subseteq \\uparrow e.\n\\]\n\\emph{Proof.} If $f$ is continuous, then\n\\[\n  f(x)=f\\left(\\bigvee^{\\uparrow}B_x\\right)\n      =\\bigvee_{d\\in B_x}^{\\uparrow} f(d).\n\\]\nSince $e\\ll f(x)$, some $d\\in B_x$ satisfies $e\\sqsubseteq f(d)$; monotonicity gives $f(\\uparrow d)\\subseteq\\uparrow e$.\n\nConversely, first suppose $x\\sqsubseteq y$ but $f(x)\\not\\sqsubseteq f(y)$. By Proposition 2.2.10 choose $e\\in C_{f(x)}\\setminus\\downarrow f(y)$, and then $d\\in B_x$ with $f(\\uparrow d)\\subseteq\\uparrow e$. Since $y\\in\\uparrow d$, this contradicts $e\\not\\sqsubseteq f(y)$. Thus $f$ is monotone. Now let $A\\subseteq D$ be directed with $x=\\bigvee^{\\uparrow}A$. Monotonicity gives $\\bigvee^{\\uparrow}f(A)\\sqsubseteq f(x)$. If the reverse inequality failed, Proposition 2.2.10 would give $e\\in C_{f(x)}$ with $e\\not\\sqsubseteq\\bigvee^{\\uparrow}f(A)$; choose $d\\in B_x$ with $f(\\uparrow d)\\subseteq\\uparrow e$. Since $d\\ll x$, some $a\\in A$ lies above $d$, hence $\\bigvee^{\\uparrow}f(A)\\sqsupseteq f(a)\\sqsupseteq f(d)\\sqsupseteq e$, a contradiction.\n\nThis criterion is followed by a fixed-point result for countable bases: a continuous function need not preserve compactness or the order of approximation, so the naive sequence $\\bot,f(\\bot),f(f(\\bot)),\\ldots$ need not consist of basis elements."
+    },
+    "prop-2-2-12": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 22",
+      "tex": "\\leanmarker{prop-2-2-12}{Proposition 2.2.12} Let $D$ be a pointed $\\omega$-continuous domain with basis $B$, and let $f:D\\to D$ be continuous. Then there exists an $\\omega$-chain\n\\[\n  b_0\\sqsubseteq b_1\\sqsubseteq b_2\\sqsubseteq\\cdots\n\\]\nof basis elements satisfying:\n\\begin{enumerate}\n\\item $b_0=\\bot$;\n\\item for all $n\\in\\mathbb{N}$, $b_{n+1}\\sqsubseteq f(b_n)$;\n\\item\n\\[\n  \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} b_n\n  =\\operatorname{fix}(f)\n  =\\bigvee_{n\\in\\mathbb{N}}^{\\uparrow} f^n(\\bot).\n\\]\n\\end{enumerate}\nThe book cites Abramsky for the proof."
+    },
+    "prop-2-2-13": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 22",
+      "tex": "\\leanmarker{prop-2-2-13}{Proposition 2.2.13} If a dcpo $D$ has a countable basis, then every directed subset of $D$ contains an $\\omega$-chain with the same supremum.\n\nThis motivates a parallel $\\omega$-chain presentation: an $\\omega$-ccpo has suprema of all $\\omega$-chains; an $\\omega$-continuous map preserves those suprema; and $x$ $\\omega$-approximates $y$ if\n\\[\n  y\\sqsubseteq\\bigvee_{n\\in\\mathbb{N}}^{\\uparrow}a_n\n  \\quad\\Rightarrow\\quad\n  \\exists n\\in\\mathbb{N},\\ x\\sqsubseteq a_n.\n\\]\nWith a countable basis, this version agrees with the directed-set presentation."
+    },
+    "prop-2-2-14": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 23",
+      "tex": "\\leanmarker{prop-2-2-14}{Proposition 2.2.14}\n\\begin{enumerate}\n\\item Every continuous $\\omega$-ccpo is a continuous dcpo.\n\\item Every algebraic $\\omega$-ccpo is an algebraic dcpo.\n\\item Every $\\omega$-continuous map between continuous $\\omega$-ccpos is continuous.\n\\end{enumerate}\n\\emph{Proof.} Enumerate a countable basis $B$ as $(b_n)_{n\\in\\mathbb{N}}$. For a directed subset $A$, construct an $\\omega$-chain $(a_n)_{n\\in\\mathbb{N}}$ in $A$ that successively dominates the relevant basis elements below members of $A$. The resulting chain need not be cofinal in $A$, but it has the same supremum because both dominate the same basis elements. This also identifies $\\omega$-approximation with ordinary approximation in a continuous $\\omega$-ccpo, yielding (1); part (2) follows from the same argument. For (3), if $f$ is $\\omega$-continuous and $A$ is directed, choose such an $\\omega$-chain $(a_n)$ in $A$. Then\n\\[\n  f\\left(\\bigvee^{\\uparrow}A\\right)\n  = f\\left(\\bigvee_{n\\in\\mathbb{N}}^{\\uparrow}a_n\\right)\n  = \\bigvee_{n\\in\\mathbb{N}}^{\\uparrow}f(a_n)\n  \\sqsubseteq \\bigvee^{\\uparrow}f(A),\n\\]\nwhile the opposite inequality follows from monotonicity.",
+      "skipBlocksAfter": 2
+    },
+    "lemma-2-2-15": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 24-25",
+      "tex": "\\leanmarker{lemma-2-2-15}{Lemma 2.2.15} Let $D$ be a continuous domain and let $M\\subseteq D$ be a finite set whose elements all approximate $y$. Then there exists $y'\\in D$ such that\n\\[\n  M\\ll y'\\ll y,\n\\]\nmeaning $m\\ll y'$ for every $m\\in M$ and $y'\\ll y$. If $B$ is a basis for $D$, then $y'$ may be chosen from $B$.\n\n\\emph{Proof.} Define\n\\[\n  A=\\{a\\in D\\mid \\exists a'\\in D,\\ a\\ll a'\\ll y\\}.\n\\]\nThe set $A$ is nonempty and directed. Indeed, from $a\\ll a'\\ll y$ and $b\\ll b'\\ll y$, directedness of $\\Downarrow y$ gives $c'$ above $a'$ and $b'$ with $c'\\ll y$; directedness of $\\Downarrow c'$ gives $c$ above $a$ and $b$ with $c\\ll c'$. Moreover\n\\[\n  \\bigvee^{\\uparrow}A=y,\n\\]\nbecause every $y'\\ll y$ satisfies $\\Downarrow y'\\subseteq A$, while all elements of $A$ are below $y$. For each $m\\in M$, choose $a_m\\in A$ with $m\\sqsubseteq a_m$, and let $a\\in A$ be an upper bound of the finite family $(a_m)_{m\\in M}$. By definition of $A$, some $a'$ satisfies $a\\ll a'\\ll y$, and this $a'$ interpolates between $M$ and $y$. The basis-refined version is obtained by allowing only basis elements in $A$.",
+      "skipBlocksAfter": 1
+    },
+    "cor-2-2-16": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 25",
+      "tex": "\\leanmarker{cor-2-2-16}{Corollary 2.2.16} Let $D$ be a continuous domain with basis $B$, and let $A\\subseteq D$ be directed. If $c\\ll\\bigvee^{\\uparrow}A$, then $c\\ll a$ for some $a\\in A$. Equivalently,\n\\[\n  \\Downarrow\\left(\\bigvee^{\\uparrow}A\\right)\n  = \\bigcup_{a\\in A}\\Downarrow a.\n\\]\nIntersecting both sides with the basis gives\n\\[\n  B_{\\bigvee^{\\uparrow}A}=\\bigcup_{a\\in A}B_a.\n\\]",
+      "skipBlocksAfter": 1
+    },
+    "prop-2-2-17": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 25",
+      "tex": "\\leanmarker{prop-2-2-17}{Proposition 2.2.17}\n\\begin{enumerate}\n\\item If $D$ is continuous and $x,y\\in D$, then $x\\ll y$ iff for every directed set $A$ with $\\bigvee^{\\uparrow}A=y$ there exists $a\\in A$ with $x\\sqsubseteq a$.\n\\item The order of approximation on a continuous domain is the union of the orders of approximation on all principal ideals.\n\\item A dcpo is continuous if and only if each principal ideal is continuous.\n\\item For a continuous domain $D$,\n\\[\n  K(D)=\\bigcup_{x\\in D}K(\\downarrow x).\n\\]\n\\item A dcpo is algebraic if and only if each principal ideal is algebraic.\n\\end{enumerate}",
+      "skipBlocksAfter": 1
+    },
+    "prop-2-2-18": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 25",
+      "tex": "\\leanmarker{prop-2-2-18}{Proposition 2.2.18}\n\\begin{enumerate}\n\\item In a continuous domain, minimal upper bounds of finite sets of compact elements are compact.\n\\item In a complete lattice, the sets $\\downarrow x$ are $\\sqcup$-sub-semilattices.\n\\item In a complete lattice, the join of finitely many compact elements is compact.\n\\end{enumerate}"
+    },
+    "cor-2-2-19": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 25",
+      "tex": "\\leanmarker{cor-2-2-19}{Corollary 2.2.19} A complete lattice is algebraic if and only if each element is the join of compact elements.\n\nThe infimum of compact elements need not be compact, even in an algebraic lattice; Figure 6 gives an example."
+    },
+    "def-2-2-20": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 26",
+      "tex": "\\leanmarker{def-2-2-20}{Definition 2.2.20} An \\emph{abstract basis} is a set $B$ equipped with a transitive relation $\\prec$ on $B$ such that, for every $x\\in B$ and every finite subset $M\\subseteq B$,\n\\[\n  M\\prec x \\quad\\Rightarrow\\quad \\exists y\\in B,\\ M\\prec y\\prec x.\n\\tag{INT}\n\\]\nHere $M\\prec x$ means $m\\prec x$ for every $m\\in M$. Concrete bases of continuous domains are examples, with $\\prec$ given by the restriction of $\\ll$; posets are examples because reflexivity implies interpolation.",
+      "skipBlocksAfter": 2
+    },
+    "def-2-2-21": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 27",
+      "tex": "\\leanmarker{def-2-2-21}{Definition 2.2.21} For a basis $(B,\\prec)$, let $\\operatorname{Idl}(B)$ be the set of all ideals ordered by inclusion. This dcpo is called the \\emph{ideal completion} of $B$. Let\n\\[\n  i:B\\to\\operatorname{Idl}(B)\n\\]\nmap $x\\in B$ to $\\downarrow x$. When the relation should be explicit, write $\\operatorname{Idl}(B,\\prec)$."
+    },
+    "prop-2-2-22": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 27",
+      "tex": "\\leanmarker{prop-2-2-22}{Proposition 2.2.22} Let $(B,\\prec)$ be an abstract basis.\n\\begin{enumerate}\n\\item The ideal completion $\\operatorname{Idl}(B)$ is a dcpo.\n\\item For ideals $A,A'\\in\\operatorname{Idl}(B)$, $A\\ll A'$ iff there are $x\\prec y$ in $B$ such that\n\\[\n  A\\subseteq i(x)\\subseteq i(y)\\subseteq A',\n\\]\niff there is $x\\in A'$ with $A\\subseteq i(x)$.\n\\item $\\operatorname{Idl}(B)$ is a continuous domain, with basis $i(B)$.\n\\item If $\\prec$ is reflexive, then $\\operatorname{Idl}(B)$ is algebraic.\n\\item If $(B,\\prec)$ is a poset, then $B$, $K(\\operatorname{Idl}(B))$, and $i(B)$ are all isomorphic.\n\\end{enumerate}\n\\emph{Proof.} Directed unions of ideals are ideals. Roundness gives\n\\[\n  A=\\bigcup_{x\\in A}\\downarrow x,\n\\]\nand this union is directed because $A$ is directed. This proves the way-below characterization and continuity. Reflexivity gives algebraicity, and the final clause follows from uniqueness of the basis of compact elements.",
+      "skipBlocksAfter": 0
+    },
+    "prop-2-2-23": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 27",
+      "tex": "\\leanmarker{prop-2-2-23}{Proposition 2.2.23} For abstract bases $B$ and $B'$, ideal completion preserves products:\n\\[\n  \\operatorname{Idl}(B\\times B')\\cong \\operatorname{Idl}(B)\\times \\operatorname{Idl}(B').\n\\]\nThe completion also has a weak universal property, stated next."
+    },
+    "prop-2-2-24": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 27-28",
+      "tex": "\\leanmarker{prop-2-2-24}{Proposition 2.2.24} Let $(B,\\prec)$ be an abstract basis and let $D$ be a dcpo. For every monotone function $f:B\\to D$ there is a largest continuous function\n\\[\n  \\widehat f:\\operatorname{Idl}(B)\\to D\n\\]\nsuch that $\\widehat f\\circ i\\sqsubseteq f$. It is given by\n\\[\n  \\widehat f(A)=\\bigvee^{\\uparrow}f(A).\n\\]\nThe assignment $f\\mapsto\\widehat f$ is Scott-continuous from $[B\\xrightarrow{m}D]$ to $[\\operatorname{Idl}(B)\\to D]$. If $\\prec$ is reflexive, then $\\widehat f\\circ i=f$.\n\n\\emph{Proof.} For a directed family $(A_i)_{i\\in I}$ of ideals, associativity of directed suprema gives\n\\[\n\\begin{aligned}\n  \\widehat f\\left(\\bigvee_{i\\in I}^{\\uparrow}A_i\\right)\n  &=\\widehat f\\left(\\bigcup_{i\\in I}A_i\\right) \\\\\n  &=\\bigvee^{\\uparrow}\\{f(x)\\mid x\\in\\bigcup_{i\\in I}A_i\\} \\\\\n  &=\\bigvee_{i\\in I}^{\\uparrow}\\bigvee^{\\uparrow}\\{f(x)\\mid x\\in A_i\\} \\\\\n  &=\\bigvee_{i\\in I}^{\\uparrow}\\widehat f(A_i).\n\\end{aligned}\n\\]\nMonotonicity of $f$ makes $f(x)$ an upper bound for $f(\\downarrow x)$, so $\\widehat f\\circ i\\sqsubseteq f$. If $g:\\operatorname{Idl}(B)\\to D$ is continuous and $g\\circ i\\sqsubseteq f$, then\n\\[\n  g(A)=g\\left(\\bigcup_{x\\in A}\\downarrow x\\right)\n  =\\bigvee_{x\\in A}^{\\uparrow}g(i(x))\n  \\sqsubseteq\\bigvee_{x\\in A}^{\\uparrow}f(x)=\\widehat f(A).\n\\]\nThe continuity of $f\\mapsto\\widehat f$ follows by interchanging directed suprema. If $\\prec$ is reflexive, then $\\widehat f(i(x))=\\bigvee^{\\uparrow}f(\\downarrow x)=f(x)$.",
+      "skipBlocksAfter": 5
+    },
+    "prop-2-2-25": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 28",
+      "tex": "\\leanmarker{prop-2-2-25}{Proposition 2.2.25} Let $D$ be a continuous domain with basis $B$. Viewing $(B,\\ll)$ as an abstract basis:\n\\begin{enumerate}\n\\item $\\operatorname{Idl}(B)$ is isomorphic to $D$. The isomorphism $\\sigma:\\operatorname{Idl}(B)\\to D$ is the extension $\\widehat e$ of the embedding $e:B\\hookrightarrow D$, and its inverse $\\beta$ maps $x\\in D$ to $B_x$.\n\\item For every dcpo $E$ and continuous function $f:D\\to E$,\n\\[\n  f=\\widehat g\\circ\\beta,\n\\]\nwhere $g$ is the restriction of $f$ to $B$.\n\\end{enumerate}\n\\emph{Proof.} Since $x=\\bigvee^{\\uparrow}B_x$ in a continuous domain, $\\sigma\\circ\\beta=\\operatorname{id}_D$. Conversely, if $c\\in B$ approximates $\\bigvee^{\\uparrow}A$ for an ideal $A$ in $(B,\\ll)$, interpolate\n\\[\n  c\\ll d\\ll\\bigvee^{\\uparrow}A.\n\\]\nBy the definition of $\\ll$, some $a\\in A$ lies above $d$, hence $c\\ll a$ and $c\\in A$. Finally,\n\\[\n  f(x)=f\\left(\\bigvee^{\\uparrow}B_x\\right)\n  =\\bigvee^{\\uparrow}f(B_x)\n  =\\widehat g(B_x)=\\widehat g(\\beta(x)).\n\\]"
+    },
+    "cor-2-2-26": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 28",
+      "tex": "\\leanmarker{cor-2-2-26}{Corollary 2.2.26} A continuous function from a continuous domain $D$ to a dcpo $E$ is completely determined by its behavior on a basis of $D$.\n\nThe preceding result reconstructs continuous domains and continuous maps from bases. Since continuous functions need not preserve $\\ll$, the basis-only formulation uses relations rather than functions."
+    },
+    "def-2-2-27": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 28",
+      "tex": "\\leanmarker{def-2-2-27}{Definition 2.2.27} A relation $R$ between abstract bases $B$ and $C$ is \\emph{approximable} if:\n\\begin{enumerate}\n\\item for $x\\in B$ and $y,y'\\in C$, $xRy$ and $y'\\prec y$ imply $xRy'$;\n\\item for $x\\in B$ and finite $M\\subseteq C$, if $xRy$ for every $y\\in M$, then there is $z\\in C$ such that $xRz$ and $M\\prec z$;\n\\item for $x,x'\\in B$ and $y\\in C$, $x\\prec x'$ and $xRy$ imply $x'Ry$;\n\\item for $x\\in B$ and $y\\in C$, $xRy$ implies that there exists $z\\in B$ with $z\\prec x$ and $zRy$.\n\\end{enumerate}"
+    },
+    "thm-2-2-28": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 29",
+      "tex": "\\leanmarker{thm-2-2-28}{Theorem 2.2.28} The category of abstract bases and approximable relations is equivalent to $\\mathbf{CONT}$, the category of continuous dcpos and continuous maps."
+    },
+    "thm-2-2-29": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 29",
+      "tex": "\\leanmarker{thm-2-2-29}{Theorem 2.2.29} The category of preorders and approximable relations is equivalent to $\\mathbf{ALG}$, the category of algebraic dcpos and continuous maps."
+    },
+    "def-2-3-1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 29",
+      "tex": "\\leanmarker{def-2-3-1}{Definition 2.3.1} Let $D$ be a dcpo. A subset $A\\subseteq D$ is \\emph{Scott-closed} if it is a lower set and is closed under suprema of directed subsets. Complements of Scott-closed sets are \\emph{Scott-open}; they form the Scott topology $\\sigma D$.\n\nWrite $\\operatorname{Cl}(A)$ for the smallest Scott-closed set containing $A$, and $\\operatorname{Int}(A)$ for the open kernel of $A$. Every Scott-open set is an upper set. Equivalently, a Scott-open set $O$ is an upper set such that every directed set whose supremum lies in $O$ intersects $O$."
+    },
+    "prop-2-3-2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 29",
+      "tex": "\\leanmarker{prop-2-3-2}{Proposition 2.3.2} Let $D$ be a dcpo.\n\\begin{enumerate}\n\\item For $x,y\\in D$, the following are equivalent:\n\\begin{enumerate}\n\\item $x\\sqsubseteq y$;\n\\item every Scott-open set containing $x$ also contains $y$;\n\\item $x\\in\\operatorname{Cl}(\\{y\\})$.\n\\end{enumerate}\n\\item The Scott topology satisfies the $T_0$ separation axiom.\n\\item $(D,\\sigma D)$ is Hausdorff, i.e. $T_2$, if and only if the order on $D$ is trivial.\n\\end{enumerate}"
+    },
+    "prop-2-3-3": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 30",
+      "tex": "\\leanmarker{prop-2-3-3}{Proposition 2.3.3} Let $A$ be a directed set in a dcpo $D$. An element $x\\in D$ is the supremum of $A$ if and only if $x$ is an upper bound for $A$ and every Scott-neighborhood of $x$ contains an element of $A$.\n\n\\emph{Proof.} The Scott-closed set\n\\[\n  \\downarrow\\left(\\bigvee^{\\uparrow}A\\right)\n\\]\nseparates the supremum from all other upper bounds of $A$."
+    },
+    "prop-2-3-4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 30",
+      "tex": "\\leanmarker{prop-2-3-4}{Proposition 2.3.4} For dcpos $D$ and $E$, a function $f:D\\to E$ is Scott-continuous if and only if it is topologically continuous with respect to the Scott topologies.\n\n\\emph{Proof.} If $f$ is Scott-continuous and $O\\subseteq E$ is Scott-open, then $f^{-1}(O)$ is an upper set. If $x=\\bigvee_{i\\in I}^{\\uparrow}x_i$ and $f(x)\\in O$, then\n\\[\n  f(x)=f\\left(\\bigvee_{i\\in I}^{\\uparrow}x_i\\right)\n      =\\bigvee_{i\\in I}^{\\uparrow}f(x_i)\\in O,\n\\]\nso some $x_i$ lies in $f^{-1}(O)$.\n\nConversely, assume $f$ is topologically continuous. Monotonicity follows by applying inverse images to principal Scott-closed sets. If $A\\subseteq D$ is directed, then the inverse image of\n\\[\n  \\downarrow\\left(\\bigvee_{a\\in A}^{\\uparrow}f(a)\\right)\n\\]\nis Scott-closed and contains $A$, hence contains $\\bigvee^{\\uparrow}A$. Together with monotonicity, this shows that $f$ preserves directed suprema.",
+      "skipBlocksAfter": 2
+    },
+    "prop-2-3-5": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 30",
+      "tex": "\\leanmarker{prop-2-3-5}{Proposition 2.3.5} Let $D$ be a continuous domain. For all $x,y\\in D$, the following are equivalent:\n\\begin{enumerate}\n\\item $x\\ll y$;\n\\item $y\\in\\operatorname{Int}(\\Uparrow x)$;\n\\item $y\\in\\Uparrow x$.\n\\end{enumerate}\nOf course, (1) and (3) are equivalent in every dcpo by definition of $\\Uparrow x$."
+    },
+    "prop-2-3-6": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 30-31",
+      "tex": "\\leanmarker{prop-2-3-6}{Proposition 2.3.6} Let $D$ be a continuous domain with basis $B$. A subset $O\\subseteq D$ is Scott-open iff it can be described in either of the following ways:\n\\begin{enumerate}\n\\item\n\\[\n  O=\\bigcup_{x\\in O}\\Uparrow x;\n\\]\n\\item\n\\[\n  O=\\bigcup_{x\\in O\\cap B}\\Uparrow x.\n\\]\n\\end{enumerate}\nThus every open set is supported by its members from the basis.",
+      "skipBlocksAfter": 4
+    },
+    "prop-2-3-7": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 31",
+      "tex": "\\leanmarker{prop-2-3-7}{Proposition 2.3.7} Let $(B,\\prec)$ be an abstract basis and let $M\\subseteq B$. Then\n\\[\n  \\{A\\in\\operatorname{Idl}(B)\\mid M\\cap A\\ne\\emptyset\\}\n\\]\nis Scott-open in $\\operatorname{Idl}(B)$, and every Scott-open set of $\\operatorname{Idl}(B)$ is of this form.\n\nThis identifies Scott-open properties of the completion with observable hits of basis elements."
+    },
+    "lemma-2-3-8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 31",
+      "tex": "\\leanmarker{lemma-2-3-8}{Lemma 2.3.8} Every Scott-open set in a continuous domain is a union of Scott-open filters.\n\n\\emph{Proof.} Let $x\\in O$ with $O$ Scott-open. By Proposition 2.3.6 choose $y\\in O$ with $y\\ll x$. Repeated interpolation gives a sequence\n\\[\n  y\\ll\\cdots\\ll y_n\\ll\\cdots\\ll y_1\\ll x.\n\\]\nThe union of the filters $\\Uparrow y_n$ is a Scott-open filter containing $x$ and contained in $O$.\n\nThis completes the chapter's setup for formulating domain theory through the lattice of Scott-open sets."
+    },
+    "def-2-2-8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 19",
+      "tex": "\\leanmarker{def-2-2-8}{Definition 2.2.8} A closure system $L$ is called \\emph{inductive} if it is closed under directed unions."
+    }
+  }
+}

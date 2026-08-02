@@ -1,0 +1,893 @@
+{
+  "chapter": "Chapter 7",
+  "title": "Stone duality",
+  "leanFile": "../Practice/DomainTheory/Chapter07.lean",
+  "notice": "This map records public paraphrases and Lean source locations. It does not reproduce the textbook text.",
+  "items": [
+    {
+      "id": "thm-7-1-1",
+      "number": "Theorem 7.1.1",
+      "section": "7.1",
+      "kind": "Theorem",
+      "title": "Complete lattice continuity distributivity",
+      "summary": "Complete lattice continuity distributivity.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "theorem_7_1_1_complete_lattice_continuity_distributivity"
+      ],
+      "startLine": 1232,
+      "endLine": 1240
+    },
+    {
+      "id": "def-7-1-2",
+      "number": "Definition 7.1.2",
+      "section": "7.1",
+      "kind": "Definition",
+      "title": "Prime continuity relation",
+      "summary": "Prime continuity relation.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "def_7_1_2_prime_continuity_relation"
+      ],
+      "startLine": 73,
+      "endLine": 89
+    },
+    {
+      "id": "thm-7-1-3",
+      "number": "Theorem 7.1.3",
+      "section": "7.1",
+      "kind": "Theorem",
+      "title": "Prime continuous iff completely distributive",
+      "summary": "Prime continuous iff completely distributive.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "theorem_7_1_3_prime_continuous_iff_completely_distributive"
+      ],
+      "startLine": 1241,
+      "endLine": 1250
+    },
+    {
+      "id": "def-7-1-4",
+      "number": "Definition 7.1.4",
+      "section": "7.1",
+      "kind": "Definition",
+      "title": "Meet generation",
+      "summary": "Meet generation.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "def_7_1_4_meet_generation"
+      ],
+      "startLine": 90,
+      "endLine": 146
+    },
+    {
+      "id": "def-7-1-5",
+      "number": "Definition 7.1.5",
+      "section": "7.1",
+      "kind": "Definition",
+      "title": "Meet irreducible prime",
+      "summary": "Meet irreducible prime.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "def_7_1_5_meet_irreducible_prime"
+      ],
+      "startLine": 147,
+      "endLine": 225
+    },
+    {
+      "id": "prop-7-1-6",
+      "number": "Proposition 7.1.6",
+      "section": "7.1",
+      "kind": "Proposition",
+      "title": "Meet prime irreducible",
+      "summary": "Meet prime irreducible.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "prop_7_1_6_meet_prime_irreducible"
+      ],
+      "startLine": 1251,
+      "endLine": 1265
+    },
+    {
+      "id": "thm-7-1-7",
+      "number": "Theorem 7.1.7",
+      "section": "7.1",
+      "kind": "Theorem",
+      "title": "Continuous lattice meet generated",
+      "summary": "Continuous lattice meet generated.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "theorem_7_1_7_continuous_lattice_meet_generated",
+        "theorem_7_1_7_algebraic_lattice_completely_meet_generated"
+      ],
+      "startLine": 1266,
+      "endLine": 1275
+    },
+    {
+      "id": "thm-7-1-8",
+      "number": "Theorem 7.1.8",
+      "section": "7.1",
+      "kind": "Theorem",
+      "title": "Meet prime generation distributive equations",
+      "summary": "Meet prime generation distributive equations.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "theorem_7_1_8_meet_prime_generation_distributive_equations",
+        "theorem_7_1_8_join_prime_generation_dual_distributive_equations"
+      ],
+      "startLine": 1286,
+      "endLine": 1298
+    },
+    {
+      "id": "def-7-1-9",
+      "number": "Definition 7.1.9",
+      "section": "7.1",
+      "kind": "Definition",
+      "title": "Frame homomorphism",
+      "summary": "Frame homomorphism.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "def_7_1_9_frame_homomorphism"
+      ],
+      "startLine": 226,
+      "endLine": 271
+    },
+    {
+      "id": "def-7-1-10",
+      "number": "Definition 7.1.10",
+      "section": "7.1",
+      "kind": "Definition",
+      "title": "Prime filters ideals",
+      "summary": "Prime filters ideals.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "def_7_1_10_prime_filters_ideals"
+      ],
+      "startLine": 272,
+      "endLine": 1179
+    },
+    {
+      "id": "prop-7-1-11",
+      "number": "Proposition 7.1.11",
+      "section": "7.1",
+      "kind": "Proposition",
+      "title": "Complete prime filter characterizations",
+      "summary": "Complete prime filter characterizations.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "prop_7_1_11_complete_prime_filter_characterizations"
+      ],
+      "startLine": 1312,
+      "endLine": 1322
+    },
+    {
+      "id": "def-7-1-12",
+      "number": "Definition 7.1.12",
+      "section": "7.1",
+      "kind": "Definition",
+      "title": "Points of lattice",
+      "summary": "Points of lattice.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "def_7_1_12_points_of_lattice"
+      ],
+      "startLine": 1180,
+      "endLine": 1231
+    },
+    {
+      "id": "prop-7-1-13",
+      "number": "Proposition 7.1.13",
+      "section": "7.1",
+      "kind": "Proposition",
+      "title": "Point topology",
+      "summary": "Point topology.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "prop_7_1_13_point_topology"
+      ],
+      "startLine": 1323,
+      "endLine": 1355
+    },
+    {
+      "id": "thm-7-1-14",
+      "number": "Theorem 7.1.14",
+      "section": "7.1",
+      "kind": "Theorem",
+      "title": "Stone dual adjunction",
+      "summary": "Stone dual adjunction.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+      "lean": [
+        "theorem_7_1_14_stone_dual_adjunction"
+      ],
+      "startLine": 1356,
+      "endLine": 1361
+    },
+    {
+      "id": "def-7-2-1",
+      "number": "Definition 7.2.1",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Irreducible closed",
+      "summary": "Irreducible closed.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_1_irreducible_closed"
+      ],
+      "startLine": 51,
+      "endLine": 208
+    },
+    {
+      "id": "prop-7-2-2",
+      "number": "Proposition 7.2.2",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "Sober unit characterization",
+      "summary": "Sober unit characterization.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_2_sober_unit_characterization"
+      ],
+      "startLine": 1959,
+      "endLine": 1965
+    },
+    {
+      "id": "def-7-2-3",
+      "number": "Definition 7.2.3",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Sober space",
+      "summary": "Sober space.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_3_sober_space"
+      ],
+      "startLine": 209,
+      "endLine": 670
+    },
+    {
+      "id": "prop-7-2-4",
+      "number": "Proposition 7.2.4",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "Lattice unit spatiality",
+      "summary": "Lattice unit spatiality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_4_lattice_unit_spatiality"
+      ],
+      "startLine": 1966,
+      "endLine": 2003
+    },
+    {
+      "id": "def-7-2-5",
+      "number": "Definition 7.2.5",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Spatial lattice",
+      "summary": "Spatial lattice.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_5_spatial_lattice"
+      ],
+      "startLine": 671,
+      "endLine": 1326
+    },
+    {
+      "id": "thm-7-2-6",
+      "number": "Theorem 7.2.6",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Spatial lattice frame",
+      "summary": "Spatial lattice frame.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_6_spatial_lattice_frame"
+      ],
+      "startLine": 2004,
+      "endLine": 2022
+    },
+    {
+      "id": "thm-7-2-7",
+      "number": "Theorem 7.2.7",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Points sober opens spatial",
+      "summary": "Points sober opens spatial.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_7_points_sober_opens_spatial"
+      ],
+      "startLine": 2023,
+      "endLine": 2072
+    },
+    {
+      "id": "cor-7-2-8",
+      "number": "Corollary 7.2.8",
+      "section": "7.2",
+      "kind": "Corollary",
+      "title": "Sober spatial dual equivalence",
+      "summary": "Sober spatial dual equivalence.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "cor_7_2_8_sober_spatial_dual_equivalence"
+      ],
+      "startLine": 2073,
+      "endLine": 2115
+    },
+    {
+      "id": "thm-7-2-9",
+      "number": "Theorem 7.2.9",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Hofmann mislove sober",
+      "summary": "Hofmann mislove sober.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_9_hofmann_mislove_sober"
+      ],
+      "startLine": 2116,
+      "endLine": 2228
+    },
+    {
+      "id": "cor-7-2-10",
+      "number": "Corollary 7.2.10",
+      "section": "7.2",
+      "kind": "Corollary",
+      "title": "Compact saturated filters dual",
+      "summary": "Compact saturated filters dual.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "cor_7_2_10_compact_saturated_filters_dual"
+      ],
+      "startLine": 2229,
+      "endLine": 2238
+    },
+    {
+      "id": "cor-7-2-11",
+      "number": "Corollary 7.2.11",
+      "section": "7.2",
+      "kind": "Corollary",
+      "title": "Filtered intersections compact saturated",
+      "summary": "Filtered intersections compact saturated.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "cor_7_2_11_filtered_intersections_compact_saturated"
+      ],
+      "startLine": 2239,
+      "endLine": 2249
+    },
+    {
+      "id": "prop-7-2-12",
+      "number": "Proposition 7.2.12",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "T0 weak upper topology",
+      "summary": "T0 weak upper topology.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_12_t0_weak_upper_topology"
+      ],
+      "startLine": 2250,
+      "endLine": 2626
+    },
+    {
+      "id": "prop-7-2-13",
+      "number": "Proposition 7.2.13",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "Sober specialization dcpo",
+      "summary": "Sober specialization dcpo.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_13_sober_specialization_dcpo"
+      ],
+      "startLine": 2627,
+      "endLine": 2636
+    },
+    {
+      "id": "thm-7-2-14",
+      "number": "Theorem 7.2.14",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Sober complete cocomplete retracts",
+      "summary": "Sober complete cocomplete retracts.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_14_sober_complete_cocomplete_retracts"
+      ],
+      "startLine": 2637,
+      "endLine": 2659
+    },
+    {
+      "id": "lemma-7-2-15",
+      "number": "Lemma 7.2.15",
+      "section": "7.2",
+      "kind": "Lemma",
+      "title": "Distributive continuous lattices spatial",
+      "summary": "Distributive continuous lattices spatial.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "lemma_7_2_15_distributive_continuous_lattices_spatial"
+      ],
+      "startLine": 2660,
+      "endLine": 2989
+    },
+    {
+      "id": "thm-7-2-16",
+      "number": "Theorem 7.2.16",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Locally compact distributive duality",
+      "summary": "Locally compact distributive duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_16_locally_compact_distributive_duality"
+      ],
+      "startLine": 2990,
+      "endLine": 3067
+    },
+    {
+      "id": "def-7-2-17",
+      "number": "Definition 7.2.17",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Coherent space",
+      "summary": "Coherent space.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_17_coherent_space"
+      ],
+      "startLine": 1327,
+      "endLine": 1343
+    },
+    {
+      "id": "def-7-2-18",
+      "number": "Definition 7.2.18",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Arithmetic lattice",
+      "summary": "Arithmetic lattice.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_18_arithmetic_lattice"
+      ],
+      "startLine": 1344,
+      "endLine": 1372
+    },
+    {
+      "id": "thm-7-2-19",
+      "number": "Theorem 7.2.19",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Coherent arithmetic duality",
+      "summary": "Coherent arithmetic duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_19_coherent_arithmetic_duality"
+      ],
+      "startLine": 3068,
+      "endLine": 3158
+    },
+    {
+      "id": "thm-7-2-20",
+      "number": "Theorem 7.2.20",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Algebraic distributive duality",
+      "summary": "Algebraic distributive duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_20_algebraic_distributive_duality"
+      ],
+      "startLine": 3159,
+      "endLine": 3226
+    },
+    {
+      "id": "def-7-2-21",
+      "number": "Definition 7.2.21",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Spectral space",
+      "summary": "Spectral space.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_21_spectral_space"
+      ],
+      "startLine": 1373,
+      "endLine": 1461
+    },
+    {
+      "id": "thm-7-2-22",
+      "number": "Theorem 7.2.22",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Spectral algebraic arithmetic duality",
+      "summary": "Spectral algebraic arithmetic duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_22_spectral_algebraic_arithmetic_duality"
+      ],
+      "startLine": 3227,
+      "endLine": 3232
+    },
+    {
+      "id": "prop-7-2-23",
+      "number": "Proposition 7.2.23",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "Prime filters compacts points",
+      "summary": "Prime filters compacts points.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_23_prime_filters_compacts_points"
+      ],
+      "startLine": 3233,
+      "endLine": 3304
+    },
+    {
+      "id": "def-7-2-24",
+      "number": "Definition 7.2.24",
+      "section": "7.2",
+      "kind": "Definition",
+      "title": "Join approximable relation",
+      "summary": "Join approximable relation.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "def_7_2_24_join_approximable_relation"
+      ],
+      "startLine": 1462,
+      "endLine": 1958
+    },
+    {
+      "id": "prop-7-2-25",
+      "number": "Proposition 7.2.25",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "Algebraic arithmetic lattice equivalence",
+      "summary": "Algebraic arithmetic lattice equivalence.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_25_algebraic_arithmetic_lattice_equivalence"
+      ],
+      "startLine": 3305,
+      "endLine": 3389
+    },
+    {
+      "id": "thm-7-2-26",
+      "number": "Theorem 7.2.26",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Spectral distributive duality",
+      "summary": "Spectral distributive duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_26_spectral_distributive_duality"
+      ],
+      "startLine": 3390,
+      "endLine": 3415
+    },
+    {
+      "id": "prop-7-2-27",
+      "number": "Proposition 7.2.27",
+      "section": "7.2",
+      "kind": "Proposition",
+      "title": "Continuous domains sober",
+      "summary": "Continuous domains sober.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "prop_7_2_27_continuous_domains_sober"
+      ],
+      "startLine": 3416,
+      "endLine": 3463
+    },
+    {
+      "id": "thm-7-2-28",
+      "number": "Theorem 7.2.28",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Cont completely distributive duality",
+      "summary": "Cont completely distributive duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_28_cont_completely_distributive_duality"
+      ],
+      "startLine": 3464,
+      "endLine": 3521
+    },
+    {
+      "id": "thm-7-2-29",
+      "number": "Theorem 7.2.29",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Coherent algebraic domain duality",
+      "summary": "Coherent algebraic domain duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_29_coherent_algebraic_domain_duality"
+      ],
+      "startLine": 3522,
+      "endLine": 3526
+    },
+    {
+      "id": "thm-7-2-30",
+      "number": "Theorem 7.2.30",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Compact open lattices fb domains",
+      "summary": "Compact open lattices fb domains.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_30_compact_open_lattices_fb_domains"
+      ],
+      "startLine": 3527,
+      "endLine": 3538
+    },
+    {
+      "id": "thm-7-2-31",
+      "number": "Theorem 7.2.31",
+      "section": "7.2",
+      "kind": "Theorem",
+      "title": "Compact open lattices algebraic bifinite-continuous",
+      "summary": "Compact open lattices algebraic bifinite-continuous.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "lean": [
+        "theorem_7_2_31_compact_open_lattices_algebraic_bc"
+      ],
+      "startLine": 3539,
+      "endLine": 3548
+    },
+    {
+      "id": "def-7-3-1",
+      "number": "Definition 7.3.1",
+      "section": "7.3",
+      "kind": "Definition",
+      "title": "Domain prelocale",
+      "summary": "Domain prelocale.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "def_7_3_1_domain_prelocale"
+      ],
+      "startLine": 114,
+      "endLine": 212
+    },
+    {
+      "id": "def-7-3-2",
+      "number": "Definition 7.3.2",
+      "section": "7.3",
+      "kind": "Definition",
+      "title": "Preisomorphism localic description",
+      "summary": "Preisomorphism localic description.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "def_7_3_2_preisomorphism_localic_description"
+      ],
+      "startLine": 213,
+      "endLine": 331
+    },
+    {
+      "id": "prop-7-3-3",
+      "number": "Proposition 7.3.3",
+      "section": "7.3",
+      "kind": "Proposition",
+      "title": "Localic description spectrum",
+      "summary": "Localic description spectrum.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "prop_7_3_3_localic_description_spectrum"
+      ],
+      "startLine": 3264,
+      "endLine": 3294
+    },
+    {
+      "id": "thm-7-3-4",
+      "number": "Theorem 7.3.4",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Domain prelocale duality",
+      "summary": "Domain prelocale duality.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_4_domain_prelocale_duality"
+      ],
+      "startLine": 3295,
+      "endLine": 3299
+    },
+    {
+      "id": "def-7-3-5",
+      "number": "Definition 7.3.5",
+      "section": "7.3",
+      "kind": "Definition",
+      "title": "Sub prelocale",
+      "summary": "Sub prelocale.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "def_7_3_5_sub_prelocale"
+      ],
+      "startLine": 332,
+      "endLine": 814
+    },
+    {
+      "id": "prop-7-3-6",
+      "number": "Proposition 7.3.6",
+      "section": "7.3",
+      "kind": "Proposition",
+      "title": "Sub prelocale embedding-projection pair",
+      "summary": "Sub prelocale embedding-projection pair.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "prop_7_3_6_sub_prelocale_ep_pair"
+      ],
+      "startLine": 3300,
+      "endLine": 3305
+    },
+    {
+      "id": "cor-7-3-7",
+      "number": "Corollary 7.3.7",
+      "section": "7.3",
+      "kind": "Corollary",
+      "title": "Sub prelocale domain embedding",
+      "summary": "Sub prelocale domain embedding.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "cor_7_3_7_sub_prelocale_domain_embedding"
+      ],
+      "startLine": 3306,
+      "endLine": 3314
+    },
+    {
+      "id": "lemma-7-3-8",
+      "number": "Lemma 7.3.8",
+      "section": "7.3",
+      "kind": "Lemma",
+      "title": "Compact open scott function space",
+      "summary": "Compact open scott function space.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "lemma_7_3_8_compact_open_scott_function_space"
+      ],
+      "startLine": 3315,
+      "endLine": 3324
+    },
+    {
+      "id": "lemma-7-3-9",
+      "number": "Lemma 7.3.9",
+      "section": "7.3",
+      "kind": "Lemma",
+      "title": "Bifinite function space compact opens",
+      "summary": "Bifinite function space compact opens.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "lemma_7_3_9_bifinite_function_space_compact_opens"
+      ],
+      "startLine": 3325,
+      "endLine": 3331
+    },
+    {
+      "id": "thm-7-3-10",
+      "number": "Theorem 7.3.10",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Function space prelocale",
+      "summary": "Function space prelocale.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_10_function_space_prelocale"
+      ],
+      "startLine": 3332,
+      "endLine": 3337
+    },
+    {
+      "id": "lemma-7-3-11",
+      "number": "Lemma 7.3.11",
+      "section": "7.3",
+      "kind": "Lemma",
+      "title": "Plotkin powerdomain compact opens",
+      "summary": "Plotkin powerdomain compact opens.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "lemma_7_3_11_plotkin_powerdomain_compact_opens"
+      ],
+      "startLine": 3338,
+      "endLine": 3344
+    },
+    {
+      "id": "def-7-3-12",
+      "number": "Definition 7.3.12",
+      "section": "7.3",
+      "kind": "Definition",
+      "title": "Plotkin powerlocale",
+      "summary": "Plotkin powerlocale.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "def_7_3_12_plotkin_powerlocale"
+      ],
+      "startLine": 815,
+      "endLine": 3263
+    },
+    {
+      "id": "thm-7-3-13",
+      "number": "Theorem 7.3.13",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Plotkin powerlocale rembedding-projectionresentation",
+      "summary": "Plotkin powerlocale rembedding-projectionresentation.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_13_plotkin_powerlocale_representation",
+        "theorem_7_3_13_plotkin_powerlocale_description"
+      ],
+      "startLine": 3345,
+      "endLine": 3349
+    },
+    {
+      "id": "thm-7-3-14",
+      "number": "Theorem 7.3.14",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Prelocale chains bilimits",
+      "summary": "Prelocale chains bilimits.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_14_prelocale_chains_bilimits"
+      ],
+      "startLine": 3357,
+      "endLine": 3362
+    },
+    {
+      "id": "thm-7-3-15",
+      "number": "Theorem 7.3.15",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Interpretation preserves localic descriptions",
+      "summary": "Interpretation preserves localic descriptions.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_15_interpretation_preserves_localic_descriptions"
+      ],
+      "startLine": 3363,
+      "endLine": 3370
+    },
+    {
+      "id": "thm-7-3-16",
+      "number": "Theorem 7.3.16",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Closed type expression spectrum",
+      "summary": "Closed type expression spectrum.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_16_closed_type_expression_spectrum"
+      ],
+      "startLine": 3371,
+      "endLine": 3433
+    },
+    {
+      "id": "thm-7-3-17",
+      "number": "Theorem 7.3.17",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Property language decidable",
+      "summary": "Property language decidable.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_17_property_language_decidable"
+      ],
+      "startLine": 3434,
+      "endLine": 3439
+    },
+    {
+      "id": "thm-7-3-18",
+      "number": "Theorem 7.3.18",
+      "section": "7.3",
+      "kind": "Theorem",
+      "title": "Domain logic sound complete",
+      "summary": "Domain logic sound complete.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "lean": [
+        "theorem_7_3_18_domain_logic_sound_complete"
+      ],
+      "startLine": 3440,
+      "endLine": 3446
+    }
+  ]
+}

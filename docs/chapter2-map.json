@@ -1,0 +1,915 @@
+{
+  "chapter": "Chapter 2",
+  "title": "Basic definitions and results",
+  "leanFile": "../Practice/DomainTheory/Chapter02.lean",
+  "notice": "This map records public paraphrases and Lean source locations. It does not reproduce the textbook text.",
+  "items": [
+    {
+      "id": "def-2-1-1",
+      "number": "Definition 2.1.1",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Preorders and partial orders",
+      "summary": "Predicate-level encodings of reflexive/transitive relations and antisymmetric partial orders.",
+      "lean": [
+        "IsPreorderRel",
+        "IsPartialOrderRel"
+      ],
+      "startLine": 41,
+      "endLine": 44,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-1-2",
+      "number": "Proposition 2.1.2",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Order duals",
+      "summary": "The dual of a partial order is again a partial order.",
+      "lean": [
+        "prop_2_1_2_orderDual"
+      ],
+      "startLine": 51,
+      "endLine": 55,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-1-3",
+      "number": "Definition 2.1.3",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Order-theoretic vocabulary",
+      "summary": "Upper/lower sets, bounds, maximal/minimal elements, largest/least elements, suprema, infima, and lattice completeness.",
+      "lean": [
+        "IsUpperSet",
+        "IsLowerSet",
+        "IsUpperBound",
+        "IsLowerBound",
+        "IsSup",
+        "IsInf",
+        "IsCompleteOrder"
+      ],
+      "startLine": 23,
+      "endLine": 26,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "prop-2-1-4",
+      "number": "Proposition 2.1.4",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Elementary laws for suprema and infima",
+      "summary": "Monotonicity and closure/union laws for suprema and infima in the local predicate formulation.",
+      "lean": [
+        "prop_2_1_4_sup_mono",
+        "prop_2_1_4_inf_mono",
+        "prop_2_1_4_sup_lowerClosure",
+        "prop_2_1_4_inf_upperClosure",
+        "prop_2_1_4_sup_iUnion",
+        "prop_2_1_4_inf_iUnion"
+      ],
+      "startLine": 151,
+      "endLine": 157,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "prop-2-1-5",
+      "number": "Proposition 2.1.5",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Closure systems as complete lattices",
+      "summary": "Intersections give infima, and closure of unions gives the least closed upper bound.",
+      "lean": [
+        "prop_2_1_5_closure_system_complete",
+        "ClosureSystem.isInf_sInter",
+        "ClosureSystem.closure_sUnion_least_closed_upper_bound",
+        "ClosureSystem",
+        "ClosureSystem.closure"
+      ],
+      "startLine": 70,
+      "endLine": 92,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-1-6",
+      "number": "Definition 2.1.6",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Monotone maps",
+      "summary": "Monotone maps are represented using Lean's standard `Monotone` predicate.",
+      "lean": [
+        "IsMonotoneMap"
+      ],
+      "startLine": 93,
+      "endLine": 96,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-1-7",
+      "number": "Proposition 2.1.7",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Fixed points in complete lattices",
+      "summary": "A monotone self-map of a complete lattice has least and greatest fixed points.",
+      "lean": [
+        "prop_2_1_7_complete_lattice_fixpoints"
+      ],
+      "startLine": 142,
+      "endLine": 179,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-1-8",
+      "number": "Definition 2.1.8",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Directed sets, ideals, filters, and chains",
+      "summary": "Directed subsets, ideals, filters, and chain predicates used throughout the chapter.",
+      "lean": [
+        "DirectedSet",
+        "IsIdeal",
+        "IsFilter",
+        "IsChainSet"
+      ],
+      "startLine": 335,
+      "endLine": 339,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "prop-2-1-9",
+      "number": "Proposition 2.1.9",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Joins by finite nonempty joins",
+      "summary": "The local formalization records the finite-nonempty-join decomposition target for nonempty joins.",
+      "lean": [
+        "prop_2_1_9_finite_nonempty_join_decomposition",
+        "FiniteNonemptyJoinSet"
+      ],
+      "startLine": 196,
+      "endLine": 214,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-1-10",
+      "number": "Definition 2.1.10",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Monotone nets and subnets",
+      "summary": "Bundled monotone nets, subnets, and the image-supremum predicate used for directed supremum arguments.",
+      "lean": [
+        "MonotoneNet",
+        "MonotoneNet.Subnet",
+        "MonotoneNet.HasSup"
+      ],
+      "startLine": 215,
+      "endLine": 220,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "lemma-2-1-11",
+      "number": "Lemma 2.1.11",
+      "section": "2.1",
+      "kind": "Lemma",
+      "title": "Finite-principal lattice subnet",
+      "summary": "Every monotone net has a cofinal subnet indexed by finite subsets, giving a lattice-shaped directed index.",
+      "lean": [
+        "lemma_2_1_11_monotone_net_finite_principal_lattice_subnet",
+        "lemma_2_1_11_finset_index_lattice_cofinal"
+      ],
+      "startLine": 278,
+      "endLine": 305,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-1-12",
+      "number": "Proposition 2.1.12",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Iterated directed suprema",
+      "summary": "Diagonal and iterated directed suprema agree in the predicate formulation.",
+      "lean": [
+        "prop_2_1_12_iterated_directed_suprema"
+      ],
+      "startLine": 306,
+      "endLine": 330,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-1-13",
+      "number": "Definition 2.1.13",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Directed-complete partial orders",
+      "summary": "A dcpo is represented by directed completeness together with antisymmetry; the reusable directed-completeness component remains separately available.",
+      "lean": [
+        "IsDcpoOrder",
+        "IsDcpo"
+      ],
+      "startLine": 742,
+      "endLine": 746,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "prop-2-1-15",
+      "number": "Proposition 2.1.15",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Dcpos and chain suprema",
+      "summary": "A poset is a dcpo iff every chain has a supremum; the hard direction is isolated behind a documented Markowsky/Iwamura axiom.",
+      "lean": [
+        "prop_2_1_15_dcpo_iff_chain_sups",
+        "markowsky_dcpo_of_chain_sups",
+        "HasChainSups"
+      ],
+      "startLine": 548,
+      "endLine": 553,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-1-16",
+      "number": "Proposition 2.1.16",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Least fixed points in pointed dcpos",
+      "summary": "Least fixed point existence for monotone endomaps is recorded through Pataraia-style support lemmas and a documented external theorem.",
+      "lean": [
+        "prop_2_1_16_pointed_dcpo_iff_lfp",
+        "hasLeastFixedPoints_of_pataraiaLowerSet_directed",
+        "HasLeastFixedPoints",
+        "pataraiaLowerSet"
+      ],
+      "startLine": 935,
+      "endLine": 942,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-1-17",
+      "number": "Definition 2.1.17",
+      "section": "2.1",
+      "kind": "Definition",
+      "title": "Scott-continuity and strict maps",
+      "summary": "Scott-continuity preserves directed suprema; strict maps preserve bottom in pointed dcpos.",
+      "lean": [
+        "ScottContinuous",
+        "StrictMap",
+        "ConstantMap",
+        "ScottContFun"
+      ],
+      "startLine": 751,
+      "endLine": 756,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "prop-2-1-18",
+      "number": "Proposition 2.1.18",
+      "section": "2.1",
+      "kind": "Proposition",
+      "title": "Function spaces of continuous maps",
+      "summary": "Scott-continuous function spaces are dcpos with pointwise order and pointwise directed suprema.",
+      "lean": [
+        "prop_2_1_18_continuous_function_space_dcpo",
+        "scottContFun_directed_sup_apply"
+      ],
+      "startLine": 943,
+      "endLine": 998,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "thm-2-1-19",
+      "number": "Theorem 2.1.19",
+      "section": "2.1",
+      "kind": "Theorem",
+      "title": "Kleene fixed point theorem",
+      "summary": "The least fixed point of a Scott-continuous self-map is the supremum of the Kleene iteration chain, and the chosen fixpoint assignment is Scott-continuous.",
+      "lean": [
+        "theorem_2_1_19_1",
+        "dcpo_scottContinuous_endomap_has_least_fixed_point",
+        "theorem_2_1_19_2_fix_assignment_continuous"
+      ],
+      "startLine": 847,
+      "endLine": 881,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "lemma-2-1-20",
+      "number": "Lemma 2.1.20",
+      "section": "2.1",
+      "kind": "Lemma",
+      "title": "Fixed-point induction",
+      "summary": "Admissible predicates support induction over least fixed points of continuous endomaps.",
+      "lean": [
+        "lemma_2_1_20",
+        "OmegaAdmissible"
+      ],
+      "startLine": 887,
+      "endLine": 897,
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+    },
+    {
+      "id": "lemma-2-1-21",
+      "number": "Lemma 2.1.21",
+      "section": "2.1",
+      "kind": "Lemma",
+      "title": "Fixed point invariance",
+      "summary": "Strict commuting squares preserve least fixed points.",
+      "lean": [
+        "lemma_2_1_21_fix_invariance"
+      ],
+      "startLine": 1207,
+      "endLine": 1248,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-2-1",
+      "number": "Definition 2.2.1",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Way-below relation and compactness",
+      "summary": "The approximation relation `x ≪ y`, compact elements, and the standard lower/upper way-below sets.",
+      "lean": [
+        "WayBelow",
+        "Compact",
+        "wayBelowLower",
+        "wayBelowUpper",
+        "CompactSet"
+      ],
+      "startLine": 22,
+      "endLine": 28,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "prop-2-2-2",
+      "number": "Proposition 2.2.2",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Basic way-below laws",
+      "summary": "Way-below implies order-below and is monotone in both arguments.",
+      "lean": [
+        "prop_2_2_2_1",
+        "prop_2_2_2_2"
+      ],
+      "startLine": 64,
+      "endLine": 70,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "def-2-2-3",
+      "number": "Definition 2.2.3",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Bases and approximants",
+      "summary": "Approximants relative to a candidate basis, plus raw and strengthened basis predicates.",
+      "lean": [
+        "Approximants",
+        "IsBasisRaw",
+        "IsBasis"
+      ],
+      "startLine": 78,
+      "endLine": 81,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "prop-2-2-4",
+      "number": "Proposition 2.2.4",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Elementary basis facts",
+      "summary": "Raw bases yield directed approximant sets, bases contain compact elements, and supersets of bases are bases.",
+      "lean": [
+        "prop_2_2_4_1",
+        "prop_2_2_4_2",
+        "prop_2_2_4_3"
+      ],
+      "startLine": 96,
+      "endLine": 119,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "cor-2-2-5",
+      "number": "Corollary 2.2.5",
+      "section": "2.2",
+      "kind": "Corollary",
+      "title": "Smallest basis and compact elements",
+      "summary": "The whole carrier is a basis when any basis exists, compact elements occur in every basis, and compact-element bases are smallest.",
+      "lean": [
+        "cor_2_2_5_1",
+        "cor_2_2_5_2_compacts_subset_every_basis",
+        "cor_2_2_5_3_compact_basis_smallest",
+        "cor_2_2_5_4_smallest_compact_basis_iff_algebraic"
+      ],
+      "startLine": 130,
+      "endLine": 134,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "def-2-2-6",
+      "number": "Definition 2.2.6",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Continuous, algebraic, omega-continuous, and omega-algebraic domains",
+      "summary": "The exact domain predicates combine partial-order dcpo structure with the corresponding basis condition; preorder-level basis components remain separately reusable.",
+      "lean": [
+        "IsContinuousDcpo",
+        "IsAlgebraicDcpo",
+        "IsOmegaContinuousDcpo",
+        "IsOmegaAlgebraicDcpo",
+        "IsContinuousDomain",
+        "IsAlgebraicDomain",
+        "IsOmegaContinuousDomain",
+        "IsOmegaAlgebraicDomain"
+      ],
+      "startLine": 157,
+      "endLine": 160,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "prop-2-2-7",
+      "number": "Proposition 2.2.7",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Characterizing continuous and algebraic domains",
+      "summary": "Continuity is equivalent to the whole carrier being a basis; algebraicity is compact-element basis formation.",
+      "lean": [
+        "prop_2_2_7_1",
+        "prop_2_2_7_2"
+      ],
+      "startLine": 181,
+      "endLine": 191,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "def-2-2-8",
+      "number": "Definition 2.2.8",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Inductive closure systems",
+      "summary": "A closure system is inductive when it is closed under directed unions.",
+      "lean": [
+        "ClosureSystem.IsInductive"
+      ],
+      "startLine": 1255,
+      "endLine": 1258,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-9",
+      "number": "Proposition 2.2.9",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Inductive closure systems are algebraic",
+      "summary": "Finitely generated hulls supply compact approximants for inductive closure systems.",
+      "lean": [
+        "prop_2_2_9_inductive_closure_system_algebraic",
+        "ClosureSystem.IsInductive",
+        "ClosureSystem.IsFinitelyGeneratedHull"
+      ],
+      "startLine": 1265,
+      "endLine": 1374,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-10",
+      "number": "Proposition 2.2.10",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Order through basis approximants",
+      "summary": "For a basis, `x ≤ y` can be tested by inclusion of the approximants below `x` into those below `y`.",
+      "lean": [
+        "prop_2_2_10_basis_subset",
+        "prop_2_2_10_basis_lower",
+        "prop_2_2_10_forward"
+      ],
+      "startLine": 204,
+      "endLine": 214,
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+    },
+    {
+      "id": "prop-2-2-11",
+      "number": "Proposition 2.2.11",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Basis criterion for Scott-continuity",
+      "summary": "Scott-continuity can be checked using basis elements and finite approximation witnesses.",
+      "lean": [
+        "prop_2_2_11_basis_continuity_criterion"
+      ],
+      "startLine": 1375,
+      "endLine": 1414,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-12",
+      "number": "Proposition 2.2.12",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Omega-basis fixed point chains",
+      "summary": "A countable basis supports an omega-chain description of continuous least fixed points; the full cited theorem is recorded as an external axiom.",
+      "lean": [
+        "prop_2_2_12_omega_basis_fixpoint_chain_full",
+        "prop_2_2_12_omega_basis_fixpoint_chain",
+        "OmegaBasisFixpointChain"
+      ],
+      "startLine": 1433,
+      "endLine": 1446,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-13",
+      "number": "Proposition 2.2.13",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Countable bases and omega-chains",
+      "summary": "Countable bases reduce directed supremum arguments to cofinal omega-chains.",
+      "lean": [
+        "prop_2_2_13_countable_basis_has_cofinal_omega_chain"
+      ],
+      "startLine": 1476,
+      "endLine": 1521,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-14",
+      "number": "Proposition 2.2.14",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Omega-ccpos and omega-continuity",
+      "summary": "Continuous or algebraic omega-ccpos are dcpos, and omega-continuous maps are continuous under the stated hypotheses.",
+      "lean": [
+        "prop_2_2_14_1_continuous_omega_ccpo_dcpo",
+        "prop_2_2_14_2_algebraic_omega_ccpo_dcpo",
+        "prop_2_2_14_3_omega_continuous_maps_are_continuous",
+        "IsOmegaCcpo",
+        "OmegaContinuousMap"
+      ],
+      "startLine": 1532,
+      "endLine": 1582,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "lemma-2-2-15",
+      "number": "Lemma 2.2.15",
+      "section": "2.2",
+      "kind": "Lemma",
+      "title": "Interpolation",
+      "summary": "Way-below interpolation, including finite and basis-refined forms.",
+      "lean": [
+        "lemma_2_2_15_interpolation",
+        "lemma_2_2_15_interpolation_basis",
+        "wayBelow_interpolation"
+      ],
+      "startLine": 1708,
+      "endLine": 1743,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "cor-2-2-16",
+      "number": "Corollary 2.2.16",
+      "section": "2.2",
+      "kind": "Corollary",
+      "title": "Way-below and directed suprema",
+      "summary": "Way-below elements of a directed supremum are already below a member of the directed set.",
+      "lean": [
+        "cor_2_2_16_wayBelow_directed_sup",
+        "cor_2_2_16_wayBelowLower_directed_sup"
+      ],
+      "startLine": 1771,
+      "endLine": 1785,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-17",
+      "number": "Proposition 2.2.17",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Principal ideals and locality",
+      "summary": "Continuity, algebraicity, compactness, and way-below tests can be localized to principal ideals.",
+      "lean": [
+        "prop_2_2_17_1_wayBelow_exact_sup",
+        "prop_2_2_17_2_wayBelow_principal_ideals",
+        "prop_2_2_17_3_continuous_principal_ideals",
+        "prop_2_2_17_4_compacts_from_principal_ideals",
+        "prop_2_2_17_5_algebraic_principal_ideals"
+      ],
+      "startLine": 1933,
+      "endLine": 1950,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-18",
+      "number": "Proposition 2.2.18",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Compact elements and finite joins",
+      "summary": "Minimal upper bounds and finite joins preserve compactness under the chapter's local hypotheses.",
+      "lean": [
+        "prop_2_2_18_1_mub_finite_compacts_compact",
+        "prop_2_2_18_2_wayBelowLower_sup_closed",
+        "prop_2_2_18_3_finite_join_compact"
+      ],
+      "startLine": 2121,
+      "endLine": 2140,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "cor-2-2-19",
+      "number": "Corollary 2.2.19",
+      "section": "2.2",
+      "kind": "Corollary",
+      "title": "Algebraic complete lattices",
+      "summary": "A complete lattice is algebraic exactly when every element is a join of compact elements below it.",
+      "lean": [
+        "cor_2_2_19_complete_lattice_algebraic_iff_compact_joins"
+      ],
+      "startLine": 2168,
+      "endLine": 2217,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-2-20",
+      "number": "Definition 2.2.20",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Abstract bases",
+      "summary": "Abstract bases are transitive approximation structures with finite interpolation.",
+      "lean": [
+        "AbstractBasis",
+        "AbstractBasis.ofConcreteBasis"
+      ],
+      "startLine": 2222,
+      "endLine": 2231,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-2-21",
+      "number": "Definition 2.2.21",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Ideals and ideal completion",
+      "summary": "Lower directed ideals over an abstract basis, the ideal completion, and principal ideals.",
+      "lean": [
+        "AbstractBasis.IsLower",
+        "AbstractBasis.IsDirected",
+        "AbstractBasis.IsIdeal",
+        "AbstractBasis.Ideal",
+        "AbstractBasis.principalIdeal"
+      ],
+      "startLine": 2261,
+      "endLine": 2264,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-22",
+      "number": "Proposition 2.2.22",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Properties of ideal completion",
+      "summary": "Ideal completions are dcpos; their way-below relation, basis, continuity, algebraicity, and compact basis behavior are formalized.",
+      "lean": [
+        "prop_2_2_22_1_ideal_completion_dcpo",
+        "prop_2_2_22_2_ideal_wayBelow",
+        "prop_2_2_22_3_ideal_completion_continuous",
+        "prop_2_2_22_4_reflexive_ideal_completion_algebraic",
+        "prop_2_2_22_5_poset_compacts"
+      ],
+      "startLine": 2327,
+      "endLine": 2341,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-23",
+      "number": "Proposition 2.2.23",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Products of abstract bases",
+      "summary": "Ideal completion preserves products for the local abstract-basis construction.",
+      "lean": [
+        "prop_2_2_23_ideal_completion_product",
+        "AbstractBasis.prod"
+      ],
+      "startLine": 2528,
+      "endLine": 2622,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-24",
+      "number": "Proposition 2.2.24",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Extension from ideal completions",
+      "summary": "Constructs the largest Scott-continuous extension, exposes its directed-supremum formula and reflexive-basis equality, and proves that the assignment f ↦ fhat is Scott-continuous.",
+      "lean": [
+        "prop_2_2_24_extension_universal",
+        "extensionOperator_scottContinuous",
+        "canonicalExtension_spec",
+        "MonotoneToPreorder"
+      ],
+      "startLine": 2633,
+      "endLine": 2734,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-2-25",
+      "number": "Proposition 2.2.25",
+      "section": "2.2",
+      "kind": "Proposition",
+      "title": "Continuous domains as ideal completions",
+      "summary": "A partial-order dcpo with a concrete basis is represented by the ideal completion of its extracted abstract basis.",
+      "lean": [
+        "prop_2_2_25_domain_iso_ideal_completion"
+      ],
+      "startLine": 3013,
+      "endLine": 3020,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "cor-2-2-26",
+      "number": "Corollary 2.2.26",
+      "section": "2.2",
+      "kind": "Corollary",
+      "title": "Maps determined by basis values",
+      "summary": "Continuous maps from a continuous domain are determined by their values on a basis.",
+      "lean": [
+        "cor_2_2_26_continuous_map_determined_by_basis"
+      ],
+      "startLine": 3021,
+      "endLine": 3047,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-2-27",
+      "number": "Definition 2.2.27",
+      "section": "2.2",
+      "kind": "Definition",
+      "title": "Approximable relations",
+      "summary": "Approximable relations between abstract bases, used for categorical representation statements.",
+      "lean": [
+        "ApproximableRelation"
+      ],
+      "startLine": 3048,
+      "endLine": 3064,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "thm-2-2-28",
+      "number": "Theorem 2.2.28",
+      "section": "2.2",
+      "kind": "Theorem",
+      "title": "Abstract bases and continuous domains",
+      "summary": "The PDF-level result is stated as a mathlib bundled equivalence between the category of abstract bases and approximable relations and the category of continuous dcpos and Scott-continuous maps.",
+      "lean": [
+        "theorem_2_2_28_abstract_bases_equiv_CONT",
+        "theorem_2_2_28_presentation_object_equiv",
+        "Theorem228CategoricalEquivalence"
+      ],
+      "startLine": 3322,
+      "endLine": 3329,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "thm-2-2-29",
+      "number": "Theorem 2.2.29",
+      "section": "2.2",
+      "kind": "Theorem",
+      "title": "Preorders and algebraic domains",
+      "summary": "The PDF-level result is stated as a mathlib bundled equivalence between reflexive abstract bases and algebraic dcpos with Scott-continuous maps.",
+      "lean": [
+        "theorem_2_2_29_preorders_equiv_ALG",
+        "theorem_2_2_29_presentation_object_equiv",
+        "Theorem229CategoricalEquivalence"
+      ],
+      "startLine": 3348,
+      "endLine": 3355,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "def-2-3-1",
+      "number": "Definition 2.3.1",
+      "section": "2.3",
+      "kind": "Definition",
+      "title": "Scott topology",
+      "summary": "Scott-closed and Scott-open sets, the source-facing unbundled topology, a mathlib TopologicalSpace bridge, interiors, and neighborhoods.",
+      "lean": [
+        "ScottClosed",
+        "ScottOpen",
+        "ScottTopology",
+        "scottTopologicalSpace",
+        "isOpen_scottTopologicalSpace_iff",
+        "ScottInteriorMem",
+        "ScottNeighborhood"
+      ],
+      "startLine": 22,
+      "endLine": 28,
+      "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean"
+    },
+    {
+      "id": "prop-2-3-2",
+      "number": "Proposition 2.3.2",
+      "section": "2.3",
+      "kind": "Proposition",
+      "title": "Order and separation from Scott topology",
+      "summary": "The Scott topology reconstructs the specialization order; T0 and Hausdorff separation are characterized locally.",
+      "lean": [
+        "prop_2_3_2_order_open_iff",
+        "prop_2_3_2_order_closure_iff",
+        "prop_2_3_2_2_scott_T0",
+        "prop_2_3_2_3_scott_hausdorff_trivial_order"
+      ],
+      "startLine": 136,
+      "endLine": 142,
+      "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean"
+    },
+    {
+      "id": "prop-2-3-3",
+      "number": "Proposition 2.3.3",
+      "section": "2.3",
+      "kind": "Proposition",
+      "title": "Directed suprema by Scott neighborhoods",
+      "summary": "A directed supremum is characterized by upper-bound status plus meeting every Scott neighborhood.",
+      "lean": [
+        "prop_2_3_3_sup_iff_neighborhoods"
+      ],
+      "startLine": 3433,
+      "endLine": 3458,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-3-4",
+      "number": "Proposition 2.3.4",
+      "section": "2.3",
+      "kind": "Proposition",
+      "title": "Order-theoretic and topological Scott-continuity",
+      "summary": "The two formulations of Scott-continuity coincide for the unbundled Scott topologies.",
+      "lean": [
+        "prop_2_3_4_scottContinuous_iff_topological",
+        "prop_2_3_4_forward"
+      ],
+      "startLine": 3459,
+      "endLine": 3486,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-3-5",
+      "number": "Proposition 2.3.5",
+      "section": "2.3",
+      "kind": "Proposition",
+      "title": "Way-below and Scott interiors",
+      "summary": "In continuous domains, approximation is equivalent to membership in the Scott interior, and to membership in `↑↑x`.",
+      "lean": [
+        "prop_2_3_5_wayBelow_iff_scottInterior",
+        "prop_2_3_5_wayBelowUpper",
+        "prop_2_3_5_wayBelow_iff_wayBelowUpper"
+      ],
+      "startLine": 3499,
+      "endLine": 3520,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-3-6",
+      "number": "Proposition 2.3.6",
+      "section": "2.3",
+      "kind": "Proposition",
+      "title": "Scott opens from way-below support",
+      "summary": "Scott-open sets are supported by way-below elements, and by basis elements in the basis-refined form.",
+      "lean": [
+        "prop_2_3_6_scottOpen_iff_supported",
+        "prop_2_3_6_open_supported_by_wayBelow",
+        "prop_2_3_6_open_supported_by_basis"
+      ],
+      "startLine": 3664,
+      "endLine": 3703,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "prop-2-3-7",
+      "number": "Proposition 2.3.7",
+      "section": "2.3",
+      "kind": "Proposition",
+      "title": "Scott opens of ideal completions",
+      "summary": "Scott-open subsets of an ideal completion arise from observable opens determined by basis subsets.",
+      "lean": [
+        "prop_2_3_7_ideal_completion_opens",
+        "observableOpen"
+      ],
+      "startLine": 3563,
+      "endLine": 3610,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    },
+    {
+      "id": "lemma-2-3-8",
+      "number": "Lemma 2.3.8",
+      "section": "2.3",
+      "kind": "Lemma",
+      "title": "Scott opens as unions of filters",
+      "summary": "Scott-open sets in continuous domains are unions of Scott-open filters, using an interpolating sequence.",
+      "lean": [
+        "lemma_2_3_8_scott_open_union_filters",
+        "interpolatingFilter_scottOpen",
+        "interpolatingFilter_isFilter"
+      ],
+      "startLine": 3826,
+      "endLine": 3857,
+      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+    }
+  ]
+}

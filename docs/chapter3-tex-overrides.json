@@ -1,0 +1,393 @@
+{
+  "items": {
+    "def-3-1-1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 34",
+      "tex": "\\leanmarker{def-3-1-1}{Definition 3.1.1} Let $P$ and $Q$ be posets. A pair $s:P\\to Q$, $r:Q\\to P$ of monotone functions is called a \\emph{monotone section retraction pair} if $r\\circ s$ is the identity on $P$. In this situation we will call $P$ a monotone retract of $Q$.\n\nIf $P$ and $Q$ are dcpo's and if both functions are continuous then we speak of a \\emph{continuous section retraction pair}.\n\nWe will omit the qualifying adjective ``monotone'', respectively ``continuous'', if the properties of the functions are clear from the context. We will also use \\emph{s-r-pair} as a shorthand.\n\nOne sees immediately that in an s-r-pair the retraction is surjective and the section is injective, so our intuition about $P$ being both a sub-object and a quotient of $Q$ is justified. In such a situation $P$ inherits many properties from $Q$:"
+    },
+    "prop-3-1-2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 34",
+      "skipBlocksAfter": 1,
+      "tex": "\\leanmarker{prop-3-1-2}{Proposition 3.1.2} Let $P$ and $Q$ be posets and let $s:P\\to Q$, $r:Q\\to P$ be a monotone section retraction pair.\n\\begin{enumerate}\n\\item Let $A$ be any subset of $P$. If $s(A)$ has a supremum in $Q$ then $A$ has a supremum in $P$. It is given by\n\\[\n  r\\left(\\bigvee s(A)\\right).\n\\]\nSimilarly for the infimum.\n\\item If $Q$ is a (pointed) dcpo, a semilattice, a lattice or a complete lattice then so is $P$.\n\\end{enumerate}\n\n\\emph{Proof.} Because of $r\\circ s=\\operatorname{id}_P$ and the monotonicity of $r$ it is clear that $r(\\bigvee s(A))$ is an upper bound for $A$. Let $x$ be another such. Then by the monotonicity of $s$ we have that $s(x)$ is an upper bound of $s(A)$ and hence it is above $\\bigvee s(A)$. So we get\n\\[\n  x = r(s(x)) \\sqsupseteq r\\left(\\bigvee s(A)\\right).\n\\]\nThe property of being a (pointed) dcpo, semilattice, etc., is defined through the existence of suprema or infima of certain subsets. The shape of these subsets is preserved by monotone functions and so (2) follows from (1).\n\nLet us now turn to continuous section retraction pairs."
+    },
+    "lemma-3-1-3": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 34-35",
+      "skipBlocksAfter": 1,
+      "tex": "\\leanmarker{lemma-3-1-3}{Lemma 3.1.3} Let $(s,r)$ be a continuous section retraction pair between dcpo's $D$ and $E$ and let $B$ be a basis for $E$. Then $r(B)$ is a basis for $D$.\n\n\\emph{Proof.} Let $c\\in B$ be an approximant to $s(x)$ for $x\\in D$. We show that $r(c)$ approximates $x$. To this end let $A$ be a directed subset of $D$ with $\\bigvee^{\\uparrow} A\\sqsupseteq x$. By the continuity of $s$ we have\n\\[\n  \\bigvee^{\\uparrow} s(A)=s\\left(\\bigvee^{\\uparrow} A\\right)\\sqsupseteq s(x)\n\\]\nand so for some $a\\in A$, $s(a)\\sqsupseteq c$ must hold. This implies $a=r(s(a))\\sqsupseteq r(c)$. The continuity of $r$ gives us that $x$ is the supremum of $r(B_{s(x)})$."
+    },
+    "thm-3-1-4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 35",
+      "tex": "\\leanmarker{thm-3-1-4}{Theorem 3.1.4} A retract of a continuous domain via a continuous s-r-pair is continuous.\n\nThe analogous statement for algebraic domains does not hold in general. Instead of constructing a particular counterexample, we use our knowledge about the ideal completion to get a general, positive result which implies this negative one."
+    },
+    "thm-3-1-5": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 35",
+      "tex": "\\leanmarker{thm-3-1-5}{Theorem 3.1.5} Every $(\\omega\\text{-})$continuous domain is the retract of an $(\\omega\\text{-})$algebraic domain via a continuous s-r-pair.\n\nIn more detail, we have:"
+    },
+    "prop-3-1-6": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 35",
+      "tex": "\\leanmarker{prop-3-1-6}{Proposition 3.1.6} Let $D$ be a continuous domain with basis $B$. Then the maps\n\\[\n  s:D\\to \\operatorname{Idl}(B,\\sqsubseteq),\\quad x\\mapsto B_x\n\\]\nand\n\\[\n  r:\\operatorname{Idl}(B,\\sqsubseteq)\\to D,\\quad A\\mapsto \\bigvee^{\\uparrow} A\n\\]\nconstitute a continuous section retraction pair between $D$ and $\\operatorname{Idl}(B,\\sqsubseteq)$.\n\n\\emph{Proof.} The continuity of $r$ follows from general associativity, Proposition 2.1.4, and the fact that directed suprema in $\\operatorname{Idl}(B)$ are directed unions. For the continuity of $s$ we use the interpolation property in the form of Proposition 2.2.16(2)."
+    },
+    "prop-3-1-7": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 35-36",
+      "skipBlocksAfter": 34,
+      "tex": "\\leanmarker{prop-3-1-7}{Proposition 3.1.7}\n\\begin{enumerate}\n\\item The image of a continuous idempotent map $f$ on a dcpo $D$ is a dcpo. The suprema of directed subsets of $\\operatorname{im}(f)$, calculated in $\\operatorname{im}(f)$, coincide with those calculated in $D$. The inclusion $\\operatorname{im}(f)\\to D$ is Scott-continuous.\n\\item The set of all continuous idempotent functions on a dcpo is again a dcpo.\n\\end{enumerate}\n\n\\emph{Proof.} (1) The first part follows from Proposition 3.1.2 because the inclusion is surely monotone. For the second part let $A$ be a directed set contained in $\\operatorname{im}(f)$. We need to see that $\\bigvee^{\\uparrow} A$ belongs to $\\operatorname{im}(f)$ again. This holds because $f$ is continuous:\n\\[\n  \\bigvee^{\\uparrow} A = \\bigvee^{\\uparrow} f(A) = f\\left(\\bigvee^{\\uparrow} A\\right).\n\\]\n(2) Let $(f_i)_{i\\in I}$ be a directed family of continuous idempotents. For any $x\\in D$ we can calculate\n\\[\n\\begin{aligned}\n\\left(\\bigvee^{\\uparrow}_{i\\in I} f_i\\right)\\circ\n\\left(\\bigvee^{\\uparrow}_{j\\in I} f_j\\right)(x)\n&= \\bigvee^{\\uparrow}_{i\\in I} f_i\\left(\\bigvee^{\\uparrow}_{j\\in I} f_j(x)\\right) \\\\\n&= \\bigvee^{\\uparrow}_{i\\in I}\\bigvee^{\\uparrow}_{j\\in I} f_i(f_j(x)) \\\\\n&= \\bigvee^{\\uparrow}_{i\\in I} f_i(f_i(x)) \\\\\n&= \\bigvee^{\\uparrow}_{i\\in I} f_i(x).\n\\end{aligned}\n\\]\nHence the supremum of continuous idempotents is again an idempotent function. We have proved in Proposition 2.1.18 that it is also continuous.\n\nIf $f$ is a continuous idempotent map on a continuous domain $D$ then we know that its image is again continuous. But it is not true that the order of approximation on $\\operatorname{im}(f)$ is the restriction of the order of approximation on $D$. For example, every constant map is continuous and idempotent. Its image is an algebraic domain with one element, which is therefore compact. But surely not every element of a continuous domain is compact. However, we can say something nice about the Scott-topology on the image:"
+    },
+    "prop-3-1-8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 36",
+      "tex": "\\leanmarker{prop-3-1-8}{Proposition 3.1.8} If $f$ is a continuous idempotent function on a dcpo $D$ then the Scott-topology on $\\operatorname{im}(f)$ is the restriction of the Scott-topology on $D$ to $\\operatorname{im}(f)$.\n\n\\emph{Proof.} This follows immediately because a continuous idempotent function $f$ gives rise to a continuous s-r-pair between $\\operatorname{im}(f)$ and $D$.\n\nUseful examples of idempotent self-maps are retractions $\\operatorname{ret}_x$ onto principal ideals. They are given by\n\\[\n  \\operatorname{ret}_x(y)=\n  \\begin{cases}\n    y, & \\text{if } y\\sqsubseteq x,\\\\\n    x, & \\text{otherwise.}\n  \\end{cases}\n\\]\nTheir continuity follows from the fact that $\\downarrow x$ is always Scott-closed. Dually, we can define a retraction onto a principal filter $\\uparrow c$. It is Scott-continuous if (but not only if) its generator $c$ is compact."
+    },
+    "def-3-1-9": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 37",
+      "tex": "\\leanmarker{def-3-1-9}{Definition 3.1.9} (preliminary) Let $P$ and $Q$ be posets and let $l:P\\to Q$ and $u:Q\\to P$ be monotone functions. We say that $(l,u)$ is an \\emph{adjunction} between $P$ and $Q$ if for every $x\\in P$ we have that $l(x)$ is the least element of $u^{-1}(\\uparrow x)$.\n\nThis definition is simple and easy to motivate. But it brings out just one aspect of adjoint pairs, namely, that $l$ is uniquely determined by $u$. There is much more:"
+    },
+    "prop-3-1-10": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 37-38",
+      "skipBlocksAfter": 1,
+      "tex": "\\leanmarker{prop-3-1-10}{Proposition 3.1.10} Let $P$ and $Q$ be posets and $l:P\\to Q$ and $u:Q\\to P$ be monotone functions. Then the following are equivalent:\n\\begin{enumerate}\n\\item $\\forall x\\in P.\\ l(x)=\\min(u^{-1}(\\uparrow x))$,\n\\item $\\forall y\\in Q.\\ u(y)=\\max(l^{-1}(\\downarrow y))$,\n\\item $l\\circ u\\sqsubseteq \\operatorname{id}_Q$ and $u\\circ l\\sqsupseteq \\operatorname{id}_P$,\n\\item $\\forall x\\in P\\ \\forall y\\in Q.\\ (x\\sqsubseteq u(y) \\Longleftrightarrow l(x)\\sqsubseteq y)$.\n\\end{enumerate}\nFor $(4)\\Rightarrow(1)$ the monotonicity of $u$ and $l$ is not needed.\n\n\\emph{Proof.} $(1)\\Rightarrow(2)$ Pick an element $y\\in Q$. Then because $u(y)\\sqsubseteq u(y)$ we have from (1) that $l(u(y))\\sqsubseteq y$ holds. So $u(y)$ belongs to $l^{-1}(\\downarrow y)$. Now let $x'$ be any element of $l^{-1}(\\downarrow y)$, or, equivalently, $l(x')\\sqsubseteq y$. Using (1) again, we see that this can only happen if $u(y)\\sqsupseteq x'$ holds. So $u(y)$ is indeed the largest element of $l^{-1}(\\downarrow y)$. The converse is proved analogously, of course.\n\n(1) and (2) together immediately give both (3) and (4). From (3) we get (4) by applying the monotone map $l$ to the inequality $x\\sqsubseteq u(y)$ and using $l\\circ u\\sqsubseteq \\operatorname{id}_Q$.\n\nAssuming (4) we see immediately that $l(x)$ is a lower bound for $u^{-1}(\\uparrow x)$. But because $l(x)\\sqsubseteq l(x)$ and hence $x\\sqsubseteq u(l(x))$ we have that $l(x)$ also belongs to $u^{-1}(\\uparrow x)$. We get the monotonicity of $l$ as follows: if $x\\sqsubseteq x'$ holds in $P$, then because $l(x')\\sqsubseteq l(x')$ we have $x'\\sqsubseteq u(l(x'))$ and by transitivity $x\\sqsubseteq u(l(x'))$. Using (4) again, we get $l(x)\\sqsubseteq l(x')$.\n\nWe conclude that despite the lopsided definition, the situation described by an adjunction is completely symmetric. And indeed, adjunctions are usually introduced using either (3) or (4)."
+    },
+    "def-3-1-11": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 38",
+      "tex": "\\leanmarker{def-3-1-11}{Definition 3.1.11} (official) Let $P$ and $Q$ be posets and let $l:P\\to Q$ and $u:Q\\to P$ be functions. We say that $(l,u)$ is an \\emph{adjunction} between $P$ and $Q$ if for all $x\\in P$ and $y\\in Q$ we have\n\\[\n  x\\sqsubseteq u(y) \\Longleftrightarrow l(x)\\sqsubseteq y.\n\\]\nWe call $l$ the lower and $u$ the upper adjoint and write $l:P\\rightleftarrows Q:u$."
+    },
+    "prop-3-1-12": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 38",
+      "tex": "\\leanmarker{prop-3-1-12}{Proposition 3.1.12} Let $l:P\\rightleftarrows Q:u$ be an adjunction between posets.\n\\begin{enumerate}\n\\item $u\\circ l\\circ u=u$ and $l\\circ u\\circ l=l$,\n\\item the image of $u$ and the image of $l$ are order-isomorphic. The isomorphisms are given by the restrictions of $u$ and $l$ to $\\operatorname{im}(l)$ and $\\operatorname{im}(u)$, respectively,\n\\item $u$ is surjective $\\Longleftrightarrow u\\circ l=\\operatorname{id}_P \\Longleftrightarrow l$ is injective,\n\\item $l$ is surjective $\\Longleftrightarrow l\\circ u=\\operatorname{id}_Q \\Longleftrightarrow u$ is injective,\n\\item $l$ preserves existing suprema, $u$ preserves existing infima.\n\\end{enumerate}\n\n\\emph{Proof.} (1) We use Proposition 3.1.10(3) twice:\n\\[\n  u=\\operatorname{id}_P\\circ u \\sqsubseteq (u\\circ l)\\circ u\n    =u\\circ(l\\circ u)\\sqsubseteq u\\circ\\operatorname{id}_Q=u.\n\\]\n(2) The equations from (1) say precisely that on the images of $u$ and $l$, $u\\circ l$ and $l\\circ u$, respectively, act like identity functions.\n\n(3) If $u$ is surjective then we can cancel $u$ on the right in the equation $u\\circ l\\circ u=u$ and get $u\\circ l=\\operatorname{id}_P$. From this it follows that $l$ must be injective.\n\n(5) Let $x=\\bigvee A$ for $A\\subseteq P$. By monotonicity, $l(x)\\sqsupseteq l(a)$ for each $a\\in A$. Conversely, let $y$ be any upper bound of $l(A)$. Then $u(y)$ is an upper bound for each $u(l(a))$ which in turn is above $a$. So $u(y)\\sqsupseteq \\bigvee A=x$ holds and this is equivalent to $y\\sqsupseteq l(x)$.\n\nThe last property in the preceding proposition may be used to define an adjunction in yet another way, the only prerequisite being that there are enough sets with an infimum (or supremum). This is the Adjoint Functor Theorem for posets."
+    },
+    "prop-3-1-13": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 38-39",
+      "skipBlocksAfter": 1,
+      "tex": "\\leanmarker{prop-3-1-13}{Proposition 3.1.13} Let $f:L\\to P$ be a monotone function from a complete lattice to a poset. Then the following are equivalent:\n\\begin{enumerate}\n\\item $f$ preserves all infima,\n\\item $f$ has a lower adjoint.\n\\end{enumerate}\nAnd similarly: $f$ preserves all suprema if and only if $f$ has an upper adjoint.\n\n\\emph{Proof.} We already know how to define a candidate for a lower adjoint $g$; we try\n\\[\n  g(x)=\\bigwedge f^{-1}(\\uparrow x).\n\\]\nAll that remains is to show that $g(x)$ belongs to $f^{-1}(\\uparrow x)$. This follows because $f$ preserves meets:\n\\[\n  f(g(x))=f\\left(\\bigwedge f^{-1}(\\uparrow x)\\right)\n    =\\bigwedge f(f^{-1}(\\uparrow x))\\sqsupseteq \\bigwedge\\uparrow x=x.\n\\]\n\nThis proposition gives us a way of recognizing an adjoint situation in cases where only one function is explicitly given. It is then useful to have a notation for the missing mapping. We write $f^*$ for the upper and $f_*$ for the lower adjoint of $f$.\n\nNow it is high time to come back to domains and see what all this means in our setting."
+    },
+    "prop-3-1-14": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 39",
+      "tex": "\\leanmarker{prop-3-1-14}{Proposition 3.1.14} Let $l:D\\rightleftarrows E:u$ be an adjunction between dcpo's.\n\\begin{enumerate}\n\\item $l$ is Scott-continuous.\n\\item If $u$ is Scott-continuous then $l$ preserves the order of approximation.\n\\item If $D$ is continuous then the converse of (2) is also true.\n\\end{enumerate}\n\n\\emph{Proof.} Continuity of the lower adjoint follows from Proposition 3.1.12(5). So let $x\\ll y$ be elements in $D$ and let $A$ be a directed subset of $E$ such that $l(y)\\sqsubseteq \\bigvee^{\\uparrow} A$ holds. This implies $y\\sqsubseteq u(\\bigvee^{\\uparrow}A)$ and from the continuity of $u$ we deduce $y\\sqsubseteq \\bigvee^{\\uparrow}u(A)$. Hence some $u(a)$ is above $x$ which, going back to $E$, means $l(x)\\sqsubseteq a$.\n\n(3) For the converse let $A$ be any directed subset of $E$. Monotonicity of $u$ yields $\\bigvee^{\\uparrow}u(A)\\sqsubseteq u(\\bigvee^{\\uparrow} A)$. In order to show that the other inequality also holds, we prove that $\\bigvee^{\\uparrow}u(A)$ is above every approximant to $u(\\bigvee^{\\uparrow}A)$. Indeed, if $x\\ll u(\\bigvee^{\\uparrow}A)$ we have\n\\[\n  l(x)\\ll l\\left(u\\left(\\bigvee^{\\uparrow}A\\right)\\right)\\sqsubseteq \\bigvee^{\\uparrow}A\n\\]\nby assumption. So some $a$ is above $l(x)$ and for this $a$ we have $x\\sqsubseteq u(a)\\sqsubseteq \\bigvee^{\\uparrow}u(A)$."
+    },
+    "def-3-1-15": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 39",
+      "tex": "\\leanmarker{def-3-1-15}{Definition 3.1.15} Let $D$ and $E$ be dcpo's and let $e:D\\to E$ and $p:E\\to D$ be continuous functions. We say that $(e,p)$ is a \\emph{continuous embedding projection pair} (or \\emph{e-p-pair}) if\n\\[\n  p\\circ e=\\operatorname{id}_D \\quad\\text{and}\\quad e\\circ p\\sqsubseteq \\operatorname{id}_E.\n\\]\n\nWe note that the section retraction pair between a continuous domain and its ideal completion as constructed in Section 3.1.1 is really an embedding projection pair.\n\nFrom the general theory of adjunctions and retractions we already know quite a bit about e-p-pairs. The embedding is injective, $p$ is surjective, $e$ preserves existing suprema and the order of approximation, $p$ preserves existing infima, $D$ is continuous if $E$ is continuous, and, finally, embeddings and projections uniquely determine each other. Because of this last property the term ``embedding'' has a well-defined meaning; it is an injective function which has a Scott-continuous upper adjoint.\n\nAn injective lower adjoint also reflects the order of approximation:"
+    },
+    "prop-3-1-16": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 39",
+      "tex": "\\leanmarker{prop-3-1-16}{Proposition 3.1.16} Let $e:D\\rightleftarrows E:p$ be an e-p-pair between dcpo's and let $x$ and $y$ be elements of $D$. Then $e(x)\\ll e(y)$ holds in $E$ if and only if $x$ approximates $y$ in $D$."
+    },
+    "prop-3-1-17": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 40",
+      "skipBlocksAfter": 1,
+      "tex": "\\leanmarker{prop-3-1-17}{Proposition 3.1.17} Let $D$ be a dcpo.\n\\begin{enumerate}\n\\item $[D\\xrightarrow{\\downarrow}D]$ is a dcpo.\n\\item If $p$ is a kernel operator on $D$ then for all $x\\in D$ we have\n\\[\n  p(x)=\\max\\{y\\in\\operatorname{im}(p)\\mid y\\sqsubseteq x\\}.\n\\]\n\\item The image of a kernel operator is closed under existing suprema.\n\\item $\\ll_{\\operatorname{im}(p)}=(\\ll_D)\\cap(\\operatorname{im}(p)\\times\\operatorname{im}(p))$.\n\\item For kernel operators $p,p'$ on $D$ we have $p\\sqsubseteq p'$ if and only if $\\operatorname{im}(p)\\subseteq\\operatorname{im}(p')$.\n\\end{enumerate}\n\n\\emph{Proof.} (1) is proved as Proposition 3.1.7 and (2) follows because $p$ together with the inclusion of $\\operatorname{im}(p)$ into $D$ form an adjunction. This also shows (4). Finally, (3) and (5) are direct consequences of (2)."
+    },
+    "prop-3-1-18": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 41",
+      "tex": "\\leanmarker{prop-3-1-18}{Proposition 3.1.18} Let $D$ be an algebraic domain and let $c:D\\to D$ be a monotone idempotent function above $\\operatorname{id}_D$. Then $\\operatorname{im}(c)$ is again an algebraic domain if and only if it is closed under directed suprema.\n\nThe reader will no doubt recognize this statement as being a reformulation and generalization of our example of inductive closure systems from Chapter 2, Proposition 2.2.9. It is only consequent to call $D$ a quotient domain of the continuous domain $E$ if there exists an i-c-pair $e:D\\leftrightarrows E:c$."
+    },
+    "def-3-2-1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 42",
+      "tex": "\\leanmarker{def-3-2-1}{Definition 3.2.1} The cartesian product of two dcpo's $D$ and $E$ is given by the following data:\n\\[\n  D\\times E=\\{\\langle x,y\\rangle\\mid x\\in D,\\ y\\in E\\},\n\\]\n\\[\n  \\langle x,y\\rangle\\sqsubseteq\\langle x',y'\\rangle\n  \\quad\\text{if and only if}\\quad\n  x\\sqsubseteq x'\\ \\text{and}\\ y\\sqsubseteq y'.\n\\]\nThis is just the usual product of sets, augmented by the coordinatewise order. Through induction, we can define the cartesian product for finite non-empty collections of dcpo's. For the product over the empty index set we define the result to be a fixed one-element dcpo $I$."
+    },
+    "prop-3-2-2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 42",
+      "tex": "\\leanmarker{prop-3-2-2}{Proposition 3.2.2} The cartesian product of dcpo's is a dcpo. Suprema and infima are calculated coordinatewise.\n\nWith each product $D\\times E$ there are associated two projections:\n\\[\n  \\pi_1:D\\times E\\to D \\quad\\text{and}\\quad \\pi_2:D\\times E\\to E.\n\\]\nThese projections are always surjective but they are upper adjoints only if $D$ and $E$ are pointed. So there is a slight mismatch with Section 3.1.4 here. Given a dcpo $F$ and continuous functions $f:F\\to D$ and $g:F\\to E$, we denote the mediating morphism from $F$ to $D\\times E$ by $\\langle f,g\\rangle$. It maps $x\\in F$ to $\\langle f(x),g(x)\\rangle$."
+    },
+    "prop-3-2-3": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 42",
+      "tex": "\\leanmarker{prop-3-2-3}{Proposition 3.2.3} Projections and mediating morphisms are continuous.\n\nIf $f:D\\to D'$ and $g:E\\to E'$ are Scott-continuous, then so is the mediating map\n\\[\n  \\langle f\\circ\\pi_1,\\ g\\circ\\pi_2\\rangle:D\\times E\\to D'\\times E'.\n\\]\nThe common notation for it is $f\\times g$. Since our construction is completely explicit, we have thus defined a functor in two variables on $\\mathbf{DCPO}$."
+    },
+    "prop-3-2-4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 42",
+      "tex": "\\leanmarker{prop-3-2-4}{Proposition 3.2.4} Let $D$ and $E$ be dcpo's.\n\\begin{enumerate}\n\\item A tuple $\\langle x,y\\rangle$ approximates a tuple $\\langle x',y'\\rangle$ in $D\\times E$ if and only if $x$ approximates $x'$ in $D$ and $y$ approximates $y'$ in $E$.\n\\item If $B$ and $B'$ are bases for $D$ and $E$, respectively, then $B\\times B'$ is a basis for $D\\times E$.\n\\item $D\\times E$ is continuous if and only if $D$ and $E$ are.\n\\item $K(D\\times E)=K(D)\\times K(E)$.\n\\end{enumerate}\n\nThe categorical aspect of the cartesian product is quite pleasing; it is a categorical product in each case. But we can say even more."
+    },
+    "lemma-3-2-5": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 42-43",
+      "skipBlocksAfter": 1,
+      "tex": "\\leanmarker{lemma-3-2-5}{Lemma 3.2.5} Let $\\mathcal{C}$ be a full subcategory of $\\mathbf{DCPO}$ or $\\mathbf{DCPO}_{\\bot!}$ which has finite products. Then these are isomorphic to the cartesian product.\n\nIn a restricted setting this was first observed in [Smy83a]. The general proof may be found in [Jun89]. A useful property which does not follow from general categorical or topological considerations is the following."
+    },
+    "lemma-3-2-6": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 43",
+      "skipBlocksAfter": 26,
+      "tex": "\\leanmarker{lemma-3-2-6}{Lemma 3.2.6} A function $f:D\\times E\\to F$ is continuous if and only if it is continuous in each variable separately.\n\n\\emph{Proof.} Assume $f:D\\times E\\to F$ is separately continuous. Then $f$ is monotone, because given $(x,y)\\sqsubseteq(x',y')$ we can fill in $(x,y')$ and use coordinatewise monotonicity twice. The same works for continuity: if $A\\subseteq D\\times E$ is directed then\n\\[\n\\begin{aligned}\n\\bigvee_{(x,y)\\in A}^{\\uparrow} f(x,y)\n&= \\bigvee_{x\\in\\pi_1(A)}^{\\uparrow}\\ \\bigvee_{y\\in\\pi_2(A)}^{\\uparrow} f(x,y)\\\\\n&= \\bigvee_{x\\in\\pi_1(A)}^{\\uparrow} f\\left(x,\\bigvee_{y\\in\\pi_2(A)}^{\\uparrow}y\\right)\\\\\n&= f\\left(\\bigvee_{x\\in\\pi_1(A)}^{\\uparrow}x,\\bigvee_{y\\in\\pi_2(A)}^{\\uparrow}y\\right)\\\\\n&= f\\left(\\bigvee^{\\uparrow}A\\right).\n\\end{aligned}\n\\]\nThis proves the interesting direction."
+    },
+    "lemma-3-2-7": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 44",
+      "tex": "\\leanmarker{lemma-3-2-7}{Lemma 3.2.7} Let $\\mathcal{C}$ be a cartesian closed full subcategory of $\\mathbf{DCPO}$. The exponential of two objects $D$ and $E$ of $\\mathcal{C}$ is isomorphic to $[D\\to E]$.\n\nLet us now turn to the theme of approximation in function spaces. The reader should brace himself for a profound disappointment: even for algebraic domains it may be the case that the order of approximation on the function space is empty. Exercise 3.3.12(11) discusses an example. This fact together with Lemmas 3.2.5 and 3.2.7 implies that neither $\\mathbf{CONT}$ nor $\\mathbf{ALG}$ are cartesian closed. The only way to remedy this situation is to move to more restricted classes of domains. This will be the topic of Chapter 4."
+    },
+    "prop-3-2-8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 44-45",
+      "skipBlocksAfter": 5,
+      "tex": "\\leanmarker{prop-3-2-8}{Proposition 3.2.8} The coalesced sum of pointed dcpo's is a pointed dcpo.\n\nThe individual dcpo's may be injected into the sum in the obvious way:\n\\[\n\\operatorname{inl}(x)=\n\\begin{cases}\n(x:1), & x\\ne\\bot_D,\\\\\n\\bot_{D\\oplus E}, & x=\\bot_D,\n\\end{cases}\n\\]\nand\n\\[\n\\operatorname{inr}(x)=\n\\begin{cases}\n(x:2), & x\\ne\\bot_E,\\\\\n\\bot_{D\\oplus E}, & x=\\bot_E.\n\\end{cases}\n\\]\nA universal property for the sum holds only in the realm of strict functions:"
+    },
+    "prop-3-2-9": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 45",
+      "tex": "\\leanmarker{prop-3-2-9}{Proposition 3.2.9} The coalesced sum of pointed dcpo's is the coproduct in $\\mathbf{DCPO}_{\\bot!}$, $\\mathbf{CONT}_{\\bot!}$, and $\\mathbf{ALG}_{\\bot!}$.\n\nOnce we accept the restriction to bottom preserving functions it is clear how to turn the coalesced sum into a functor."
+    },
+    "thm-3-3-1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 46-47",
+      "skipBlocksAfter": 8,
+      "tex": "\\leanmarker{thm-3-3-1}{Theorem 3.3.1} $\\mathbf{DCPO}$ has limits of arbitrary diagrams.\n\n\\emph{Proof.} The proof follows general category theoretic principles. We describe the limit of the diagram\n\\[\n  \\langle (D_i)_{i\\in O},\\ (f_j:D_{d(j)}\\to D_{c(j)})_{j\\in M}\\rangle\n\\]\nas a set of particular elements of the product of all $D_i$'s, the so-called commuting tuples:\n\\[\n  D=\\{\\langle x_i:i\\in O\\rangle\\in\\prod_{i\\in O}D_i\n      \\mid \\forall j\\in M.\\ x_{c(j)}=f_j(x_{d(j)})\\}.\n\\]\n\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.72]\n  \\tikzset{open/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.3pt}, solid/.style={circle,draw,fill=black,inner sep=0pt,minimum size=3.3pt}}\n  % Stage 1\n  \\node[open] at (-5.0,0) {};\n\n  % Stage 2\n  \\node[solid] (s2b) at (-3.25,0) {};\n  \\node[open] (s2l) at (-4.15,0.95) {};\n  \\node[open] (s2r) at (-2.35,0.95) {};\n  \\draw (s2b)--(s2l) (s2b)--(s2r);\n\n  % Stage 3\n  \\node[solid] (s3bot) at (-0.55,0) {};\n  \\foreach \\x/\\y/\\name in {-1.55/1.05/a,-0.95/0.65/b,-0.75/1.55/c,0.05/0.65/d,0.85/0.95/e} {\n    \\node[open] (s3\\name) at (\\x,\\y) {};\n    \\draw (s3bot)--(s3\\name);\n  }\n  \\draw (s3a)--(s3bot) (s3d)--(s3e);\n\n  % Stage 4\n  \\node[solid] (s4bot) at (2.35,0) {};\n  \\foreach \\x/\\y/\\name in {1.35/0.55/a,1.85/0.9/b,2.1/1.45/c,2.35/2.0/d,2.7/1.45/e,3.0/2.0/f,3.35/2.0/g,3.7/2.0/h,3.05/0.7/i,3.65/0.95/j} {\n    \\node[open] (s4\\name) at (\\x,\\y) {};\n    \\draw (s4bot)--(s4\\name);\n  }\n  \\node[solid] at (1.85,0.9) {};\n  \\node[solid] at (2.35,1.05) {};\n  \\node[solid] at (2.7,1.45) {};\n  \\node[solid] at (3.05,0.7) {};\n  \\draw (s4a)--(s4bot) (s4i)--(s4j) (s4c)--(s4d) (s4e)--(s4f) (s4e)--(s4g) (s4e)--(s4h);\n\\end{tikzpicture}\n\\caption*{Figure 9: An expanding sequence of finite domains.}\n\\end{figure}\n\nThe order on the limit object is inherited from the product, that is, tuples are ordered coordinatewise. It is again a dcpo because the coordinatewise supremum of commuting tuples is commuting as all $f_j$ are Scott-continuous. This also proves that the projections $\\pi_j:\\prod_{i\\in O}D_i\\to D_j$ restricted to $D$ are continuous. They give us the maps needed to complement $D$ to a cone.\n\nGiven any other cone $\\langle E,(g_i:E\\to D_i)_{i\\in O}\\rangle$, we define the mediating morphism $h:E\\to D$ by $h(x)=\\langle g_i(x):i\\in O\\rangle$. Again, it is obvious that this is well-defined and continuous, and that it is the only possible choice.\n\nWe also have the dual:"
+    },
+    "thm-3-3-2": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 47",
+      "tex": "\\leanmarker{thm-3-3-2}{Theorem 3.3.2} $\\mathbf{DCPO}$ has colimits of arbitrary diagrams.\n\nThis was first noted in [Mar77] and, for a somewhat different setting, in [Mes77]. The simplest way to prove it is by reducing it to completeness \\`a la Theorem 23.14 of [HS73]. This appears in [LS81]. A more detailed analysis of colimits appears in [Fie92]. There the problem of retaining algebraicity is also addressed."
+    },
+    "thm-3-3-3": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 47",
+      "tex": "\\leanmarker{thm-3-3-3}{Theorem 3.3.3} $\\mathbf{DCPO}$ is cartesian closed, complete and cocomplete."
+    },
+    "thm-3-3-4": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 47",
+      "tex": "\\leanmarker{thm-3-3-4}{Theorem 3.3.4} $\\mathbf{DCPO}_{\\bot!}$ is monoidal closed, complete and cocomplete.\n\nHow about $\\mathbf{DCPO}_{\\bot}$, where objects have least elements but morphisms need not preserve them? The truth is that both completeness and cocompleteness fail for this category. On the other hand, it is the right setting for denotational semantics in most cases. As a result of this mismatch, we quite often must resort to detailed proofs on the element level and cannot simply apply general category theoretic principles. Let us nevertheless write down the one good property of $\\mathbf{DCPO}_{\\bot}$:"
+    },
+    "thm-3-3-5": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 47",
+      "tex": "\\leanmarker{thm-3-3-5}{Theorem 3.3.5} $\\mathbf{DCPO}_{\\bot}$ is cartesian closed."
+    },
+    "def-3-3-6": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 48",
+      "tex": "\\leanmarker{def-3-3-6}{Definition 3.3.6} A diagram\n\\[\n  \\langle (D_n)_{n\\in\\mathbb{N}},\\ (e_{mn}:D_n\\to D_m)_{n\\le m\\in\\mathbb{N}}\\rangle\n\\]\nin the category $\\mathbf{DCPO}$ is called an \\emph{expanding sequence}, if the following conditions are satisfied:\n\\begin{enumerate}\n\\item Each $e_{mn}:D_n\\to D_m$ is an embedding. The associated projection $e^*_{mn}$ is denoted by $p_{nm}$.\n\\item $\\forall n\\in\\mathbb{N}.\\ e_{nn}=\\operatorname{id}_{D_n}$.\n\\item $\\forall n\\le m\\le k\\in\\mathbb{N}.\\ e_{kn}=e_{km}\\circ e_{mn}$.\n\\end{enumerate}\nNote that because lower adjoints determine upper adjoints and vice versa, we have $p_{nk}=p_{nm}\\circ p_{mk}$ whenever $n\\le m\\le k\\in\\mathbb{N}$.\n\nIt turns out that, in contrast to the general situation, the colimit of an expanding sequence can be calculated easily via the associated projections."
+    },
+    "thm-3-3-7": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 48-50",
+      "skipBlocksAfter": 43,
+      "tex": "\\leanmarker{thm-3-3-7}{Theorem 3.3.7} Let\n\\[\n  \\langle (D_n)_{n\\in\\mathbb{N}},\\ (e_{mn}:D_n\\to D_m)_{n\\le m\\in\\mathbb{N}}\\rangle\n\\]\nbe an expanding sequence in $\\mathbf{DCPO}$. Define an object $D$ by\n\\[\n  D=\\{\\langle x_n:n\\in\\mathbb{N}\\rangle\\in\\prod_{n\\in\\mathbb{N}}D_n\n      \\mid \\forall n\\le m\\in\\mathbb{N}.\\ x_n=p_{nm}(x_m)\\},\n\\]\nprojections $p_m:D\\to D_m$ by $\\langle x_n:n\\in\\mathbb{N}\\rangle\\mapsto x_m$, and embeddings $e_m:D_m\\to D$ by\n\\[\n  x\\mapsto \\left\\langle \\bigvee^{\\uparrow}_{k\\ge n,m} p_{nk}\\circ e_{km}(x):n\\in\\mathbb{N}\\right\\rangle.\n\\]\nThen:\n\\begin{enumerate}\n\\item The maps $(e_m,p_m)$, $m\\in\\mathbb{N}$, form embedding projection pairs and\n\\[\n  \\bigvee^{\\uparrow}_{m\\in\\mathbb{N}} e_m\\circ p_m=\\operatorname{id}_D\n\\]\nholds.\n\\item $\\langle D,(p_n)_{n\\in\\mathbb{N}}\\rangle$ is a limit of the diagram $\\langle(D_n)_{n\\in\\mathbb{N}},(p_{nm})_{n\\le m\\in\\mathbb{N}}\\rangle$. If $\\langle C,(g_n)_{n\\in\\mathbb{N}}\\rangle$ is another cone, then the mediating map from $C$ to $D$ is given by\n\\[\n  g(x)=\\langle g_n(x):n\\in\\mathbb{N}\\rangle\n  \\quad\\text{or}\\quad\n  g=\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}} e_n\\circ g_n.\n\\]\n\\item $\\langle D,(e_n)_{n\\in\\mathbb{N}}\\rangle$ is a colimit of the diagram $\\langle(D_n)_{n\\in\\mathbb{N}},(e_{mn})_{n\\le m\\in\\mathbb{N}}\\rangle$. If $\\langle E,(f_n)_{n\\in\\mathbb{N}}\\rangle$ is another cocone, then the mediating map from $D$ to $E$ is given by\n\\[\n  f(\\langle x_n:n\\in\\mathbb{N}\\rangle)=\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}f_n(x_n)\n  \\quad\\text{or}\\quad\n  f=\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}f_n\\circ p_n.\n\\]\n\\end{enumerate}\nThe directed supremum in the definition of $e_m$ could be replaced by $p_{nk}\\circ e_{km}(x)$ for any upper bound $k$ of $\\{n,m\\}$ in $\\mathbb{N}$; the displayed form makes the proof uniform.\n\n\\emph{Proof sketch.} The limiting part follows from Theorem 3.3.1 applied to the projection diagram. The tuple defining $e_m(x)$ is commuting by the projection equations, and the assignment is Scott-continuous because it is built from Scott-continuous maps and directed suprema. A direct calculation gives $p_m\\circ e_m=\\operatorname{id}$ and $e_m\\circ p_m\\sqsubseteq\\operatorname{id}_D$; a closer coordinatewise analysis shows that the directed supremum of the endomaps $e_m\\circ p_m$ is the identity. The universal property of the colimit follows by defining the mediating map as $\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}f_n\\circ p_n$, using directedness of the family $f_n\\circ p_n$, and uniqueness follows by composing with the approximating idempotents $e_m\\circ p_m$.\n\nThis fact, that the colimit of an expanding sequence is canonically isomorphic to the limit of the associated dual diagram, is called the \\emph{limit-colimit coincidence}. It is one of the fundamental tools of domain theory and plays its most prominent role in the solution of recursive domain equations, Chapter 5. Because of this coincidence we will henceforth also speak of the \\emph{bilimit} of an expanding sequence and denote it by $\\operatorname{bilim}\\langle(D_n),(e_{mn})\\rangle$."
+    },
+    "lemma-3-3-8": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 50-51",
+      "skipBlocksAfter": 28,
+      "tex": "\\leanmarker{lemma-3-3-8}{Lemma 3.3.8} Let $\\langle E,(f_n)_{n\\in\\mathbb{N}}\\rangle$ be a cocone for the expanding sequence\n\\[\n  \\langle(D_n)_{n\\in\\mathbb{N}},(e_{mn}:D_n\\to D_m)_{n\\le m\\in\\mathbb{N}}\\rangle.\n\\]\nIt is colimiting if and only if, firstly, there are Scott-continuous functions $g_n:E\\to D_n$ such that each $(f_n,g_n)$ is an e-p-pair and, secondly,\n\\[\n  \\bigvee^{\\uparrow}_{n\\in\\mathbb{N}} f_n\\circ g_n=\\operatorname{id}_E\n\\]\nholds.\n\n\\emph{Proof.} Necessity is Part (1) of Theorem 3.3.7. For sufficiency we show that the bilimit $D$ as constructed there is isomorphic to $E$. We already have maps $f:D\\to E$ and $g:E\\to D$ because $D$ is the bilimit. These commute with the limiting and colimiting morphisms, respectively. Their composites are identities:\n\\[\n  f\\circ g(x)=f(\\langle g_n(x):n\\in\\mathbb{N}\\rangle)\n    =\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}f_n\\circ g_n(x)=x,\n\\]\nand\n\\[\n\\begin{aligned}\n  g\\circ f\n  &=\\left(\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}e_n\\circ g_n\\right)\\circ\n    \\left(\\bigvee^{\\uparrow}_{m\\in\\mathbb{N}}f_m\\circ p_m\\right)\\\\\n  &=\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}} e_n\\circ g_n\\circ f_n\\circ p_n\\\\\n  &=\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}} e_n\\circ p_n\n    =\\operatorname{id}_D.\n\\end{aligned}\n\\]\nWe note that in the proof we have used the condition $\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}f_n\\circ g_n=\\operatorname{id}_E$ only for the first calculation. Without it, we still get that $f$ and $g$ form an e-p-pair. Thus we have:"
+    },
+    "prop-3-3-9": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 51",
+      "tex": "\\leanmarker{prop-3-3-9}{Proposition 3.3.9} Let $\\langle E,(f_n)_{n\\in\\mathbb{N}}\\rangle$ be a cocone over the expanding sequence\n\\[\n  \\langle(D_n)_{n\\in\\mathbb{N}},(e_{mn}:D_n\\to D_m)_{n\\le m\\in\\mathbb{N}}\\rangle\n\\]\nwhere the $f_n$ are embeddings. Then the bilimit of the sequence is a sub-domain of $E$.\n\nIn other words:"
+    },
+    "cor-3-3-10": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 51",
+      "tex": "\\leanmarker{cor-3-3-10}{Corollary 3.3.10} The bilimit of an expanding sequence is also the colimit (limit) in the restricted category of dcpo's with embeddings (projections) as morphisms."
+    },
+    "thm-3-3-11": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 51",
+      "tex": "\\leanmarker{thm-3-3-11}{Theorem 3.3.11} Let\n\\[\n  \\langle(D_n)_{n\\in\\mathbb{N}},(e_{mn}:D_n\\to D_m)_{n\\le m\\in\\mathbb{N}}\\rangle\n\\]\nbe an expanding sequence and $\\langle D,(e_n)_{n\\in\\mathbb{N}}\\rangle$ its bilimit.\n\\begin{enumerate}\n\\item If all $D_n$ are $(\\omega\\text{-})$continuous then so is $D$. If we are given bases $B_n$, $n\\in\\mathbb{N}$, for each $D_n$, then a basis for $D$ is given by\n\\[\n  \\bigcup_{n\\in\\mathbb{N}} e_n(B_n).\n\\]\n\\item If all $D_n$ are $(\\omega\\text{-})$algebraic then so is $D$ and\n\\[\n  K(D)=\\bigcup_{n\\in\\mathbb{N}}e_n(K(D_n)).\n\\]\n\\end{enumerate}\n\n\\emph{Proof.} Given an element $x\\in D$ we first show that\n\\[\n  \\bigcup_{n\\in\\mathbb{N}} e_n(B_{p_n(x)}^n)\n\\]\nis directed. It is sufficient to show that for all $n\\le m\\in\\mathbb{N}$ and for each $y\\in B_{p_n(x)}^n$ there is $y'\\in B_{p_m(x)}^m$ with $e_n(y)\\sqsubseteq e_m(y')$. Since $y\\ll p_n(x)$ and embeddings preserve approximation,\n\\[\n  e_{mn}(y)\\ll e_{mn}(p_n(x))=e_{mn}(p_{nm}\\circ p_m(x))\\sqsubseteq p_m(x).\n\\]\nAs $p_m(x)=\\bigvee^{\\uparrow}B_{p_m(x)}^m$, some $y'\\ll p_m(x)$ is above $e_{mn}(y)$, and hence $e_n(y)=e_m(e_{mn}(y))\\sqsubseteq e_m(y')$.\n\nThe set $\\bigcup_{n\\in\\mathbb{N}}e_n(B_{p_n(x)}^n)$ gives back $x$ because\n\\[\n  x=\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}e_n\\circ p_n(x)\n   =\\bigvee^{\\uparrow}_{n\\in\\mathbb{N}}e_n\\left(\\bigvee^{\\uparrow}B_{p_n(x)}^n\\right)\n   =\\bigvee^{\\uparrow}\\bigcup_{n\\in\\mathbb{N}}e_n(B_{p_n(x)}^n).\n\\]\nIt consists solely of approximants to $x$ because the $e_n$ are lower adjoints."
+    }
+  },
+  "blocks": {
+    "p34-b1": {
+      "status": "reviewed",
+      "tex": "\\section*{3 Domains collectively}"
+    },
+    "p34-b2": {
+      "status": "reviewed",
+      "tex": "\\section*{3.1 Comparing domains}"
+    },
+    "p34-b3": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.1.1 Retractions}"
+    },
+    "p34-b4": {
+      "status": "reviewed",
+      "tex": "\\vspace{0pt}"
+    },
+    "p34-b5": {
+      "status": "reviewed",
+      "tex": "This section records the standard ways of comparing domains by maps which exhibit one domain as a retract, sub-domain, or quotient of another. The first case is a section-retraction pair: a section embeds the smaller structure into the larger one, and a retraction maps back to the identity."
+    },
+    "p35-b5": {
+      "status": "reviewed",
+      "tex": "\\subsection*{Idempotents}"
+    },
+    "p35-b6": {
+      "status": "reviewed",
+      "tex": "Often the section part of an s-r-pair is literally an inclusion. Then the retraction may be encoded by the corresponding idempotent endomap on the larger dcpo. The image of such an idempotent inherits the relevant completeness properties, and for continuous idempotents the image is again a dcpo with the induced directed suprema."
+    },
+    "p36-b36": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.1.3 Adjunctions}"
+    },
+    "p36-b37": {
+      "status": "reviewed",
+      "tex": "Adjunctions are the order-theoretic mechanism behind embeddings and projections. Instead of only asking for a right inverse, one asks for canonical representatives in fibers, equivalently for lower and upper adjoints satisfying the characteristic order equivalence."
+    },
+    "p39-b3": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.1.4 Projections and sub-domains}"
+    },
+    "p39-b4": {
+      "status": "reviewed",
+      "tex": "Combining retractions with adjunctions gives embedding-projection pairs. These are the morphisms used to express the sub-domain relation: the embedding is a lower adjoint, the projection is its Scott-continuous upper adjoint, and the composite on the larger domain is below the identity."
+    },
+    "p40-b1": {
+      "status": "reviewed",
+      "tex": "The associated idempotent \\(e\\circ p\\) on \\(E\\) lies below the identity, so it behaves like a kernel operator. Its image is the chosen sub-domain, and the order on kernel operators is controlled by inclusion of images."
+    },
+    "p40-b2": {
+      "status": "reviewed",
+      "tex": "Kernel operators on a dcpo \\(D\\) are collected in the dcpo \\([D\\xrightarrow{\\downarrow}D]\\). For a kernel operator \\(p\\), each value \\(p(x)\\) is the largest point of \\(\\operatorname{im}(p)\\) below \\(x\\)."
+    },
+    "p40-b5": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.1.5 Closures and quotient domains}"
+    },
+    "p40-b6": {
+      "status": "reviewed",
+      "tex": "The sub-domain relation combines retractions and adjunctions in one direction. Reversing the adjunction inequality leads to insertion-closure pairs, where the idempotent endomap lies above the identity and represents a quotient-like construction."
+    },
+    "p41-b1": {
+      "status": "reviewed",
+      "tex": "The associated idempotent is a closure operator. For algebraic domains, such a closure image is algebraic precisely when it is closed under directed suprema. This connects closure operators with inductive closure systems from Chapter 2."
+    },
+    "p41-b3": {
+      "status": "reviewed",
+      "tex": "\\section*{3.2 Finitary constructions}",
+      "skipBlocksAfter": 1
+    },
+    "p41-b5": {
+      "status": "reviewed",
+      "tex": "This section introduces basic constructions for building new domains from old ones. For each construction the text tracks three issues: preservation of domain-theoretic properties, behavior of bases and compact elements, and the relevant categorical universal property."
+    },
+    "p42-b1": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.2.1 Cartesian product}",
+      "skipBlocksAfter": 1
+    },
+    "p43-b29": {
+      "status": "reviewed",
+      "tex": "\\subsection*{Function space}"
+    },
+    "p43-b30": {
+      "status": "reviewed",
+      "tex": "The function space \\([D\\to E]\\) consists of all Scott-continuous maps ordered pointwise. It is again a dcpo, and separate continuity of a map out of a product is enough to obtain joint continuity. This supplies the expected exponential object whenever the ambient full subcategory is cartesian closed."
+    },
+    "p44-b13": {
+      "status": "reviewed",
+      "tex": "\\subsection*{Coalesced sum}"
+    },
+    "p44-b14": {
+      "status": "reviewed",
+      "tex": "For pointed dcpo's, the coalesced sum is obtained by identifying the two bottom elements and otherwise keeping the two summands disjoint. It has the expected coproduct property in categories of strict maps."
+    },
+    "p45-b7": {
+      "status": "reviewed",
+      "tex": "\\subsection*{Smash product and strict function space}"
+    },
+    "p45-b8": {
+      "status": "reviewed",
+      "tex": "Inside \\(DCPO_{\\bot!}\\), the full function space is not the exponential for strict maps. The relevant function space is the strict function space \\([D\\xrightarrow{\\bot!}E]\\), and it pairs with the smash product rather than the ordinary cartesian product."
+    },
+    "p45-b9": {
+      "status": "reviewed",
+      "tex": "\\subsection*{Lifting}"
+    },
+    "p45-b10": {
+      "status": "reviewed",
+      "tex": "Lifting adds a new bottom element to a dcpo, written \\(D_\\bot\\). Continuity and algebraicity are preserved by lifting, and the operation interacts well with the pointed categories used later."
+    },
+    "p45-b11": {
+      "status": "reviewed",
+      "tex": "\\subsection*{Summary}"
+    },
+    "p46-b31": {
+      "status": "reviewed",
+      "tex": "\\section*{3.3 Infinitary constructions}"
+    },
+    "p46-b32": {
+      "status": "reviewed",
+      "tex": "Products and sums have infinitary analogues, but limits and colimits require more care in domain categories. The general category \\(DCPO\\) behaves well, while the subcategories of continuous and algebraic domains require restricted diagrams."
+    },
+    "p46-b33": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.3.1 Limits and colimits}"
+    },
+    "p46-b34": {
+      "status": "reviewed",
+      "tex": "Limits are treated categorically. A diagram is represented by objects and morphisms, and the limit is the dcpo of commuting tuples inside the product. The order and directed suprema are inherited coordinatewise."
+    },
+    "p47-b13": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.3.2 The limit-colimit coincidence}"
+    },
+    "p47-b14": {
+      "status": "reviewed",
+      "tex": "For continuous or algebraic domains, arbitrary limits and colimits do not preserve the desired structure. The remedy is to restrict to expanding sequences of embeddings and their associated projections, where the limit and colimit constructions coincide."
+    },
+    "p48-b1": {
+      "status": "reviewed",
+      "tex": "As motivation, consider a chain \\(D_1,D_2,\\ldots\\) in which each \\(D_n\\) is a sub-domain of \\(D_{n+1}\\). The intended limit is obtained by adding limit points to the union of the stages; for algebraic stages this construction should preserve algebraicity."
+    },
+    "p51-b4": {
+      "status": "reviewed",
+      "tex": "\\subsection*{3.3.3 Bilimits of domains}"
+    },
+    "p37-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 37",
+      "skipBlocksAfter": 3,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.82]\n  \\tikzset{dot/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.5pt}}\n  \\draw[rounded corners=16pt] (-2.8,-1.15) rectangle (-1.85,1.15);\n  \\node[dot] (c) at (-2.25,0.72) {};\n  \\node[dot] (b) at (-2.25,0) {};\n  \\node[dot] (a) at (-2.25,-0.72) {};\n  \\node[left] at (-2.42,0.72) {$c$};\n  \\node[left] at (-2.42,0) {$b$};\n  \\node[left] at (-2.42,-0.72) {$a$};\n  \\draw (a)--(b)--(c);\n\n  \\draw[rounded corners=16pt] (1.75,-1.15) rectangle (2.7,1.15);\n  \\draw (1.75,-0.42)--(2.7,0.02);\n  \\draw (1.75,0.12)--(2.7,0.56);\n  \\draw (2.35,0.72)--(3.0,0.72);\n  \\draw (2.35,0)--(3.0,0);\n  \\draw (2.35,-0.72)--(3.0,-0.72);\n  \\node[right] at (3.05,0.72) {$f^{-1}(c)$};\n  \\node[right] at (3.05,0) {$f^{-1}(b)$};\n  \\node[right] at (3.05,-0.72) {$f^{-1}(a)$};\n\n  \\draw[->] (1.55,0.45)--(-1.65,0.45);\n  \\node at (-0.05,0.72) {$f$};\n  \\draw[->,dashed] (-1.65,-0.45)--(1.55,-0.45);\n  \\node at (-0.05,-0.78) {?};\n\\end{tikzpicture}\n\\caption*{Figure 7: The right inverse problem for a surjective function.}\n\\end{figure}\n\nA right inverse must pick out a representative from $f^{-1}(x)$ for each $x\\in P$. Set-theoretically this can be done, but the point here is that we want $e$ to be monotone. If we succeed then $e$ and $f$ form a (monotone) section retraction pair. Even nicer would it be if we could pick out a canonical representative from $f^{-1}(x)$, which in the realm of order theory means that we want $f^{-1}(x)$ to have a least (or largest) element. If this is the case then how can we ensure that the assignment $e:x\\mapsto \\min(f^{-1}(x))$ is monotone? The solution is suggested by the observation that if $e$ is monotone then $e(x)$ is not only the least element of $f^{-1}(x)$ but also of $f^{-1}(\\uparrow x)$. This condition is also sufficient. The switch from $f^{-1}(x)$ to $f^{-1}(\\uparrow x)$ (and this is a trick to remember) may allow us to construct a partial right inverse even if $f$ is not surjective. Thus we arrive at a first, tentative definition of an adjunction."
+    },
+    "p44-b1": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF page 44",
+      "skipBlocksAfter": 10,
+      "tex": "\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.9]\n  \\coordinate (bot) at (0,0);\n  \\draw (-2.8,1.85)--(-1.45,1.85)--(bot)--cycle;\n  \\draw (2.8,1.85)--(1.45,1.85)--(bot)--cycle;\n  \\draw (-0.35,1.85)--(bot)--(0.35,1.85);\n\\end{tikzpicture}\n\\caption*{Figure 8: The coalesced sum of two pointed dcpo's.}\n\\end{figure}\n\nAs for the product we can show that the choice of the exponential object is more or less forced upon us. This again was first noticed by Smyth in the above mentioned reference."
+    },
+    "p45-b12": {
+      "status": "reviewed",
+      "source": "OCR-assisted visual check against PDF pages 45-46",
+      "skipBlocksAfter": 30,
+      "tex": "For quick reference let us compile a table of the constructions looked at so far. A `X' indicates that the category is closed under the respective construction, a `+' says that, in addition, the construction plays the expected categorical role as a product, exponential or coproduct, respectively. Observe that for the constructions considered in this section it makes no difference if we restrict the size of a (minimal) basis.\n\n\\begin{center}\n\\setlength{\\tabcolsep}{0.55em}\n\\renewcommand{\\arraystretch}{1.15}\n\\begin{tabular}{lccccccc}\n\\hline\nConstruction & $\\mathbf{DCPO}$ & $\\mathbf{DCPO}_{\\bot}$ & $\\mathbf{DCPO}_{\\bot!}$ & $\\mathbf{CONT}$ & $\\mathbf{ALG}$ & $\\mathbf{CONT}_{\\bot}$/$\\mathbf{ALG}_{\\bot}$ & $\\mathbf{CONT}_{\\bot!}$/$\\mathbf{ALG}_{\\bot!}$\\\\\n\\hline\n$D\\times E$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$\\\\\n$[D\\to E]$ & $+$ & $+$ & $X$ &  &  &  & \\\\\n$D\\cup E$ & $+$ &  &  & $+$ &  &  & \\\\\n$D\\otimes E$ &  & $X$ & $X$ &  &  & $X$ & $X$\\\\\n$[D\\xrightarrow{\\bot!}E]$ &  & $X$ & $+$ &  &  &  & \\\\\n$D\\oplus E$ &  & $X$ & $+$ &  &  & $X$ & $+$\\\\\n$D_{\\bot}$ & $X$ & $X$ & $X$ & $X$ & $X$ & $X$ & $X$\\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+    },
+    "p37-b3": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p44-b7": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p47-b1": {
+      "status": "reviewed",
+      "tex": "\\begin{figure}[h]\n\\centering\n\\begin{tikzpicture}[scale=0.72]\n  \\tikzset{open/.style={circle,draw,fill=white,inner sep=0pt,minimum size=3.3pt}, solid/.style={circle,draw,fill=black,inner sep=0pt,minimum size=3.3pt}}\n  % Stage 1\n  \\node[open] at (-5.0,0) {};\n\n  % Stage 2\n  \\node[solid] (s2b) at (-3.25,0) {};\n  \\node[open] (s2l) at (-4.15,0.95) {};\n  \\node[open] (s2r) at (-2.35,0.95) {};\n  \\draw (s2b)--(s2l) (s2b)--(s2r);\n\n  % Stage 3\n  \\node[solid] (s3bot) at (-0.55,0) {};\n  \\foreach \\x/\\y/\\name in {-1.55/1.05/a,-0.95/0.65/b,-0.75/1.55/c,0.05/0.65/d,0.85/0.95/e} {\n    \\node[open] (s3\\name) at (\\x,\\y) {};\n    \\draw (s3bot)--(s3\\name);\n  }\n  \\draw (s3a)--(s3bot) (s3d)--(s3e);\n\n  % Stage 4\n  \\node[solid] (s4bot) at (2.35,0) {};\n  \\foreach \\x/\\y/\\name in {1.35/0.55/a,1.85/0.9/b,2.1/1.45/c,2.35/2.0/d,2.7/1.45/e,3.0/2.0/f,3.35/2.0/g,3.7/2.0/h,3.05/0.7/i,3.65/0.95/j} {\n    \\node[open] (s4\\name) at (\\x,\\y) {};\n    \\draw (s4bot)--(s4\\name);\n  }\n  \\node[solid] at (1.85,0.9) {};\n  \\node[solid] at (2.35,1.05) {};\n  \\node[solid] at (2.7,1.45) {};\n  \\node[solid] at (3.05,0.7) {};\n  \\draw (s4a)--(s4bot) (s4i)--(s4j) (s4c)--(s4d) (s4e)--(s4f) (s4e)--(s4g) (s4e)--(s4h);\n\\end{tikzpicture}\n\\caption*{Figure 9: An expanding sequence of finite domains.}\n\\end{figure}",
+      "skipBlocksAfter": 7
+    },
+    "p47-b3": {
+      "status": "ignored",
+      "tex": ""
+    },
+    "p47-b6": {
+      "status": "ignored",
+      "tex": ""
+    }
+  }
+}

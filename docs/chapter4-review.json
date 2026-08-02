@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "chapter": 4,
+  "sourceVersion": {
+    "id": "abramsky-jung-domain-theory-pdf-v1",
+    "pdfSha256": "74adfbb57ae86a8b24e5afae312ffa77138480962186136d6823098a2c9c8991"
+  },
+  "items": {
+    "prop-4-2-4": {
+      "permanentId": "prop-4-2-4",
+      "number": "Proposition 4.2.4",
+      "source": {"pdfPage": 58, "printedPage": "58", "texSha256": "b1f04c639e1c0b584973f13014e6ff7c21732021f9ffc98d6fe78312fd1aec97", "locator": "page:58:block:p58-b4"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.prop_4_2_4_bifinite_to_pointed_algebraic_function_space", "module": "Practice.DomainTheory.Chapter04.Section42_CompactFunctions", "signatureSha256": "7994f64c3c679395721fb9c3d33b4ffe705ef71d3518fbd9b88a405d6c2b6d0f", "bodySha256": "c3d26dfb35d5172c7de6bef969b2023bdcf81e34627781361b03bdd22ec593e8"},
+      "states": {"translated": true, "proved": true, "sourceAligned": true, "architectureStable": true, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "proved", "reason": "none", "evidence": ["The PDF gives a constructive proof sketch on printed page 58.", "The Lean proof formalizes finite compact refinement, joinable graph construction, directedness, algebraicity, and the compact-element characterization.", "The numbered theorem contains no local sorry or admit; its Lemma 4.2.3 dependency remains admitted because the book omits that proof."]},
+      "risk": {"level": "high", "reasons": ["depends_on_book_omitted_lemma_4_2_3", "new_constructive_proof_requires_human_review", "signature_corrected", "compact_basis_mub_semantics_corrected"], "downstreamCount": 1},
+      "revisionHistory": [{"cycle": 1, "attemptsUsed": 10, "outcome": "superseded after correcting the domain and K(D)-mub interfaces", "attempts": [
+        "Reuse Lemma 4.2.3; it produces one compact function, not a directed basis.",
+        "Use all joinable families below f; directedness is unavailable.",
+        "Enumerate finite mub-closed subsets; no closure enumeration API exists.",
+        "Induct over a finite M; the minimal-element invariant is not packaged.",
+        "Choose compact e_m from algebraicity; monotone simultaneous choice is missing.",
+        "Recursively choose e-hat_m; well-founded finite-order support is missing.",
+        "Use JoinableFamilyBelow; its comparison theorem is itself admitted.",
+        "Reuse Chapter 3 function-space algebraicity; it lacks joinable-family data.",
+        "Reuse mathlib compact-map infrastructure; no matching imported theorem exists.",
+        "Prove only algebraicity; rejected because it drops the source characterization."
+      ]}],
+      "currentRevisionCycle": {"cycle": 2, "attemptsUsed": 7, "attempts": [
+        "Correct the wrapper to expose the source's dcpo/poset assumptions and correct joinability to compute minimal upper bounds inside K(D); isolate the remaining finite monotone compact-choice construction. The corrected interface compiles.",
+        "Prove finite_compact_upper_below_of_algebraic: a finite compact family below x has a compact common upper bound below x. This is the local choice step required by the textbook's finite-poset recursion and it compiles.",
+        "Use strong induction on the cardinality of a finite poset and a maximal-element step to construct monotone compact refinements below a monotone map.",
+        "Prove that a finite compact-basis-mub-closed set with monotone compact labels has a joinable graph under Definition 4.2.2.",
+        "Prove finite compact-basis mub-closures are finite, compact, and closed under compact minimal upper bounds.",
+        "Extend arbitrary finite compact observations below f to a compact joinable-family map below f.",
+        "Prove compact joinable-family maps below f are directed with supremum f; derive algebraicity and the characterization of all compact functions."
+      ]},
+      "dependencies": {"planned": ["lemma-4-2-3"], "actual": ["lemma_4_2_3_bifinite_algebraic_finite_steps", "finite_compact_upper_below_of_algebraic", "exists_monotone_compact_refinement_on_finite", "isJoinableFiniteCompactRelation_graph", "compactBasisMubClosureCarrier_properties", "exists_compact_joinable_function_extending_finite_observations", "compactJoinableFunctionsBelow_directed_isSup", "CompactMinimalUpperBounds"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "prop-4-2-4:b1f04c63:7994f64c:c3d26dfb"}
+    },
+    "prop-4-2-5": {
+      "permanentId": "prop-4-2-5",
+      "number": "Proposition 4.2.5",
+      "source": {"pdfPage": 59, "printedPage": "59", "texSha256": "9748ef125146aef7bc6349013b10e99896d7c076f2937f5fe360f2af8b9f6a07", "locator": "page:59:block:p59-b11"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.prop_4_2_5_mub_complete_basis_bifinite", "module": "Practice.DomainTheory.Chapter04.Section42_ProjectionFS", "signatureSha256": "f8142cb6bc87567c130cb3ade4c157c7a238908ef91a983ef60f928e02912f35", "bodySha256": "878a32615c85248b2b8fae6c235be2ab63ad99faeecb41160f7cabb9760841da"},
+      "states": {"translated": true, "proved": true, "sourceAligned": true, "architectureStable": false, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "proved", "reason": "none", "evidence": ["The Lean proof reconstructs directedness, Scott continuity, idempotence, fixing, and leastness from the proof on printed page 59.", "lake build Practice.DomainTheory.Chapter04.NumberedItems passed."]},
+      "risk": {"level": "medium", "reasons": ["signature_corrected", "ordered_domain_partial_order_refactor_pending"], "downstreamCount": 2},
+      "revisionHistory": [{"cycle": 1, "attemptsUsed": 10, "outcome": "superseded by the successful source-guided construction", "attempts": [
+        "Choose the stated supremum; directedness is not yet available.",
+        "Use algebraicity to choose the supremum; it does not directly supply this sup.",
+        "Use dcpo completeness; the mub-closure downset must first be directed.",
+        "Derive directedness from mub-completeness; closure transport lemmas are missing.",
+        "Prove monotonicity first; chosen suprema still need extensional packaging.",
+        "Apply Corollary 2.2.16; its wrapper does not match the generated function.",
+        "Prove idempotence via fixing mc(A); no MubClosure induction principle exists.",
+        "Prove leastness pointwise; competitors must first be shown to fix mc(A).",
+        "Build a finite projection; finite image needs assumptions absent here.",
+        "Keep the old strengthened result; rejected because bifiniteness also needs bottom."
+      ]}],
+      "currentRevisionCycle": {"cycle": 2, "attemptsUsed": 1, "attempts": [
+        "Construct the generated dcpo supremum explicitly; prove continuity with Corollary 2.2.16 and prove closure leastness using finite compact interpolation. This compiled."
+      ]},
+      "dependencies": {"planned": ["cor-2-2-16", "mub-completeness", "algebraic-basis interpolation"], "actual": ["Chapter2.cor_2_2_16_wayBelow_directed_sup", "Chapter2.finite_wayBelow_basis_upper", "mubClosure_isMubClosed", "subset_mubClosure", "KernelOperatorGeneratedByMubClosure", "IsLeastKernelOperatorFixing"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "prop-4-2-5:9748ef12:f8142cb6:878a3261"}
+    },
+    "thm-4-2-6": {
+      "permanentId": "thm-4-2-6",
+      "number": "Theorem 4.2.6",
+      "source": {"pdfPage": 59, "printedPage": "59", "texSha256": "09b77fac5a08a98e87a98985d88cf1276c98c0b5a0825687171fe4c2e0f01c0d", "locator": "page:59:block:p59-b13"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.theorem_4_2_6_bifinite_functional_characterizations", "module": "Practice.DomainTheory.Chapter04.Section42_ProjectionFS", "signatureSha256": "eb941b77fe044d9f311faf2d6c8b5679dd53b7d378cb017ff84198bc653f280e", "bodySha256": "94e838c81467888f45ccd1507387b5c1932cd96d344e6177383631ee727cb339"},
+      "states": {"translated": true, "proved": true, "sourceAligned": true, "architectureStable": false, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "proved", "reason": "none", "evidence": ["The Lean proof reconstructs both functional characterizations from the proof on printed pages 59-60.", "The proof contains no local sorry or admit.", "lake build Practice.DomainTheory.Chapter04.NumberedItems passed."]},
+      "risk": {"level": "medium", "reasons": ["signature_corrected", "ordered_domain_partial_order_refactor_pending"], "downstreamCount": 3},
+      "revisionHistory": [{"cycle": 1, "attemptsUsed": 10, "outcome": "superseded by the successful source-guided construction", "attempts": [
+        "Construct deflations from finite mub-closures; the finite-image corollary is missing.",
+        "Show finite-image points compact; the lower-adjoint bridge is missing.",
+        "Recover algebraicity from finite-image deflations; basis extraction is missing.",
+        "Recover mub-completeness; image-order minimal-upper-bound lemmas are absent.",
+        "Derive all-deflations directedness from compactness; compactness is unavailable.",
+        "Use sequence-style BifiniteDomain; its equivalence to the basis form is unproved.",
+        "Use finite ranges as bases; compactness of range points is unproved.",
+        "Transport pointwise suprema through maps; the IsSup bridge is missing.",
+        "Reuse Chapter 3 kernel APIs; no matching lower-adjoint theorem is imported.",
+        "Prove only forward implications; rejected because the source states equivalence."
+      ]}],
+      "currentRevisionCycle": {"cycle": 2, "attemptsUsed": 1, "attempts": [
+        "Construct finite projections from finite mub-closures; reconstruct Plotkin-order data from directed ranges; dominate arbitrary finite projections by fixing their finite ranges. This compiled."
+      ]},
+      "dependencies": {"planned": ["prop-4-2-5", "prop-3-1-17"], "actual": ["prop_4_2_5_mub_complete_basis_bifinite", "FiniteProjection.compact_of_mem_range", "exists_idempotentDeflation_fixing_finite_compacts", "mubClosure_subset_projection_range", "plotkinOrder_of_directed_idempotentDeflations", "exists_finiteProjection_generatedBy_finite_mubClosure", "directed_idempotentDeflations_of_bifinite", "all_idempotentDeflations_of_directed", "directed_idempotentDeflations_of_all"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "thm-4-2-6:09b77fac:eb941b77:94e838c8"}
+    },
+    "thm-4-2-7": {
+      "permanentId": "thm-4-2-7",
+      "number": "Theorem 4.2.7",
+      "source": {"pdfPage": 60, "printedPage": "60", "texSha256": "d608eac5d843f94fcbdff96fc909e07ba78ea11726cc422e1d01d7ae2692a548", "locator": "page:60:block:p60-b2"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.theorem_4_2_7_bifinite_iff_bilimit_finite_posets", "module": "Practice.DomainTheory.Chapter04.Section42_ProjectionFS", "signatureSha256": "085af4a33f5a38ebc11b94fc2db33f938057fbfe3bbf99f1ec1e79a477a41164", "bodySha256": "2a22b694bd87335b87c8c0b123153101d97ca714bf0d2d29e1d0eac618be07a8"},
+      "states": {"translated": true, "proved": true, "sourceAligned": true, "architectureStable": false, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "proved", "reason": "none", "evidence": ["The Lean statement now quantifies over an arbitrary directed index type, matching the PDF's expanding system rather than the countable special case.", "Both directions of the PDF proof are reconstructed through finite kernel images and Theorem 4.2.6.", "The theorem contains no local sorry or admit and the Section42 module compiles."]},
+      "risk": {"level": "medium", "reasons": ["new_general_directed_bilimit_interface", "signature_corrected", "ordered_domain_partial_order_refactor_pending"], "downstreamCount": 2},
+      "revisionHistory": [{"cycle": 1, "attemptsUsed": 10, "outcome": "superseded after introducing the general directed bilimit criterion", "attempts": [
+        "Index stages by all deflations; ExpandingSequence requires Nat.",
+        "Choose a countable cofinal subfamily; no countability assumption exists.",
+        "Use sequence-style projections; no bridge from compact-basis bifiniteness exists.",
+        "Construct image embedding-retraction pairs; image upper adjoints are unbundled.",
+        "Apply Lemma 3.3.8; it requires an already constructed sequence.",
+        "Prove the converse from composites; Theorem 4.2.6 remains unresolved.",
+        "Transport finite pointedness over OrderIsoData; transfer lemmas are absent.",
+        "Generalize ExpandingSequence to arbitrary indices; this exceeds a local proof.",
+        "Restrict to omega-bifinite domains; rejected as a source statement change.",
+        "Mark the Nat wrapper source-aligned; rejected and the mismatch stays explicit."
+      ]}],
+      "currentRevisionCycle": {"cycle": 2, "attemptsUsed": 1, "attempts": [
+        "Introduce a general directed finite-stage e-p presentation satisfying the Lemma 3.3.8 pointwise-supremum criterion, construct it from finite kernel images, and recover directed finite projections in the converse. This compiled."
+      ]},
+      "dependencies": {"planned": ["thm-4-2-6", "lemma-3-3-8"], "actual": ["FinitePointedExpandingBilimit", "Chapter3.EPPair", "Chapter3.KernelOperator.ImageCarrier", "theorem_4_2_6_bifinite_functional_characterizations", "hasBottom_of_bifiniteCompactBasis"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "thm-4-2-7:d608eac5:085af4a3:2a22b694"}
+    },
+    "thm-4-2-8": {
+      "permanentId": "thm-4-2-8",
+      "number": "Theorem 4.2.8",
+      "source": {"pdfPage": 60, "printedPage": "60", "texSha256": "3028aae2f8690300db46068f678ec42aacd0a315c9cdb106ed477764c34c5a58", "locator": "page:60:block:p60-b3"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.theorem_4_2_8_bifinite_closure_properties", "module": "Practice.DomainTheory.Chapter04.Section42_ProjectionFS", "signatureSha256": "ac546addadaad454e799f49c1b697c62aff5788572e506b0886c92a6941fb866", "bodySha256": "0fa6a78371de6841d709b0cdf0143f7dbf3772b87500e113f77e4d02bfd0eed3"},
+      "states": {"translated": true, "proved": false, "sourceAligned": true, "architectureStable": false, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "admit", "reason": "book_proof_omitted", "evidence": ["Product closure and the supplied function-space proof are formalized without local debt.", "The PDF gives no proof details for the elementary coalesced-sum clause.", "The PDF explicitly leaves bilimit closure as an exercise."]},
+      "risk": {"level": "high", "reasons": ["book_proof_omitted", "object_level_cartesian_closed_interface", "coalesced_sum_component_pending", "bilimit_exercise_pending"], "downstreamCount": 1},
+      "revisionHistory": [{"cycle": 1, "attemptsUsed": 10, "outcome": "superseded for the product and function-space components", "attempts": [
+        "Derive product closure from the basis predicate; product mub lemmas are absent.",
+        "Use Proposition 4.2.4 for functions; it does not prove a Plotkin basis.",
+        "Implement F_ij(h)=g_j o h o f_i; its four structure laws remain missing.",
+        "Show F_ij has finite image; finite map-space enumeration is absent.",
+        "Prove F_ij approximates h; interchange of directed suprema is unbundled.",
+        "Construct coalesced-sum compact bases; compactness transport is absent.",
+        "Use the Chapter 3 coalesced sum; it supplies a carrier, not bifiniteness.",
+        "Use Theorem 4.2.7 for bilimits; its proof and indexing mismatch propagate.",
+        "Build CartesianClosed from product and function closure; this subgoal succeeds.",
+        "Mark the whole aggregate admit; rejected because it hides the supplied proof."
+      ]}],
+      "currentRevisionCycle": {"cycle": 2, "attemptsUsed": 2, "attempts": [
+        "Construct coordinatewise product projections and prove their finite image, directedness, and pointwise supremum. This compiled.",
+        "Construct F_ij(h)=g_j o h o f_i, prove Scott continuity and finite image by finite function coding, and prove the iterated directed-supremum argument. This compiled."
+      ]},
+      "dependencies": {"planned": ["thm-4-2-6", "thm-4-2-7"], "actual": ["bifiniteDomainClass_closedUnderProducts", "bifiniteDomainClass_closedUnderFunctionSpaces", "FiniteProjection.functionSpace", "directedIdempotentDeflations_functionSpace", "DomainClass.ClosedUnderCoalescedSums", "DomainClass.ClosedUnderExpandingBilimits"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "thm-4-2-8:3028aae2:ac546add:0fa6a783"}
+    },
+    "prop-4-2-15": {
+      "permanentId": "prop-4-2-15",
+      "number": "Proposition 4.2.15",
+      "source": {"pdfPage": 62, "printedPage": "62", "texSha256": "20d381e715ff0efadd7ad7550c9895217d1618ffb89a3524c7c3ee2b665b118b", "locator": "page:62:block:p62-b6"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.prop_4_2_15_scott_compactness_criteria", "module": "Practice.DomainTheory.Chapter04.Section42_Topology", "signatureSha256": "2bbc095409756c56779727d6cb39e8a03a1b886247b820ce17c5af84b67729fe", "bodySha256": "f7989773ef962e42b79bd2870563b02b43d16eb73ac364d5423edaa1c3737a53"},
+      "states": {"translated": true, "proved": false, "sourceAligned": true, "architectureStable": false, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "sorry", "reason": "automation_exhausted", "evidence": ["The PDF supplies the finite-upper-set proof.", "Lean now proves the dcpo and final definitional components."]},
+      "risk": {"level": "critical", "reasons": ["automation_exhausted", "way_below_topology_bridge_missing"], "downstreamCount": 2},
+      "currentRevisionCycle": {"cycle": 1, "attemptsUsed": 10, "attempts": [
+        "Reuse Proposition 4.2.14 for dcpo structure; this succeeds.",
+        "Unfold the final set-level criterion; this succeeds by reflexivity.",
+        "Construct finite upper neighborhoods; no supporting lemma exists.",
+        "Derive continuity of kappa D; basis directedness is missing.",
+        "Prove kappa way-below forward; open extraction is only in admitted 4.2.14.",
+        "Prove kappa way-below reverse; filtered-to-directed conversion is absent.",
+        "Transfer through Hofmann-Mislove; Theorem 4.2.13 remains admitted.",
+        "Prove sigma way-below directly; compact interpolation is missing.",
+        "Reuse mathlib compactness; local predicates are not definitionally aligned.",
+        "Replace actual WayBelow by a custom relation; rejected as semantically weaker."
+      ]},
+      "dependencies": {"planned": ["thm-4-2-13", "prop-4-2-14"], "actual": ["prop_4_2_14_compact_saturated_scott_open_filters", "Chapter3.WayBelow"], "mismatch": true},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "prop-4-2-15:20d381e7:2bbc0954"}
+    },
+    "prop-4-2-10": {
+      "permanentId": "prop-4-2-10",
+      "number": "Proposition 4.2.10",
+      "source": {"pdfPage": 61, "printedPage": "61", "texSha256": "f33e21b56b92b39eceadf6d5d7c91e80cc559c4c81c598253d89e677a93041a8", "locator": "page:61:block:p61-b2"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.conjecture_4_2_10_fs_function_space", "module": "Practice.DomainTheory.Chapter04.Section42_ProjectionFS", "signatureSha256": "55b0564405556f1d571a1673ab25aecebef135df6ee67d2063035f0844239a92", "bodySha256": "5a9e5f0f462ad4b8b1db009ae7be266424a7f17f825dd348b0426282cdd3ab75"},
+      "states": {"translated": true, "proved": false, "sourceAligned": true, "architectureStable": true, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "conjecture", "reason": "source_explicitly_unknown", "evidence": ["The source labels the claim Proposition 4.2.10 and immediately says that its proof was as yet unknown.", "Lean exposes only a proposition-valued definition and no proof constant.", "The former downstream use in Lemma 4.3.2 was removed and replaced by Jun90 Theorem 2.2.6 plus the proved FS-continuity bridge."]},
+      "risk": {"level": "critical", "reasons": ["source_explicitly_unknown", "must_not_be_consumed_as_theorem", "formerly_used_downstream"], "downstreamCount": 0},
+      "currentRevisionCycle": {"cycle": 1, "attemptsUsed": 1, "attempts": ["Reclassify the printed proposition as a conjecture, prove independently that FS objects are continuous, and remove its only downstream theorem use."]},
+      "dependencies": {"planned": ["def-4-2-9"], "actual": ["IsFSObject", "IsPointedContinuousDomain", "Chapter3.IsContinuousDomain", "OrderedDomain.functionSpace"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "prop-4-2-10:f33e21b5:55b05644:5a9e5f0f"}
+    },
+    "lemma-4-3-1": {
+      "permanentId": "lemma-4-3-1",
+      "number": "Lemma 4.3.1",
+      "source": {"pdfPage": 64, "printedPage": "64", "texSha256": "81189905eaa87254b738eefc129b6431d647242f4a0670aaf4cefa37481e84cc", "locator": "page:64:block:p64-b4"},
+      "lean": {"canonical": "AbramskyJung.Chapter4.lemma_4_3_1_cartesian_closed_separation", "module": "Practice.DomainTheory.Chapter04.Section43_Pointed", "signatureSha256": "403950d9a0ae6fcf969b33dda0700a6c19f394b90842cff17e15ca96f29b868d", "bodySha256": "bc051f3e366595d4e8127d3d53feaeb9e023254acb7e09008f0a29f40756e04e"},
+      "states": {"translated": true, "proved": false, "sourceAligned": true, "architectureStable": true, "mathlibCandidate": false},
+      "proofBoundary": {"kind": "sorry", "reason": "source_gap", "evidence": ["The numbered theorem has a compiled proof reduction.", "Exercise 4.3.11(3) is an exact admit boundary because the textbook explicitly omits it.", "The corrected Figure 11 contradiction is proved.", "The remaining source-case sorry is isolated in Figure 12, where the printed successor construction and pointwise-supremum claim require additional source-valid chain data."]},
+      "risk": {"level": "critical", "reasons": ["classification_core_dependency", "exercise_admit_dependency", "figure12_source_gap", "prop_4_2_16_dependency"], "downstreamCount": 4},
+      "currentRevisionCycle": {"cycle": 1, "attemptsUsed": 20, "thresholdLifted": true, "attempts": [
+        "Use Proposition 4.2.16 to extract opens; its equivalence is unproved.",
+        "Interpolate Scott opens; no ScottOpenCarrier interpolation API exists.",
+        "Encode the A retract case; the special domain A is not defined.",
+        "Encode the X retract case; the special domain X is not defined.",
+        "Reduce arbitrary non-L E to A or X; the book delegates this to an exercise.",
+        "Build the step functions f1 and f2; open-step codomain data is unavailable.",
+        "Define the case-split f; continuity across the Scott-open partition is unproved.",
+        "Define the directed h_i family; directedness and supremum calculations are missing.",
+        "Transport continuity along retracts; function-space retract support is absent.",
+        "Assume the retract classification locally; rejected because it would add an axiom.",
+        "Apply Jung 1989 Lemma 4.23; rejected because it assumes pointed dcpos with property m, unlike the textbook statement.",
+        "Apply Jung 1990 directly; rejected because that paper contains the FS closure and Lawson-compact corollary but not this exact generalized bifurcation statement.",
+        "Reconstruct the forbidden domains A and X from Figures 12 and 11; their diagrams are now verified, but the ordinal descending chain and retract classification still require Exercise 4.3.11(3).",
+        "Check the pointwise supremum in textbook Case 2; found that the printed f has value c1 on the intersection whereas sup_i h_i has value top, so the displayed proof cannot type-check mathematically as written.",
+        "Use the later locally-compact-sober dichotomy theorem as an axiom; rejected by the project rule because the textbook does not cite it as the external boundary for Lemma 4.3.1.",
+        "State Exercise 4.3.11(3) at its exact forbidden-retract boundary and classify it as admit because the textbook explicitly omits the proof.",
+        "Formalize postcomposition and the induced continuous-function-space retract; this compiles and discharges the retract-transport step.",
+        "Separate the printed Case 2 map into a c1-valued common bound and a top-valued family supremum; this repairs the first pointwise conflict.",
+        "Make the Case 2 family agree with the c1-valued map outside the intersection; continuity, directedness, exact supremum, and the final Figure 11 contradiction now compile without proof debt.",
+        "Reconstruct Figure 12 Case 1; the displayed diagram lacks a source-valid successor operation for the possibly ordinal chain, and the printed outside-intersection clause does not establish the claimed supremum, so one exact source-case sorry remains."
+      ]},
+      "dependencies": {"planned": ["prop-4-2-16", "exercise-4-3-11-3"], "actual": ["prop_4_2_16_coherence_open_neighborhoods", "exercise_4_3_11_3_non_l_forbidden_retract", "continuousFunctionSpaceRetract", "not_continuous_functionSpace_of_figure11", "not_continuous_functionSpace_of_figure12", "Chapter3.theorem_3_1_4_retract_continuous_domain"], "mismatch": false},
+      "reviews": {"sourceTex": {"status": "pending"}, "leanSemantics": {"status": "pending"}, "proofBoundary": {"status": "pending"}, "mathlibAlignment": {"status": "pending"}, "readerMapping": {"status": "pending"}},
+      "cache": {"key": "lemma-4-3-1:81189905:403950d9"}
+    }
+  }
+}

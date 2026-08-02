@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive TeX-to-Lean reader for the Abramsky--Jung Domain Theory formalization.">
+  <title>Domain Theory - Lean 4 Formalization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" id="brandLink" href="./" aria-label="Domain Theory Lean 4 reader home">
+      <span class="brand-mark" aria-hidden="true">DT</span>
+      <span class="brand-copy">
+        <strong>Domain Theory</strong>
+        <span>Lean 4 formalization</span>
+      </span>
+    </a>
+
+    <div class="chapter-control">
+      <label for="chapterSelect">Chapter</label>
+      <select id="chapterSelect" aria-label="Select chapter"></select>
+    </div>
+
+    <div class="topbar-meta">
+      <span class="mode-badge">Read-only</span>
+      <span id="buildMeta" class="build-meta"></span>
+      <a class="topbar-link" id="repositoryLink" href="https://github.com/ChanYuxu/domain-theory-book-formalization">GitHub</a>
+    </div>
+  </header>
+
+  <main class="workspace" id="workspace">
+    <section class="source-pane" aria-label="TeX companion PDF">
+      <div class="source-toolbar">
+        <label class="search-field" for="itemSearch">
+          <input id="itemSearch" type="search" autocomplete="off" placeholder="Find an item">
+        </label>
+        <span class="pdf-status" id="pdfStatus">Loading</span>
+      </div>
+
+      <div class="source-body">
+        <nav class="item-nav" id="itemNav" aria-label="Chapter items"></nav>
+        <div class="pdf-scroll" id="pdfScroll" aria-label="Rendered TeX companion PDF">
+          <div class="loading-state" id="loadingState">
+            <span class="loading-bar" aria-hidden="true"></span>
+            <span>Rendering TeX companion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class="splitter" id="splitter" type="button" aria-label="Resize PDF and Lean panes" title="Resize panes"></button>
+
+    <section class="lean-pane" aria-label="Mapped Lean source">
+      <header class="lean-header">
+        <div class="item-kicker" id="itemKicker">Select an item</div>
+        <h1 id="itemTitle">Lean source appears here</h1>
+        <p class="item-summary" id="itemSummary">Choose a marker in the TeX PDF or an entry in the chapter index.</p>
+
+        <div class="item-metadata" id="itemMetadata"></div>
+
+        <div class="code-toolbar">
+          <label class="declaration-control" id="declarationControl" hidden>
+            <span>Declaration</span>
+            <select id="declarationSelect"></select>
+          </label>
+          <span class="source-location" id="sourceLocation"></span>
+          <div class="code-actions">
+            <a class="action-button" id="githubSource" href="#" target="_blank" rel="noreferrer" hidden>Source</a>
+            <button class="action-button" id="copyCode" type="button" disabled>Copy</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="code-scroll" id="codeScroll">
+        <pre class="code-view"><code id="codeView">-- Select a mapped book item.</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

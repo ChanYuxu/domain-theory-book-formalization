@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 5 PDF.js to Lean</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --accent: #0f766e;
+      --accent-soft: #dff4ef;
+      --code-bg: #101827;
+      --code-line: #1f2937;
+      --code-ink: #e7edf5;
+      --warn-bg: #fff7ed;
+      --warn-line: #fed7aa;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+      overflow: hidden;
+    }
+
+    .app {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+    }
+
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .meta {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      width: min(360px, 34vw);
+      min-width: 220px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 10px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .button {
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 11px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    main {
+      --split-left: 58%;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: var(--split-left) 8px minmax(320px, 1fr);
+      overflow: hidden;
+    }
+
+    main.resizing {
+      user-select: none;
+      cursor: col-resize;
+    }
+
+    .pdf-pane,
+    .lean-pane {
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .pdf-pane {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) 176px;
+      background: #e8edf4;
+    }
+
+    .pdf-scroll {
+      min-height: 0;
+      overflow: auto;
+      padding: 18px;
+    }
+
+    .pdf-page {
+      position: relative;
+      flex: none;
+      margin: 0 auto 18px;
+      background: white;
+      box-shadow: 0 8px 28px rgba(15, 23, 42, 0.16);
+    }
+
+    .pdf-page canvas {
+      display: block;
+    }
+
+    .pdf-link {
+      position: absolute;
+      border: 2px solid transparent;
+      border-radius: 3px;
+      background: rgba(15, 118, 110, 0.06);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .pdf-link:hover,
+    .pdf-link.active {
+      border-color: var(--accent);
+      background: rgba(15, 118, 110, 0.18);
+    }
+
+
+    .splitter {
+      min-width: 8px;
+      border: 0;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      background: linear-gradient(90deg, #edf2f7, #f8fafc);
+      cursor: col-resize;
+      padding: 0;
+      position: relative;
+    }
+
+    .splitter::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2px;
+      height: 42px;
+      border-radius: 999px;
+      background: #a8b3c2;
+      transform: translate(-50%, -50%);
+    }
+
+    .splitter:hover,
+    .splitter:focus-visible,
+    main.resizing .splitter {
+      background: var(--accent-soft);
+      outline: none;
+    }
+
+    main.resizing .pdf-scroll,
+    main.resizing .lean-pane {
+      pointer-events: none;
+    }
+
+    .marker-panel {
+      border-top: 1px solid var(--line);
+      background: var(--panel);
+      overflow: auto;
+      padding: 10px;
+    }
+
+    .marker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 8px;
+    }
+
+    .marker {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      padding: 8px 9px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .marker:hover,
+    .marker:focus-visible {
+      border-color: #99bdb7;
+      outline: none;
+    }
+
+    .marker.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .marker-number {
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .marker-title {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .lean-pane {
+      background: var(--panel);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .code-header {
+      border-bottom: 1px solid var(--line);
+      padding: 15px 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .code-title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .code-title {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .code-location {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .code-summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .code-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .editor-toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .editor-toolbar > div:last-child {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .audit-note {
+      margin: 0;
+      padding: 8px 10px;
+      border-left: 3px solid var(--line);
+      background: #f8fafc;
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .audit-note[data-risk="critical"] { border-left-color: #b42318; background: #fff1f0; }
+    .audit-note[data-risk="high"] { border-left-color: #b54708; background: #fff7ed; }
+    .audit-note[data-risk="medium"] { border-left-color: #175cd3; background: #eff8ff; }
+    .audit-note[data-risk="low"] { border-left-color: #067647; background: #ecfdf3; }
+
+    .code-tag {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: #334155;
+      background: #fff;
+    }
+
+    .declaration-select {
+      max-width: 100%;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      padding: 0 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      display: none;
+    }
+
+    .save-button {
+      height: 32px;
+      border: 1px solid #0f766e;
+      border-radius: 6px;
+      background: #0f766e;
+      color: white;
+      padding: 0 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .save-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .save-status {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .code-editor {
+      margin: 0;
+      min-height: 0;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      border: 0;
+      resize: none;
+      background: var(--code-bg);
+      color: var(--code-ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      tab-size: 2;
+      padding: 14px 16px;
+      outline: none;
+      white-space: pre;
+      box-sizing: border-box;
+    }
+
+    .build-output {
+      max-height: 180px;
+      overflow: auto;
+      border-top: 1px solid #334155;
+      background: #0b1220;
+      color: #dbeafe;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.45;
+      padding: 10px 12px;
+      white-space: pre-wrap;
+      display: none;
+    }
+
+    .status,
+    .notice {
+      padding: 18px;
+      color: var(--muted);
+    }
+
+    .notice {
+      border: 1px solid var(--warn-line);
+      background: var(--warn-bg);
+      color: #7c2d12;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      header { grid-template-columns: 1fr; }
+      .toolbar { justify-content: flex-start; }
+      main {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(560px, 58vh) minmax(360px, 42vh);
+      }
+      .splitter {
+        display: none;
+      }
+      .pdf-pane {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Chapter 5 PDF.js to Lean</h1>
+        <div class="meta" id="meta">Loading PDF.js reader...</div>
+      </div>
+      <div class="toolbar">
+        <input class="search" id="search" type="search" placeholder="Search number, title, or Lean name">
+        <a class="button" href="generated/chapter5-marked.pdf">Marked PDF</a>
+      </div>
+    </header>
+    <main>
+      <section class="pdf-pane" aria-label="PDF.js rendered TeX PDF">
+        <div class="pdf-scroll" id="pdfScroll"></div>
+        <div class="marker-panel">
+          <div class="marker-grid" id="markerGrid"></div>
+        </div>
+      </section>
+      <button class="splitter" id="splitter" type="button" aria-label="Resize PDF and Lean panes"></button>
+      <section class="lean-pane" aria-label="Lean source">
+        <div class="code-header">
+          <div class="code-title-row">
+            <h2 class="code-title" id="codeTitle">Select a Lean marker</h2>
+            <div class="code-location" id="codeLocation"></div>
+          </div>
+          <p class="code-summary" id="codeSummary">Click a Lean marker in the rendered PDF, or select an item below the PDF.</p>
+          <div class="editor-toolbar">
+            <div class="code-tags" id="codeTags"></div>
+            <div>
+              <select class="declaration-select" id="declarationSelect" aria-label="Lean declaration"></select>
+              <span class="save-status" id="saveStatus"></span>
+              <button class="save-button" id="saveButton" type="button" disabled>Save + build</button>
+            </div>
+          </div>
+          <p class="audit-note" id="auditNote" hidden></p>
+        </div>
+        <textarea class="code-editor" id="codeEditor" spellcheck="false" disabled>No Lean item selected.</textarea>
+        <pre class="build-output" id="buildOutput"></pre>
+      </section>
+    </main>
+  </div>
+  <script type="module">
+    import * as pdfjsLib from "./vendor/pdfjs/pdf.mjs";
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "./vendor/pdfjs/pdf.worker.mjs";
+
+    const PDF_URL = "generated/chapter5-marked.pdf";
+    const MAX_RENDER_SCALE = 1.35;
+
+    const state = {
+      map: null,
+      audit: null,
+      extract: null,
+      sourceLines: [],
+      pdf: null,
+      selectedId: "",
+      selectedLean: null,
+      selectedDeclaration: "",
+      query: "",
+      linkById: new Map(),
+      resizeTimer: 0,
+      splitRenderTimer: 0,
+      draggingSplitter: false,
+      saving: false
+    };
+
+    const meta = document.getElementById("meta");
+    const appMain = document.querySelector("main");
+    const splitter = document.getElementById("splitter");
+    const pdfScroll = document.getElementById("pdfScroll");
+    const markerGrid = document.getElementById("markerGrid");
+    const search = document.getElementById("search");
+    const codeTitle = document.getElementById("codeTitle");
+    const codeLocation = document.getElementById("codeLocation");
+    const codeSummary = document.getElementById("codeSummary");
+    const codeTags = document.getElementById("codeTags");
+    const auditNote = document.getElementById("auditNote");
+    const declarationSelect = document.getElementById("declarationSelect");
+    const codeEditor = document.getElementById("codeEditor");
+    const saveButton = document.getElementById("saveButton");
+    const saveStatus = document.getElementById("saveStatus");
+    const buildOutput = document.getElementById("buildOutput");
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+    }
+
+    function itemById(id) {
+      return state.map.items.find(item => item.id === id);
+    }
+
+    function detectedIds() {
+      const ids = new Set();
+      for (const page of state.extract.pages) {
+        for (const block of page.blocks) {
+          if (block.marker) ids.add(block.marker.id);
+        }
+      }
+      return ids;
+    }
+
+    function normalizeDest(dest) {
+      if (typeof dest === "string") return dest;
+      if (Array.isArray(dest) && typeof dest[0] === "string") return dest[0];
+      return "";
+    }
+
+    function rectToViewport(rect, viewport) {
+      const converted = viewport.convertToViewportRectangle(rect);
+      const left = Math.min(converted[0], converted[2]);
+      const top = Math.min(converted[1], converted[3]);
+      const width = Math.abs(converted[2] - converted[0]);
+      const height = Math.abs(converted[3] - converted[1]);
+      return { left, top, width, height };
+    }
+
+    function contentWidth(element) {
+      const style = getComputedStyle(element);
+      return element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    }
+
+    function fittedViewport(page) {
+      const base = page.getViewport({ scale: 1 });
+      const fitScale = contentWidth(pdfScroll) / base.width;
+      return page.getViewport({ scale: Math.min(MAX_RENDER_SCALE, fitScale) });
+    }
+
+
+    function splitStorageKey() {
+      return `domain-reader-split:${PDF_URL}`;
+    }
+
+    function applySplitPercent(percent) {
+      const clamped = Math.min(76, Math.max(32, percent));
+      appMain.style.setProperty("--split-left", `${clamped}%`);
+      return clamped;
+    }
+
+    function loadSplitPercent() {
+      const saved = Number(localStorage.getItem(splitStorageKey()));
+      if (Number.isFinite(saved)) applySplitPercent(saved);
+    }
+
+    function rerenderPdfSoon(delay = 160) {
+      if (!state.pdf) return;
+      clearTimeout(state.splitRenderTimer);
+      state.splitRenderTimer = setTimeout(async () => {
+        await renderPdf();
+        if (state.selectedId) {
+          highlightSelection(state.selectedId);
+          const target = state.linkById.get(state.selectedId);
+          if (target) target.pageEl.scrollIntoView({ block: "center" });
+        }
+      }, delay);
+    }
+
+    function updateSplitFromPointer(event) {
+      const bounds = appMain.getBoundingClientRect();
+      const percent = ((event.clientX - bounds.left) / bounds.width) * 100;
+      const clamped = applySplitPercent(percent);
+      localStorage.setItem(splitStorageKey(), String(clamped));
+    }
+
+    function setupSplitter() {
+      loadSplitPercent();
+      splitter.addEventListener("pointerdown", event => {
+        if (window.matchMedia("(max-width: 980px)").matches) return;
+        state.draggingSplitter = true;
+        splitter.setPointerCapture(event.pointerId);
+        appMain.classList.add("resizing");
+        updateSplitFromPointer(event);
+      });
+      splitter.addEventListener("pointermove", event => {
+        if (!state.draggingSplitter) return;
+        updateSplitFromPointer(event);
+        rerenderPdfSoon(220);
+      });
+      function finishDrag(event) {
+        if (!state.draggingSplitter) return;
+        state.draggingSplitter = false;
+        if (splitter.hasPointerCapture(event.pointerId)) splitter.releasePointerCapture(event.pointerId);
+        appMain.classList.remove("resizing");
+        updateSplitFromPointer(event);
+        rerenderPdfSoon(0);
+      }
+      splitter.addEventListener("pointerup", finishDrag);
+      splitter.addEventListener("pointercancel", finishDrag);
+      splitter.addEventListener("mousedown", event => {
+        if (window.matchMedia("(max-width: 980px)").matches) return;
+        state.draggingSplitter = true;
+        appMain.classList.add("resizing");
+        updateSplitFromPointer(event);
+        event.preventDefault();
+      });
+      document.addEventListener("mousemove", event => {
+        if (!state.draggingSplitter) return;
+        updateSplitFromPointer(event);
+        rerenderPdfSoon(220);
+      });
+      document.addEventListener("mouseup", event => {
+        if (!state.draggingSplitter) return;
+        state.draggingSplitter = false;
+        appMain.classList.remove("resizing");
+        updateSplitFromPointer(event);
+        rerenderPdfSoon(0);
+      });
+      splitter.addEventListener("keydown", event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const current = Number.parseFloat(getComputedStyle(appMain).getPropertyValue("--split-left")) || 58;
+        const next = event.key === 'Home' ? 38 : event.key === 'End' ? 72 : current + (event.key === 'ArrowLeft' ? -3 : 3);
+        const clamped = applySplitPercent(next);
+        localStorage.setItem(splitStorageKey(), String(clamped));
+        rerenderPdfSoon(0);
+      });
+    }
+
+    async function renderPdf() {
+      pdfScroll.innerHTML = "";
+      state.linkById.clear();
+      state.pdf = await pdfjsLib.getDocument(PDF_URL).promise;
+      for (let pageNumber = 1; pageNumber <= state.pdf.numPages; pageNumber += 1) {
+        const page = await state.pdf.getPage(pageNumber);
+        const viewport = fittedViewport(page);
+        const pageEl = document.createElement("div");
+        pageEl.className = "pdf-page";
+        pageEl.dataset.page = String(pageNumber);
+        pageEl.style.width = `${viewport.width}px`;
+        pageEl.style.height = `${viewport.height}px`;
+
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        canvas.width = Math.floor(viewport.width);
+        canvas.height = Math.floor(viewport.height);
+        canvas.style.width = `${viewport.width}px`;
+        canvas.style.height = `${viewport.height}px`;
+        pageEl.appendChild(canvas);
+        pdfScroll.appendChild(pageEl);
+
+        await page.render({ canvasContext: context, viewport }).promise;
+
+        const annotations = await page.getAnnotations({ intent: "display" });
+        for (const annotation of annotations) {
+          const id = normalizeDest(annotation.dest);
+          if (!id || !itemById(id) || !annotation.rect) continue;
+          const box = rectToViewport(annotation.rect, viewport);
+          const link = document.createElement("button");
+          link.type = "button";
+          link.className = "pdf-link";
+          link.dataset.id = id;
+          link.title = `Show Lean for ${itemById(id).number}`;
+          link.style.left = `${box.left}px`;
+          link.style.top = `${box.top}px`;
+          link.style.width = `${Math.max(24, box.width)}px`;
+          link.style.height = `${Math.max(16, box.height)}px`;
+          link.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+            selectItem(id, true, false);
+          });
+          pageEl.appendChild(link);
+          state.linkById.set(id, { pageEl, link });
+        }
+      }
+    }
+
+    function renderMarkers() {
+      const ids = detectedIds();
+      const query = state.query.trim().toLowerCase();
+      const items = state.map.items.filter(item => {
+        if (!ids.has(item.id)) return false;
+        const audit = state.audit?.items?.[item.id] || {};
+        const haystack = [item.number, item.kind, item.title, item.summary,
+          audit.sourceAlignment, audit.proofStatus, audit.risk, audit.note,
+          ...(item.lean || [])].join(" ").toLowerCase();
+        return !query || haystack.includes(query);
+      });
+      if (!items.length) {
+        markerGrid.innerHTML = '<div class="notice">No matching Lean markers.</div>';
+        return;
+      }
+      markerGrid.innerHTML = items.map(item => `
+        <button type="button" class="marker ${item.id === state.selectedId ? "active" : ""}" data-id="${escapeHtml(item.id)}">
+          <div class="marker-number">${escapeHtml(item.number)}</div>
+          <div class="marker-title">${escapeHtml(item.title)}</div>
+        </button>
+      `).join("");
+    }
+
+    function editorLabel(leanItem) {
+      if (!leanItem) return "";
+      return `${leanItem.file}:${leanItem.startLine}-${leanItem.endLine}`;
+    }
+
+    function setBuildOutput(text) {
+      buildOutput.textContent = text || "";
+      buildOutput.style.display = text ? "block" : "none";
+    }
+
+    function setEditorState({ value, disabled, status, output }) {
+      codeEditor.value = value;
+      codeEditor.disabled = disabled;
+      saveButton.disabled = disabled || state.saving;
+      saveStatus.textContent = status || "";
+      setBuildOutput(output || "");
+    }
+
+    async function loadLeanItem(item, declaration = state.selectedDeclaration || item.lean?.[0] || "") {
+      const query = new URLSearchParams({ id: item.id });
+      if (declaration) query.set("decl", declaration);
+      const response = await fetch(`/api/lean-item?${query}`, { cache: "no-store" });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || `Unable to resolve Lean item: ${response.status}`);
+      }
+      const payload = await response.json();
+      state.selectedLean = payload;
+      return payload;
+    }
+
+    async function renderCode(item) {
+      if (!item) {
+        state.selectedLean = null;
+        codeTitle.textContent = "Select a Lean marker";
+        codeLocation.textContent = "";
+        codeSummary.textContent = "Click a Lean marker in the rendered PDF, or select an item below the PDF.";
+        codeTags.innerHTML = "";
+        auditNote.hidden = true;
+        setEditorState({ value: "No Lean item selected.", disabled: true });
+        return;
+      }
+      codeTitle.textContent = `${item.number}: ${item.title}`;
+      codeSummary.textContent = item.summary;
+      const audit = state.audit?.items?.[item.id];
+      const auditTags = audit ? [
+        `source: ${audit.sourceAlignment}`,
+        `proof: ${audit.proofStatus}`,
+        `risk: ${audit.risk}`
+      ] : [];
+      codeTags.innerHTML = [...auditTags, ...(item.lean || [])]
+        .map(name => `<span class="code-tag">${escapeHtml(name)}</span>`).join("");
+      auditNote.hidden = !audit;
+      if (audit) {
+        auditNote.dataset.risk = audit.risk;
+        auditNote.textContent = audit.note;
+      }
+      const declarations = item.lean || [];
+      state.selectedDeclaration = declarations.includes(state.selectedDeclaration)
+        ? state.selectedDeclaration
+        : (declarations[0] || "");
+      declarationSelect.innerHTML = declarations.map(name =>
+        `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`
+      ).join("");
+      declarationSelect.value = state.selectedDeclaration;
+      declarationSelect.style.display = declarations.length > 1 ? "block" : "none";
+      setEditorState({ value: "Loading Lean source...", disabled: true });
+      try {
+        const leanItem = await loadLeanItem(item);
+        codeLocation.textContent = editorLabel(leanItem);
+        const disabled = !leanItem.editable;
+        setEditorState({
+          value: leanItem.code,
+          disabled,
+          status: disabled ? leanItem.reason : "Editable",
+          output: ""
+        });
+      } catch (error) {
+        state.selectedLean = null;
+        codeLocation.textContent = `mapped fallback ${item.startLine}-${item.endLine}`;
+        const start = Math.max(1, item.startLine);
+        const end = Math.min(state.sourceLines.length, item.endLine);
+        const code = state.sourceLines.slice(start - 1, end).join("\n");
+        setEditorState({
+          value: code || error.message,
+          disabled: true,
+          status: "Read-only fallback",
+          output: error.message
+        });
+      }
+    }
+
+    function highlightSelection(id) {
+      document.querySelectorAll(".pdf-link.active, .marker.active").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(`.pdf-link[data-id="${CSS.escape(id)}"], .marker[data-id="${CSS.escape(id)}"]`).forEach(el => el.classList.add("active"));
+    }
+
+    async function selectItem(id, updateHash = true, scrollPdf = true) {
+      const item = itemById(id);
+      if (!item) return;
+      state.selectedId = id;
+      renderMarkers();
+      await renderCode(item);
+      highlightSelection(id);
+      const target = state.linkById.get(id);
+      if (scrollPdf && target) {
+        target.pageEl.scrollIntoView({ block: "center" });
+      }
+      const active = document.querySelector(`.marker[data-id="${CSS.escape(id)}"]`);
+      if (active) active.scrollIntoView({ block: "nearest" });
+      if (updateHash) history.replaceState(null, "", `#${id}`);
+    }
+
+    async function load() {
+      try {
+        if (location.protocol === "file:") {
+          throw new Error("Open this through the local server, not by double-clicking the HTML file.");
+        }
+        const [mapResponse, auditResponse, extractResponse] = await Promise.all([
+          fetch("chapter5-map.json", { cache: "no-store" }),
+          fetch("chapter5-audit.json", { cache: "no-store" }),
+          fetch("generated/chapter5-extract.json", { cache: "no-store" })
+        ]);
+        if (!mapResponse.ok) throw new Error(`Unable to load map: ${mapResponse.status}`);
+        if (!auditResponse.ok) throw new Error(`Unable to load Chapter 5 audit: ${auditResponse.status}`);
+        if (!extractResponse.ok) throw new Error(`Unable to load generated/chapter5-extract.json: ${extractResponse.status}`);
+        state.map = await mapResponse.json();
+        state.audit = await auditResponse.json();
+        state.extract = await extractResponse.json();
+        const sourceResponse = await fetch(state.map.leanFile, { cache: "no-store" });
+        if (!sourceResponse.ok) throw new Error(`Unable to load Lean source: ${sourceResponse.status}`);
+        state.sourceLines = (await sourceResponse.text()).split(/\r?\n/);
+        renderMarkers();
+        await renderPdf();
+        meta.textContent = `${state.extract.markerCount} clickable PDF markers · PDF.js rendered`;
+        const hashId = decodeURIComponent(location.hash.replace(/^#/, ""));
+        if (hashId) await selectItem(hashId, false, true);
+      } catch (error) {
+        meta.textContent = "PDF.js reader failed to load";
+        pdfScroll.innerHTML = `
+          <div class="notice">
+            Run this from the repository root, then refresh:<br>
+            <code>python3 docs/build_chapter5_extract.py "/absolute/path/to/Domain Theory.pdf"</code>
+          </div>
+        `;
+        codeTitle.textContent = "Generated files required";
+        codeSummary.textContent = error.message;
+        state.selectedLean = null;
+        setEditorState({
+          value: error.message,
+          disabled: true,
+          status: "Reader load failed",
+          output: error.message
+        });
+      }
+    }
+
+    markerGrid.addEventListener("click", event => {
+      const button = event.target.closest(".marker");
+      if (button) selectItem(button.dataset.id, true, true);
+    });
+
+    search.addEventListener("input", event => {
+      state.query = event.target.value;
+      if (state.map && state.extract) {
+        renderMarkers();
+        if (state.selectedId) highlightSelection(state.selectedId);
+      }
+    });
+
+    saveButton.addEventListener("click", async () => {
+      if (!state.selectedLean || state.saving) return;
+      state.saving = true;
+      saveButton.disabled = true;
+      saveStatus.textContent = "Saving and running Lean...";
+      setBuildOutput("");
+      const payload = {
+        id: state.selectedLean.id,
+        declaration: state.selectedLean.declaration,
+        file: state.selectedLean.file,
+        startLine: state.selectedLean.startLine,
+        endLine: state.selectedLean.endLine,
+        version: state.selectedLean.version,
+        code: codeEditor.value
+      };
+      try {
+        const response = await fetch("/api/save-lean", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok || !result.ok) {
+          saveStatus.textContent = "Save failed; original source restored";
+          setBuildOutput([result.error, result.output].filter(Boolean).join("\n\n"));
+          return;
+        }
+        saveStatus.textContent = `Saved; ${result.target} passed in ${result.seconds}s`;
+        setBuildOutput(result.output || result.message);
+        const refreshed = await loadLeanItem(itemById(state.selectedId), state.selectedDeclaration);
+        codeLocation.textContent = editorLabel(refreshed);
+        codeEditor.value = refreshed.code;
+        state.selectedLean = refreshed;
+      } catch (error) {
+        saveStatus.textContent = "Save failed";
+        setBuildOutput(error.message);
+      } finally {
+        state.saving = false;
+        saveButton.disabled = !state.selectedLean || !state.selectedLean.editable;
+      }
+    });
+
+    declarationSelect.addEventListener("change", async event => {
+      const item = itemById(state.selectedId);
+      if (!item || state.saving) return;
+      state.selectedDeclaration = event.target.value;
+      await renderCode(item);
+    });
+
+    window.addEventListener("hashchange", () => {
+      const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+      if (id) selectItem(id, false, true);
+    });
+
+    window.addEventListener("resize", () => {
+      if (!state.pdf) return;
+      clearTimeout(state.resizeTimer);
+      state.resizeTimer = setTimeout(async () => {
+        await renderPdf();
+        if (state.selectedId) {
+          highlightSelection(state.selectedId);
+          const target = state.linkById.get(state.selectedId);
+          if (target) target.pageEl.scrollIntoView({ block: "center" });
+        }
+      }, 180);
+    });
+
+    setupSplitter();
+    load();
+  </script>
+</body>
+</html>

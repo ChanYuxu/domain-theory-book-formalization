@@ -1,0 +1,35 @@
+/.lake/
+/.worktrees/
+.DS_Store
+**/.DS_Store
+
+# Local source material.  Do not publish the textbook PDF in this repository.
+/Domain Theory.pdf
+/docs/generated/
+/docs/__pycache__/
+/docs/chapter2-reader.html
+/_site/
+/tmp/
+
+# Personal workflow material and backups are outside the public book package.
+/Practice/DomainTheory/Papers/
+/skills/
+/LEAN_DOMAIN_THEORY_30_DAY_TRAINING.md
+/ScratchCheck.lean
+/Domain Theory Chapter 2 Reader.command
+*.bak
+*.bak-*
+*_副本.*
+
+# Local scratch files not imported by the Lake target.
+/test.lean
+/domaintheory.lean
+/DomainTheory_Chapter2_Core_fixed.lean
+/DomainTheory_Chapter3_Core.lean
+
+# Lean and editor build artifacts.
+*.olean
+*.ilean
+*.trace
+*.c
+*.o

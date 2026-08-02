@@ -1,0 +1,405 @@
+{
+  "chapter": "Chapter 5",
+  "title": "Recursive domain equations",
+  "leanFile": "../Practice/DomainTheory/Chapter05/NumberedItems.lean",
+  "notice": "This map records public paraphrases and Lean source locations. It does not reproduce the textbook text.",
+  "items": [
+    {
+      "id": "def-5-1-1",
+      "number": "Definition 5.1.1",
+      "section": "5.1",
+      "kind": "Definition",
+      "title": "Functor algebras and homomorphisms for an endofunctor",
+      "summary": "Functor algebras and homomorphisms for an endofunctor.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section51.lean",
+      "lean": [
+        "def_5_1_1_functor_algebra",
+        "def_5_1_1_functor_algebra_hom"
+      ],
+      "startLine": 23,
+      "endLine": 28
+    },
+    {
+      "id": "lemma-5-1-2",
+      "number": "Lemma 5.1.2",
+      "section": "5.1",
+      "kind": "Lemma",
+      "title": "An initial functor algebra has an isomorphic structure map",
+      "summary": "An initial functor algebra has an isomorphic structure map.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section51.lean",
+      "lean": [
+        "lemma_5_1_2_initial_algebra_structure_is_iso"
+      ],
+      "startLine": 37,
+      "endLine": 71
+    },
+    {
+      "id": "def-5-2-1",
+      "number": "Definition 5.2.1",
+      "section": "5.2",
+      "kind": "Definition",
+      "title": "Continuous functors preserve colimits of expanding sequences",
+      "summary": "Continuous functors preserve colimits of expanding sequences.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "ContinuousDomainFunctor"
+      ],
+      "startLine": 111,
+      "endLine": 118
+    },
+    {
+      "id": "lemma-5-2-2",
+      "number": "Lemma 5.2.2",
+      "section": "5.2",
+      "kind": "Lemma",
+      "title": "The canonical chain for a continuous functor yields a fixpoint isomorphism",
+      "summary": "The canonical chain for a continuous functor yields a fixpoint isomorphism.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "lemma_5_2_2_continuous_functor_canonical_chain"
+      ],
+      "startLine": 165,
+      "endLine": 231
+    },
+    {
+      "id": "def-5-2-3",
+      "number": "Definition 5.2.3",
+      "section": "5.2",
+      "kind": "Definition",
+      "title": "Locally continuous functors preserve directed suprema on hom-sets",
+      "summary": "Locally continuous functors preserve directed suprema on hom-sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "def_5_2_3_locally_continuous_functor"
+      ],
+      "startLine": 232,
+      "endLine": 235
+    },
+    {
+      "id": "prop-5-2-4",
+      "number": "Proposition 5.2.4",
+      "section": "5.2",
+      "kind": "Proposition",
+      "title": "A locally continuous functor restricts to a continuous functor on embeddings",
+      "summary": "A locally continuous functor from D to E restricts to a continuous functor from D^e to E^e.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "prop_5_2_4_locally_continuous_restricts_to_hom_continuity"
+      ],
+      "startLine": 236,
+      "endLine": 246
+    },
+    {
+      "id": "def-5-2-5",
+      "number": "Definition 5.2.5",
+      "section": "5.2",
+      "kind": "Definition",
+      "title": "Mixed-variant local continuity for contravariant/covariant functors",
+      "summary": "Mixed-variant local continuity for contravariant/covariant functors.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "def_5_2_5_mixed_variant_locally_continuous"
+      ],
+      "startLine": 440,
+      "endLine": 453
+    },
+    {
+      "id": "prop-5-2-6",
+      "number": "Proposition 5.2.6",
+      "section": "5.2",
+      "kind": "Proposition",
+      "title": "A mixed-variant locally continuous functor induces a continuous functor on embeddings",
+      "summary": "A mixed-variant locally continuous functor induces a continuous functor on embeddings.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "prop_5_2_6_mixed_variant_chains"
+      ],
+      "startLine": 842,
+      "endLine": 923
+    },
+    {
+      "id": "prop-5-2-7",
+      "number": "Proposition 5.2.7",
+      "section": "5.2",
+      "kind": "Proposition",
+      "title": "Parameterized canonical fixpoints form a locally continuous functor",
+      "summary": "Parameterized canonical fixpoints form a locally continuous functor.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+      "lean": [
+        "prop_5_2_7_parameterized_fix_locally_continuous"
+      ],
+      "startLine": 1101,
+      "endLine": 1126
+    },
+    {
+      "id": "lemma-5-3-1",
+      "number": "Lemma 5.3.1",
+      "section": "5.3",
+      "kind": "Lemma",
+      "title": "Least homomorphisms between fixpoints are obtained as least fixpoints and compose",
+      "summary": "Least homomorphisms between fixpoints are obtained as least fixpoints and compose.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+      "lean": [
+        "lemma_5_3_1_canonical_fixpoint_mediating",
+        "lemma_5_3_1_least_fixpoint_formula",
+        "lemma_5_3_1_least_hom_composition"
+      ],
+      "startLine": 456,
+      "endLine": 472
+    },
+    {
+      "id": "thm-5-3-2",
+      "number": "Theorem 5.3.2",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "Invariance part 1 characterizes canonical fixpoints by least endomorphisms",
+      "summary": "Invariance part 1 characterizes canonical fixpoints by least endomorphisms.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+      "lean": [
+        "theorem_5_3_2_invariance_part1"
+      ],
+      "startLine": 912,
+      "endLine": 958
+    },
+    {
+      "id": "thm-5-3-3",
+      "number": "Theorem 5.3.3",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "The canonical fixpoint is a sub-domain of every other fixpoint",
+      "summary": "The canonical fixpoint is a sub-domain of every other fixpoint.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+      "lean": [
+        "theorem_5_3_3_minimality_part1"
+      ],
+      "startLine": 975,
+      "endLine": 985
+    },
+    {
+      "id": "thm-5-3-4",
+      "number": "Theorem 5.3.4",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "The canonical fold map is an initial algebra for strict locally continuous functors",
+      "summary": "The canonical fold map is an initial algebra for strict locally continuous functors.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+      "lean": [
+        "theorem_5_3_4_initiality_strict"
+      ],
+      "startLine": 1057,
+      "endLine": 1205
+    },
+    {
+      "id": "thm-5-3-5",
+      "number": "Theorem 5.3.5",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "The canonical unfold map is a final coalgebra",
+      "summary": "The canonical unfold map is a final coalgebra.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+      "lean": [
+        "theorem_5_3_5_finality"
+      ],
+      "startLine": 1279,
+      "endLine": 1407
+    },
+    {
+      "id": "lemma-5-3-6",
+      "number": "Lemma 5.3.6",
+      "section": "5.3",
+      "kind": "Lemma",
+      "title": "Mixed-variant fixpoints admit least pairs of mediating maps",
+      "summary": "Mixed-variant fixpoints admit least pairs of mediating maps.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+      "lean": [
+        "lemma_5_3_6_mixed_variant_mediating",
+        "lemma_5_3_6_mixed_hom_pair_composition"
+      ],
+      "startLine": 553,
+      "endLine": 573
+    },
+    {
+      "id": "thm-5-3-7",
+      "number": "Theorem 5.3.7",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "Invariance part 2 characterizes mixed-variant canonical fixpoints",
+      "summary": "Invariance part 2 characterizes mixed-variant canonical fixpoints.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+      "lean": [
+        "theorem_5_3_7_invariance_part2"
+      ],
+      "startLine": 1271,
+      "endLine": 1317
+    },
+    {
+      "id": "thm-5-3-8",
+      "number": "Theorem 5.3.8",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "The mixed-variant canonical fixpoint is minimal among fixpoints",
+      "summary": "The mixed-variant canonical fixpoint is minimal among fixpoints.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+      "lean": [
+        "theorem_5_3_8_minimality_part2"
+      ],
+      "startLine": 1334,
+      "endLine": 1344
+    },
+    {
+      "id": "thm-5-3-9",
+      "number": "Theorem 5.3.9",
+      "section": "5.3",
+      "kind": "Theorem",
+      "title": "The mixed-variant canonical solution satisfies the free mixed algebra property",
+      "summary": "The mixed-variant canonical solution satisfies the free mixed algebra property.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+      "lean": [
+        "theorem_5_3_9_free_mixed_variant_algebra"
+      ],
+      "startLine": 1345,
+      "endLine": 1362
+    },
+    {
+      "id": "def-5-4-1",
+      "number": "Definition 5.4.1",
+      "section": "5.4",
+      "kind": "Definition",
+      "title": "Admissible relations are closed under bottom tuples and omega-chain suprema",
+      "summary": "Admissible relations are closed under bottom tuples and omega-chain suprema.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "def_5_4_1_admissible_relations"
+      ],
+      "startLine": 43,
+      "endLine": 56
+    },
+    {
+      "id": "prop-5-4-2",
+      "number": "Proposition 5.4.2",
+      "section": "5.4",
+      "kind": "Proposition",
+      "title": "Function-space predicates induced by admissible relations are admissible",
+      "summary": "Function-space predicates induced by admissible relations are admissible.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "prop_5_4_2_admissible_relation_closure",
+        "prop_5_4_2_admissible_relation_closure_strict"
+      ],
+      "startLine": 197,
+      "endLine": 237
+    },
+    {
+      "id": "def-5-4-3",
+      "number": "Definition 5.4.3",
+      "section": "5.4",
+      "kind": "Definition",
+      "title": "Admissible actions on relations for mixed-variant functors",
+      "summary": "Admissible actions on relations for mixed-variant functors.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "def_5_4_3_relation_action"
+      ],
+      "startLine": 238,
+      "endLine": 267
+    },
+    {
+      "id": "prop-5-4-4",
+      "number": "Proposition 5.4.4",
+      "section": "5.4",
+      "kind": "Proposition",
+      "title": "Relation actions are antitone in the contravariant coordinate and monotone in the covariant coordinate",
+      "summary": "Relation actions are antitone in the contravariant coordinate and monotone in the covariant coordinate.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "prop_5_4_4_relation_action_functoriality"
+      ],
+      "startLine": 277,
+      "endLine": 308
+    },
+    {
+      "id": "thm-5-4-5",
+      "number": "Theorem 5.4.5",
+      "section": "5.4",
+      "kind": "Theorem",
+      "title": "The admissible-relation principle compares two admissible relations on a canonical fixpoint",
+      "summary": "The admissible-relation principle compares two admissible relations on a canonical fixpoint.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "theorem_5_4_5_admissible_relation_actions_exist"
+      ],
+      "startLine": 322,
+      "endLine": 457
+    },
+    {
+      "id": "def-5-4-6",
+      "number": "Definition 5.4.6",
+      "section": "5.4",
+      "kind": "Definition",
+      "title": "Logical admissible actions are those whose covariant total relation is total",
+      "summary": "Logical admissible actions are those whose covariant total relation is total.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "def_5_4_6_logical_admissible_action"
+      ],
+      "startLine": 458,
+      "endLine": 470
+    },
+    {
+      "id": "thm-5-4-7",
+      "number": "Theorem 5.4.7",
+      "section": "5.4",
+      "kind": "Theorem",
+      "title": "The induction principle for logical actions on admissible predicates",
+      "summary": "The induction principle for logical actions on admissible predicates.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "theorem_5_4_7_induction"
+      ],
+      "startLine": 471,
+      "endLine": 499
+    },
+    {
+      "id": "def-5-4-8",
+      "number": "Definition 5.4.8",
+      "section": "5.4",
+      "kind": "Definition",
+      "title": "Extensional admissible actions preserve the domain order in the covariant coordinate",
+      "summary": "Extensional admissible actions preserve the domain order in the covariant coordinate.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "def_5_4_8_extensional_admissible_action"
+      ],
+      "startLine": 500,
+      "endLine": 511
+    },
+    {
+      "id": "thm-5-4-9",
+      "number": "Theorem 5.4.9",
+      "section": "5.4",
+      "kind": "Theorem",
+      "title": "The coinduction principle for extensional actions on binary relations",
+      "summary": "The coinduction principle for extensional actions on binary relations.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "theorem_5_4_9_coinduction"
+      ],
+      "startLine": 524,
+      "endLine": 545
+    },
+    {
+      "id": "cor-5-4-10",
+      "number": "Corollary 5.4.10",
+      "section": "5.4",
+      "kind": "Corollary",
+      "title": "Order in the canonical fixpoint is characterized by simulations",
+      "summary": "Order in the canonical fixpoint is characterized by simulations.",
+      "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+      "lean": [
+        "cor_5_4_10_order_iff_simulation"
+      ],
+      "startLine": 546,
+      "endLine": 575
+    }
+  ]
+}

@@ -1,0 +1,597 @@
+{
+  "chapter": "Chapter 4",
+  "title": "Cartesian closed categories of domains",
+  "leanFile": "../Practice/DomainTheory/Chapter04/NumberedItems.lean",
+  "notice": "This map records public paraphrases and Lean source locations. It does not reproduce the textbook text.",
+  "items": [
+    {
+      "id": "def-4-0-1",
+      "number": "Definition 4.0.1",
+      "section": "4.0",
+      "kind": "Definition",
+      "title": "Step functions and open-set step functions for pointed codomains",
+      "summary": "Step functions and open-set step functions for pointed codomains.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "def_4_0_1_step_functions",
+        "def_4_0_1_open_step_functions"
+      ],
+      "startLine": 48,
+      "endLine": 54
+    },
+    {
+      "id": "prop-4-0-2",
+      "number": "Proposition 4.0.2",
+      "section": "4.0",
+      "kind": "Proposition",
+      "title": "Step functions are Scott-continuous and approximate continuous maps",
+      "summary": "Step functions are Scott-continuous and approximate continuous maps.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "prop_4_0_2_step_functions_full",
+        "prop_4_0_2_step_functions",
+        "prop_4_0_2_step_function_approximation_and_supremum"
+      ],
+      "startLine": 322,
+      "endLine": 329
+    },
+    {
+      "id": "def-4-1-1",
+      "number": "Definition 4.1.1",
+      "section": "4.1",
+      "kind": "Definition",
+      "title": "L-domains, bounded-complete domains, and continuous lattices",
+      "summary": "L-domains, bounded-complete domains, and continuous lattices.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "IsLDomainByBinarySuprema",
+        "IsBcDomainByBinarySuprema",
+        "IsContinuousLatticeDomainByBinarySuprema",
+        "def_4_1_1_lattice_like_domain_classes"
+      ],
+      "startLine": 353,
+      "endLine": 356
+    },
+    {
+      "id": "prop-4-1-2",
+      "number": "Proposition 4.1.2",
+      "section": "4.1",
+      "kind": "Proposition",
+      "title": "Lattice-like domains characterized by existence of infima",
+      "summary": "Lattice-like domains characterized by existence of infima.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "prop_4_1_2_source_infimum_characterizations",
+        "prop_4_1_2_lattice_like_infimum_characterizations"
+      ],
+      "startLine": 421,
+      "endLine": 428
+    },
+    {
+      "id": "prop-4-1-3",
+      "number": "Proposition 4.1.3",
+      "section": "4.1",
+      "kind": "Proposition",
+      "title": "Retracts and bilimits preserve lattice-like domain classes",
+      "summary": "Retracts and bilimits preserve lattice-like domain classes.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "prop_4_1_3_retracts_and_bilimits_lattice_like",
+        "prop_4_1_3_retracts_bilimits_lattice_like",
+        "prop_4_1_3_bilimits_lattice_like"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The retract clause is general, but the current bilimit interface covers only Nat-indexed expanding sequences rather than every bilimit intended by the textbook wording.",
+      "startLine": 837,
+      "endLine": 842
+    },
+    {
+      "id": "prop-4-1-4",
+      "number": "Proposition 4.1.4",
+      "section": "4.1",
+      "kind": "Proposition",
+      "title": "Ideal completions preserve the lattice-like algebraic counterparts",
+      "summary": "Ideal completions preserve the lattice-like algebraic counterparts.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "prop_4_1_4_ideal_completion_lattice_like"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The Lean theorem assumes an auxiliary abstract basis together with an order-isomorphism presenting the source domain; it is stronger in hypotheses than the direct textbook statement about Idl(D, sqsubseteq).",
+      "startLine": 930,
+      "endLine": 965
+    },
+    {
+      "id": "prop-4-1-5",
+      "number": "Proposition 4.1.5",
+      "section": "4.1",
+      "kind": "Proposition",
+      "title": "Function spaces into lattice-like domains are lattice-like",
+      "summary": "Function spaces into lattice-like domains are lattice-like.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "prop_4_1_5_function_spaces_lattice_like"
+      ],
+      "startLine": 2259,
+      "endLine": 2271
+    },
+    {
+      "id": "cor-4-1-6",
+      "number": "Corollary 4.1.6",
+      "section": "4.1",
+      "kind": "Corollary",
+      "title": "Lattice-like categories and algebraic counterparts are cartesian closed",
+      "summary": "Lattice-like categories and algebraic counterparts are cartesian closed.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section40_41.lean",
+      "lean": [
+        "cor_4_1_6_lattice_like_and_algebraic_categories_cartesian_closed"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "DomainClass.CartesianClosed currently records closure under binary products and function-space objects only; it does not encode a category, terminal object, evaluation morphism, or the exponential universal property.",
+      "startLine": 2682,
+      "endLine": 2699
+    },
+    {
+      "id": "def-4-2-1",
+      "number": "Definition 4.2.1",
+      "section": "4.2",
+      "kind": "Definition",
+      "title": "Mub-completeness, mub-closure, Plotkin orders, and bifinite domains",
+      "summary": "Mub-completeness, mub-closure, Plotkin orders, and bifinite domains.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_CompactFunctions.lean",
+      "lean": [
+        "IsMubComplete",
+        "MubClosure",
+        "HasFiniteMubProperty",
+        "IsPlotkinOrder",
+        "HasBifiniteCompactBasis",
+        "IsBifiniteCategoryObject",
+        "def_4_2_1_mub_completeness"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "All five source components are selectable. The reusable mub and compact-basis predicates remain defined over OrderedDomain's Preorder carrier, while IsBifiniteCategoryObject now restores the dcpo and antisymmetry assumptions implicit in the textbook's category B. A future PartialOrder-based core refactor is still pending.",
+      "startLine": 111,
+      "endLine": 118
+    },
+    {
+      "id": "def-4-2-2",
+      "number": "Definition 4.2.2",
+      "section": "4.2",
+      "kind": "Definition",
+      "title": "Joinable finite subsets of compact pairs and their associated functions",
+      "summary": "Joinable finite subsets of compact pairs and their associated functions.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_CompactFunctions.lean",
+      "lean": [
+        "def_4_2_2_joinable_finite_subsets",
+        "JoinableFamilyAssociatedFunction"
+      ],
+      "reviewNote": "The joinability equation now computes mub(pi_1(G)) in the compact-basis poset K(D), as in the textbook, and maps those compact minimal upper bounds back to D. The previous ambient-D computation was not semantically equivalent in general.",
+      "startLine": 201,
+      "endLine": 206
+    },
+    {
+      "id": "lemma-4-2-3",
+      "number": "Lemma 4.2.3",
+      "section": "4.2",
+      "kind": "Lemma",
+      "title": "Joinable families give compact function-space elements and their order criterion",
+      "summary": "Joinable families give compact function-space elements and their order criterion.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_CompactFunctions.lean",
+      "lean": [
+        "lemma_4_2_3_bifinite_algebraic_finite_steps"
+      ],
+      "startLine": 450,
+      "endLine": 470
+    },
+    {
+      "id": "prop-4-2-4",
+      "number": "Proposition 4.2.4",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Bifinite-to-pointed-algebraic function spaces are algebraic",
+      "summary": "Bifinite-to-pointed-algebraic function spaces are algebraic.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_CompactFunctions.lean",
+      "lean": [
+        "prop_4_2_4_bifinite_to_pointed_algebraic_function_space"
+      ],
+      "formalizationStatus": "proved",
+      "reviewNote": "The constructive proof sketch is formalized: finite compact observations are closed under compact-basis minimal upper bounds, refined to monotone compact labels, converted to joinable families, and shown to form a directed basis below each continuous map. The numbered proposition contains no local sorry or admit; it depends on Lemma 4.2.3, whose proof is omitted by the textbook and remains an explicit admit.",
+      "startLine": 674,
+      "endLine": 730
+    },
+    {
+      "id": "prop-4-2-5",
+      "number": "Proposition 4.2.5",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Mub-complete algebraic bases yield least kernel operators fixing compact sets",
+      "summary": "Mub-complete algebraic bases yield least kernel operators fixing compact sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "prop_4_2_5_mub_complete_basis_bifinite"
+      ],
+      "formalizationStatus": "proved",
+      "reviewNote": "The source proof is fully reconstructed: mub-completeness makes each generated lower section directed, dcpo completeness defines its supremum, Corollary 2.2.16 gives Scott continuity, and algebraicity shows every competing kernel fixing A also fixes mc(A). The signature explicitly supplies dcpo completeness and antisymmetry because the current local OrderedDomain/IsAlgebraicDomain interfaces do not bundle those textbook assumptions.",
+      "startLine": 107,
+      "endLine": 264
+    },
+    {
+      "id": "thm-4-2-6",
+      "number": "Theorem 4.2.6",
+      "section": "4.2",
+      "kind": "Theorem",
+      "title": "Functional characterizations of bifinite domains by idempotent deflations",
+      "summary": "Functional characterizations of bifinite domains by idempotent deflations.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "theorem_4_2_6_bifinite_functional_characterizations"
+      ],
+      "formalizationStatus": "proved",
+      "reviewNote": "The full equivalence is proved. Finite mub-closures generate finite projections; these form a directed family with pointwise supremum the identity. Conversely, directed finite projections give an algebraic basis, mub-completeness, finite mub-closures, and hence a Plotkin compact basis. The all-deflations formulation follows by choosing a family member fixing the finite union of two projection ranges.",
+      "startLine": 752,
+      "endLine": 776
+    },
+    {
+      "id": "thm-4-2-7",
+      "number": "Theorem 4.2.7",
+      "section": "4.2",
+      "kind": "Theorem",
+      "title": "Bifinite domains are exactly bilimits of expanding systems of finite pointed posets",
+      "summary": "Bifinite domains are exactly bilimits of expanding systems of finite pointed posets.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "theorem_4_2_7_bifinite_iff_bilimit_finite_posets"
+      ],
+      "formalizationStatus": "proved",
+      "reviewNote": "The theorem now uses an arbitrary directed index type rather than a Nat-indexed sequence. The forward proof takes the finite kernel images of the directed idempotent deflations supplied by Theorem 4.2.6; the reverse proof composes each finite-stage projection with its embedding and applies the functional characterization. The explicit antisymmetry hypothesis reflects that OrderedDomain currently bundles only a Preorder.",
+      "startLine": 897,
+      "endLine": 972
+    },
+    {
+      "id": "thm-4-2-8",
+      "number": "Theorem 4.2.8",
+      "section": "4.2",
+      "kind": "Theorem",
+      "title": "The category of bifinite domains is cartesian closed and closed under listed constructions",
+      "summary": "The category of bifinite domains is cartesian closed and closed under listed constructions.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "theorem_4_2_8_bifinite_closure_properties"
+      ],
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "mixed",
+      "reviewNote": "Product closure and the textbook's function-space proof are now formalized through directed finite projections; in particular the finite image and double directed-supremum arguments for h ↦ g_j ∘ h ∘ f_i are proved. The elementary coalesced-sum clause has no proof details in the textbook and remains admit; bilimit closure remains admit because the textbook explicitly leaves it as an exercise. The cartesian-closed conclusion still uses the local object-closure interface rather than categorical universal properties.",
+      "startLine": 1294,
+      "endLine": 1320
+    },
+    {
+      "id": "def-4-2-9",
+      "number": "Definition 4.2.9",
+      "section": "4.2",
+      "kind": "Definition",
+      "title": "Finite separation, strong separation, and FS-domains",
+      "summary": "Finite separation, strong separation, and FS-domains.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "def_4_2_9_fs_domain"
+      ],
+      "startLine": 1327,
+      "endLine": 1331
+    },
+    {
+      "id": "prop-4-2-10",
+      "number": "Proposition 4.2.10",
+      "section": "4.2",
+      "kind": "Conjecture",
+      "title": "Conjectural FS-domain function-space continuity statement",
+      "summary": "The source labels this Proposition 4.2.10 but immediately states that its proof was unknown.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "conjecture_4_2_10_fs_function_space"
+      ],
+      "formalizationStatus": "conjecture",
+      "reviewNote": "The source explicitly says the proof is as yet unknown. Lean therefore defines only the proposition-valued statement and exposes no theorem, axiom, admit, or sorry evidence for it. The old source-number name remains only as a proposition-valued compatibility abbreviation. No downstream proof may consume this claim.",
+      "startLine": 1429,
+      "endLine": 1435
+    },
+    {
+      "id": "thm-4-2-11",
+      "number": "Theorem 4.2.11",
+      "section": "4.2",
+      "kind": "Theorem",
+      "title": "The category FS is cartesian closed and closed under listed constructions",
+      "summary": "The category FS is cartesian closed and closed under listed constructions.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "theorem_4_2_11_fs_closure_properties"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "Jung [Jun90, Theorem 2.2.6] was checked against the local FS encoding and is recorded as an exact external axiom for products, function spaces, and expanding inverse limits. The textbook-omitted coalesced-sum proof remains admit, and cartesian closedness is still represented only by object closure.",
+      "startLine": 1454,
+      "endLine": 1472
+    },
+    {
+      "id": "prop-4-2-12",
+      "number": "Proposition 4.2.12",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Bifinite domains, FS retracts, and algebraic FS domains relate as stated",
+      "summary": "Bifinite domains, FS retracts, and algebraic FS domains relate as stated.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_ProjectionFS.lean",
+      "lean": [
+        "prop_4_2_12_bifinite_fs_relationships",
+        "prop_4_2_12_bifinite_implies_fs",
+        "prop_4_2_12_fs_closed_under_retracts",
+        "prop_4_2_12_algebraic_fs_bifinite"
+      ],
+      "startLine": 1498,
+      "endLine": 1504
+    },
+    {
+      "id": "thm-4-2-13",
+      "number": "Theorem 4.2.13",
+      "section": "4.2",
+      "kind": "Theorem",
+      "title": "Hofmann-Mislove neighborhood/filter characterization for compact saturated sets",
+      "summary": "Hofmann-Mislove neighborhood/filter characterization for compact saturated sets.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "theorem_4_2_13_hofmann_mislove_neighborhoods"
+      ],
+      "startLine": 18,
+      "endLine": 32
+    },
+    {
+      "id": "prop-4-2-14",
+      "number": "Proposition 4.2.14",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Compact saturated sets form dcpos with filtered intersections as suprema",
+      "summary": "Compact saturated sets form dcpos with filtered intersections as suprema.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "prop_4_2_14_compact_saturated_scott_open_filters"
+      ],
+      "startLine": 50,
+      "endLine": 70
+    },
+    {
+      "id": "prop-4-2-15",
+      "number": "Proposition 4.2.15",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Continuity and way-below criteria for compact saturated sets and Scott opens",
+      "summary": "Continuity and way-below criteria for compact saturated sets and Scott opens.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "prop_4_2_15_scott_compactness_criteria"
+      ],
+      "formalizationStatus": "automation-exhausted",
+      "reviewNote": "The textbook supplies the finite-upper-set proof. Lean now proves the dcpo component from Proposition 4.2.14 and the final set-level equivalence definitionally; the remaining continuity and way-below obligations are sorry after ten distinct strategies.",
+      "startLine": 575,
+      "endLine": 601
+    },
+    {
+      "id": "prop-4-2-16",
+      "number": "Proposition 4.2.16",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Coherence characterized by the Scott-open way-below intersection condition",
+      "summary": "Coherence characterized by the Scott-open way-below intersection condition.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "prop_4_2_16_coherence_open_neighborhoods"
+      ],
+      "startLine": 615,
+      "endLine": 623
+    },
+    {
+      "id": "prop-4-2-17",
+      "number": "Proposition 4.2.17",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Algebraic coherence characterized by mub-complete compact basis with finite mubs",
+      "summary": "Algebraic coherence characterized by mub-complete compact basis with finite mubs.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "prop_4_2_17_algebraic_coherence_mub_complete"
+      ],
+      "startLine": 624,
+      "endLine": 634
+    },
+    {
+      "id": "thm-4-2-18",
+      "number": "Theorem 4.2.18",
+      "section": "4.2",
+      "kind": "Theorem",
+      "title": "FS-domains and bifinite domains are coherent",
+      "summary": "FS-domains and bifinite domains are coherent.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "theorem_4_2_18_fs_bifinite_coherent"
+      ],
+      "startLine": 667,
+      "endLine": 680
+    },
+    {
+      "id": "def-4-2-19",
+      "number": "Definition 4.2.19",
+      "section": "4.2",
+      "kind": "Definition",
+      "title": "Lawson topology generated by Scott opens and complements of principal uppers",
+      "summary": "Lawson topology generated by Scott opens and complements of principal uppers.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "def_4_2_19_lawson_topology"
+      ],
+      "startLine": 729,
+      "endLine": 733
+    },
+    {
+      "id": "prop-4-2-20",
+      "number": "Proposition 4.2.20",
+      "section": "4.2",
+      "kind": "Proposition",
+      "title": "Lawson topology is Hausdorff, compact iff coherent, and compactness passes to retracts",
+      "summary": "Lawson topology is Hausdorff, compact iff coherent, and compactness passes to retracts.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section42_Topology.lean",
+      "lean": [
+        "prop_4_2_20_lawson_topology_compactness"
+      ],
+      "startLine": 785,
+      "endLine": 804
+    },
+    {
+      "id": "lemma-4-3-1",
+      "number": "Lemma 4.3.1",
+      "section": "4.3",
+      "kind": "Lemma",
+      "title": "Continuous function-space separation: coherent domain or L-domain codomain",
+      "summary": "Continuous function-space separation: coherent domain or L-domain codomain.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Pointed.lean",
+      "lean": [
+        "lemma_4_3_1_cartesian_closed_separation"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The numbered theorem now has a compiled reduction through Exercise 4.3.11(3), continuous-function-space retract transport, and a complete corrected Figure 11 contradiction. The exercise is an admit because the textbook explicitly omits it. The only source-case sorry is isolated in the Figure 12 branch: the printed successor construction and pointwise-supremum claim require source-valid chain data not present in the displayed diagram. Proposition 4.2.16 is also a tracked transitive dependency.",
+      "startLine": 23,
+      "endLine": 66
+    },
+    {
+      "id": "lemma-4-3-2",
+      "number": "Lemma 4.3.2",
+      "section": "4.3",
+      "kind": "Lemma",
+      "title": "Bottomed continuous domains are FS iff self-function coherence conditions hold",
+      "summary": "Bottomed continuous domains are FS iff self-function coherence conditions hold.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Pointed.lean",
+      "lean": [
+        "lemma_4_3_2_bottomed_continuous_fs"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "Jung [Jun90, Corollary 2.2.14] was located and checked. Its Lawson-compact implication is recorded as an exact external axiom. The forward direction now uses Jun90 Theorem 2.2.6 together with a proved local theorem that every FS object is continuous; it deliberately does not use the conjectural Proposition 4.2.10. Remaining debt is only in explicitly tracked dependencies.",
+      "startLine": 83,
+      "endLine": 115
+    },
+    {
+      "id": "thm-4-3-3",
+      "number": "Theorem 4.3.3",
+      "section": "4.3",
+      "kind": "Theorem",
+      "title": "Cartesian closed full subcategories of pointed continuous domains lie in FS or L",
+      "summary": "Cartesian closed full subcategories of pointed continuous domains lie in FS or L.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Pointed.lean",
+      "lean": [
+        "theorem_4_3_3_cartesian_closed_contbot_subset_fs"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The classification is proved relative to the local object-class closure predicate, not a bundled full subcategory with categorical cartesian-closed structure. It depends transitively on the explicitly tracked Exercise 4.3.11(3), Figure 12, and Proposition 4.2.16 proof debt. Lemma 4.3.2 has a checked Jun90 boundary and a compiled Lean proof.",
+      "startLine": 116,
+      "endLine": 168
+    },
+    {
+      "id": "thm-4-3-4",
+      "number": "Theorem 4.3.4",
+      "section": "4.3",
+      "kind": "Theorem",
+      "title": "Cartesian closed full subcategories of pointed algebraic domains lie in B or aL",
+      "summary": "Cartesian closed full subcategories of pointed algebraic domains lie in B or aL.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Pointed.lean",
+      "lean": [
+        "theorem_4_3_4_cartesian_closed_algbot_subset_bifinite"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The classification uses the local object-class closure interface rather than a bundled full subcategory and depends transitively on the explicitly tracked Exercise 4.3.11(3), Figure 12, and Proposition 4.2.16 proof debt. Lemma 4.3.2 has a checked Jun90 boundary and a compiled Lean proof.",
+      "startLine": 169,
+      "endLine": 236
+    },
+    {
+      "id": "thm-4-3-5",
+      "number": "Theorem 4.3.5",
+      "section": "4.3",
+      "kind": "Theorem",
+      "title": "Countably based pointed cartesian closed subcategories lie in omega-FS or omega-B",
+      "summary": "Countably based pointed cartesian closed subcategories lie in omega-FS or omega-B.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Pointed.lean",
+      "lean": [
+        "theorem_4_3_5_omega_cartesian_closed_subcategories"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The omega restrictions and subclass conclusions are encoded, but cartesian closedness is still only object closure and both component classification proofs remain admitted.",
+      "startLine": 264,
+      "endLine": 277
+    },
+    {
+      "id": "lemma-4-3-6",
+      "number": "Lemma 4.3.6",
+      "section": "4.3",
+      "kind": "Lemma",
+      "title": "Without bottom: continuous function spaces force compactness or pointed components",
+      "summary": "Without bottom: continuous function spaces force compactness or pointed components.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Unpointed.lean",
+      "lean": [
+        "lemma_4_3_6_compactness_from_continuous_function_space"
+      ],
+      "startLine": 43,
+      "endLine": 53
+    },
+    {
+      "id": "def-4-3-7",
+      "number": "Definition 4.3.7",
+      "section": "4.3",
+      "kind": "Definition",
+      "title": "Finite amalgams and F-/U- category notation",
+      "summary": "Finite amalgams and F-/U- category notation.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Unpointed.lean",
+      "lean": [
+        "def_4_3_7_finite_amalgam"
+      ],
+      "startLine": 71,
+      "endLine": 74
+    },
+    {
+      "id": "prop-4-3-8",
+      "number": "Proposition 4.3.8",
+      "section": "4.3",
+      "kind": "Proposition",
+      "title": "Finite amalgams characterized by finite mub-closure of the empty set",
+      "summary": "Finite amalgams characterized by finite mub-closure of the empty set.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Unpointed.lean",
+      "lean": [
+        "prop_4_3_8_finite_amalgam_mub_property"
+      ],
+      "startLine": 115,
+      "endLine": 122
+    },
+    {
+      "id": "lemma-4-3-9",
+      "number": "Lemma 4.3.9",
+      "section": "4.3",
+      "kind": "Lemma",
+      "title": "Compact continuous self-function space forces finite amalgam",
+      "summary": "Compact continuous self-function space forces finite amalgam.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Unpointed.lean",
+      "lean": [
+        "lemma_4_3_9_compact_self_function_space_finite_amalgam"
+      ],
+      "startLine": 123,
+      "endLine": 134
+    },
+    {
+      "id": "thm-4-3-10",
+      "number": "Theorem 4.3.10",
+      "section": "4.3",
+      "kind": "Theorem",
+      "title": "Maximal cartesian closed full subcategories of CONT and ALG",
+      "summary": "Maximal cartesian closed full subcategories of CONT and ALG.",
+      "leanFile": "../Practice/DomainTheory/Chapter04/Section43_Unpointed.lean",
+      "lean": [
+        "theorem_4_3_10_maximal_cartesian_closed_subcategories"
+      ],
+      "formalizationStatus": "partial",
+      "reviewNote": "The eight maximality clauses are stated, but maximal cartesian closed subcategories are modeled only through object predicates and closure, without categorical morphism or universal-property data.",
+      "startLine": 142,
+      "endLine": 169
+    }
+  ]
+}
