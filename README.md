@@ -186,7 +186,6 @@ lake build Practice.DomainTheory.Chapter04.NumberedItems
 Rebuild and check the public reader:
 
 ```bash
-python3 docs/export_public_locators.py
 python3 docs/build_public_companion.py
 python3 docs/build_public_site.py
 python3 docs/check_public_release.py _site
@@ -194,6 +193,11 @@ python3 docs/check_public_release.py _site
 
 This publication build requires `pdflatex` and the standard AMS, TikZ,
 `stmaryrd`, and `microtype` packages.
+
+The tracked `docs/public/source-locators.json` is the sanitized publication
+input. `docs/export_public_locators.py` is a maintainer-only command for
+refreshing it from ignored local extraction artifacts; CI and clean clones do
+not require those artifacts or the original PDF.
 
 The GitHub Actions workflow runs the Lean build before uploading the static
 Pages artifact. A failed Lean or publication-safety check prevents deployment.

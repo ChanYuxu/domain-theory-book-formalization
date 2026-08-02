@@ -41,9 +41,7 @@ jobs:
             texlive-science
 
       - name: Compile TeX companion PDFs
-        run: |
-          python3 docs/export_public_locators.py
-          python3 docs/build_public_companion.py
+        run: python3 docs/build_public_companion.py
 
       - name: Build public reader
         run: python3 docs/build_public_site.py --output _site
