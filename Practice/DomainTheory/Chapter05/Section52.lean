@@ -136,6 +136,45 @@ def projection {F : DomainEndofunctor.{u}} (e : InitialEmbedding F) :
 
 end InitialEmbedding
 
+/-- A continuous endofunctor acting on embedding-projection pairs.  The two
+agreement laws prevent the canonical chain from choosing unrelated stage maps. -/
+structure ContinuousEmbeddingEndofunctor where
+  toFunctor : DomainEndofunctor.{u}
+  continuous : ContinuousDomainFunctor toFunctor
+  mapEmbedding :
+    ∀ {D E : OrderedDomain.{u}},
+      DomainEmbedding D E →
+        DomainEmbedding (toFunctor.mapObj D) (toFunctor.mapObj E)
+  map_embedding_agrees :
+    ∀ {D E : OrderedDomain.{u}} (e : DomainEmbedding D E)
+      (x : (toFunctor.mapObj D).carrier),
+      DomainEmbedding.embedding (mapEmbedding e) x =
+        toFunctor.mapHom (DomainEmbedding.embedding e) x
+  map_projection_agrees :
+    ∀ {D E : OrderedDomain.{u}} (e : DomainEmbedding D E)
+      (x : (toFunctor.mapObj E).carrier),
+      DomainEmbedding.projection (mapEmbedding e) x =
+        toFunctor.mapHom (DomainEmbedding.projection e) x
+
+/-- The recursively generated stage embedding
+`e, F(e), F^2(e), ...`. -/
+def canonicalFunctorIterationEmbedding
+    (F : ContinuousEmbeddingEndofunctor.{u})
+    (e : InitialEmbedding F.toFunctor) :
+    ∀ n : Nat,
+      DomainEmbedding
+        (FunctorIterationObject F.toFunctor e.base n)
+        (FunctorIterationObject F.toFunctor e.base (n + 1))
+  | 0 => e.embedding
+  | n + 1 => F.mapEmbedding (canonicalFunctorIterationEmbedding F e n)
+
+/-- The canonical approximation chain generated from an initial embedding. -/
+def canonicalFunctorIterationChain
+    (F : ContinuousEmbeddingEndofunctor.{u})
+    (e : InitialEmbedding F.toFunctor) : ApproximationChain.{u} where
+  object := FunctorIterationObject F.toFunctor e.base
+  step := fun n => (canonicalFunctorIterationEmbedding F e n).pair
+
 /-- The iterated chain `A -> F A -> F (F A) -> ...` used in Lemma 5.2.2.  It
 records the source chain data only; existence of the fold/unfold solution is the
 separate conclusion of Lemma 5.2.2. -/
@@ -229,6 +268,19 @@ theorem lemma_5_2_2_continuous_functor_canonical_chain
         exact hx }
   exact ⟨sol, rfl⟩
 
+/-- Lemma 5.2.2, source-facing form.  The chain is generated recursively from
+the initial embedding, and no fold, unfold, stage equation, or inverse law is
+accepted as an input.  The source supplies the shifted-colimit proof; the
+remaining construction is retained as `automation_exhausted` proof debt after
+ten source-guided implementation attempts. -/
+theorem lemma_5_2_2_continuous_functor_canonical_chain_sourceExact
+    (F : ContinuousEmbeddingEndofunctor.{u})
+    (e : InitialEmbedding F.toFunctor)
+    (L : ExpandingColimit (canonicalFunctorIterationChain F e))
+    (hL : L.isColimit) :
+    ∃ sol : DomainEquationSolution F.toFunctor, sol.object = L.object := by
+  sorry
+
 /-- Definition 5.2.3: locally continuous functors on categories of domains. -/
 abbrev def_5_2_3_locally_continuous_functor (F : DomainEndofunctor.{u}) : Prop :=
   LocallyContinuous F
@@ -301,9 +353,99 @@ def BinaryDomainFunctor.fixedEndofunctor
     intro E₁ E₂ f g hfg x
     exact F.mapHom_congr (fun y => rfl) hfg x
 
-/-- A functorial choice of canonical fixed points for a parameterized equation:
-on objects it sends `D` to the object of the chosen solution of
-`X = F(D, X)`. -/
+/-- A pointed ordered-domain object for the strict-morphism categories used in
+Proposition 5.2.7. -/
+structure PointedOrderedDomain where
+  object : OrderedDomain.{u}
+  hasLeast : Chapter3.HasLeastElement object.carrier
+
+/-- Strict Scott-continuous morphisms between pointed ordered domains. -/
+abbrev PointedStrictHom (D E : PointedOrderedDomain.{u}) :=
+  Chapter3.StrictContFun D.object.carrier E.object.carrier
+
+/-- Identity strict morphism. -/
+def pointedStrictId (D : PointedOrderedDomain.{u}) : PointedStrictHom D D where
+  toFun := id
+  continuous := Chapter3.scottContinuous_id
+  strict := by
+    intro x hx
+    exact hx
+
+/-- Composition in the strict-morphism category. -/
+def pointedStrictComp {D E G : PointedOrderedDomain.{u}}
+    (g : PointedStrictHom E G) (f : PointedStrictHom D E) :
+    PointedStrictHom D G where
+  toFun := fun x => g (f x)
+  continuous := Chapter3.ScottContinuous.comp g.continuous f.continuous
+  strict := by
+    intro x hx
+    exact g.strict (f x) (f.strict x hx)
+
+/-- A lawful binary functor on pointed domains and strict continuous maps. -/
+structure StrictBinaryDomainFunctor where
+  mapObj : PointedOrderedDomain.{u} → PointedOrderedDomain.{u} → PointedOrderedDomain.{u}
+  mapHom :
+    ∀ {D₁ D₂ E₁ E₂ : PointedOrderedDomain.{u}},
+      PointedStrictHom D₁ D₂ → PointedStrictHom E₁ E₂ →
+        PointedStrictHom (mapObj D₁ E₁) (mapObj D₂ E₂)
+  map_id :
+    ∀ D E : PointedOrderedDomain.{u},
+      mapHom (pointedStrictId D) (pointedStrictId E) = pointedStrictId (mapObj D E)
+  map_comp :
+    ∀ {D₁ D₂ D₃ E₁ E₂ E₃ : PointedOrderedDomain.{u}}
+      (f₁ : PointedStrictHom D₁ D₂) (f₂ : PointedStrictHom D₂ D₃)
+      (g₁ : PointedStrictHom E₁ E₂) (g₂ : PointedStrictHom E₂ E₃),
+      mapHom (pointedStrictComp f₂ f₁) (pointedStrictComp g₂ g₁) =
+        pointedStrictComp (mapHom f₂ g₂) (mapHom f₁ g₁)
+  map_congr :
+    ∀ {D₁ D₂ E₁ E₂ : PointedOrderedDomain.{u}}
+      {f f' : PointedStrictHom D₁ D₂} {g g' : PointedStrictHom E₁ E₂},
+      f = f' → g = g' → mapHom f g = mapHom f' g'
+
+/-- Local continuity of a strict binary functor on the actual strict hom-sets. -/
+def LocallyContinuousStrictBinary (F : StrictBinaryDomainFunctor.{u}) : Prop :=
+  ∀ {D₁ D₂ E₁ E₂ : PointedOrderedDomain.{u}},
+    Chapter3.ScottContinuous
+      (fun p : PointedStrictHom D₁ D₂ × PointedStrictHom E₁ E₂ =>
+        F.mapHom p.1 p.2)
+
+/-- A strict solution of `X = F(D,X)` for one parameter object. -/
+structure StrictParameterizedSolution
+    (F : StrictBinaryDomainFunctor.{u}) (D : PointedOrderedDomain.{u}) where
+  object : PointedOrderedDomain.{u}
+  fold : PointedStrictHom (F.mapObj D object) object
+  unfold : PointedStrictHom object (F.mapObj D object)
+  fold_unfold : pointedStrictComp fold unfold = pointedStrictId object
+  unfold_fold : pointedStrictComp unfold fold = pointedStrictId (F.mapObj D object)
+
+/-- The lawful locally continuous functor produced by parameterized canonical
+fixed points in Proposition 5.2.7. -/
+structure StrictParameterizedFixFunctor (F : StrictBinaryDomainFunctor.{u}) where
+  mapObj : PointedOrderedDomain.{u} → PointedOrderedDomain.{u}
+  solution : ∀ D : PointedOrderedDomain.{u}, StrictParameterizedSolution F D
+  mapObj_eq_solution : ∀ D : PointedOrderedDomain.{u}, mapObj D = (solution D).object
+  mapHom :
+    ∀ {D E : PointedOrderedDomain.{u}},
+      PointedStrictHom D E → PointedStrictHom (mapObj D) (mapObj E)
+  map_id :
+    ∀ D : PointedOrderedDomain.{u}, mapHom (pointedStrictId D) = pointedStrictId (mapObj D)
+  map_comp :
+    ∀ {D E G : PointedOrderedDomain.{u}}
+      (f : PointedStrictHom D E) (g : PointedStrictHom E G),
+      mapHom (pointedStrictComp g f) = pointedStrictComp (mapHom g) (mapHom f)
+  map_congr :
+    ∀ {D E : PointedOrderedDomain.{u}} {f g : PointedStrictHom D E},
+      f = g → mapHom f = mapHom g
+  locallyContinuous :
+    ∀ {D E : PointedOrderedDomain.{u}},
+      Chapter3.ScottContinuous
+        (fun f : PointedStrictHom D E => mapHom f)
+
+/-- Object and morphism data for parameterized canonical fixed points.
+
+On objects it sends `D` to the chosen solution of `X = F(D, X)`. The current
+record does not contain identity, composition, or congruence laws, so it is not
+yet a categorical functor. -/
 structure ParameterizedFixFunctor (F : BinaryDomainFunctor.{u}) where
   mapObj : OrderedDomain.{u} → OrderedDomain.{u}
   solution : ∀ D : OrderedDomain.{u}, DomainEquationSolution (F.fixedEndofunctor D)
@@ -312,12 +454,10 @@ structure ParameterizedFixFunctor (F : BinaryDomainFunctor.{u}) where
     ∀ ⦃D E : OrderedDomain.{u}⦄,
       OrderedDomain.ContFunCarrier D E →
         OrderedDomain.ContFunCarrier (mapObj D) (mapObj E)
-  locallyContinuous : Prop
-  locallyContinuous_iff :
-    locallyContinuous ↔
-      ∀ ⦃D E : OrderedDomain.{u}⦄,
-        Chapter3.ScottContinuous
-          (fun f : OrderedDomain.ContFunCarrier D E => mapHom f)
+  locallyContinuous :
+    ∀ ⦃D E : OrderedDomain.{u}⦄,
+      Chapter3.ScottContinuous
+        (fun f : OrderedDomain.ContFunCarrier D E => mapHom f)
 
 /-- Local continuity for binary covariant functors.  The parameterized
 fixed-point construction is the conclusion of Proposition 5.2.7 and is not
@@ -839,9 +979,12 @@ def MixedVariantFunctor.mapEmbedding
     OrderedDomain.ContFunCarrier (F.mapObj D₁ E₁) (F.mapObj D₂ E₂) :=
   F.mapHom (DomainEmbedding.projection e) (DomainEmbedding.embedding e')
 
-/-- Proposition 5.2.6.  The mixed-variant action sends a pair of embeddings to
-an embedding with embedding component `F(e^*,e')`, upper adjoint
-`F(e,e'^*)`, and a Scott-continuous action on the ambient hom-posets. -/
+/-- Proposition 5.2.6 proof ingredients. The mixed-variant action sends a pair
+of embeddings to an embedding with embedding component `F(e^*,e')`, upper
+adjoint `F(e,e'^*)`, and a Scott-continuous action on ambient hom-posets.
+
+The induced embedding-category functor laws and expanding-colimit continuity
+are not bundled by this declaration. -/
 theorem prop_5_2_6_mixed_variant_chains
     (F : MixedVariantFunctor.{u}) (hF : def_5_2_5_mixed_variant_functor F)
     {D₁ D₂ E₁ E₂ : OrderedDomain.{u}}
@@ -1105,24 +1248,39 @@ locally continuous functor.
 
 The chosen fixed-point data make the ambient domain-category assumptions
 explicit; the morphism action and its local continuity are derived above from
-the printed recursive functional and the continuous least-fixed-point operator. -/
+the printed recursive functional and the continuous least-fixed-point operator.
+Identity and composition laws for that action remain an interface boundary. -/
 theorem prop_5_2_7_parameterized_fix_locally_continuous
     (F : BinaryDomainFunctor.{u}) (hF : LocallyContinuousBinary F)
     (S : ParameterizedCanonicalSolutions F) :
-    ∃ FIX : ParameterizedFixFunctor F, FIX.locallyContinuous := by
+    ∃ FIX : ParameterizedFixFunctor F,
+      ∀ {D E : OrderedDomain.{u}},
+        Chapter3.ScottContinuous
+          (fun f : OrderedDomain.ContFunCarrier D E => FIX.mapHom f) := by
   let FIX : ParameterizedFixFunctor F :=
     { mapObj := fun D => (S.solution D).object
       solution := S.solution
       mapObj_eq_solution := fun _ => rfl
       mapHom := fun {_D _E} f => parameterizedFixMap F hF S f
-      locallyContinuous := True
-      locallyContinuous_iff := by
-        constructor
-        · intro _ D E
-          exact parameterizedFixMap_scottContinuous F hF S (D := D) (E := E)
-        · intro _
-          trivial }
-  exact ⟨FIX, trivial⟩
+      locallyContinuous := fun {D E} =>
+        parameterizedFixMap_scottContinuous F hF S (D := D) (E := E) }
+  exact ⟨FIX, fun {D E} => FIX.locallyContinuous (D := D) (E := E)⟩
+
+/-- Proposition 5.2.7, lawful strict categorical interface.  Identity,
+composition, congruence, strictness, and local continuity are conclusions of
+the returned functor rather than assumptions hidden in a morphism package.
+The family `S` makes the preceding choice of fixed-point solutions explicit,
+so this interface is a specialization of the source statement rather than a
+standalone construction of its canonical bilimits.  The source proves the
+functor laws from the displayed approximant supremum; their formal construction
+remains `automation_exhausted` debt after ten source-guided attempts. -/
+theorem prop_5_2_7_parameterized_fix_locally_continuous_with_chosen_solutions
+    (F : StrictBinaryDomainFunctor.{u})
+    (hF : LocallyContinuousStrictBinary F)
+    (S : ∀ D : PointedOrderedDomain.{u}, StrictParameterizedSolution F D) :
+    ∃ FIX : StrictParameterizedFixFunctor F,
+      ∀ D : PointedOrderedDomain.{u}, FIX.mapObj D = (S D).object := by
+  sorry
 
 end Chapter5
 end AbramskyJung

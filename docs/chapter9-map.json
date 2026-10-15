@@ -1,0 +1,298 @@
+{
+  "chapter": "Chapter 9",
+  "title": "Guide to the literature",
+  "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+  "notice": "Chapter 9 is a one-page bibliography guide, not a theorem chapter. The public companion paraphrases the source's grouping and preserves every cited key without reproducing the textbook prose.",
+  "items": [
+    {
+      "id": "def-9-1-1",
+      "number": "General reading guide",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Systematic accounts and introductions",
+      "summary": "Scott, Plotkin, Gunter-Scott, continuous-lattice, Stone-duality, and partial-order sources.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "overviewEntry"
+      ],
+      "startLine": 32,
+      "endLine": 44,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "overviewEntry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 32,
+          "endLine": 44
+        }
+      ]
+    },
+    {
+      "id": "def-9-1-2",
+      "number": "Reading for Section 2",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Section 2 references",
+      "summary": "DP90 and Joh82.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "section2Entry"
+      ],
+      "startLine": 45,
+      "endLine": 51,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "section2Entry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 45,
+          "endLine": 51
+        }
+      ]
+    },
+    {
+      "id": "def-9-1-3",
+      "number": "Reading for Section 3",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Section 3 references",
+      "summary": "Plo81, Gun92b, and Win93.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "section3Entry"
+      ],
+      "startLine": 52,
+      "endLine": 59,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "section3Entry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 52,
+          "endLine": 59
+        }
+      ]
+    },
+    {
+      "id": "def-9-1-4",
+      "number": "Reading for Section 4",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Section 4 references",
+      "summary": "Jun89 and Jun90.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "section4Entry"
+      ],
+      "startLine": 60,
+      "endLine": 66,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "section4Entry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 60,
+          "endLine": 66
+        }
+      ]
+    },
+    {
+      "id": "def-9-1-5",
+      "number": "Reading for Section 5",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Section 5 references",
+      "summary": "SP82, Fre91, Fre92, Pit93b, and Pit93a.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "section5Entry"
+      ],
+      "startLine": 67,
+      "endLine": 76,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "section5Entry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 67,
+          "endLine": 76
+        }
+      ]
+    },
+    {
+      "id": "def-9-1-6",
+      "number": "Reading for Section 6",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Section 6 references",
+      "summary": "Plo76, Smy78, Win83, Hec91, and Sch93.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "section6Entry"
+      ],
+      "startLine": 77,
+      "endLine": 86,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "section6Entry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 77,
+          "endLine": 86
+        }
+      ]
+    },
+    {
+      "id": "def-9-1-7",
+      "number": "Reading for Section 7",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Section 7 references",
+      "summary": "Nine references on logic, topology, and domain-theoretic semantics.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "section7Entry"
+      ],
+      "startLine": 87,
+      "endLine": 100,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "section7Entry",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 87,
+          "endLine": 100
+        }
+      ]
+    },
+    {
+      "id": "def-9-2-1",
+      "number": "Programming-language textbooks",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Semantics textbooks",
+      "summary": "Sch86, Ten91, Gun92b, and Win93.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "programmingLanguageTextbooks"
+      ],
+      "startLine": 106,
+      "endLine": 116,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "programmingLanguageTextbooks",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 106,
+          "endLine": 116
+        }
+      ]
+    },
+    {
+      "id": "def-9-2-2",
+      "number": "Applications of Domain Theory",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Six additional application areas",
+      "summary": "Abstract interpretation, databases, computational linguistics, AI, fractals, and foundations of analysis.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "applicationGuide"
+      ],
+      "startLine": 123,
+      "endLine": 144,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "applicationGuide",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 123,
+          "endLine": 144
+        }
+      ]
+    },
+    {
+      "id": "def-9-2-3",
+      "number": "Related Handbook chapters",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Handbook cross-references",
+      "summary": "Six Handbook chapters making substantial use of domain-theoretic ideas.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "HandbookChapter",
+        "handbookChapters"
+      ],
+      "startLine": 145,
+      "endLine": 154,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "HandbookChapter",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 145,
+          "endLine": 154
+        },
+        {
+          "declaration": "handbookChapters",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 155,
+          "endLine": 162
+        }
+      ]
+    },
+    {
+      "id": "def-9-3-1",
+      "number": "Bibliography query API",
+      "section": "9",
+      "kind": "Definition",
+      "title": "Citation membership",
+      "summary": "A key occurs in a guide when it appears in one entry's citation list.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "ContainsCitation"
+      ],
+      "startLine": 163,
+      "endLine": 167,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "ContainsCitation",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 163,
+          "endLine": 167
+        }
+      ]
+    },
+    {
+      "id": "prop-9-3-2",
+      "number": "Verified guide queries",
+      "section": "9",
+      "kind": "Proposition",
+      "title": "Scott and Freyd references are discoverable",
+      "summary": "Lean proves that Sco81 occurs in the complete guide and Fre91 in the Section 5 guide.",
+      "sourcePdfPage": 152,
+      "lean": [
+        "contains_scott_1981",
+        "section5_contains_freyd_1991"
+      ],
+      "startLine": 168,
+      "endLine": 173,
+      "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "contains_scott_1981",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 168,
+          "endLine": 173
+        },
+        {
+          "declaration": "section5_contains_freyd_1991",
+          "leanFile": "../Practice/DomainTheory/Chapter09.lean",
+          "startLine": 174,
+          "endLine": 180
+        }
+      ]
+    }
+  ]
+}

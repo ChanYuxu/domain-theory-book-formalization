@@ -4,7 +4,7 @@
 Usage:
     DOMAIN_THEORY_PDF="/path/to/Domain Theory.pdf" python3 docs/serve_chapter4.py
 
-Chapter 4 uses the same transactional declaration editor as Chapters 2 and 3.
+This launcher uses the shared transactional declaration editor for Chapters 2-9.
 """
 
 from __future__ import annotations

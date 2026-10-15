@@ -1,0 +1,52 @@
+{
+  "items": {
+    "def-9-1-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-1}{General reading guide} The source recommends systematic lecture notes by Scott (Sco81) and Plotkin (Plo81), the introductory exposition GS90, the continuous-lattice account GHK+80, Johnstone's treatment of Stone duality and continuous lattices (Joh82), and the introduction to partial orders DP90."
+    },
+    "def-9-1-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-2}{Reading for Section 2} Further reading: DP90 and Joh82."
+    },
+    "def-9-1-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-3}{Reading for Section 3} Further reading: Plo81, Gun92b, and Win93."
+    },
+    "def-9-1-4": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-4}{Reading for Section 4} Further reading: Jun89 and Jun90."
+    },
+    "def-9-1-5": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-5}{Reading for Section 5} Further reading: SP82, Fre91, Fre92, Pit93b, and Pit93a."
+    },
+    "def-9-1-6": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-6}{Reading for Section 6} Further reading: Plo76, Smy78, Win83, Hec91, and Sch93."
+    },
+    "def-9-1-7": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-1-7}{Reading for Section 7} Further reading: Abr90c, Abr91a, AO93, Ong93, Hen93, Bou94, Jen92, Jen91, and Smy83b."
+    },
+    "def-9-2-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-2-1}{Programming-language textbooks} The recommended semantics textbooks are Sch86, Ten91, Gun92b, and Win93."
+    },
+    "def-9-2-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-2-2}{Applications of Domain Theory} Additional applications are abstract interpretation and static analysis (Abr90a, BHA86, AJ91), databases (BDW88, BJO91), computational linguistics (PS84, PM90), artificial intelligence (RZ94), fractal image generation (Eda93b), and foundations of analysis (Eda93a)."
+    },
+    "def-9-2-3": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-2-3}{Related Handbook chapters} The source lists six other Handbook chapters with substantial domain-theoretic content: Topology, Algebraic Semantics, Semantics of Types, Correspondence between Operational and Denotational Semantics, Abstract Interpretation, and Effective Structures."
+    },
+    "def-9-3-1": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{def-9-3-1}{Bibliography query API} Lean defines citation membership by\n\\[\n  \\operatorname{ContainsCitation}(G,k)\\quad\\Longleftrightarrow\\quad\n  \\exists E\\in G,\\;\\exists c\\in E.\\operatorname{citations},\\;c.\\operatorname{key}=k.\n\\]"
+    },
+    "prop-9-3-2": {
+      "status": "reviewed",
+      "tex": "\\leanmarker{prop-9-3-2}{Verified guide queries} The executable bibliography API proves that Sco81 occurs in the complete reading guide and that Fre91 occurs in the Section 5 entry."
+    }
+  }
+}

@@ -105,10 +105,10 @@ theorem lemma_4_3_2_bottomed_continuous_fs
     exact ⟨hCoherentD, hFunContinuous, hCoherentFun⟩
   · rintro ⟨hCoherentD, hFunContinuous, hCoherentFun⟩
     have hCompactD : IsLawsonCompact D :=
-      (prop_4_2_20_lawson_topology_properties D hD.1 hD.2.2).2.2.2.2 hCoherentD
+      (prop_4_2_20_lawson_topology_properties D hD.1 hD.2.2).2.2.2 hCoherentD
     have hCompactFun : IsLawsonCompact (OrderedDomain.functionSpace D D) :=
       (prop_4_2_20_lawson_topology_properties
-        (OrderedDomain.functionSpace D D) hFunContinuous.1 hFunContinuous.2).2.2.2.2
+        (OrderedDomain.functionSpace D D) hFunContinuous.1 hFunContinuous.2).2.2.2
           hCoherentFun
     exact jun90_corollary_2_2_14_fs_of_lawson_compact_self
       D hD hFunContinuous hCompactD hCompactFun
@@ -167,8 +167,8 @@ theorem theorem_4_3_3_cartesian_closed_contbot_subset_fs (C : DomainClass.{u})
         ⟨hDcoherent, hSelfCont, hSelfCoherent⟩)
 
 /-- Theorem 4.3.4, PDF text: every cartesian closed full subcategory of
-`ALG⊥` is contained in `B` or `aL`.  The classification proof is registered as
-local proof debt. -/
+`ALG⊥` is contained in `B` or `aL`.  The proof repeats Theorem 4.3.3 and then
+uses Proposition 4.2.12 to turn an algebraic FS-domain into a bifinite domain. -/
 theorem theorem_4_3_4_cartesian_closed_algbot_subset_bifinite (C : DomainClass.{u})
     (hC : DomainClass.CartesianClosedSubcategoryOf
       (PointedAlgebraicDomainClass : DomainClass.{u}) C) :
@@ -242,24 +242,69 @@ def HasCountableBasis (D : OrderedDomain.{u}) : Prop :=
 def OmegaRestriction (C : DomainClass.{u}) : DomainClass.{u} where
   Obj := fun D => C.Obj D ∧ HasCountableBasis D
 
-/-- Theorem 4.3.5, omega-continuous case.  The classification proof is
-registered as local proof debt rather than as a principle projection. -/
+/-- Exercise 4.3.11(17), cited immediately before Theorem 4.3.5: an L-domain
+whose self-function space is countably based is an FS-domain.  The textbook
+sets this as an exercise and attributes it to Jung [Jun89], so its omitted proof
+is the precise local `admit` boundary for Theorem 4.3.5. -/
+theorem exercise_4_3_11_17_l_domain_self_countably_based_fs
+    (E : OrderedDomain.{u}) (hE : IsLDomainObject E)
+    (hSelfCountable : HasCountableBasis (OrderedDomain.functionSpace E E)) :
+    IsFSObject E := by
+  admit
+
+/-- Theorem 4.3.5, omega-continuous case.  Theorem 4.3.3 gives the FS/L
+dichotomy.  In the L branch, cartesian closure makes the self-function space
+countably based, so Exercise 4.3.11(17) supplies the FS conclusion. -/
 theorem theorem_4_3_5_omega_continuous_cartesian_closed_subcategories
     (C : DomainClass.{u})
     (hCont : DomainClass.CartesianClosedSubcategoryOf
       (OmegaRestriction (PointedContinuousDomainClass : DomainClass.{u})) C) :
     DomainClass.Subclass C (OmegaRestriction (FSDomainClass : DomainClass.{u})) := by
-  admit
+  have hPointed : DomainClass.CartesianClosedSubcategoryOf
+      (PointedContinuousDomainClass : DomainClass.{u}) C :=
+    ⟨fun D hDC => (hCont.1 D hDC).1, hCont.2⟩
+  rcases theorem_4_3_3_cartesian_closed_contbot_subset_fs C hPointed with hFS | hL
+  · intro D hDC
+    exact ⟨hFS D hDC, (hCont.1 D hDC).2⟩
+  · intro D hDC
+    have hSelfC : C.Obj (OrderedDomain.functionSpace D D) :=
+      hCont.2.exponentials hDC hDC
+    have hSelfCountable : HasCountableBasis (OrderedDomain.functionSpace D D) :=
+      (hCont.1 (OrderedDomain.functionSpace D D) hSelfC).2
+    exact ⟨exercise_4_3_11_17_l_domain_self_countably_based_fs
+      D (hL D hDC) hSelfCountable, (hCont.1 D hDC).2⟩
 
-/-- Theorem 4.3.5, omega-algebraic case.  The classification proof is
-registered as local proof debt rather than as a principle projection. -/
+/-- Theorem 4.3.5, omega-algebraic case.  Theorem 4.3.4 gives the bifinite/aL
+dichotomy.  The aL branch becomes FS by Exercise 4.3.11(17), and algebraic FS
+objects are bifinite by Proposition 4.2.12. -/
 theorem theorem_4_3_5_omega_algebraic_cartesian_closed_subcategories
     (C : DomainClass.{u})
     (hAlg : DomainClass.CartesianClosedSubcategoryOf
       (OmegaRestriction (PointedAlgebraicDomainClass : DomainClass.{u})) C) :
     DomainClass.Subclass C
       (OmegaRestriction (BifiniteDomainObjectClass : DomainClass.{u})) := by
-  admit
+  have hPointedAlg : DomainClass.CartesianClosedSubcategoryOf
+      (PointedAlgebraicDomainClass : DomainClass.{u}) C :=
+    ⟨fun D hDC => (hAlg.1 D hDC).1, hAlg.2⟩
+  rcases theorem_4_3_4_cartesian_closed_algbot_subset_bifinite C hPointedAlg with
+    hBifinite | hAlgL
+  · intro D hDC
+    exact ⟨hBifinite D hDC, (hAlg.1 D hDC).2⟩
+  · intro D hDC
+    have hDpointedAlg : IsPointedAlgebraicDomain D := (hAlg.1 D hDC).1
+    have hDL : IsLDomainObject D :=
+      ⟨hDpointedAlg.toAlgebraicDomainObject.toContinuousDomainObject,
+        (hAlgL D hDC).2⟩
+    have hSelfC : C.Obj (OrderedDomain.functionSpace D D) :=
+      hAlg.2.exponentials hDC hDC
+    have hSelfCountable : HasCountableBasis (OrderedDomain.functionSpace D D) :=
+      (hAlg.1 (OrderedDomain.functionSpace D D) hSelfC).2
+    have hFS : IsFSObject D :=
+      exercise_4_3_11_17_l_domain_self_countably_based_fs D hDL hSelfCountable
+    have hBifinite : IsBifiniteDomainObject D :=
+      ⟨hDpointedAlg.toAlgebraicDomainObject,
+        prop_4_2_12_algebraic_fs_bifinite D hDpointedAlg.2.2 hFS⟩
+    exact ⟨hBifinite, (hAlg.1 D hDC).2⟩
 
 /-- Theorem 4.3.5, PDF text: every cartesian closed full subcategory of
 `ω-CONT⊥` (`ω-ALG⊥`) is contained in `ω-FS` (`ω-B`). -/

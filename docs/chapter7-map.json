@@ -15,8 +15,16 @@
       "lean": [
         "theorem_7_1_1_complete_lattice_continuity_distributivity"
       ],
-      "startLine": 1232,
-      "endLine": 1240
+      "startLine": 1465,
+      "endLine": 1582,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_1_1_complete_lattice_continuity_distributivity",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1465,
+          "endLine": 1582
+        }
+      ]
     },
     {
       "id": "def-7-1-2",
@@ -29,8 +37,16 @@
       "lean": [
         "def_7_1_2_prime_continuity_relation"
       ],
-      "startLine": 73,
-      "endLine": 89
+      "startLine": 72,
+      "endLine": 75,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_1_2_prime_continuity_relation",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 72,
+          "endLine": 75
+        }
+      ]
     },
     {
       "id": "thm-7-1-3",
@@ -39,12 +55,22 @@
       "kind": "Theorem",
       "title": "Prime continuous iff completely distributive",
       "summary": "Prime continuous iff completely distributive.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook cites Raney's characterization but supplies no proof; retained as a book-omission admit rather than an unverified external axiom.",
       "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
       "lean": [
         "theorem_7_1_3_prime_continuous_iff_completely_distributive"
       ],
-      "startLine": 1241,
-      "endLine": 1250
+      "startLine": 1583,
+      "endLine": 1591,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_1_3_prime_continuous_iff_completely_distributive",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1583,
+          "endLine": 1591
+        }
+      ]
     },
     {
       "id": "def-7-1-4",
@@ -57,8 +83,16 @@
       "lean": [
         "def_7_1_4_meet_generation"
       ],
-      "startLine": 90,
-      "endLine": 146
+      "startLine": 89,
+      "endLine": 94,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_1_4_meet_generation",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 89,
+          "endLine": 94
+        }
+      ]
     },
     {
       "id": "def-7-1-5",
@@ -71,8 +105,16 @@
       "lean": [
         "def_7_1_5_meet_irreducible_prime"
       ],
-      "startLine": 147,
-      "endLine": 225
+      "startLine": 146,
+      "endLine": 157,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_1_5_meet_irreducible_prime",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 146,
+          "endLine": 157
+        }
+      ]
     },
     {
       "id": "prop-7-1-6",
@@ -85,8 +127,16 @@
       "lean": [
         "prop_7_1_6_meet_prime_irreducible"
       ],
-      "startLine": 1251,
-      "endLine": 1265
+      "startLine": 1592,
+      "endLine": 1607,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_1_6_meet_prime_irreducible",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1592,
+          "endLine": 1607
+        }
+      ]
     },
     {
       "id": "thm-7-1-7",
@@ -100,8 +150,22 @@
         "theorem_7_1_7_continuous_lattice_meet_generated",
         "theorem_7_1_7_algebraic_lattice_completely_meet_generated"
       ],
-      "startLine": 1266,
-      "endLine": 1275
+      "startLine": 1811,
+      "endLine": 1827,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_1_7_continuous_lattice_meet_generated",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1811,
+          "endLine": 1827
+        },
+        {
+          "declaration": "theorem_7_1_7_algebraic_lattice_completely_meet_generated",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1828,
+          "endLine": 1846
+        }
+      ]
     },
     {
       "id": "thm-7-1-8",
@@ -115,8 +179,22 @@
         "theorem_7_1_8_meet_prime_generation_distributive_equations",
         "theorem_7_1_8_join_prime_generation_dual_distributive_equations"
       ],
-      "startLine": 1286,
-      "endLine": 1298
+      "startLine": 1847,
+      "endLine": 1859,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_1_8_meet_prime_generation_distributive_equations",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1847,
+          "endLine": 1859
+        },
+        {
+          "declaration": "theorem_7_1_8_join_prime_generation_dual_distributive_equations",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1860,
+          "endLine": 1872
+        }
+      ]
     },
     {
       "id": "def-7-1-9",
@@ -129,8 +207,16 @@
       "lean": [
         "def_7_1_9_frame_homomorphism"
       ],
-      "startLine": 226,
-      "endLine": 271
+      "startLine": 225,
+      "endLine": 229,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_1_9_frame_homomorphism",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 225,
+          "endLine": 229
+        }
+      ]
     },
     {
       "id": "def-7-1-10",
@@ -143,8 +229,16 @@
       "lean": [
         "def_7_1_10_prime_filters_ideals"
       ],
-      "startLine": 272,
-      "endLine": 1179
+      "startLine": 271,
+      "endLine": 280,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_1_10_prime_filters_ideals",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 271,
+          "endLine": 280
+        }
+      ]
     },
     {
       "id": "prop-7-1-11",
@@ -157,8 +251,16 @@
       "lean": [
         "prop_7_1_11_complete_prime_filter_characterizations"
       ],
-      "startLine": 1312,
-      "endLine": 1322
+      "startLine": 1873,
+      "endLine": 1884,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_1_11_complete_prime_filter_characterizations",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1873,
+          "endLine": 1884
+        }
+      ]
     },
     {
       "id": "def-7-1-12",
@@ -171,8 +273,16 @@
       "lean": [
         "def_7_1_12_points_of_lattice"
       ],
-      "startLine": 1180,
-      "endLine": 1231
+      "startLine": 1179,
+      "endLine": 1182,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_1_12_points_of_lattice",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1179,
+          "endLine": 1182
+        }
+      ]
     },
     {
       "id": "prop-7-1-13",
@@ -185,8 +295,16 @@
       "lean": [
         "prop_7_1_13_point_topology"
       ],
-      "startLine": 1323,
-      "endLine": 1355
+      "startLine": 1885,
+      "endLine": 1916,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_1_13_point_topology",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1885,
+          "endLine": 1916
+        }
+      ]
     },
     {
       "id": "thm-7-1-14",
@@ -199,8 +317,16 @@
       "lean": [
         "theorem_7_1_14_stone_dual_adjunction"
       ],
-      "startLine": 1356,
-      "endLine": 1361
+      "startLine": 1917,
+      "endLine": 1951,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_1_14_stone_dual_adjunction",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section71.lean",
+          "startLine": 1917,
+          "endLine": 1951
+        }
+      ]
     },
     {
       "id": "def-7-2-1",
@@ -209,12 +335,20 @@
       "kind": "Definition",
       "title": "Irreducible closed",
       "summary": "Irreducible closed.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_1_irreducible_closed"
       ],
-      "startLine": 51,
-      "endLine": 208
+      "startLine": 45,
+      "endLine": 48,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_1_irreducible_closed",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 45,
+          "endLine": 48
+        }
+      ]
     },
     {
       "id": "prop-7-2-2",
@@ -223,12 +357,36 @@
       "kind": "Proposition",
       "title": "Sober unit characterization",
       "summary": "Sober unit characterization.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
-        "prop_7_2_2_sober_unit_characterization"
+        "prop_7_2_2_sober_unit_characterization",
+        "stoneUnitPoint_injective_iff_t0",
+        "stoneUnitPoint_surjective_iff_generic_points"
       ],
-      "startLine": 1959,
-      "endLine": 1965
+      "formalizationStatus": "proved",
+      "reviewNote": "SoberUnitInjective and SoberUnitSurjective now mean actual injectivity and surjectivity of stoneUnitPoint; both equivalences are proved rather than definitional aliases.",
+      "startLine": 19,
+      "endLine": 26,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_2_sober_unit_characterization",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 19,
+          "endLine": 26
+        },
+        {
+          "declaration": "stoneUnitPoint_injective_iff_t0",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 1852,
+          "endLine": 1856
+        },
+        {
+          "declaration": "stoneUnitPoint_surjective_iff_generic_points",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 1984,
+          "endLine": 1991
+        }
+      ]
     },
     {
       "id": "def-7-2-3",
@@ -237,12 +395,20 @@
       "kind": "Definition",
       "title": "Sober space",
       "summary": "Sober space.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_3_sober_space"
       ],
-      "startLine": 209,
-      "endLine": 670
+      "startLine": 233,
+      "endLine": 236,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_3_sober_space",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 233,
+          "endLine": 236
+        }
+      ]
     },
     {
       "id": "prop-7-2-4",
@@ -251,12 +417,20 @@
       "kind": "Proposition",
       "title": "Lattice unit spatiality",
       "summary": "Lattice unit spatiality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "prop_7_2_4_lattice_unit_spatiality"
       ],
-      "startLine": 1966,
-      "endLine": 2003
+      "startLine": 27,
+      "endLine": 65,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_4_lattice_unit_spatiality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 27,
+          "endLine": 65
+        }
+      ]
     },
     {
       "id": "def-7-2-5",
@@ -265,12 +439,20 @@
       "kind": "Definition",
       "title": "Spatial lattice",
       "summary": "Spatial lattice.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_5_spatial_lattice"
       ],
-      "startLine": 671,
-      "endLine": 1326
+      "startLine": 677,
+      "endLine": 680,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_5_spatial_lattice",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 677,
+          "endLine": 680
+        }
+      ]
     },
     {
       "id": "thm-7-2-6",
@@ -279,12 +461,20 @@
       "kind": "Theorem",
       "title": "Spatial lattice frame",
       "summary": "Spatial lattice frame.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "theorem_7_2_6_spatial_lattice_frame"
       ],
-      "startLine": 2004,
-      "endLine": 2022
+      "startLine": 66,
+      "endLine": 84,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_6_spatial_lattice_frame",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 66,
+          "endLine": 84
+        }
+      ]
     },
     {
       "id": "thm-7-2-7",
@@ -293,12 +483,20 @@
       "kind": "Theorem",
       "title": "Points sober opens spatial",
       "summary": "Points sober opens spatial.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "theorem_7_2_7_points_sober_opens_spatial"
       ],
-      "startLine": 2023,
-      "endLine": 2072
+      "startLine": 85,
+      "endLine": 92,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_7_points_sober_opens_spatial",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 85,
+          "endLine": 92
+        }
+      ]
     },
     {
       "id": "cor-7-2-8",
@@ -307,12 +505,22 @@
       "kind": "Corollary",
       "title": "Sober spatial dual equivalence",
       "summary": "Sober spatial dual equivalence.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The Lean declaration proves object maps and object-level unit bijections, but it does not define the source categories, contravariant functors on morphisms, functor laws, naturality, or a categorical dual equivalence.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "cor_7_2_8_sober_spatial_dual_equivalence"
       ],
-      "startLine": 2073,
-      "endLine": 2115
+      "startLine": 161,
+      "endLine": 210,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_7_2_8_sober_spatial_dual_equivalence",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 161,
+          "endLine": 210
+        }
+      ]
     },
     {
       "id": "thm-7-2-9",
@@ -321,12 +529,20 @@
       "kind": "Theorem",
       "title": "Hofmann mislove sober",
       "summary": "Hofmann mislove sober.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "theorem_7_2_9_hofmann_mislove_sober"
       ],
-      "startLine": 2116,
-      "endLine": 2228
+      "startLine": 249,
+      "endLine": 278,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_9_hofmann_mislove_sober",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 249,
+          "endLine": 278
+        }
+      ]
     },
     {
       "id": "cor-7-2-10",
@@ -335,12 +551,20 @@
       "kind": "Corollary",
       "title": "Compact saturated filters dual",
       "summary": "Compact saturated filters dual.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "cor_7_2_10_compact_saturated_filters_dual"
       ],
-      "startLine": 2229,
-      "endLine": 2238
+      "startLine": 362,
+      "endLine": 371,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_7_2_10_compact_saturated_filters_dual",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 362,
+          "endLine": 371
+        }
+      ]
     },
     {
       "id": "cor-7-2-11",
@@ -349,12 +573,20 @@
       "kind": "Corollary",
       "title": "Filtered intersections compact saturated",
       "summary": "Filtered intersections compact saturated.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "cor_7_2_11_filtered_intersections_compact_saturated"
       ],
-      "startLine": 2239,
-      "endLine": 2249
+      "startLine": 372,
+      "endLine": 382,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_7_2_11_filtered_intersections_compact_saturated",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 372,
+          "endLine": 382
+        }
+      ]
     },
     {
       "id": "prop-7-2-12",
@@ -363,12 +595,20 @@
       "kind": "Proposition",
       "title": "T0 weak upper topology",
       "summary": "T0 weak upper topology.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
       "lean": [
         "prop_7_2_12_t0_weak_upper_topology"
       ],
-      "startLine": 2250,
-      "endLine": 2626
+      "startLine": 383,
+      "endLine": 415,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_12_t0_weak_upper_topology",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/SoberSpatial.lean",
+          "startLine": 383,
+          "endLine": 415
+        }
+      ]
     },
     {
       "id": "prop-7-2-13",
@@ -377,12 +617,20 @@
       "kind": "Proposition",
       "title": "Sober specialization dcpo",
       "summary": "Sober specialization dcpo.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Specialization.lean",
       "lean": [
         "prop_7_2_13_sober_specialization_dcpo"
       ],
-      "startLine": 2627,
-      "endLine": 2636
+      "startLine": 365,
+      "endLine": 374,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_13_sober_specialization_dcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Specialization.lean",
+          "startLine": 365,
+          "endLine": 374
+        }
+      ]
     },
     {
       "id": "thm-7-2-14",
@@ -391,12 +639,22 @@
       "kind": "Theorem",
       "title": "Sober complete cocomplete retracts",
       "summary": "Sober complete cocomplete retracts.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "Retract closure is proved, but the current limit/colimit record only has an unindexed diagram surrogate with chosen cones, cocones, lifts, and descents; it lacks diagram morphisms, commutativity, factorization, and uniqueness, so it does not formalize categorical completeness or cocompleteness.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Specialization.lean",
       "lean": [
         "theorem_7_2_14_sober_complete_cocomplete_retracts"
       ],
-      "startLine": 2637,
-      "endLine": 2659
+      "startLine": 375,
+      "endLine": 388,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_14_sober_complete_cocomplete_retracts",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Specialization.lean",
+          "startLine": 375,
+          "endLine": 388
+        }
+      ]
     },
     {
       "id": "lemma-7-2-15",
@@ -405,12 +663,20 @@
       "kind": "Lemma",
       "title": "Distributive continuous lattices spatial",
       "summary": "Distributive continuous lattices spatial.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Specialization.lean",
       "lean": [
         "lemma_7_2_15_distributive_continuous_lattices_spatial"
       ],
-      "startLine": 2660,
-      "endLine": 2989
+      "startLine": 447,
+      "endLine": 454,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_7_2_15_distributive_continuous_lattices_spatial",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Specialization.lean",
+          "startLine": 447,
+          "endLine": 454
+        }
+      ]
     },
     {
       "id": "thm-7-2-16",
@@ -419,12 +685,22 @@
       "kind": "Theorem",
       "title": "Locally compact distributive duality",
       "summary": "Locally compact distributive duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The object maps, Stone units, bijectivity, and local-compactness/continuity ingredients are proved, but the restricted categories, morphism actions, functor laws, naturality, and categorical dual equivalence are not encoded.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/LocallyCompact.lean",
       "lean": [
         "theorem_7_2_16_locally_compact_distributive_duality"
       ],
-      "startLine": 2990,
-      "endLine": 3067
+      "startLine": 736,
+      "endLine": 815,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_16_locally_compact_distributive_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/LocallyCompact.lean",
+          "startLine": 736,
+          "endLine": 815
+        }
+      ]
     },
     {
       "id": "def-7-2-17",
@@ -433,12 +709,20 @@
       "kind": "Definition",
       "title": "Coherent space",
       "summary": "Coherent space.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_17_coherent_space"
       ],
-      "startLine": 1327,
-      "endLine": 1343
+      "startLine": 1333,
+      "endLine": 1336,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_17_coherent_space",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 1333,
+          "endLine": 1336
+        }
+      ]
     },
     {
       "id": "def-7-2-18",
@@ -447,12 +731,20 @@
       "kind": "Definition",
       "title": "Arithmetic lattice",
       "summary": "Arithmetic lattice.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_18_arithmetic_lattice"
       ],
-      "startLine": 1344,
-      "endLine": 1372
+      "startLine": 1350,
+      "endLine": 1353,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_18_arithmetic_lattice",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 1350,
+          "endLine": 1353
+        }
+      ]
     },
     {
       "id": "thm-7-2-19",
@@ -461,12 +753,22 @@
       "kind": "Theorem",
       "title": "Coherent arithmetic duality",
       "summary": "Coherent arithmetic duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The object-level restriction and unit bijections are proved, but the coherent/arithmetic categories, contravariant morphism maps, functor laws, naturality, and categorical dual equivalence remain unformalized.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Coherent.lean",
       "lean": [
         "theorem_7_2_19_coherent_arithmetic_duality"
       ],
-      "startLine": 3068,
-      "endLine": 3158
+      "startLine": 389,
+      "endLine": 472,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_19_coherent_arithmetic_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Coherent.lean",
+          "startLine": 389,
+          "endLine": 472
+        }
+      ]
     },
     {
       "id": "thm-7-2-20",
@@ -475,12 +777,22 @@
       "kind": "Theorem",
       "title": "Algebraic distributive duality",
       "summary": "Algebraic distributive duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The object-level compact-open/algebraic restriction and unit bijections are proved, but the source categories, morphism actions, functor laws, naturality, and categorical dual equivalence are not encoded.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Algebraic.lean",
       "lean": [
         "theorem_7_2_20_algebraic_distributive_duality"
       ],
-      "startLine": 3159,
-      "endLine": 3226
+      "startLine": 289,
+      "endLine": 370,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_20_algebraic_distributive_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Algebraic.lean",
+          "startLine": 289,
+          "endLine": 370
+        }
+      ]
     },
     {
       "id": "def-7-2-21",
@@ -489,12 +801,20 @@
       "kind": "Definition",
       "title": "Spectral space",
       "summary": "Spectral space.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_21_spectral_space"
       ],
-      "startLine": 1373,
-      "endLine": 1461
+      "startLine": 1379,
+      "endLine": 1382,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_21_spectral_space",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 1379,
+          "endLine": 1382
+        }
+      ]
     },
     {
       "id": "thm-7-2-22",
@@ -503,12 +823,22 @@
       "kind": "Theorem",
       "title": "Spectral algebraic arithmetic duality",
       "summary": "Spectral algebraic arithmetic duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The object-level spectral/algebraic-arithmetic restriction is assembled from Theorems 7.2.19 and 7.2.20, but no actual categories, contravariant functors, functor laws, naturality, or categorical dual equivalence are encoded.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
       "lean": [
         "theorem_7_2_22_spectral_algebraic_arithmetic_duality"
       ],
-      "startLine": 3227,
-      "endLine": 3232
+      "startLine": 115,
+      "endLine": 185,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_22_spectral_algebraic_arithmetic_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
+          "startLine": 115,
+          "endLine": 185
+        }
+      ]
     },
     {
       "id": "prop-7-2-23",
@@ -517,12 +847,20 @@
       "kind": "Proposition",
       "title": "Prime filters compacts points",
       "summary": "Prime filters compacts points.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
       "lean": [
         "prop_7_2_23_prime_filters_compacts_points"
       ],
-      "startLine": 3233,
-      "endLine": 3304
+      "startLine": 416,
+      "endLine": 445,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_23_prime_filters_compacts_points",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
+          "startLine": 416,
+          "endLine": 445
+        }
+      ]
     },
     {
       "id": "def-7-2-24",
@@ -531,12 +869,20 @@
       "kind": "Definition",
       "title": "Join approximable relation",
       "summary": "Join approximable relation.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
       "lean": [
         "def_7_2_24_join_approximable_relation"
       ],
-      "startLine": 1462,
-      "endLine": 1958
+      "startLine": 1468,
+      "endLine": 1472,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_2_24_join_approximable_relation",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Core.lean",
+          "startLine": 1468,
+          "endLine": 1472
+        }
+      ]
     },
     {
       "id": "prop-7-2-25",
@@ -545,12 +891,22 @@
       "kind": "Proposition",
       "title": "Algebraic arithmetic lattice equivalence",
       "summary": "Algebraic arithmetic lattice equivalence.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The source says the equivalence is easily established but omits the proof, so the construction remains an admit. In addition, the current data records object maps and morphism conversions without category/functor laws or natural equivalence data.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
       "lean": [
         "prop_7_2_25_algebraic_arithmetic_lattice_equivalence"
       ],
-      "startLine": 3305,
-      "endLine": 3389
+      "startLine": 511,
+      "endLine": 515,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_25_algebraic_arithmetic_lattice_equivalence",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
+          "startLine": 511,
+          "endLine": 515
+        }
+      ]
     },
     {
       "id": "thm-7-2-26",
@@ -559,12 +915,22 @@
       "kind": "Theorem",
       "title": "Spectral distributive duality",
       "summary": "Spectral distributive duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The theorem is stated after the functor construction without a proof, so it remains an admit. The current interface also lacks category laws, functor laws, naturality, and categorical dual-equivalence data.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
       "lean": [
         "theorem_7_2_26_spectral_distributive_duality"
       ],
-      "startLine": 3390,
-      "endLine": 3415
+      "startLine": 596,
+      "endLine": 601,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_26_spectral_distributive_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/Spectral.lean",
+          "startLine": 596,
+          "endLine": 601
+        }
+      ]
     },
     {
       "id": "prop-7-2-27",
@@ -573,12 +939,20 @@
       "kind": "Proposition",
       "title": "Continuous domains sober",
       "summary": "Continuous domains sober.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
       "lean": [
         "prop_7_2_27_continuous_domains_sober"
       ],
-      "startLine": 3416,
-      "endLine": 3463
+      "startLine": 157,
+      "endLine": 165,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_2_27_continuous_domains_sober",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
+          "startLine": 157,
+          "endLine": 165
+        }
+      ]
     },
     {
       "id": "thm-7-2-28",
@@ -587,12 +961,22 @@
       "kind": "Theorem",
       "title": "Cont completely distributive duality",
       "summary": "Cont completely distributive duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The numbered theorem transitively depends on the source-proved prime-filter dcpo/interpolation helper completeDistributivePointDcpoData. Its DualEquivalenceData field is also object-level only and does not encode morphisms, functor laws, naturality, or a categorical dual equivalence.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
       "lean": [
         "theorem_7_2_28_cont_completely_distributive_duality"
       ],
-      "startLine": 3464,
-      "endLine": 3521
+      "startLine": 357,
+      "endLine": 417,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_28_cont_completely_distributive_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
+          "startLine": 357,
+          "endLine": 417
+        }
+      ]
     },
     {
       "id": "thm-7-2-29",
@@ -601,12 +985,22 @@
       "kind": "Theorem",
       "title": "Coherent algebraic domain duality",
       "summary": "Coherent algebraic domain duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF proves this by restricting Theorem 7.2.26; the restriction bridge remains source-proved automation-exhausted debt. The current record also omits the categorical morphism/functor/naturality laws needed for the claimed dual equivalence.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
       "lean": [
         "theorem_7_2_29_coherent_algebraic_domain_duality"
       ],
-      "startLine": 3522,
-      "endLine": 3526
+      "startLine": 471,
+      "endLine": 481,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_29_coherent_algebraic_domain_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
+          "startLine": 471,
+          "endLine": 481
+        }
+      ]
     },
     {
       "id": "thm-7-2-30",
@@ -615,12 +1009,22 @@
       "kind": "Theorem",
       "title": "Compact open lattices fb domains",
       "summary": "Compact open lattices fb domains.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook states the compact-open characterization without proof; retained as a book-omission admit.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
       "lean": [
         "theorem_7_2_30_compact_open_lattices_fb_domains"
       ],
-      "startLine": 3527,
-      "endLine": 3538
+      "startLine": 482,
+      "endLine": 493,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_30_compact_open_lattices_fb_domains",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
+          "startLine": 482,
+          "endLine": 493
+        }
+      ]
     },
     {
       "id": "thm-7-2-31",
@@ -629,12 +1033,22 @@
       "kind": "Theorem",
       "title": "Compact open lattices algebraic bifinite-continuous",
       "summary": "Compact open lattices algebraic bifinite-continuous.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section72.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook states the algebraic bicomplete characterization without proof; retained as a book-omission admit.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
       "lean": [
         "theorem_7_2_31_compact_open_lattices_algebraic_bc"
       ],
-      "startLine": 3539,
-      "endLine": 3548
+      "startLine": 494,
+      "endLine": 503,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_2_31_compact_open_lattices_algebraic_bc",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section72/DomainDualities.lean",
+          "startLine": 494,
+          "endLine": 503
+        }
+      ]
     },
     {
       "id": "def-7-3-1",
@@ -643,12 +1057,20 @@
       "kind": "Definition",
       "title": "Domain prelocale",
       "summary": "Domain prelocale.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
       "lean": [
         "def_7_3_1_domain_prelocale"
       ],
-      "startLine": 114,
-      "endLine": 212
+      "startLine": 106,
+      "endLine": 109,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_3_1_domain_prelocale",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
+          "startLine": 106,
+          "endLine": 109
+        }
+      ]
     },
     {
       "id": "def-7-3-2",
@@ -657,12 +1079,20 @@
       "kind": "Definition",
       "title": "Preisomorphism localic description",
       "summary": "Preisomorphism localic description.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
       "lean": [
         "def_7_3_2_preisomorphism_localic_description"
       ],
-      "startLine": 213,
-      "endLine": 331
+      "startLine": 205,
+      "endLine": 210,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_3_2_preisomorphism_localic_description",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
+          "startLine": 205,
+          "endLine": 210
+        }
+      ]
     },
     {
       "id": "prop-7-3-3",
@@ -671,12 +1101,22 @@
       "kind": "Proposition",
       "title": "Localic description spectrum",
       "summary": "Localic description spectrum.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF proves both directions; the spectrum unit and compact-open pre-isomorphism bridge remain source-proved automation-exhausted debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "prop_7_3_3_localic_description_spectrum"
       ],
-      "startLine": 3264,
-      "endLine": 3294
+      "startLine": 20,
+      "endLine": 30,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_3_3_localic_description_spectrum",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 20,
+          "endLine": 30
+        }
+      ]
     },
     {
       "id": "thm-7-3-4",
@@ -685,12 +1125,22 @@
       "kind": "Theorem",
       "title": "Domain prelocale duality",
       "summary": "Domain prelocale duality.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The book calls this a slight extension of Theorem 7.2.30 but supplies no proof, so it remains an admit. The current record exposes object and morphism correspondences but still lacks category laws, functor laws, naturality, and a categorical dual equivalence.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_4_domain_prelocale_duality"
       ],
-      "startLine": 3295,
-      "endLine": 3299
+      "startLine": 56,
+      "endLine": 63,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_4_domain_prelocale_duality",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 56,
+          "endLine": 63
+        }
+      ]
     },
     {
       "id": "def-7-3-5",
@@ -699,12 +1149,20 @@
       "kind": "Definition",
       "title": "Sub prelocale",
       "summary": "Sub prelocale.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
       "lean": [
         "def_7_3_5_sub_prelocale"
       ],
-      "startLine": 332,
-      "endLine": 814
+      "startLine": 324,
+      "endLine": 327,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_3_5_sub_prelocale",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
+          "startLine": 324,
+          "endLine": 327
+        }
+      ]
     },
     {
       "id": "prop-7-3-6",
@@ -713,12 +1171,22 @@
       "kind": "Proposition",
       "title": "Sub prelocale embedding-projection pair",
       "summary": "Sub prelocale embedding-projection pair.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF proves the explicit filter formulas and e-p laws; prime-filter well-definedness remains source-proved automation-exhausted debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "prop_7_3_6_sub_prelocale_ep_pair"
       ],
-      "startLine": 3300,
-      "endLine": 3305
+      "startLine": 64,
+      "endLine": 73,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_7_3_6_sub_prelocale_ep_pair",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 64,
+          "endLine": 73
+        }
+      ]
     },
     {
       "id": "cor-7-3-7",
@@ -727,12 +1195,22 @@
       "kind": "Corollary",
       "title": "Sub prelocale domain embedding",
       "summary": "Sub prelocale domain embedding.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF constructs the embedding through the two spectrum isomorphisms; this remains transitive source-proved debt from 7.3.3 and 7.3.6.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "cor_7_3_7_sub_prelocale_domain_embedding"
       ],
-      "startLine": 3306,
-      "endLine": 3314
+      "startLine": 74,
+      "endLine": 85,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_7_3_7_sub_prelocale_domain_embedding",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 74,
+          "endLine": 85
+        }
+      ]
     },
     {
       "id": "lemma-7-3-8",
@@ -741,12 +1219,22 @@
       "kind": "Lemma",
       "title": "Compact open scott function space",
       "summary": "Compact open scott function space.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF proves equality of the Scott and compact-open topologies using compactness and finite deflations; the deflation bridge remains automation-exhausted debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "lemma_7_3_8_compact_open_scott_function_space"
       ],
-      "startLine": 3315,
-      "endLine": 3324
+      "startLine": 86,
+      "endLine": 99,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_7_3_8_compact_open_scott_function_space",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 86,
+          "endLine": 99
+        }
+      ]
     },
     {
       "id": "lemma-7-3-9",
@@ -755,12 +1243,22 @@
       "kind": "Lemma",
       "title": "Bifinite function space compact opens",
       "summary": "Bifinite function space compact opens.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The subbasic topology membership is proved, while the PDF's Scott-openness and compactness arguments via function-space deflations remain source-proved debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "lemma_7_3_9_bifinite_function_space_compact_opens"
       ],
-      "startLine": 3325,
-      "endLine": 3331
+      "startLine": 100,
+      "endLine": 111,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_7_3_9_bifinite_function_space_compact_opens",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 100,
+          "endLine": 111
+        }
+      ]
     },
     {
       "id": "thm-7-3-10",
@@ -769,12 +1267,22 @@
       "kind": "Theorem",
       "title": "Function space prelocale",
       "summary": "Function space prelocale.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives the generator/rule construction and naturality proof; constructing the concrete prelocale and spectrum isomorphism remains source-proved debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_10_function_space_prelocale"
       ],
-      "startLine": 3332,
-      "endLine": 3337
+      "startLine": 112,
+      "endLine": 121,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_10_function_space_prelocale",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 112,
+          "endLine": 121
+        }
+      ]
     },
     {
       "id": "lemma-7-3-11",
@@ -783,12 +1291,22 @@
       "kind": "Lemma",
       "title": "Plotkin powerdomain compact opens",
       "summary": "Plotkin powerdomain compact opens.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF proves compact-openness and the Scott-base formula using lifted deflations and finite compact lenses; that construction remains source-proved debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "lemma_7_3_11_plotkin_powerdomain_compact_opens"
       ],
-      "startLine": 3338,
-      "endLine": 3344
+      "startLine": 122,
+      "endLine": 132,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_7_3_11_plotkin_powerdomain_compact_opens",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 122,
+          "endLine": 132
+        }
+      ]
     },
     {
       "id": "def-7-3-12",
@@ -797,27 +1315,51 @@
       "kind": "Definition",
       "title": "Plotkin powerlocale",
       "summary": "Plotkin powerlocale.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
       "lean": [
         "def_7_3_12_plotkin_powerlocale"
       ],
-      "startLine": 815,
-      "endLine": 3263
+      "startLine": 807,
+      "endLine": 810,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_7_3_12_plotkin_powerlocale",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/Prelocale.lean",
+          "startLine": 807,
+          "endLine": 810
+        }
+      ]
     },
     {
       "id": "thm-7-3-13",
       "number": "Theorem 7.3.13",
       "section": "7.3",
       "kind": "Theorem",
-      "title": "Plotkin powerlocale rembedding-projectionresentation",
-      "summary": "Plotkin powerlocale rembedding-projectionresentation.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "title": "Plotkin powerlocale representation",
+      "summary": "Plotkin powerlocale representation.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF constructs the Plotkin powerlocale and proves definability and naturality; the term-prelocale/spectrum construction remains source-proved debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_13_plotkin_powerlocale_representation",
         "theorem_7_3_13_plotkin_powerlocale_description"
       ],
-      "startLine": 3345,
-      "endLine": 3349
+      "startLine": 133,
+      "endLine": 141,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_13_plotkin_powerlocale_representation",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 133,
+          "endLine": 141
+        },
+        {
+          "declaration": "theorem_7_3_13_plotkin_powerlocale_description",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 142,
+          "endLine": 148
+        }
+      ]
     },
     {
       "id": "thm-7-3-14",
@@ -826,12 +1368,22 @@
       "kind": "Theorem",
       "title": "Prelocale chains bilimits",
       "summary": "Prelocale chains bilimits.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives the directed-union and bilimit construction; coherent stage maps and compact-element factorization remain source-proved debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_14_prelocale_chains_bilimits"
       ],
-      "startLine": 3357,
-      "endLine": 3362
+      "startLine": 149,
+      "endLine": 158,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_14_prelocale_chains_bilimits",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 149,
+          "endLine": 158
+        }
+      ]
     },
     {
       "id": "thm-7-3-15",
@@ -840,12 +1392,22 @@
       "kind": "Theorem",
       "title": "Interpretation preserves localic descriptions",
       "summary": "Interpretation preserves localic descriptions.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The canonical theorem now takes constructor interpretation data and environment descriptions as hypotheses; the conclusion is no longer preloaded in TypeInterpretationAgreement. The compositional proof remains source-proved debt.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_15_interpretation_preserves_localic_descriptions"
       ],
-      "startLine": 3363,
-      "endLine": 3370
+      "startLine": 159,
+      "endLine": 173,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_15_interpretation_preserves_localic_descriptions",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 159,
+          "endLine": 173
+        }
+      ]
     },
     {
       "id": "thm-7-3-16",
@@ -854,12 +1416,29 @@
       "kind": "Theorem",
       "title": "Closed type expression spectrum",
       "summary": "Closed type expression spectrum.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The source calls this a special case of 7.3.15, but the current interface lacks the required identity between the chosen interpretation and syntactic L(σ). The type-specific preorder rules and inductive compact/termination rule systems referred to Abramsky's thesis are also not yet encoded; former truth-valued placeholders have been removed.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
+        "theorem_7_3_16_closed_type_expression_spectrum_sourceExact",
         "theorem_7_3_16_closed_type_expression_spectrum"
       ],
-      "startLine": 3371,
-      "endLine": 3433
+      "startLine": 174,
+      "endLine": 184,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_16_closed_type_expression_spectrum_sourceExact",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 174,
+          "endLine": 184
+        },
+        {
+          "declaration": "theorem_7_3_16_closed_type_expression_spectrum",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 185,
+          "endLine": 191
+        }
+      ]
     },
     {
       "id": "thm-7-3-17",
@@ -868,12 +1447,22 @@
       "kind": "Theorem",
       "title": "Property language decidable",
       "summary": "Property language decidable.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "The canonical conclusion is decidability of the actual PropertyFormulaPreorder relation. The finite prime normalizer and correctness proof remain source-proved debt; the externally cited type-specific C/T rules still require source transcription.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_17_property_language_decidable"
       ],
-      "startLine": 3434,
-      "endLine": 3439
+      "startLine": 259,
+      "endLine": 268,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_17_property_language_decidable",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 259,
+          "endLine": 268
+        }
+      ]
     },
     {
       "id": "thm-7-3-18",
@@ -882,12 +1471,22 @@
       "kind": "Theorem",
       "title": "Domain logic sound complete",
       "summary": "Domain logic sound complete.",
-      "leanFile": "../Practice/DomainTheory/Chapter07/Section73.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "Derivability is now fixed to DomainLogicDerivation and validity is defined from a denotational interpretation rather than supplied as arbitrary fields. The textbook omits the proof, so the canonical theorem remains a book-omission admit; the general semantic interface still requires further concrete interpretation equations.",
+      "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
       "lean": [
         "theorem_7_3_18_domain_logic_sound_complete"
       ],
-      "startLine": 3440,
-      "endLine": 3446
+      "startLine": 269,
+      "endLine": 278,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_7_3_18_domain_logic_sound_complete",
+          "leanFile": "../Practice/DomainTheory/Chapter07/Section73/NumberedItems.lean",
+          "startLine": 269,
+          "endLine": 278
+        }
+      ]
     }
   ]
 }

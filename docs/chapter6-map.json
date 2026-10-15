@@ -11,12 +11,22 @@
       "kind": "Proposition",
       "title": "Dcpo algebras form a complete category",
       "summary": "Dcpo algebras form a complete category.",
-      "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+      "formalizationStatus": "partial",
+      "reviewNote": "Arbitrary products and equalizers are constructed with explicit universal properties. The current wrapper does not yet bundle the algebra category or derive arbitrary indexed limits, so it is a proved completeness criterion rather than the exact categorical conclusion.",
+      "leanFile": "../Practice/DomainTheory/Chapter06/Section61_Limits.lean",
       "lean": [
         "prop_6_1_1_dcpo_algebras_complete"
       ],
-      "startLine": 138,
-      "endLine": 164
+      "startLine": 526,
+      "endLine": 538,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_1_1_dcpo_algebras_complete",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61_Limits.lean",
+          "startLine": 526,
+          "endLine": 538
+        }
+      ]
     },
     {
       "id": "thm-6-1-2",
@@ -25,12 +35,22 @@
       "kind": "Theorem",
       "title": "Free dcpo algebras exist for inequational theories",
       "summary": "Free dcpo algebras exist for inequational theories.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives the adjoint-functor/solution-set argument; its categorical construction remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "theorem_6_1_2_free_dcpo_algebras_exist"
       ],
-      "startLine": 165,
-      "endLine": 505
+      "startLine": 40,
+      "endLine": 54,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_1_2_free_dcpo_algebras_exist",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 40,
+          "endLine": 54
+        }
+      ]
     },
     {
       "id": "prop-6-1-3",
@@ -43,8 +63,16 @@
       "lean": [
         "prop_6_1_3_syntactic_basis_abstract_basis"
       ],
-      "startLine": 506,
-      "endLine": 522
+      "startLine": 384,
+      "endLine": 399,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_1_3_syntactic_basis_abstract_basis",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 384,
+          "endLine": 399
+        }
+      ]
     },
     {
       "id": "prop-6-1-4",
@@ -57,8 +85,16 @@
       "lean": [
         "prop_6_1_4_syntactic_approximation_properties"
       ],
-      "startLine": 523,
-      "endLine": 651
+      "startLine": 400,
+      "endLine": 425,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_1_4_syntactic_approximation_properties",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 400,
+          "endLine": 425
+        }
+      ]
     },
     {
       "id": "lemma-6-1-5",
@@ -71,8 +107,16 @@
       "lean": [
         "lemma_6_1_5_quotient_syntactic_basis"
       ],
-      "startLine": 652,
-      "endLine": 677
+      "startLine": 531,
+      "endLine": 544,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_6_1_5_quotient_syntactic_basis",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 531,
+          "endLine": 544
+        }
+      ]
     },
     {
       "id": "thm-6-1-6",
@@ -81,12 +125,22 @@
       "kind": "Theorem",
       "title": "Free continuous dcpo algebras are built from the syntactic basis",
       "summary": "Free continuous dcpo algebras are built from the syntactic basis.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF proves the ideal-completion construction and universal property; the concrete free-algebra package remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "theorem_6_1_6_free_continuous_dcpo_algebra"
       ],
-      "startLine": 678,
-      "endLine": 719
+      "startLine": 557,
+      "endLine": 571,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_1_6_free_continuous_dcpo_algebra",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 557,
+          "endLine": 571
+        }
+      ]
     },
     {
       "id": "thm-6-1-7",
@@ -95,12 +149,22 @@
       "kind": "Theorem",
       "title": "Free continuous-domain algebras exist",
       "summary": "Free continuous-domain algebras exist.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The object/morphism action is complete relative to Theorem 6.1.6, whose ideal-completion proof remains automation-exhausted. The current structure also omits functor identity/composition laws and the adjunction data asserted by the source.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "theorem_6_1_7_free_continuous_domain_algebras_exist"
       ],
-      "startLine": 720,
-      "endLine": 758
+      "startLine": 601,
+      "endLine": 630,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_1_7_free_continuous_domain_algebras_exist",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 601,
+          "endLine": 630
+        }
+      ]
     },
     {
       "id": "prop-6-1-8",
@@ -113,8 +177,16 @@
       "lean": [
         "prop_6_1_8_extension_map_scott_continuous"
       ],
-      "startLine": 759,
-      "endLine": 795
+      "startLine": 640,
+      "endLine": 649,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_1_8_extension_map_scott_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 640,
+          "endLine": 649
+        }
+      ]
     },
     {
       "id": "thm-6-1-9",
@@ -123,12 +195,22 @@
       "kind": "Theorem",
       "title": "The free-algebra monad is locally continuous",
       "summary": "The free-algebra monad is locally continuous.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The endofunctor laws and local-continuity argument are proved, but the construction transitively depends on Theorem 6.1.6. The source calls this a monad; no monad unit, multiplication, naturality, or monad laws are encoded yet.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "theorem_6_1_9_free_algebra_monad_locally_continuous"
       ],
-      "startLine": 796,
-      "endLine": 840
+      "startLine": 726,
+      "endLine": 836,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_1_9_free_algebra_monad_locally_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 726,
+          "endLine": 836
+        }
+      ]
     },
     {
       "id": "thm-6-1-10",
@@ -137,12 +219,22 @@
       "kind": "Theorem",
       "title": "Free algebraic-domain algebras exist",
       "summary": "Free algebraic-domain algebras exist.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF derives algebraicity from the reflexive syntactic approximation relation; that construction remains source-proved automation-exhausted debt. The current object/morphism package also lacks functor laws and the left-adjoint data used in the source formulation.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "theorem_6_1_10_free_algebraic_domain_algebras_exist"
       ],
-      "startLine": 841,
-      "endLine": 862
+      "startLine": 873,
+      "endLine": 883,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_1_10_free_algebraic_domain_algebras_exist",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 873,
+          "endLine": 883
+        }
+      ]
     },
     {
       "id": "prop-6-1-11",
@@ -155,8 +247,16 @@
       "lean": [
         "prop_6_1_11_unit_order_reflection_criterion"
       ],
-      "startLine": 863,
-      "endLine": 915
+      "startLine": 902,
+      "endLine": 989,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_1_11_unit_order_reflection_criterion",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 902,
+          "endLine": 989
+        }
+      ]
     },
     {
       "id": "def-6-1-12",
@@ -170,8 +270,22 @@
         "def_6_1_12_strict_dcpo_algebra",
         "def_6_1_12_strict_homomorphism"
       ],
-      "startLine": 916,
-      "endLine": 921
+      "startLine": 1032,
+      "endLine": 1039,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_6_1_12_strict_dcpo_algebra",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 1032,
+          "endLine": 1039
+        },
+        {
+          "declaration": "def_6_1_12_strict_homomorphism",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 1040,
+          "endLine": 1046
+        }
+      ]
     },
     {
       "id": "thm-6-1-13",
@@ -180,12 +294,22 @@
       "kind": "Theorem",
       "title": "Free strict algebras exist",
       "summary": "Free strict algebras exist.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF adapts the pointed adjoint-functor and syntactic constructions; the bundled strict free-algebra witness remains source-proved automation-exhausted debt. Its three object/morphism packages do not yet contain functor laws or the natural hom-equivalences and triangle laws required for the stated left adjoints.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "theorem_6_1_13_free_strict_algebras_exist"
       ],
-      "startLine": 1034,
-      "endLine": 1159
+      "startLine": 1153,
+      "endLine": 1166,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_1_13_free_strict_algebras_exist",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 1153,
+          "endLine": 1166
+        }
+      ]
     },
     {
       "id": "prop-6-1-14",
@@ -194,12 +318,22 @@
       "kind": "Proposition",
       "title": "Finite-poset preservation yields bifinite preservation",
       "summary": "Finite-poset preservation yields bifinite preservation.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook states this proposition without proof; the exact boundary is retained as a book-omission admit.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
       "lean": [
         "prop_6_1_14_finite_preservation_bifinite"
       ],
-      "startLine": 1160,
-      "endLine": 1168
+      "startLine": 1282,
+      "endLine": 1294,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_1_14_finite_preservation_bifinite",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section61.lean",
+          "startLine": 1282,
+          "endLine": 1294
+        }
+      ]
     },
     {
       "id": "def-6-2-1",
@@ -212,8 +346,16 @@
       "lean": [
         "def_6_2_1_plotkin_powertheory"
       ],
-      "startLine": 172,
-      "endLine": 226
+      "startLine": 171,
+      "endLine": 174,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_6_2_1_plotkin_powertheory",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 171,
+          "endLine": 174
+        }
+      ]
     },
     {
       "id": "def-6-2-2",
@@ -226,8 +368,16 @@
       "lean": [
         "def_6_2_2_egli_milner_relation"
       ],
-      "startLine": 59,
-      "endLine": 171
+      "startLine": 58,
+      "endLine": 62,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_6_2_2_egli_milner_relation",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 58,
+          "endLine": 62
+        }
+      ]
     },
     {
       "id": "thm-6-2-3",
@@ -236,12 +386,22 @@
       "kind": "Theorem",
       "title": "The Plotkin powerdomain of a continuous domain is continuous",
       "summary": "The Plotkin powerdomain of a continuous domain is continuous.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives the finite-term/Egli-Milner ideal-completion proof; the representation construction remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "theorem_6_2_3_plotkin_powerdomain_continuous"
       ],
-      "startLine": 227,
-      "endLine": 244
+      "startLine": 222,
+      "endLine": 238,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_2_3_plotkin_powerdomain_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 222,
+          "endLine": 238
+        }
+      ]
     },
     {
       "id": "def-6-2-4",
@@ -254,8 +414,16 @@
       "lean": [
         "def_6_2_4_convex_hull"
       ],
-      "startLine": 245,
-      "endLine": 259
+      "startLine": 247,
+      "endLine": 251,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_6_2_4_convex_hull",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 247,
+          "endLine": 251
+        }
+      ]
     },
     {
       "id": "prop-6-2-5",
@@ -268,8 +436,16 @@
       "lean": [
         "prop_6_2_5_convex_egli_milner_properties"
       ],
-      "startLine": 260,
-      "endLine": 363
+      "startLine": 262,
+      "endLine": 361,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_5_convex_egli_milner_properties",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 262,
+          "endLine": 361
+        }
+      ]
     },
     {
       "id": "prop-6-2-6",
@@ -278,12 +454,22 @@
       "kind": "Proposition",
       "title": "The Plotkin powerdomain of an algebraic domain is algebraic",
       "summary": "The Plotkin powerdomain of an algebraic domain is algebraic.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook states the proposition after Theorem 6.2.3 without supplying a proof; retained as a book-omission admit.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "prop_6_2_6_plotkin_powerdomain_algebraic"
       ],
-      "startLine": 364,
-      "endLine": 386
+      "startLine": 362,
+      "endLine": 378,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_6_plotkin_powerdomain_algebraic",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 362,
+          "endLine": 378
+        }
+      ]
     },
     {
       "id": "def-6-2-7",
@@ -296,8 +482,16 @@
       "lean": [
         "def_6_2_7_hoare_smyth_powertheories"
       ],
-      "startLine": 387,
-      "endLine": 424
+      "startLine": 389,
+      "endLine": 396,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_6_2_7_hoare_smyth_powertheories",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 389,
+          "endLine": 396
+        }
+      ]
     },
     {
       "id": "prop-6-2-8",
@@ -311,8 +505,22 @@
         "prop_6_2_8_hoare_smyth_powerdomain_lattice",
         "prop_6_2_8_hoare_powerdomain_lattice"
       ],
-      "startLine": 425,
-      "endLine": 436
+      "startLine": 541,
+      "endLine": 602,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_8_hoare_smyth_powerdomain_lattice",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 541,
+          "endLine": 602
+        },
+        {
+          "declaration": "prop_6_2_8_hoare_powerdomain_lattice",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 603,
+          "endLine": 614
+        }
+      ]
     },
     {
       "id": "prop-6-2-9",
@@ -325,8 +533,16 @@
       "lean": [
         "prop_6_2_9_hoare_smyth_finite_basis_approximation"
       ],
-      "startLine": 471,
-      "endLine": 484
+      "startLine": 645,
+      "endLine": 670,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_9_hoare_smyth_finite_basis_approximation",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 645,
+          "endLine": 670
+        }
+      ]
     },
     {
       "id": "thm-6-2-10",
@@ -335,13 +551,29 @@
       "kind": "Theorem",
       "title": "Hoare and Smyth powerdomains of continuous domains are continuous",
       "summary": "Hoare and Smyth powerdomains of continuous domains are continuous.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF derives the one-sided quotients from the Plotkin construction; the quotient universal properties remain source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "theorem_6_2_10_hoare_smyth_powerdomain_continuous",
         "theorem_6_2_10_hoare_powerdomain_continuous"
       ],
-      "startLine": 485,
-      "endLine": 498
+      "startLine": 671,
+      "endLine": 690,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_2_10_hoare_smyth_powerdomain_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 671,
+          "endLine": 690
+        },
+        {
+          "declaration": "theorem_6_2_10_hoare_powerdomain_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 691,
+          "endLine": 704
+        }
+      ]
     },
     {
       "id": "prop-6-2-11",
@@ -354,8 +586,16 @@
       "lean": [
         "prop_6_2_11_subset_approximation_preorders"
       ],
-      "startLine": 513,
-      "endLine": 576
+      "startLine": 705,
+      "endLine": 746,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_11_subset_approximation_preorders",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 705,
+          "endLine": 746
+        }
+      ]
     },
     {
       "id": "prop-6-2-12",
@@ -364,13 +604,29 @@
       "kind": "Proposition",
       "title": "Algebraic Hoare and Smyth powerdomains are algebraic",
       "summary": "Algebraic Hoare and Smyth powerdomains are algebraic.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook states the algebraicity consequence without a proof; retained as a book-omission admit.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "prop_6_2_12_hoare_smyth_powerdomain_algebraic",
         "prop_6_2_12_smyth_powerdomain_algebraic"
       ],
-      "startLine": 577,
-      "endLine": 592
+      "startLine": 767,
+      "endLine": 785,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_12_hoare_smyth_powerdomain_algebraic",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 767,
+          "endLine": 785
+        },
+        {
+          "declaration": "prop_6_2_12_smyth_powerdomain_algebraic",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 786,
+          "endLine": 801
+        }
+      ]
     },
     {
       "id": "thm-6-2-13",
@@ -379,12 +635,22 @@
       "kind": "Theorem",
       "title": "Hoare powerdomains can be represented by closed sets",
       "summary": "Hoare powerdomains can be represented by closed sets.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF supplies the closed-set representation proof; its order-isomorphism construction remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "theorem_6_2_13_hoare_powerdomain_closed_sets"
       ],
-      "startLine": 766,
-      "endLine": 777
+      "startLine": 956,
+      "endLine": 970,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_2_13_hoare_powerdomain_closed_sets",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 956,
+          "endLine": 970
+        }
+      ]
     },
     {
       "id": "thm-6-2-14",
@@ -393,26 +659,46 @@
       "kind": "Theorem",
       "title": "Smyth powerdomains can be represented by compact saturated sets",
       "summary": "Smyth powerdomains can be represented by compact saturated sets.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF supplies the compact-saturated representation proof; its order-isomorphism construction remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "theorem_6_2_14_smyth_powerdomain_compact_saturated"
       ],
-      "startLine": 778,
-      "endLine": 794
+      "startLine": 971,
+      "endLine": 985,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_2_14_smyth_powerdomain_compact_saturated",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 971,
+          "endLine": 985
+        }
+      ]
     },
     {
       "id": "cor-6-2-15",
       "number": "Corollary 6.2.15",
       "section": "6.2",
       "kind": "Corollary",
-      "title": "Smyth powerdomains of coherent domains are bifinite-continuous",
-      "summary": "Smyth powerdomains of coherent domains are bifinite-continuous.",
+      "title": "The Smyth powerdomain of a coherent domain with bottom is a bc-domain",
+      "summary": "For a coherent domain with bottom, its Smyth powerdomain is a bc-domain.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives the coherence/intersection argument; the corollary remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "cor_6_2_15_smyth_powerdomain_coherent_bc"
       ],
-      "startLine": 795,
-      "endLine": 826
+      "startLine": 991,
+      "endLine": 1007,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_6_2_15_smyth_powerdomain_coherent_bc",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 991,
+          "endLine": 1007
+        }
+      ]
     },
     {
       "id": "def-6-2-16",
@@ -423,10 +709,40 @@
       "summary": "Lenses and their Egli-Milner ordering.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
-        "def_6_2_16_lenses"
+        "def_6_2_16_lenses",
+        "IsLens",
+        "Lens",
+        "Lens.ext"
       ],
-      "startLine": 827,
-      "endLine": 941
+      "reviewNote": "Lens identity is now extensional in the carrier set; closed and compact-saturated presentations are existential proof data and do not affect equality.",
+      "startLine": 1038,
+      "endLine": 1042,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_6_2_16_lenses",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1038,
+          "endLine": 1042
+        },
+        {
+          "declaration": "IsLens",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1022,
+          "endLine": 1026
+        },
+        {
+          "declaration": "Lens",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1027,
+          "endLine": 1032
+        },
+        {
+          "declaration": "Lens.ext",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1078,
+          "endLine": 1086
+        }
+      ]
     },
     {
       "id": "prop-6-2-17",
@@ -437,10 +753,26 @@
       "summary": "Lenses are convex, compact, and closed under the stated operations.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
-        "prop_6_2_17_lens_closure_properties"
+        "prop_6_2_17_lens_closure_properties",
+        "lensEgliMilner_antisymm"
       ],
-      "startLine": 942,
-      "endLine": 1030
+      "reviewNote": "The antisymmetry conclusion is equality of Lens objects, obtained from carrier equality by Lens.ext.",
+      "startLine": 1189,
+      "endLine": 1213,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_6_2_17_lens_closure_properties",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1189,
+          "endLine": 1213
+        },
+        {
+          "declaration": "lensEgliMilner_antisymm",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1571,
+          "endLine": 1577
+        }
+      ]
     },
     {
       "id": "lemma-6-2-18",
@@ -449,12 +781,22 @@
       "kind": "Lemma",
       "title": "Plotkin ideals are represented by generated lenses",
       "summary": "Plotkin ideals are represented by generated lenses.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives both directions of the ideal-to-lens representation; the equivalence remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "lemma_6_2_18_plotkin_ideal_lens_representation"
       ],
-      "startLine": 1031,
-      "endLine": 1080
+      "startLine": 1279,
+      "endLine": 1296,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_6_2_18_plotkin_ideal_lens_representation",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1279,
+          "endLine": 1296
+        }
+      ]
     },
     {
       "id": "thm-6-2-19",
@@ -463,12 +805,22 @@
       "kind": "Theorem",
       "title": "Omega-continuous Plotkin powerdomains are represented by lenses",
       "summary": "Omega-continuous Plotkin powerdomains are represented by lenses.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF constructs countable lens approximants and proves surjectivity; the representation remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "theorem_6_2_19_plotkin_powerdomain_omega_lenses"
       ],
-      "startLine": 1081,
-      "endLine": 1136
+      "startLine": 1331,
+      "endLine": 1344,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_2_19_plotkin_powerdomain_omega_lenses",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1331,
+          "endLine": 1344
+        }
+      ]
     },
     {
       "id": "lemma-6-2-20",
@@ -481,8 +833,16 @@
       "lean": [
         "lemma_6_2_20_lawson_compact_lower_scott_closed"
       ],
-      "startLine": 1137,
-      "endLine": 1318
+      "startLine": 1389,
+      "endLine": 1453,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_6_2_20_lawson_compact_lower_scott_closed",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1389,
+          "endLine": 1453
+        }
+      ]
     },
     {
       "id": "cor-6-2-21",
@@ -491,12 +851,22 @@
       "kind": "Corollary",
       "title": "Coherent-domain lenses are convex Lawson-compact sets",
       "summary": "Coherent-domain lenses are convex Lawson-compact sets.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The textbook states this corollary without a proof; retained as a book-omission admit.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "cor_6_2_21_lenses_convex_lawson_compact"
       ],
-      "startLine": 1319,
-      "endLine": 1331
+      "startLine": 1578,
+      "endLine": 1592,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_6_2_21_lenses_convex_lawson_compact",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1578,
+          "endLine": 1592
+        }
+      ]
     },
     {
       "id": "thm-6-2-22",
@@ -505,12 +875,22 @@
       "kind": "Theorem",
       "title": "The Plotkin powerdomain of a coherent domain is represented by lenses",
       "summary": "The Plotkin powerdomain of a coherent domain is represented by lenses.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The PDF gives the coherent/Hofmann-Mislove proof; the representation theorem remains source-proved automation-exhausted debt.",
       "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
       "lean": [
         "theorem_6_2_22_plotkin_powerdomain_lenses"
       ],
-      "startLine": 1332,
-      "endLine": 1340
+      "startLine": 1593,
+      "endLine": 1606,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_6_2_22_plotkin_powerdomain_lenses",
+          "leanFile": "../Practice/DomainTheory/Chapter06/Section62.lean",
+          "startLine": 1593,
+          "endLine": 1606
+        }
+      ]
     }
   ]
 }

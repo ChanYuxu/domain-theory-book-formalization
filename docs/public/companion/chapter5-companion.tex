@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 \usepackage{marginnote}
 \usepackage{microtype}
+\usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \definecolor{LeanTeal}{HTML}{087F72}
 \definecolor{SourceGray}{HTML}{66736F}
@@ -16,6 +17,7 @@
 \setlength{\parskip}{0.55em}
 \setlength{\emergencystretch}{2em}
 \newcommand{\leanmarker}[2]{%
+  \Needspace{3\baselineskip}%
   \marginnote{\hyperlink{#1}{\color{LeanTeal}\fbox{\scriptsize Lean}}}%
   \hypertarget{#1}{\textbf{#2.}}%
 }

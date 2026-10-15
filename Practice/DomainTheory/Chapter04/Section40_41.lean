@@ -1,4 +1,4 @@
-import Practice.DomainTheory.Chapter04
+import Practice.DomainTheory.Chapter04.Core
 
 set_option autoImplicit false
 set_option linter.unnecessarySimpa false
@@ -333,11 +333,13 @@ def HasBottom (D : OrderedDomain.{u}) : Prop :=
   ∃ bot : D.carrier, ∀ x : D.carrier, bot ≤ x
 
 /-- Definition 4.1.1(1), the source formulation by binary suprema inside a
-principal ideal. -/
+principal ideal.  The final universal property is relative to `↓e`, as in the
+PDF; it is not the stronger assertion that the pair has a global supremum. -/
 def HasPrincipalBinarySuprema (D : OrderedDomain.{u}) : Prop :=
   ∀ e e₁ e₂ : D.carrier, e₁ ≤ e → e₂ ≤ e →
     ∃ s : D.carrier,
-      Chapter3.IsSup ({x : D.carrier | x = e₁ ∨ x = e₂}) s ∧ s ≤ e
+      s ≤ e ∧ e₁ ≤ s ∧ e₂ ≤ s ∧
+        ∀ y : D.carrier, y ≤ e → e₁ ≤ y → e₂ ≤ y → s ≤ y
 
 /-- Definition 4.1.1(2), the source formulation by suprema of bounded pairs. -/
 def HasBoundedBinarySuprema (D : OrderedDomain.{u}) : Prop :=
@@ -418,13 +420,161 @@ theorem prop_4_1_2_lattice_like_infimum_characterizations (D : OrderedDomain.{u}
       HasBottom D ∧ Chapter3.IsContinuousDomain D.carrier ∧ HasAllInfima D) := by
   exact ⟨Iff.rfl, Iff.rfl, Iff.rfl⟩
 
+/-- Binary suprema inside principal ideals are equivalent to infima of bounded
+nonempty sets in a pointed dcpo.  The forward direction takes the directed
+supremum of all lower bounds; the reverse direction takes the infimum of the
+upper bounds that lie in the chosen principal ideal. -/
+theorem principalBinarySuprema_iff_principalLowerInfima
+    (D : OrderedDomain.{u}) (hDcpo : Chapter3.IsDcpo D.carrier)
+    (hBottom : HasBottom D) :
+    HasPrincipalBinarySuprema D ↔ HasPrincipalLowerInfima D := by
+  constructor
+  · intro hSup x A hAne hAx
+    let L : Set D.carrier := {y | ∀ a ∈ A, y ≤ a}
+    rcases hBottom with ⟨bot, hbot⟩
+    have hLnonempty : L.Nonempty := ⟨bot, fun a _ha => hbot a⟩
+    have hLdirected : Chapter3.DirectedSet L := by
+      refine ⟨hLnonempty, ?_⟩
+      intro y hy z hz
+      rcases hAne with ⟨a₀, ha₀⟩
+      have hyx : y ≤ x := le_trans (hy a₀ ha₀) (hAx ha₀)
+      have hzx : z ≤ x := le_trans (hz a₀ ha₀) (hAx ha₀)
+      rcases hSup x y z hyx hzx with ⟨s, hsx, hys, hzs, hleast⟩
+      refine ⟨s, ?_, hys, hzs⟩
+      intro a ha
+      exact hleast a (hAx ha) (hy a ha) (hz a ha)
+    rcases hDcpo L hLdirected with ⟨i, hi⟩
+    refine ⟨i, ?_, ?_⟩
+    · intro a ha
+      exact hi.2 a (fun y hy => hy a ha)
+    · intro y hy
+      exact hi.1 hy
+  · intro hInf e e₁ e₂ he₁ he₂
+    let U : Set D.carrier := {y | e₁ ≤ y ∧ e₂ ≤ y ∧ y ≤ e}
+    have heU : e ∈ U := ⟨he₁, he₂, le_rfl⟩
+    have hUe : U ⊆ {y : D.carrier | y ≤ e} := fun _y hy => hy.2.2
+    rcases hInf e U ⟨e, heU⟩ hUe with ⟨i, hi⟩
+    refine ⟨i, hi.1 heU, ?_, ?_, ?_⟩
+    · exact hi.2 e₁ (fun y hy => hy.1)
+    · exact hi.2 e₂ (fun y hy => hy.2.1)
+    · intro y hye he₁y he₂y
+      exact hi.1 ⟨he₁y, he₂y, hye⟩
+
+/-- Bounded binary suprema are equivalent to infima of nonempty sets in a
+pointed dcpo. -/
+theorem boundedBinarySuprema_iff_nonemptyInfima
+    (D : OrderedDomain.{u}) (hDcpo : Chapter3.IsDcpo D.carrier)
+    (hBottom : HasBottom D) :
+    HasBoundedBinarySuprema D ↔ HasNonemptyInfima D := by
+  constructor
+  · intro hSup A hAne
+    let L : Set D.carrier := {y | ∀ a ∈ A, y ≤ a}
+    rcases hBottom with ⟨bot, hbot⟩
+    have hLnonempty : L.Nonempty := ⟨bot, fun a _ha => hbot a⟩
+    have hLdirected : Chapter3.DirectedSet L := by
+      refine ⟨hLnonempty, ?_⟩
+      intro y hy z hz
+      rcases hAne with ⟨a₀, ha₀⟩
+      rcases hSup y z ⟨a₀, hy a₀ ha₀, hz a₀ ha₀⟩ with ⟨s, hs⟩
+      refine ⟨s, ?_, hs.1 (Or.inl rfl), hs.1 (Or.inr rfl)⟩
+      intro a ha
+      exact hs.2 a (by
+        intro w hw
+        rcases hw with rfl | rfl
+        · exact hy a ha
+        · exact hz a ha)
+    rcases hDcpo L hLdirected with ⟨i, hi⟩
+    refine ⟨i, ?_, ?_⟩
+    · intro a ha
+      exact hi.2 a (fun y hy => hy a ha)
+    · intro y hy
+      exact hi.1 hy
+  · intro hInf e₁ e₂ hBound
+    let U : Set D.carrier := {y | e₁ ≤ y ∧ e₂ ≤ y}
+    have hUne : U.Nonempty := by
+      rcases hBound with ⟨e, he₁, he₂⟩
+      exact ⟨e, he₁, he₂⟩
+    rcases hInf U hUne with ⟨i, hi⟩
+    refine ⟨i, ?_, ?_⟩
+    · intro w hw
+      rcases hw with hw | hw
+      · simpa only [hw] using hi.2 e₁ (fun y hy => hy.1)
+      · simpa only [hw] using hi.2 e₂ (fun y hy => hy.2)
+    · intro y hy
+      exact hi.1 ⟨hy (Or.inl rfl), hy (Or.inr rfl)⟩
+
+/-- Unrestricted binary suprema are equivalent to all infima in a pointed
+dcpo. -/
+theorem binarySuprema_iff_allInfima
+    (D : OrderedDomain.{u}) (hDcpo : Chapter3.IsDcpo D.carrier)
+    (hBottom : HasBottom D) :
+    HasBinarySuprema D ↔ HasAllInfima D := by
+  constructor
+  · intro hSup A
+    let L : Set D.carrier := {y | ∀ a ∈ A, y ≤ a}
+    rcases hBottom with ⟨bot, hbot⟩
+    have hLnonempty : L.Nonempty := ⟨bot, fun a _ha => hbot a⟩
+    have hLdirected : Chapter3.DirectedSet L := by
+      refine ⟨hLnonempty, ?_⟩
+      intro y hy z hz
+      rcases hSup y z with ⟨s, hs⟩
+      refine ⟨s, ?_, hs.1 (Or.inl rfl), hs.1 (Or.inr rfl)⟩
+      intro a ha
+      exact hs.2 a (by
+        intro w hw
+        rcases hw with rfl | rfl
+        · exact hy a ha
+        · exact hz a ha)
+    rcases hDcpo L hLdirected with ⟨i, hi⟩
+    refine ⟨i, ?_, ?_⟩
+    · intro a ha
+      exact hi.2 a (fun y hy => hy a ha)
+    · intro y hy
+      exact hi.1 hy
+  · intro hInf e₁ e₂
+    let U : Set D.carrier := {y | e₁ ≤ y ∧ e₂ ≤ y}
+    rcases hInf U with ⟨i, hi⟩
+    refine ⟨i, ?_, ?_⟩
+    · intro w hw
+      rcases hw with hw | hw
+      · simpa only [hw] using hi.2 e₁ (fun y hy => hy.1)
+      · simpa only [hw] using hi.2 e₂ (fun y hy => hy.2)
+    · intro y hy
+      exact hi.1 ⟨hy (Or.inl rfl), hy (Or.inr rfl)⟩
+
 /-- Proposition 4.1.2 with Definition 4.1.1 encoded independently on the left.
-The book omits the proof, so this exact bridge remains visible proof debt. -/
-theorem prop_4_1_2_source_infimum_characterizations (D : OrderedDomain.{u}) :
+The explicit dcpo hypothesis supplies the directed supremum used to construct
+each infimum and is part of the textbook meaning of "continuous domain". -/
+theorem prop_4_1_2_source_infimum_characterizations (D : OrderedDomain.{u})
+    (hDcpo : Chapter3.IsDcpo D.carrier) :
     (IsLDomainByBinarySuprema D ↔ IsLDomain D) ∧
       (IsBcDomainByBinarySuprema D ↔ IsBcDomain D) ∧
         (IsContinuousLatticeDomainByBinarySuprema D ↔ IsContinuousLatticeDomain D) := by
-  admit
+  constructor
+  · simp only [IsLDomainByBinarySuprema, IsLDomain]
+    constructor
+    · rintro ⟨hbot, hcont, hsup⟩
+      exact ⟨hbot, hcont,
+        (principalBinarySuprema_iff_principalLowerInfima D hDcpo hbot).1 hsup⟩
+    · rintro ⟨hbot, hcont, hinf⟩
+      exact ⟨hbot, hcont,
+        (principalBinarySuprema_iff_principalLowerInfima D hDcpo hbot).2 hinf⟩
+  constructor
+  · simp only [IsBcDomainByBinarySuprema, IsBcDomain]
+    constructor
+    · rintro ⟨hbot, hcont, hsup⟩
+      exact ⟨hbot, hcont,
+        (boundedBinarySuprema_iff_nonemptyInfima D hDcpo hbot).1 hsup⟩
+    · rintro ⟨hbot, hcont, hinf⟩
+      exact ⟨hbot, hcont,
+        (boundedBinarySuprema_iff_nonemptyInfima D hDcpo hbot).2 hinf⟩
+  · simp only [IsContinuousLatticeDomainByBinarySuprema,
+      IsContinuousLatticeDomain]
+    constructor
+    · rintro ⟨hbot, hcont, hsup⟩
+      exact ⟨hbot, hcont, (binarySuprema_iff_allInfima D hDcpo hbot).1 hsup⟩
+    · rintro ⟨hbot, hcont, hinf⟩
+      exact ⟨hbot, hcont, (binarySuprema_iff_allInfima D hDcpo hbot).2 hinf⟩
 
 /-- The Chapter 3 bilimit carrier, viewed as a Chapter 4 ordered-domain object. -/
 def BilimitOrderedDomain
@@ -2678,6 +2828,26 @@ theorem cor_4_1_6_lattice_like_and_algebraic_categories_cartesian_closed_of_data
   rcases cor_4_1_6_algebraic_lattice_like_categories_cartesian_closed_of_data hAlgebraic with
     ⟨haL, haBC, haLAT⟩
   exact ⟨hL, hBC, hLAT, haL, haBC, haLAT⟩
+
+/-- Corollary 4.1.6, source-facing categorical statement.  Each class is a
+full subcategory of `DCPO` with a terminal object, categorical products, and
+exponentials satisfying the hom-order universal property.  The textbook states
+this corollary without a separate proof, so the categorical construction is a
+visible book-omission boundary rather than being weakened to object closure. -/
+theorem cor_4_1_6_lattice_like_and_algebraic_categories_cartesian_closed_sourceExact :
+    Nonempty (DomainClass.CartesianClosedFullSubcategoryData
+        (LDomainClass : DomainClass.{u})) ∧
+      Nonempty (DomainClass.CartesianClosedFullSubcategoryData
+        (BcDomainClass : DomainClass.{u})) ∧
+        Nonempty (DomainClass.CartesianClosedFullSubcategoryData
+          (ContinuousLatticeDomainClass : DomainClass.{u})) ∧
+          Nonempty (DomainClass.CartesianClosedFullSubcategoryData
+            (AlgebraicLDomainClass : DomainClass.{u})) ∧
+            Nonempty (DomainClass.CartesianClosedFullSubcategoryData
+              (AlgebraicBcDomainClass : DomainClass.{u})) ∧
+              Nonempty (DomainClass.CartesianClosedFullSubcategoryData
+                (AlgebraicContinuousLatticeDomainClass : DomainClass.{u})) := by
+  admit
 
 /-- Corollary 4.1.6, PDF text: "The categories L, BC, LAT, and their algebraic
 counterparts are cartesian closed."  Direct registered placeholder for the

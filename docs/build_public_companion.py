@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build public TeX companion PDFs for Chapters 2-7.
+"""Build public TeX companion PDFs for Chapters 2--9.
 
 Only reviewed numbered items and diagram environments are included.  Automatic
 OCR prose and the original textbook PDF never enter this build.
@@ -21,7 +21,7 @@ PUBLIC = DOCS / "public"
 COMPANION = PUBLIC / "companion"
 LOCATORS = PUBLIC / "source-locators.json"
 BUILD_DIR = ROOT / "tmp" / "public-companion"
-CHAPTERS = range(2, 8)
+CHAPTERS = range(2, 10)
 CHAPTER_TITLES = {
     2: "Domains individually",
     3: "Domains collectively",
@@ -29,6 +29,8 @@ CHAPTER_TITLES = {
     5: "Recursive domain equations",
     6: "Equational theories",
     7: "Domains and logic",
+    8: "Further directions",
+    9: "Guide to the literature",
 }
 
 BLOCK_ID_RE = re.compile(r"^p(?P<page>\d+)-b(?P<block>\d+)$")
@@ -86,6 +88,7 @@ def tex_preamble(chapter: int, title: str) -> list[str]:
         r"\usepackage{xcolor}",
         r"\usepackage{marginnote}",
         r"\usepackage{microtype}",
+        r"\usepackage{needspace}",
         r"\usepackage[hidelinks]{hyperref}",
         r"\definecolor{LeanTeal}{HTML}{087F72}",
         r"\definecolor{SourceGray}{HTML}{66736F}",
@@ -93,6 +96,7 @@ def tex_preamble(chapter: int, title: str) -> list[str]:
         r"\setlength{\parskip}{0.55em}",
         r"\setlength{\emergencystretch}{2em}",
         r"\newcommand{\leanmarker}[2]{%",
+        r"  \Needspace{3\baselineskip}%",
         r"  \marginnote{\hyperlink{#1}{\color{LeanTeal}\fbox{\scriptsize Lean}}}%",
         r"  \hypertarget{#1}{\textbf{#2.}}%",
         r"}",
@@ -123,7 +127,9 @@ def build_chapter_tex(chapter: int, locators: dict) -> str:
         if not locator:
             raise SystemExit(f"Chapter {chapter}: missing public locator for {item_id}")
         page, block = block_order(locator["block"])
-        item_tex = override["tex"].replace(r"\begin{figure}[h]", r"\begin{figure}[ht]")
+        item_tex = override["tex"].replace(
+            r"\begin{figure}[h]", r"\begin{figure}[ht]"
+        )
         item_diagram_keys.update(diagram_key(fragment) for fragment in diagram_fragments(item_tex))
         events.append((page, block, 10 + map_index, {"type": "item", "map": item, "tex": item_tex}))
 

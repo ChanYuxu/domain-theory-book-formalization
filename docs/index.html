@@ -145,7 +145,7 @@
   <main>
     <div class="grid" id="chapterGrid"></div>
     <div class="notice">
-      Chapters 2 and 3 support editing Lean snippets with save-build-rollback. Later chapter readers currently open in review mode.
+      Chapters 2-9 support editing Lean snippets with transactional save, Lean build, and automatic rollback on failure.
     </div>
   </main>
 
@@ -154,9 +154,11 @@
       { n: 2, title: "Basic definitions and results", editable: true, items: "Chapter 2 Lean editing enabled" },
       { n: 3, title: "Categories, functors, and constructions", editable: true, items: "Chapter 3 Lean editing enabled" },
       { n: 4, title: "Cartesian closed categories of domains", editable: true, items: "Chapter 4 Lean editing enabled" },
-      { n: 5, title: "Recursive domain equations", editable: false, items: "Review reader" },
-      { n: 6, title: "Powerdomains", editable: false, items: "Review reader" },
-      { n: 7, title: "Stone duality", editable: false, items: "Review reader" }
+      { n: 5, title: "Recursive domain equations", editable: true, items: "Chapter 5 Lean editing enabled" },
+      { n: 6, title: "Powerdomains", editable: true, items: "Chapter 6 Lean editing enabled" },
+      { n: 7, title: "Stone duality", editable: true, items: "Chapter 7 Lean editing enabled" },
+      { n: 8, title: "Further directions", editable: true, items: "19 source-aligned survey items" },
+      { n: 9, title: "Guide to the literature", editable: true, items: "12 queryable bibliography items" }
     ];
 
     const grid = document.getElementById("chapterGrid");

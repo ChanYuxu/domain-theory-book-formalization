@@ -1,4 +1,4 @@
-import Practice.DomainTheory.Chapter05
+import Practice.DomainTheory.Chapter05.Core
 
 set_option autoImplicit false
 set_option linter.unnecessarySimpa false

@@ -21,6 +21,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
+      - name: Check module architecture
+        run: python3 docs/check_architecture.py
+
+      - name: Validate review schemas
+        run: python3 docs/validate_workflow_state.py docs/chapter*-review.json architecture/module-policy.json
+
+      - name: Check maps and proof-debt ledgers
+        run: python3 docs/check_formalization_metadata.py
+
       - name: Build Lean project
         uses: leanprover/lean-action@v1
         with:
@@ -28,6 +37,9 @@ jobs:
           build: true
           build-args: Practice
           test: false
+
+      - name: Check transitive axiom disclosure
+        run: python3 docs/check_axiom_footprint.py --no-build
 
       - name: Install TeX dependencies
         run: |

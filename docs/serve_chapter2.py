@@ -56,6 +56,14 @@ CHAPTERS = {
         "map": ROOT / "docs/chapter7-map.json",
         "target": "Practice.DomainTheory.Chapter07.NumberedItems",
     },
+    8: {
+        "map": ROOT / "docs/chapter8-map.json",
+        "target": "Practice.DomainTheory.Chapter08",
+    },
+    9: {
+        "map": ROOT / "docs/chapter9-map.json",
+        "target": "Practice.DomainTheory.Chapter09",
+    },
 }
 
 

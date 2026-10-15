@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DEFAULT_OUTPUT = DOCS / "public" / "source-locators.json"
-CHAPTERS = range(2, 8)
+CHAPTERS = range(2, 10)
 
 
 def load_json(path: Path) -> dict:

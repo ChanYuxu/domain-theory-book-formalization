@@ -464,7 +464,7 @@
     "p136-b1": {
       "status": "reviewed",
       "tex": "\\subsubsection*{7.3.5 Recursive domain equations}\nSuppose\n\\[\nA_0\\preccurlyeq A_1\\preccurlyeq A_2\\preccurlyeq\\cdots\n\\]\nis a chain of domain prelocales and each \\(A_n\\) describes a bifinite domain \\(D_n\\). Corollary 7.3.7 translates \\(A_n\\preccurlyeq A_m\\), for \\(n\\le m\\), into embeddings \\(e_{mn}:D_n\\to D_m\\), and these form an expanding system. Put \\(A=\\bigcup_{n\\in\\mathbb{N}}A_n\\) and let \\(D=\\operatorname{bilim}D_n\\). The interpretation is defined by\n\\[\n  \\llbracket a\\rrbracket=l_m(\\llbracket a\\rrbracket_{A_m}),\n\\]\nwhere \\(m\\) is chosen with \\(a\\in A_m\\). This is independent of \\(m\\): if \\(m\\le k\\), then\n\\[\n  \\llbracket a\\rrbracket_{A_k}=e_{km}(\\llbracket a\\rrbracket_{A_m}),\n  \\qquad\n  l_k(\\llbracket a\\rrbracket_{A_k})=l_m(\\llbracket a\\rrbracket_{A_m}).\n\\]\nSoundness, prime generation, completeness, definability, and naturality follow from the corresponding finite stages. For naturality, if \\(B=\\bigcup B_n\\) is a second chain and \\(A_n\\preccurlyeq B_n\\), the embedding \\(e:D\\to E\\) satisfies for \\(a\\in C(A)\\):\n\\[\n\\begin{aligned}\ne(\\llbracket a\\rrbracket_A^0)\n &= \\Bigl(\\bigcup_{n\\in\\mathbb{N}}k_n\\circ e_n\\circ l_n^*\\Bigr)(l_m(\\llbracket a\\rrbracket_{A_m}^0))\\\\\n &= \\bigcup_{n\\ge m}k_n\\circ e_n(\\llbracket a\\rrbracket_{A_m}^0)\\\\\n &= \\bigcup_{n\\ge m}k_n(\\llbracket a\\rrbracket_{B_m}^0)\n  = \\llbracket a\\rrbracket_B^0.\n\\end{aligned}\n\\]",
-      "skipBlocksAfter": 13
+      "skipBlocksAfter": 12
     },
     "p137-b1": {
       "status": "reviewed",
@@ -701,6 +701,10 @@
       "status": "reviewed",
       "tex": "\\vspace{0pt}",
       "skipBlocksAfter": 0
+    },
+    "p138-b29": {
+      "status": "reviewed",
+      "tex": "Here \\(\\sigma[\\tau/X]\\) denotes capture-avoiding substitution of \\(\\tau\\) for \\(X\\) in \\(\\sigma\\). The preceding formation rules generate, for every type expression \\(\\sigma\\), the carrier of a syntactic domain prelocale \\(\\mathcal L(\\sigma)\\). No separate property constructors are needed for a recursive type: its observable properties are those of the approximating domains assembled by Theorem~7.3.14. Each \\(\\mathcal L(\\sigma)\\) is then equipped, by a further inductive definition, with a preorder \\(\\preceq\\) and predicates \\(C\\) and \\(T\\), where \\(T\\) is used for the coalesced-sum construction."
     },
     "p142-b33": {
       "status": "reviewed",

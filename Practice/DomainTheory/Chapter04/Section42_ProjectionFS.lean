@@ -1545,12 +1545,22 @@ structure CompactSaturatedCarrier (D : OrderedDomain.{u}) where
   compact_saturated : IsCompactSaturated D carrierSet
 
 instance compactSaturatedCarrierPreorder (D : OrderedDomain.{u}) :
-    Preorder (CompactSaturatedCarrier D) where
+    PartialOrder (CompactSaturatedCarrier D) where
   le A B := B.carrierSet ⊆ A.carrierSet
   le_refl A := by intro x hx; exact hx
   le_trans A B C hAB hBC := by
     intro x hx
     exact hAB (hBC hx)
+  le_antisymm A B hAB hBA := by
+    cases A with
+    | mk A hA =>
+      cases B with
+      | mk B hB =>
+        have hAB' : B ⊆ A := hAB
+        have hBA' : A ⊆ B := hBA
+        have hEq : A = B := Set.Subset.antisymm hBA' hAB'
+        subst B
+        rfl
 
 /-- The nonempty part `κD \ {∅}` from Proposition 4.2.14. -/
 structure NonemptyCompactSaturatedCarrier (D : OrderedDomain.{u}) where
@@ -1559,12 +1569,22 @@ structure NonemptyCompactSaturatedCarrier (D : OrderedDomain.{u}) where
   nonempty : carrierSet.Nonempty
 
 instance nonemptyCompactSaturatedCarrierPreorder (D : OrderedDomain.{u}) :
-    Preorder (NonemptyCompactSaturatedCarrier D) where
+    PartialOrder (NonemptyCompactSaturatedCarrier D) where
   le A B := B.carrierSet ⊆ A.carrierSet
   le_refl A := by intro x hx; exact hx
   le_trans A B C hAB hBC := by
     intro x hx
     exact hAB (hBC hx)
+  le_antisymm A B hAB hBA := by
+    cases A with
+    | mk A hA hAne =>
+      cases B with
+      | mk B hB hBne =>
+        have hAB' : B ⊆ A := hAB
+        have hBA' : A ⊆ B := hBA
+        have hEq : A = B := Set.Subset.antisymm hBA' hAB'
+        subst B
+        rfl
 
 /-- Scott opens as an ordered carrier, ordered by inclusion. -/
 structure ScottOpenCarrier (D : OrderedDomain.{u}) where
@@ -1572,12 +1592,22 @@ structure ScottOpenCarrier (D : OrderedDomain.{u}) where
   scott_open : Chapter2.ScottOpen carrierSet
 
 instance scottOpenCarrierPreorder (D : OrderedDomain.{u}) :
-    Preorder (ScottOpenCarrier D) where
+    PartialOrder (ScottOpenCarrier D) where
   le O U := O.carrierSet ⊆ U.carrierSet
   le_refl O := by intro x hx; exact hx
   le_trans O U V hOU hUV := by
     intro x hx
     exact hUV (hOU hx)
+  le_antisymm O U hOU hUO := by
+    cases O with
+    | mk O hO =>
+      cases U with
+      | mk U hU =>
+        have hOU' : O ⊆ U := hOU
+        have hUO' : U ⊆ O := hUO
+        have hEq : O = U := Set.Subset.antisymm hOU' hUO'
+        subst U
+        rfl
 
 namespace ScottOpenCarrier
 

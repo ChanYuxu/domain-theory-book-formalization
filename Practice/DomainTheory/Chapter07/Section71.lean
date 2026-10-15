@@ -1,4 +1,4 @@
-import Practice.DomainTheory.Chapter07
+import Practice.DomainTheory.Chapter07.StoneCore
 
 set_option autoImplicit false
 set_option linter.unnecessarySimpa false
@@ -1186,6 +1186,234 @@ structure StoneContinuousMap (X Y : Space.{u}) where
   preimage_open :
     ∀ U : Set Y.Point, Y.IsOpen U → X.IsOpen {x : X.Point | toFun x ∈ U}
 
+namespace FrameHom
+
+/-- A frame homomorphism is monotone. -/
+theorem monotone {K : Type u} {L : Type v} [CompleteLattice K] [CompleteLattice L]
+    (h : FrameHom K L) : Monotone h.toFun := by
+  intro x y hxy
+  have hInf : x ⊓ y = x := inf_eq_left.2 hxy
+  calc
+    h.toFun x = h.toFun (x ⊓ y) := congrArg h.toFun hInf.symm
+    _ = h.toFun x ⊓ h.toFun y := h.map_inf x y
+    _ ≤ h.toFun y := inf_le_right
+
+end FrameHom
+
+/-- The inverse-image frame homomorphism induced by a continuous map. -/
+def openSetPreimageFrameHom {X Y : Space.{u}} (f : StoneContinuousMap X Y) :
+    FrameHom (OpenSet Y) (OpenSet X) where
+  toFun U := ⟨{ x : X.Point | f.toFun x ∈ U.1 }, f.preimage_open U.1 U.2⟩
+  map_sSup := by
+    intro S
+    apply Subtype.ext
+    ext x
+    constructor
+    · intro hx
+      rcases (OpenSet.mem_sSup_iff Y S (f.toFun x)).1 hx with ⟨U, hUS, hxU⟩
+      exact (OpenSet.mem_sSup_iff X
+        ((fun U : OpenSet Y =>
+          (⟨{ x : X.Point | f.toFun x ∈ U.1 }, f.preimage_open U.1 U.2⟩ : OpenSet X)) '' S) x).2
+            ⟨⟨{ x : X.Point | f.toFun x ∈ U.1 }, f.preimage_open U.1 U.2⟩,
+              ⟨U, hUS, rfl⟩, hxU⟩
+    · intro hx
+      rcases (OpenSet.mem_sSup_iff X
+        ((fun U : OpenSet Y =>
+          (⟨{ x : X.Point | f.toFun x ∈ U.1 }, f.preimage_open U.1 U.2⟩ : OpenSet X)) '' S) x).1 hx with
+        ⟨V, ⟨U, hUS, hUV⟩, hxV⟩
+      subst V
+      exact (OpenSet.mem_sSup_iff Y S (f.toFun x)).2 ⟨U, hUS, hxV⟩
+  map_top := by
+    apply Subtype.ext
+    ext x
+    change f.toFun x ∈ (⊤ : OpenSet Y).1 ↔ x ∈ (⊤ : OpenSet X).1
+    rw [OpenSet.top_eq_univ Y, OpenSet.top_eq_univ X]
+    simp
+  map_inf := by
+    intro U V
+    apply Subtype.ext
+    ext x
+    change f.toFun x ∈ (U ⊓ V).1 ↔
+      x ∈
+        ((⟨{x : X.Point | f.toFun x ∈ U.1}, f.preimage_open U.1 U.2⟩ : OpenSet X) ⊓
+          ⟨{x : X.Point | f.toFun x ∈ V.1}, f.preimage_open V.1 V.2⟩).1
+    rw [OpenSet.inf_eq_inter Y U V]
+    rw [OpenSet.inf_eq_inter X]
+    rfl
+
+/-- The inverse image of a completely prime filter under a frame homomorphism. -/
+def frameHomPointPreimage {K L : Type u} [CompleteLattice K] [CompleteLattice L]
+    (h : FrameHom K L) (F : Point L) : Point K := by
+  refine ⟨{x : K | h.toFun x ∈ F.1}, ?_⟩
+  constructor
+  · constructor
+    · change h.toFun ⊤ ∈ F.1
+      rw [h.map_top]
+      exact F.2.1.1
+    · constructor
+      · intro x y hx hxy
+        exact F.2.1.2.1 hx (h.monotone hxy)
+      · intro x y hx hy
+        change h.toFun (x ⊓ y) ∈ F.1
+        rw [h.map_inf]
+        exact F.2.1.2.2 hx hy
+  · intro S hSup
+    have hImageSup : sSup (h.toFun '' S) ∈ F.1 := by
+      rw [← h.map_sSup S]
+      exact hSup
+    rcases F.2.2 (h.toFun '' S) hImageSup with ⟨y, ⟨x, hxS, rfl⟩, hxF⟩
+    exact ⟨x, hxS, hxF⟩
+
+/-- The contravariant point-space action of a frame homomorphism. -/
+def spectrumMapOfFrameHom {K L : Frame.{u}}
+    (h : FrameHom K.carrier L.carrier) :
+    StoneContinuousMap (pointSpace L.carrier) (pointSpace K.carrier) where
+  toFun := frameHomPointPreimage h
+  preimage_open := by
+    intro U hU
+    induction hU with
+    | basic x =>
+        simpa [frameHomPointPreimage, pointBasicOpen] using
+          (PointOpen.basic (h.toFun x) :
+            PointOpen L.carrier (pointBasicOpen (h.toFun x)))
+    | univ =>
+        simpa using (PointOpen.univ : PointOpen L.carrier Set.univ)
+    | inter _hU _hV ihU ihV =>
+        exact PointOpen.inter ihU ihV
+    | sUnion S _hS ihS =>
+        let T : Set (Set (Point L.carrier)) :=
+          (fun V : Set (Point K.carrier) =>
+            {F : Point L.carrier | frameHomPointPreimage h F ∈ V}) '' S
+        have hT : ∀ V ∈ T, PointOpen L.carrier V := by
+          intro V hVT
+          rcases hVT with ⟨W, hWS, rfl⟩
+          exact ihS W hWS
+        have hOpen : PointOpen L.carrier (⋃₀ T) := PointOpen.sUnion T hT
+        convert hOpen using 1
+        ext F
+        constructor
+        · intro hF
+          rcases hF with ⟨V, hVS, hFV⟩
+          exact ⟨{G : Point L.carrier | frameHomPointPreimage h G ∈ V},
+            ⟨V, hVS, rfl⟩, hFV⟩
+        · intro hF
+          rcases hF with ⟨V, ⟨W, hWS, hVW⟩, hFV⟩
+          subst V
+          exact ⟨W, hWS, hFV⟩
+
+/-- The neighborhood filter of a point in the concrete lattice of opens. -/
+def pointNeighborhoodFilter (X : Space.{u}) (x : X.Point) : Set (OpenSet X) :=
+  {U : OpenSet X | x ∈ U.1}
+
+theorem pointNeighborhoodFilter_completelyPrime
+    (X : Space.{u}) (x : X.Point) :
+    IsCompletelyPrimeFilter (pointNeighborhoodFilter X x) := by
+  constructor
+  · constructor
+    · unfold pointNeighborhoodFilter
+      change x ∈ (⊤ : OpenSet X).1
+      rw [OpenSet.top_eq_univ X]
+      exact Set.mem_univ x
+    · constructor
+      · intro U V hU hUV
+        exact hUV hU
+      · intro U V hU hV
+        unfold pointNeighborhoodFilter at hU hV
+        unfold pointNeighborhoodFilter
+        change x ∈ (U ⊓ V).1
+        rw [OpenSet.inf_eq_inter X U V]
+        exact ⟨hU, hV⟩
+  · intro S hSup
+    unfold pointNeighborhoodFilter at hSup
+    rcases (OpenSet.mem_sSup_iff X S x).1 hSup with ⟨U, hUS, hxU⟩
+    exact ⟨U, hUS, hxU⟩
+
+/-- A point of `pt(Omega(X))` represented by the neighborhoods of `x`. -/
+def stoneUnitPoint (X : Space.{u}) (x : X.Point) : Point (OpenSet X) :=
+  ⟨pointNeighborhoodFilter X x, pointNeighborhoodFilter_completelyPrime X x⟩
+
+/-- The space-side unit `eta_X`, sending a point to its neighborhood filter. -/
+def stoneUnitContinuous (X : Space.{u}) :
+    StoneContinuousMap X (pointSpace (OpenSet X)) where
+  toFun := stoneUnitPoint X
+  preimage_open := by
+    intro U hU
+    induction hU with
+    | basic V =>
+        simpa [pointNeighborhoodFilter, pointBasicOpen] using V.2
+    | univ =>
+        simpa using X.univ_open
+    | inter _hU _hV ihU ihV =>
+        exact X.inter_open _ _ ihU ihV
+    | sUnion S _hS ihS =>
+        let T : Set (Set X.Point) :=
+          (fun V : Set (Point (OpenSet X)) =>
+            {x : X.Point | stoneUnitPoint X x ∈ V}) '' S
+        have hT : ∀ V ∈ T, X.IsOpen V := by
+          intro V hVT
+          rcases hVT with ⟨W, hWS, rfl⟩
+          exact ihS W hWS
+        have hOpen : X.IsOpen (⋃₀ T) := X.sUnion_open T hT
+        convert hOpen using 1
+        ext x
+        constructor
+        · intro hx
+          rcases hx with ⟨V, hVS, hxV⟩
+          exact ⟨{x : X.Point | stoneUnitPoint X x ∈ V}, ⟨V, hVS, rfl⟩, hxV⟩
+        · intro hx
+          rcases hx with ⟨V, ⟨W, hWS, hVW⟩, hxV⟩
+          subst V
+          exact ⟨W, hWS, hxV⟩
+
+/-- The lattice-side unit `epsilon_L`, sending `a` to its basic open `O_a`. -/
+def stoneEpsilonFrameHom (L : Frame.{u}) :
+    FrameHom L.carrier (OpenSet (pointSpace L.carrier)) where
+  toFun a := ⟨pointBasicOpen a, PointOpen.basic a⟩
+  map_sSup := by
+    intro S
+    apply Subtype.ext
+    ext F
+    constructor
+    · intro hSup
+      rcases F.2.2 S hSup with ⟨a, haS, haF⟩
+      exact (OpenSet.mem_sSup_iff (pointSpace L.carrier)
+        ((fun a : L.carrier =>
+          (⟨pointBasicOpen a, PointOpen.basic a⟩ : OpenSet (pointSpace L.carrier))) '' S) F).2
+            ⟨⟨pointBasicOpen a, PointOpen.basic a⟩, ⟨a, haS, rfl⟩, haF⟩
+    · intro hUnion
+      rcases (OpenSet.mem_sSup_iff (pointSpace L.carrier)
+        ((fun a : L.carrier =>
+          (⟨pointBasicOpen a, PointOpen.basic a⟩ : OpenSet (pointSpace L.carrier))) '' S) F).1
+          hUnion with ⟨U, ⟨a, haS, hUa⟩, hFU⟩
+      subst U
+      exact F.2.1.2.1 hFU (le_sSup haS)
+  map_top := by
+    apply Subtype.ext
+    ext F
+    rw [OpenSet.top_eq_univ (pointSpace L.carrier)]
+    constructor
+    · intro _h
+      exact Set.mem_univ F
+    · intro _h
+      exact F.2.1.1
+  map_inf := by
+    intro a b
+    apply Subtype.ext
+    ext F
+    rw [OpenSet.inf_eq_inter (pointSpace L.carrier)]
+    constructor
+    · intro hab
+      exact ⟨F.2.1.2.1 hab inf_le_left, F.2.1.2.1 hab inf_le_right⟩
+    · intro hab
+      exact F.2.1.2.2 hab.1 hab.2
+
+/-- The concrete `Omega`/`pt` object maps and units. -/
+def concreteStoneAdjunction : StoneAdjunction.{u} where
+  opens X := ⟨OpenSet X, OpenSet.completeLattice X⟩
+  spectrum L := @pointSpace L.carrier L.lattice
+  unit X := (stoneUnitContinuous X).toFun
+  epsilon L := (stoneEpsilonFrameHom L).toFun
+
 /-- Data for the dual adjunction in Theorem 7.1.14.  The fields spell out the
 contravariant action on maps, the unit `eta`, the lattice-side unit `epsilon`,
 and the naturality/triangle equations described in the PDF. -/
@@ -1201,38 +1429,156 @@ structure StoneDualAdjunctionData where
     ∀ X : Space.{u}, StoneContinuousMap X (adjunction.spectrum (adjunction.opens X))
   unit_agrees :
     ∀ X : Space.{u}, ∀ x : X.Point, (unit_continuous X).toFun x = adjunction.unit X x
-  counit_frame_hom :
-    ∀ L : Frame.{u}, FrameHom (adjunction.opens (adjunction.spectrum L)).carrier L.carrier
-  counit_agrees :
-    ∀ L : Frame.{u}, ∀ a : (adjunction.opens (adjunction.spectrum L)).carrier,
-      (counit_frame_hom L).toFun a = adjunction.counit L a
-  epsilon :
-    ∀ L : Frame.{u}, L.carrier → (adjunction.opens (adjunction.spectrum L)).carrier
   epsilon_frame_hom :
     ∀ L : Frame.{u}, FrameHom L.carrier (adjunction.opens (adjunction.spectrum L)).carrier
   epsilon_agrees :
-    ∀ L : Frame.{u}, ∀ a : L.carrier, (epsilon_frame_hom L).toFun a = epsilon L a
+    ∀ L : Frame.{u}, ∀ a : L.carrier,
+      (epsilon_frame_hom L).toFun a = adjunction.epsilon L a
   unit_naturality :
     ∀ {X Y : Space.{u}}, ∀ f : StoneContinuousMap X Y, ∀ x : X.Point,
       (spectrumMap (opensMap f)).toFun (adjunction.unit X x) =
         adjunction.unit Y (f.toFun x)
   epsilon_naturality :
     ∀ {K L : Frame.{u}}, ∀ h : FrameHom K.carrier L.carrier, ∀ a : K.carrier,
-      (opensMap (spectrumMap h)).toFun (epsilon K a) = epsilon L (h.toFun a)
-  counit_epsilon_left :
-    ∀ L : Frame.{u}, ∀ a : L.carrier, adjunction.counit L (epsilon L a) = a
-  counit_epsilon_right :
-    ∀ L : Frame.{u}, ∀ a : (adjunction.opens (adjunction.spectrum L)).carrier,
-      epsilon L (adjunction.counit L a) = a
+      (opensMap (spectrumMap h)).toFun (adjunction.epsilon K a) =
+        adjunction.epsilon L (h.toFun a)
+  left_triangle :
+    ∀ X : Space.{u}, ∀ U : (adjunction.opens X).carrier,
+      (opensMap (unit_continuous X)).toFun
+          (adjunction.epsilon (adjunction.opens X) U) = U
+  right_triangle :
+    ∀ L : Frame.{u}, ∀ F : (adjunction.spectrum L).Point,
+      (spectrumMap (epsilon_frame_hom L)).toFun
+          ((unit_continuous (adjunction.spectrum L)).toFun F) = F
 
-/-- Theorem 7.1.1.  PDF text: complete-lattice continuity is equivalent to the
-directed distributivity law.
+/-- The canonical supremum in a complete lattice satisfies the local `IsSup`
+interface used by Chapter 2. -/
+private theorem completeLattice_sSup_isSup
+    (L : Type u) [CompleteLattice L] (A : Set L) :
+    Chapter2.IsSup A (sSup A) := by
+  constructor
+  · intro a ha
+    exact le_sSup ha
+  · intro y hy
+    exact sSup_le hy
 
-This Stone/Raney lattice theorem is registered as local proof debt. -/
+/-- Theorem 7.1.1.  Complete-lattice continuity is equivalent to the directed
+choice distributivity law.  The index type is quantified in the universe of
+`L`, which is required by the converse's family of all directed subsets. -/
 theorem theorem_7_1_1_complete_lattice_continuity_distributivity
     (L : Type u) [CompleteLattice L] :
-    IsContinuousCompleteLattice L ↔ DirectedChoiceMeetJoinLaw.{u, v} L := by
-  admit
+    IsContinuousCompleteLattice L ↔ DirectedChoiceMeetJoinLaw.{u, u} L := by
+  constructor
+  · intro hContinuous ι A hDirected
+    apply le_antisymm
+    · rcases hContinuous.2 with ⟨B, hB⟩
+      rcases hB (sInf (Set.range (fun i : ι => sSup (A i)))) with
+        ⟨C, hCsub, _hCdirected, hCsup⟩
+      apply hCsup.2
+      intro c hcC
+      have hcWayBelow :
+          Chapter2.WayBelow c (sInf (Set.range (fun i : ι => sSup (A i)))) :=
+        (hCsub hcC).2
+      have hChoice : ∀ i : ι, ∃ a ∈ A i, c ≤ a := by
+        intro i
+        exact hcWayBelow (hDirected i)
+          (completeLattice_sSup_isSup L (A i))
+          (sInf_le ⟨i, rfl⟩)
+      let f : ∀ i : ι, {a : L // a ∈ A i} := fun i =>
+        ⟨Classical.choose (hChoice i), (Classical.choose_spec (hChoice i)).1⟩
+      have hcf : c ≤ sInf (Set.range (fun i : ι => (f i).1)) := by
+        apply le_sInf
+        intro a ha
+        rcases ha with ⟨i, rfl⟩
+        exact (Classical.choose_spec (hChoice i)).2
+      exact hcf.trans (le_sSup ⟨f, rfl⟩)
+    · apply sSup_le
+      intro y hy
+      rcases hy with ⟨f, rfl⟩
+      apply le_sInf
+      intro z hz
+      rcases hz with ⟨i, rfl⟩
+      have hMeetLe :
+          sInf (Set.range (fun j : ι => (f j).1)) ≤ (f i).1 :=
+        sInf_le ⟨i, rfl⟩
+      exact hMeetLe.trans (le_sSup (f i).2)
+  · intro hLaw
+    refine ⟨completeLattice_isDcpo L, ⟨Set.univ, ?_⟩⟩
+    intro x
+    let I := {A : Set L // Chapter2.DirectedSet A ∧ x ≤ sSup A}
+    let family : I → Set L := fun i => i.1
+    let choices : Set L :=
+      {y : L |
+        ∃ f : ∀ i : I, {a : L // a ∈ family i},
+          y = sInf (Set.range (fun i : I => (f i).1))}
+    have hFamilyDirected : ∀ i : I, Chapter2.DirectedSet (family i) :=
+      fun i => i.2.1
+    have hLeft :
+        sInf (Set.range (fun i : I => sSup (family i))) = x := by
+      apply le_antisymm
+      · let ix : I := ⟨{x}, Chapter2.directed_singleton x, by simp⟩
+        have hle :
+            sInf (Set.range (fun i : I => sSup (family i))) ≤
+              sSup (family ix) := sInf_le ⟨ix, rfl⟩
+        simpa [family, ix] using hle
+      · apply le_sInf
+        intro y hy
+        rcases hy with ⟨i, rfl⟩
+        exact i.2.2
+    have hMain : x = sSup choices := by
+      calc
+        x = sInf (Set.range (fun i : I => sSup (family i))) := hLeft.symm
+        _ = sSup choices := by
+          simpa [choices] using hLaw I family hFamilyDirected
+    have hChoicesWayBelow : ∀ y ∈ choices, Chapter2.WayBelow y x := by
+      intro y hy
+      rcases hy with ⟨f, rfl⟩
+      intro A s hAdirected hAsup hxs
+      have hsSup : Chapter2.IsSup A (sSup A) :=
+        completeLattice_sSup_isSup L A
+      have hSupEq : sSup A = s := Chapter2.IsSup.unique hsSup hAsup
+      let i : I := ⟨A, hAdirected, by simpa [hSupEq] using hxs⟩
+      refine ⟨(f i).1, (f i).2, ?_⟩
+      exact sInf_le ⟨i, rfl⟩
+    refine ⟨choices, ?_, ?_, ?_⟩
+    · intro y hy
+      exact ⟨Set.mem_univ y, hChoicesWayBelow y hy⟩
+    · constructor
+      · have hMember : ∀ i : I, ∃ a : L, a ∈ family i :=
+          fun i => i.2.1.1
+        let f : ∀ i : I, {a : L // a ∈ family i} := fun i =>
+          ⟨Classical.choose (hMember i), Classical.choose_spec (hMember i)⟩
+        exact ⟨sInf (Set.range (fun i : I => (f i).1)), ⟨f, rfl⟩⟩
+      · intro y hy z hz
+        rcases hy with ⟨f, rfl⟩
+        rcases hz with ⟨g, rfl⟩
+        have hUpper : ∀ i : I,
+            ∃ a ∈ family i, (f i).1 ≤ a ∧ (g i).1 ≤ a := by
+          intro i
+          exact i.2.1.2 (f i).2 (g i).2
+        let k : ∀ i : I, {a : L // a ∈ family i} := fun i =>
+          ⟨Classical.choose (hUpper i), (Classical.choose_spec (hUpper i)).1⟩
+        refine ⟨sInf (Set.range (fun i : I => (k i).1)), ⟨k, rfl⟩, ?_, ?_⟩
+        · apply le_sInf
+          intro a ha
+          rcases ha with ⟨i, rfl⟩
+          have hMeetLe :
+              sInf (Set.range (fun j : I => (f j).1)) ≤ (f i).1 :=
+            sInf_le ⟨i, rfl⟩
+          exact hMeetLe.trans (Classical.choose_spec (hUpper i)).2.1
+        · apply le_sInf
+          intro a ha
+          rcases ha with ⟨i, rfl⟩
+          have hMeetLe :
+              sInf (Set.range (fun j : I => (g j).1)) ≤ (g i).1 :=
+            sInf_le ⟨i, rfl⟩
+          exact hMeetLe.trans (Classical.choose_spec (hUpper i)).2.2
+    · constructor
+      · intro y hy
+        exact Chapter2.prop_2_2_2_1 (hChoicesWayBelow y hy)
+      · intro z hz
+        rw [hMain]
+        exact sSup_le hz
 
 /-- Theorem 7.1.3.  PDF text: prime-continuity is equivalent to complete
 distributivity.
@@ -1259,25 +1605,244 @@ theorem prop_7_1_6_meet_prime_irreducible
   · intro hFrame x hx
     exact finiteMeetPrime_of_finiteMeetIrreducible_of_frame hFrame hx
 
-/-- Theorem 7.1.7.  PDF text: continuous lattices are meet-generated by
-meet-irreducible elements.
+/-- A finite subset of an order filter has a common lower bound in that filter. -/
+private theorem filter_finite_lower_bound
+    {L : Type u} [Preorder L] {F M : Set L}
+    (hF : Chapter2.IsFilter F) (hM : M.Finite) (hMF : M ⊆ F) :
+    ∃ z ∈ F, ∀ m ∈ M, z ≤ m := by
+  induction M, hM using Set.Finite.induction_on with
+  | empty =>
+      rcases hF.2.1 with ⟨z, hzF⟩
+      exact ⟨z, hzF, by intro m hm; cases hm⟩
+  | @insert a M haM hM ih =>
+      have hMF' : M ⊆ F := by
+        intro m hm
+        exact hMF (Set.mem_insert_of_mem a hm)
+      rcases ih hMF' with ⟨z, hzF, hzLower⟩
+      have haF : a ∈ F := hMF (Set.mem_insert a M)
+      rcases hF.2.2 haF hzF with ⟨w, hwF, hwa, hwz⟩
+      refine ⟨w, hwF, ?_⟩
+      intro m hm
+      rcases Set.mem_insert_iff.mp hm with rfl | hm
+      · exact hwa
+      · exact hwz.trans (hzLower m hm)
 
-This theorem is registered as local proof debt. -/
+/-- Lemma 2.3.8 separates a failed order relation by a Scott-open order filter. -/
+private theorem exists_scottOpen_filter_separating
+    {L : Type u} [CompleteLattice L]
+    (hContinuous : Chapter2.IsContinuousDomain L)
+    {x y : L} (hxy : ¬ x ≤ y) :
+    ∃ F : Set L,
+      Chapter2.ScottOpen F ∧ Chapter2.IsFilter F ∧ x ∈ F ∧ y ∉ F := by
+  let O : Set L := (Chapter2.lowerClosure ({y} : Set L))ᶜ
+  have hO : Chapter2.ScottOpen O := by
+    simpa [O, Chapter2.ScottOpen] using Chapter2.scottClosed_principal_ideal y
+  have hxO : x ∈ O := by
+    intro hxLower
+    rcases hxLower with ⟨z, hz, hxz⟩
+    have hzy : z = y := by simpa using hz
+    exact hxy (by simpa [hzy] using hxz)
+  have hyO : y ∉ O := by
+    intro hy
+    exact hy ⟨y, by simp, le_rfl⟩
+  rcases Chapter2.lemma_2_3_8_scott_open_union_filters hContinuous hO with
+    ⟨family, hFamily, hUnion⟩
+  have hxUnion : x ∈ ⋃₀ family := by
+    rw [← hUnion]
+    exact hxO
+  rcases hxUnion with ⟨F, hFfamily, hxF⟩
+  have hF := hFamily F hFfamily
+  refine ⟨F, hF.1, hF.2, hxF, ?_⟩
+  intro hyF
+  apply hyO
+  rw [hUnion]
+  exact ⟨F, hFfamily, hyF⟩
+
+/-- Zorn's lemma supplies a maximal element of `up y` outside a Scott-open
+filter.  Scott-openness keeps directed chain suprema outside the filter. -/
+private theorem exists_maximal_outside_filter
+    {L : Type u} [CompleteLattice L] {F : Set L}
+    (hFopen : Chapter2.ScottOpen F) (hFfilter : Chapter2.IsFilter F)
+    {x y : L} (hxF : x ∈ F) (hyF : y ∉ F) :
+    ∃ m : L,
+      y ≤ m ∧ m ∉ F ∧ ¬ x ≤ m ∧
+        ∀ z : L, y ≤ z → z ∉ F → m ≤ z → z ≤ m := by
+  let P := {z : L // y ≤ z ∧ z ∉ F}
+  letI : Nonempty P := ⟨⟨y, le_rfl, hyF⟩⟩
+  have hChainBound :
+      ∀ c : Set P, IsChain (· ≤ ·) c → c.Nonempty → BddAbove c := by
+    intro c hc hcNonempty
+    let values : Set L := Subtype.val '' c
+    have hValuesDirected : Chapter2.DirectedSet values := by
+      constructor
+      · rcases hcNonempty with ⟨a, ha⟩
+        exact ⟨a.1, ⟨a, ha, rfl⟩⟩
+      · intro a ha b hb
+        rcases ha with ⟨a', ha', rfl⟩
+        rcases hb with ⟨b', hb', rfl⟩
+        rcases hc.total ha' hb' with hab | hba
+        · exact ⟨b'.1, ⟨b', hb', rfl⟩, hab, le_rfl⟩
+        · exact ⟨a'.1, ⟨a', ha', rfl⟩, le_rfl, hba⟩
+    have hySup : y ≤ sSup values := by
+      rcases hcNonempty with ⟨a, ha⟩
+      exact a.2.1.trans (le_sSup ⟨a, ha, rfl⟩)
+    have hSupNotF : sSup values ∉ F := by
+      intro hSupF
+      have hSupComp : sSup values ∈ Fᶜ :=
+        hFopen.2 hValuesDirected
+          (by
+            intro z hz
+            rcases hz with ⟨a, ha, rfl⟩
+            exact a.2.2)
+          (completeLattice_sSup_isSup L values)
+      exact hSupComp hSupF
+    let upper : P := ⟨sSup values, hySup, hSupNotF⟩
+    refine ⟨upper, ?_⟩
+    intro a ha
+    exact le_sSup ⟨a, ha, rfl⟩
+  rcases zorn_le_nonempty hChainBound with ⟨m, hm⟩
+  refine ⟨m.1, m.2.1, m.2.2, ?_, ?_⟩
+  · intro hxm
+    exact m.2.2 (hFfilter.1 hxF hxm)
+  · intro z hyz hzF hmz
+    let zP : P := ⟨z, hyz, hzF⟩
+    exact hm (show m ≤ zP from hmz)
+
+/-- A failed order relation in a continuous complete lattice is separated by a
+finite meet-irreducible upper bound. -/
+private theorem exists_finiteMeetIrreducible_separator
+    {L : Type u} [CompleteLattice L]
+    (hContinuous : Chapter2.IsContinuousDomain L)
+    {x y : L} (hxy : ¬ x ≤ y) :
+    ∃ p : L, y ≤ p ∧ ¬ x ≤ p ∧ IsFiniteMeetIrreducible p := by
+  rcases exists_scottOpen_filter_separating hContinuous hxy with
+    ⟨F, hFopen, hFfilter, hxF, hyF⟩
+  rcases exists_maximal_outside_filter hFopen hFfilter hxF hyF with
+    ⟨m, hym, hmF, hxm, hmMax⟩
+  refine ⟨m, hym, hxm, ?_⟩
+  constructor
+  · intro hmTop
+    rcases hFfilter.2.1 with ⟨z, hzF⟩
+    have hTopF : (⊤ : L) ∈ F := hFfilter.1 hzF le_top
+    exact hmF (by simpa [hmTop] using hTopF)
+  · intro M hM hmInf
+    by_contra hNoMember
+    have hAllF : M ⊆ F := by
+      intro a haM
+      by_contra haF
+      have hma : m ≤ a := by
+        rw [hmInf]
+        exact sInf_le haM
+      have ham : a ≤ m := hmMax a (hym.trans hma) haF hma
+      have hamEq : a = m := le_antisymm ham hma
+      exact hNoMember ⟨a, haM, hamEq.symm⟩
+    rcases filter_finite_lower_bound hFfilter hM hAllF with
+      ⟨z, hzF, hzLower⟩
+    have hzm : z ≤ m := by
+      rw [hmInf]
+      exact le_sInf hzLower
+    exact hmF (hFfilter.1 hzF hzm)
+
+/-- In an algebraic complete lattice the separating filter can be chosen
+principal at a compact element, so the maximal separator is completely
+meet-irreducible. -/
+private theorem exists_completelyMeetIrreducible_separator
+    {L : Type u} [CompleteLattice L]
+    (hAlgebraic : Chapter2.IsAlgebraicDomain L)
+    {x y : L} (hxy : ¬ x ≤ y) :
+    ∃ p : L, y ≤ p ∧ ¬ x ≤ p ∧ IsCompletelyMeetIrreducible p := by
+  rcases hAlgebraic x with ⟨A, hAsub, _hAdirected, hAsup⟩
+  have hCompactNotBelow : ∃ k ∈ A, ¬ k ≤ y := by
+    by_contra hNone
+    have hAll : ∀ k ∈ A, k ≤ y := by
+      intro k hk
+      by_contra hky
+      exact hNone ⟨k, hk, hky⟩
+    exact hxy (hAsup.2 y hAll)
+  rcases hCompactNotBelow with ⟨k, hkA, hky⟩
+  have hkData := hAsub hkA
+  have hkCompact : Chapter2.Compact k := hkData.1
+  have hkx : k ≤ x := Chapter2.prop_2_2_2_1 hkData.2
+  let F : Set L := {z : L | k ≤ z}
+  have hFfilter : Chapter2.IsFilter F := by
+    constructor
+    · intro a b ha hab
+      exact ha.trans hab
+    · constructor
+      · exact ⟨k, le_rfl⟩
+      · intro a ha b hb
+        exact ⟨k, le_rfl, ha, hb⟩
+  have hFopen : Chapter2.ScottOpen F := by
+    have hEq : F = Chapter2.wayBelowUpper k := by
+      ext z
+      constructor
+      · intro hkz
+        exact Chapter2.prop_2_2_2_2 le_rfl hkCompact hkz
+      · intro hkz
+        exact Chapter2.prop_2_2_2_1 hkz
+    rw [hEq]
+    exact Chapter2.scottOpen_wayBelowUpper ⟨Chapter2.CompactSet, hAlgebraic⟩ k
+  have hxF : x ∈ F := hkx
+  have hyF : y ∉ F := hky
+  rcases exists_maximal_outside_filter hFopen hFfilter hxF hyF with
+    ⟨m, hym, hmF, hxm, hmMax⟩
+  refine ⟨m, hym, hxm, ?_⟩
+  constructor
+  · intro hmTop
+    exact hmF (by simpa [F, hmTop])
+  · intro M hmInf
+    by_contra hNoMember
+    have hAllF : M ⊆ F := by
+      intro a haM
+      by_contra haF
+      have hma : m ≤ a := by
+        rw [hmInf]
+        exact sInf_le haM
+      have ham : a ≤ m := hmMax a (hym.trans hma) haF hma
+      have hamEq : a = m := le_antisymm ham hma
+      exact hNoMember ⟨a, haM, hamEq.symm⟩
+    have hkm : k ≤ m := by
+      rw [hmInf]
+      exact le_sInf (by
+        intro a haM
+        exact hAllF haM)
+    exact hmF hkm
+
+/-- Theorem 7.1.7: continuous lattices are meet-generated by meet-irreducible
+elements. -/
 theorem theorem_7_1_7_continuous_lattice_meet_generated
     (L : Type u) [CompleteLattice L] :
     IsContinuousCompleteLattice L →
       MeetGeneratedBy ({x : L | IsFiniteMeetIrreducible x}) := by
-  admit
+  intro hContinuous x
+  apply le_antisymm
+  · apply le_sInf
+    intro p hp
+    exact hp.2
+  · by_contra hNotLe
+    rcases exists_finiteMeetIrreducible_separator hContinuous.2 hNotLe with
+      ⟨p, hxp, hNotInfP, hpIrred⟩
+    apply hNotInfP
+    exact sInf_le ⟨hpIrred, hxp⟩
 
-/-- The algebraic half of Theorem 7.1.7.  PDF text: algebraic complete lattices
-are meet-generated by completely meet-irreducible elements.
-
-This theorem is registered as local proof debt. -/
+/-- The algebraic half of Theorem 7.1.7: algebraic complete lattices are
+meet-generated by completely meet-irreducible elements. -/
 theorem theorem_7_1_7_algebraic_lattice_completely_meet_generated
     (L : Type u) [CompleteLattice L] :
     IsAlgebraicCompleteLattice L →
       MeetGeneratedBy ({x : L | IsCompletelyMeetIrreducible x}) := by
-  admit
+  intro hAlgebraic x
+  apply le_antisymm
+  · apply le_sInf
+    intro p hp
+    exact hp.2
+  · by_contra hNotLe
+    have hAlgebraicRaw : Chapter2.IsAlgebraicDomain L :=
+      Chapter2.basis_to_raw hAlgebraic.2
+    rcases exists_completelyMeetIrreducible_separator hAlgebraicRaw hNotLe with
+      ⟨p, hxp, hNotInfP, hpIrred⟩
+    apply hNotInfP
+    exact sInf_le ⟨hpIrred, hxp⟩
 
 /-- Theorem 7.1.8.  PDF text: meet-prime generation implies the finite-prime
 distributive equations.
@@ -1352,10 +1917,37 @@ theorem prop_7_1_13_point_topology (L : Type u) [CompleteLattice L] :
 /-- Theorem 7.1.14.  PDF text: the open-set and point functors form a dual
 adjunction with units `eta` and `epsilon`.
 
-The Stone dual adjunction is registered as local proof debt. -/
+The two final fields are the triangle identities displayed in the textbook. -/
 theorem theorem_7_1_14_stone_dual_adjunction :
     Nonempty (StoneDualAdjunctionData.{u}) := by
-  admit
+  refine ⟨{
+    adjunction := concreteStoneAdjunction
+    opensMap := fun f => openSetPreimageFrameHom f
+    spectrumMap := fun h => spectrumMapOfFrameHom h
+    unit_continuous := stoneUnitContinuous
+    unit_agrees := ?_
+    epsilon_frame_hom := stoneEpsilonFrameHom
+    epsilon_agrees := ?_
+    unit_naturality := ?_
+    epsilon_naturality := ?_
+    left_triangle := ?_
+    right_triangle := ?_ }⟩
+  · intro X x
+    rfl
+  · intro L a
+    rfl
+  · intro X Y f x
+    apply Subtype.ext
+    rfl
+  · intro K L h a
+    apply Subtype.ext
+    rfl
+  · intro X U
+    apply Subtype.ext
+    rfl
+  · intro L F
+    apply Subtype.ext
+    rfl
 
 end Chapter7
 end AbramskyJung

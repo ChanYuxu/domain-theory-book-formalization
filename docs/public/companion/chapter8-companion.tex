@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,left=25mm,right=30mm,top=22mm,bottom=24mm,marginparwidth=18mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,stmaryrd}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{marginnote}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+\definecolor{LeanTeal}{HTML}{087F72}
+\definecolor{SourceGray}{HTML}{66736F}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2em}
+\newcommand{\leanmarker}[2]{%
+  \Needspace{3\baselineskip}%
+  \marginnote{\hyperlink{#1}{\color{LeanTeal}\fbox{\scriptsize Lean}}}%
+  \hypertarget{#1}{\textbf{#2.}}%
+}
+\newcommand{\sourcepage}[1]{\par\medskip\noindent\textcolor{SourceGray}{\scriptsize Source PDF page #1}\par\smallskip}
+\pagestyle{plain}
+\begin{document}
+\begin{center}\LARGE\bfseries Further directions\par\medskip
+\large Lean 4 Formalization Companion -- Chapter 8\end{center}
+\medskip
+\noindent\textit{This project-generated reading copy contains reviewed mathematical items, short source locators, and redrawn diagrams. It does not reproduce the original PDF or automatic OCR prose. Click a Lean tag in the web reader to open the mapped Lean declaration.}
+\bigskip\hrule\bigskip
+\section*{Section 8.1.1}
+\sourcepage{145}
+\leanmarker{def-8-1-1}{Definition in Section 8.1.1} An effectively given domain is an $\omega$-continuous domain with a concrete basis $B=\{b_n\mid n\in\mathbb{N}\}$ such that the relation
+\[
+  b_m\ll b_n
+\]
+is recursive in the indices $m,n$.
+
+\leanmarker{def-8-1-1-1}{Definition of effective map in Section 8.1.1} Let $D,E$ be effectively given domains with numbered bases $(b_m)$ and $(c_n)$. A continuous map $f:D\to E$ is effective when its approximable relation
+\[
+  \{(m,n)\mid c_n\ll f(b_m)\}
+\]
+is recursively enumerable.
+
+\clearpage
+\section*{Section 8.1.2}
+\leanmarker{def-8-1-2}{Definition in Section 8.1.2} A universal domain $U$ for a class $\mathcal C$ contains every $D\in\mathcal C$ as an embedding--projection retract
+\[
+  D \xrightarrow{e_D} U \xrightarrow{p_D} D,\qquad p_D\circ e_D=\operatorname{id}_D,\quad e_D\circ p_D\sqsubseteq\operatorname{id}_U.
+\]
+The object $D$ is represented in $U$ by the idempotent $e_D\circ p_D$.
+
+\leanmarker{formula-8-1-2-1}{Coding formulas in Section 8.1.2} Codes $u_D\in U$ for represented objects are equipped with continuous operations
+\[
+  \mathsf{fun},\mathsf{prod}:U^2\longrightarrow U,
+\]
+satisfying
+\[
+  \mathsf{fun}(u_D,u_E)=u_{[D\to E]},\qquad
+  \mathsf{prod}(u_D,u_E)=u_{D\times E}.
+\]
+
+\sourcepage{146}
+\leanmarker{def-8-1-2-2}{Universal type in Section 8.1.2} Let
+\[
+  V=\{u_D\in U\mid D\in\mathcal C\}
+\]
+be the subdomain of object codes. If $V$ is itself an object of $\mathcal C$, its code $u_V$ is a universal type.
+
+\leanmarker{prop-8-1-2-3}{Reported outcomes in Section 8.1.2} For $\mathcal P(\omega)$, the source reports that no universal type exists for $\omega$-continuous lattices represented by idempotents (Ers75, HS77), while a universal type does exist for $\omega$-algebraic lattices represented by closure operators (the Hancock--Martin-Lof result reported in Sco76). These are bibliographic reports, not locally proved theorems.
+
+\clearpage
+\section*{Section 8.1.3}
+\leanmarker{def-8-1-3}{Semantics interface in Section 8.1.3} The survey distinguishes three approaches to polymorphic semantics: impredicative functorial models, ideal-based implicit models, and models based on partial equivalence relations. The Lean interface records an interpretation of type expressions in contexts together with the selected approach and citations; the external constructions are not reproduced.
+
+\clearpage
+\section*{Section 8.1.4}
+\sourcepage{147}
+\leanmarker{def-8-1-4}{Information systems in Section 8.1.4} An information system is presented by tokens, a consistency predicate on token sets, and an entailment relation. The source uses information systems to present abstract bases, effective domains, bilimits by unions, and solutions of domain equations up to equality. Since the chapter refers elsewhere for the axioms, Lean retains only this signature and the stated survey roles.
+
+\clearpage
+\section*{Section 8.2}
+\leanmarker{def-8-2-1}{Modulus of stability in Section 8.2} For $e\in C_{f(x)}$, a continuity witness is a basis element $d\in B_x$ such that
+\[
+  d\sqsubseteq y \Longrightarrow e\sqsubseteq f(y).
+\]
+The modulus $M(f,x,e)$, when it exists, is the least such $d$. A continuous function is stable when this least witness exists for every $x$ and every $e\in C_{f(x)}$.
+
+\leanmarker{formula-8-2-1-1}{Stable-order formula in Section 8.2} Stable functions are ordered by
+\[
+  f\sqsubseteq_s g\quad\Longleftrightarrow\quad
+  f\sqsubseteq g\;\land\;
+  \forall x\,\forall e\in C_{f(x)},
+  M(f,x,e)=M(g,x,e).
+\]
+
+\leanmarker{prop-8-2-2}{Claim in Section 8.2} Let $D,E$ be L-domains. A continuous map $f:D\to E$ is stable if and only if it preserves bounded nonempty infima. The chapter states this equivalence without supplying its proof.
+
+\leanmarker{prop-8-2-3}{Stable-order claim in Section 8.2} For stable maps between L-domains,
+\[
+  f\sqsubseteq_s g\quad\Longleftrightarrow\quad
+  \forall x\sqsubseteq y,\; f(x)=f(y)\sqcap g(x).
+\]
+Lean expresses the meet by its universal property, so the statement does not assume an unprovided global lattice instance.
+
+\clearpage
+\section*{Section 8.3.1}
+\sourcepage{148}
+\leanmarker{def-8-3-1}{Definition in Section 8.3.1} A partial function $f:D\rightharpoonup E$ is continuous when its domain of definition is Scott-open in $D$ and its restriction to that domain is a total Scott-continuous function.
+
+\leanmarker{formula-8-3-1-1}{Comparison in Section 8.3.1} The source records an equivalence of categories $\mathcal C_{\partial}\simeq\mathcal C_{\bot!}$ and, at function-space level, the natural comparison
+\[
+  [D\to E_{\bot}]\cong[D\rightharpoonup E].
+\]
+The present Lean interface records inverse hom-set translations; category-level naturality remains an external obligation.
+
+\clearpage
+\section*{Section 8.3.2}
+\sourcepage{149}
+\leanmarker{def-8-3-2}{Definition in Section 8.3.2} A computational monad on a cartesian category consists of a monad $(T,\eta,\mu)$ and a tensorial strength
+\[
+  t_{A,B}:A\times TB\longrightarrow T(A\times B).
+\]
+The source refers to coherence equations without printing them. Accordingly, Lean uses mathlib's full monad and an explicitly raw natural strength interface.
+
+\leanmarker{formula-8-3-2-1}{Kleisli formula in Section 8.3.2} For $f:A\to TB$ and $g:B\to TC$, Kleisli composition is
+\[
+  A\xrightarrow{f}TB\xrightarrow{Tg}TTC\xrightarrow{\mu_C}TC,
+\]
+with identity $\eta_A:A\to TA$. Lean proves both unit laws from mathlib's monad laws.
+
+\clearpage
+\section*{Section 8.3.3}
+\sourcepage{150}
+\leanmarker{formula-8-3-3-1}{Linear decomposition in Section 8.3.3} Linear domain models seek a decomposition
+\[
+  [A\to B]\cong[!A\multimap B].
+\]
+For pointed domains and strict maps, products and coproducts are cartesian products and coalesced sums, while smash product and strict function space provide the monoidal closed structure. The complete-lattice example takes $!L=\mathcal P_H(L)$.
+
+\clearpage
+\section*{Section 8.4}
+\leanmarker{def-8-4-1}{Programme in Section 8.4} Axiomatic domain theory asks which categorical structure is essential for denotational semantics. The survey highlights enrichment over a suitable subcategory of DCPO, fixpoint principles, and canonical solutions of recursive domain equations. Lean records hom-set dcpo structure and chosen fixed-point isomorphisms, while explicitly avoiding the false identification of this limited data with Freyd's full algebraic compactness.
+
+\clearpage
+\section*{Section 8.5}
+\sourcepage{151}
+\leanmarker{def-8-5-1}{Programme in Section 8.5} Synthetic domain theory proposes absorbing convergence, approximation, and computability into a suitable constructive set theory or topos. Its slogan is ``Domains are Sets''. The Lean value records the programme and the references Ros86, Pho91, FMRS90, Hyl91, and Tay91, together with the synthetic-differential-geometry analogy Koc81.
+
+\end{document}

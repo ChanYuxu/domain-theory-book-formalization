@@ -1098,6 +1098,146 @@
           "block": "p143-b2"
         }
       }
+    },
+    "8": {
+      "sourcePdfPages": [
+        145,
+        151
+      ],
+      "items": {
+        "def-8-1-1": {
+          "pdfPage": 145,
+          "block": "p145-b1"
+        },
+        "def-8-1-1-1": {
+          "pdfPage": 145,
+          "block": "p145-b2"
+        },
+        "def-8-1-2": {
+          "pdfPage": 145,
+          "block": "p145-b3"
+        },
+        "formula-8-1-2-1": {
+          "pdfPage": 145,
+          "block": "p145-b4"
+        },
+        "def-8-1-2-2": {
+          "pdfPage": 146,
+          "block": "p146-b1"
+        },
+        "prop-8-1-2-3": {
+          "pdfPage": 146,
+          "block": "p146-b2"
+        },
+        "def-8-1-3": {
+          "pdfPage": 146,
+          "block": "p146-b3"
+        },
+        "def-8-1-4": {
+          "pdfPage": 147,
+          "block": "p147-b1"
+        },
+        "def-8-2-1": {
+          "pdfPage": 147,
+          "block": "p147-b2"
+        },
+        "formula-8-2-1-1": {
+          "pdfPage": 147,
+          "block": "p147-b3"
+        },
+        "prop-8-2-2": {
+          "pdfPage": 147,
+          "block": "p147-b4"
+        },
+        "prop-8-2-3": {
+          "pdfPage": 147,
+          "block": "p147-b5"
+        },
+        "def-8-3-1": {
+          "pdfPage": 148,
+          "block": "p148-b1"
+        },
+        "formula-8-3-1-1": {
+          "pdfPage": 148,
+          "block": "p148-b2"
+        },
+        "def-8-3-2": {
+          "pdfPage": 149,
+          "block": "p149-b1"
+        },
+        "formula-8-3-2-1": {
+          "pdfPage": 149,
+          "block": "p149-b2"
+        },
+        "formula-8-3-3-1": {
+          "pdfPage": 150,
+          "block": "p150-b1"
+        },
+        "def-8-4-1": {
+          "pdfPage": 150,
+          "block": "p150-b2"
+        },
+        "def-8-5-1": {
+          "pdfPage": 151,
+          "block": "p151-b1"
+        }
+      }
+    },
+    "9": {
+      "sourcePdfPages": [
+        152,
+        152
+      ],
+      "items": {
+        "def-9-1-1": {
+          "pdfPage": 152,
+          "block": "p152-b1"
+        },
+        "def-9-1-2": {
+          "pdfPage": 152,
+          "block": "p152-b2"
+        },
+        "def-9-1-3": {
+          "pdfPage": 152,
+          "block": "p152-b3"
+        },
+        "def-9-1-4": {
+          "pdfPage": 152,
+          "block": "p152-b4"
+        },
+        "def-9-1-5": {
+          "pdfPage": 152,
+          "block": "p152-b5"
+        },
+        "def-9-1-6": {
+          "pdfPage": 152,
+          "block": "p152-b6"
+        },
+        "def-9-1-7": {
+          "pdfPage": 152,
+          "block": "p152-b7"
+        },
+        "def-9-2-1": {
+          "pdfPage": 152,
+          "block": "p152-b8"
+        },
+        "def-9-2-2": {
+          "pdfPage": 152,
+          "block": "p152-b9"
+        },
+        "def-9-2-3": {
+          "pdfPage": 152,
+          "block": "p152-b10"
+        },
+        "def-9-3-1": {
+          "pdfPage": 152,
+          "block": "p152-b11"
+        },
+        "prop-9-3-2": {
+          "pdfPage": 152,
+          "block": "p152-b12"
+        }
+      }
     }
   }
 }

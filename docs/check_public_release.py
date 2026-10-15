@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DEFAULT_SITE = ROOT / "_site"
-CHAPTERS = range(2, 8)
+CHAPTERS = range(2, 10)
 TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".tex", ".md", ".txt"}
 FORBIDDEN_PATH_PARTS = {"generated", "tmp", "Papers", "skills"}
 FORBIDDEN_TEXT = [
@@ -89,7 +89,7 @@ def main() -> None:
             if pattern.search(text):
                 fail(f"forbidden text pattern {pattern.pattern!r} in {relative}")
 
-    print(f"Public release check passed: Chapters 2-7, {total_items} mapped items")
+    print(f"Public release check passed: Chapters 2-9, {total_items} mapped items")
 
 
 if __name__ == "__main__":

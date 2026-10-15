@@ -6,7 +6,7 @@
     },
     "prop-4-0-2": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-0-2}{Proposition 4.0.2}\n\\begin{enumerate}\n\\item Step functions are Scott-continuous.\n\\item If $D,E$ are dcpos, $E$ is pointed, $f:D\\to E$ is continuous, and $e\\ll f(d)$, then $(d\\searrow e)\\ll f$.\n\\item If, in addition, $D$ and $E$ are continuous, then every continuous $f:D\\to E$ is a supremum of step functions.\n\\end{enumerate}",
+      "tex": "\\leanmarker{prop-4-0-2}{Proposition 4.0.2}\n\\begin{enumerate}\n\\item Step functions are Scott-continuous.\n\\item If $D,E$ are dcpos, $E$ is pointed, $f:D\\to E$ is continuous, and $e\\ll f(d)$, then $(d\\searrow e)\\ll f$.\n\\item If, in addition, $D$ and $E$ are continuous, then every continuous $f:D\\to E$ is a supremum of step functions.\n\\end{enumerate}\n\\textit{Proof.} (1) Scott continuity follows because $\\operatorname{Int}(\\uparrow d)$, and more generally $O$, is Scott-open. (2) Let $G$ be directed and suppose $\\bigvee G\\sqsupseteq f$. Suprema in $[D\\to E]$ are pointwise, so $\\bigvee_{g\\in G}g(d)\\sqsupseteq f(d)$. Since $e\\ll f(d)$, some $g\\in G$ satisfies $e\\sqsubseteq g(d)$; a case split on membership in $\\operatorname{Int}(\\uparrow d)$ gives $(d\\searrow e)\\sqsubseteq g$. (3) Given $d\\in D$ and $e\\ll f(d)$, continuity of $D$ and preservation of directed suprema give\n\\[\n f(d)=f\\!\\left(\\bigvee_{y\\ll d}y\\right)=\\bigvee_{y\\ll d}f(y).\n\\]\nThus $e\\sqsubseteq f(y)$ for some $y\\ll d$, and $(y\\searrow e)\\ll f$ maps $d$ to $e$. Continuity of $E$ supplies such $e$ arbitrarily close to $f(d)$, proving the supremum claim.",
       "skipBlocksAfter": 2
     },
     "def-4-1-1": {
@@ -15,23 +15,23 @@
     },
     "prop-4-1-2": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-1-2}{Proposition 4.1.2} For a pointed continuous domain $D$, being an $L$-domain, a bc-domain, or a continuous lattice is equivalent respectively to having infima for bounded nonempty subsets, nonempty subsets, or arbitrary subsets."
+      "tex": "\\leanmarker{prop-4-1-2}{Proposition 4.1.2} For a pointed continuous domain $D$, being an $L$-domain, a bc-domain, or a continuous lattice is equivalent respectively to having infima for bounded nonempty subsets, nonempty subsets, or arbitrary subsets.\n\\textit{Source status.} The textbook states this equivalence without a local proof."
     },
     "prop-4-1-3": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-1-3}{Proposition 4.1.3} Retracts and bilimits of $L$-domains, bc-domains, and continuous lattices are again objects of the same respective class."
+      "tex": "\\leanmarker{prop-4-1-3}{Proposition 4.1.3} Retracts and bilimits of $L$-domains, bc-domains, and continuous lattices are again objects of the same respective class.\n\\textit{Source derivation.} The retract/bilimit part follows from Proposition 3.1.2 and Theorem 3.1.4; preservation of the required infima by upper adjoints gives the lattice-like part."
     },
     "prop-4-1-4": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-1-4}{Proposition 4.1.4} If $D$ is an $L$-domain, a bc-domain, or a continuous lattice, then $\\operatorname{Idl}(D,\\sqsubseteq)$ is respectively an algebraic $L$-domain, an algebraic bc-domain, or an algebraic lattice."
+      "tex": "\\leanmarker{prop-4-1-4}{Proposition 4.1.4} If $D$ is an $L$-domain, a bc-domain, or a continuous lattice, then $\\operatorname{Idl}(D,\\sqsubseteq)$ is respectively an algebraic $L$-domain, an algebraic bc-domain, or an algebraic lattice.\n\\textit{Source status.} The textbook states this result without a local proof."
     },
     "prop-4-1-5": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-1-5}{Proposition 4.1.5} If $D$ is a continuous domain and $E$ is an $L$-domain, a bc-domain, or a continuous lattice, then the function space $[D\\to E]$ is again respectively an $L$-domain, a bc-domain, or a continuous lattice."
+      "tex": "\\leanmarker{prop-4-1-5}{Proposition 4.1.5} If $D$ is a continuous domain and $E$ is an $L$-domain, a bc-domain, or a continuous lattice, then the function space $[D\\to E]$ is again respectively an $L$-domain, a bc-domain, or a continuous lattice.\n\\textit{Source status.} The textbook states the closure result here but supplies no local proof."
     },
     "cor-4-1-6": {
       "status": "reviewed",
-      "tex": "\\leanmarker{cor-4-1-6}{Corollary 4.1.6} The categories $L$, $BC$, $LAT$, and their algebraic counterparts are cartesian closed."
+      "tex": "\\leanmarker{cor-4-1-6}{Corollary 4.1.6} The categories $L$, $BC$, $LAT$, and their algebraic counterparts are cartesian closed.\n\\textit{Source derivation.} This is stated as the consequence of the preceding closure results; no separate proof is printed."
     },
     "def-4-2-1": {
       "status": "reviewed",
@@ -44,7 +44,7 @@
     },
     "lemma-4-2-3": {
       "status": "reviewed",
-      "tex": "\\leanmarker{lemma-4-2-3}{Lemma 4.2.3} If $D$ is bifinite and $E$ is pointed algebraic, every joinable subset of $K(D)\\times K(E)$ gives a compact element of $[D\\to E]$. For joinable families $F,G$, the associated functions satisfy the stated order exactly when every $(d,e)\\in G$ is matched by some $(d',e')\\in F$ with $d'\\sqsubseteq d$ and $e\\sqsubseteq e'$."
+      "tex": "\\leanmarker{lemma-4-2-3}{Lemma 4.2.3} If $D$ is bifinite and $E$ is pointed algebraic, every joinable subset of $K(D)\\times K(E)$ gives a compact element of $[D\\to E]$. For joinable families $F,G$, the associated functions satisfy the stated order exactly when every $(d,e)\\in G$ is matched by some $(d',e')\\in F$ with $d'\\sqsubseteq d$ and $e\\sqsubseteq e'$.\n\\textit{Source status.} The textbook gives the statement but no proof of the finite-step construction or comparison criterion."
     },
     "prop-4-2-4": {
       "status": "reviewed",
@@ -53,11 +53,12 @@
     },
     "prop-4-2-5": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-5}{Proposition 4.2.5} Let $D$ be algebraic with mub-complete basis $K(D)$, and let $A\\subseteq K(D)$. There is a least kernel operator $p_A$ on $D$ fixing $A$, given by\n\\[\np_A(x)=\\bigvee\\{c\\in \\operatorname{mc}(A)\\mid c\\sqsubseteq x\\}.\n\\]"
+      "tex": "\\leanmarker{prop-4-2-5}{Proposition 4.2.5} Let $D$ be algebraic with mub-complete basis $K(D)$, and let $A\\subseteq K(D)$. There is a least kernel operator $p_A$ on $D$ fixing $A$, given by\n\\[\np_A(x)=\\bigvee\\{c\\in \\operatorname{mc}(A)\\mid c\\sqsubseteq x\\}.\n\\]\n\\textit{Proof.} The supremum is taken over a directed set, by mub-completeness, so $p_A$ is well-defined. Scott continuity follows from Corollary 2.2.16. Any kernel operator fixing $A$ must also fix every element of the mub-closure $\\operatorname{mc}(A)$; hence it lies pointwise above $p_A$, making $p_A$ the least such operator.",
+      "skipBlocksAfter": 1
     },
     "thm-4-2-6": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-2-6}{Theorem 4.2.6} For a pointed dcpo $D$, the following are equivalent:\n\\begin{enumerate}\n\\item $D$ is bifinite.\n\\item There is a directed family $(f_i)_{i\\in I}$ of idempotent deflations with $\\bigvee_i f_i=\\operatorname{id}_D$.\n\\item The set of all idempotent deflations is directed and has join $\\operatorname{id}_D$.\n\\end{enumerate}"
+      "tex": "\\leanmarker{thm-4-2-6}{Theorem 4.2.6} In a bifinite domain, finite mub-closures and Proposition 4.2.5 yield finite-image kernel operators; these form a directed family because kernel operators are ordered by their images (Proposition 3.1.17). Call such maps idempotent deflations. For a pointed dcpo $D$, the following are equivalent:\n\\begin{enumerate}\n\\item $D$ is bifinite.\n\\item There is a directed family $(f_i)_{i\\in I}$ of idempotent deflations with $\\bigvee_i f_i=\\operatorname{id}_D$.\n\\item The set of all idempotent deflations is directed and has join $\\operatorname{id}_D$.\n\\end{enumerate}\n\\textit{Proof.} For the implication from (2) to (1), the inclusion of the image of each kernel operator is a lower adjoint and therefore preserves compactness; the finite images of the deflations consequently provide the required algebraic finite-mub basis. For (2)$\\Rightarrow$(3), idempotent deflations are compact elements of the function space, so any two are bounded above by a member of the directed family from (2). The remaining directions use the least kernel operators of Proposition 4.2.5 and the fact that an idempotent deflation is determined by its image."
     },
     "thm-4-2-7": {
       "status": "reviewed",
@@ -66,7 +67,7 @@
     },
     "thm-4-2-8": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-2-8}{Theorem 4.2.8} The category $B$ of bifinite domains is closed under cartesian products, function spaces, coalesced sums, and bilimits. In particular, $B$ is cartesian closed.\n\\textit{Proof sketch.} For function spaces, if \\((f_i)_{i\\in I}\\) and \\((g_j)_{j\\in J}\\) are directed families of idempotent deflations for \\(D\\) and \\(E\\), then\n\\[\n  F_{ij}(h)=g_j\\circ h\\circ f_i\\qquad (i,j)\\in I\\times J\n\\]\nforms a directed family of idempotent deflations on \\([D\\to E]\\).",
+      "tex": "\\leanmarker{thm-4-2-8}{Theorem 4.2.8} The category $B$ of bifinite domains is closed under cartesian products, function spaces, coalesced sums, and bilimits. In particular, $B$ is cartesian closed.\n\\textit{Proof.} The source says that only function spaces and bilimits are nontrivial, and explicitly leaves bilimit closure as an exercise. For function spaces, if \\((f_i)_{i\\in I}\\) and \\((g_j)_{j\\in J}\\) are directed families of idempotent deflations for \\(D\\) and \\(E\\), then\n\\[\n  F_{ij}(h)=g_j\\circ h\\circ f_i\\qquad (i,j)\\in I\\times J\n\\]\nforms a directed family of idempotent deflations on \\([D\\to E]\\). Products and coalesced sums are treated as immediate; the printed text gives no further construction for them.",
       "skipBlocksAfter": 0
     },
     "def-4-2-9": {
@@ -80,36 +81,36 @@
     },
     "thm-4-2-11": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-2-11}{Theorem 4.2.11} The category $FS$ is closed under products, function spaces, coalesced sums, and bilimits; hence it is cartesian closed."
+      "tex": "\\leanmarker{thm-4-2-11}{Theorem 4.2.11} The category $FS$ is closed under products, function spaces, coalesced sums, and bilimits; hence it is cartesian closed.\n\\textit{Source status.} The textbook attributes the FS-domain closure theorem to Jung~[Jun90] and gives no local proof."
     },
     "prop-4-2-12": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-12}{Proposition 4.2.12}\n\\begin{enumerate}\n\\item Every bifinite domain is an FS-domain.\n\\item A retract of an FS-domain is an FS-domain.\n\\item An algebraic FS-domain is bifinite.\n\\end{enumerate}",
+      "tex": "\\leanmarker{prop-4-2-12}{Proposition 4.2.12}\n\\begin{enumerate}\n\\item Every bifinite domain is an FS-domain.\n\\item A retract of an FS-domain is an FS-domain.\n\\item An algebraic FS-domain is bifinite.\n\\end{enumerate}\n\\textit{Source status.} The three relationships are stated without a local proof.",
       "skipBlocksAfter": 2
     },
     "thm-4-2-13": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-2-13}{Theorem 4.2.13} For a continuous domain $D$, the sets of open neighborhoods of compact saturated sets are exactly the Scott-open filters in $\\sigma D$."
+      "tex": "\\leanmarker{thm-4-2-13}{Theorem 4.2.13} For a continuous domain $D$, the sets of open neighborhoods of compact saturated sets are exactly the Scott-open filters in $\\sigma D$.\n\\textit{Source derivation.} By Proposition 7.2.27 this is a special case of the Hofmann--Mislove Theorem 7.2.9."
     },
     "prop-4-2-14": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-14}{Proposition 4.2.14} For a continuous domain $D$:\n\\begin{enumerate}\n\\item $\\kappa D$ is a dcpo, with directed suprema given by intersection.\n\\item If a filtered intersection of compact saturated sets is contained in a Scott-open set $O$, then one member is already contained in $O$.\n\\item $\\kappa D\\setminus\\{\\emptyset\\}$ is a dcpo.\n\\end{enumerate}"
+      "tex": "\\leanmarker{prop-4-2-14}{Proposition 4.2.14} For a continuous domain $D$:\n\\begin{enumerate}\n\\item $\\kappa D$ is a dcpo, with directed suprema given by intersection.\n\\item If a filtered intersection of compact saturated sets is contained in a Scott-open set $O$, then one member is already contained in $O$.\n\\item $\\kappa D\\setminus\\{\\emptyset\\}$ is a dcpo.\n\\end{enumerate}\n\\textit{Source derivation.} The textbook identifies this as a reformulation of Corollary 7.2.11."
     },
     "prop-4-2-15": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-15}{Proposition 4.2.15} For a continuous domain $D$:\n\\begin{enumerate}\n\\item $\\kappa D$ is continuous.\n\\item $A\\ll B$ in $\\kappa D$ iff there is a Scott-open $O$ with $B\\subseteq O\\subseteq A$.\n\\item $O\\ll U$ in $\\sigma D$ iff there is compact saturated $A$ with $O\\subseteq A\\subseteq U$.\n\\end{enumerate}\nThe proof uses upper sets generated by finitely many points: if \\(O\\) is an open neighborhood of a compact saturated set \\(A\\), then there is a finite set \\(M\\subseteq O\\) with\n\\[\n  A\\subseteq \\uparrow M\\subseteq \\uparrow M\\subseteq O.\n\\]"
+      "tex": "\\leanmarker{prop-4-2-15}{Proposition 4.2.15} For a continuous domain $D$:\n\\begin{enumerate}\n\\item $\\kappa D$ is continuous.\n\\item $A\\ll B$ in $\\kappa D$ iff there is a Scott-open $O$ with $B\\subseteq O\\subseteq A$.\n\\item $O\\ll U$ in $\\sigma D$ iff there is compact saturated $A$ with $O\\subseteq A\\subseteq U$.\n\\end{enumerate}\n\\textit{Proof.} All three claims use upper sets generated by finitely many points. If \\(O\\) is an open neighborhood of a compact saturated set \\(A\\), compactness and continuity yield a finite set \\(M\\subseteq O\\) such that\n\\[\n  A\\subseteq \\Uparrow M\\subseteq \\uparrow M\\subseteq O.\n\\]\nHere $\\Uparrow M=\\bigcup_{m\\in M}\\{x\\mid m\\ll x\\}$ is Scott-open. Lean represents this exact set by \\texttt{FiniteWayBelowOpen D M} and uses it for the way-below witnesses in $\\kappa D$ and $\\sigma D$."
     },
     "prop-4-2-16": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-16}{Proposition 4.2.16} A continuous domain $D$ is coherent iff for all $O,U_1,U_2\\in\\sigma D$, from $O\\ll U_1$ and $O\\ll U_2$ it follows that $O\\ll U_1\\cap U_2$."
+      "tex": "\\leanmarker{prop-4-2-16}{Proposition 4.2.16} A continuous domain $D$ is coherent iff for all $O,U_1,U_2\\in\\sigma D$, from $O\\ll U_1$ and $O\\ll U_2$ it follows that $O\\ll U_1\\cap U_2$.\n\\textit{Source status.} The textbook states this equivalence without a local proof."
     },
     "prop-4-2-17": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-17}{Proposition 4.2.17} An algebraic domain $D$ is coherent iff $K(D)$ is mub-complete and finite subsets of $K(D)$ have finite sets of minimal upper bounds.\nThis is the ``2/3-SFP Theorem'' of Plotkin: coherence rules out the first two non-bifinite examples from Figure 12, but not the third. In algebraic coherent domains, the compact-open sets \\(\\uparrow c_1\\cup\\cdots\\cup\\uparrow c_n\\) form a common sublattice of \\(\\sigma D\\) and \\(\\kappa D\\)."
+      "tex": "\\leanmarker{prop-4-2-17}{Proposition 4.2.17} An algebraic domain $D$ is coherent iff $K(D)$ is mub-complete and finite subsets of $K(D)$ have finite sets of minimal upper bounds.\n\\textit{Source status.} The textbook states the equivalence without a local proof. This is the ``2/3-SFP Theorem'' of Plotkin: coherence rules out the first two non-bifinite examples from Figure 12, but not the third. In algebraic coherent domains, the compact-open sets \\(\\uparrow c_1\\cup\\cdots\\cup\\uparrow c_n\\) form a common sublattice of \\(\\sigma D\\) and \\(\\kappa D\\)."
     },
     "thm-4-2-18": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-2-18}{Theorem 4.2.18} FS-domains and bifinite domains are coherent."
+      "tex": "\\leanmarker{thm-4-2-18}{Theorem 4.2.18} FS-domains and bifinite domains are coherent.\n\\textit{Source status.} This is recorded as a consequence of the preceding characterizations; no separate proof is printed."
     },
     "def-4-2-19": {
       "status": "reviewed",
@@ -117,33 +118,32 @@
     },
     "prop-4-2-20": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-2-20}{Proposition 4.2.20} For a continuous domain $D$:\n\\begin{enumerate}\n\\item The Lawson topology is Hausdorff, and every Lawson-open has the form $O\\setminus A$ with $O$ Scott-open and $A$ Scott-compact saturated.\n\\item The Lawson topology is compact iff $D$ is coherent.\n\\item Scott-continuous retracts of Lawson-compact continuous domains are Lawson-compact and continuous.\n\\end{enumerate}"
+      "tex": "\\leanmarker{prop-4-2-20}{Proposition 4.2.20} For a continuous domain $D$:\n\\begin{enumerate}\n\\item The Lawson topology is Hausdorff, and every Lawson-open has the form $O\\setminus A$ with $O$ Scott-open and $A$ Scott-compact saturated.\n\\item The Lawson topology is compact iff $D$ is coherent.\n\\item Scott-continuous retracts of Lawson-compact continuous domains are Lawson-compact and continuous.\n\\end{enumerate}\n\\textit{Source status.} The textbook gives these three assertions without a local proof."
     },
     "lemma-4-3-1": {
       "status": "reviewed",
-      "tex": "\\leanmarker{lemma-4-3-1}{Lemma 4.3.1} If $D,E$ are continuous domains, $E$ is pointed, and $[D\\to E]$ is continuous, then $D$ is coherent or $E$ is an $L$-domain.\n\\textit{Proof sketch.} Suppose not. Choose Scott opens \\(O,U_1,U_2\\) with \\(O\\ll U_1\\), \\(O\\ll U_2\\), but not \\(O\\ll U_1\\cap U_2\\), and a directed cover \\((V_i)_{i\\in I}\\) of \\(U_1\\cap U_2\\) none of whose members covers \\(O\\). Interpolate \\(O\\ll U'_1\\ll U_1\\) and \\(O\\ll U'_2\\ll U_2\\). The failure of the \\(L\\)-domain property reduces to two retract cases.\nFor \\(E=A\\), take \\(f_1=(U'_1\\searrow a)\\), \\(f_2=(U'_2\\searrow b)\\), and\n\\[\n f(x)=\\begin{cases}\n c_0,&x\\in U_1\\cap U_2,\\\\\n a,&x\\in U_1\\setminus U_2,\\\\\n b,&x\\in U_2\\setminus U_1,\\\\\n \\bot,&\\text{otherwise.}\n \\end{cases}\n\\]\nGiven an upper bound \\(g\\) of \\(\\{f_1,f_2\\}\\) below \\(f\\), define\n\\[\n h_i(x)=\\begin{cases}\n c_0,&x\\in V_i,\\\\\n c_{n+1},&x\\in (U_1\\cap U_2)\\setminus V_i\\text{ and }g(x)=c_n,\\\\\n g(x),&\\text{otherwise.}\n \\end{cases}\n\\]\nNo \\(h_i\\) is above \\(g\\), but their supremum is \\(f\\), contradicting continuity of \\([D\\to E]\\). For \\(E=X\\), use the same opens and\n\\[\n f(x)=\\begin{cases}\n c_1,&x\\in U_1\\cap U_2,\\\\\n a,&x\\in U_1\\setminus U_2,\\\\\n b,&x\\in U_2\\setminus U_1,\\\\\n \\bot,&\\text{otherwise,}\n \\end{cases}\n\\quad\n h_i(x)=\\begin{cases}\n \\top,&x\\in V_i,\\\\\n c_2,&x\\in (U_1\\cap U_2)\\setminus V_i,\\\\\n g(x),&\\text{otherwise.}\n \\end{cases}\n\\]\nto obtain the same contradiction.",
-      "formalizationNote": "The printed Case 2 uses one symbol f for two roles and leaves h_i equal to g outside the intersection, so the stated pointwise supremum does not follow. The compiled Figure 11 formalization uses a c1-valued map to bound the common approximant, a distinct top-valued map as the family supremum, and family members equal to the c1-valued map outside the intersection. Figure 12 remains under human source review because its successor construction and supremum claim require additional source-valid chain data.",
+      "tex": "\\leanmarker{lemma-4-3-1}{Lemma 4.3.1} If $D,E$ are continuous domains, $E$ is pointed, and $[D\\to E]$ is continuous, then $D$ is coherent or $E$ is an $L$-domain.\n\\textit{Proof sketch.} Suppose not. Choose Scott opens \\(O,U_1,U_2\\) with \\(O\\ll U_1\\), \\(O\\ll U_2\\), but not \\(O\\ll U_1\\cap U_2\\), and a directed cover \\((V_i)_{i\\in I}\\) of \\(U_1\\cap U_2\\) none of whose members covers \\(O\\). Interpolate \\(O\\ll U'_1\\ll U_1\\) and \\(O\\ll U'_2\\ll U_2\\). The failure of the \\(L\\)-domain property reduces to two retract cases.\nFor \\(E=A\\), take \\(f_1=(U'_1\\searrow a)\\), \\(f_2=(U'_2\\searrow b)\\), and\n\\[\n f(x)=\\begin{cases}\n c_0,&x\\in U_1\\cap U_2,\\\\\n a,&x\\in U_1\\setminus U_2,\\\\\n b,&x\\in U_2\\setminus U_1,\\\\\n \\bot,&\\text{otherwise.}\n \\end{cases}\n\\]\nGiven an upper bound \\(g\\) of \\(\\{f_1,f_2\\}\\) below \\(f\\), define\n\\[\n h_i(x)=\\begin{cases}\n c_0,&x\\in V_i,\\\\\n c_{n+1},&x\\in (U_1\\cap U_2)\\setminus V_i\\text{ and }g(x)=c_n,\\\\\n g(x),&\\text{otherwise.}\n \\end{cases}\n\\]\nNo \\(h_i\\) is above \\(g\\), but their supremum is \\(f\\), contradicting continuity of \\([D\\to E]\\). For \\(E=X\\), use the same opens and\n\\[\n f(x)=\\begin{cases}\n c_1,&x\\in U_1\\cap U_2,\\\\\n a,&x\\in U_1\\setminus U_2,\\\\\n b,&x\\in U_2\\setminus U_1,\\\\\n \\bot,&\\text{otherwise,}\n \\end{cases}\n\\quad\n h_i(x)=\\begin{cases}\n \\top,&x\\in V_i,\\\\\n c_2,&x\\in (U_1\\cap U_2)\\setminus V_i,\\\\\n g(x),&\\text{otherwise.}\n \\end{cases}\n\\]\nto obtain the same contradiction.\n\\textit{Formalization note.} The printed Case 2 uses one symbol \\(f\\) for two roles and leaves \\(h_i\\) equal to \\(g\\) outside the intersection, so the stated pointwise supremum does not follow. The compiled Figure 11 formalization uses a \\(c_1\\)-valued map to bound the common approximant, a distinct \\(\\top\\)-valued map as the family supremum, and family members equal to the \\(c_1\\)-valued map outside the intersection. Figure 12 remains under human source review because its successor construction and supremum claim require additional source-valid chain data.",
       "skipBlocksAfter": 1
     },
     "lemma-4-3-2": {
       "status": "reviewed",
-      "tex": "\\leanmarker{lemma-4-3-2}{Lemma 4.3.2} A continuous domain with bottom is an FS-domain iff both $D$ and $[D\\to D]$ are coherent."
+      "tex": "\\leanmarker{lemma-4-3-2}{Lemma 4.3.2} A continuous domain with bottom is an FS-domain iff both $D$ and $[D\\to D]$ are coherent.\n\\textit{Proof boundary in the source.} The printed text gives no local proof and refers the reader to Jung~[Jun90].\n\\textit{Reconstruction from the cited results.} If $D$ is an FS-domain, then $D$ is coherent by Theorem~4.2.18. The FS closure theorem, Theorem~4.2.11, makes $[D\\to D]$ an FS-domain as well, hence coherent again by Theorem~4.2.18. Conversely, assume that $D$ and $[D\\to D]$ are coherent. Proposition~4.2.20 converts these two coherence assumptions into compactness of their Lawson topologies. Jung~[Jun90, Corollary~2.2.14] then yields that $D$ is an FS-domain. The Lean proof follows exactly this reconstruction; its reverse implication therefore remains conditional on the explicitly recorded Jun90 result."
     },
     "thm-4-3-3": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-3-3}{Theorem 4.3.3} Every cartesian closed full subcategory of $CONT_\\bot$ is contained in $FS$ or in $L$."
+      "tex": "\\leanmarker{thm-4-3-3}{Theorem 4.3.3} Every cartesian closed full subcategory of $CONT_\\bot$ is contained in $FS$ or in $L$.\n\\textit{Proof, expanding the source's one-line derivation.} Let $\\mathcal C$ be such a subcategory. If every object of $\\mathcal C$ is an $L$-domain, then $\\mathcal C\\subseteq L$. Otherwise choose $E\\in\\mathcal C$ which is not an $L$-domain. For any $D\\in\\mathcal C$, cartesian closure and Lemmas~3.2.5 and~3.2.7 place the continuous function spaces $[D\\to E]$, $[D\\to D]$, and $[[D\\to D]\\to E]$ in $\\mathcal C$. Applying Lemma~4.3.1 first to $(D,E)$ and then to $([D\\to D],E)$ forces both $D$ and $[D\\to D]$ to be coherent, since the alternative conclusion that $E$ is an $L$-domain is excluded. Lemma~4.3.2 now shows that $D$ is an FS-domain. Thus every object of $\\mathcal C$ is in $FS$, proving $\\mathcal C\\subseteq FS$."
     },
     "thm-4-3-4": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-3-4}{Theorem 4.3.4} Every cartesian closed full subcategory of $ALG_\\bot$ is contained in $B$ or in $aL$."
+      "tex": "\\leanmarker{thm-4-3-4}{Theorem 4.3.4} Every cartesian closed full subcategory of $ALG_\\bot$ is contained in $B$ or in $aL$.\n\\textit{Proof, expanding the source's one-line derivation.} Let $\\mathcal C$ be such a subcategory. If all its objects are algebraic $L$-domains, then $\\mathcal C\\subseteq aL$. Otherwise choose an algebraic object $E\\in\\mathcal C$ which is not an $L$-domain. Repeating the proof of Theorem~4.3.3 shows that every $D\\in\\mathcal C$ is an FS-domain. Since $D$ is algebraic, Proposition~4.2.12(3) says that $D$ is bifinite. Hence $\\mathcal C\\subseteq B$. This is the precise role of the source's phrase ``adding Proposition~4.2.12.''"
     },
     "thm-4-3-5": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-3-5}{Theorem 4.3.5} Every cartesian closed full subcategory of $\\omega$-$CONT_\\bot$ respectively $\\omega$-$ALG_\\bot$ is contained in $\\omega$-$FS$ respectively $\\omega$-$B$."
+      "tex": "\\leanmarker{thm-4-3-5}{Theorem 4.3.5} Every cartesian closed full subcategory of $\\omega$-$CONT_\\bot$ respectively $\\omega$-$ALG_\\bot$ is contained in $\\omega$-$FS$ respectively $\\omega$-$B$.\n\\textit{Proof reconstructed from the source's reduction.} For a cartesian closed full subcategory $\\mathcal C\\subseteq\\omega$-$CONT_\\bot$, Theorem~4.3.3 gives $\\mathcal C\\subseteq FS$ or $\\mathcal C\\subseteq L$. The first case is immediate. In the second case, cartesian closure ensures that $[D\\to D]$ belongs to $\\mathcal C$ and is therefore countably based for every $D\\in\\mathcal C$. Exercise~4.3.11(17), attributed to Jung~[Jun89], then gives that $D$ is an FS-domain. Thus $\\mathcal C\\subseteq\\omega$-$FS$. For $\\mathcal C\\subseteq\\omega$-$ALG_\\bot$, Theorem~4.3.4 gives the alternatives $B$ and $aL$. The $B$ case is immediate; in the $aL$ case Exercise~4.3.11(17) makes every object FS and Proposition~4.2.12(3) then makes it bifinite. Hence $\\mathcal C\\subseteq\\omega$-$B$.\n\\textit{Proof boundary.} The textbook sets Exercise~4.3.11(17) rather than proving it. Lean now isolates exactly that exercise as the single local \\texttt{admit}; both classification deductions above are compiled proofs."
     },
     "lemma-4-3-6": {
       "status": "reviewed",
-      "tex": "\\leanmarker{lemma-4-3-6}{Lemma 4.3.6} If $D,E$ are continuous domains and $[D\\to E]$ is continuous, then $D$ is compact or $E$ is a disjoint union of pointed domains."
+      "tex": "\\leanmarker{lemma-4-3-6}{Lemma 4.3.6} If $D,E$ are continuous domains and $[D\\to E]$ is continuous, then $D$ is compact or $E$ is a disjoint union of pointed domains.\n\\textit{Source status.} The textbook says that the proof is a cut-down version of Lemma 4.3.1 and supplies no further details."
     },
     "def-4-3-7": {
       "status": "reviewed",
@@ -151,15 +151,15 @@
     },
     "prop-4-3-8": {
       "status": "reviewed",
-      "tex": "\\leanmarker{prop-4-3-8}{Proposition 4.3.8} A mub-complete dcpo is a finite amalgam iff the mub-closure of the empty set is finite."
+      "tex": "\\leanmarker{prop-4-3-8}{Proposition 4.3.8} A mub-complete dcpo is a finite amalgam iff the mub-closure of the empty set is finite.\n\\textit{Source status.} The textbook states this characterization without a local proof."
     },
     "lemma-4-3-9": {
       "status": "reviewed",
-      "tex": "\\leanmarker{lemma-4-3-9}{Lemma 4.3.9} If both $D$ and $[D\\to D]$ are compact and continuous, then $D$ is a finite amalgam."
+      "tex": "\\leanmarker{lemma-4-3-9}{Lemma 4.3.9} If both $D$ and $[D\\to D]$ are compact and continuous, then $D$ is a finite amalgam.\n\\textit{Source status.} The textbook states the lemma without a local proof."
     },
     "thm-4-3-10": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-4-3-10}{Theorem 4.3.10}\n\\begin{enumerate}\n\\item The maximal cartesian closed full subcategories of $CONT$ are $F$-$FS$, $U$-$FS$, $F$-$L$, and $U$-$L$.\n\\item The maximal cartesian closed full subcategories of $ALG$ are $F$-$B$, $U$-$B$, $F$-$aL$, and $U$-$aL$.\n\\end{enumerate}"
+      "tex": "\\leanmarker{thm-4-3-10}{Theorem 4.3.10} The textbook concludes, without printing a separate proof, that:\n\\begin{enumerate}\n\\item The maximal cartesian closed full subcategories of $CONT$ are $F$-$FS$, $U$-$FS$, $F$-$L$, and $U$-$L$.\n\\item The maximal cartesian closed full subcategories of $ALG$ are $F$-$B$, $U$-$B$, $F$-$aL$, and $U$-$aL$.\n\\end{enumerate}"
     }
   },
   "blocks": {

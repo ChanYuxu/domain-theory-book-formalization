@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "chapter": 2,
+  "sourceVersion": {
+    "id": "abramsky-jung-domain-theory-pdf-v1",
+    "pdfSha256": "74adfbb57ae86a8b24e5afae312ffa77138480962186136d6823098a2c9c8991"
+  },
+  "items": {
+    "prop-2-1-15": {
+      "permanentId": "prop-2-1-15",
+      "number": "Proposition 2.1.15",
+      "source": {
+        "pdfPage": 15,
+        "printedPage": "15",
+        "texSha256": "31f5dd991e08f1414d1ed99843588551cba31f4f9223fd3ce20b7a289e714b19",
+        "locator": "page:15:block:p15-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter2.prop_2_1_15_dcpo_iff_chain_sups",
+        "module": "Practice.DomainTheory.Chapter02.Section21",
+        "signatureSha256": "b3bca42e388257e438fadd8506b45c363e3275b8c5b7a98263a44c66987eb4ea",
+        "bodySha256": "a0cac11b2a999dc4249ea4a7768ef0a9ad7317a2548f7a929c19e396ca9eafc3"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "The PDF page 15 explicitly says that the proof uses Choice, goes back to Iwamura [Iwa44], and can be found in Markowsky [Mar76].",
+          "The exact numbered equivalence is proved locally from the external hard direction and the locally proved dcpo-to-chain-supremum direction.",
+          "The external theorem statement is isolated as AbramskyJung.Chapter2.markowsky_dcpo_of_chain_sups."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "verified_external_axiom",
+          "choice_dependent_chain_completeness",
+          "foundational_dcpo_equivalence"
+        ],
+        "downstreamCount": 12
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-2-1-13"
+        ],
+        "actual": [
+          "markowsky_dcpo_of_chain_sups"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-2-1-15:31f5dd99:b3bca42e:a0cac11b"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-2-1-16": {
+      "permanentId": "prop-2-1-16",
+      "number": "Proposition 2.1.16",
+      "source": {
+        "pdfPage": 15,
+        "printedPage": "15",
+        "texSha256": "9bf7094f39f0a4892c3cfd56caeb613fc6b725afc90aca1d20f3619b69facbd5",
+        "locator": "page:15:block:p15-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter2.prop_2_1_16_pointed_dcpo_iff_lfp",
+        "module": "Practice.DomainTheory.Chapter02.Section21",
+        "signatureSha256": "6547df71ad74d33a53841ea1df704765412ea68c5526f27f162a36d4caf5afa5",
+        "bodySha256": "67be8631334f6d60ee735414b090c9c1d69ab2e1c7b7e4edb4f0ebffc46e0899"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "The PDF page 15 explicitly says that Proposition 2.1.16 may also be found in Markowsky [Mar76].",
+          "The Lean axiom states the same pointed-poset equivalence between dcpo completeness and least fixed points of all monotone endomaps.",
+          "Pataraia and Bourbaki-Witt support lemmas are proved locally but do not by themselves discharge the exact equivalence."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "verified_external_axiom",
+          "least_fixed_point_characterization",
+          "foundational_pointed_dcpo_equivalence"
+        ],
+        "downstreamCount": 7
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "prop-2-1-15"
+        ],
+        "actual": [
+          "prop_2_1_16_pointed_dcpo_iff_lfp"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-2-1-16:9bf7094f:6547df71:67be8631"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-2-2-12": {
+      "permanentId": "prop-2-2-12",
+      "number": "Proposition 2.2.12",
+      "source": {
+        "pdfPage": 22,
+        "printedPage": "22",
+        "texSha256": "fd4648e23d3db60d9ebc492d462f9c6ecc7b0b2d0efb5333eb15f09364295c21",
+        "locator": "page:22:block:p22-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter2.prop_2_2_12_omega_basis_fixpoint_chain_full",
+        "module": "Practice.DomainTheory.Chapter02.Section22_Approximation",
+        "signatureSha256": "19e0e220efe161eb5934cc885fc5c788ef159151ab6dc64d914ad67ca5a82561",
+        "bodySha256": "f94f7e6ceeb251a84c92600c01ce23c73fa90f09172ff68e75e3c70e8ff7186d"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "The PDF page 22 explicitly says that a proof may be found in Abramsky [Abr90b].",
+          "OmegaBasisFixpointChain records basis membership, monotonicity, the step inequality, least fixed-point status, and both source supremum equalities.",
+          "The weaker locally proved clause is separately named and is not used to claim the full proposition proved."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "verified_external_axiom",
+          "omega_basis_fixpoint_chain",
+          "exact_fixed_point_supremum"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "prop-2-1-16",
+          "def-2-2-6"
+        ],
+        "actual": [
+          "prop_2_2_12_omega_basis_fixpoint_chain_full"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-2-2-12:fd4648e2:19e0e220:f94f7e6c"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-2-2-28": {
+      "permanentId": "thm-2-2-28",
+      "number": "Theorem 2.2.28",
+      "source": {
+        "pdfPage": 29,
+        "printedPage": "29",
+        "texSha256": "80b1cd0250e17ad14e2ee0038fb7a3a89985aedb5a4127342ebcc82656256c16",
+        "locator": "page:29:block:p29-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter2.AbstractBasis.theorem_2_2_28_abstract_bases_equiv_CONT",
+        "module": "Practice.DomainTheory.Chapter02.Section22_AbstractBases",
+        "signatureSha256": "14ea489b5758b4916e6150914a45b29e9728c772a0265f5b103d5fa4f84bf590",
+        "bodySha256": "c31e3f6c6626990b2cd71445e4dbfb5f701a5ae348795c0f764ea0153ffe4ee0"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The PDF page 29 says the result is proved without difficulties but provides no proof and no external citation here.",
+          "The canonical Lean declaration states a bundled CategoryTheory.Equivalence between the abstract-basis and continuous-domain categories.",
+          "The presentation-object equivalence is proved support and is explicitly not substituted for the categorical theorem."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "book_proof_omitted",
+          "categorical_equivalence",
+          "abstract_basis_completion"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-2-2-27"
+        ],
+        "actual": [
+          "Theorem228CategoricalEquivalence"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-2-2-28:80b1cd02:14ea489b:c31e3f6c"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-2-2-29": {
+      "permanentId": "thm-2-2-29",
+      "number": "Theorem 2.2.29",
+      "source": {
+        "pdfPage": 29,
+        "printedPage": "29",
+        "texSha256": "7afa8591cf50859329574acade595abfb0fb1cbe03ec089c45d46bae51671bc5",
+        "locator": "page:29:block:p29-b3"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter2.AbstractBasis.theorem_2_2_29_preorders_equiv_ALG",
+        "module": "Practice.DomainTheory.Chapter02.Section22_AbstractBases",
+        "signatureSha256": "b959553c2e60a22aba55125f607f303227b5e6e6cb10aeec3a135395aaaf2d10",
+        "bodySha256": "c04a59270eca184dd502c2376bacaa3cb92307214c2ff644acb76eb2d7b714de"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The PDF page 29 says the result follows immediately from the preceding formulation but gives no proof.",
+          "The canonical Lean declaration states a bundled CategoryTheory.Equivalence between reflexive abstract bases and algebraic-domain objects.",
+          "The presentation-object equivalence is proved support and is explicitly not substituted for the categorical theorem."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "categorical_equivalence",
+          "algebraic_specialization"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-2-2-28"
+        ],
+        "actual": [
+          "Theorem229CategoricalEquivalence"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-2-2-29:7afa8591:b959553c:c04a5927"
+      },
+      "statementRelation": "exact"
+    }
+  }
+}

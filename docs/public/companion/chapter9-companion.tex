@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,left=25mm,right=30mm,top=22mm,bottom=24mm,marginparwidth=18mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,stmaryrd}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{marginnote}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+\definecolor{LeanTeal}{HTML}{087F72}
+\definecolor{SourceGray}{HTML}{66736F}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2em}
+\newcommand{\leanmarker}[2]{%
+  \Needspace{3\baselineskip}%
+  \marginnote{\hyperlink{#1}{\color{LeanTeal}\fbox{\scriptsize Lean}}}%
+  \hypertarget{#1}{\textbf{#2.}}%
+}
+\newcommand{\sourcepage}[1]{\par\medskip\noindent\textcolor{SourceGray}{\scriptsize Source PDF page #1}\par\smallskip}
+\pagestyle{plain}
+\begin{document}
+\begin{center}\LARGE\bfseries Guide to the literature\par\medskip
+\large Lean 4 Formalization Companion -- Chapter 9\end{center}
+\medskip
+\noindent\textit{This project-generated reading copy contains reviewed mathematical items, short source locators, and redrawn diagrams. It does not reproduce the original PDF or automatic OCR prose. Click a Lean tag in the web reader to open the mapped Lean declaration.}
+\bigskip\hrule\bigskip
+\section*{Section 9}
+\sourcepage{152}
+\leanmarker{def-9-1-1}{General reading guide} The source recommends systematic lecture notes by Scott (Sco81) and Plotkin (Plo81), the introductory exposition GS90, the continuous-lattice account GHK+80, Johnstone's treatment of Stone duality and continuous lattices (Joh82), and the introduction to partial orders DP90.
+
+\leanmarker{def-9-1-2}{Reading for Section 2} Further reading: DP90 and Joh82.
+
+\leanmarker{def-9-1-3}{Reading for Section 3} Further reading: Plo81, Gun92b, and Win93.
+
+\leanmarker{def-9-1-4}{Reading for Section 4} Further reading: Jun89 and Jun90.
+
+\leanmarker{def-9-1-5}{Reading for Section 5} Further reading: SP82, Fre91, Fre92, Pit93b, and Pit93a.
+
+\leanmarker{def-9-1-6}{Reading for Section 6} Further reading: Plo76, Smy78, Win83, Hec91, and Sch93.
+
+\leanmarker{def-9-1-7}{Reading for Section 7} Further reading: Abr90c, Abr91a, AO93, Ong93, Hen93, Bou94, Jen92, Jen91, and Smy83b.
+
+\leanmarker{def-9-2-1}{Programming-language textbooks} The recommended semantics textbooks are Sch86, Ten91, Gun92b, and Win93.
+
+\leanmarker{def-9-2-2}{Applications of Domain Theory} Additional applications are abstract interpretation and static analysis (Abr90a, BHA86, AJ91), databases (BDW88, BJO91), computational linguistics (PS84, PM90), artificial intelligence (RZ94), fractal image generation (Eda93b), and foundations of analysis (Eda93a).
+
+\leanmarker{def-9-2-3}{Related Handbook chapters} The source lists six other Handbook chapters with substantial domain-theoretic content: Topology, Algebraic Semantics, Semantics of Types, Correspondence between Operational and Denotational Semantics, Abstract Interpretation, and Effective Structures.
+
+\leanmarker{def-9-3-1}{Bibliography query API} Lean defines citation membership by
+\[
+  \operatorname{ContainsCitation}(G,k)\quad\Longleftrightarrow\quad
+  \exists E\in G,\;\exists c\in E.\operatorname{citations},\;c.\operatorname{key}=k.
+\]
+
+\leanmarker{prop-9-3-2}{Verified guide queries} The executable bibliography API proves that Sco81 occurs in the complete reading guide and that Fre91 occurs in the Section 5 entry.
+
+\end{document}

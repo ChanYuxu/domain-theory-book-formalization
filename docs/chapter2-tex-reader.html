@@ -464,7 +464,7 @@
     const state = {
       map: null,
       extract: null,
-      sourceLines: [],
+      sourceCache: new Map(),
       pdf: null,
       selectedId: "",
       selectedLean: null,
@@ -730,6 +730,28 @@
       return payload;
     }
 
+    function fallbackLocation(item) {
+      const locations = item.fallbackDeclarations || [];
+      return locations.find(location => location.declaration === state.selectedDeclaration)
+        || locations[0]
+        || {
+          declaration: state.selectedDeclaration,
+          leanFile: item.leanFile || state.map.leanFile,
+          startLine: item.startLine,
+          endLine: item.endLine
+        };
+    }
+
+    async function sourceLinesFor(location) {
+      const sourcePath = location.leanFile;
+      if (!state.sourceCache.has(sourcePath)) {
+        const response = await fetch(sourcePath, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Unable to load Lean source: ${response.status}`);
+        state.sourceCache.set(sourcePath, (await response.text()).split(/\r?\n/));
+      }
+      return state.sourceCache.get(sourcePath);
+    }
+
     async function renderCode(item) {
       if (!item) {
         state.selectedLean = null;
@@ -769,10 +791,12 @@
         });
       } catch (error) {
         state.selectedLean = null;
-        codeLocation.textContent = `mapped fallback ${item.startLine}-${item.endLine}`;
-        const start = Math.max(1, item.startLine);
-        const end = Math.min(state.sourceLines.length, item.endLine);
-        const code = state.sourceLines.slice(start - 1, end).join("\n");
+        const location = fallbackLocation(item);
+        codeLocation.textContent = `${location.leanFile}:${location.startLine}-${location.endLine} (fallback)`;
+        const sourceLines = await sourceLinesFor(location);
+        const start = Math.max(1, location.startLine);
+        const end = Math.min(sourceLines.length, location.endLine);
+        const code = sourceLines.slice(start - 1, end).join("\n");
         setEditorState({
           value: code || error.message,
           disabled: true,
@@ -816,9 +840,6 @@
         if (!extractResponse.ok) throw new Error(`Unable to load generated/chapter2-extract.json: ${extractResponse.status}`);
         state.map = await mapResponse.json();
         state.extract = await extractResponse.json();
-        const sourceResponse = await fetch(state.map.leanFile, { cache: "no-store" });
-        if (!sourceResponse.ok) throw new Error(`Unable to load Lean source: ${sourceResponse.status}`);
-        state.sourceLines = (await sourceResponse.text()).split(/\r?\n/);
         renderMarkers();
         await renderPdf();
         meta.textContent = `${state.extract.markerCount} clickable PDF markers · PDF.js rendered`;

@@ -112,11 +112,11 @@
     },
     "thm-6-2-14": {
       "status": "reviewed",
-      "tex": "\\leanmarker{thm-6-2-14}{Theorem 6.2.14} For a continuous domain \\(D\\), the Smyth powerdomain is isomorphic to \\(\\kappa D\\setminus\\{\\emptyset\\}\\), the non-empty Scott-compact saturated subsets ordered by reverse inclusion. Formal union is interpreted by intersection."
+      "tex": "\\leanmarker{thm-6-2-14}{Theorem 6.2.14} For a continuous domain \\(D\\), the Smyth powerdomain is isomorphic to \\(\\kappa D\\setminus\\{\\emptyset\\}\\), the non-empty Scott-compact saturated subsets ordered by reverse inclusion. Formal union is interpreted by actual union."
     },
     "cor-6-2-15": {
       "status": "reviewed",
-      "tex": "\\leanmarker{cor-6-2-15}{Corollary 6.2.15} Smyth powerdomains of coherent domains are bifinite-continuous."
+      "tex": "\\leanmarker{cor-6-2-15}{Corollary 6.2.15} The Smyth powerdomain of a coherent domain with bottom is a bc-domain."
     },
     "def-6-2-16": {
       "status": "reviewed",
@@ -268,7 +268,7 @@
     "p95-b4": {
       "status": "reviewed",
       "tex": "Although \\(\\langle\\mathcal{P}_f(K(D)),\\sqsubseteq_{EM}\\rangle\\) is only a preorder, Proposition 6.2.5 shows how to replace it by an ordered basis: use finitely generated convex subsets of \\(K(D)\\). This yields the algebraic representation in Proposition 6.2.6 and explains the terminology \\emph{convex powerdomain}.",
-      "skipBlocksAfter": 1
+      "skipBlocksAfter": 0
     },
     "p96-b1": {
       "status": "reviewed",
@@ -293,7 +293,7 @@
     "p99-b1": {
       "status": "reviewed",
       "tex": "For the Smyth representation, a compact saturated set \\(A\\) is sent to the ideal\n\\[\n  \\psi^S(A)=\\{\\,M\\in\\mathcal{P}_f(B)\\mid A\\subseteq\\uparrow M\\,\\}.\n\\]\nThis is an ideal because every open neighbourhood of a compact set contains a finite set of basis elements whose upward closure covers it. The two maps are inverse: \\(\\psi^S\\circ\\phi^S=\\operatorname{id}\\) follows by the \\(\\ll_S\\)-roundness argument, and \\(\\phi^S\\circ\\psi^S=\\operatorname{id}\\) because a saturated compact set is the intersection of its open neighbourhoods. Formal union becomes intersection:\n\\[\n  \\phi^S(I\\cup J)=\\phi^S(I)\\cap\\phi^S(J).\n\\]\nFor the Plotkin case, an ideal \\(I\\) in \\(\\langle\\mathcal{P}_f(B),\\ll_{EM}\\rangle\\) gives a Scott-closed set \\(\\phi^H(I)=\\operatorname{Cl}(\\bigcup I)\\) and a compact saturated set \\(\\phi^S(I)=\\bigcap_{M\\in I}\\uparrow M\\). The lens represented by \\(I\\) is\n\\[\n  \\phi(I)=\\phi^H(I)\\cap\\phi^S(I).\n\\]",
-      "skipBlocksAfter": 2
+      "skipBlocksAfter": 0
     },
     "p101-b1": {
       "status": "reviewed",

@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "chapter": 3,
+  "sourceVersion": {
+    "id": "abramsky-jung-domain-theory-pdf-v1",
+    "pdfSha256": "74adfbb57ae86a8b24e5afae312ffa77138480962186136d6823098a2c9c8991"
+  },
+  "items": {
+    "prop-3-1-18": {
+      "permanentId": "prop-3-1-18",
+      "number": "Proposition 3.1.18",
+      "source": {
+        "pdfPage": 41,
+        "printedPage": "41",
+        "texSha256": "cbbce20585a5ac02574ffec3607341815708a9c2acd118545e37d1207732f045",
+        "locator": "page:41:block:p41-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter3.prop_3_1_18_raw_closure_image_algebraic_subdomain_iff_directed_sup_closed",
+        "module": "Practice.DomainTheory.Chapter03.NumberedItems.Section31",
+        "signatureSha256": "402e2e67eb5b9b512d77487c70d5f6fe0ed5a91ec9432611a7e4d86b06dc99e2",
+        "bodySha256": "c86e80fe0af9bbf5611e48d161d19c5d3170b5c6efa2ba9ca6670383c7111352"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The PDF states Proposition 3.1.18 without supplying its proof.",
+          "The left-hand side now records only algebraicity of the image carrier; directed-supremum closure is not stored circularly in that definition.",
+          "The backward implication is proved locally. The omitted forward implication is isolated in RawClosureOperator.imageAlgebraicSubdomain_iff_directedSupClosed."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "ambient_and_internal_directed_suprema"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-3-1-17"
+        ],
+        "actual": [
+          "RawClosureOperator.imageAlgebraicSubdomain_iff_directedSupClosed",
+          "RawClosureOperator.image_algebraic_of_directedSupClosed"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-3-1-18:cbbce205:402e2e67:c86e80fe"
+      },
+      "statementRelation": "exact"
+    },
+    "lemma-3-2-5": {
+      "permanentId": "lemma-3-2-5",
+      "number": "Lemma 3.2.5",
+      "source": {
+        "pdfPage": 42,
+        "printedPage": "42",
+        "texSha256": "41ae083a1b8f20447ec2179ea6e15e1158e396f997426cdaf76852095f5b0b3d",
+        "locator": "page:42:block:p42-b7"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter3.lemma_3_2_5_full_subcategory_products_cartesian_full",
+        "module": "Practice.DomainTheory.Chapter03.NumberedItems.Section32",
+        "signatureSha256": "7f79bd45e26ecc8f1d978dbbb2f42530c275bfd7c8b249fc6bec91f310484fb6",
+        "bodySha256": "7f79bd45e26ecc8f1d978dbbb2f42530c275bfd7c8b249fc6bec91f310484fb6"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": true,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "The PDF cites Smyth [Smy83a] and Jung [Jun89].",
+          "Jung [Jun89], Lemma 1.21(ii), was located and states the cartesian-product comparison used by the full-subcategory criterion.",
+          "The local declaration is an explicit P2 axiom bridge and is not presented as a proof."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "verified_external_axiom",
+          "categorical_product_universal_property"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-3-2-4"
+        ],
+        "actual": [
+          "CartesianProductComparison"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-3-2-5:41ae083a:7f79bd45:7f79bd45"
+      },
+      "statementRelation": "exact"
+    },
+    "lemma-3-2-7": {
+      "permanentId": "lemma-3-2-7",
+      "number": "Lemma 3.2.7",
+      "source": {
+        "pdfPage": 44,
+        "printedPage": "44",
+        "texSha256": "83830036f9c75e76d06b8c1bee2920f2133c93fbf934089b7710a222d253d7f3",
+        "locator": "page:44:block:p44-b12"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter3.lemma_3_2_7_exponential_is_function_space_full",
+        "module": "Practice.DomainTheory.Chapter03.NumberedItems.Section32",
+        "signatureSha256": "416bf76c3f9b992a1eaf9fdf48a0fbb36d1e77b27f49835c43e869c513caf390",
+        "bodySha256": "416bf76c3f9b992a1eaf9fdf48a0fbb36d1e77b27f49835c43e869c513caf390"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": true,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "The PDF cites Jung [Jun89] for the exponential/function-space comparison.",
+          "Jung [Jun89], Lemma 1.21(iii), was located and matches the represented hom-order universal property.",
+          "The local declaration is an explicit P2 axiom bridge and is not presented as a proof."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "verified_external_axiom",
+          "exponential_universal_property"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-3-2-6"
+        ],
+        "actual": [
+          "ExponentialComparison"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-3-2-7:83830036:416bf76c:416bf76c"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-3-3-2": {
+      "permanentId": "thm-3-3-2",
+      "number": "Theorem 3.3.2",
+      "source": {
+        "pdfPage": 47,
+        "printedPage": "47",
+        "texSha256": "8ca6a5f9af855d32c90801becbee1564fff8cd59e8062072573ade469aedfe86",
+        "locator": "page:47:block:p47-b9"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter3.theorem_3_3_2_dcpo_cocomplete",
+        "module": "Practice.DomainTheory.Chapter03.NumberedItems.Section33_Limits",
+        "signatureSha256": "53a32a060fe923bc47c75dcdac39960c8daa7be4064d8bd2035ab1f83ce2bc40",
+        "bodySha256": "53a32a060fe923bc47c75dcdac39960c8daa7be4064d8bd2035ab1f83ce2bc40"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "The PDF explicitly cites Markowsky [Mar77], Meseguer [Mes77], Herrlich--Strecker [HS73] via Lehmann--Smyth [LS81], and Fiech [Fie92].",
+          "Markowsky's published abstract states completeness and cocompleteness for chain-complete posets and chain-continuous maps.",
+          "The arbitrary-diagram DCPO adaptation is exposed as a P2 axiom bridge rather than claimed as locally proved."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "verified_external_axiom",
+          "arbitrary_diagram_adaptation",
+          "category_cocompleteness"
+        ],
+        "downstreamCount": 6
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [],
+        "actual": [
+          "DCPODiagram",
+          "DCPOColimit"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-3-3-2:8ca6a5f9:53a32a06:53a32a06"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-3-3-3": {
+      "permanentId": "thm-3-3-3",
+      "number": "Theorem 3.3.3",
+      "source": {
+        "pdfPage": 47,
+        "printedPage": "47",
+        "texSha256": "220e05afd6421c1276dba696fce1066a5473733f38b62efebe98243afdd692e2",
+        "locator": "page:47:block:p47-b10"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter3.theorem_3_3_3_dcpo_cartesian_closed_complete_cocomplete",
+        "module": "Practice.DomainTheory.Chapter03.NumberedItems.Section33_FunctionSpaces",
+        "signatureSha256": "0a0536f166647f3d040d9af3d15bade0bd4ac758d917c5e0e1e12bf65dd38be9",
+        "bodySha256": "0a0536f166647f3d040d9af3d15bade0bd4ac758d917c5e0e1e12bf65dd38be9"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "axiom",
+        "reason": "external_book_citation_verified",
+        "evidence": [
+          "Cartesian closure and completeness are constructed in Lean.",
+          "Cocompleteness is inherited transitively from the verified external boundary theorem_3_3_2_dcpo_cocomplete.",
+          "The aggregate theorem has no direct placeholder but is not P3."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "transitive_external_axiom",
+          "category_aggregate"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-3-3-2"
+        ],
+        "actual": [
+          "theorem_3_3_2_dcpo_cocomplete"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-3-3-3:220e05af:0a0536f1:0a0536f1"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-3-3-4": {
+      "permanentId": "thm-3-3-4",
+      "number": "Theorem 3.3.4",
+      "source": {
+        "pdfPage": 47,
+        "printedPage": "47",
+        "texSha256": "2fe1ec46922d0216699c058afe7a4223115f821175ccd7438db06fa69f088549",
+        "locator": "page:47:block:p47-b11"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter3.theorem_3_3_4_strict_pointed_dcpo_monoidal_closed_complete_cocomplete",
+        "module": "Practice.DomainTheory.Chapter03.NumberedItems.Section33_FunctionSpaces",
+        "signatureSha256": "1bcbe63fe084723c21fd67ff7d37abbc5cb4d95d7e06284627396200fac739a4",
+        "bodySha256": "1bcbe63fe084723c21fd67ff7d37abbc5cb4d95d7e06284627396200fac739a4"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The strict function-space, smash tensor-hom comparison, and arbitrary-limit construction are formalized.",
+          "The PDF states strict pointed cocompleteness without proof in the surrounding text.",
+          "Only the exact cocompleteness component remains a direct admit."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "strict_pointed_cocompleteness"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-3-3-2"
+        ],
+        "actual": [
+          "theorem_3_3_4_strict_pointed_dcpo_cocomplete"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-3-3-4:2fe1ec46:1bcbe63f:1bcbe63f"
+      },
+      "statementRelation": "exact"
+    }
+  }
+}

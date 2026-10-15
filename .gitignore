@@ -9,6 +9,7 @@
 /docs/__pycache__/
 /docs/chapter2-reader.html
 /_site/
+/downloads/
 /tmp/
 
 # Personal workflow material and backups are outside the public book package.

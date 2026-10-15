@@ -1,4 +1,4 @@
-import Practice.DomainTheory.Chapter06
+import Practice.DomainTheory.Chapter06.Section61_Limits
 
 set_option autoImplicit false
 set_option linter.unnecessarySimpa false
@@ -8,9 +8,9 @@ set_option linter.style.longLine false
 # Chapter 6.1: free dcpo-algebras and strict algebras
 
 This section records the numbered Section 6.1 items over the bundled
-order/domain APIs.  Several existence theorems are registered as visible proof
-debt with auxiliary packages rather than the full adjoint-functor and
-syntactic-basis constructions from the PDF.
+order/domain APIs.  Source-provided arguments that still exceed the current
+categorical and ideal-completion APIs are exposed as `sorry`; `admit` is reserved
+for statements whose proof the textbook actually omits.
 -/
 
 universe u v w z
@@ -19,126 +19,6 @@ namespace AbramskyJung
 namespace Chapter6
 
 open Chapter4
-
-/-- A homomorphism between models of the same inequational theory. -/
-structure DcpoAlgebraHom {Sig : Signature.{u, v}} {Var : Type w}
-    {T : Theory Sig Var} (A B : Model T) where
-  toFun : A.domain.carrier → B.domain.carrier
-  continuous : Chapter3.ScottContinuous toFun
-  preserves_op :
-    ∀ (o : Sig.Op) (args : Sig.arity o → A.domain.carrier),
-      toFun (A.algebra.op o args) = B.algebra.op o (fun i => toFun (args i))
-
-namespace DcpoAlgebraHom
-
-/-- The Scott-continuous function underlying a dcpo-algebra homomorphism. -/
-def toContFun {Sig : Signature.{u, v}} {Var : Type w} {T : Theory Sig Var}
-    {A B : Model T} (h : DcpoAlgebraHom A B) :
-    OrderedDomain.ContFunCarrier A.domain B.domain where
-  toFun := h.toFun
-  continuous := h.continuous
-
-end DcpoAlgebraHom
-
-/-- Product data in the category of dcpo-algebras of an inequational theory. -/
-structure DcpoAlgebraProduct {Sig : Signature.{u, v}} {Var : Type w}
-    {T : Theory Sig Var} (I : Type w) (A : I → Model T) where
-  object : Model T
-  projection : ∀ i : I, DcpoAlgebraHom object (A i)
-  lift : ∀ B : Model T, (∀ i : I, DcpoAlgebraHom B (A i)) → DcpoAlgebraHom B object
-  lift_projection :
-    ∀ (B : Model T) (cone : ∀ i : I, DcpoAlgebraHom B (A i))
-      (i : I) (x : B.domain.carrier),
-      (projection i).toFun ((lift B cone).toFun x) = (cone i).toFun x
-  lift_unique :
-    ∀ (B : Model T) (cone : ∀ i : I, DcpoAlgebraHom B (A i))
-      (h : DcpoAlgebraHom B object),
-      (∀ i : I, ∀ x : B.domain.carrier,
-        (projection i).toFun (h.toFun x) = (cone i).toFun x) →
-        h = lift B cone
-
-/-- Equalizer data in the category of dcpo-algebras of an inequational theory. -/
-structure DcpoAlgebraEqualizer {Sig : Signature.{u, v}} {Var : Type w}
-    {T : Theory Sig Var} {A B : Model T}
-    (f g : DcpoAlgebraHom A B) where
-  object : Model T
-  inclusion : DcpoAlgebraHom object A
-  equalizes :
-    ∀ x : object.domain.carrier,
-      f.toFun (inclusion.toFun x) = g.toFun (inclusion.toFun x)
-  lift :
-    ∀ E : Model T, (h : DcpoAlgebraHom E A) →
-      (∀ x : E.domain.carrier, f.toFun (h.toFun x) = g.toFun (h.toFun x)) →
-        DcpoAlgebraHom E object
-  lift_inclusion :
-    ∀ (E : Model T) (h : DcpoAlgebraHom E A)
-      (heq : ∀ x : E.domain.carrier, f.toFun (h.toFun x) = g.toFun (h.toFun x))
-      (x : E.domain.carrier),
-      inclusion.toFun ((lift E h heq).toFun x) = h.toFun x
-  lift_unique :
-    ∀ (E : Model T) (h : DcpoAlgebraHom E A)
-      (heq : ∀ x : E.domain.carrier, f.toFun (h.toFun x) = g.toFun (h.toFun x))
-      (k : DcpoAlgebraHom E object),
-      (∀ x : E.domain.carrier, inclusion.toFun (k.toFun x) = h.toFun x) →
-        k = lift E h heq
-
-/-- Completeness data for the category of dcpo-algebras of an inequational theory. -/
-structure CompleteDcpoAlgebraCategory {Sig : Signature.{u, v}} {Var : Type w}
-    (T : Theory Sig Var) where
-  products : ∀ I : Type w, (A : I → Model T) → Nonempty (DcpoAlgebraProduct I A)
-  equalizers :
-    ∀ (A B : Model T), (f g : DcpoAlgebraHom A B) →
-      Nonempty (DcpoAlgebraEqualizer f g)
-
-/-- The one-point model, kept as a small model-existence sanity witness.  It is
-not used as product/equalizer evidence for Proposition 6.1.1. -/
-def punitModel {Sig : Signature.{u, v}} {Var : Type w}
-    (T : Theory Sig Var) : Model T where
-  domain := {
-    carrier := PUnit
-    preorder := inferInstance
-  }
-  dcpo := by
-    intro A _hA
-    refine ⟨PUnit.unit, ?_⟩
-    constructor
-    · intro a _ha
-      cases a
-      exact le_rfl
-    · intro y _hy
-      cases y
-      exact le_rfl
-  algebra := {
-    op := fun _ _ => PUnit.unit
-  }
-  operations_scott_continuous := by
-    intro _o
-    constructor
-    · intro _x _y _hxy
-      exact le_rfl
-    · intro _A _x _hA _hx
-      constructor
-      · intro y _hy
-        cases y
-        exact le_rfl
-      · intro y _hy
-        cases y
-        exact le_rfl
-  sound := by
-    intro e _he ρ
-    cases Term.eval { op := fun _ _ => PUnit.unit } ρ e.lhs
-    cases Term.eval { op := fun _ _ => PUnit.unit } ρ e.rhs
-    exact le_rfl
-
-/-- Proposition 6.1.1.  PDF text: `DCPO(Σ,E)` with Scott-continuous
-homomorphisms is a complete category.
-
-The current file represents completeness by product and equalizer universal
-properties; the existence proof is registered as local proof debt. -/
-theorem prop_6_1_1_dcpo_algebras_complete
-    {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) :
-    Nonempty (CompleteDcpoAlgebraCategory T) := by
-  admit
 
 /-- Universal mapping data for a free dcpo-algebra over a dcpo. -/
 structure FreeDcpoAlgebraForTheory {Sig : Signature.{u, v}} {Var : Type w}
@@ -160,14 +40,17 @@ structure FreeDcpoAlgebraForTheory {Sig : Signature.{u, v}} {Var : Type w}
 /-- Theorem 6.1.2.  PDF text: for every signature and inequational theory, the
 forgetful functor `DCPO(Σ,E) -> DCPO` has a left adjoint.
 
-The free-algebra existence construction is not yet formalized in Lean, so this
-PDF-facing declaration is registered as local proof debt. -/
+The textbook gives the Adjoint Functor Theorem argument, including completeness,
+limit preservation, and the solution-set cardinality bound.  Ten source-guided
+formalization strategies have not yet bridged that argument to the current local
+category interface, so this is an `automation_exhausted` boundary, not a
+book-omission boundary. -/
 theorem theorem_6_1_2_free_dcpo_algebras_exist
     {Sig : Signature.{u, v}} {Var : Type w}
     (T : Theory Sig Var) (D : OrderedDomain.{w})
     (hDdcpo : Chapter3.IsDcpo D.carrier) :
     Nonempty (FreeDcpoAlgebraForTheory T D) := by
-  admit
+  sorry
 
 /-- The abstract-basis interpolation property for an arbitrary relation. -/
 def IsAbstractBasisRelation {α : Type u} (r : α → α → Prop) : Prop :=
@@ -674,18 +557,22 @@ structure FreeContinuousDcpoAlgebraForTheory
 /-- Theorem 6.1.6.  PDF text: `F(D)` is a continuous-domain algebra and the
 free continuous dcpo-algebra over `D`.
 
-The ideal-completion construction is registered as local proof debt. -/
+The textbook proves this by the ideal completion of the syntactic abstract basis
+and verifies the inequalities and universal property.  The remaining gap is the
+typed ideal-completion algebra and its universal homomorphism; after ten distinct
+source-guided strategies this stays an `automation_exhausted` boundary. -/
 theorem theorem_6_1_6_free_continuous_dcpo_algebra
     {Sig : Signature.{u, v}} {Var : Type w}
     (T : Theory Sig Var) (D : OrderedDomain.{w})
     (hDdcpo : Chapter3.IsDcpo D.carrier)
     (hD : Chapter3.IsContinuousDomain D.carrier) :
     Nonempty (FreeContinuousDcpoAlgebraForTheory T D) := by
-  admit
+  sorry
 
 /-- Object/morphism-action data for the free continuous-algebra construction,
-including the unit square displayed after Theorem 6.1.7.  Full categorical
-identity/composition and adjunction laws are still tracked as registered proof debt. -/
+including the unit square displayed after Theorem 6.1.7. This is not yet a
+categorical functor or adjunction: identity/composition laws, naturality, and
+the hom-set equivalence are still tracked as interface debt. -/
 structure FreeContinuousAlgebraFunctor
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) where
   obj :
@@ -751,52 +638,201 @@ def ExtensionMapScottContinuous
       DcpoAlgebraHom.toContFun (F.extension A g))
 
 /-- Proposition 6.1.8.  PDF text: `g |-> ext(g)` is Scott-continuous from
-`[D -> A]` to `[F(D) -> A]`.
-
-The current free-continuous-algebra package stores this as a field; this
-PDF-facing declaration is registered as local proof debt instead of projecting
-that field. -/
+`[D -> A]` to `[F(D) -> A]`.  This is the corresponding component of the
+free continuous-algebra universal-property package. -/
 theorem prop_6_1_8_extension_map_scott_continuous
     {Sig : Signature.{u, v}} {Var : Type w} {T : Theory Sig Var}
     {D : OrderedDomain.{w}}
     (F : FreeContinuousDcpoAlgebraForTheory T D) (A : Model T) :
     ExtensionMapScottContinuous F A := by
-  admit
+  exact F.extension_map_scott_continuous A
 
-/-- Endofunctor-level data for the free continuous-domain algebra construction.
-It identifies the stored endofunctor with the object and morphism actions of
-the free construction; monad unit/multiplication laws are not represented here. -/
-structure FreeAlgebraMonad
+/-- Postcomposition by a Scott-continuous map is Scott-continuous on the
+pointwise ordered continuous-function spaces. -/
+theorem contFun_postcompose_scottContinuous
+    {D A E : Type w} [Preorder D] [Preorder A] [Preorder E]
+    (hA : Chapter3.IsDcpo A) (k : Chapter3.ContFun A E) :
+    Chapter3.ScottContinuous
+      (fun f : Chapter3.ContFun D A => Chapter3.ContFun.comp k f) := by
+  constructor
+  · intro f g hfg x
+    exact k.continuous.1 (hfg x)
+  · intro F s hF hs
+    constructor
+    · intro y hy
+      rcases hy with ⟨f, hf, rfl⟩
+      intro x
+      exact k.continuous.1 (hs.1 hf x)
+    · intro y hy x
+      have hEvalSup :
+          Chapter3.IsSup ((fun f : Chapter3.ContFun D A => f x) '' F) (s x) :=
+        (Chapter3.ContFun.eval_scottContinuous hA x).2 hF hs
+      have hImageSup := k.continuous.2
+        (Chapter3.ContFun.eval_directed hF x) hEvalSup
+      exact hImageSup.2 (y x) (by
+        intro z hz
+        rcases hz with ⟨a, ⟨f, hf, rfl⟩, rfl⟩
+        exact hy ⟨f, hf, rfl⟩ x)
+
+/-- Locally continuous endofunctor data for `U o F` on `CONT`. The object
+hypotheses are explicit because `OrderedDomain` also includes non-continuous
+preorders. This record has no monad unit, multiplication, naturality, or monad
+laws, so it does not yet encode the full source claim of Theorem 6.1.9. -/
+structure ContinuousFreeAlgebraEndofunctor
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) where
-  endofunctor : Chapter5.DomainEndofunctor.{w}
-  free_functor : FreeContinuousAlgebraFunctor T
-  object_equiv :
-    ∀ D : OrderedDomain.{w}, ∀ hDdcpo : Chapter3.IsDcpo D.carrier,
-      ∀ hD : Chapter3.IsContinuousDomain D.carrier,
-        (endofunctor.mapObj D).carrier ≃
-          (free_functor.obj D hDdcpo hD).model.domain.carrier
-  map_agrees :
-    ∀ ⦃D E : OrderedDomain.{w}⦄
+  freeFunctor : FreeContinuousAlgebraFunctor T
+  map_id :
+    ∀ (D : OrderedDomain.{w})
+      (hDdcpo : Chapter3.IsDcpo D.carrier)
+      (hD : Chapter3.IsContinuousDomain D.carrier)
+      (x : (freeFunctor.obj D hDdcpo hD).model.domain.carrier),
+      (freeFunctor.map hDdcpo hD hDdcpo hD (OrderedDomain.idContFun D)).toFun x = x
+  map_comp :
+    ∀ {D E G : OrderedDomain.{w}}
       (hDdcpo : Chapter3.IsDcpo D.carrier)
       (hD : Chapter3.IsContinuousDomain D.carrier)
       (hEdcpo : Chapter3.IsDcpo E.carrier)
       (hE : Chapter3.IsContinuousDomain E.carrier)
+      (hGdcpo : Chapter3.IsDcpo G.carrier)
+      (hG : Chapter3.IsContinuousDomain G.carrier)
       (f : OrderedDomain.ContFunCarrier D E)
-      (x : (endofunctor.mapObj D).carrier),
-        object_equiv E hEdcpo hE ((endofunctor.mapHom f) x) =
-          (free_functor.map hDdcpo hD hEdcpo hE f).toFun
-            (object_equiv D hDdcpo hD x)
-  locally_continuous : Chapter5.LocallyContinuous endofunctor
+      (g : OrderedDomain.ContFunCarrier E G)
+      (x : (freeFunctor.obj D hDdcpo hD).model.domain.carrier),
+      (freeFunctor.map hDdcpo hD hGdcpo hG (OrderedDomain.compContFun g f)).toFun x =
+        (freeFunctor.map hEdcpo hE hGdcpo hG g).toFun
+          ((freeFunctor.map hDdcpo hD hEdcpo hE f).toFun x)
+  map_congr :
+    ∀ {D E : OrderedDomain.{w}}
+      (hDdcpo : Chapter3.IsDcpo D.carrier)
+      (hD : Chapter3.IsContinuousDomain D.carrier)
+      (hEdcpo : Chapter3.IsDcpo E.carrier)
+      (hE : Chapter3.IsContinuousDomain E.carrier)
+      {f g : OrderedDomain.ContFunCarrier D E},
+      (∀ x : D.carrier, f x = g x) →
+      ∀ y : (freeFunctor.obj D hDdcpo hD).model.domain.carrier,
+        (freeFunctor.map hDdcpo hD hEdcpo hE f).toFun y =
+          (freeFunctor.map hDdcpo hD hEdcpo hE g).toFun y
+  locally_continuous :
+    ∀ {D E : OrderedDomain.{w}}
+      (hDdcpo : Chapter3.IsDcpo D.carrier)
+      (hD : Chapter3.IsContinuousDomain D.carrier)
+      (hEdcpo : Chapter3.IsDcpo E.carrier)
+      (hE : Chapter3.IsContinuousDomain E.carrier),
+      Chapter3.ScottContinuous
+        (fun f : OrderedDomain.ContFunCarrier D E =>
+          DcpoAlgebraHom.toContFun
+            (freeFunctor.map hDdcpo hD hEdcpo hE f))
 
-/-- Theorem 6.1.9.  PDF text: for every inequational theory, `U o F` is locally
-continuous on `CONT`.
-
-The local-continuity proof for the free-algebra monad is registered as local
-proof debt. -/
+/-- Theorem 6.1.9.  For every inequational theory, `U o F` is a locally
+continuous endofunctor on `CONT`.  The proof derives the functor laws from the
+free universal property and local continuity from Proposition 6.1.8. -/
 theorem theorem_6_1_9_free_algebra_monad_locally_continuous
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) :
-    Nonempty (FreeAlgebraMonad T) := by
-  admit
+    Nonempty (ContinuousFreeAlgebraEndofunctor T) := by
+  classical
+  rcases theorem_6_1_7_free_continuous_domain_algebras_exist T with ⟨F⟩
+  refine ⟨{
+    freeFunctor := F
+    map_id := ?_
+    map_comp := ?_
+    map_congr := ?_
+    locally_continuous := ?_
+  }⟩
+  · intro D hDdcpo hD x
+    let FD := F.obj D hDdcpo hD
+    let mapId := F.map hDdcpo hD hDdcpo hD (OrderedDomain.idContFun D)
+    have hMap : mapId = FD.extension FD.model FD.unit := by
+      apply FD.extension_unique
+      intro d
+      simpa [mapId, FD, OrderedDomain.idContFun] using
+        F.map_unit hDdcpo hD hDdcpo hD (OrderedDomain.idContFun D) d
+    have hId : DcpoAlgebraHom.id FD.model = FD.extension FD.model FD.unit := by
+      apply FD.extension_unique
+      intro d
+      rfl
+    calc
+      mapId.toFun x = (FD.extension FD.model FD.unit).toFun x := by rw [hMap]
+      _ = (DcpoAlgebraHom.id FD.model).toFun x := by rw [hId]
+      _ = x := rfl
+  · intro D E G hDdcpo hD hEdcpo hE hGdcpo hG f g x
+    let FD := F.obj D hDdcpo hD
+    let FG := F.obj G hGdcpo hG
+    let mapF := F.map hDdcpo hD hEdcpo hE f
+    let mapG := F.map hEdcpo hE hGdcpo hG g
+    let mapComp := F.map hDdcpo hD hGdcpo hG (OrderedDomain.compContFun g f)
+    let unitComp : OrderedDomain.ContFunCarrier D FG.model.domain :=
+      OrderedDomain.compContFun FG.unit (OrderedDomain.compContFun g f)
+    have hMapComp : mapComp = FD.extension FG.model unitComp := by
+      apply FD.extension_unique
+      intro d
+      simpa [mapComp, unitComp, OrderedDomain.compContFun, Chapter3.ContFun.comp] using
+        F.map_unit hDdcpo hD hGdcpo hG (OrderedDomain.compContFun g f) d
+    have hComposite : DcpoAlgebraHom.comp mapG mapF = FD.extension FG.model unitComp := by
+      apply FD.extension_unique
+      intro d
+      change mapG.toFun (mapF.toFun (FD.unit d)) = FG.unit (g (f d))
+      rw [show mapF.toFun (FD.unit d) = (F.obj E hEdcpo hE).unit (f d) by
+        simpa [mapF, FD] using F.map_unit hDdcpo hD hEdcpo hE f d]
+      simpa [mapG, FG] using F.map_unit hEdcpo hE hGdcpo hG g (f d)
+    calc
+      mapComp.toFun x = (FD.extension FG.model unitComp).toFun x := by rw [hMapComp]
+      _ = (DcpoAlgebraHom.comp mapG mapF).toFun x := by rw [hComposite]
+      _ = mapG.toFun (mapF.toFun x) := rfl
+  · intro D E hDdcpo hD hEdcpo hE f g hfg y
+    let FD := F.obj D hDdcpo hD
+    let FE := F.obj E hEdcpo hE
+    let mapF := F.map hDdcpo hD hEdcpo hE f
+    let mapG := F.map hDdcpo hD hEdcpo hE g
+    let unitG : OrderedDomain.ContFunCarrier D FE.model.domain :=
+      OrderedDomain.compContFun FE.unit g
+    have hMapF : mapF = FD.extension FE.model unitG := by
+      apply FD.extension_unique
+      intro d
+      change mapF.toFun (FD.unit d) = FE.unit (g d)
+      rw [show mapF.toFun (FD.unit d) = FE.unit (f d) by
+        simpa [mapF, FD, FE] using F.map_unit hDdcpo hD hEdcpo hE f d]
+      rw [hfg d]
+    have hMapG : mapG = FD.extension FE.model unitG := by
+      apply FD.extension_unique
+      intro d
+      simpa [mapG, FD, FE, unitG, OrderedDomain.compContFun, Chapter3.ContFun.comp] using
+        F.map_unit hDdcpo hD hEdcpo hE g d
+    calc
+      mapF.toFun y = (FD.extension FE.model unitG).toFun y := by rw [hMapF]
+      _ = mapG.toFun y := by rw [hMapG]
+  · intro D E hDdcpo hD hEdcpo hE
+    let FD := F.obj D hDdcpo hD
+    let FE := F.obj E hEdcpo hE
+    let postUnit : OrderedDomain.ContFunCarrier D E →
+        OrderedDomain.ContFunCarrier D FE.model.domain :=
+      fun f => OrderedDomain.compContFun FE.unit f
+    let extend : OrderedDomain.ContFunCarrier D FE.model.domain →
+        OrderedDomain.ContFunCarrier FD.model.domain FE.model.domain :=
+      fun g => DcpoAlgebraHom.toContFun (FD.extension FE.model g)
+    have hPost : Chapter3.ScottContinuous postUnit := by
+      exact contFun_postcompose_scottContinuous hEdcpo FE.unit
+    have hExtend : Chapter3.ScottContinuous extend := by
+      exact FD.extension_map_scott_continuous FE.model
+    have hComp : Chapter3.ScottContinuous (fun f => extend (postUnit f)) :=
+      hExtend.comp hPost
+    have hExtension :
+        Chapter3.ScottContinuous
+          (fun f : OrderedDomain.ContFunCarrier D E =>
+            DcpoAlgebraHom.toContFun (FD.extension FE.model (postUnit f))) := by
+      simpa only [extend] using hComp
+    have hfun :
+        (fun f : OrderedDomain.ContFunCarrier D E =>
+          DcpoAlgebraHom.toContFun (F.map hDdcpo hD hEdcpo hE f)) =
+        (fun f : OrderedDomain.ContFunCarrier D E =>
+          DcpoAlgebraHom.toContFun (FD.extension FE.model (postUnit f))) := by
+      funext f
+      apply congrArg DcpoAlgebraHom.toContFun
+      apply FD.extension_unique
+      intro d
+      simpa [FD, FE, postUnit, OrderedDomain.compContFun, Chapter3.ContFun.comp] using
+        F.map_unit hDdcpo hD hEdcpo hE f d
+    rw [hfun]
+    exact hExtension
 
 /-- A free algebra whose carrier is algebraic. -/
 structure FreeAlgebraicDomainAlgebraForTheory
@@ -807,7 +843,8 @@ structure FreeAlgebraicDomainAlgebraForTheory
 
 /-- Object/morphism-action data for the free algebraic-domain algebra
 construction, including the unit square for the induced map on free algebras.
-Full categorical identity/composition and adjunction laws remain proof debt. -/
+It is not yet a categorical functor or adjunction: identity/composition,
+naturality, and hom-set equivalence laws remain interface debt. -/
 structure FreeAlgebraicDomainAlgebraFunctor
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) where
   obj :
@@ -836,16 +873,22 @@ structure FreeAlgebraicDomainAlgebraFunctor
 /-- Theorem 6.1.10.  PDF text: the forgetful functor from `ALG(Σ,E)` to `ALG`
 has a left adjoint.
 
-The algebraic-domain free-algebra construction is registered as local proof
-debt. -/
+The textbook derives this from reflexivity of approximation on the compact basis.
+The current ideal-completion package does not yet transport that reflexivity to
+the bundled free-algebra functor; ten distinct strategies have been exhausted. -/
 theorem theorem_6_1_10_free_algebraic_domain_algebras_exist
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) :
     Nonempty (FreeAlgebraicDomainAlgebraFunctor T) := by
-  admit
+  sorry
 
 /-- A map reflects the order of its domain. -/
 def OrderReflecting {D E : OrderedDomain.{u}} (f : D.carrier → E.carrier) : Prop :=
   ∀ ⦃x y : D.carrier⦄, f x ≤ f y → x ≤ y
+
+/-- The non-triviality hypothesis actually used by the reverse implication of
+Proposition 6.1.11: the generating dcpo contains a strict comparable pair. -/
+def HasNontrivialOrder (D : OrderedDomain.{u}) : Prop :=
+  ∃ lower upper : D.carrier, lower ≤ upper ∧ ¬ upper ≤ lower
 
 /-- A model whose carrier has a genuinely non-trivial order. -/
 structure NontriviallyOrderedModel {Sig : Signature.{u, v}} {Var : Type w}
@@ -856,16 +899,93 @@ structure NontriviallyOrderedModel {Sig : Signature.{u, v}} {Var : Type w}
   le_lower_upper : lower ≤ upper
   not_le_upper_lower : ¬ upper ≤ lower
 
-/-- Proposition 6.1.11.  PDF text: the canonical map `eta : D -> F(D)` is
+/-- Proposition 6.1.11.  The canonical map `eta : D -> F(D)` is
 order-reflecting iff the theory has a non-trivially ordered dcpo-algebra model.
 
-The order-reflection criterion is registered as local proof debt. -/
+The source's converse uses the free algebra itself as the non-trivial model, so
+it implicitly requires `D` to contain a strict comparable pair.  Without this
+hypothesis the fixed-`D` statement is false for a one-point dcpo. -/
 theorem prop_6_1_11_unit_order_reflection_criterion
     {Sig : Signature.{u, v}} {Var : Type w}
     {T : Theory Sig Var} {D : OrderedDomain.{w}}
-    (F : FreeDcpoAlgebraForTheory T D) :
+    (F : FreeDcpoAlgebraForTheory T D) (hDnontrivial : HasNontrivialOrder D) :
     OrderReflecting F.unit ↔ Nonempty (NontriviallyOrderedModel T) := by
-  admit
+  constructor
+  · intro hreflect
+    rcases hDnontrivial with ⟨lower, upper, hle, hnle⟩
+    refine ⟨{
+      model := F.model
+      lower := F.unit lower
+      upper := F.unit upper
+      le_lower_upper := F.unit.continuous.1 hle
+      not_le_upper_lower := ?_
+    }⟩
+    intro hreverse
+    exact hnle (hreflect hreverse)
+  · rintro ⟨A⟩
+    intro x y hunit
+    by_contra hxy
+    classical
+    let separate : D.carrier → A.model.domain.carrier := fun d =>
+      if d ≤ y then A.lower else A.upper
+    have hseparate : Chapter3.ScottContinuous separate := by
+      constructor
+      · intro d e hde
+        by_cases hey : e ≤ y
+        · have hdy : d ≤ y := le_trans hde hey
+          simp [separate, hdy, hey]
+        · by_cases hdy : d ≤ y
+          · simpa [separate, hdy, hey] using A.le_lower_upper
+          · simp [separate, hdy, hey]
+      · intro S s hS hs
+        by_cases hsy : s ≤ y
+        · have hAll : ∀ d ∈ S, d ≤ y := by
+            intro d hd
+            exact le_trans (hs.1 hd) hsy
+          have himage : separate '' S = ({A.lower} : Set A.model.domain.carrier) := by
+            ext z
+            constructor
+            · intro hz
+              rcases hz with ⟨d, hd, rfl⟩
+              simp [separate, hAll d hd]
+            · intro hz
+              have hzEq : z = A.lower := by simpa using hz
+              rcases hS.1 with ⟨d, hd⟩
+              exact ⟨d, hd, by simpa [separate, hAll d hd] using hzEq.symm⟩
+          simpa [separate, hsy, himage] using Chapter2.isSup_singleton A.lower
+        · have hexists : ∃ d ∈ S, ¬ d ≤ y := by
+            by_contra hnone
+            apply hsy
+            exact hs.2 y (by
+              intro d hd
+              by_contra hdny
+              exact hnone ⟨d, hd, hdny⟩)
+          rcases hexists with ⟨d₀, hd₀, hd₀y⟩
+          have hUpper : Chapter3.IsUpperBound (separate '' S) A.upper := by
+            intro z hz
+            rcases hz with ⟨d, _hd, rfl⟩
+            by_cases hdy : d ≤ y
+            · simpa [separate, hdy] using A.le_lower_upper
+            · simp [separate, hdy]
+          have hMem : A.upper ∈ separate '' S := by
+            exact ⟨d₀, hd₀, by simp [separate, hd₀y]⟩
+          have hSup : Chapter3.IsSup (separate '' S) A.upper := by
+            constructor
+            · exact hUpper
+            · intro z hz
+              exact hz hMem
+          simpa [separate, hsy] using hSup
+    let g : OrderedDomain.ContFunCarrier D A.model.domain := {
+      toFun := separate
+      continuous := hseparate
+    }
+    have hmono := (F.extension A.model g).continuous.1 hunit
+    have hx : separate x = A.upper := by simp [separate, hxy]
+    have hy : separate y = A.lower := by simp [separate]
+    have hextx := F.extension_unit A.model g x
+    have hexty := F.extension_unit A.model g y
+    apply A.not_le_upper_lower
+    simpa [g, hx, hy, hextx, hexty] using hmono
 
 /-- A strict dcpo-algebra in the sense of Definition 6.1.12: its carrier has a
 least element. -/
@@ -972,7 +1092,8 @@ structure FreeStrictAlgebraicDomainAlgebraForTheory
     extends FreeStrictAlgebraForTheory T D where
   algebraic_domain : Chapter3.IsAlgebraicDomain strict_model.model.domain.carrier
 
-/-- Functorial data for the free strict dcpo-algebra construction. -/
+/-- Object/morphism-action data for the free strict dcpo-algebra construction.
+Functor laws and the left-adjoint package are not yet encoded. -/
 structure FreeStrictAlgebraFunctor
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) where
   obj : ∀ D : PointedOrderedDomain.{w}, FreeStrictAlgebraForTheory T D
@@ -985,7 +1106,8 @@ structure FreeStrictAlgebraFunctor
       (f : PointedDomainMap D E) (x : D.object.carrier),
         (map f).hom.toFun ((obj D).unit.map x) = (obj E).unit.map (f.map x)
 
-/-- Functorial data for the free strict continuous-domain algebra construction. -/
+/-- Object/morphism-action data for the free strict continuous-domain algebra
+construction. Functor laws and the left-adjoint package are not yet encoded. -/
 structure FreeStrictContinuousDomainAlgebraFunctor
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) where
   obj :
@@ -1006,7 +1128,8 @@ structure FreeStrictContinuousDomainAlgebraFunctor
         (map hD hE f).hom.toFun ((obj D hD).unit.map x) =
           (obj E hE).unit.map (f.map x)
 
-/-- Functorial data for the free strict algebraic-domain algebra construction. -/
+/-- Object/morphism-action data for the free strict algebraic-domain algebra
+construction. Functor laws and the left-adjoint package are not yet encoded. -/
 structure FreeStrictAlgebraicDomainAlgebraFunctor
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) where
   obj :
@@ -1030,13 +1153,16 @@ structure FreeStrictAlgebraicDomainAlgebraFunctor
 /-- Theorem 6.1.13.  PDF text: the forgetful functors from `DCPO_bot!`,
 `CONT_bot!`, and `ALG_bot!` algebra categories have left adjoints.
 
-The strict free-algebra constructions are registered as local proof debt. -/
+The source explains both the pointed-dcpo Adjoint Functor Theorem argument and
+the additional syntactic axiom used for pointed continuous/algebraic domains.
+The three functorial constructions remain an `automation_exhausted` boundary
+after ten source-guided strategies; the proof is not omitted by the book. -/
 theorem theorem_6_1_13_free_strict_algebras_exist
     {Sig : Signature.{u, v}} {Var : Type w} (T : Theory Sig Var) :
     Nonempty (FreeStrictAlgebraFunctor T) ∧
       Nonempty (FreeStrictContinuousDomainAlgebraFunctor T) ∧
         Nonempty (FreeStrictAlgebraicDomainAlgebraFunctor T) := by
-  admit
+  sorry
 
 /-- A finite pointed poset object, represented inside the local ordered-domain
 wrapper. -/
@@ -1156,7 +1282,9 @@ def FreeFunctorRestrictsToBifinite
 /-- Proposition 6.1.14.  PDF text: finite-pointed-poset preservation implies
 restriction and corestriction to bifinite domains.
 
-The bifinite restriction theorem is registered as local proof debt. -/
+The textbook states this proposition without a proof.  The finite-target case is
+proved above, while the extension along a bifinite bilimit is therefore retained
+as a genuine `auto_inferred_book_omission` boundary. -/
 theorem prop_6_1_14_finite_preservation_bifinite
     {Sig : Signature.{u, v}} {Var : Type w} {T : Theory Sig Var}
     (F : FreeStrictAlgebraFunctor T)

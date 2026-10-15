@@ -377,9 +377,10 @@ def build_tex(data: dict, overrides: dict[str, dict], block_overrides: dict[str,
         r"\usepackage[hidelinks]{hyperref}",
         r"\usepackage{xcolor}",
         r"\usepackage{marginnote}",
+        r"\usepackage{needspace}",
         r"\setlength{\parindent}{0pt}",
         r"\setlength{\parskip}{0.6em}",
-        r"\newcommand{\leanmarker}[2]{\marginnote{\hyperlink{#1}{\color{teal}\fbox{\scriptsize Lean}}}\hypertarget{#1}{\textbf{#2.}}}",
+        r"\newcommand{\leanmarker}[2]{\Needspace{3\baselineskip}\marginnote{\hyperlink{#1}{\color{teal}\fbox{\scriptsize Lean}}}\hypertarget{#1}{\textbf{#2.}}}",
         r"\begin{document}",
         r"\section*{Chapter 6 marked reading copy}",
         r"\textit{Generated locally from the user's PDF. Do not publish this extracted text unless you have the right to do so.}",
@@ -397,15 +398,21 @@ def build_tex(data: dict, overrides: dict[str, dict], block_overrides: dict[str,
             if skip_blocks > 0:
                 skip_blocks -= 1
                 continue
-            if block["id"] in block_overrides:
-                override = block_overrides[block["id"]]
-                page_lines.append(override["tex"])
-                page_lines.append("")
-                skip_blocks = int(override.get("skipBlocksAfter", 0))
-                continue
             marker = block.get("marker")
             if marker and marker["id"] in overrides:
                 override = overrides[marker["id"]]
+                page_lines.append(override["tex"])
+                page_lines.append("")
+                marker_skip = int(override.get("skipBlocksAfter", 0))
+                block_override = block_overrides.get(block["id"])
+                if block_override:
+                    page_lines.append(block_override["tex"])
+                    page_lines.append("")
+                block_skip = int((block_override or {}).get("skipBlocksAfter", 0))
+                skip_blocks = max(marker_skip, block_skip)
+                continue
+            if block["id"] in block_overrides:
+                override = block_overrides[block["id"]]
                 page_lines.append(override["tex"])
                 page_lines.append("")
                 skip_blocks = int(override.get("skipBlocksAfter", 0))

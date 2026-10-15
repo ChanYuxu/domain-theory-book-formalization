@@ -18,6 +18,7 @@ The section files intentionally reuse the Chapter 2 order-theoretic definitions
 through `Practice.DomainTheory.Chapter03.Prelude`; they do not redeclare dcpos,
 directed sets, Scott-continuity, way-below, compactness, or bases.
 
-The per-item PDF anchor and semantic-strength audit for Chapter 3 is recorded in
-`formalization_status.md`, under "Chapter 3 PDF and Semantic Source Audit".
+Per-item PDF anchors and proof-boundary notes are recorded in
+`docs/chapter3-map.json`; mathlib/API comparisons are recorded in
+`docs/chapter3-mathlib-alignment.md`.
 -/

@@ -140,8 +140,11 @@ def IsMaximalCartesianClosedSubcategory (Base C : DomainClass.{u}) : Prop :=
         DomainClass.Subclass C E → DomainClass.Subclass E C
 
 /-- Theorem 4.3.10, PDF text: the maximal cartesian closed full subcategories
-of `CONT` and `ALG` are the finite-amalgam and disjoint-union closures listed
-in the book.  The classification proof is registered as local proof debt. -/
+of `CONT` and `ALG` are exactly the finite-amalgam and disjoint-union closures
+listed in the book.  The first eight clauses assert maximality of every listed
+class; the final two clauses express exhaustiveness up to extensional equality
+of object classes.  The classification proof is registered as local proof
+debt. -/
 theorem theorem_4_3_10_maximal_cartesian_closed_subcategories :
     IsMaximalCartesianClosedSubcategory
         (ContinuousDomainClass : DomainClass.{u})
@@ -164,7 +167,33 @@ theorem theorem_4_3_10_maximal_cartesian_closed_subcategories :
         (FiniteAmalgamClass (AlgebraicLDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) ∧
       IsMaximalCartesianClosedSubcategory
         (AlgebraicDomainClass : DomainClass.{u})
-        (DisjointUnionClass (AlgebraicLDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) := by
+        (DisjointUnionClass (AlgebraicLDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) ∧
+      (∀ C : DomainClass.{u},
+        IsMaximalCartesianClosedSubcategory
+            (ContinuousDomainClass : DomainClass.{u}) C →
+          DomainClass.Equivalent C
+              (FiniteAmalgamClass (FSDomainClass : DomainClass.{u}) : DomainClass.{u}) ∨
+            DomainClass.Equivalent C
+              (DisjointUnionClass (FSDomainClass : DomainClass.{u}) : DomainClass.{u}) ∨
+            DomainClass.Equivalent C
+              (FiniteAmalgamClass (LDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) ∨
+            DomainClass.Equivalent C
+              (DisjointUnionClass (LDomainObjectClass : DomainClass.{u}) : DomainClass.{u})) ∧
+        ∀ C : DomainClass.{u},
+          IsMaximalCartesianClosedSubcategory
+              (AlgebraicDomainClass : DomainClass.{u}) C →
+            DomainClass.Equivalent C
+                (FiniteAmalgamClass
+                  (BifiniteDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) ∨
+              DomainClass.Equivalent C
+                (DisjointUnionClass
+                  (BifiniteDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) ∨
+              DomainClass.Equivalent C
+                (FiniteAmalgamClass
+                  (AlgebraicLDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) ∨
+              DomainClass.Equivalent C
+                (DisjointUnionClass
+                  (AlgebraicLDomainObjectClass : DomainClass.{u}) : DomainClass.{u}) := by
   admit
 
 end Chapter4

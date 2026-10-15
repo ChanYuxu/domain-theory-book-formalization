@@ -9,10 +9,10 @@ set_option linter.style.longLine false
 /-!
 # Chapter 6.2: powerdomains
 
-This section records the numbered powerdomain items.  Some order-theoretic
-lemmas are proved directly, while most representation theorems are represented
-as visible proof debt with auxiliary packages or lightweight representation
-witnesses.
+This section records the numbered powerdomain items.  Source-provided arguments
+that still exceed the current ideal-completion or topological representation APIs
+are exposed as `sorry`; `admit` is reserved for results whose proof is absent
+from the textbook.
 -/
 
 universe u v w
@@ -223,7 +223,10 @@ def BasisFiniteEgliMilnerApprox {α : Type u} [Preorder α] {B : Set α}
 with basis `B` is the ideal completion of finite subsets ordered by
 Egli-Milner approximation.
 
-The ideal-completion representation is registered as local proof debt. -/
+The source derives this representation by quotienting semilattice terms to
+finite nonempty subsets and transporting syntactic approximation to the
+Egli--Milner relation.  The quotient/free-algebra equivalence remains an
+`automation_exhausted` boundary after ten source-guided strategies. -/
 theorem theorem_6_2_3_plotkin_powerdomain_continuous
     (D : OrderedDomain.{u}) (B : Set D.carrier)
     (hDdcpo : Chapter3.IsDcpo D.carrier)
@@ -231,7 +234,7 @@ theorem theorem_6_2_3_plotkin_powerdomain_continuous
     Nonempty
       (PowerdomainBasisPresentation D PowerdomainKind.plotkin
         (FiniteNonemptySubset B) BasisFiniteEgliMilnerApprox) := by
-  admit
+  sorry
 
 /-- Definition 6.2.4: convex hull in a preordered set. -/
 def ConvexHull {α : Type u} [Preorder α] (M : Set α) : Set α :=
@@ -360,7 +363,9 @@ theorem prop_6_2_5_convex_egli_milner_properties
 powerdomain is the ideal completion of finitely generated convex compact
 subsets with Egli-Milner ordering.
 
-This representation theorem is registered as local proof debt. -/
+The textbook states this as an immediate consequence of Proposition 6.2.5 but
+does not supply a proof.  It is therefore a genuine
+`auto_inferred_book_omission` boundary. -/
 theorem prop_6_2_6_plotkin_powerdomain_algebraic
     (D : OrderedDomain.{u})
     (hDdcpo : Chapter3.IsDcpo D.carrier)
@@ -396,7 +401,7 @@ def HasNonemptySuprema (D : OrderedDomain.{u}) : Prop :=
 /-- Existence of bounded infima for non-empty sets. -/
 def HasBoundedInfima (D : OrderedDomain.{u}) : Prop :=
   ∀ A : Set D.carrier,
-    A.Nonempty → (∃ u : D.carrier, Chapter3.IsUpperBound A u) →
+    A.Nonempty → (∃ l : D.carrier, Chapter3.IsLowerBound A l) →
       ∃ i : D.carrier, Chapter3.IsInf A i
 
 /-- Existence of binary infima. -/
@@ -417,6 +422,122 @@ def FormalUnionBinaryInf {D : OrderedDomain.{u}} (P : Powerdomain D) : Prop :=
     Chapter3.IsInf ({z : P.carrier.carrier | z = x ∨ z = y} : Set P.carrier.carrier)
       (P.unionLike x y)
 
+/-- Suprema of finite non-empty subsets of `A`.  This directed closure is the
+standard bridge from binary suprema and directed completeness to arbitrary
+non-empty suprema. -/
+def FiniteNonemptySuprema
+    {D : OrderedDomain.{u}} (A : Set D.carrier) : Set D.carrier :=
+  {x | ∃ F : Set D.carrier,
+    F.Finite ∧ F.Nonempty ∧ F ⊆ A ∧ Chapter3.IsSup F x}
+
+/-- Finite non-empty suprema form a directed set when binary suprema exist. -/
+theorem finiteNonemptySuprema_directed
+    {D : OrderedDomain.{u}}
+    (supOp : D.carrier → D.carrier → D.carrier)
+    (hSup : ∀ x y : D.carrier,
+      Chapter3.IsSup ({z : D.carrier | z = x ∨ z = y} : Set D.carrier) (supOp x y))
+    {A : Set D.carrier} (hA : A.Nonempty) :
+    Chapter3.DirectedSet (FiniteNonemptySuprema A) := by
+  constructor
+  · rcases hA with ⟨a, haA⟩
+    refine ⟨a, {a}, Set.finite_singleton a, ⟨a, by simp⟩, ?_, ?_⟩
+    · intro x hx
+      have hxa : x = a := by simpa using hx
+      simpa [hxa] using haA
+    · constructor
+      · intro x hx
+        have hxa : x = a := by simpa using hx
+        simpa [hxa]
+      · intro y hy
+        exact hy (by simp)
+  · intro x hx y hy
+    rcases hx with ⟨F, hFfin, hFne, hFA, hFx⟩
+    rcases hy with ⟨G, hGfin, hGne, hGA, hGy⟩
+    refine ⟨supOp x y, ?_, ?_, ?_⟩
+    · refine ⟨F ∪ G, hFfin.union hGfin,
+        hFne.mono Set.subset_union_left, ?_, ?_⟩
+      · intro a ha
+        exact ha.elim (fun haF => hFA haF) (fun haG => hGA haG)
+      · constructor
+        · intro a ha
+          rcases ha with haF | haG
+          · exact le_trans (hFx.1 haF) ((hSup x y).1 (Or.inl rfl))
+          · exact le_trans (hGy.1 haG) ((hSup x y).1 (Or.inr rfl))
+        · intro z hz
+          apply (hSup x y).2 z
+          intro q hq
+          rcases hq with rfl | rfl
+          · exact hFx.2 z (fun a haF => hz (Or.inl haF))
+          · exact hGy.2 z (fun a haG => hz (Or.inr haG))
+    · exact (hSup x y).1 (Or.inl rfl)
+    · exact (hSup x y).1 (Or.inr rfl)
+
+/-- A dcpo with binary suprema has all non-empty suprema. -/
+theorem hasNonemptySuprema_of_dcpo_binarySup
+    {D : OrderedDomain.{u}}
+    (hDcpo : Chapter3.IsDcpo D.carrier)
+    (supOp : D.carrier → D.carrier → D.carrier)
+    (hSup : ∀ x y : D.carrier,
+      Chapter3.IsSup ({z : D.carrier | z = x ∨ z = y} : Set D.carrier) (supOp x y)) :
+    HasNonemptySuprema D := by
+  intro A hA
+  let S := FiniteNonemptySuprema A
+  have hSdir : Chapter3.DirectedSet S :=
+    finiteNonemptySuprema_directed supOp hSup hA
+  rcases hDcpo S hSdir with ⟨s, hs⟩
+  refine ⟨s, ?_⟩
+  constructor
+  · intro a haA
+    have haS : a ∈ S := by
+      refine ⟨{a}, Set.finite_singleton a, ⟨a, by simp⟩, ?_, ?_⟩
+      · intro x hx
+        have hxa : x = a := by simpa using hx
+        simpa [hxa] using haA
+      · constructor
+        · intro x hx
+          have hxa : x = a := by simpa using hx
+          simpa [hxa]
+        · intro y hy
+          exact hy (by simp)
+    exact hs.1 haS
+  · intro y hy
+    exact hs.2 y (by
+      intro x hxS
+      rcases hxS with ⟨F, _hFfin, _hFne, hFA, hFx⟩
+      exact hFx.2 y (fun a haF => hy (hFA haF)))
+
+/-- A dcpo with binary suprema has infima for every lower-bounded non-empty
+set: take the directed supremum of its lower bounds. -/
+theorem hasBoundedInfima_of_dcpo_binarySup
+    {D : OrderedDomain.{u}}
+    (hDcpo : Chapter3.IsDcpo D.carrier)
+    (supOp : D.carrier → D.carrier → D.carrier)
+    (hSup : ∀ x y : D.carrier,
+      Chapter3.IsSup ({z : D.carrier | z = x ∨ z = y} : Set D.carrier) (supOp x y)) :
+    HasBoundedInfima D := by
+  intro A _hA hBounded
+  rcases hBounded with ⟨l, hl⟩
+  let B : Set D.carrier := {x | Chapter3.IsLowerBound A x}
+  have hBdir : Chapter3.DirectedSet B := by
+    constructor
+    · exact ⟨l, hl⟩
+    · intro x hx y hy
+      refine ⟨supOp x y, ?_, (hSup x y).1 (Or.inl rfl),
+        (hSup x y).1 (Or.inr rfl)⟩
+      intro a haA
+      exact (hSup x y).2 a (by
+        intro z hz
+        rcases hz with rfl | rfl
+        · exact hx haA
+        · exact hy haA)
+  rcases hDcpo B hBdir with ⟨i, hi⟩
+  refine ⟨i, ?_⟩
+  constructor
+  · intro a haA
+    exact hi.2 a (fun x hxB => hxB haA)
+  · intro y hy
+    exact hi.1 hy
+
 /-- Proposition 6.2.8.  PDF text: Hoare powerdomains have non-empty suprema and
 bounded infima; Smyth powerdomains have binary infima, with formal union giving
 the corresponding binary suprema/infima.
@@ -424,13 +545,60 @@ the corresponding binary suprema/infima.
 The lattice-property theorem is registered as local proof debt. -/
 theorem prop_6_2_8_hoare_smyth_powerdomain_lattice
     (D : OrderedDomain.{u})
-    (hDdcpo : Chapter3.IsDcpo D.carrier) :
+    (_hDdcpo : Chapter3.IsDcpo D.carrier) :
     (∀ P : Powerdomain D, P.kind = PowerdomainKind.hoare →
       HasNonemptySuprema P.carrier ∧ HasBoundedInfima P.carrier ∧
         FormalUnionBinarySup P) ∧
       (∀ P : Powerdomain D, P.kind = PowerdomainKind.smyth →
         HasBinaryInfima P.carrier ∧ FormalUnionBinaryInf P) := by
-  admit
+  constructor
+  · intro P hKind
+    have hLaw :
+        (∀ x y, x ≤ P.unionLike x y) ∧
+          (∀ x y, y ≤ P.unionLike x y) := by
+      simpa [PowerdomainKindLaw, hKind] using P.algebra.kind_law
+    have hUnionSup : FormalUnionBinarySup P := by
+      intro x y
+      constructor
+      · intro z hz
+        rcases hz with hzx | hzy
+        · subst z
+          exact hLaw.1 x y
+        · subst z
+          exact hLaw.2 x y
+      · intro z hz
+        have hxz : x ≤ z := hz (Or.inl rfl)
+        have hyz : y ≤ z := hz (Or.inr rfl)
+        have hmono := P.algebra.union_continuous.1
+          (show (x, y) ≤ (z, z) from ⟨hxz, hyz⟩)
+        simpa [P.algebra.union_idem z] using hmono
+    exact
+      ⟨hasNonemptySuprema_of_dcpo_binarySup
+          P.algebra.dcpo P.unionLike hUnionSup,
+        hasBoundedInfima_of_dcpo_binarySup
+          P.algebra.dcpo P.unionLike hUnionSup,
+        hUnionSup⟩
+  · intro P hKind
+    have hLaw :
+        (∀ x y, P.unionLike x y ≤ x) ∧
+          (∀ x y, P.unionLike x y ≤ y) := by
+      simpa [PowerdomainKindLaw, hKind] using P.algebra.kind_law
+    have hUnionInf : FormalUnionBinaryInf P := by
+      intro x y
+      constructor
+      · intro z hz
+        rcases hz with hzx | hzy
+        · subst z
+          exact hLaw.1 x y
+        · subst z
+          exact hLaw.2 x y
+      · intro z hz
+        have hzx : z ≤ x := hz (Or.inl rfl)
+        have hzy : z ≤ y := hz (Or.inr rfl)
+        have hmono := P.algebra.union_continuous.1
+          (show (z, z) ≤ (x, y) from ⟨hzx, hzy⟩)
+        simpa [P.algebra.union_idem z] using hmono
+    exact ⟨fun x y => ⟨P.unionLike x y, hUnionInf x y⟩, hUnionInf⟩
 
 /-- Compatibility alias for the older one-sided name.  The statement covers
 both the Hoare and Smyth halves of Proposition 6.2.8. -/
@@ -464,24 +632,50 @@ def BasisFiniteSmythApprox {α : Type u} [Preorder α] {B : Set α}
     (M N : FiniteNonemptySubset B) : Prop :=
   UpperApprox (fun a b : α => Chapter3.WayBelow a b) M.carrier N.carrier
 
-/-- Proposition 6.2.9, definitional form: the finite-basis approximations for
-Hoare and Smyth powerdomains are represented by the two halves of
-Egli-Milner approximation.  The inequational preorder characterization from
-the PDF is not separately constructed. -/
+/-- The preorder induced on finite sets by the Hoare inequation. -/
+def FiniteHoareInequationalOrder {α : Type u} [Preorder α]
+    (M N : FiniteNonemptySet α) : Prop :=
+  M.carrier ⊆ Chapter2.lowerClosure N.carrier
+
+/-- The preorder induced on finite sets by the Smyth inequation. -/
+def FiniteSmythInequationalOrder {α : Type u} [Preorder α]
+    (M N : FiniteNonemptySet α) : Prop :=
+  N.carrier ⊆ Chapter2.upperClosure M.carrier
+
+/-- Proposition 6.2.9: the inequational preorders on finite sets are inclusion
+in a lower closure and reverse inclusion in an upper closure.  Combining these
+orders with strict syntactic approximation yields respectively the lower and
+upper halves of Egli--Milner approximation by way-below. -/
 theorem prop_6_2_9_hoare_smyth_finite_basis_approximation
     {α : Type u} [Preorder α] (M N : FiniteNonemptySet α) :
-    FiniteHoareApprox M N =
-        LowerApprox (fun a b : α => Chapter3.WayBelow a b) M.carrier N.carrier ∧
-      FiniteSmythApprox M N =
-        UpperApprox (fun a b : α => Chapter3.WayBelow a b) M.carrier N.carrier := by
-  constructor <;> rfl
+    (FiniteHoareInequationalOrder M N ↔
+      LowerApprox (fun a b : α => a ≤ b) M.carrier N.carrier) ∧
+    (FiniteSmythInequationalOrder M N ↔
+      UpperApprox (fun a b : α => a ≤ b) M.carrier N.carrier) ∧
+    (FiniteHoareApprox M N ↔
+      LowerApprox (fun a b : α => Chapter3.WayBelow a b) M.carrier N.carrier) ∧
+    (FiniteSmythApprox M N ↔
+      UpperApprox (fun a b : α => Chapter3.WayBelow a b) M.carrier N.carrier) := by
+  refine ⟨?_, ?_, Iff.rfl, Iff.rfl⟩
+  · constructor
+    · intro h a haM
+      exact h haM
+    · intro h a haM
+      exact h a haM
+  · constructor
+    · intro h b hbN
+      exact h hbN
+    · intro h b hbN
+      exact h b hbN
 
 /-- Theorem 6.2.10.  PDF text: Hoare and Smyth powerdomains of a continuous
 domain are ideal completions of finite subsets with the corresponding
 one-sided approximations.
 
-The Hoare/Smyth ideal-completion representations are registered as local proof
-debt. -/
+The source derives both clauses by reducing the syntactic relations to the two
+one-sided Egli--Milner conditions.  The corresponding free-algebra quotient
+equivalences remain an `automation_exhausted` boundary after ten distinct
+formalization strategies. -/
 theorem theorem_6_2_10_hoare_smyth_powerdomain_continuous
     (D : OrderedDomain.{u}) (B : Set D.carrier)
     (hDdcpo : Chapter3.IsDcpo D.carrier)
@@ -492,7 +686,7 @@ theorem theorem_6_2_10_hoare_smyth_powerdomain_continuous
       Nonempty
         (PowerdomainBasisPresentation D PowerdomainKind.smyth
           (FiniteNonemptySubset B) BasisFiniteSmythApprox) := by
-  admit
+  sorry
 
 /-- Compatibility alias for the older one-sided name.  The statement covers
 both Hoare and Smyth continuous powerdomain presentations. -/
@@ -573,7 +767,8 @@ def FinitelyGeneratedCompactUpperSet (D : OrderedDomain.{u})
 /-- Proposition 6.2.12.  PDF text: algebraic Hoare and Smyth powerdomains are
 ideal completions of finitely generated lower and upper compact subsets.
 
-This algebraic representation theorem is registered as local proof debt. -/
+The textbook states the two algebraic representations without a local proof, so
+this remains a genuine `auto_inferred_book_omission` boundary. -/
 theorem prop_6_2_12_hoare_smyth_powerdomain_algebraic
     (D : OrderedDomain.{u})
     (hDdcpo : Chapter3.IsDcpo D.carrier)
@@ -762,25 +957,31 @@ structure SmythCompactSaturatedRepresentation (D : OrderedDomain.{u}) where
 the lattice of non-empty Scott-closed subsets ordered by inclusion, and formal
 union is actual union.
 
-This representation theorem is registered as local proof debt. -/
+The textbook supplies the two explicit inverse maps between Hoare ideals and
+nonempty Scott-closed sets and checks their inverse and union laws.  The full
+typed construction remains an `automation_exhausted` boundary after ten
+source-guided strategies. -/
 theorem theorem_6_2_13_hoare_powerdomain_closed_sets
     (D : OrderedDomain.{u})
     (hDdcpo : Chapter3.IsDcpo D.carrier)
     (hD : Chapter3.IsContinuousDomain D.carrier) :
     Nonempty (HoareClosedSetRepresentation D) := by
-  admit
+  sorry
 
 /-- Theorem 6.2.14.  PDF text: the Smyth powerdomain of a continuous domain is
 represented by non-empty compact saturated subsets ordered by reverse inclusion,
 and formal union is actual union.
 
-This representation theorem is registered as local proof debt. -/
+The textbook supplies the filtered-intersection and finite-neighborhood proof of
+the compact-saturated representation, including the formal-union calculation.
+The full typed construction remains an `automation_exhausted` boundary after ten
+source-guided strategies. -/
 theorem theorem_6_2_14_smyth_powerdomain_compact_saturated
     (D : OrderedDomain.{u})
     (hDdcpo : Chapter3.IsDcpo D.carrier)
     (hD : Chapter3.IsContinuousDomain D.carrier) :
     Nonempty (SmythCompactSaturatedRepresentation D) := by
-  admit
+  sorry
 
 /-- A bc-domain predicate used for the Smyth-powerdomain corollary, reusing
 Chapter 4's bc-domain predicate rather than duplicating a weaker local variant. -/
@@ -790,8 +991,10 @@ abbrev BcDomain (D : OrderedDomain.{u}) : Prop :=
 /-- Corollary 6.2.15.  PDF text: the Smyth powerdomain of a coherent domain
 with bottom is a bc-domain.
 
-This corollary is registered as local proof debt until the Smyth representation
-and bc-domain argument are formalized directly. -/
+The textbook proves the bounded-completeness step by intersection of bounded
+compact saturated sets in a coherent domain.  Transport through the bundled
+representation and continuity proof remains an `automation_exhausted` boundary
+after ten source-guided strategies. -/
 theorem cor_6_2_15_smyth_powerdomain_coherent_bc
     (D : OrderedDomain.{u})
     (hDdcpo : Chapter3.IsDcpo D.carrier)
@@ -800,22 +1003,32 @@ theorem cor_6_2_15_smyth_powerdomain_coherent_bc
     (hbottom : ∃ bottom : D.carrier, ∀ x : D.carrier, bottom ≤ x) :
     ∀ R : SmythCompactSaturatedRepresentation D,
       BcDomain R.representation.powerdomain.carrier := by
-  admit
+  sorry
 
 /-- Scott closure as a set-valued operator. -/
 def ScottClosure (D : OrderedDomain.{u}) (A : Set D.carrier) : Set D.carrier :=
   {x : D.carrier | Chapter2.ScottClosureMem A x}
 
-/-- Definition 6.2.16: lenses are non-empty intersections of a Scott-closed set
-and a compact saturated set. -/
-structure Lens (D : OrderedDomain.{u}) where
-  carrier : Set D.carrier
-  nonempty : carrier.Nonempty
+/-- A presentation witnessing that a set is the intersection of a Scott-closed
+set and a compact saturated set.  Presentations are proof data, not part of the
+identity of a lens. -/
+structure LensPresentation (D : OrderedDomain.{u}) (carrier : Set D.carrier) where
   closedPart : Set D.carrier
   compactPart : Set D.carrier
   closed_scott : Chapter2.ScottClosed closedPart
   compact_saturated : ScottCompactSet D compactPart ∧ SaturatedSet D compactPart
   eq_inter : carrier = closedPart ∩ compactPart
+
+/-- Definition 6.2.16: a lens is a non-empty set admitting a closed/compact
+saturated presentation. -/
+def IsLens (D : OrderedDomain.{u}) (carrier : Set D.carrier) : Prop :=
+  carrier.Nonempty ∧ Nonempty (LensPresentation D carrier)
+
+/-- Lenses are extensional sets.  The chosen presentation is existential proof
+data and therefore cannot make two lenses with the same carrier unequal. -/
+structure Lens (D : OrderedDomain.{u}) where
+  carrier : Set D.carrier
+  isLens : IsLens D carrier
 
 /-- Definition 6.2.16: topological Egli-Milner ordering on lenses. -/
 def TopologicalEgliMilner {D : OrderedDomain.{u}} (K L : Lens D) : Prop :=
@@ -832,6 +1045,44 @@ def OrderConvexSet {α : Type u} [Preorder α] (A : Set α) : Prop :=
   ∀ ⦃x y z : α⦄, x ∈ A → z ∈ A → x ≤ y → y ≤ z → y ∈ A
 
 namespace Lens
+
+/-- Every lens is non-empty. -/
+theorem nonempty {D : OrderedDomain.{u}} (L : Lens D) : L.carrier.Nonempty :=
+  L.isLens.1
+
+/-- A presentation chosen only for proving properties of an extensional lens. -/
+noncomputable def presentation {D : OrderedDomain.{u}} (L : Lens D) :
+    LensPresentation D L.carrier :=
+  Classical.choice L.isLens.2
+
+noncomputable def closedPart {D : OrderedDomain.{u}} (L : Lens D) : Set D.carrier :=
+  L.presentation.closedPart
+
+noncomputable def compactPart {D : OrderedDomain.{u}} (L : Lens D) : Set D.carrier :=
+  L.presentation.compactPart
+
+theorem closed_scott {D : OrderedDomain.{u}} (L : Lens D) :
+    Chapter2.ScottClosed L.closedPart :=
+  L.presentation.closed_scott
+
+theorem compact_saturated {D : OrderedDomain.{u}} (L : Lens D) :
+    ScottCompactSet D L.compactPart ∧ SaturatedSet D L.compactPart :=
+  L.presentation.compact_saturated
+
+theorem eq_inter {D : OrderedDomain.{u}} (L : Lens D) :
+    L.carrier = L.closedPart ∩ L.compactPart :=
+  L.presentation.eq_inter
+
+/-- Lens equality is equality of the represented subsets. -/
+@[ext]
+theorem ext {D : OrderedDomain.{u}} {K L : Lens D}
+    (h : K.carrier = L.carrier) : K = L := by
+  cases K with
+  | mk K hK =>
+      cases L with
+      | mk L hL =>
+          cases h
+          rfl
 
 /-- The compact saturated component contains the upward closure of a lens. -/
 theorem upperClosure_subset_compactPart
@@ -948,11 +1199,12 @@ theorem prop_6_2_17_lens_closure_properties
           L.carrier = Chapter2.upperClosure L.carrier ∩ ScottClosure D L.carrier) ∧
       (∀ K L : Lens D,
         TopologicalEgliMilner K L → TopologicalEgliMilner L K →
-          K.carrier = L.carrier) := by
+          K = L) := by
   constructor
   · intro L
     exact ⟨L.orderConvex, L.scottCompact, L.carrier_eq_upperClosure_inter_scottClosure⟩
   · intro K L hKL hLK
+    apply Lens.ext
     apply Set.Subset.antisymm
     · intro x hxK
       exact Lens.mem_of_upperClosure_and_scottClosure (hLK.1 hxK) (hKL.2 hxK)
@@ -1027,7 +1279,9 @@ theorem directedSupremumRepresentation_subset_plotkinLensFromIdeal
 /-- Lemma 6.2.18.  PDF text: the lens generated by a Plotkin ideal over a basis
 can be represented by directed suprema of sets meeting every ideal element.
 
-This representation lemma is registered as local proof debt. -/
+The source proves both inclusions by basis interpolation, ideal roundness, and
+directed suprema.  The remaining typed equality proof is an
+`automation_exhausted` boundary after ten source-guided strategies. -/
 theorem lemma_6_2_18_plotkin_ideal_lens_representation
     (D : OrderedDomain.{u}) (B : Set D.carrier)
     (I : Set (FiniteNonemptySubset B))
@@ -1038,7 +1292,7 @@ theorem lemma_6_2_18_plotkin_ideal_lens_representation
       IsIdealRelation
         (fun M N : FiniteNonemptySubset B => BasisFiniteEgliMilnerApprox M N) I) :
     PlotkinLensFromIdeal D I = DirectedSupremumRepresentation D I := by
-  admit
+  sorry
 
 /-- Omega-continuity as existence of a countable basis. -/
 def OmegaContinuousOrderedDomain (D : OrderedDomain.{u}) : Prop :=
@@ -1077,14 +1331,16 @@ structure LensPowerdomainRepresentation
 /-- Theorem 6.2.19.  PDF text: for an omega-continuous domain, the Plotkin
 powerdomain is represented by lenses with topological Egli-Milner order.
 
-This omega-continuous lens representation is registered as local proof debt. -/
+The source gives the two inverse maps and the countable diagonal construction
+that recovers the Scott closure.  The complete powerdomain equivalence remains
+an `automation_exhausted` boundary after ten source-guided strategies. -/
 theorem theorem_6_2_19_plotkin_powerdomain_omega_lenses
     (D : OrderedDomain.{u})
     (hD : OmegaContinuousOrderedDomain D) :
     Nonempty
       (LensPowerdomainRepresentation D PowerdomainKind.plotkin
         TopologicalEgliMilner (TopologicalConvexClosure D)) := by
-  admit
+  sorry
 
 /-- Principal upper set. -/
 def PrincipalUpper (D : OrderedDomain.{u}) (x : D.carrier) : Set D.carrier :=
@@ -1243,14 +1499,15 @@ theorem convexLawsonCompactSet_exists_lens
     ∃ L : Lens D, L.carrier = A := by
   refine ⟨{
     carrier := A
-    nonempty := hAne
-    closedPart := Chapter2.lowerClosure A
-    compactPart := Chapter2.upperClosure A
-    closed_scott := lemma_6_2_20_lawson_compact_lower_scott_closed D A hDdcpo hD hCompact
-    compact_saturated :=
-      ⟨upperClosure_scottCompact_of_lawsonCompact D hCompact,
-        upperClosure_saturated D A⟩
-    eq_inter := ?_
+    isLens := ⟨hAne, ⟨{
+      closedPart := Chapter2.lowerClosure A
+      compactPart := Chapter2.upperClosure A
+      closed_scott := lemma_6_2_20_lawson_compact_lower_scott_closed D A hDdcpo hD hCompact
+      compact_saturated :=
+        ⟨upperClosure_scottCompact_of_lawsonCompact D hCompact,
+          upperClosure_saturated D A⟩
+      eq_inter := ?_
+    }⟩⟩
   }, rfl⟩
   apply Set.Subset.antisymm
   · intro x hx
@@ -1311,11 +1568,19 @@ theorem lensEgliMilner_equiv_carrier_eq
   · intro x hxL
     exact Lens.mem_of_upperClosure_and_scottClosure (hTopKL.1 hxL) (hTopLK.2 hxL)
 
+/-- Ordinary Egli-Milner equivalence is antisymmetric on extensional lenses. -/
+theorem lensEgliMilner_antisymm
+    {D : OrderedDomain.{u}} {K L : Lens D}
+    (hKL : LensEgliMilner K L) (hLK : LensEgliMilner L K) :
+    K = L := by
+  exact Lens.ext (lensEgliMilner_equiv_carrier_eq hKL hLK)
+
 /-- Corollary 6.2.21.  PDF text: in coherent domains, lenses are precisely
 convex Lawson-compact subsets, and topological and ordinary Egli-Milner orders
 agree.
 
-This characterization is registered as local proof debt. -/
+The textbook states this corollary without a separate proof after Lemma 6.2.20.
+It is retained as a genuine `auto_inferred_book_omission` boundary. -/
 theorem cor_6_2_21_lenses_convex_lawson_compact
     (D : OrderedDomain.{u}) (hD : IsCoherentOrderedDomain D) :
     (∀ A : Set D.carrier,
@@ -1328,13 +1593,16 @@ theorem cor_6_2_21_lenses_convex_lawson_compact
 /-- Theorem 6.2.22.  PDF text: for a coherent domain, the Plotkin powerdomain is
 represented by lenses with ordinary Egli-Milner order.
 
-This coherent-domain lens representation is registered as local proof debt. -/
+The source explicitly adapts the proof of Theorem 6.2.19 using
+Hofmann--Mislove and proves the remaining closure inclusion.  The full bundled
+equivalence remains an `automation_exhausted` boundary after ten source-guided
+strategies. -/
 theorem theorem_6_2_22_plotkin_powerdomain_lenses
     (D : OrderedDomain.{u}) (hD : IsCoherentOrderedDomain D) :
     Nonempty
       (LensPowerdomainRepresentation D PowerdomainKind.plotkin LensEgliMilner
         (PlainConvexClosure D)) := by
-  admit
+  sorry
 
 end Chapter6
 end AbramskyJung

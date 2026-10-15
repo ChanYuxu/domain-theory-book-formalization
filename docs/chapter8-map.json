@@ -1,0 +1,595 @@
+{
+  "chapter": "Chapter 8",
+  "title": "Further directions",
+  "leanFile": "../Practice/DomainTheory/Chapter08.lean",
+  "notice": "Chapter 8 is a survey chapter without numbered theorem environments. Stable permanent IDs identify its definitions, displayed formulas, and explicitly bounded survey claims; public text is a project-authored paraphrase.",
+  "items": [
+    {
+      "id": "def-8-1-1",
+      "number": "Definition in Section 8.1.1",
+      "section": "8.1.1",
+      "kind": "Definition",
+      "title": "Effectively given domain",
+      "summary": "An omega-continuous domain with a numbered basis whose way-below relation is recursive on indices.",
+      "sourcePdfPage": 145,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "EffectiveDomain",
+        "EffectiveDomain.isOmegaContinuousDcpo"
+      ],
+      "startLine": 28,
+      "endLine": 45,
+      "fallbackDeclarations": [
+        {
+          "declaration": "EffectiveDomain",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 28,
+          "endLine": 45
+        },
+        {
+          "declaration": "EffectiveDomain.isOmegaContinuousDcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 55,
+          "endLine": 59
+        }
+      ]
+    },
+    {
+      "id": "def-8-1-1-1",
+      "number": "Definition of effective map in Section 8.1.1",
+      "section": "8.1.1",
+      "kind": "Definition",
+      "title": "Effective continuous map",
+      "summary": "A Scott-continuous map whose approximable relation on numbered bases is recursively enumerable.",
+      "sourcePdfPage": 145,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "EffectiveContinuousMap"
+      ],
+      "startLine": 62,
+      "endLine": 73,
+      "fallbackDeclarations": [
+        {
+          "declaration": "EffectiveContinuousMap",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 62,
+          "endLine": 73
+        }
+      ]
+    },
+    {
+      "id": "def-8-1-2",
+      "number": "Definition in Section 8.1.2",
+      "section": "8.1.2",
+      "kind": "Definition",
+      "title": "Universal domain and represented idempotent",
+      "summary": "Every object of the chosen class is an embedding-projection retract of one universal object and is represented there by e composed with p.",
+      "sourcePdfPage": 145,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "UniversalDomain",
+        "UniversalDomain.representedIdempotent",
+        "UniversalDomain.representedIdempotent_idempotent",
+        "UniversalDomain.representedIdempotent_below"
+      ],
+      "startLine": 82,
+      "endLine": 92,
+      "fallbackDeclarations": [
+        {
+          "declaration": "UniversalDomain",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 82,
+          "endLine": 92
+        },
+        {
+          "declaration": "UniversalDomain.representedIdempotent",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 95,
+          "endLine": 100
+        },
+        {
+          "declaration": "UniversalDomain.representedIdempotent_idempotent",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 101,
+          "endLine": 107
+        },
+        {
+          "declaration": "UniversalDomain.representedIdempotent_below",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 108,
+          "endLine": 112
+        }
+      ]
+    },
+    {
+      "id": "formula-8-1-2-1",
+      "number": "Coding formulas in Section 8.1.2",
+      "section": "8.1.2",
+      "kind": "Formula",
+      "title": "Continuous operations on universal-domain codes",
+      "summary": "Continuous operations on pairs of codes return codes for function spaces and products.",
+      "sourcePdfPage": 145,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "UniversalDomainCoding"
+      ],
+      "startLine": 115,
+      "endLine": 136,
+      "fallbackDeclarations": [
+        {
+          "declaration": "UniversalDomainCoding",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 115,
+          "endLine": 136
+        }
+      ]
+    },
+    {
+      "id": "def-8-1-2-2",
+      "number": "Universal type in Section 8.1.2",
+      "section": "8.1.2",
+      "kind": "Definition",
+      "title": "Universal type",
+      "summary": "The subdomain of object codes is itself represented, yielding its code u_V.",
+      "sourcePdfPage": 146,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "UniversalDomainCoding.IsTypeCode",
+        "UniversalDomainCoding.typeCodesDomain",
+        "UniversalDomainCoding.AdmitsUniversalType",
+        "UniversalDomainCoding.universalTypeCode"
+      ],
+      "startLine": 139,
+      "endLine": 143,
+      "fallbackDeclarations": [
+        {
+          "declaration": "UniversalDomainCoding.IsTypeCode",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 139,
+          "endLine": 143
+        },
+        {
+          "declaration": "UniversalDomainCoding.typeCodesDomain",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 144,
+          "endLine": 149
+        },
+        {
+          "declaration": "UniversalDomainCoding.AdmitsUniversalType",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 150,
+          "endLine": 155
+        },
+        {
+          "declaration": "UniversalDomainCoding.universalTypeCode",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 156,
+          "endLine": 161
+        }
+      ]
+    },
+    {
+      "id": "prop-8-1-2-3",
+      "number": "Reported outcomes in Section 8.1.2",
+      "section": "8.1.2",
+      "kind": "Survey claim",
+      "title": "Universal-type case studies for P(omega)",
+      "summary": "The source reports non-existence for omega-continuous lattices represented by idempotents and existence for omega-algebraic lattices represented by closures.",
+      "sourcePdfPage": 146,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "universalTypeCaseStudies"
+      ],
+      "startLine": 179,
+      "endLine": 192,
+      "fallbackDeclarations": [
+        {
+          "declaration": "universalTypeCaseStudies",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 179,
+          "endLine": 192
+        }
+      ]
+    },
+    {
+      "id": "def-8-1-3",
+      "number": "Semantics interface in Section 8.1.3",
+      "section": "8.1.3",
+      "kind": "Definition",
+      "title": "Polymorphic semantics",
+      "summary": "A source-bounded interface recording functorial, ideal-based, and partial-equivalence-relation approaches.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "interface-only",
+      "reviewNote": "The survey does not give the constructions or laws of the cited polymorphism models; Lean records only the interpretation signature, approach, and citations.",
+      "sourcePdfPage": 146,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "PolymorphicSemantics"
+      ],
+      "startLine": 200,
+      "endLine": 209,
+      "fallbackDeclarations": [
+        {
+          "declaration": "PolymorphicSemantics",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 200,
+          "endLine": 209
+        }
+      ]
+    },
+    {
+      "id": "def-8-1-4",
+      "number": "Information systems in Section 8.1.4",
+      "section": "8.1.4",
+      "kind": "Definition",
+      "title": "Information-system signature and survey role",
+      "summary": "Tokens, consistency, and entailment are retained, together with the representation, bilimit, and domain-equation roles stated by the source.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "interface-only",
+      "reviewNote": "The chapter references the information-system axioms but does not print them, so no external axiom system is invented.",
+      "sourcePdfPage": 147,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+      "lean": [
+        "InformationSystem",
+        "informationSystemSurveyRole"
+      ],
+      "startLine": 210,
+      "endLine": 217,
+      "fallbackDeclarations": [
+        {
+          "declaration": "InformationSystem",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 210,
+          "endLine": 217
+        },
+        {
+          "declaration": "informationSystemSurveyRole",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Core.lean",
+          "startLine": 227,
+          "endLine": 237
+        }
+      ]
+    },
+    {
+      "id": "def-8-2-1",
+      "number": "Modulus of stability in Section 8.2",
+      "section": "8.2",
+      "kind": "Definition",
+      "title": "Stability modulus",
+      "summary": "For each output approximant, choose the least basis approximant sufficient to force it.",
+      "sourcePdfPage": 147,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "IsContinuityWitness",
+        "StabilityModulus",
+        "IsStable"
+      ],
+      "startLine": 27,
+      "endLine": 35,
+      "fallbackDeclarations": [
+        {
+          "declaration": "IsContinuityWitness",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 27,
+          "endLine": 35
+        },
+        {
+          "declaration": "StabilityModulus",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 36,
+          "endLine": 52
+        },
+        {
+          "declaration": "IsStable",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 53,
+          "endLine": 59
+        }
+      ]
+    },
+    {
+      "id": "formula-8-2-1-1",
+      "number": "Stable-order formula in Section 8.2",
+      "section": "8.2",
+      "kind": "Formula",
+      "title": "Stable ordering",
+      "summary": "The stable order combines pointwise order with equality of stability moduli.",
+      "sourcePdfPage": 147,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "StableOrder"
+      ],
+      "startLine": 69,
+      "endLine": 81,
+      "fallbackDeclarations": [
+        {
+          "declaration": "StableOrder",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 69,
+          "endLine": 81
+        }
+      ]
+    },
+    {
+      "id": "prop-8-2-2",
+      "number": "Claim in Section 8.2",
+      "section": "8.2",
+      "kind": "Proposition",
+      "title": "Stability and bounded nonempty infima",
+      "summary": "For L-domains, stability is equivalent to preservation of bounded nonempty infima.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "admit",
+      "reviewNote": "The chapter states this equivalence without a proof; the exact statement is retained as a book-omission admit.",
+      "sourcePdfPage": 147,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "stable_iff_preserves_bounded_nonempty_infima"
+      ],
+      "startLine": 90,
+      "endLine": 100,
+      "fallbackDeclarations": [
+        {
+          "declaration": "stable_iff_preserves_bounded_nonempty_infima",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 90,
+          "endLine": 100
+        }
+      ]
+    },
+    {
+      "id": "prop-8-2-3",
+      "number": "Stable-order claim in Section 8.2",
+      "section": "8.2",
+      "kind": "Proposition",
+      "title": "Stable order via a meet equation",
+      "summary": "For stable maps between L-domains, f is below g in stable order exactly when f(x) is the meet of f(y) and g(x) whenever x is below y.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "admit",
+      "reviewNote": "The chapter gives the characterization but no proof; the relational meet formulation avoids assuming an unjustified global lattice instance.",
+      "sourcePdfPage": 147,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "stableOrder_iff_meet_equation"
+      ],
+      "startLine": 109,
+      "endLine": 119,
+      "fallbackDeclarations": [
+        {
+          "declaration": "stableOrder_iff_meet_equation",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 109,
+          "endLine": 119
+        }
+      ]
+    },
+    {
+      "id": "def-8-3-1",
+      "number": "Definition in Section 8.3.1",
+      "section": "8.3.1",
+      "kind": "Definition",
+      "title": "Partial continuous map",
+      "summary": "A partial map has Scott-open domain of definition and Scott-continuous total restriction.",
+      "sourcePdfPage": 148,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "PartialContinuousMap"
+      ],
+      "startLine": 122,
+      "endLine": 129,
+      "fallbackDeclarations": [
+        {
+          "declaration": "PartialContinuousMap",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 122,
+          "endLine": 129
+        }
+      ]
+    },
+    {
+      "id": "formula-8-3-1-1",
+      "number": "Comparison in Section 8.3.1",
+      "section": "8.3.1",
+      "kind": "Formula",
+      "title": "Lifted total maps and partial maps",
+      "summary": "The displayed comparison [D to E_bottom] isomorphic to [D partial-to E] is represented by inverse hom-set translations.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "interface-only",
+      "reviewNote": "The source states a natural categorical equivalence but does not develop the category interfaces here; Lean records the exact hom-set comparison and inverse laws without fabricating naturality.",
+      "sourcePdfPage": 148,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "LiftingPartialMapComparison"
+      ],
+      "startLine": 138,
+      "endLine": 150,
+      "fallbackDeclarations": [
+        {
+          "declaration": "LiftingPartialMapComparison",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 138,
+          "endLine": 150
+        }
+      ]
+    },
+    {
+      "id": "def-8-3-2",
+      "number": "Definition in Section 8.3.2",
+      "section": "8.3.2",
+      "kind": "Definition",
+      "title": "Computational monad and tensorial strength",
+      "summary": "A mathlib categorical monad is equipped with the natural-transformation part of a tensorial strength.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "interface-only",
+      "reviewNote": "The chapter says the strength satisfies equational axioms but does not print them; the declaration is explicitly named RawTensorialStrength.",
+      "sourcePdfPage": 149,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "RawTensorialStrength",
+        "ComputationalMonad"
+      ],
+      "startLine": 156,
+      "endLine": 168,
+      "fallbackDeclarations": [
+        {
+          "declaration": "RawTensorialStrength",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 156,
+          "endLine": 168
+        },
+        {
+          "declaration": "ComputationalMonad",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 169,
+          "endLine": 174
+        }
+      ]
+    },
+    {
+      "id": "formula-8-3-2-1",
+      "number": "Kleisli formula in Section 8.3.2",
+      "section": "8.3.2",
+      "kind": "Formula",
+      "title": "Kleisli composition",
+      "summary": "Composition is f followed by T g and monad multiplication; the unit gives both identities.",
+      "sourcePdfPage": 149,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "ComputationalMonad.kleisliComp",
+        "ComputationalMonad.kleisliComp_unit_left",
+        "ComputationalMonad.kleisliComp_unit_right"
+      ],
+      "startLine": 177,
+      "endLine": 185,
+      "fallbackDeclarations": [
+        {
+          "declaration": "ComputationalMonad.kleisliComp",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 177,
+          "endLine": 185
+        },
+        {
+          "declaration": "ComputationalMonad.kleisliComp_unit_left",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 186,
+          "endLine": 203
+        },
+        {
+          "declaration": "ComputationalMonad.kleisliComp_unit_right",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 204,
+          "endLine": 213
+        }
+      ]
+    },
+    {
+      "id": "formula-8-3-3-1",
+      "number": "Linear decomposition in Section 8.3.3",
+      "section": "8.3.3",
+      "kind": "Formula",
+      "title": "Linear function-space decomposition",
+      "summary": "Ordinary continuous maps A to B correspond to strict linear maps !A to B.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "interface-only",
+      "reviewNote": "The survey names the categorical structures but omits their laws; Lean records the inverse function-space comparison and named model components.",
+      "sourcePdfPage": 150,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+      "lean": [
+        "LinearFunctionSpaceComparison",
+        "LinearDomainModel",
+        "completeLatticeLinearExample"
+      ],
+      "startLine": 237,
+      "endLine": 251,
+      "fallbackDeclarations": [
+        {
+          "declaration": "LinearFunctionSpaceComparison",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 237,
+          "endLine": 251
+        },
+        {
+          "declaration": "LinearDomainModel",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 252,
+          "endLine": 266
+        },
+        {
+          "declaration": "completeLatticeLinearExample",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section82_83.lean",
+          "startLine": 267,
+          "endLine": 276
+        }
+      ]
+    },
+    {
+      "id": "def-8-4-1",
+      "number": "Programme in Section 8.4",
+      "section": "8.4",
+      "kind": "Definition",
+      "title": "Axiomatic domain theory",
+      "summary": "DCPO-enriched hom-sets, fixpoints, and canonical recursive solutions form the obligations isolated by the survey.",
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "interface-only",
+      "reviewNote": "The chapter surveys a research programme rather than presenting Freyd's full axiomatization; the Lean name CanonicalRecursiveSolutions avoids identifying a fixed-point isomorphism alone with algebraic compactness.",
+      "sourcePdfPage": 150,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+      "lean": [
+        "DcpoEnrichment",
+        "CanonicalRecursiveSolutions",
+        "AxiomaticDomainTheory"
+      ],
+      "startLine": 22,
+      "endLine": 34,
+      "fallbackDeclarations": [
+        {
+          "declaration": "DcpoEnrichment",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+          "startLine": 22,
+          "endLine": 34
+        },
+        {
+          "declaration": "CanonicalRecursiveSolutions",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+          "startLine": 35,
+          "endLine": 43
+        },
+        {
+          "declaration": "AxiomaticDomainTheory",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+          "startLine": 44,
+          "endLine": 54
+        }
+      ]
+    },
+    {
+      "id": "def-8-5-1",
+      "number": "Programme in Section 8.5",
+      "section": "8.5",
+      "kind": "Definition",
+      "title": "Synthetic domain theory",
+      "summary": "Convergence, approximation, and computability are absorbed into a constructive ambient universe under the slogan Domains are Sets.",
+      "sourcePdfPage": 151,
+      "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+      "lean": [
+        "SyntheticDomainTheory",
+        "syntheticDomainTheoryProgramme"
+      ],
+      "startLine": 65,
+      "endLine": 77,
+      "fallbackDeclarations": [
+        {
+          "declaration": "SyntheticDomainTheory",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+          "startLine": 65,
+          "endLine": 77
+        },
+        {
+          "declaration": "syntheticDomainTheoryProgramme",
+          "leanFile": "../Practice/DomainTheory/Chapter08/Section84_85.lean",
+          "startLine": 78,
+          "endLine": 92
+        }
+      ]
+    }
+  ]
+}

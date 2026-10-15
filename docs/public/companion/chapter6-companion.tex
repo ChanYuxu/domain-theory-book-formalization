@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 \usepackage{marginnote}
 \usepackage{microtype}
+\usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \definecolor{LeanTeal}{HTML}{087F72}
 \definecolor{SourceGray}{HTML}{66736F}
@@ -16,6 +17,7 @@
 \setlength{\parskip}{0.55em}
 \setlength{\emergencystretch}{2em}
 \newcommand{\leanmarker}[2]{%
+  \Needspace{3\baselineskip}%
   \marginnote{\hyperlink{#1}{\color{LeanTeal}\fbox{\scriptsize Lean}}}%
   \hypertarget{#1}{\textbf{#2.}}%
 }
@@ -171,10 +173,10 @@ where \(\mathcal{P}_{\operatorname{Cx},f}(K(D))\) is the set of finitely generat
 \sourcepage{98}
 \leanmarker{thm-6-2-13}{Theorem 6.2.13} For a continuous domain \(D\), the Hoare powerdomain is isomorphic to the lattice of all non-empty Scott-closed subsets of \(D\). Formal union is interpreted by actual union.
 
-\leanmarker{thm-6-2-14}{Theorem 6.2.14} For a continuous domain \(D\), the Smyth powerdomain is isomorphic to \(\kappa D\setminus\{\emptyset\}\), the non-empty Scott-compact saturated subsets ordered by reverse inclusion. Formal union is interpreted by intersection.
+\leanmarker{thm-6-2-14}{Theorem 6.2.14} For a continuous domain \(D\), the Smyth powerdomain is isomorphic to \(\kappa D\setminus\{\emptyset\}\), the non-empty Scott-compact saturated subsets ordered by reverse inclusion. Formal union is interpreted by actual union.
 
 \sourcepage{99}
-\leanmarker{cor-6-2-15}{Corollary 6.2.15} Smyth powerdomains of coherent domains are bifinite-continuous.
+\leanmarker{cor-6-2-15}{Corollary 6.2.15} The Smyth powerdomain of a coherent domain with bottom is a bc-domain.
 
 \leanmarker{def-6-2-16}{Definition 6.2.16} For a dcpo \(D\), \(\operatorname{Lens}(D)\) is the set of all non-empty subsets that are intersections of a Scott-closed set and a compact saturated set. On lenses define the topological Egli-Milner ordering by
 \[

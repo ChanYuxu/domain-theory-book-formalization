@@ -20,7 +20,7 @@ COMPANION = PUBLIC / "companion"
 LOCATORS = PUBLIC / "source-locators.json"
 PDFJS = DOCS / "vendor" / "pdfjs"
 DEFAULT_OUTPUT = ROOT / "_site"
-CHAPTERS = range(2, 8)
+CHAPTERS = range(2, 10)
 CHAPTER_TITLES = {
     2: "Domains individually",
     3: "Domains collectively",
@@ -28,6 +28,8 @@ CHAPTER_TITLES = {
     5: "Recursive domain equations",
     6: "Equational theories",
     7: "Domains and logic",
+    8: "Further directions",
+    9: "Guide to the literature",
 }
 REPOSITORY = os.environ.get(
     "GITHUB_REPOSITORY", "ChanYuxu/domain-theory-book-formalization"

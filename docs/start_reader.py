@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 GENERATED = DOCS / "generated"
-CHAPTERS = range(2, 8)
+CHAPTERS = range(2, 10)
 
 
 def requested_pdf(value: str) -> Path:
@@ -42,6 +42,8 @@ def artifact_is_stale(chapter: int, pdf: Path) -> bool:
         DOCS / f"chapter{chapter}-map.json",
         DOCS / f"chapter{chapter}-tex-overrides.json",
     ]
+    if chapter >= 8:
+        inputs.append(DOCS / "build_survey_chapter.py")
     newest_input = max(path.stat().st_mtime for path in inputs if path.exists())
     return min(artifact.stat().st_mtime for artifact in artifacts) < newest_input
 

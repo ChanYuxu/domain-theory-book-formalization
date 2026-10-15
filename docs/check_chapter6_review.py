@@ -61,13 +61,18 @@ def main() -> None:
                 continue
             block_id = block["id"]
             marker = block.get("marker")
+            if marker and marker["id"] in reviewed:
+                emitted_marker_blocks.append(block_id)
+                marker_skip = int(overrides["items"][marker["id"]].get("skipBlocksAfter", 0))
+                block_override = block_overrides.get(block_id)
+                if block_override:
+                    emitted_reviewed_blocks.append(block_id)
+                block_skip = int((block_override or {}).get("skipBlocksAfter", 0))
+                skip_blocks = max(marker_skip, block_skip)
+                continue
             if block_id in block_overrides:
                 emitted_reviewed_blocks.append(block_id)
                 skip_blocks = int(block_overrides[block_id].get("skipBlocksAfter", 0))
-                continue
-            if marker and marker["id"] in reviewed:
-                emitted_marker_blocks.append(block_id)
-                skip_blocks = int(overrides["items"][marker["id"]].get("skipBlocksAfter", 0))
                 continue
             emitted_auto_blocks.append(block)
 

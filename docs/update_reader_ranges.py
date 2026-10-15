@@ -14,9 +14,20 @@ def update_chapter(chapter: int) -> None:
     path = ROOT / "docs" / f"chapter{chapter}-map.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     for item in data["items"]:
-        canonical = item["lean"][0]
-        resolved = locate_item(item["id"], canonical)
-        item["leanFile"] = "../" + resolved["file"]
+        locations = []
+        for declaration in item["lean"]:
+            declaration_location = locate_item(item["id"], declaration)
+            locations.append(
+                {
+                    "declaration": declaration,
+                    "leanFile": "../" + declaration_location["file"],
+                    "startLine": declaration_location["startLine"],
+                    "endLine": declaration_location["endLine"],
+                }
+            )
+        item["fallbackDeclarations"] = locations
+        resolved = locations[0]
+        item["leanFile"] = resolved["leanFile"]
         item["startLine"] = resolved["startLine"]
         item["endLine"] = resolved["endLine"]
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -25,7 +36,7 @@ def update_chapter(chapter: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("chapters", type=int, nargs="+", choices=tuple(range(2, 8)))
+    parser.add_argument("chapters", type=int, nargs="+", choices=tuple(range(2, 10)))
     args = parser.parse_args()
     for chapter in args.chapters:
         update_chapter(chapter)

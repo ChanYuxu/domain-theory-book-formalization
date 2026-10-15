@@ -1,0 +1,2221 @@
+{
+  "schemaVersion": 1,
+  "chapter": 7,
+  "sourceVersion": {
+    "id": "abramsky-jung-domain-theory-pdf-v1",
+    "pdfSha256": "74adfbb57ae86a8b24e5afae312ffa77138480962186136d6823098a2c9c8991"
+  },
+  "items": {
+    "cor-7-2-8": {
+      "permanentId": "cor-7-2-8",
+      "number": "Corollary 7.2.8",
+      "source": {
+        "pdfPage": 114,
+        "printedPage": "114",
+        "texSha256": "ccf93c70b2eb718fc5858ce963e4fb49e3520fa5a120503a354d16fbc0ce2d12",
+        "locator": "page:114:block:p114-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.cor_7_2_8_sober_spatial_dual_equivalence",
+        "module": "Practice.DomainTheory.Chapter07.Section72.SoberSpatial",
+        "signatureSha256": "9e3457e03609abda69430c68eeac94ffceb8b7a9b75c39c5e113619d0610031a",
+        "bodySha256": "3ad425974a758401e53dd0c499dd39b7bf8af1f7ac78679d0d05378703620213"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_semantics",
+        "evidence": [
+          "The Lean declaration proves object maps and object-level Stone-unit bijections, but it does not encode categories, morphism actions, functor laws, naturality, or a categorical dual equivalence.",
+          "Canonical declaration: AbramskyJung.Chapter7.cor_7_2_8_sober_spatial_dual_equivalence.",
+          "The reader marks the item partial; a source-faithful categorical wrapper remains to be formalized."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "interface_only",
+          "categorical_semantics_missing"
+        ],
+        "downstreamCount": 0
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-7"
+        ],
+        "actual": [
+          "thm-7-2-7"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "cor-7-2-8:ccf93c70:9e3457e0:3ad42597"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-14": {
+      "permanentId": "thm-7-2-14",
+      "number": "Theorem 7.2.14",
+      "source": {
+        "pdfPage": 115,
+        "printedPage": "115",
+        "texSha256": "1b83a8f8330c8c3cbd9fd3439ea15c93c66d3a77eb6bcf98a40d098a4b269f08",
+        "locator": "page:115:block:p115-b6"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_14_sober_complete_cocomplete_retracts",
+        "module": "Practice.DomainTheory.Chapter07.Section72.Specialization",
+        "signatureSha256": "e18dc697fa6a48d252fa89341f1d31b1184ce453dec436d9a464f18e43329083",
+        "bodySha256": "3dc05ef240a9b5deb61a9403ca9515bee860d8c8533c1ddcb22e64d4a8fa0433"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_semantics",
+        "evidence": [
+          "Retract closure is proved, but the limit/colimit package uses an unindexed diagram surrogate with chosen cones, cocones, lifts, and descents; it has no diagram morphisms, commutativity, factorization, or uniqueness, so it does not express categorical completeness or cocompleteness.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_14_sober_complete_cocomplete_retracts.",
+          "The reader marks the item partial; genuine indexed diagrams and universal properties remain to be formalized."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "interface_only",
+          "categorical_limits_missing"
+        ],
+        "downstreamCount": 0
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [],
+        "actual": [],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-14:1b83a8f8:e18dc697:3dc05ef2"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-16": {
+      "permanentId": "thm-7-2-16",
+      "number": "Theorem 7.2.16",
+      "source": {
+        "pdfPage": 116,
+        "printedPage": "116",
+        "texSha256": "7bfc6c415eac64f0d5f51ffe8483f8f7582fd6875390ca8dd0b00644cac8edb9",
+        "locator": "page:116:block:p116-b6"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_16_locally_compact_distributive_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.LocallyCompact",
+        "signatureSha256": "a678ed261ca2c56e7e853dbd5b21986bcadb97ceb86603d5c0907b2b0b0e5e61",
+        "bodySha256": "bdb4e5aa5aa9eb690a6fe7503c9b141649c6c04150f523b44be1af410499def6"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_semantics",
+        "evidence": [
+          "The object restrictions and Stone-unit bijections are proved, but the source categories, contravariant morphism actions, functor laws, naturality, and categorical dual equivalence are absent.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_16_locally_compact_distributive_duality.",
+          "The reader marks the item partial; a source-faithful categorical wrapper remains to be formalized."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "interface_only",
+          "categorical_semantics_missing"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "cor-7-2-10",
+          "lemma-7-2-15"
+        ],
+        "actual": [
+          "cor-7-2-10",
+          "lemma-7-2-15"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-16:7bfc6c41:a678ed26:bdb4e5aa"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-19": {
+      "permanentId": "thm-7-2-19",
+      "number": "Theorem 7.2.19",
+      "source": {
+        "pdfPage": 117,
+        "printedPage": "117",
+        "texSha256": "1b3547c9051925daaee0f87229af7c61652cea4ca9565f2320089ba21a849ff1",
+        "locator": "page:117:block:p117-b6"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_19_coherent_arithmetic_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.Coherent",
+        "signatureSha256": "0474ddff8b9d17b9547a5d88b6ec124fe10704de35a17064eae3a46eed947f7c",
+        "bodySha256": "271f23d82af23b6d277daaeca941d205f6ca0e707d9bc03a737616a0b7e7f9fc"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_semantics",
+        "evidence": [
+          "The coherent/arithmetic object restrictions and unit bijections are proved, but the categories, morphism actions, functor laws, naturality, and categorical dual equivalence are absent.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_19_coherent_arithmetic_duality.",
+          "The reader marks the item partial; a source-faithful categorical wrapper remains to be formalized."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "interface_only",
+          "categorical_semantics_missing"
+        ],
+        "downstreamCount": 1
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-16"
+        ],
+        "actual": [
+          "thm-7-2-16"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-19:1b3547c9:0474ddff:271f23d8"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-20": {
+      "permanentId": "thm-7-2-20",
+      "number": "Theorem 7.2.20",
+      "source": {
+        "pdfPage": 117,
+        "printedPage": "117",
+        "texSha256": "3e263472760d219664ed513c98f2084711f99edfd976b97108752b2586564807",
+        "locator": "page:117:block:p117-b9"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_20_algebraic_distributive_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.Algebraic",
+        "signatureSha256": "509e28d27e985f0e832a68a4c6dc2bff0e105b1a5adad38118446b193c0e3240",
+        "bodySha256": "0c2d2ca8e51aa0466a31d5b35f2e4100dd3477d1c53f7f4914defd889457fcbe"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_semantics",
+        "evidence": [
+          "The compact-open/algebraic object restrictions and unit bijections are proved, but the categories, morphism actions, functor laws, naturality, and categorical dual equivalence are absent.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_20_algebraic_distributive_duality.",
+          "The reader marks the item partial; a source-faithful categorical wrapper remains to be formalized."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "interface_only",
+          "categorical_semantics_missing"
+        ],
+        "downstreamCount": 1
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-16"
+        ],
+        "actual": [
+          "thm-7-2-16"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-20:3e263472:509e28d2:0c2d2ca8"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-22": {
+      "permanentId": "thm-7-2-22",
+      "number": "Theorem 7.2.22",
+      "source": {
+        "pdfPage": 117,
+        "printedPage": "117",
+        "texSha256": "d995b8a1dc92d4dd867c9e25fe2858e3d9da303b05d9baf852386a9c944aeffd",
+        "locator": "page:117:block:p117-b11"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_22_spectral_algebraic_arithmetic_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.Spectral",
+        "signatureSha256": "fbcc4a445bfc2eac8ced60b5c884775d27cf633f00e14a04d9c5424d6edf94c2",
+        "bodySha256": "250aee00c597b99ebad648939dbf2f696cceb46100451707ca4b6f4b1c8ed3e4"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_semantics",
+        "evidence": [
+          "The spectral/algebraic-arithmetic object restriction is assembled from Theorems 7.2.19 and 7.2.20, but categories, morphism actions, functor laws, naturality, and a categorical dual equivalence are absent.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_22_spectral_algebraic_arithmetic_duality.",
+          "The reader marks the item partial; a source-faithful categorical wrapper remains to be formalized."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "interface_only",
+          "categorical_semantics_missing"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-19",
+          "thm-7-2-20"
+        ],
+        "actual": [
+          "thm-7-2-19",
+          "thm-7-2-20"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-22:d995b8a1:fbcc4a44:250aee00"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-1-3": {
+      "permanentId": "thm-7-1-3",
+      "number": "Theorem 7.1.3",
+      "source": {
+        "pdfPage": 108,
+        "printedPage": "108",
+        "texSha256": "9d453cf70ed52929d2fa93e9831aeab884299a8cb2728a751c71db159dc4a4cf",
+        "locator": "page:108:block:p108-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_1_3_prime_continuous_iff_completely_distributive",
+        "module": "Practice.DomainTheory.Chapter07.Section71",
+        "signatureSha256": "3f65e125600b05d8cb0a0b52439fe573f88040b3c81fe83875c29a0d958be11e",
+        "bodySha256": "6d5d2176b8e1f2bb6007f5e2513fb3f5a25ed05d1ef4f95c07847bea61cf3f34"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook cites Raney's characterization but supplies no proof; retained as a book-omission admit rather than an unverified external axiom.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_1_3_prime_continuous_iff_completely_distributive.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "book_proof_omitted",
+          "external_citation_not_promoted_to_axiom"
+        ],
+        "downstreamCount": 12
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-1-1",
+          "def-7-1-2"
+        ],
+        "actual": [
+          "thm-7-1-1",
+          "def-7-1-2"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-1-3:9d453cf7:3f65e125:6d5d2176"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-7-2-25": {
+      "permanentId": "prop-7-2-25",
+      "number": "Proposition 7.2.25",
+      "source": {
+        "pdfPage": 118,
+        "printedPage": "118",
+        "texSha256": "796b8701c09347ace5b51d28808a2626839f17a831a6da89b7a6cc6f22a83e77",
+        "locator": "page:118:block:p118-b3"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.prop_7_2_25_algebraic_arithmetic_lattice_equivalence",
+        "module": "Practice.DomainTheory.Chapter07.Section72.Spectral",
+        "signatureSha256": "3a75f92309ab3a3f306927be629eed3b7d09205d2d108cb7435e533e6a4b8924",
+        "bodySha256": "d68c591dc923e437f37cefee00f3c81395981b34267dcaf844c80c3ad2bf4d90"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The source says the equivalence is easily established but omits the proof; retained as a book-omission admit.",
+          "The current interface records object maps and morphism conversions but not category laws, functor laws, naturality, or a categorical equivalence.",
+          "Canonical declaration: AbramskyJung.Chapter7.prop_7_2_25_algebraic_arithmetic_lattice_equivalence.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "quotient_lattice_equivalence",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 5
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-7-2-24"
+        ],
+        "actual": [
+          "def-7-2-24"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-7-2-25:796b8701:3a75f923:d68c591d"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-26": {
+      "permanentId": "thm-7-2-26",
+      "number": "Theorem 7.2.26",
+      "source": {
+        "pdfPage": 118,
+        "printedPage": "118",
+        "texSha256": "f864ee7d9d71920a34fe91cf7707372ff1bcc2c95a962bc51ed0e750ec90a597",
+        "locator": "page:118:block:p118-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_26_spectral_distributive_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.Spectral",
+        "signatureSha256": "bd5cf570582c44f24cd59dc87ff1c6cc319e87ad1e72abab2803176a3f0e51d1",
+        "bodySha256": "5dd83ed279f13e61b9ee2dfafb0316356f40a17fff564796b06afe149e81a261"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The theorem is stated after the functor construction without a proof; retained as a book-omission admit.",
+          "The current interface exposes object maps and morphism conversions but omits category laws, functor laws, naturality, inverse laws, and a categorical dual equivalence.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_26_spectral_distributive_duality.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "categorical_duality_packaging",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 9
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "prop-7-2-25",
+          "thm-7-2-22"
+        ],
+        "actual": [
+          "prop-7-2-25",
+          "thm-7-2-22"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-26:f864ee7d:bd5cf570:5dd83ed2"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-28": {
+      "permanentId": "thm-7-2-28",
+      "number": "Theorem 7.2.28",
+      "source": {
+        "pdfPage": 119,
+        "printedPage": "119",
+        "texSha256": "b219893f22a2fc512cac5bd9fe9b8adaee2e6191f1fe11c1978d76d156e40007",
+        "locator": "page:119:block:p119-b8"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_28_cont_completely_distributive_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.DomainDualities",
+        "signatureSha256": "e6f8f03589952301438c345730ba6ce0244e6fb1cac0babb38f1d47c3e624fc7",
+        "bodySha256": "31f39f40f8eef56dc4361788f78093846d9536092ed878a6fdbbde211971d405"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The numbered theorem is assembled, but transitively depends on the source-proved prime-filter dcpo/interpolation helper completeDistributivePointDcpoData.",
+          "Its DualEquivalenceData field contains only object maps and unit/counit bijectivity propositions, with no category, morphism, functor-law, naturality, or categorical equivalence data.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_28_cont_completely_distributive_duality.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map.",
+          "The numbered theorem has no direct placeholder; #print-axiom dependency is isolated in completeDistributivePointDcpoData."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "transitive_helper_completeDistributivePointDcpoData",
+          "point_dcpo_continuity",
+          "topology_recovery",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 8
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.2.28 and isolate the required construction: successive prime interpolation for point filters and recovery of the Scott topology.",
+          "Compare the Lean signature of Theorem 7.2.28 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies successive prime interpolation for point filters and recovery of the Scott topology; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of successive prime interpolation for point filters and recovery of the Scott topology; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in successive prime interpolation for point filters and recovery of the Scott topology.",
+          "Attempt dependency composition through prop-7-2-27, thm-7-1-3; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for successive prime interpolation for point filters and recovery of the Scott topology; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around successive prime interpolation for point filters and recovery of the Scott topology; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for successive prime interpolation for point filters and recovery of the Scott topology, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.2.28; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "prop-7-2-27",
+          "thm-7-1-3"
+        ],
+        "actual": [
+          "prop-7-2-27",
+          "thm-7-1-3"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-28:b219893f:e6f8f035:31f39f40"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-29": {
+      "permanentId": "thm-7-2-29",
+      "number": "Theorem 7.2.29",
+      "source": {
+        "pdfPage": 120,
+        "printedPage": "120",
+        "texSha256": "a2cbd76ddb83bf46a06fbf64dde459c306d17d91ca5b5e96e5a73b7d7b27234f",
+        "locator": "page:120:block:p120-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_29_coherent_algebraic_domain_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section72.DomainDualities",
+        "signatureSha256": "0753774d491bef7f2a4f57367c666eca7c7a80b6f92141d531cf33ec8dec4dab",
+        "bodySha256": "8899c8ebabed1648ec6ba528bc1a89f56ad1a02fa57309ccdd090e28d48bc3e6"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF proves this by restricting Theorem 7.2.26; the restriction bridge remains source-proved automation-exhausted debt.",
+          "The current record has object presentations but no categorical morphism actions, category/functor laws, naturality, or dual-equivalence data.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_29_coherent_algebraic_domain_duality.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "duality_restriction_bridge",
+          "finite_join_prime_compatibility",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 6
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.2.29 and isolate the required construction: restriction of spectral duality to coherent algebraic objects.",
+          "Compare the Lean signature of Theorem 7.2.29 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies restriction of spectral duality to coherent algebraic objects; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of restriction of spectral duality to coherent algebraic objects; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in restriction of spectral duality to coherent algebraic objects.",
+          "Attempt dependency composition through thm-7-2-26; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for restriction of spectral duality to coherent algebraic objects; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around restriction of spectral duality to coherent algebraic objects; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for restriction of spectral duality to coherent algebraic objects, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.2.29; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-26"
+        ],
+        "actual": [
+          "thm-7-2-26"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-29:a2cbd76d:0753774d:8899c8eb"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-7-2-30": {
+      "permanentId": "thm-7-2-30",
+      "number": "Theorem 7.2.30",
+      "source": {
+        "pdfPage": 120,
+        "printedPage": "120",
+        "texSha256": "c9d725449a83291ae5b8978274f667480469a6e7390a5434fb27bc5a35eb8ad2",
+        "locator": "page:120:block:p120-b3"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_30_compact_open_lattices_fb_domains",
+        "module": "Practice.DomainTheory.Chapter07.Section72.DomainDualities",
+        "signatureSha256": "442ade71623c665c8e682884352ccb860a5f2b2133fcfbb9231317ef1ce95ef4",
+        "bodySha256": "ff32e655d2b25d3451fb4d6693010fe29f530f0f67e685de157753b748c92a33"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states the compact-open characterization without proof; retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_30_compact_open_lattices_fb_domains.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "compact_open_lattice_characterization"
+        ],
+        "downstreamCount": 5
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-29"
+        ],
+        "actual": [
+          "thm-7-2-29"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-30:c9d72544:442ade71:ff32e655"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-2-31": {
+      "permanentId": "thm-7-2-31",
+      "number": "Theorem 7.2.31",
+      "source": {
+        "pdfPage": 121,
+        "printedPage": "121",
+        "texSha256": "0236c5381a8dd531a69797cd2743747ab0db5145307894600dd0fe9a3f513712",
+        "locator": "page:121:block:p121-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_2_31_compact_open_lattices_algebraic_bc",
+        "module": "Practice.DomainTheory.Chapter07.Section72.DomainDualities",
+        "signatureSha256": "6f7f9a3b1449e2112e76ea83bca989f2c3d35b30d927ea8ce4b230b05fdf9634",
+        "bodySha256": "195feb5fa99a91f20a5b4a5bcc81894f225cabb74505b3f0cd09fc422cf3bf63"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states the algebraic bicomplete characterization without proof; retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_2_31_compact_open_lattices_algebraic_bc.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "finite_infimum_join_prime_condition"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-2-30"
+        ],
+        "actual": [
+          "thm-7-2-30"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-2-31:0236c538:6f7f9a3b:195feb5f"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-7-3-3": {
+      "permanentId": "prop-7-3-3",
+      "number": "Proposition 7.3.3",
+      "source": {
+        "pdfPage": 125,
+        "printedPage": "125",
+        "texSha256": "fdfb9e6266d875e5e6fba9855a38375e2cacb1d2888eb799685b2ad60378e0ec",
+        "locator": "page:125:block:p125-b9"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.prop_7_3_3_localic_description_spectrum",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "45cc28a6462da6a64fab8347c72f03cc3c364ff976e7b58b90bb97b021319e2f",
+        "bodySha256": "1de9b09bed9f62e7ed65b2890aad5472e942b89534b26ac1ffd40b06e41aa014"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF proves both directions; the spectrum unit and compact-open pre-isomorphism bridge remain source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.prop_7_3_3_localic_description_spectrum.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "spectrum_unit_missing",
+          "compact_open_preisomorphism_bridge"
+        ],
+        "downstreamCount": 11
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Proposition 7.3.3 and isolate the required construction: spectrum unit and compact-open pre-isomorphism in both directions.",
+          "Compare the Lean signature of Proposition 7.3.3 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies spectrum unit and compact-open pre-isomorphism in both directions; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of spectrum unit and compact-open pre-isomorphism in both directions; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in spectrum unit and compact-open pre-isomorphism in both directions.",
+          "Attempt dependency composition through prop-7-2-4; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for spectrum unit and compact-open pre-isomorphism in both directions; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around spectrum unit and compact-open pre-isomorphism in both directions; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for spectrum unit and compact-open pre-isomorphism in both directions, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Proposition 7.3.3; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "prop-7-2-4"
+        ],
+        "actual": [
+          "prop-7-2-4"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-7-3-3:fdfb9e62:45cc28a6:1de9b09b"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-4": {
+      "permanentId": "thm-7-3-4",
+      "number": "Theorem 7.3.4",
+      "source": {
+        "pdfPage": 125,
+        "printedPage": "125",
+        "texSha256": "f06a6c2e192603a5e18ad41961e4527210b4f47ba77e014d6df6358796712887",
+        "locator": "page:125:block:p125-b10"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_4_domain_prelocale_duality",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "3e7ac5bfad8cf1722ee5868d6ddf3ca8367e2e036ed3e0a8146eb2517c9adec6",
+        "bodySha256": "f5b4fe4d4cb2272529e41bca206ed9bfc3921ae34e154252174af956db4cce3b"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The book calls this a slight extension of Theorem 7.2.30 but supplies no proof; retained as a book-omission admit.",
+          "The current interface records object and morphism correspondences but omits category/functor laws, naturality, inverse laws, and a categorical dual equivalence.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_4_domain_prelocale_duality.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "book_proof_omitted",
+          "morphism_correspondence",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 14
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "prop-7-3-3",
+          "thm-7-2-30"
+        ],
+        "actual": [
+          "prop-7-3-3",
+          "thm-7-2-30"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-4:f06a6c2e:3e7ac5bf:f5b4fe4d"
+      },
+      "statementRelation": "interface_only"
+    },
+    "prop-7-3-6": {
+      "permanentId": "prop-7-3-6",
+      "number": "Proposition 7.3.6",
+      "source": {
+        "pdfPage": 126,
+        "printedPage": "126",
+        "texSha256": "dbf5327665c227c3cedfbfbd242e673173884621258f23ccb7c74b33631bde57",
+        "locator": "page:126:block:p126-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.prop_7_3_6_sub_prelocale_ep_pair",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "1d3572a9af205ffc55a842c92e90fa9b4da0546d56ac8c0b8bf87ffd3ccb1336",
+        "bodySha256": "3ac89e302cde49b2485ff5e3e2d507e3998a62c74f0e2f587992519a8fea9135"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF proves the explicit filter formulas and e-p laws; prime-filter well-definedness remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.prop_7_3_6_sub_prelocale_ep_pair.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "prime_filter_well_definedness",
+          "spectrum_ep_pair"
+        ],
+        "downstreamCount": 12
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Proposition 7.3.6 and isolate the required construction: well-defined prime-filter embedding and projection formulas.",
+          "Compare the Lean signature of Proposition 7.3.6 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies well-defined prime-filter embedding and projection formulas; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of well-defined prime-filter embedding and projection formulas; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in well-defined prime-filter embedding and projection formulas.",
+          "Attempt dependency composition through def-7-3-5; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for well-defined prime-filter embedding and projection formulas; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around well-defined prime-filter embedding and projection formulas; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for well-defined prime-filter embedding and projection formulas, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Proposition 7.3.6; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "def-7-3-5"
+        ],
+        "actual": [
+          "def-7-3-5"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-7-3-6:dbf53276:1d3572a9:3ac89e30"
+      },
+      "statementRelation": "exact"
+    },
+    "cor-7-3-7": {
+      "permanentId": "cor-7-3-7",
+      "number": "Corollary 7.3.7",
+      "source": {
+        "pdfPage": 126,
+        "printedPage": "126",
+        "texSha256": "38b472bd29e36f87636facc01a8642060569898200cced3e7fcacdd0c87e16b7",
+        "locator": "page:126:block:p126-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.cor_7_3_7_sub_prelocale_domain_embedding",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "c87de4d4b1690d4f3232f14f67e3550abb88b40000e1785afdfb696777a7948b",
+        "bodySha256": "c1ab9e5e5b36460a54b9e4fffad8a74f742bd8afbdd2f261ba2110a93ff7fd71"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF constructs the embedding through the two spectrum isomorphisms; this remains transitive source-proved debt from 7.3.3 and 7.3.6.",
+          "Canonical declaration: AbramskyJung.Chapter7.cor_7_3_7_sub_prelocale_domain_embedding.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "transitive_spectrum_boundaries",
+          "compact_generator_formula"
+        ],
+        "downstreamCount": 11
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Corollary 7.3.7 and isolate the required construction: transport of the spectrum embedding through localic descriptions.",
+          "Compare the Lean signature of Corollary 7.3.7 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies transport of the spectrum embedding through localic descriptions; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of transport of the spectrum embedding through localic descriptions; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in transport of the spectrum embedding through localic descriptions.",
+          "Attempt dependency composition through prop-7-3-3, prop-7-3-6; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for transport of the spectrum embedding through localic descriptions; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around transport of the spectrum embedding through localic descriptions; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for transport of the spectrum embedding through localic descriptions, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Corollary 7.3.7; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "prop-7-3-3",
+          "prop-7-3-6"
+        ],
+        "actual": [
+          "prop-7-3-3",
+          "prop-7-3-6"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "cor-7-3-7:38b472bd:c87de4d4:c1ab9e5e"
+      },
+      "statementRelation": "exact"
+    },
+    "lemma-7-3-8": {
+      "permanentId": "lemma-7-3-8",
+      "number": "Lemma 7.3.8",
+      "source": {
+        "pdfPage": 130,
+        "printedPage": "130",
+        "texSha256": "5c6deb9e298d9e5c2c6c5c58773aa84bad67bd5eb2d075bb4a27155f67db6a3c",
+        "locator": "page:130:block:p130-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.lemma_7_3_8_compact_open_scott_function_space",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "548541b3b0b64dd8b418f65d982597a8dd0614fdb7040de1c37a9238887f8372",
+        "bodySha256": "a0017fc8d5269ccfa9aac461c2922427f15c72418bb3ea90674c04aff8dfcd70"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF proves equality of the Scott and compact-open topologies using compactness and finite deflations; the deflation bridge remains automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.lemma_7_3_8_compact_open_scott_function_space.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "finite_deflation_interface",
+          "topology_extensionality"
+        ],
+        "downstreamCount": 9
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Lemma 7.3.8 and isolate the required construction: equality of Scott and compact-open function-space topologies.",
+          "Compare the Lean signature of Lemma 7.3.8 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies equality of Scott and compact-open function-space topologies; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of equality of Scott and compact-open function-space topologies; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in equality of Scott and compact-open function-space topologies.",
+          "Attempt dependency composition through the local foundational API; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for equality of Scott and compact-open function-space topologies; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around equality of Scott and compact-open function-space topologies; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for equality of Scott and compact-open function-space topologies, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Lemma 7.3.8; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [],
+        "actual": [],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-7-3-8:5c6deb9e:548541b3:a0017fc8"
+      },
+      "statementRelation": "exact"
+    },
+    "lemma-7-3-9": {
+      "permanentId": "lemma-7-3-9",
+      "number": "Lemma 7.3.9",
+      "source": {
+        "pdfPage": 130,
+        "printedPage": "130",
+        "texSha256": "519e0bc2194fa2d61579c1ae3e16a4bc5a2976e94eab8b107132e873cec2097f",
+        "locator": "page:130:block:p130-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.lemma_7_3_9_bifinite_function_space_compact_opens",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "52764c881ea1a840fc4b0d5ef6036bcc7802a76de06f470c6657310291bf2869",
+        "bodySha256": "ea411273d4e12c992fa69aa7adedb43c16417143f06261b3bf62df6328f26fe3"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The subbasic topology membership is proved, while the PDF's Scott-openness and compactness arguments via function-space deflations remain source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.lemma_7_3_9_bifinite_function_space_compact_opens.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "function_space_deflation",
+          "compact_subbasic_predicate"
+        ],
+        "downstreamCount": 8
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Lemma 7.3.9 and isolate the required construction: Scott compactness of function-space subbasic predicates.",
+          "Compare the Lean signature of Lemma 7.3.9 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Scott compactness of function-space subbasic predicates; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Scott compactness of function-space subbasic predicates; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Scott compactness of function-space subbasic predicates.",
+          "Attempt dependency composition through lemma-7-3-8; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Scott compactness of function-space subbasic predicates; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Scott compactness of function-space subbasic predicates; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Scott compactness of function-space subbasic predicates, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Lemma 7.3.9; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "lemma-7-3-8"
+        ],
+        "actual": [
+          "lemma-7-3-8"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-7-3-9:519e0bc2:52764c88:ea411273"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-10": {
+      "permanentId": "thm-7-3-10",
+      "number": "Theorem 7.3.10",
+      "source": {
+        "pdfPage": 132,
+        "printedPage": "132",
+        "texSha256": "99eb509bfa82e008f64a0667ade2240d5a6f7969a539dbd8ae83ff5971fedf1f",
+        "locator": "page:132:block:p132-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_10_function_space_prelocale",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "0ea043bd2e656d9b5e3d3c639f4ecf125bf49542cc6c45a2153a8fc14f62d18d",
+        "bodySha256": "a7ff33c1ebdec28eb889dda5a9fd71cf18eeabfe4e156a5dd9762d8fe2f1a0e5"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the generator/rule construction and naturality proof; constructing the concrete prelocale and spectrum isomorphism remains source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_10_function_space_prelocale.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "term_prelocale_construction",
+          "function_spectrum_naturality"
+        ],
+        "downstreamCount": 13
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.3.10 and isolate the required construction: term prelocale for function spaces, spectrum isomorphism, and naturality.",
+          "Compare the Lean signature of Theorem 7.3.10 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies term prelocale for function spaces, spectrum isomorphism, and naturality; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of term prelocale for function spaces, spectrum isomorphism, and naturality; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in term prelocale for function spaces, spectrum isomorphism, and naturality.",
+          "Attempt dependency composition through lemma-7-3-8, lemma-7-3-9, cor-7-3-7; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for term prelocale for function spaces, spectrum isomorphism, and naturality; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around term prelocale for function spaces, spectrum isomorphism, and naturality; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for term prelocale for function spaces, spectrum isomorphism, and naturality, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.3.10; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "lemma-7-3-8",
+          "lemma-7-3-9",
+          "cor-7-3-7"
+        ],
+        "actual": [
+          "lemma-7-3-8",
+          "lemma-7-3-9",
+          "cor-7-3-7"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-10:99eb509b:0ea043bd:a7ff33c1"
+      },
+      "statementRelation": "exact"
+    },
+    "lemma-7-3-11": {
+      "permanentId": "lemma-7-3-11",
+      "number": "Lemma 7.3.11",
+      "source": {
+        "pdfPage": 133,
+        "printedPage": "133",
+        "texSha256": "0bce74b438dff35da604b2c41bf495aa2fa89b9690aa93c0b8ba6d289f07784a",
+        "locator": "page:133:block:p133-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.lemma_7_3_11_plotkin_powerdomain_compact_opens",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "57de46672964b3380fc63143764e0d79e0bd484b661e4ec37272acf38e8ecc44",
+        "bodySha256": "91f60ba31b63f24022b10a739c278b2fc8f260cc30d4eb61556a3679df180452"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF proves compact-openness and the Scott-base formula using lifted deflations and finite compact lenses; that construction remains source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.lemma_7_3_11_plotkin_powerdomain_compact_opens.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "lifted_plotkin_deflation",
+          "finite_compact_lens_base"
+        ],
+        "downstreamCount": 8
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Lemma 7.3.11 and isolate the required construction: Plotkin modal compact-opens and their Scott base.",
+          "Compare the Lean signature of Lemma 7.3.11 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Plotkin modal compact-opens and their Scott base; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Plotkin modal compact-opens and their Scott base; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Plotkin modal compact-opens and their Scott base.",
+          "Attempt dependency composition through thm-6-2-22; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Plotkin modal compact-opens and their Scott base; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Plotkin modal compact-opens and their Scott base; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Plotkin modal compact-opens and their Scott base, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Lemma 7.3.11; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-22"
+        ],
+        "actual": [
+          "thm-6-2-22"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-7-3-11:0bce74b4:57de4667:91f60ba3"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-13": {
+      "permanentId": "thm-7-3-13",
+      "number": "Theorem 7.3.13",
+      "source": {
+        "pdfPage": 135,
+        "printedPage": "135",
+        "texSha256": "329c36d12e4068a9016fed7e5d15353004c6810c56c8290755e685bb254bb0c2",
+        "locator": "page:135:block:p135-b20"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_13_plotkin_powerlocale_representation",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "34b3e119a6e0b5d011f655b0c686ed0a9abf0fccc7ddd9a6a3b789b6fe62d55f",
+        "bodySha256": "fabf80ee8c7942980897aa8bfa1788e8d74ebd50519253a378d7e671897a492a"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF constructs the Plotkin powerlocale and proves definability and naturality; the term-prelocale/spectrum construction remains source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_13_plotkin_powerlocale_representation.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "plotkin_term_prelocale",
+          "powerlocale_naturality"
+        ],
+        "downstreamCount": 10
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.3.13 and isolate the required construction: Plotkin term powerlocale, spectrum isomorphism, and naturality.",
+          "Compare the Lean signature of Theorem 7.3.13 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Plotkin term powerlocale, spectrum isomorphism, and naturality; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Plotkin term powerlocale, spectrum isomorphism, and naturality; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Plotkin term powerlocale, spectrum isomorphism, and naturality.",
+          "Attempt dependency composition through lemma-7-3-11, cor-7-3-7; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Plotkin term powerlocale, spectrum isomorphism, and naturality; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Plotkin term powerlocale, spectrum isomorphism, and naturality; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Plotkin term powerlocale, spectrum isomorphism, and naturality, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.3.13; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "lemma-7-3-11",
+          "cor-7-3-7"
+        ],
+        "actual": [
+          "lemma-7-3-11",
+          "cor-7-3-7"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-13:329c36d1:34b3e119:fabf80ee"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-14": {
+      "permanentId": "thm-7-3-14",
+      "number": "Theorem 7.3.14",
+      "source": {
+        "pdfPage": 136,
+        "printedPage": "136",
+        "texSha256": "819f4f7ae261b1a82368130c824087c177e6075f77b264cf89a9fca97497feb2",
+        "locator": "page:136:block:p136-b14"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_14_prelocale_chains_bilimits",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "9b965658153877584c836378efc14175d2fa2e7ed1f8a5e187a831dca085582a",
+        "bodySha256": "8d89cf332246547e959cb6175c624afa33b264546d59b3287ff607612b979b65"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the directed-union and bilimit construction; coherent stage maps and compact-element factorization remain source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_14_prelocale_chains_bilimits.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "coherent_stage_maps",
+          "bilimit_compact_factorization"
+        ],
+        "downstreamCount": 7
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.3.14 and isolate the required construction: directed union of prelocales and spectrum bilimit.",
+          "Compare the Lean signature of Theorem 7.3.14 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies directed union of prelocales and spectrum bilimit; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of directed union of prelocales and spectrum bilimit; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in directed union of prelocales and spectrum bilimit.",
+          "Attempt dependency composition through cor-7-3-7; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for directed union of prelocales and spectrum bilimit; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around directed union of prelocales and spectrum bilimit; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for directed union of prelocales and spectrum bilimit, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.3.14; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "cor-7-3-7"
+        ],
+        "actual": [
+          "cor-7-3-7"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-14:819f4f7a:9b965658:8d89cf33"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-15": {
+      "permanentId": "thm-7-3-15",
+      "number": "Theorem 7.3.15",
+      "source": {
+        "pdfPage": 138,
+        "printedPage": "138",
+        "texSha256": "efaa65b1eaaffd8f52b210e3871f8718408b0e9513b28afe6cd6fc5fca4931f9",
+        "locator": "page:138:block:p138-b13"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_15_interpretation_preserves_localic_descriptions",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "5ab807db611a4dafd880b16180bc10933652c706ec18adbe3c480a79d7d7478a",
+        "bodySha256": "bd6135777f2f0e64bfd410169396531963f9da69d6e317171d5a4efce445d762"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF derives this compositionally from the localic constructors; assembling the full interpretation package remains source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_15_interpretation_preserves_localic_descriptions.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "constructor_interpretation_package",
+          "recursive_type_bilimit"
+        ],
+        "downstreamCount": 6
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.3.15 and isolate the required construction: compositional localic interpretation of every type constructor.",
+          "Compare the Lean signature of Theorem 7.3.15 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies compositional localic interpretation of every type constructor; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of compositional localic interpretation of every type constructor; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in compositional localic interpretation of every type constructor.",
+          "Attempt dependency composition through thm-7-3-10, thm-7-3-13, thm-7-3-14; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for compositional localic interpretation of every type constructor; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around compositional localic interpretation of every type constructor; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for compositional localic interpretation of every type constructor, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.3.15; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-3-10",
+          "thm-7-3-13",
+          "thm-7-3-14"
+        ],
+        "actual": [
+          "thm-7-3-10",
+          "thm-7-3-13",
+          "thm-7-3-14"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-15:efaa65b1:5ab807db:bd613577"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-16": {
+      "permanentId": "thm-7-3-16",
+      "number": "Theorem 7.3.16",
+      "source": {
+        "pdfPage": 139,
+        "printedPage": "139",
+        "texSha256": "dd751f807b716efe00f8a160877c28ed77734c80689a6dd96afd06415da2f8e8",
+        "locator": "page:139:block:p139-b17"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_16_closed_type_expression_spectrum",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "4ab619e8e00e09fc9c7c8cca0538a2c9a53e205d0b48d639f4181dce31c0d5b4",
+        "bodySha256": "46571b0f59e1c05eb530068cc14ac60b44f5d489005794453b7e59d25fbf1d22"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The source calls this a special case of 7.3.15, but the current interface lacks the required identity between the chosen interpretation and syntactic L(σ).",
+          "The source delegates the full type-specific preorder and inductive compact/termination rules to Abramsky's thesis; those rules are not encoded, and former truth-valued placeholder fields have been removed.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_16_closed_type_expression_spectrum.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "interface_gap_property_language_identification",
+          "closed_type_specialization",
+          "type_specific_rule_system_missing"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.3.16 and isolate the required construction: identification of the chosen localic interpretation with the syntactic prelocale L(sigma).",
+          "Compare the Lean signature of Theorem 7.3.16 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies identification of the chosen localic interpretation with the syntactic prelocale L(sigma); no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of identification of the chosen localic interpretation with the syntactic prelocale L(sigma); the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in identification of the chosen localic interpretation with the syntactic prelocale L(sigma).",
+          "Attempt dependency composition through thm-7-3-15; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for identification of the chosen localic interpretation with the syntactic prelocale L(sigma); it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around identification of the chosen localic interpretation with the syntactic prelocale L(sigma); coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for identification of the chosen localic interpretation with the syntactic prelocale L(sigma), rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.3.16; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-3-15"
+        ],
+        "actual": [
+          "thm-7-3-15"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-16:dd751f80:4ab619e8:46571b0f"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-17": {
+      "permanentId": "thm-7-3-17",
+      "number": "Theorem 7.3.17",
+      "source": {
+        "pdfPage": 139,
+        "printedPage": "139",
+        "texSha256": "0fafaae9d4e4a55657e29e16736b46dd0aeb816c4fb5faf442f2351a3a95c337",
+        "locator": "page:139:block:p139-b18"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_17_property_language_decidable",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "2caf5e4105aa2e951496c6d3c5ec4098a3f79e6127a22dbbbf5751fb6592a6f9",
+        "bodySha256": "cc075e75248d8b448e175fd01ca122bc2c72af7ec969546e21020bdef1cc96a9"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the finite prime-normal-form decision argument; the mutually recursive normalizer and correctness proofs remain source-proved debt.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_17_property_language_decidable.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "prime_normal_form_algorithm",
+          "decision_procedure_correctness"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 7.3.17 and isolate the required construction: mutually recursive prime normalizer and decidable structural reduction.",
+          "Compare the Lean signature of Theorem 7.3.17 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies mutually recursive prime normalizer and decidable structural reduction; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of mutually recursive prime normalizer and decidable structural reduction; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in mutually recursive prime normalizer and decidable structural reduction.",
+          "Attempt dependency composition through thm-7-3-15; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for mutually recursive prime normalizer and decidable structural reduction; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around mutually recursive prime normalizer and decidable structural reduction; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for mutually recursive prime normalizer and decidable structural reduction, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 7.3.17; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-3-15"
+        ],
+        "actual": [
+          "thm-7-3-15"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-17:0fafaae9:2caf5e41:cc075e75"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-7-3-18": {
+      "permanentId": "thm-7-3-18",
+      "number": "Theorem 7.3.18",
+      "source": {
+        "pdfPage": 143,
+        "printedPage": "143",
+        "texSha256": "0c43b152202542fd27d23d0d272b87fee4801568c82de070b58e32f14f3a3531",
+        "locator": "page:143:block:p143-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter7.theorem_7_3_18_domain_logic_sound_complete",
+        "module": "Practice.DomainTheory.Chapter07.Section73.NumberedItems",
+        "signatureSha256": "dde32c996772f82fb1d0ad3cbf445ba004897a04aa7feb9af5b816be171f4a15",
+        "bodySha256": "df6117eccd49fa797e833b0ea6122e78430fad2451a09c774f9cac8c7922eb4c"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states soundness and completeness after presenting the calculus and semantics but omits the proof; retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter7.theorem_7_3_18_domain_logic_sound_complete.",
+          "Derivability is fixed to DomainLogicDerivation and validity is derived from the interpretation, but the interpretation still abstracts over the concrete denotational equations; this remains interface-only."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "semantic_fundamental_lemma"
+        ],
+        "downstreamCount": 0
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-7-3-16",
+          "thm-7-3-17"
+        ],
+        "actual": [
+          "thm-7-3-16",
+          "thm-7-3-17"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-7-3-18:0c43b152:dde32c99:df6117ec"
+      },
+      "statementRelation": "interface_only"
+    }
+  }
+}

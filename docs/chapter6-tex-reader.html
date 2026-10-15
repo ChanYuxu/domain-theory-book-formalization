@@ -244,6 +244,8 @@
       background: var(--panel);
       display: grid;
       grid-template-rows: auto 1fr;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .code-header {
@@ -258,6 +260,7 @@
       justify-content: space-between;
       gap: 12px;
       align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     .code-title {
@@ -270,7 +273,8 @@
       color: var(--muted);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 12px;
-      flex: none;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .code-summary {
@@ -283,6 +287,22 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+      min-width: 0;
+    }
+
+    .editor-toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .editor-toolbar > div:last-child {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .code-tag {
@@ -295,37 +315,71 @@
       background: #fff;
     }
 
-    pre {
+    .declaration-select {
+      max-width: 100%;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      padding: 0 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      display: none;
+    }
+
+    .save-button {
+      height: 32px;
+      border: 1px solid #0f766e;
+      border-radius: 6px;
+      background: #0f766e;
+      color: white;
+      padding: 0 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .save-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .save-status {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .code-editor {
       margin: 0;
       min-height: 0;
       height: 100%;
+      width: 100%;
       overflow: auto;
+      border: 0;
+      resize: none;
       background: var(--code-bg);
       color: var(--code-ink);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 13px;
       line-height: 1.55;
       tab-size: 2;
-    }
-
-    .code-line {
-      display: grid;
-      grid-template-columns: 64px minmax(0, 1fr);
-      min-width: max-content;
-    }
-
-    .line-no {
-      color: #94a3b8;
-      background: var(--code-line);
-      text-align: right;
-      padding: 0 12px;
-      border-right: 1px solid #334155;
-      user-select: none;
-    }
-
-    .line-src {
-      padding: 0 14px;
+      padding: 14px 16px;
+      outline: none;
       white-space: pre;
+      box-sizing: border-box;
+    }
+
+    .build-output {
+      max-height: 180px;
+      overflow: auto;
+      border-top: 1px solid #334155;
+      background: #0b1220;
+      color: #dbeafe;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.45;
+      padding: 10px 12px;
+      white-space: pre-wrap;
+      display: none;
     }
 
     .status,
@@ -385,9 +439,17 @@
             <div class="code-location" id="codeLocation"></div>
           </div>
           <p class="code-summary" id="codeSummary">Click a Lean marker in the rendered PDF, or select an item below the PDF.</p>
-          <div class="code-tags" id="codeTags"></div>
+          <div class="editor-toolbar">
+            <div class="code-tags" id="codeTags"></div>
+            <div>
+              <select class="declaration-select" id="declarationSelect" aria-label="Lean declaration"></select>
+              <span class="save-status" id="saveStatus"></span>
+              <button class="save-button" id="saveButton" type="button" disabled>Save + build</button>
+            </div>
+          </div>
         </div>
-        <pre id="codeBlock"><div class="status">No Lean item selected.</div></pre>
+        <textarea class="code-editor" id="codeEditor" spellcheck="false" disabled>No Lean item selected.</textarea>
+        <pre class="build-output" id="buildOutput"></pre>
       </section>
     </main>
   </div>
@@ -405,11 +467,14 @@
       sourceCache: new Map(),
       pdf: null,
       selectedId: "",
+      selectedLean: null,
+      selectedDeclaration: "",
       query: "",
       linkById: new Map(),
       resizeTimer: 0,
       splitRenderTimer: 0,
-      draggingSplitter: false
+      draggingSplitter: false,
+      saving: false
     };
 
     const meta = document.getElementById("meta");
@@ -422,7 +487,11 @@
     const codeLocation = document.getElementById("codeLocation");
     const codeSummary = document.getElementById("codeSummary");
     const codeTags = document.getElementById("codeTags");
-    const codeBlock = document.getElementById("codeBlock");
+    const declarationSelect = document.getElementById("declarationSelect");
+    const codeEditor = document.getElementById("codeEditor");
+    const saveButton = document.getElementById("saveButton");
+    const saveStatus = document.getElementById("saveStatus");
+    const buildOutput = document.getElementById("buildOutput");
 
     function escapeHtml(value) {
       return String(value)
@@ -630,11 +699,54 @@
       `).join("");
     }
 
-    async function sourceLinesFor(item) {
-      const sourcePath = item.leanFile || state.map.leanFile;
+    function editorLabel(leanItem) {
+      if (!leanItem) return "";
+      return `${leanItem.file}:${leanItem.startLine}-${leanItem.endLine}`;
+    }
+
+    function setBuildOutput(text) {
+      buildOutput.textContent = text || "";
+      buildOutput.style.display = text ? "block" : "none";
+    }
+
+    function setEditorState({ value, disabled, status, output }) {
+      codeEditor.value = value;
+      codeEditor.disabled = disabled;
+      saveButton.disabled = disabled || state.saving;
+      saveStatus.textContent = status || "";
+      setBuildOutput(output || "");
+    }
+
+    async function loadLeanItem(item, declaration = state.selectedDeclaration || item.lean?.[0] || "") {
+      const query = new URLSearchParams({ id: item.id });
+      if (declaration) query.set("decl", declaration);
+      const response = await fetch(`/api/lean-item?${query}`, { cache: "no-store" });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || `Unable to resolve Lean item: ${response.status}`);
+      }
+      const payload = await response.json();
+      state.selectedLean = payload;
+      return payload;
+    }
+
+    function fallbackLocation(item) {
+      const locations = item.fallbackDeclarations || [];
+      return locations.find(location => location.declaration === state.selectedDeclaration)
+        || locations[0]
+        || {
+          declaration: state.selectedDeclaration,
+          leanFile: item.leanFile || state.map.leanFile,
+          startLine: item.startLine,
+          endLine: item.endLine
+        };
+    }
+
+    async function sourceLinesFor(location) {
+      const sourcePath = location.leanFile;
       if (!state.sourceCache.has(sourcePath)) {
         const response = await fetch(sourcePath, { cache: "no-store" });
-        if (!response.ok) throw new Error(`Unable to load Lean source ${sourcePath}: ${response.status}`);
+        if (!response.ok) throw new Error(`Unable to load Lean source: ${response.status}`);
         state.sourceCache.set(sourcePath, (await response.text()).split(/\r?\n/));
       }
       return state.sourceCache.get(sourcePath);
@@ -642,27 +754,56 @@
 
     async function renderCode(item) {
       if (!item) {
+        state.selectedLean = null;
         codeTitle.textContent = "Select a Lean marker";
         codeLocation.textContent = "";
         codeSummary.textContent = "Click a Lean marker in the rendered PDF, or select an item below the PDF.";
         codeTags.innerHTML = "";
-        codeBlock.innerHTML = '<div class="status">No Lean item selected.</div>';
+        setEditorState({ value: "No Lean item selected.", disabled: true });
         return;
       }
       codeTitle.textContent = `${item.number}: ${item.title}`;
-      const sourcePath = item.leanFile || state.map.leanFile;
-      const sourceName = sourcePath.split("/").pop();
-      codeLocation.textContent = `${sourceName}:${item.startLine}-${item.endLine}`;
-      codeSummary.textContent = item.summary;
+      codeSummary.textContent = [
+        item.summary,
+        item.formalizationStatus ? `Status: ${item.formalizationStatus}.` : "",
+        item.reviewNote || ""
+      ].filter(Boolean).join(" ");
       codeTags.innerHTML = (item.lean || []).map(name => `<span class="code-tag">${escapeHtml(name)}</span>`).join("");
-      const sourceLines = await sourceLinesFor(item);
-      const start = Math.max(1, item.startLine);
-      const end = Math.min(sourceLines.length, item.endLine);
-      const rows = [];
-      for (let line = start; line <= end; line += 1) {
-        rows.push(`<div class="code-line"><span class="line-no">${line}</span><span class="line-src">${escapeHtml(sourceLines[line - 1] || "")}</span></div>`);
+      const declarations = item.lean || [];
+      state.selectedDeclaration = declarations.includes(state.selectedDeclaration)
+        ? state.selectedDeclaration
+        : (declarations[0] || "");
+      declarationSelect.innerHTML = declarations.map(name =>
+        `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`
+      ).join("");
+      declarationSelect.value = state.selectedDeclaration;
+      declarationSelect.style.display = declarations.length > 1 ? "block" : "none";
+      setEditorState({ value: "Loading Lean source...", disabled: true });
+      try {
+        const leanItem = await loadLeanItem(item);
+        codeLocation.textContent = editorLabel(leanItem);
+        const disabled = !leanItem.editable;
+        setEditorState({
+          value: leanItem.code,
+          disabled,
+          status: disabled ? leanItem.reason : "Editable",
+          output: ""
+        });
+      } catch (error) {
+        state.selectedLean = null;
+        const location = fallbackLocation(item);
+        codeLocation.textContent = `${location.leanFile}:${location.startLine}-${location.endLine} (fallback)`;
+        const sourceLines = await sourceLinesFor(location);
+        const start = Math.max(1, location.startLine);
+        const end = Math.min(sourceLines.length, location.endLine);
+        const code = sourceLines.slice(start - 1, end).join("\n");
+        setEditorState({
+          value: code || error.message,
+          disabled: true,
+          status: "Read-only fallback",
+          output: error.message
+        });
       }
-      codeBlock.innerHTML = rows.join("");
     }
 
     function highlightSelection(id) {
@@ -670,12 +811,12 @@
       document.querySelectorAll(`.pdf-link[data-id="${CSS.escape(id)}"], .marker[data-id="${CSS.escape(id)}"]`).forEach(el => el.classList.add("active"));
     }
 
-    async function selectItem(id, updateHash = true, scrollPdf = true) {
+    function selectItem(id, updateHash = true, scrollPdf = true) {
       const item = itemById(id);
       if (!item) return;
       state.selectedId = id;
       renderMarkers();
-      await renderCode(item);
+      renderCode(item);
       highlightSelection(id);
       const target = state.linkById.get(id);
       if (scrollPdf && target) {
@@ -703,7 +844,7 @@
         await renderPdf();
         meta.textContent = `${state.extract.markerCount} clickable PDF markers · PDF.js rendered`;
         const hashId = decodeURIComponent(location.hash.replace(/^#/, ""));
-        if (hashId) await selectItem(hashId, false, true);
+        if (hashId) selectItem(hashId, false, true);
       } catch (error) {
         meta.textContent = "PDF.js reader failed to load";
         pdfScroll.innerHTML = `
@@ -714,7 +855,13 @@
         `;
         codeTitle.textContent = "Generated files required";
         codeSummary.textContent = error.message;
-        codeBlock.innerHTML = `<div class="status">${escapeHtml(error.message)}</div>`;
+        state.selectedLean = null;
+        setEditorState({
+          value: error.message,
+          disabled: true,
+          status: "Reader load failed",
+          output: error.message
+        });
       }
     }
 
@@ -729,6 +876,55 @@
         renderMarkers();
         if (state.selectedId) highlightSelection(state.selectedId);
       }
+    });
+
+    saveButton.addEventListener("click", async () => {
+      if (!state.selectedLean || state.saving) return;
+      state.saving = true;
+      saveButton.disabled = true;
+      saveStatus.textContent = "Saving and running Lean...";
+      setBuildOutput("");
+      const payload = {
+        id: state.selectedLean.id,
+        declaration: state.selectedLean.declaration,
+        file: state.selectedLean.file,
+        startLine: state.selectedLean.startLine,
+        endLine: state.selectedLean.endLine,
+        version: state.selectedLean.version,
+        code: codeEditor.value
+      };
+      try {
+        const response = await fetch("/api/save-lean", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok || !result.ok) {
+          saveStatus.textContent = "Save failed; original source restored";
+          setBuildOutput([result.error, result.output].filter(Boolean).join("\n\n"));
+          return;
+        }
+        saveStatus.textContent = `Saved; ${result.target} passed in ${result.seconds}s`;
+        setBuildOutput(result.output || result.message);
+        const refreshed = await loadLeanItem(itemById(state.selectedId), state.selectedDeclaration);
+        codeLocation.textContent = editorLabel(refreshed);
+        codeEditor.value = refreshed.code;
+        state.selectedLean = refreshed;
+      } catch (error) {
+        saveStatus.textContent = "Save failed";
+        setBuildOutput(error.message);
+      } finally {
+        state.saving = false;
+        saveButton.disabled = !state.selectedLean || !state.selectedLean.editable;
+      }
+    });
+
+    declarationSelect.addEventListener("change", async event => {
+      const item = itemById(state.selectedId);
+      if (!item || state.saving) return;
+      state.selectedDeclaration = event.target.value;
+      await renderCode(item);
     });
 
     window.addEventListener("hashchange", () => {

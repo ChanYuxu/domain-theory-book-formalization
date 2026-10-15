@@ -15,9 +15,23 @@
         "IsPreorderRel",
         "IsPartialOrderRel"
       ],
-      "startLine": 41,
-      "endLine": 44,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 25,
+      "endLine": 28,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "IsPreorderRel",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 25,
+          "endLine": 28
+        },
+        {
+          "declaration": "IsPartialOrderRel",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 29,
+          "endLine": 34
+        }
+      ]
     },
     {
       "id": "prop-2-1-2",
@@ -29,9 +43,17 @@
       "lean": [
         "prop_2_1_2_orderDual"
       ],
-      "startLine": 51,
-      "endLine": 55,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 35,
+      "endLine": 39,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_2_orderDual",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 35,
+          "endLine": 39
+        }
+      ]
     },
     {
       "id": "def-2-1-3",
@@ -51,7 +73,51 @@
       ],
       "startLine": 23,
       "endLine": 26,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "IsUpperSet",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 23,
+          "endLine": 26
+        },
+        {
+          "declaration": "IsLowerSet",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 27,
+          "endLine": 30
+        },
+        {
+          "declaration": "IsUpperBound",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 39,
+          "endLine": 42
+        },
+        {
+          "declaration": "IsLowerBound",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 43,
+          "endLine": 46
+        },
+        {
+          "declaration": "IsSup",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 75,
+          "endLine": 78
+        },
+        {
+          "declaration": "IsInf",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 79,
+          "endLine": 82
+        },
+        {
+          "declaration": "IsCompleteOrder",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 95,
+          "endLine": 98
+        }
+      ]
     },
     {
       "id": "prop-2-1-4",
@@ -70,7 +136,45 @@
       ],
       "startLine": 151,
       "endLine": 157,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_4_sup_mono",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 151,
+          "endLine": 157
+        },
+        {
+          "declaration": "prop_2_1_4_inf_mono",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 187,
+          "endLine": 193
+        },
+        {
+          "declaration": "prop_2_1_4_sup_lowerClosure",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 194,
+          "endLine": 205
+        },
+        {
+          "declaration": "prop_2_1_4_inf_upperClosure",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 206,
+          "endLine": 217
+        },
+        {
+          "declaration": "prop_2_1_4_sup_iUnion",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 218,
+          "endLine": 237
+        },
+        {
+          "declaration": "prop_2_1_4_inf_iUnion",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 238,
+          "endLine": 257
+        }
+      ]
     },
     {
       "id": "prop-2-1-5",
@@ -86,9 +190,41 @@
         "ClosureSystem",
         "ClosureSystem.closure"
       ],
-      "startLine": 70,
-      "endLine": 92,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 54,
+      "endLine": 76,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_5_closure_system_complete",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 54,
+          "endLine": 76
+        },
+        {
+          "declaration": "ClosureSystem.isInf_sInter",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 305,
+          "endLine": 313
+        },
+        {
+          "declaration": "ClosureSystem.closure_sUnion_least_closed_upper_bound",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 314,
+          "endLine": 324
+        },
+        {
+          "declaration": "ClosureSystem",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 278,
+          "endLine": 282
+        },
+        {
+          "declaration": "ClosureSystem.closure",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 285,
+          "endLine": 288
+        }
+      ]
     },
     {
       "id": "def-2-1-6",
@@ -100,9 +236,17 @@
       "lean": [
         "IsMonotoneMap"
       ],
-      "startLine": 93,
-      "endLine": 96,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 77,
+      "endLine": 80,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "IsMonotoneMap",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 77,
+          "endLine": 80
+        }
+      ]
     },
     {
       "id": "prop-2-1-7",
@@ -114,9 +258,17 @@
       "lean": [
         "prop_2_1_7_complete_lattice_fixpoints"
       ],
-      "startLine": 142,
-      "endLine": 179,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 126,
+      "endLine": 163,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_7_complete_lattice_fixpoints",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 126,
+          "endLine": 163
+        }
+      ]
     },
     {
       "id": "def-2-1-8",
@@ -133,7 +285,33 @@
       ],
       "startLine": 335,
       "endLine": 339,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "DirectedSet",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 335,
+          "endLine": 339
+        },
+        {
+          "declaration": "IsIdeal",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 340,
+          "endLine": 343
+        },
+        {
+          "declaration": "IsFilter",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 344,
+          "endLine": 348
+        },
+        {
+          "declaration": "IsChainSet",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 349,
+          "endLine": 352
+        }
+      ]
     },
     {
       "id": "prop-2-1-9",
@@ -146,9 +324,23 @@
         "prop_2_1_9_finite_nonempty_join_decomposition",
         "FiniteNonemptyJoinSet"
       ],
-      "startLine": 196,
-      "endLine": 214,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 180,
+      "endLine": 198,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_9_finite_nonempty_join_decomposition",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 180,
+          "endLine": 198
+        },
+        {
+          "declaration": "FiniteNonemptyJoinSet",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 176,
+          "endLine": 179
+        }
+      ]
     },
     {
       "id": "def-2-1-10",
@@ -162,9 +354,29 @@
         "MonotoneNet.Subnet",
         "MonotoneNet.HasSup"
       ],
-      "startLine": 215,
-      "endLine": 220,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 199,
+      "endLine": 204,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "MonotoneNet",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 199,
+          "endLine": 204
+        },
+        {
+          "declaration": "MonotoneNet.Subnet",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 205,
+          "endLine": 212
+        },
+        {
+          "declaration": "MonotoneNet.HasSup",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 213,
+          "endLine": 217
+        }
+      ]
     },
     {
       "id": "lemma-2-1-11",
@@ -177,9 +389,23 @@
         "lemma_2_1_11_monotone_net_finite_principal_lattice_subnet",
         "lemma_2_1_11_finset_index_lattice_cofinal"
       ],
-      "startLine": 278,
-      "endLine": 305,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 262,
+      "endLine": 289,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_2_1_11_monotone_net_finite_principal_lattice_subnet",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 262,
+          "endLine": 289
+        },
+        {
+          "declaration": "lemma_2_1_11_finset_index_lattice_cofinal",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 239,
+          "endLine": 261
+        }
+      ]
     },
     {
       "id": "prop-2-1-12",
@@ -191,9 +417,17 @@
       "lean": [
         "prop_2_1_12_iterated_directed_suprema"
       ],
-      "startLine": 306,
-      "endLine": 330,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 290,
+      "endLine": 314,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_12_iterated_directed_suprema",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 290,
+          "endLine": 314
+        }
+      ]
     },
     {
       "id": "def-2-1-13",
@@ -208,7 +442,21 @@
       ],
       "startLine": 742,
       "endLine": 746,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "IsDcpoOrder",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 742,
+          "endLine": 746
+        },
+        {
+          "declaration": "IsDcpo",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 735,
+          "endLine": 741
+        }
+      ]
     },
     {
       "id": "prop-2-1-15",
@@ -222,9 +470,32 @@
         "markowsky_dcpo_of_chain_sups",
         "HasChainSups"
       ],
-      "startLine": 548,
-      "endLine": 553,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "external-axiom",
+      "reviewNote": "The PDF explicitly says that the choice-dependent proof goes back to Iwamura [Iwa44] and can be found in Markowsky [Mar76]. The hard chain-complete-to-dcpo direction is therefore exposed as an external axiom; the converse and exact numbered equivalence are proved locally.",
+      "startLine": 532,
+      "endLine": 537,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_15_dcpo_iff_chain_sups",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 532,
+          "endLine": 537
+        },
+        {
+          "declaration": "markowsky_dcpo_of_chain_sups",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 521,
+          "endLine": 531
+        },
+        {
+          "declaration": "HasChainSups",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 315,
+          "endLine": 319
+        }
+      ]
     },
     {
       "id": "prop-2-1-16",
@@ -239,9 +510,38 @@
         "HasLeastFixedPoints",
         "pataraiaLowerSet"
       ],
-      "startLine": 935,
-      "endLine": 942,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "external-axiom",
+      "reviewNote": "The PDF explicitly says that this result may also be found in Markowsky [Mar76]. The exact equivalence is retained as an external axiom while the local file proves reusable Pataraia and Bourbaki-Witt support results.",
+      "startLine": 919,
+      "endLine": 926,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_16_pointed_dcpo_iff_lfp",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 919,
+          "endLine": 926
+        },
+        {
+          "declaration": "hasLeastFixedPoints_of_pataraiaLowerSet_directed",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 681,
+          "endLine": 689
+        },
+        {
+          "declaration": "HasLeastFixedPoints",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 538,
+          "endLine": 542
+        },
+        {
+          "declaration": "pataraiaLowerSet",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 553,
+          "endLine": 558
+        }
+      ]
     },
     {
       "id": "def-2-1-17",
@@ -258,7 +558,33 @@
       ],
       "startLine": 751,
       "endLine": 756,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "ScottContinuous",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 751,
+          "endLine": 756
+        },
+        {
+          "declaration": "StrictMap",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 93,
+          "endLine": 96
+        },
+        {
+          "declaration": "ConstantMap",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 97,
+          "endLine": 100
+        },
+        {
+          "declaration": "ScottContFun",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 108,
+          "endLine": 113
+        }
+      ]
     },
     {
       "id": "prop-2-1-18",
@@ -271,9 +597,23 @@
         "prop_2_1_18_continuous_function_space_dcpo",
         "scottContFun_directed_sup_apply"
       ],
-      "startLine": 943,
-      "endLine": 998,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 927,
+      "endLine": 982,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_1_18_continuous_function_space_dcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 927,
+          "endLine": 982
+        },
+        {
+          "declaration": "scottContFun_directed_sup_apply",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 983,
+          "endLine": 1048
+        }
+      ]
     },
     {
       "id": "thm-2-1-19",
@@ -289,7 +629,27 @@
       ],
       "startLine": 847,
       "endLine": 881,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_2_1_19_1",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 847,
+          "endLine": 881
+        },
+        {
+          "declaration": "dcpo_scottContinuous_endomap_has_least_fixed_point",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 1062,
+          "endLine": 1073
+        },
+        {
+          "declaration": "theorem_2_1_19_2_fix_assignment_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 1164,
+          "endLine": 1190
+        }
+      ]
     },
     {
       "id": "lemma-2-1-20",
@@ -304,7 +664,21 @@
       ],
       "startLine": 887,
       "endLine": 897,
-      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean"
+      "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_2_1_20",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 887,
+          "endLine": 897
+        },
+        {
+          "declaration": "OmegaAdmissible",
+          "leanFile": "../Practice/DomainTheory/Order/DCPO/Basic.lean",
+          "startLine": 882,
+          "endLine": 886
+        }
+      ]
     },
     {
       "id": "lemma-2-1-21",
@@ -316,9 +690,17 @@
       "lean": [
         "lemma_2_1_21_fix_invariance"
       ],
-      "startLine": 1207,
-      "endLine": 1248,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 1191,
+      "endLine": 1232,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_2_1_21_fix_invariance",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section21.lean",
+          "startLine": 1191,
+          "endLine": 1232
+        }
+      ]
     },
     {
       "id": "def-2-2-1",
@@ -336,7 +718,39 @@
       ],
       "startLine": 22,
       "endLine": 28,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "WayBelow",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 22,
+          "endLine": 28
+        },
+        {
+          "declaration": "Compact",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 29,
+          "endLine": 32
+        },
+        {
+          "declaration": "wayBelowLower",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 33,
+          "endLine": 36
+        },
+        {
+          "declaration": "wayBelowUpper",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 37,
+          "endLine": 40
+        },
+        {
+          "declaration": "CompactSet",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 41,
+          "endLine": 44
+        }
+      ]
     },
     {
       "id": "prop-2-2-2",
@@ -351,7 +765,21 @@
       ],
       "startLine": 64,
       "endLine": 70,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_2_1",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 64,
+          "endLine": 70
+        },
+        {
+          "declaration": "prop_2_2_2_2",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 71,
+          "endLine": 77
+        }
+      ]
     },
     {
       "id": "def-2-2-3",
@@ -367,7 +795,27 @@
       ],
       "startLine": 78,
       "endLine": 81,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "Approximants",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 78,
+          "endLine": 81
+        },
+        {
+          "declaration": "IsBasisRaw",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 82,
+          "endLine": 86
+        },
+        {
+          "declaration": "IsBasis",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 87,
+          "endLine": 90
+        }
+      ]
     },
     {
       "id": "prop-2-2-4",
@@ -383,7 +831,27 @@
       ],
       "startLine": 96,
       "endLine": 119,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_4_1",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 96,
+          "endLine": 119
+        },
+        {
+          "declaration": "prop_2_2_4_2",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 235,
+          "endLine": 245
+        },
+        {
+          "declaration": "prop_2_2_4_3",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 120,
+          "endLine": 129
+        }
+      ]
     },
     {
       "id": "cor-2-2-5",
@@ -400,7 +868,33 @@
       ],
       "startLine": 130,
       "endLine": 134,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_2_2_5_1",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 130,
+          "endLine": 134
+        },
+        {
+          "declaration": "cor_2_2_5_2_compacts_subset_every_basis",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 246,
+          "endLine": 252
+        },
+        {
+          "declaration": "cor_2_2_5_3_compact_basis_smallest",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 253,
+          "endLine": 259
+        },
+        {
+          "declaration": "cor_2_2_5_4_smallest_compact_basis_iff_algebraic",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 260,
+          "endLine": 269
+        }
+      ]
     },
     {
       "id": "def-2-2-6",
@@ -421,7 +915,57 @@
       ],
       "startLine": 157,
       "endLine": 160,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "IsContinuousDcpo",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 157,
+          "endLine": 160
+        },
+        {
+          "declaration": "IsAlgebraicDcpo",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 161,
+          "endLine": 164
+        },
+        {
+          "declaration": "IsOmegaContinuousDcpo",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 165,
+          "endLine": 168
+        },
+        {
+          "declaration": "IsOmegaAlgebraicDcpo",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 169,
+          "endLine": 172
+        },
+        {
+          "declaration": "IsContinuousDomain",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 139,
+          "endLine": 143
+        },
+        {
+          "declaration": "IsAlgebraicDomain",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 144,
+          "endLine": 148
+        },
+        {
+          "declaration": "IsOmegaContinuousDomain",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 149,
+          "endLine": 152
+        },
+        {
+          "declaration": "IsOmegaAlgebraicDomain",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 153,
+          "endLine": 156
+        }
+      ]
     },
     {
       "id": "prop-2-2-7",
@@ -436,7 +980,21 @@
       ],
       "startLine": 181,
       "endLine": 191,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_7_1",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 181,
+          "endLine": 191
+        },
+        {
+          "declaration": "prop_2_2_7_2",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 192,
+          "endLine": 196
+        }
+      ]
     },
     {
       "id": "def-2-2-8",
@@ -448,9 +1006,17 @@
       "lean": [
         "ClosureSystem.IsInductive"
       ],
-      "startLine": 1255,
-      "endLine": 1258,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 23,
+      "endLine": 26,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "ClosureSystem.IsInductive",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 23,
+          "endLine": 26
+        }
+      ]
     },
     {
       "id": "prop-2-2-9",
@@ -464,9 +1030,29 @@
         "ClosureSystem.IsInductive",
         "ClosureSystem.IsFinitelyGeneratedHull"
       ],
-      "startLine": 1265,
-      "endLine": 1374,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 33,
+      "endLine": 142,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_9_inductive_closure_system_algebraic",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 33,
+          "endLine": 142
+        },
+        {
+          "declaration": "ClosureSystem.IsInductive",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 23,
+          "endLine": 26
+        },
+        {
+          "declaration": "ClosureSystem.IsFinitelyGeneratedHull",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 27,
+          "endLine": 32
+        }
+      ]
     },
     {
       "id": "prop-2-2-10",
@@ -482,7 +1068,27 @@
       ],
       "startLine": 204,
       "endLine": 214,
-      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean"
+      "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_10_basis_subset",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 204,
+          "endLine": 214
+        },
+        {
+          "declaration": "prop_2_2_10_basis_lower",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 215,
+          "endLine": 228
+        },
+        {
+          "declaration": "prop_2_2_10_forward",
+          "leanFile": "../Practice/DomainTheory/Order/WayBelow.lean",
+          "startLine": 197,
+          "endLine": 203
+        }
+      ]
     },
     {
       "id": "prop-2-2-11",
@@ -494,9 +1100,17 @@
       "lean": [
         "prop_2_2_11_basis_continuity_criterion"
       ],
-      "startLine": 1375,
-      "endLine": 1414,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 143,
+      "endLine": 182,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_11_basis_continuity_criterion",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 143,
+          "endLine": 182
+        }
+      ]
     },
     {
       "id": "prop-2-2-12",
@@ -510,9 +1124,32 @@
         "prop_2_2_12_omega_basis_fixpoint_chain",
         "OmegaBasisFixpointChain"
       ],
-      "startLine": 1433,
-      "endLine": 1446,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "external-axiom",
+      "reviewNote": "The PDF explicitly sends the proof to Abramsky [Abr90b]. The full basis-chain/fixed-point package is an external axiom; a weaker basis-chain clause is proved locally and is not presented as the complete proposition.",
+      "startLine": 201,
+      "endLine": 214,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_12_omega_basis_fixpoint_chain_full",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 201,
+          "endLine": 214
+        },
+        {
+          "declaration": "prop_2_2_12_omega_basis_fixpoint_chain",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 215,
+          "endLine": 243
+        },
+        {
+          "declaration": "OmegaBasisFixpointChain",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 183,
+          "endLine": 200
+        }
+      ]
     },
     {
       "id": "prop-2-2-13",
@@ -524,9 +1161,17 @@
       "lean": [
         "prop_2_2_13_countable_basis_has_cofinal_omega_chain"
       ],
-      "startLine": 1476,
-      "endLine": 1521,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 244,
+      "endLine": 289,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_13_countable_basis_has_cofinal_omega_chain",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 244,
+          "endLine": 289
+        }
+      ]
     },
     {
       "id": "prop-2-2-14",
@@ -539,12 +1184,67 @@
         "prop_2_2_14_1_continuous_omega_ccpo_dcpo",
         "prop_2_2_14_2_algebraic_omega_ccpo_dcpo",
         "prop_2_2_14_3_omega_continuous_maps_are_continuous",
+        "OmegaWayBelow",
+        "IsContinuousOmegaCcpo",
+        "IsAlgebraicOmegaCcpo",
         "IsOmegaCcpo",
         "OmegaContinuousMap"
       ],
-      "startLine": 1532,
-      "endLine": 1582,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "formalizationStatus": "proved",
+      "reviewNote": "The canonical declarations now use the book's omega-chain approximation relation and source definitions of continuous/algebraic omega-ccpos. The older countable ordinary-way-below basis lemmas remain separate compatibility support.",
+      "startLine": 524,
+      "endLine": 535,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_14_1_continuous_omega_ccpo_dcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 524,
+          "endLine": 535
+        },
+        {
+          "declaration": "prop_2_2_14_2_algebraic_omega_ccpo_dcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 536,
+          "endLine": 551
+        },
+        {
+          "declaration": "prop_2_2_14_3_omega_continuous_maps_are_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 552,
+          "endLine": 562
+        },
+        {
+          "declaration": "OmegaWayBelow",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 294,
+          "endLine": 299
+        },
+        {
+          "declaration": "IsContinuousOmegaCcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 320,
+          "endLine": 323
+        },
+        {
+          "declaration": "IsAlgebraicOmegaCcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 324,
+          "endLine": 328
+        },
+        {
+          "declaration": "IsOmegaCcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 290,
+          "endLine": 293
+        },
+        {
+          "declaration": "OmegaContinuousMap",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 434,
+          "endLine": 439
+        }
+      ]
     },
     {
       "id": "lemma-2-2-15",
@@ -558,9 +1258,29 @@
         "lemma_2_2_15_interpolation_basis",
         "wayBelow_interpolation"
       ],
-      "startLine": 1708,
-      "endLine": 1743,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 656,
+      "endLine": 691,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_2_2_15_interpolation",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 656,
+          "endLine": 691
+        },
+        {
+          "declaration": "lemma_2_2_15_interpolation_basis",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 692,
+          "endLine": 705
+        },
+        {
+          "declaration": "wayBelow_interpolation",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 643,
+          "endLine": 655
+        }
+      ]
     },
     {
       "id": "cor-2-2-16",
@@ -573,9 +1293,23 @@
         "cor_2_2_16_wayBelow_directed_sup",
         "cor_2_2_16_wayBelowLower_directed_sup"
       ],
-      "startLine": 1771,
-      "endLine": 1785,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 719,
+      "endLine": 733,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_2_2_16_wayBelow_directed_sup",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 719,
+          "endLine": 733
+        },
+        {
+          "declaration": "cor_2_2_16_wayBelowLower_directed_sup",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 734,
+          "endLine": 751
+        }
+      ]
     },
     {
       "id": "prop-2-2-17",
@@ -591,9 +1325,41 @@
         "prop_2_2_17_4_compacts_from_principal_ideals",
         "prop_2_2_17_5_algebraic_principal_ideals"
       ],
-      "startLine": 1933,
-      "endLine": 1950,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 881,
+      "endLine": 898,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_17_1_wayBelow_exact_sup",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 881,
+          "endLine": 898
+        },
+        {
+          "declaration": "prop_2_2_17_2_wayBelow_principal_ideals",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 899,
+          "endLine": 927
+        },
+        {
+          "declaration": "prop_2_2_17_3_continuous_principal_ideals",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 963,
+          "endLine": 988
+        },
+        {
+          "declaration": "prop_2_2_17_4_compacts_from_principal_ideals",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 989,
+          "endLine": 1004
+        },
+        {
+          "declaration": "prop_2_2_17_5_algebraic_principal_ideals",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 1038,
+          "endLine": 1068
+        }
+      ]
     },
     {
       "id": "prop-2-2-18",
@@ -607,9 +1373,29 @@
         "prop_2_2_18_2_wayBelowLower_sup_closed",
         "prop_2_2_18_3_finite_join_compact"
       ],
-      "startLine": 2121,
-      "endLine": 2140,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 1069,
+      "endLine": 1088,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_18_1_mub_finite_compacts_compact",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 1069,
+          "endLine": 1088
+        },
+        {
+          "declaration": "prop_2_2_18_2_wayBelowLower_sup_closed",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 1089,
+          "endLine": 1099
+        },
+        {
+          "declaration": "prop_2_2_18_3_finite_join_compact",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 1100,
+          "endLine": 1115
+        }
+      ]
     },
     {
       "id": "cor-2-2-19",
@@ -621,9 +1407,17 @@
       "lean": [
         "cor_2_2_19_complete_lattice_algebraic_iff_compact_joins"
       ],
-      "startLine": 2168,
-      "endLine": 2217,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 1116,
+      "endLine": 1165,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_2_2_19_complete_lattice_algebraic_iff_compact_joins",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_Approximation.lean",
+          "startLine": 1116,
+          "endLine": 1165
+        }
+      ]
     },
     {
       "id": "def-2-2-20",
@@ -636,9 +1430,23 @@
         "AbstractBasis",
         "AbstractBasis.ofConcreteBasis"
       ],
-      "startLine": 2222,
-      "endLine": 2231,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 21,
+      "endLine": 30,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "AbstractBasis",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 21,
+          "endLine": 30
+        },
+        {
+          "declaration": "AbstractBasis.ofConcreteBasis",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 33,
+          "endLine": 59
+        }
+      ]
     },
     {
       "id": "def-2-2-21",
@@ -654,9 +1462,41 @@
         "AbstractBasis.Ideal",
         "AbstractBasis.principalIdeal"
       ],
-      "startLine": 2261,
-      "endLine": 2264,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 60,
+      "endLine": 63,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "AbstractBasis.IsLower",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 60,
+          "endLine": 63
+        },
+        {
+          "declaration": "AbstractBasis.IsDirected",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 64,
+          "endLine": 69
+        },
+        {
+          "declaration": "AbstractBasis.IsIdeal",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 70,
+          "endLine": 73
+        },
+        {
+          "declaration": "AbstractBasis.Ideal",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 74,
+          "endLine": 77
+        },
+        {
+          "declaration": "AbstractBasis.principalIdeal",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 83,
+          "endLine": 105
+        }
+      ]
     },
     {
       "id": "prop-2-2-22",
@@ -672,9 +1512,41 @@
         "prop_2_2_22_4_reflexive_ideal_completion_algebraic",
         "prop_2_2_22_5_poset_compacts"
       ],
-      "startLine": 2327,
-      "endLine": 2341,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 126,
+      "endLine": 140,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_22_1_ideal_completion_dcpo",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 126,
+          "endLine": 140
+        },
+        {
+          "declaration": "prop_2_2_22_2_ideal_wayBelow",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 141,
+          "endLine": 184
+        },
+        {
+          "declaration": "prop_2_2_22_3_ideal_completion_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 224,
+          "endLine": 228
+        },
+        {
+          "declaration": "prop_2_2_22_4_reflexive_ideal_completion_algebraic",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 236,
+          "endLine": 246
+        },
+        {
+          "declaration": "prop_2_2_22_5_poset_compacts",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 247,
+          "endLine": 299
+        }
+      ]
     },
     {
       "id": "prop-2-2-23",
@@ -687,9 +1559,23 @@
         "prop_2_2_23_ideal_completion_product",
         "AbstractBasis.prod"
       ],
-      "startLine": 2528,
-      "endLine": 2622,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 327,
+      "endLine": 421,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_23_ideal_completion_product",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 327,
+          "endLine": 421
+        },
+        {
+          "declaration": "AbstractBasis.prod",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 300,
+          "endLine": 326
+        }
+      ]
     },
     {
       "id": "prop-2-2-24",
@@ -704,9 +1590,35 @@
         "canonicalExtension_spec",
         "MonotoneToPreorder"
       ],
-      "startLine": 2633,
-      "endLine": 2734,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 432,
+      "endLine": 533,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_24_extension_universal",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 432,
+          "endLine": 533
+        },
+        {
+          "declaration": "extensionOperator_scottContinuous",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 646,
+          "endLine": 674
+        },
+        {
+          "declaration": "canonicalExtension_spec",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 617,
+          "endLine": 622
+        },
+        {
+          "declaration": "MonotoneToPreorder",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 422,
+          "endLine": 425
+        }
+      ]
     },
     {
       "id": "prop-2-2-25",
@@ -718,9 +1630,17 @@
       "lean": [
         "prop_2_2_25_domain_iso_ideal_completion"
       ],
-      "startLine": 3013,
-      "endLine": 3020,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 812,
+      "endLine": 819,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_2_25_domain_iso_ideal_completion",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 812,
+          "endLine": 819
+        }
+      ]
     },
     {
       "id": "cor-2-2-26",
@@ -732,9 +1652,17 @@
       "lean": [
         "cor_2_2_26_continuous_map_determined_by_basis"
       ],
-      "startLine": 3021,
-      "endLine": 3047,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 820,
+      "endLine": 846,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_2_2_26_continuous_map_determined_by_basis",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 820,
+          "endLine": 846
+        }
+      ]
     },
     {
       "id": "def-2-2-27",
@@ -746,9 +1674,17 @@
       "lean": [
         "ApproximableRelation"
       ],
-      "startLine": 3048,
-      "endLine": 3064,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 847,
+      "endLine": 863,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "ApproximableRelation",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 847,
+          "endLine": 863
+        }
+      ]
     },
     {
       "id": "thm-2-2-28",
@@ -762,9 +1698,32 @@
         "theorem_2_2_28_presentation_object_equiv",
         "Theorem228CategoricalEquivalence"
       ],
-      "startLine": 3322,
-      "endLine": 3329,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "direct-admit",
+      "reviewNote": "The PDF says that the categorical equivalence is proved without difficulties but supplies neither the proof nor an external source at this point. The exact categorical statement remains a book-omission admit; the proved presentation-object equivalence is only auxiliary support.",
+      "startLine": 1121,
+      "endLine": 1128,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_2_2_28_abstract_bases_equiv_CONT",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 1121,
+          "endLine": 1128
+        },
+        {
+          "declaration": "theorem_2_2_28_presentation_object_equiv",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 1104,
+          "endLine": 1120
+        },
+        {
+          "declaration": "Theorem228CategoricalEquivalence",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 1094,
+          "endLine": 1098
+        }
+      ]
     },
     {
       "id": "thm-2-2-29",
@@ -778,9 +1737,32 @@
         "theorem_2_2_29_presentation_object_equiv",
         "Theorem229CategoricalEquivalence"
       ],
-      "startLine": 3348,
-      "endLine": 3355,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "direct-admit",
+      "reviewNote": "The PDF says this algebraic specialization follows immediately from the preceding formulation but does not provide a proof. The exact categorical equivalence remains a book-omission admit; the proved presentation-object equivalence does not replace it.",
+      "startLine": 1147,
+      "endLine": 1154,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_2_2_29_preorders_equiv_ALG",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 1147,
+          "endLine": 1154
+        },
+        {
+          "declaration": "theorem_2_2_29_presentation_object_equiv",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 1129,
+          "endLine": 1146
+        },
+        {
+          "declaration": "Theorem229CategoricalEquivalence",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section22_AbstractBases.lean",
+          "startLine": 1099,
+          "endLine": 1103
+        }
+      ]
     },
     {
       "id": "def-2-3-1",
@@ -800,7 +1782,51 @@
       ],
       "startLine": 22,
       "endLine": 28,
-      "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean"
+      "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "ScottClosed",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 22,
+          "endLine": 28
+        },
+        {
+          "declaration": "ScottOpen",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 29,
+          "endLine": 32
+        },
+        {
+          "declaration": "ScottTopology",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 33,
+          "endLine": 38
+        },
+        {
+          "declaration": "scottTopologicalSpace",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 298,
+          "endLine": 318
+        },
+        {
+          "declaration": "isOpen_scottTopologicalSpace_iff",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 319,
+          "endLine": 322
+        },
+        {
+          "declaration": "ScottInteriorMem",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 23,
+          "endLine": 26
+        },
+        {
+          "declaration": "ScottNeighborhood",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 27,
+          "endLine": 30
+        }
+      ]
     },
     {
       "id": "prop-2-3-2",
@@ -817,7 +1843,33 @@
       ],
       "startLine": 136,
       "endLine": 142,
-      "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean"
+      "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_3_2_order_open_iff",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 136,
+          "endLine": 142
+        },
+        {
+          "declaration": "prop_2_3_2_order_closure_iff",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 162,
+          "endLine": 168
+        },
+        {
+          "declaration": "prop_2_3_2_2_scott_T0",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 31,
+          "endLine": 66
+        },
+        {
+          "declaration": "prop_2_3_2_3_scott_hausdorff_trivial_order",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 67,
+          "endLine": 91
+        }
+      ]
     },
     {
       "id": "prop-2-3-3",
@@ -829,9 +1881,17 @@
       "lean": [
         "prop_2_3_3_sup_iff_neighborhoods"
       ],
-      "startLine": 3433,
-      "endLine": 3458,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 92,
+      "endLine": 117,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_3_3_sup_iff_neighborhoods",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 92,
+          "endLine": 117
+        }
+      ]
     },
     {
       "id": "prop-2-3-4",
@@ -844,9 +1904,23 @@
         "prop_2_3_4_scottContinuous_iff_topological",
         "prop_2_3_4_forward"
       ],
-      "startLine": 3459,
-      "endLine": 3486,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 118,
+      "endLine": 145,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_3_4_scottContinuous_iff_topological",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 118,
+          "endLine": 145
+        },
+        {
+          "declaration": "prop_2_3_4_forward",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 173,
+          "endLine": 187
+        }
+      ]
     },
     {
       "id": "prop-2-3-5",
@@ -860,9 +1934,29 @@
         "prop_2_3_5_wayBelowUpper",
         "prop_2_3_5_wayBelow_iff_wayBelowUpper"
       ],
-      "startLine": 3499,
-      "endLine": 3520,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 158,
+      "endLine": 179,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_3_5_wayBelow_iff_scottInterior",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 158,
+          "endLine": 179
+        },
+        {
+          "declaration": "prop_2_3_5_wayBelowUpper",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 188,
+          "endLine": 193
+        },
+        {
+          "declaration": "prop_2_3_5_wayBelow_iff_wayBelowUpper",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 180,
+          "endLine": 185
+        }
+      ]
     },
     {
       "id": "prop-2-3-6",
@@ -876,9 +1970,29 @@
         "prop_2_3_6_open_supported_by_wayBelow",
         "prop_2_3_6_open_supported_by_basis"
       ],
-      "startLine": 3664,
-      "endLine": 3703,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 323,
+      "endLine": 362,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_3_6_scottOpen_iff_supported",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 323,
+          "endLine": 362
+        },
+        {
+          "declaration": "prop_2_3_6_open_supported_by_wayBelow",
+          "leanFile": "../Practice/DomainTheory/Topology/ScottTopology.lean",
+          "startLine": 194,
+          "endLine": 223
+        },
+        {
+          "declaration": "prop_2_3_6_open_supported_by_basis",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 186,
+          "endLine": 212
+        }
+      ]
     },
     {
       "id": "prop-2-3-7",
@@ -891,9 +2005,23 @@
         "prop_2_3_7_ideal_completion_opens",
         "observableOpen"
       ],
-      "startLine": 3563,
-      "endLine": 3610,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 222,
+      "endLine": 269,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_2_3_7_ideal_completion_opens",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 222,
+          "endLine": 269
+        },
+        {
+          "declaration": "observableOpen",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 217,
+          "endLine": 221
+        }
+      ]
     },
     {
       "id": "lemma-2-3-8",
@@ -907,9 +2035,29 @@
         "interpolatingFilter_scottOpen",
         "interpolatingFilter_isFilter"
       ],
-      "startLine": 3826,
-      "endLine": 3857,
-      "leanFile": "../Practice/DomainTheory/Chapter02.lean"
+      "startLine": 485,
+      "endLine": 516,
+      "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_2_3_8_scott_open_union_filters",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 485,
+          "endLine": 516
+        },
+        {
+          "declaration": "interpolatingFilter_scottOpen",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 434,
+          "endLine": 439
+        },
+        {
+          "declaration": "interpolatingFilter_isFilter",
+          "leanFile": "../Practice/DomainTheory/Chapter02/Section23_Topology.lean",
+          "startLine": 440,
+          "endLine": 466
+        }
+      ]
     }
   ]
 }

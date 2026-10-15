@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "chapter": 5,
+  "sourceVersion": {
+    "id": "abramsky-jung-domain-theory-pdf-v1",
+    "pdfSha256": "74adfbb57ae86a8b24e5afae312ffa77138480962186136d6823098a2c9c8991"
+  },
+  "items": {
+    "lemma-5-2-2": {
+      "permanentId": "lemma-5-2-2",
+      "number": "Lemma 5.2.2",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "71",
+        "texSha256": "76a86fa564ed9588b445e49a6ecb285f2c79357f60cd3fb271a3996d561b18e3",
+        "locator": "page:71:block:p71-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.lemma_5_2_2_continuous_functor_canonical_chain_sourceExact",
+        "module": "Practice.DomainTheory.Chapter05.Section52",
+        "signatureSha256": "53caee1d6fdd05cdf6b5b2cc4e213d89637cb8a384adbb807649f5b27e466300",
+        "bodySha256": "e67a5186a294fc3a1a96ba8f2eb334f18c9837a00d95f1286329abcabceafec5"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF supplies the shifted-colimit argument for the recursively generated chain.",
+          "The Lean conclusion does not accept fold, unfold, stage equations, or inverse laws as input.",
+          "Ten source-guided implementation attempts were exhausted; the remaining shifted-cocone construction is retained for human review."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "shifted_colimit_comparison",
+          "canonical_chain_stage_equations"
+        ],
+        "downstreamCount": 5
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Instantiate the older comparison theorem directly; rejected because it assumes the fold/unfold comparison data that the source constructs.",
+          "Generate all stage embeddings recursively from the initial embedding; this succeeds but does not yet supply the shifted cocone maps.",
+          "Transport the source cocone through the endofunctor; compatibility requires the missing shift-index equations.",
+          "Use preservation of expanding colimits to obtain the image colimit; the mediator still needs a concrete shifted cocone.",
+          "Define fold by the source colimit universal property; its stage components are not definitionally aligned with the recursive chain.",
+          "Define unfold by the image-colimit universal property; the successor-stage reindexing remains unresolved.",
+          "Prove fold-after-unfold on every source cocone stage; the required stage transport lemma is absent.",
+          "Apply source-colimit uniqueness to derive the first inverse law; blocked by the preceding stage equality.",
+          "Apply image-colimit uniqueness to derive the second inverse law; blocked by the shifted image-stage equality.",
+          "Search local and imported APIs for a canonical chain-shift isomorphism; no definitionally compatible theorem was found."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "def-5-2-1"
+        ],
+        "actual": [
+          "ContinuousEmbeddingEndofunctor",
+          "canonicalFunctorIterationChain",
+          "ExpandingColimit.isColimit"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-5-2-2:76a86fa5:53caee1d:e67a5186"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-5-2-6": {
+      "permanentId": "prop-5-2-6",
+      "number": "Proposition 5.2.6",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "72",
+        "texSha256": "0b9b99e59e62ee2dbf5e3c2a3146d82a3de3a5a8296176dc1b1f14d03d183937",
+        "locator": "page:72:block:p72-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.prop_5_2_6_mixed_variant_chains",
+        "module": "Practice.DomainTheory.Chapter05.Section52",
+        "signatureSha256": "e48985185dbf49ae50aa1264fd49cf6d17fc96b619b0a88c3598de5417cb677d",
+        "bodySha256": "991026793ef48e503901e835bcfdb0eec16ed04a39d6c98a88064c74ef619fa9"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_embedding_functor",
+        "evidence": [
+          "The displayed embedding/projection construction and hom-poset Scott continuity are kernel-checked.",
+          "The declaration does not package the induced embedding-category functor or its identity, composition, and expanding-colimit preservation laws.",
+          "Canonical declaration: AbramskyJung.Chapter5.prop_5_2_6_mixed_variant_chains."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "interface_only",
+          "embedding_functor_laws_missing"
+        ],
+        "downstreamCount": 0
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "def-5-2-5"
+        ],
+        "actual": [
+          "def-5-2-5"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-5-2-6:0b9b99e5:e4898518:99102679"
+      },
+      "statementRelation": "interface_only"
+    },
+    "prop-5-2-7": {
+      "permanentId": "prop-5-2-7",
+      "number": "Proposition 5.2.7",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "73",
+        "texSha256": "87129f9914834d5c43fa541483e9d5ea84339741df40476bdff59ff4da88ff69",
+        "locator": "page:73:block:p73-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.prop_5_2_7_parameterized_fix_locally_continuous_with_chosen_solutions",
+        "module": "Practice.DomainTheory.Chapter05.Section52",
+        "signatureSha256": "f7ba0a436c596302a97883f05a269a1bd404295d3bcc83da04afa1be10a377db",
+        "bodySha256": "d8913be713b0af9c25b6ed8010001d1c81c88652ef2147826cac0219e33a00a3"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The returned object is now a lawful functor with identity, composition, congruence, strictness, and local-continuity obligations.",
+          "The theorem retains an explicit family S of fixed-point solutions, whereas the PDF constructs the canonical family from bilimits; the statement is therefore specialized.",
+          "The PDF supplies the approximant-supremum proof of the functor laws; ten source-guided attempts were exhausted."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "chosen_solution_family_input",
+          "parameterized_functor_laws",
+          "canonical_bilimit_construction_missing"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Reuse the old ParameterizedFixFunctor theorem; rejected because that record has no identity or composition laws.",
+          "Lift the old morphism action to strict homs; strictness of the least-fixed-point map requires a pointed functional lemma.",
+          "Prove the identity law by unfolding the least fixed point; the canonical-approximant induction is not available for StrictParameterizedSolution.",
+          "Prove composition by fixed-point induction; the two nested parameterized functionals require an interchange lemma.",
+          "Use uniqueness of fixed points; arbitrary fixed points are not unique without the canonical construction.",
+          "Transport laws through fold/unfold isomorphisms; compatibility with parameter morphisms remains unproved.",
+          "Derive map congruence from functor congruence; this succeeds only after the strict binary functor layer is introduced.",
+          "Derive local continuity from the joint functional; a strict-hom dcpo and its least element are not yet bundled.",
+          "Construct the chosen solution family from Lemma 5.2.2 pointwise; strict pointed chain and bilimit bridges are missing.",
+          "Search local and imported APIs for the parameterized algebraic-compactness theorem; no definitionally compatible result was found."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "def-5-2-5",
+          "lemma-5-2-2"
+        ],
+        "actual": [
+          "StrictBinaryDomainFunctor",
+          "LocallyContinuousStrictBinary",
+          "StrictParameterizedSolution",
+          "StrictParameterizedFixFunctor"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-5-2-7:87129f99:f7ba0a43:d8913be7"
+      },
+      "statementRelation": "specialized"
+    },
+    "prop-5-2-4": {
+      "permanentId": "prop-5-2-4",
+      "number": "Proposition 5.2.4",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "71",
+        "texSha256": "24570d0a8ea57eb7a51d9d533b01e7813d88b1dc6e77429e610a4bb206e6085f",
+        "locator": "page:71:block:p71-b14"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.prop_5_2_4_locally_continuous_restricts_to_hom_continuity",
+        "module": "Practice.DomainTheory.Chapter05.Section52",
+        "signatureSha256": "1e38f8f71419fa7b1766b6eb4a5d3271638c5f9544f35834f82bee33b827fc35",
+        "bodySha256": "eb23560e4d1c57903a548c5d06af66e50a058b6442da46acf7387a50f784da6d"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": true,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states Proposition 5.2.4 without a proof.",
+          "The Lean declaration preserves the full image-colimit universal property.",
+          "The omitted source proof is recorded as a direct admit rather than replaced by a weaker wrapper."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "image_colimit_universal_property"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-5-2-3"
+        ],
+        "actual": [
+          "LocallyContinuousImageColimitData"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-5-2-4:24570d0a:1e38f8f7:eb23560e"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-5-3-3": {
+      "permanentId": "thm-5-3-3",
+      "number": "Theorem 5.3.3",
+      "source": {
+        "pdfPage": 76,
+        "printedPage": "76",
+        "texSha256": "31b5e97c7a83b522f1c1568d5748f1742449bec206f4406d4f14e948ea06dfe5",
+        "locator": "page:76:block:p76-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.theorem_5_3_3_minimality_part1",
+        "module": "Practice.DomainTheory.Chapter05.Section53_Ordinary",
+        "signatureSha256": "6bfae6aa6b51aa843e47112746abef9c012b6c20cc6731760e0bbaba1f47f645",
+        "bodySha256": "39dc86a085989c9dec9850c7f11cf1f46362ded4544a6d32b3b4edecc99773f5"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": true,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states the minimality conclusion and supplies no proof.",
+          "The exact subdomain conclusion is retained.",
+          "The boundary is not replaced by a weaker existence claim."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "canonical_fixpoint_minimality"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-5-3-2"
+        ],
+        "actual": [
+          "CanonicalFixpointMinimality"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-5-3-3:31b5e97c:6bfae6aa:39dc86a0"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-5-3-8": {
+      "permanentId": "thm-5-3-8",
+      "number": "Theorem 5.3.8",
+      "source": {
+        "pdfPage": 79,
+        "printedPage": "79",
+        "texSha256": "b4caf24f24cecb5d0246a0eb622070c0bb5fd080063d16f02c8787fdc050ed10",
+        "locator": "page:79:block:p79-b1"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.theorem_5_3_8_minimality_part2",
+        "module": "Practice.DomainTheory.Chapter05.Section53_Mixed",
+        "signatureSha256": "27790d54a5c2c4e478301be80913c7f0f44cc9362bcddaa09cc55cdf418f19a4",
+        "bodySha256": "e77640d75d12c096ca1aa39f43a526cfcddcd6c05675da52552603aeb9b8f703"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": true,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states mixed-variance minimality without a proof.",
+          "Lean retains the exact subdomain conclusion.",
+          "The omission remains a direct admit with visible downstream risk."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "mixed_variance_minimality"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-5-3-7"
+        ],
+        "actual": [
+          "MixedVarianceMinimality"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-5-3-8:b4caf24f:27790d54:e77640d7"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-5-3-9": {
+      "permanentId": "thm-5-3-9",
+      "number": "Theorem 5.3.9",
+      "source": {
+        "pdfPage": 79,
+        "printedPage": "79",
+        "texSha256": "c9245e3151384f9671632da80a59090147a178dd3a62cc0b1e1a9ab8ea4e6ca3",
+        "locator": "page:79:block:p79-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter5.theorem_5_3_9_free_mixed_variant_algebra",
+        "module": "Practice.DomainTheory.Chapter05.Section53_Mixed",
+        "signatureSha256": "e15c090fa4b38aabda1bc78b5a748358cf38993241056dc7cabb71b1a0a3308a",
+        "bodySha256": "d4d704a4a6bd86a8cfc6eae73f10369be2ed7677f16d8784ef646e70b4b8b5b1"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": true,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook explicitly leaves the free mixed-algebra proof to the reader.",
+          "Lean records the full strict universal property.",
+          "The exercise boundary remains a direct admit."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "book_proof_omitted",
+          "reader_exercise",
+          "strict_universal_property"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-5-3-8"
+        ],
+        "actual": [
+          "FreeMixedVariantAlgebra"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-5-3-9:c9245e31:e15c090f:d4d704a4"
+      },
+      "statementRelation": "exact"
+    }
+  }
+}

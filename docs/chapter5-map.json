@@ -17,7 +17,21 @@
         "def_5_1_1_functor_algebra_hom"
       ],
       "startLine": 23,
-      "endLine": 28
+      "endLine": 28,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_1_1_functor_algebra",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section51.lean",
+          "startLine": 23,
+          "endLine": 28
+        },
+        {
+          "declaration": "def_5_1_1_functor_algebra_hom",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section51.lean",
+          "startLine": 29,
+          "endLine": 36
+        }
+      ]
     },
     {
       "id": "lemma-5-1-2",
@@ -31,7 +45,15 @@
         "lemma_5_1_2_initial_algebra_structure_is_iso"
       ],
       "startLine": 37,
-      "endLine": 71
+      "endLine": 71,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_5_1_2_initial_algebra_structure_is_iso",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section51.lean",
+          "startLine": 37,
+          "endLine": 71
+        }
+      ]
     },
     {
       "id": "def-5-2-1",
@@ -45,7 +67,15 @@
         "ContinuousDomainFunctor"
       ],
       "startLine": 111,
-      "endLine": 118
+      "endLine": 118,
+      "fallbackDeclarations": [
+        {
+          "declaration": "ContinuousDomainFunctor",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 111,
+          "endLine": 118
+        }
+      ]
     },
     {
       "id": "lemma-5-2-2",
@@ -56,10 +86,27 @@
       "summary": "The canonical chain for a continuous functor yields a fixpoint isomorphism.",
       "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
       "lean": [
+        "lemma_5_2_2_continuous_functor_canonical_chain_sourceExact",
         "lemma_5_2_2_continuous_functor_canonical_chain"
       ],
-      "startLine": 165,
-      "endLine": 231
+      "formalizationStatus": "partial",
+      "reviewNote": "The canonical declaration now constructs the iterated chain recursively from the initial embedding and does not preload fold/unfold equations. The shifted-colimit proof remains source-proved automation-exhausted debt; the older comparison-input theorem is compatibility support.",
+      "startLine": 271,
+      "endLine": 283,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_5_2_2_continuous_functor_canonical_chain_sourceExact",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 271,
+          "endLine": 283
+        },
+        {
+          "declaration": "lemma_5_2_2_continuous_functor_canonical_chain",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 204,
+          "endLine": 270
+        }
+      ]
     },
     {
       "id": "def-5-2-3",
@@ -72,8 +119,16 @@
       "lean": [
         "def_5_2_3_locally_continuous_functor"
       ],
-      "startLine": 232,
-      "endLine": 235
+      "startLine": 284,
+      "endLine": 287,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_2_3_locally_continuous_functor",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 284,
+          "endLine": 287
+        }
+      ]
     },
     {
       "id": "prop-5-2-4",
@@ -86,8 +141,19 @@
       "lean": [
         "prop_5_2_4_locally_continuous_restricts_to_hom_continuity"
       ],
-      "startLine": 236,
-      "endLine": 246
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "direct-admit",
+      "reviewNote": "The textbook states Proposition 5.2.4 without a proof. The Lean declaration preserves the full image-colimit universal property, so the omitted source proof is recorded as a direct admit rather than replaced by a weaker proved wrapper.",
+      "startLine": 288,
+      "endLine": 298,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_5_2_4_locally_continuous_restricts_to_hom_continuity",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 288,
+          "endLine": 298
+        }
+      ]
     },
     {
       "id": "def-5-2-5",
@@ -100,8 +166,16 @@
       "lean": [
         "def_5_2_5_mixed_variant_locally_continuous"
       ],
-      "startLine": 440,
-      "endLine": 453
+      "startLine": 580,
+      "endLine": 593,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_2_5_mixed_variant_locally_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 580,
+          "endLine": 593
+        }
+      ]
     },
     {
       "id": "prop-5-2-6",
@@ -110,12 +184,22 @@
       "kind": "Proposition",
       "title": "A mixed-variant locally continuous functor induces a continuous functor on embeddings",
       "summary": "A mixed-variant locally continuous functor induces a continuous functor on embeddings.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The Lean theorem proves the displayed embedding/projection pair and hom-poset continuity for each pair of embeddings. It does not package the induced embedding-category functor or prove its identity/composition laws and colimit continuity.",
       "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
       "lean": [
         "prop_5_2_6_mixed_variant_chains"
       ],
-      "startLine": 842,
-      "endLine": 923
+      "startLine": 982,
+      "endLine": 1066,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_5_2_6_mixed_variant_chains",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 982,
+          "endLine": 1066
+        }
+      ]
     },
     {
       "id": "prop-5-2-7",
@@ -124,12 +208,29 @@
       "kind": "Proposition",
       "title": "Parameterized canonical fixpoints form a locally continuous functor",
       "summary": "Parameterized canonical fixpoints form a locally continuous functor.",
+      "formalizationStatus": "partial",
+      "reviewNote": "The canonical declaration now uses pointed domains, strict Scott-continuous homs, and explicit identity/composition/congruence/local-continuity laws. It still accepts the family of fixed-point solutions as explicit input, so it is a specialized lawful interface rather than the source's standalone canonical-bilimit construction. Its functor-law construction remains source-proved automation-exhausted debt; the older non-lawful object/morphism package is compatibility support.",
       "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
       "lean": [
+        "prop_5_2_7_parameterized_fix_locally_continuous_with_chosen_solutions",
         "prop_5_2_7_parameterized_fix_locally_continuous"
       ],
-      "startLine": 1101,
-      "endLine": 1126
+      "startLine": 1269,
+      "endLine": 1284,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_5_2_7_parameterized_fix_locally_continuous_with_chosen_solutions",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 1269,
+          "endLine": 1284
+        },
+        {
+          "declaration": "prop_5_2_7_parameterized_fix_locally_continuous",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section52.lean",
+          "startLine": 1244,
+          "endLine": 1268
+        }
+      ]
     },
     {
       "id": "lemma-5-3-1",
@@ -145,7 +246,27 @@
         "lemma_5_3_1_least_hom_composition"
       ],
       "startLine": 456,
-      "endLine": 472
+      "endLine": 472,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_5_3_1_canonical_fixpoint_mediating",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 456,
+          "endLine": 472
+        },
+        {
+          "declaration": "lemma_5_3_1_least_fixpoint_formula",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 473,
+          "endLine": 491
+        },
+        {
+          "declaration": "lemma_5_3_1_least_hom_composition",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 492,
+          "endLine": 579
+        }
+      ]
     },
     {
       "id": "thm-5-3-2",
@@ -159,7 +280,15 @@
         "theorem_5_3_2_invariance_part1"
       ],
       "startLine": 912,
-      "endLine": 958
+      "endLine": 958,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_2_invariance_part1",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 912,
+          "endLine": 958
+        }
+      ]
     },
     {
       "id": "thm-5-3-3",
@@ -172,8 +301,19 @@
       "lean": [
         "theorem_5_3_3_minimality_part1"
       ],
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "direct-admit",
+      "reviewNote": "The textbook states the minimality conclusion and supplies no proof. The exact subdomain conclusion remains a direct admit until it is derived from the canonical functor-iteration bilimit construction.",
       "startLine": 975,
-      "endLine": 985
+      "endLine": 985,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_3_minimality_part1",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 975,
+          "endLine": 985
+        }
+      ]
     },
     {
       "id": "thm-5-3-4",
@@ -187,7 +327,15 @@
         "theorem_5_3_4_initiality_strict"
       ],
       "startLine": 1057,
-      "endLine": 1205
+      "endLine": 1205,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_4_initiality_strict",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 1057,
+          "endLine": 1205
+        }
+      ]
     },
     {
       "id": "thm-5-3-5",
@@ -201,7 +349,15 @@
         "theorem_5_3_5_finality"
       ],
       "startLine": 1279,
-      "endLine": 1407
+      "endLine": 1407,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_5_finality",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Ordinary.lean",
+          "startLine": 1279,
+          "endLine": 1407
+        }
+      ]
     },
     {
       "id": "lemma-5-3-6",
@@ -216,7 +372,21 @@
         "lemma_5_3_6_mixed_hom_pair_composition"
       ],
       "startLine": 553,
-      "endLine": 573
+      "endLine": 573,
+      "fallbackDeclarations": [
+        {
+          "declaration": "lemma_5_3_6_mixed_variant_mediating",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+          "startLine": 553,
+          "endLine": 573
+        },
+        {
+          "declaration": "lemma_5_3_6_mixed_hom_pair_composition",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+          "startLine": 574,
+          "endLine": 646
+        }
+      ]
     },
     {
       "id": "thm-5-3-7",
@@ -230,7 +400,15 @@
         "theorem_5_3_7_invariance_part2"
       ],
       "startLine": 1271,
-      "endLine": 1317
+      "endLine": 1317,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_7_invariance_part2",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+          "startLine": 1271,
+          "endLine": 1317
+        }
+      ]
     },
     {
       "id": "thm-5-3-8",
@@ -243,8 +421,19 @@
       "lean": [
         "theorem_5_3_8_minimality_part2"
       ],
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "direct-admit",
+      "reviewNote": "The textbook states mixed-variance minimality without a proof. Lean retains the exact subdomain conclusion as direct omitted-source proof debt.",
       "startLine": 1334,
-      "endLine": 1344
+      "endLine": 1344,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_8_minimality_part2",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+          "startLine": 1334,
+          "endLine": 1344
+        }
+      ]
     },
     {
       "id": "thm-5-3-9",
@@ -257,8 +446,19 @@
       "lean": [
         "theorem_5_3_9_free_mixed_variant_algebra"
       ],
+      "formalizationStatus": "partial",
+      "proofBoundaryStatus": "direct-admit",
+      "reviewNote": "The textbook explicitly leaves the proof of the free mixed algebra property to the reader. Lean records the full strict universal property and keeps its exercise proof as a direct admit.",
       "startLine": 1345,
-      "endLine": 1362
+      "endLine": 1362,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_3_9_free_mixed_variant_algebra",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section53_Mixed.lean",
+          "startLine": 1345,
+          "endLine": 1362
+        }
+      ]
     },
     {
       "id": "def-5-4-1",
@@ -272,7 +472,15 @@
         "def_5_4_1_admissible_relations"
       ],
       "startLine": 43,
-      "endLine": 56
+      "endLine": 56,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_4_1_admissible_relations",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 43,
+          "endLine": 56
+        }
+      ]
     },
     {
       "id": "prop-5-4-2",
@@ -287,7 +495,21 @@
         "prop_5_4_2_admissible_relation_closure_strict"
       ],
       "startLine": 197,
-      "endLine": 237
+      "endLine": 237,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_5_4_2_admissible_relation_closure",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 197,
+          "endLine": 237
+        },
+        {
+          "declaration": "prop_5_4_2_admissible_relation_closure_strict",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 152,
+          "endLine": 196
+        }
+      ]
     },
     {
       "id": "def-5-4-3",
@@ -301,7 +523,15 @@
         "def_5_4_3_relation_action"
       ],
       "startLine": 238,
-      "endLine": 267
+      "endLine": 267,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_4_3_relation_action",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 238,
+          "endLine": 267
+        }
+      ]
     },
     {
       "id": "prop-5-4-4",
@@ -315,7 +545,15 @@
         "prop_5_4_4_relation_action_functoriality"
       ],
       "startLine": 277,
-      "endLine": 308
+      "endLine": 308,
+      "fallbackDeclarations": [
+        {
+          "declaration": "prop_5_4_4_relation_action_functoriality",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 277,
+          "endLine": 308
+        }
+      ]
     },
     {
       "id": "thm-5-4-5",
@@ -329,7 +567,15 @@
         "theorem_5_4_5_admissible_relation_actions_exist"
       ],
       "startLine": 322,
-      "endLine": 457
+      "endLine": 457,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_4_5_admissible_relation_actions_exist",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 322,
+          "endLine": 457
+        }
+      ]
     },
     {
       "id": "def-5-4-6",
@@ -343,7 +589,15 @@
         "def_5_4_6_logical_admissible_action"
       ],
       "startLine": 458,
-      "endLine": 470
+      "endLine": 470,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_4_6_logical_admissible_action",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 458,
+          "endLine": 470
+        }
+      ]
     },
     {
       "id": "thm-5-4-7",
@@ -357,7 +611,15 @@
         "theorem_5_4_7_induction"
       ],
       "startLine": 471,
-      "endLine": 499
+      "endLine": 499,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_4_7_induction",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 471,
+          "endLine": 499
+        }
+      ]
     },
     {
       "id": "def-5-4-8",
@@ -371,7 +633,15 @@
         "def_5_4_8_extensional_admissible_action"
       ],
       "startLine": 500,
-      "endLine": 511
+      "endLine": 511,
+      "fallbackDeclarations": [
+        {
+          "declaration": "def_5_4_8_extensional_admissible_action",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 500,
+          "endLine": 511
+        }
+      ]
     },
     {
       "id": "thm-5-4-9",
@@ -385,7 +655,15 @@
         "theorem_5_4_9_coinduction"
       ],
       "startLine": 524,
-      "endLine": 545
+      "endLine": 545,
+      "fallbackDeclarations": [
+        {
+          "declaration": "theorem_5_4_9_coinduction",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 524,
+          "endLine": 545
+        }
+      ]
     },
     {
       "id": "cor-5-4-10",
@@ -399,7 +677,15 @@
         "cor_5_4_10_order_iff_simulation"
       ],
       "startLine": 546,
-      "endLine": 575
+      "endLine": 575,
+      "fallbackDeclarations": [
+        {
+          "declaration": "cor_5_4_10_order_iff_simulation",
+          "leanFile": "../Practice/DomainTheory/Chapter05/Section54.lean",
+          "startLine": 546,
+          "endLine": 575
+        }
+      ]
     }
   ]
 }

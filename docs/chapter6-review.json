@@ -1,0 +1,1581 @@
+{
+  "schemaVersion": 1,
+  "chapter": 6,
+  "sourceVersion": {
+    "id": "abramsky-jung-domain-theory-pdf-v1",
+    "pdfSha256": "74adfbb57ae86a8b24e5afae312ffa77138480962186136d6823098a2c9c8991"
+  },
+  "items": {
+    "prop-6-1-1": {
+      "permanentId": "prop-6-1-1",
+      "number": "Proposition 6.1.1",
+      "source": {
+        "pdfPage": 86,
+        "printedPage": "86",
+        "texSha256": "7c19fbae9df7662bb106f244492a488a199e7fd8319938143b017d8c3d4363eb",
+        "locator": "page:86:block:p86-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.prop_6_1_1_dcpo_algebras_complete",
+        "module": "Practice.DomainTheory.Chapter06.Section61_Limits",
+        "signatureSha256": "a8f2abbbe6ab082616cdc8541727bf8be3de796154e27287c46722e40d193069",
+        "bodySha256": "a26ff8a3c44d04f8256d3af861548a988aad42ce414feededa92021bb266e086"
+      },
+      "states": {
+        "translated": true,
+        "proved": true,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "proved",
+        "reason": "interface_only_categorical_completeness",
+        "evidence": [
+          "Arbitrary products and equalizers are constructed with concrete existence, factorization, and uniqueness data.",
+          "The wrapper does not bundle a category or derive arbitrary indexed limits, so it proves the textbook's completeness criterion rather than the exact categorical conclusion.",
+          "Canonical declaration: AbramskyJung.Chapter6.prop_6_1_1_dcpo_algebras_complete."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "interface_only",
+          "categorical_limits_bridge_missing"
+        ],
+        "downstreamCount": 1
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [],
+        "actual": [],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-6-1-1:7c19fbae:a8f2abbb:a26ff8a3"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-6-1-2": {
+      "permanentId": "thm-6-1-2",
+      "number": "Theorem 6.1.2",
+      "source": {
+        "pdfPage": 86,
+        "printedPage": "86",
+        "texSha256": "97dad5aebcdf800fc664b8033675068794f0c2fd6f9fc6952a9839eab9e1631a",
+        "locator": "page:86:block:p86-b3"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_1_2_free_dcpo_algebras_exist",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "6a12f4350229c0d04b5535052d13a336dc6dfc798c1deb32454a8f194e5553fa",
+        "bodySha256": "7671e566e04c2328507c0b89a85e2016ab14bd1ce743d63d9716266c73c730a7"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the adjoint-functor/solution-set argument; its categorical construction remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_1_2_free_dcpo_algebras_exist.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "categorical_left_adjoint_construction",
+          "solution_set_cardinality_bound"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.1.2 and isolate the required construction: Adjoint Functor Theorem solution-set construction.",
+          "Compare the Lean signature of Theorem 6.1.2 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Adjoint Functor Theorem solution-set construction; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Adjoint Functor Theorem solution-set construction; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Adjoint Functor Theorem solution-set construction.",
+          "Attempt dependency composition through prop-6-1-1; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Adjoint Functor Theorem solution-set construction; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Adjoint Functor Theorem solution-set construction; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Adjoint Functor Theorem solution-set construction, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.1.2; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "prop-6-1-1"
+        ],
+        "actual": [
+          "prop-6-1-1"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-1-2:97dad5ae:6a12f435:7671e566"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-1-6": {
+      "permanentId": "thm-6-1-6",
+      "number": "Theorem 6.1.6",
+      "source": {
+        "pdfPage": 89,
+        "printedPage": "89",
+        "texSha256": "e96161d79d82c2a04e69e9b5d8d398115030b83b2410ebbfa439288c291415c5",
+        "locator": "page:89:block:p89-b7"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_1_6_free_continuous_dcpo_algebra",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "5f07db162da2a012d5c3160ff845b2ff978c5a26af7d761dc0b83aac631843f6",
+        "bodySha256": "dfff3e6643172aba2f8f32fae9e819580ecba11df7e4c19968a242e08bca88e1"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF proves the ideal-completion construction and universal property; the concrete free-algebra package remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_1_6_free_continuous_dcpo_algebra.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "ideal_completion_algebra_structure",
+          "universal_extension_uniqueness"
+        ],
+        "downstreamCount": 5
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.1.6 and isolate the required construction: ideal completion of the quotient syntactic basis and its free universal property.",
+          "Compare the Lean signature of Theorem 6.1.6 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies ideal completion of the quotient syntactic basis and its free universal property; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of ideal completion of the quotient syntactic basis and its free universal property; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in ideal completion of the quotient syntactic basis and its free universal property.",
+          "Attempt dependency composition through lemma-6-1-5, prop-6-1-4; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for ideal completion of the quotient syntactic basis and its free universal property; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around ideal completion of the quotient syntactic basis and its free universal property; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for ideal completion of the quotient syntactic basis and its free universal property, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.1.6; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "lemma-6-1-5",
+          "prop-6-1-4"
+        ],
+        "actual": [
+          "lemma-6-1-5",
+          "prop-6-1-4"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-1-6:e96161d7:5f07db16:dfff3e66"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-1-7": {
+      "permanentId": "thm-6-1-7",
+      "number": "Theorem 6.1.7",
+      "source": {
+        "pdfPage": 90,
+        "printedPage": "90",
+        "texSha256": "76f82d7a2712ee57cb01b744d908ba1d0d199a67109d6536c40c28f80ebc3441",
+        "locator": "page:90:block:p90-b7"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_1_7_free_continuous_domain_algebras_exist",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "199db6b28af1e435e8b5bc18428277b4399b0a7b98b06fcff82cc50bd27bec6d",
+        "bodySha256": "cb34f85fe1945abc0acbdfb910c0fd88e24b3e5dca7ae3a614cfa0bfad28b5d9"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The functor object and morphism actions, including the unit square, are proved in Lean.",
+          "FreeContinuousAlgebraFunctor has no identity/composition laws, natural hom-equivalence, or triangle laws, so the source's left-adjoint formulation remains interface-only.",
+          "The construction chooses the free continuous dcpo algebra supplied by Theorem 6.1.6, whose source-proved ideal-completion implementation remains automation-exhausted debt.",
+          "#print axioms reports sorryAx transitively through theorem_6_1_6_free_continuous_dcpo_algebra; the numbered theorem has no direct placeholder."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "transitive_ideal_completion_boundary",
+          "left_adjoint_object_morphism_action",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 1
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-1-6"
+        ],
+        "actual": [
+          "theorem_6_1_6_free_continuous_dcpo_algebra"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-1-7:76f82d7a:199db6b2:cb34f85f"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-6-1-9": {
+      "permanentId": "thm-6-1-9",
+      "number": "Theorem 6.1.9",
+      "source": {
+        "pdfPage": 91,
+        "printedPage": "91",
+        "texSha256": "6b5eca6f4d89d7b4d1ad0b4e9dde7d272e4e8a2de0b410859c261003962f64fc",
+        "locator": "page:91:block:p91-b8"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_1_9_free_algebra_monad_locally_continuous",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "0da6ee4839a08734db5e227e24f6bba42280594c5f75853fabf31caff87f0b80",
+        "bodySha256": "d48244d656bff5eb30c8dd9931654eb7066ca7f8f818879025ee031d2dfcd482"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The identity, composition, congruence, and local-continuity fields are proved from the free universal property and Proposition 6.1.8.",
+          "ContinuousFreeAlgebraEndofunctor contains no monad unit, multiplication, naturality, or monad laws, so it does not yet encode the source's free-algebra monad.",
+          "The construction consumes Theorem 6.1.7 and therefore inherits Theorem 6.1.6's automation-exhausted ideal-completion boundary.",
+          "#print axioms reports sorryAx transitively; theorem_6_1_9_free_algebra_monad_locally_continuous contains no direct placeholder."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "transitive_ideal_completion_boundary",
+          "locally_continuous_monad_construction",
+          "monad_structure_missing"
+        ],
+        "downstreamCount": 0
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-1-7",
+          "prop-6-1-8"
+        ],
+        "actual": [
+          "theorem_6_1_7_free_continuous_domain_algebras_exist",
+          "prop_6_1_8_extension_map_scott_continuous"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-1-9:6b5eca6f:0da6ee48:d48244d6"
+      },
+      "statementRelation": "unresolved"
+    },
+    "thm-6-1-10": {
+      "permanentId": "thm-6-1-10",
+      "number": "Theorem 6.1.10",
+      "source": {
+        "pdfPage": 91,
+        "printedPage": "91",
+        "texSha256": "71e40f3542e70d23cc54a1fad7762b18e5712e08ff4ec6b9353d1f33834966c7",
+        "locator": "page:91:block:p91-b9"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_1_10_free_algebraic_domain_algebras_exist",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "da2b64bb26b33df1781900af616efffa7c501685b9c067c524f16f4f28be1b70",
+        "bodySha256": "f2204daa3920f3aaa31210ebaa66496c4c853d74dd718a8a6a92271ece2ce8a9"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF derives algebraicity from the reflexive syntactic approximation relation; that construction remains source-proved automation-exhausted debt.",
+          "The object/morphism package has no functor identity/composition laws or categorical left-adjoint data.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_1_10_free_algebraic_domain_algebras_exist.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "reflexive_basis_compactness",
+          "algebraic_free_algebra_packaging",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.1.10 and isolate the required construction: algebraicity from the reflexive syntactic approximation relation.",
+          "Compare the Lean signature of Theorem 6.1.10 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies algebraicity from the reflexive syntactic approximation relation; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of algebraicity from the reflexive syntactic approximation relation; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in algebraicity from the reflexive syntactic approximation relation.",
+          "Attempt dependency composition through thm-6-1-6; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for algebraicity from the reflexive syntactic approximation relation; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around algebraicity from the reflexive syntactic approximation relation; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for algebraicity from the reflexive syntactic approximation relation, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.1.10; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-1-6"
+        ],
+        "actual": [
+          "thm-6-1-6"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-1-10:71e40f35:da2b64bb:f2204daa"
+      },
+      "statementRelation": "interface_only"
+    },
+    "thm-6-1-13": {
+      "permanentId": "thm-6-1-13",
+      "number": "Theorem 6.1.13",
+      "source": {
+        "pdfPage": 92,
+        "printedPage": "92",
+        "texSha256": "04deab75d0701abeb756475c6ba510ce756f5d1e4d0880f7c5b25f98a5e28020",
+        "locator": "page:92:block:p92-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_1_13_free_strict_algebras_exist",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "627b5e5f67b38ddd57ec79ca40718619860b43d7ef1cb7130b875cb4033a92fc",
+        "bodySha256": "b2af4e3e5d89a8dbc7facb18e640f8b0d53459544add5a5a618eb8b9407e31bb"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": false,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF adapts the pointed adjoint-functor and syntactic constructions; the bundled strict free-algebra witness remains source-proved automation-exhausted debt.",
+          "The three object/morphism packages omit functor laws and the natural hom-equivalences and triangle identities required for the stated left adjoints.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_1_13_free_strict_algebras_exist.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "pointed_adjunction",
+          "strict_universal_property",
+          "interface_only_categorical_semantics"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.1.13 and isolate the required construction: strict pointed free-algebra construction and the added bottom axiom.",
+          "Compare the Lean signature of Theorem 6.1.13 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies strict pointed free-algebra construction and the added bottom axiom; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of strict pointed free-algebra construction and the added bottom axiom; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in strict pointed free-algebra construction and the added bottom axiom.",
+          "Attempt dependency composition through thm-6-1-2, thm-6-1-6, thm-6-1-10; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for strict pointed free-algebra construction and the added bottom axiom; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around strict pointed free-algebra construction and the added bottom axiom; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for strict pointed free-algebra construction and the added bottom axiom, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.1.13; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-1-2",
+          "thm-6-1-6",
+          "thm-6-1-10"
+        ],
+        "actual": [
+          "thm-6-1-2",
+          "thm-6-1-6",
+          "thm-6-1-10"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-1-13:04deab75:627b5e5f:b2af4e3e"
+      },
+      "statementRelation": "interface_only"
+    },
+    "prop-6-1-14": {
+      "permanentId": "prop-6-1-14",
+      "number": "Proposition 6.1.14",
+      "source": {
+        "pdfPage": 93,
+        "printedPage": "93",
+        "texSha256": "95d53e27f67bb76a8769e0cd0bbe9aa46cca724218a6a4767a474f97e10a2d44",
+        "locator": "page:93:block:p93-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.prop_6_1_14_finite_preservation_bifinite",
+        "module": "Practice.DomainTheory.Chapter06.Section61",
+        "signatureSha256": "9886e07510d0742d2f7b96c477752fa5789941708a82cade888e7a33119f4b07",
+        "bodySha256": "26187facd88d503c2e30ef3e41a75482f1f8ed5f73c8f9fc458d817cc9a0efb3"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states this proposition without proof; the exact boundary is retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter6.prop_6_1_14_finite_preservation_bifinite.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "functorial_bilimit_preservation"
+        ],
+        "downstreamCount": 2
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [],
+        "actual": [],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-6-1-14:95d53e27:9886e075:26187fac"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-2-3": {
+      "permanentId": "thm-6-2-3",
+      "number": "Theorem 6.2.3",
+      "source": {
+        "pdfPage": 94,
+        "printedPage": "94",
+        "texSha256": "68c7900ff02f5cf6f0d4e8b13f69520b6f2e86d5a3316bd01a891ff259fc71b6",
+        "locator": "page:94:block:p94-b9"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_2_3_plotkin_powerdomain_continuous",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "41d8628e0f90c08221cf4d2e000709270ff3eaa6e1b5bd1c197c2ebad8ba5a1a",
+        "bodySha256": "26c7d7ba2c76a32576fe946ba8694c23ad8a412bdf002dce5ea9e67244c13ed4"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the finite-term/Egli-Milner ideal-completion proof; the representation construction remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_2_3_plotkin_powerdomain_continuous.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "powerdomain_ideal_completion",
+          "egli_milner_basis_interpolation"
+        ],
+        "downstreamCount": 8
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.2.3 and isolate the required construction: finite term/Egli-Milner basis and ideal-completion representation.",
+          "Compare the Lean signature of Theorem 6.2.3 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies finite term/Egli-Milner basis and ideal-completion representation; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of finite term/Egli-Milner basis and ideal-completion representation; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in finite term/Egli-Milner basis and ideal-completion representation.",
+          "Attempt dependency composition through def-6-2-1, def-6-2-2; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for finite term/Egli-Milner basis and ideal-completion representation; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around finite term/Egli-Milner basis and ideal-completion representation; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for finite term/Egli-Milner basis and ideal-completion representation, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.2.3; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "def-6-2-1",
+          "def-6-2-2"
+        ],
+        "actual": [
+          "def-6-2-1",
+          "def-6-2-2"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-2-3:68c7900f:41d8628e:26c7d7ba"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-6-2-6": {
+      "permanentId": "prop-6-2-6",
+      "number": "Proposition 6.2.6",
+      "source": {
+        "pdfPage": 95,
+        "printedPage": "95",
+        "texSha256": "c021542ecc2712511a506dbc9927008f6b01f71c61abbaea14ee20223c45a4bc",
+        "locator": "page:95:block:p95-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.prop_6_2_6_plotkin_powerdomain_algebraic",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "f72640f73ffa643e55279ebd4422ec6273025d66e1d32239be665017ffa67dac",
+        "bodySha256": "06b429261849794420df5d14b7033628a0f1af11704a4bbc419a9a212418bd9b"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states the proposition after Theorem 6.2.3 without supplying a proof; retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter6.prop_6_2_6_plotkin_powerdomain_algebraic.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "compact_powerdomain_basis"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-3"
+        ],
+        "actual": [
+          "thm-6-2-3"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-6-2-6:c021542e:f72640f7:06b42926"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-2-10": {
+      "permanentId": "thm-6-2-10",
+      "number": "Theorem 6.2.10",
+      "source": {
+        "pdfPage": 97,
+        "printedPage": "97",
+        "texSha256": "3c66695251af9682be8366149bb2259a350fc686e3759adf9d6189b0e904cdab",
+        "locator": "page:97:block:p97-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_2_10_hoare_smyth_powerdomain_continuous",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "14ce61302c9ea755c4f3a3d0bcd8e943c9dfaed6da540686ab54a8417c788266",
+        "bodySha256": "8c258aa0338c67059ac6a75b4a52c138a001de3b013bef8c946bd2b17adfc247"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF derives the one-sided quotients from the Plotkin construction; the quotient universal properties remain source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_2_10_hoare_smyth_powerdomain_continuous.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "quotient_universal_property",
+          "one_sided_approximation"
+        ],
+        "downstreamCount": 7
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.2.10 and isolate the required construction: Hoare and Smyth one-sided quotient constructions.",
+          "Compare the Lean signature of Theorem 6.2.10 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Hoare and Smyth one-sided quotient constructions; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Hoare and Smyth one-sided quotient constructions; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Hoare and Smyth one-sided quotient constructions.",
+          "Attempt dependency composition through thm-6-2-3, prop-6-2-9; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Hoare and Smyth one-sided quotient constructions; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Hoare and Smyth one-sided quotient constructions; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Hoare and Smyth one-sided quotient constructions, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.2.10; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-3",
+          "prop-6-2-9"
+        ],
+        "actual": [
+          "thm-6-2-3",
+          "prop-6-2-9"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-2-10:3c666952:14ce6130:8c258aa0"
+      },
+      "statementRelation": "exact"
+    },
+    "prop-6-2-12": {
+      "permanentId": "prop-6-2-12",
+      "number": "Proposition 6.2.12",
+      "source": {
+        "pdfPage": 97,
+        "printedPage": "97",
+        "texSha256": "901314662f9a1a423c971dee782eb5abfc83ba7290b197324cb21ae1196c4269",
+        "locator": "page:97:block:p97-b4"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.prop_6_2_12_hoare_smyth_powerdomain_algebraic",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "1866235518df3e16f3bd07c15b644f1555312dcbbd26d9f64301e0d20c03fca7",
+        "bodySha256": "e8e642746cb8433ae513087939d479f779f4f0536b7c715fc8aa724d6520379e"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states the algebraicity consequence without a proof; retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter6.prop_6_2_12_hoare_smyth_powerdomain_algebraic.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "quotient_compact_basis"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-10"
+        ],
+        "actual": [
+          "thm-6-2-10"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "prop-6-2-12:90131466:18662355:e8e64274"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-2-13": {
+      "permanentId": "thm-6-2-13",
+      "number": "Theorem 6.2.13",
+      "source": {
+        "pdfPage": 98,
+        "printedPage": "98",
+        "texSha256": "d08b94ee8848cdb7b52c4781d5cc66254097c558d48a4c27654f3e3207bb63fc",
+        "locator": "page:98:block:p98-b1"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_2_13_hoare_powerdomain_closed_sets",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "98b1a08109f98f4a10035acf64b52e28b4f4ded0dcc3c662ebf57faaa272d0a9",
+        "bodySha256": "087e4434c389771b16093e9e94a2fa52653e204793c318589912c9d40f84f6f4"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF supplies the closed-set representation proof; its order-isomorphism construction remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_2_13_hoare_powerdomain_closed_sets.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "closed_set_representation",
+          "supremum_transport"
+        ],
+        "downstreamCount": 6
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.2.13 and isolate the required construction: Hoare powerdomain order-isomorphism with nonempty Scott-closed sets.",
+          "Compare the Lean signature of Theorem 6.2.13 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Hoare powerdomain order-isomorphism with nonempty Scott-closed sets; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Hoare powerdomain order-isomorphism with nonempty Scott-closed sets; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Hoare powerdomain order-isomorphism with nonempty Scott-closed sets.",
+          "Attempt dependency composition through thm-6-2-10; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Hoare powerdomain order-isomorphism with nonempty Scott-closed sets; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Hoare powerdomain order-isomorphism with nonempty Scott-closed sets; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Hoare powerdomain order-isomorphism with nonempty Scott-closed sets, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.2.13; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-10"
+        ],
+        "actual": [
+          "thm-6-2-10"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-2-13:d08b94ee:98b1a081:087e4434"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-2-14": {
+      "permanentId": "thm-6-2-14",
+      "number": "Theorem 6.2.14",
+      "source": {
+        "pdfPage": 98,
+        "printedPage": "98",
+        "texSha256": "9f6a4d7bb67333bca21c8cfbf8ca442b249c44c5945460c7fc1e07c5794174f8",
+        "locator": "page:98:block:p98-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_2_14_smyth_powerdomain_compact_saturated",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "29efa11041ebbd1d206821def724e9314637d41e239614d3ba088725504a2cad",
+        "bodySha256": "47bb471627f9f7362fa00e345d09baca4a21425b022cf0e996af25bd5a63d3bf"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF supplies the compact-saturated representation proof; its order-isomorphism construction remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_2_14_smyth_powerdomain_compact_saturated.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "compact_saturated_representation",
+          "reverse_inclusion_order"
+        ],
+        "downstreamCount": 7
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.2.14 and isolate the required construction: Smyth powerdomain order-isomorphism with nonempty compact saturated sets.",
+          "Compare the Lean signature of Theorem 6.2.14 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies Smyth powerdomain order-isomorphism with nonempty compact saturated sets; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of Smyth powerdomain order-isomorphism with nonempty compact saturated sets; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in Smyth powerdomain order-isomorphism with nonempty compact saturated sets.",
+          "Attempt dependency composition through thm-6-2-10; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for Smyth powerdomain order-isomorphism with nonempty compact saturated sets; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around Smyth powerdomain order-isomorphism with nonempty compact saturated sets; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for Smyth powerdomain order-isomorphism with nonempty compact saturated sets, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.2.14; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-10"
+        ],
+        "actual": [
+          "thm-6-2-10"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-2-14:9f6a4d7b:29efa110:47bb4716"
+      },
+      "statementRelation": "exact"
+    },
+    "cor-6-2-15": {
+      "permanentId": "cor-6-2-15",
+      "number": "Corollary 6.2.15",
+      "source": {
+        "pdfPage": 99,
+        "printedPage": "99",
+        "texSha256": "611fd5a31cefd629101129fcbc74f3122b8b2496835c01a08e7f9ea142686956",
+        "locator": "page:99:block:p99-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.cor_6_2_15_smyth_powerdomain_coherent_bc",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "f216244c4a8e1a8205025310fa81aa0e977e3d581bf406711cf44b3490d9cb03",
+        "bodySha256": "b42493bc8533d72632da13d1a9ed5afe10a7feeef4d3e81f2adb58790f4d48fb"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the coherence/intersection argument; the corollary remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.cor_6_2_15_smyth_powerdomain_coherent_bc.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "coherence_transport",
+          "intersection_compactness"
+        ],
+        "downstreamCount": 4
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Corollary 6.2.15 and isolate the required construction: coherence and filtered-intersection consequence for the Smyth representation.",
+          "Compare the Lean signature of Corollary 6.2.15 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies coherence and filtered-intersection consequence for the Smyth representation; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of coherence and filtered-intersection consequence for the Smyth representation; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in coherence and filtered-intersection consequence for the Smyth representation.",
+          "Attempt dependency composition through thm-6-2-14; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for coherence and filtered-intersection consequence for the Smyth representation; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around coherence and filtered-intersection consequence for the Smyth representation; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for coherence and filtered-intersection consequence for the Smyth representation, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Corollary 6.2.15; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-14"
+        ],
+        "actual": [
+          "thm-6-2-14"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "cor-6-2-15:611fd5a3:f216244c:b42493bc"
+      },
+      "statementRelation": "exact"
+    },
+    "lemma-6-2-18": {
+      "permanentId": "lemma-6-2-18",
+      "number": "Lemma 6.2.18",
+      "source": {
+        "pdfPage": 100,
+        "printedPage": "100",
+        "texSha256": "9efabb95d50565763ac5e8c75a440be705980d893de39306e7680ab8ec931959",
+        "locator": "page:100:block:p100-b2"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.lemma_6_2_18_plotkin_ideal_lens_representation",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "fb21358cac4af600707f05dda884c74e569242ab508635508e077ef2303fa6ef",
+        "bodySha256": "4f4a67e4952e2246bb5c1ff812999e3309e565dcc638f8627a5a47e10f4e5ed7"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives both directions of the ideal-to-lens representation; the equivalence remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.lemma_6_2_18_plotkin_ideal_lens_representation.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "ideal_lens_equivalence",
+          "convex_closure_membership"
+        ],
+        "downstreamCount": 5
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Lemma 6.2.18 and isolate the required construction: two-way correspondence between Plotkin ideals and generated lenses.",
+          "Compare the Lean signature of Lemma 6.2.18 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies two-way correspondence between Plotkin ideals and generated lenses; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of two-way correspondence between Plotkin ideals and generated lenses; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in two-way correspondence between Plotkin ideals and generated lenses.",
+          "Attempt dependency composition through prop-6-2-17; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for two-way correspondence between Plotkin ideals and generated lenses; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around two-way correspondence between Plotkin ideals and generated lenses; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for two-way correspondence between Plotkin ideals and generated lenses, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Lemma 6.2.18; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "prop-6-2-17"
+        ],
+        "actual": [
+          "prop-6-2-17"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "lemma-6-2-18:9efabb95:fb21358c:4f4a67e4"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-2-19": {
+      "permanentId": "thm-6-2-19",
+      "number": "Theorem 6.2.19",
+      "source": {
+        "pdfPage": 100,
+        "printedPage": "100",
+        "texSha256": "dc035f78144aec272de726b67aa18cab9f43d0b5e073e7d2075ae7e35b33198b",
+        "locator": "page:100:block:p100-b3"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_2_19_plotkin_powerdomain_omega_lenses",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "31425c2a770a35ac1a267ef822d0a2a61ea85006ed99e106449a0215b3a8e5ad",
+        "bodySha256": "9796094885a218da1c2f167e7afc36947e22c43e0b024acab372f8c517acd6f7"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF constructs countable lens approximants and proves surjectivity; the representation remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_2_19_plotkin_powerdomain_omega_lenses.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "countable_lens_approximation",
+          "surjectivity_of_representation"
+        ],
+        "downstreamCount": 5
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.2.19 and isolate the required construction: countable approximation of lenses in omega-continuous domains.",
+          "Compare the Lean signature of Theorem 6.2.19 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies countable approximation of lenses in omega-continuous domains; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of countable approximation of lenses in omega-continuous domains; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in countable approximation of lenses in omega-continuous domains.",
+          "Attempt dependency composition through lemma-6-2-18; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for countable approximation of lenses in omega-continuous domains; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around countable approximation of lenses in omega-continuous domains; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for countable approximation of lenses in omega-continuous domains, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.2.19; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "lemma-6-2-18"
+        ],
+        "actual": [
+          "lemma-6-2-18"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-2-19:dc035f78:31425c2a:97960948"
+      },
+      "statementRelation": "exact"
+    },
+    "cor-6-2-21": {
+      "permanentId": "cor-6-2-21",
+      "number": "Corollary 6.2.21",
+      "source": {
+        "pdfPage": 102,
+        "printedPage": "102",
+        "texSha256": "1c7c6c6c8a0cf61c711ee827dc7067dac6e82f5885e50685c8ec53a1259b80a9",
+        "locator": "page:102:block:p102-b5"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.cor_6_2_21_lenses_convex_lawson_compact",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "11bcd0466e42cdf40288dd8cdfc687df23f5e23b53e8c43d33f74da82ed42251",
+        "bodySha256": "29f961555f78b4e54ccfacde56f60c36ae4c56ba89a53570ef48564aad558c4b"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "admit",
+        "reason": "book_proof_omitted",
+        "evidence": [
+          "The textbook states this corollary without a proof; retained as a book-omission admit.",
+          "Canonical declaration: AbramskyJung.Chapter6.cor_6_2_21_lenses_convex_lawson_compact.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "medium",
+        "reasons": [
+          "book_proof_omitted",
+          "lawson_compact_lens_characterization"
+        ],
+        "downstreamCount": 3
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 0,
+        "attempts": []
+      },
+      "dependencies": {
+        "planned": [
+          "lemma-6-2-20"
+        ],
+        "actual": [
+          "lemma-6-2-20"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "cor-6-2-21:1c7c6c6c:11bcd046:29f96155"
+      },
+      "statementRelation": "exact"
+    },
+    "thm-6-2-22": {
+      "permanentId": "thm-6-2-22",
+      "number": "Theorem 6.2.22",
+      "source": {
+        "pdfPage": 102,
+        "printedPage": "102",
+        "texSha256": "393b7dee884d0f339058ed5a35e9e02109ddd467e8ec89ec7add79b3bd7aa4be",
+        "locator": "page:102:block:p102-b6"
+      },
+      "lean": {
+        "canonical": "AbramskyJung.Chapter6.theorem_6_2_22_plotkin_powerdomain_lenses",
+        "module": "Practice.DomainTheory.Chapter06.Section62",
+        "signatureSha256": "708c80c3c31c070240cdea595d3978fbee96bc786574bf4aa2e740ed6e829a0f",
+        "bodySha256": "cb54c1a0517f71c12e528e96220efa2f76fcdbc00b488c1c929b8b10fcf59069"
+      },
+      "states": {
+        "translated": true,
+        "proved": false,
+        "sourceAligned": true,
+        "architectureStable": false,
+        "mathlibCandidate": false
+      },
+      "proofBoundary": {
+        "kind": "sorry",
+        "reason": "automation_exhausted",
+        "evidence": [
+          "The PDF gives the coherent/Hofmann-Mislove proof; the representation theorem remains source-proved automation-exhausted debt.",
+          "Canonical declaration: AbramskyJung.Chapter6.theorem_6_2_22_plotkin_powerdomain_lenses.",
+          "The exact declaration remains compilable and is exposed as partial in the reader map."
+        ]
+      },
+      "risk": {
+        "level": "critical",
+        "reasons": [
+          "hofmann_mislove_bridge",
+          "coherent_plotkin_representation"
+        ],
+        "downstreamCount": 10
+      },
+      "currentRevisionCycle": {
+        "cycle": 1,
+        "attemptsUsed": 10,
+        "attempts": [
+          "Decompose the PDF argument for Theorem 6.2.22 and isolate the required construction: coherent-domain lens representation via Hofmann-Mislove.",
+          "Compare the Lean signature of Theorem 6.2.22 with the quantified hypotheses and conclusion in the source; no weaker replacement was accepted.",
+          "Search existing chapter modules for a theorem that directly supplies coherent-domain lens representation via Hofmann-Mislove; no complete local bridge was found.",
+          "Search the imported mathlib API for a definitionally compatible construction of coherent-domain lens representation via Hofmann-Mislove; the project's bundled interfaces are not directly aligned.",
+          "Attempt a direct constructor proof and identify the first unavailable field in coherent-domain lens representation via Hofmann-Mislove.",
+          "Attempt dependency composition through thm-6-2-14, cor-6-2-21; the missing construction is not exported by those declarations.",
+          "Evaluate an alternative quotient, ideal-completion, spectrum, or transport representation for coherent-domain lens representation via Hofmann-Mislove; it would require additional equivalence infrastructure.",
+          "Check universe, preorder-versus-partial-order, continuity, and extensionality obligations around coherent-domain lens representation via Hofmann-Mislove; coercion changes alone do not close the goal.",
+          "Isolate the smallest source-faithful helper boundary for coherent-domain lens representation via Hofmann-Mislove, rejecting any axiom or strengthened hypothesis not present in the PDF.",
+          "Compile the isolated boundary and all downstream declarations for Theorem 6.2.22; retain `sorry` with automation_exhausted classification pending human review."
+        ]
+      },
+      "dependencies": {
+        "planned": [
+          "thm-6-2-14",
+          "cor-6-2-21"
+        ],
+        "actual": [
+          "thm-6-2-14",
+          "cor-6-2-21"
+        ],
+        "mismatch": false
+      },
+      "reviews": {
+        "sourceTex": {
+          "status": "pending"
+        },
+        "leanSemantics": {
+          "status": "pending"
+        },
+        "proofBoundary": {
+          "status": "pending"
+        },
+        "mathlibAlignment": {
+          "status": "pending"
+        },
+        "readerMapping": {
+          "status": "pending"
+        }
+      },
+      "cache": {
+        "key": "thm-6-2-22:393b7dee:708c80c3:cb54c1a0"
+      },
+      "statementRelation": "exact"
+    }
+  }
+}

@@ -20,6 +20,11 @@ namespace Chapter4
 def DomainClass.Subclass (C D : DomainClass.{u}) : Prop :=
   ∀ X : OrderedDomain.{u}, C.Obj X → D.Obj X
 
+/-- Extensional equality of object classes, expressed without identifying the
+proof-valued `Obj` fields definitionally. -/
+def DomainClass.Equivalent (C D : DomainClass.{u}) : Prop :=
+  DomainClass.Subclass C D ∧ DomainClass.Subclass D C
+
 /-- A cartesian closed full subcategory of a base class, represented by its object predicate. -/
 def DomainClass.CartesianClosedSubcategoryOf (Base C : DomainClass.{u}) : Prop :=
   DomainClass.Subclass C Base ∧ DomainClass.CartesianClosed C
